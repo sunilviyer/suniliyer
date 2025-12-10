@@ -13,7 +13,7 @@ export function Header() {
                         Home
                     </Link>
                     <Link href="/about" className="text-sm font-medium hover:text-primary-blue transition-colors">
-                        About
+                        About Me
                     </Link>
                     <ThemeToggle />
                 </nav>
