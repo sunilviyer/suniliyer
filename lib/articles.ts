@@ -233,7 +233,12 @@ export const articles: Record<string, Article> = {
         category: "Strategy",
         author: "Sunil Iyer",
         image: "/images/responsible-ai.png",
-        tldr: [],
+        tldr: [
+            "Responsible AI is a shared responsibility across the entire organization, not just for technical teams",
+            "Avoid common pitfalls like ill-defined governance structures and unclear mandates",
+            "Recognize that lack of foresight can lead to indirect harm and legal consequences",
+            "Understand that the EU AI Act makes robust governance a financial imperative, not just an ethical choice"
+        ],
         tags: ["Responsible AI", "Organization", "Ethics", "Governance", "EU AI Act", "Organizational structure"],
         sources: [],
         sections: [
