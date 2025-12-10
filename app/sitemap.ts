@@ -3,7 +3,7 @@ import { articles } from '@/lib/articles'
 
 export default function sitemap(): MetadataRoute.Sitemap {
     // TODO: Update this with your actual domain
-    const baseUrl = 'https://aidefence.vercel.app'
+    const baseUrl = 'https://www.suniliyer.ca'
 
     const articleUrls = Object.values(articles).map((article) => ({
         url: `${baseUrl}/aidefence/articles/${article.slug}`,
