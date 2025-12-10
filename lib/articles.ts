@@ -1002,7 +1002,7 @@ export const articles: Record<string, Article> = {
         readTime: "8 min read",
         category: "History",
         author: "Sunil Iyer",
-        image: "",
+        image: "/images/ai-history.svg",
         tldr: [
             "The 1956 Dartmouth Conference officially birthed the field of Artificial Intelligence",
             "AI has experienced cycles of hype and 'Winters' where funding and progress stalled",
