@@ -470,5 +470,333 @@ export const articles: Record<string, Article> = {
                 content: "Next steps: Familiarize yourself with the OECD AI Principles and the OECD Framework for Classification of AI Systems. Start thinking about AI systems you interact with daily—how would you classify them? What dimensions matter most for governance?"
             }
         ]
+    },
+    "article-2a-types-of-ai-intelligence": {
+        slug: "article-2a-types-of-ai-intelligence",
+        title: "The AI Family Tree - Understanding AI Intelligence Levels",
+        description: "Understanding Narrow, General, and Super AI, and the difference between Generative and Discriminative models.",
+        date: "Nov 01, 2024",
+        readTime: "6 min read",
+        category: "Fundamentals",
+        author: "Sunil Iyer",
+        image: "/images/types-of-ai.png",
+        tldr: [
+            "Understand the three levels of AI intelligence: Narrow, General, and Super",
+            "Distinguish between generative and discriminative AI",
+            "Apply this knowledge to evaluate AI tools and vendors",
+            "Recognize governance implications for each AI type"
+        ],
+        tags: ["AI Types", "Narrow AI", "AGI", "ASI", "Generative AI", "Discriminative AI", "Governance"],
+        sources: [
+            { title: "Bostrom, N. (2014). Superintelligence: Paths, Dangers, Strategies" },
+            { title: "IBM. (2024). Types of Artificial Intelligence" },
+            { title: "TechTarget. (2024). What is Artificial General Intelligence?" },
+            { title: "Built In. (2025). What Is Artificial Superintelligence (ASI)?" },
+            { title: "GeeksforGeeks. (2025). Generative AI vs. Discriminative AI" },
+            { title: "DataCamp. (2024). Generative vs Discriminative Models" },
+            { title: "McKinsey & Company. (2024). ASI automation projections report" }
+        ],
+        sections: [
+            {
+                type: "text",
+                content: "Your company just purchased an AI-powered hiring tool. The vendor promises it will \"revolutionize recruitment.\" But here's a question most executives never think to ask: What *type* of AI is this, exactly?"
+            },
+            {
+                type: "text",
+                content: "Understanding AI types isn't just for engineers—it's essential for anyone making purchasing decisions, setting company policy, or assessing risk. The differences between AI categories determine what a system can do, what could go wrong, and what oversight you'll need. Think of it like understanding the difference between a calculator and an accountant: both work with numbers, but you'd trust them with very different tasks."
+            },
+            {
+                type: "text",
+                content: "This article breaks down AI into categories that matter for business leaders, using examples from your everyday operations—no computer science degree required."
+            },
+            {
+                title: "The Three Levels of AI — From Specialist to Sci-Fi",
+                type: "text",
+                content: "Imagine you're building a team. You could hire specialists who excel at one thing, generalists who handle anything, or—hypothetically—geniuses who outperform everyone at everything. AI works the same way."
+            },
+            {
+                title: "Narrow AI (What We Have Now)",
+                type: "text",
+                content: "Every AI system you've encountered is Narrow AI. Your email's spam filter? Narrow AI. The chatbot on your customer service page? Narrow AI. That hiring tool screening resumes? Narrow AI."
+            },
+            {
+                type: "text",
+                content: "These systems are like exceptional specialists: brilliant at their one job, useless at everything else. Your spam filter can identify junk mail with remarkable accuracy, but ask it to schedule a meeting and it's helpless. LinkedIn's job-matching algorithm can suggest candidates, but it can't conduct an interview or assess cultural fit."
+            },
+            {
+                type: "text",
+                content: "For business leaders, this means every AI tool has boundaries. When a vendor claims their AI \"understands\" your industry, they mean it was trained on industry-specific data for specific tasks—not that it actually comprehends your business the way a human consultant would."
+            },
+            {
+                title: "Artificial General Intelligence (The Next Frontier)",
+                type: "text",
+                content: "AGI would work like a highly capable employee who can transfer skills across domains. Imagine hiring someone who learns your HR processes, then seamlessly helps with financial planning, then pivots to marketing strategy—all at human-level competence."
+            },
+            {
+                type: "text",
+                content: "AGI doesn't exist yet, but it's the goal major tech companies are racing toward. Sam Altman, CEO of OpenAI, believes it could arrive by 2033. Geoffrey Hinton, often called the \"godfather of AI,\" estimates somewhere between 2028 and 2043. These aren't fringe predictions—they're from people building the technology."
+            },
+            {
+                type: "text",
+                content: "For executives, AGI's arrival would mean fundamentally different AI tools: systems that could genuinely substitute for human judgment across departments, not just automate specific tasks."
+            },
+            {
+                title: "Artificial Superintelligence (The Unknown Territory)",
+                type: "text",
+                content: "ASI is where AI surpasses human intelligence in virtually every field—science, creativity, strategy, social skills, everything. Nick Bostrom, the philosopher who wrote the influential book *Superintelligence*, describes it as \"an intellect that is much smarter than the best human brains in practically every field.\""
+            },
+            {
+                title: "What ASI Would Actually Look Like in Business",
+                type: "text",
+                content: "Imagine a system that doesn't just screen resumes—it redesigns your entire organizational structure, identifies that your company should pivot into an adjacent market you hadn't considered, negotiates supplier contracts better than your best procurement team, and does all of this simultaneously while also improving its own capabilities."
+            },
+            {
+                type: "text",
+                content: "For a CEO: ASI wouldn't be a tool you deploy—it would be a strategic partner that outthinks your entire executive team combined. Every market analysis, competitive strategy, and M&A decision would be better handled by the system than by humans."
+            },
+            {
+                type: "text",
+                content: "For an HR recruiter: ASI wouldn't just match candidates to roles—it would redesign the roles themselves, predict which organizational structures would maximize employee satisfaction and productivity, and identify talent pipelines you didn't know existed."
+            },
+            {
+                title: "The Timeline Is Closer Than You Think",
+                type: "list",
+                content: "This isn't science fiction speculation from outsiders. Here's what the people actually building these systems are saying:",
+                items: [
+                    "Elon Musk (Tesla, xAI): Machines could surpass human intelligence by 2026 or 2027",
+                    "Dario Amodei (CEO of Anthropic, maker of Claude): Anticipates 2027",
+                    "Sam Altman (CEO of OpenAI, maker of ChatGPT): Believes \"humanity is close to building a digital superintelligence,\" possibly by 2033",
+                    "Geoffrey Hinton (the \"godfather of AI\"): Estimates between 2028 and 2043"
+                ]
+            },
+            {
+                type: "text",
+                content: "These compressed timelines have shifted ASI from a distant philosophical concern to something your board should be discussing."
+            },
+            {
+                title: "The Business Implications Are Staggering",
+                type: "text",
+                content: "A 2024 McKinsey report projected that ASI-level systems could automate 80% of jobs by 2040. Geoffrey Hinton himself warned that advanced AI will bring massive unemployment, potentially making \"a few people much richer and most people poorer.\""
+            },
+            {
+                type: "text",
+                content: "But here's the governance challenge that keeps AI researchers awake at night: How do you oversee a system that's smarter than you? It's like asking a golden retriever to supervise a team of scientists—the dog might be very well-intentioned, but it simply can't evaluate whether the scientists are doing good work."
+            },
+            {
+                type: "text",
+                content: "This is why AI governance isn't just about today's narrow AI tools—it's about building the frameworks, oversight mechanisms, and institutional knowledge now, before systems become too sophisticated to control."
+            },
+            {
+                title: "Why This Matters for Your Decisions Today",
+                type: "text",
+                content: "Even if ASI is years away, the governance frameworks you establish now will determine whether your organization can adapt. Companies that treat AI governance as a checkbox exercise today will find themselves unprepared when more capable systems arrive. Those building robust oversight practices, clear accountability structures, and organizational AI literacy will have a significant competitive advantage."
+            },
+            {
+                title: "Generative vs. Discriminative AI — Creators and Classifiers",
+                type: "text",
+                content: "Beyond intelligence levels, AI systems divide into two functional categories based on what they're built to do: create or classify."
+            },
+            {
+                title: "Discriminative AI: The Decision-Makers",
+                type: "text",
+                content: "Think of discriminative AI as your screening committee. It examines inputs and makes classification decisions: yes or no, this category or that one, approve or reject."
+            },
+            {
+                type: "text",
+                content: "When your HR software scans 500 resumes and flags the top 50 candidates, that's discriminative AI. When your finance system reviews expense reports and flags potential policy violations, that's discriminative AI. When your email sorts messages into Primary, Social, and Promotions, that's discriminative AI."
+            },
+            {
+                type: "text",
+                content: "These systems excel at pattern recognition and categorization. They learn what distinguishes a qualified candidate from an unqualified one, what separates legitimate expenses from policy violations, what makes an email spam versus important."
+            },
+            {
+                type: "text",
+                content: "The governance concern: discriminative AI can encode bias. If your resume screener learned from historical hiring decisions, it may have learned that past managers preferred certain schools, backgrounds, or even names—perpetuating discrimination automatically."
+            },
+            {
+                title: "Generative AI: The Content Creators",
+                type: "text",
+                content: "Generative AI doesn't classify—it creates. ChatGPT drafting your meeting notes, DALL-E creating marketing images, AI tools writing job descriptions or product copy—these systems produce new content based on patterns from their training."
+            },
+            {
+                type: "text",
+                content: "When your marketing team uses AI to draft social media posts, that's generative AI. When HR uses AI to write job descriptions, that's generative AI. When your communications team uses AI to summarize lengthy reports, that's generative AI."
+            },
+            {
+                type: "text",
+                content: "The governance concerns differ here: authenticity (is this content accurate?), intellectual property (who owns AI-generated work?), and disclosure (should you tell customers when AI created something?)."
+            },
+            {
+                title: "Conclusion",
+                type: "text",
+                content: "For business leaders, these distinctions aren't academic—they're practical. When evaluating an AI hiring tool, you need to know: Is it discriminative (screening candidates) or generative (writing job posts)? Is it Narrow AI with clear limitations, or is the vendor overpromising AGI-like capabilities?"
+            },
+            {
+                type: "text",
+                content: "The AI landscape is evolving rapidly. Narrow AI is transforming operations today. AGI may arrive within a decade. ASI, once science fiction, now appears on credible timelines. Understanding these categories helps you make better purchasing decisions, set appropriate policies, and prepare your organization for what's coming."
+            },
+            {
+                type: "text",
+                content: "Because when your board asks about your AI strategy, \"I bought what the vendor recommended\" isn't going to cut it anymore."
+            }
+        ]
+    },
+    "article-2b-how-machines-learn": {
+        slug: "article-2b-how-machines-learn",
+        title: "How Machines Learn — Training Methods and Automation Explained",
+        description: "Supervised, Unsupervised, Reinforcement Learning, Transformers, and the difference between RPA and Robotics.",
+        date: "Nov 08, 2024",
+        readTime: "5 min read",
+        category: "Fundamentals",
+        author: "Sunil Iyer",
+        image: "/images/machine-learning.png",
+        tldr: [
+            "Understand the four ways AI systems learn",
+            "Grasp how transformer technology powers modern AI tools",
+            "Distinguish between software automation (RPA) and physical robotics",
+            "Apply this knowledge to vendor conversations and risk assessment"
+        ],
+        tags: ["Machine Learning", "Supervised Learning", "Unsupervised Learning", "Reinforcement Learning", "Transformers", "RPA", "Robotics"],
+        sources: [
+            { title: "NVIDIA. (2019). Difference Between Supervised, Unsupervised, and Reinforcement Learning" },
+            { title: "Vaswani, A., et al. (2017). Attention Is All You Need" },
+            { title: "IBM. (2024). What is an Attention Mechanism?" },
+            { title: "IBM. (2024). What is Robotic Process Automation (RPA)?" },
+            { title: "McKinsey & Company. (2016). The next acronym you need to know about: RPA" },
+            { title: "Google Cloud. (2024). What is Robotic Process Automation?" },
+            { title: "GeeksforGeeks. (2025). Supervised vs Unsupervised vs Reinforcement Learning" }
+        ],
+        sections: [
+            {
+                type: "text",
+                content: "When an AI vendor tells you their system \"learned\" from millions of examples, what does that actually mean? And when someone mentions \"machine learning\" versus \"robotic process automation,\" are they talking about the same thing?"
+            },
+            {
+                type: "text",
+                content: "For business leaders evaluating AI tools, understanding *how* AI learns isn't just technical trivia—it reveals where problems might emerge. A system that learned from biased data will make biased decisions. A tool trained on outdated information will give outdated answers. Knowing the learning method helps you ask better questions during vendor evaluation."
+            },
+            {
+                type: "text",
+                content: "This article explains AI learning methods and automation types in plain language, using examples from operations you already understand."
+            },
+            {
+                title: "The Four Ways Machines Learn",
+                type: "text",
+                content: "Think of training AI like training a new employee. There are different approaches depending on what resources you have and what you need them to do."
+            },
+            {
+                title: "Supervised Learning: Training with Answer Keys",
+                type: "text",
+                content: "Imagine onboarding a new HR coordinator by showing them 10,000 past hiring decisions: \"This candidate was hired. This one wasn't. This one was hired. This one wasn't.\" Over time, they'd recognize patterns: certain qualifications, experiences, or signals that predicted hiring outcomes."
+            },
+            {
+                type: "text",
+                content: "That's supervised learning. The AI trains on labeled examples where the correct answer is known. Your spam filter learned by processing millions of emails pre-labeled as \"spam\" or \"not spam.\" Credit approval systems learned from thousands of past applications labeled \"approved\" or \"denied.\""
+            },
+            {
+                type: "text",
+                content: "The governance concern: If those historical decisions contained bias—say, past managers unconsciously favored certain universities—the AI learns that bias as if it were a valid pattern. The system doesn't know it's learning discrimination; it just learns what predicted past outcomes."
+            },
+            {
+                title: "Unsupervised Learning: Finding Patterns Without Instructions",
+                type: "text",
+                content: "Now imagine giving a new analyst your entire customer database and saying, \"Find me the patterns.\" No labels, no answer key—just data. They might discover that customers naturally group into segments based on purchasing behavior, geography, or engagement patterns."
+            },
+            {
+                type: "text",
+                content: "That's unsupervised learning. The AI identifies clusters, relationships, and structures on its own. Customer segmentation tools often work this way, grouping buyers by behavior patterns without being told what categories to look for."
+            },
+            {
+                type: "text",
+                content: "The governance concern: Since there's no \"correct answer\" to validate against, results can be harder to interpret. The AI might find real patterns or meaningless correlations—distinguishing between them requires human judgment."
+            },
+            {
+                title: "Semi-Supervised Learning: Labeling Some, Learning from All",
+                type: "text",
+                content: "Labeling data is expensive. Having doctors review and label 100,000 medical images could take months and cost a fortune. But what if you could label just 1,000 images and have the AI learn patterns that apply to the rest?"
+            },
+            {
+                type: "text",
+                content: "That's semi-supervised learning—a practical compromise. You hand-label a small portion of your data, train an initial model, then apply that learning to the vast unlabeled remainder."
+            },
+            {
+                type: "text",
+                content: "The governance concern: The quality of your small labeled set matters enormously. Bias or errors in that foundation propagates across the entire dataset."
+            },
+            {
+                title: "Reinforcement Learning: Learning from Trial and Error",
+                type: "text",
+                content: "Think of how salespeople develop their pitch through experience. They try different approaches, some work better than others, and over time they optimize based on what generates results."
+            },
+            {
+                type: "text",
+                content: "That's reinforcement learning. The AI takes actions, receives feedback (rewards for success, penalties for failure), and optimizes behavior over time. Amazon's warehouse systems use this approach—robots learn efficient picking routes by trying different paths and measuring which ones work best."
+            },
+            {
+                type: "text",
+                content: "The governance concern: The system optimizes for whatever you measure. If you reward sales volume without considering customer satisfaction, the AI will maximize volume regardless of customer experience. The reward signal becomes the AI's entire value system."
+            },
+            {
+                title: "Transformers — Why Modern AI Seems So Smart",
+                type: "text",
+                content: "If you've used ChatGPT, Claude, or any recent AI writing tool, you've experienced transformer technology—the 2017 breakthrough that made AI seem suddenly capable of understanding context."
+            },
+            {
+                type: "text",
+                content: "Here's the simple version: Older AI processed text like reading through a straw, one word at a time, trying to remember what came before. Transformers process everything at once, letting each word \"look at\" every other word to understand relationships."
+            },
+            {
+                type: "text",
+                content: "When you type \"The CEO told the board she would resign,\" the transformer instantly connects \"she\" to \"CEO\" rather than \"board\"—something that sounds obvious but was surprisingly difficult for earlier AI."
+            },
+            {
+                type: "text",
+                content: "For business applications, this means modern AI tools can handle context-dependent tasks that previously required human interpretation: summarizing long reports, drafting responses that maintain context, or analyzing documents where meaning depends on relationships between sections."
+            },
+            {
+                type: "text",
+                content: "The governance concern: These models are powerful but opaque. When your AI writing tool produces a response, explaining *why* it chose those specific words is nearly impossible. This \"black box\" quality creates challenges for auditing and accountability."
+            },
+            {
+                title: "RPA vs. Robotics — The Confusion Clarified",
+                type: "text",
+                content: "When vendors mention \"robotics,\" clarify what they mean—because the word describes two completely different things."
+            },
+            {
+                title: "Physical Robotics: Machines That Move",
+                type: "text",
+                content: "Factory robots welding car frames. Warehouse systems moving pallets. Surgical robots assisting operations. These are physical machines that interact with the real world. They're governed by workplace safety regulations, require physical maintenance, and pose physical risks."
+            },
+            {
+                title: "Robotic Process Automation (RPA): Software That Clicks",
+                type: "text",
+                content: "RPA contains no physical robots whatsoever. It's software that automates repetitive computer tasks—copying data from emails to spreadsheets, filling forms, moving files between systems."
+            },
+            {
+                type: "text",
+                content: "One expert described it perfectly: \"RPA takes the robot out of the human.\" All those tedious, repetitive clicks your employees perform daily? RPA software can mimic those actions automatically."
+            },
+            {
+                type: "text",
+                content: "Example: When your HR team manually copies new hire information from email to your HRIS to payroll to benefits enrollment—that's exactly what RPA automates. The software \"watches\" how a human performs the task, then replicates those clicks and keystrokes automatically."
+            },
+            {
+                type: "text",
+                content: "The governance distinction: Physical robotics involves workplace safety, mechanical failure risks, and labor displacement in manufacturing. RPA involves data accuracy, process dependencies, and labor displacement in knowledge work. Same word, very different governance frameworks."
+            },
+            {
+                title: "Conclusion",
+                type: "text",
+                content: "Understanding how AI learns reveals where problems hide. Supervised learning can encode historical bias. Reinforcement learning optimizes for whatever you measure—choose those metrics carefully. Transformers enable impressive capabilities but resist explanation."
+            },
+            {
+                type: "text",
+                content: "When evaluating AI vendors, these distinctions help you ask better questions: \"What data did you train on? How was it labeled? What are you optimizing for? Can you explain why the system makes specific decisions?\""
+            },
+            {
+                type: "text",
+                content: "And when someone promises \"robotic\" solutions, make sure you know whether they mean a mechanical arm on the factory floor or a software script clicking through your expense reports. The governance implications couldn't be more different."
+            }
+        ]
     }
 }
