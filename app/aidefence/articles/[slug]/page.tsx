@@ -2,7 +2,7 @@ import { VideoEmbed } from "@/components/video-embed"
 import { TableOfContents } from "@/components/toc"
 import { ShareButtons } from "@/components/share-buttons"
 import { NewsletterCTA } from "@/components/newsletter-cta"
-import { ArrowLeft } from "lucide-react"
+import { ArrowLeft, BookOpen, Link as LinkIcon } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
 import { articles } from "@/lib/articles"
@@ -21,9 +21,9 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
     return (
         <div className="container mx-auto px-4 py-8">
             <div className="mb-8">
-                <Link href="/aidefence" className="inline-flex items-center text-sm text-gray-500 hover:text-primary-blue transition-colors">
+                <Link href="/aidefence/articles" className="inline-flex items-center text-sm text-gray-500 hover:text-primary-blue transition-colors">
                     <ArrowLeft className="w-4 h-4 mr-1" />
-                    Back to Dashboard
+                    Back to Articles
                 </Link>
             </div>
 
@@ -68,6 +68,24 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
                         )}
                     </header>
 
+                    {/* TLDR Section */}
+                    {article.tldr && article.tldr.length > 0 && (
+                        <div className="bg-blue-50 dark:bg-blue-900/20 border border-blue-100 dark:border-blue-800 rounded-xl p-6 mb-10">
+                            <div className="flex items-center gap-2 mb-4 text-primary-blue">
+                                <BookOpen className="w-5 h-5" />
+                                <h2 className="font-bold text-lg m-0">TL;DR</h2>
+                            </div>
+                            <ul className="space-y-2">
+                                {article.tldr.map((item, i) => (
+                                    <li key={i} className="flex items-start gap-2 text-gray-700 dark:text-gray-300">
+                                        <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-primary-blue flex-shrink-0" />
+                                        <span>{item}</span>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    )}
+
                     <div className="prose prose-lg dark:prose-invert max-w-none">
                         {article.sections.map((section, index) => (
                             <div key={index} className="mb-8">
@@ -89,7 +107,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
 
                                 {section.type === 'list' && (
                                     <div>
-                                        <p className="mb-4">{section.content}</p>
+                                        <p className="mb-4 font-medium">{section.content}</p>
                                         <ul className="list-disc pl-6 space-y-2">
                                             {section.items?.map((item, i) => (
                                                 <li key={i}>{item}</li>
@@ -99,11 +117,34 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
                                 )}
                             </div>
                         ))}
-
-                        <p className="text-sm text-gray-500 mt-8">
-                            Current slug: {slug}
-                        </p>
                     </div>
+
+                    {/* Sources Section */}
+                    {article.sources && article.sources.length > 0 && (
+                        <div className="mt-12 pt-8 border-t border-gray-100 dark:border-gray-800">
+                            <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-6">Sources & Research Notes</h3>
+                            <ul className="space-y-3">
+                                {article.sources.map((source, i) => (
+                                    <li key={i} className="flex items-start gap-2 text-sm">
+                                        <span className="mt-1 text-gray-400">•</span>
+                                        <div>
+                                            <span className="text-gray-700 dark:text-gray-300">{source.title}</span>
+                                            {source.link && (
+                                                <a
+                                                    href={source.link}
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    className="ml-2 text-primary-blue hover:underline inline-flex items-center gap-1"
+                                                >
+                                                    Link <LinkIcon className="w-3 h-3" />
+                                                </a>
+                                            )}
+                                        </div>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    )}
 
                     <div className="mt-12 pt-8 border-t border-gray-100 dark:border-gray-800">
                         <div className="flex flex-wrap gap-2 mb-8">
