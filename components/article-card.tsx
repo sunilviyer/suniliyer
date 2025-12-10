@@ -13,7 +13,7 @@ interface ArticleCardProps {
 
 export function ArticleCard({ title, excerpt, date, slug, imageUrl, category, readTime }: ArticleCardProps) {
     return (
-        <Link href={`/articles/${slug}`} className="group block h-full">
+        <Link href={`/aidefence/articles/${slug}`} className="group block h-full">
             <div className="bg-white dark:bg-gray-900 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 h-full border border-gray-100 dark:border-gray-800 flex flex-col">
                 <div className="relative h-48 w-full overflow-hidden">
                     {imageUrl ? (

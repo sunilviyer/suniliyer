@@ -7,28 +7,31 @@ import { BookOpen, TrendingUp, Shield } from "lucide-react"
 export default function Home() {
   const articles = [
     {
-      title: "Introduction to AI Governance: Why It Matters",
-      excerpt: "Setting the stage for AI governance importance. Understand why responsible AI is crucial for the future of technology and business.",
-      date: "Week 1",
-      slug: "intro-to-ai-governance",
-      category: "Foundations",
-      readTime: "5 min read"
+      slug: "eu-ai-act-gold-standard-ai-governance",
+      title: "The New Gold Standard for AI Governance",
+      excerpt: "Understanding the EU AI Act: scope, compliance, penalties, and why it matters.",
+      date: "May 21, 2024",
+      category: "Regulation",
+      readTime: "8 min read",
+      image: "/images/eu-ai-act.png"
     },
     {
-      title: "AI Fundamentals: Types and Applications",
-      excerpt: "Explore the difference between narrow and broad AI, types of machine learning, and real-world applications transforming industries.",
-      date: "Week 2",
-      slug: "ai-fundamentals",
-      category: "Foundations",
-      readTime: "6 min read"
+      slug: "responsibility-of-responsible-ai",
+      title: "Responsibility of Responsible AI",
+      excerpt: "Why everyone in an organization shares responsibility for AI governance.",
+      date: "May 10, 2024",
+      category: "Strategy",
+      readTime: "3 min read",
+      image: "/images/responsible-ai.png"
     },
     {
-      title: "The AI Technology Stack Explained",
-      excerpt: "A comprehensive look at the AI infrastructure, platforms, and application layers that power modern AI systems.",
-      date: "Week 3",
-      slug: "ai-tech-stack",
-      category: "Technology",
-      readTime: "5 min read"
+      slug: "week-1-building-blocks-what-ai-actually-is",
+      title: "The Building Blocks - What AI Actually Is",
+      excerpt: "Definitions, frameworks, and the socio-technical nature of AI.",
+      date: "Oct 24, 2024",
+      category: "Foundations",
+      readTime: "6 min read",
+      image: "/images/ai-building-blocks.png"
     }
   ]
 

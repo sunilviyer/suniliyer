@@ -4,12 +4,19 @@ import { ShareButtons } from "@/components/share-buttons"
 import { NewsletterCTA } from "@/components/newsletter-cta"
 import { ArrowLeft } from "lucide-react"
 import Link from "next/link"
+import Image from "next/image"
+import { articles } from "@/lib/articles"
+import { notFound } from "next/navigation"
 
 export default async function ArticlePage({ params }: { params: Promise<{ slug: string }> }) {
     const { slug } = await params
+    const article = articles[slug]
 
-    // In a real app, fetch data based on slug
-    const articleUrl = `https://aidefence.io/articles/${slug}` // Example URL
+    if (!article) {
+        notFound()
+    }
+
+    const articleUrl = `https://aidefence.io/articles/${slug}`
 
     return (
         <div className="container mx-auto px-4 py-8">
@@ -25,58 +32,73 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
                 <article className="lg:col-span-8">
                     <header className="mb-10">
                         <div className="flex items-center gap-2 text-sm text-primary-blue font-medium mb-4">
-                            <span>Foundations</span>
-                            <span>•</span>
-                            <span>Week 1</span>
+                            <span>{article.category}</span>
                         </div>
                         <h1 className="text-3xl md:text-5xl font-bold mb-6 text-gray-900 dark:text-white leading-tight">
-                            Introduction to AI Governance: Why It Matters
+                            {article.title}
                         </h1>
 
                         <div className="flex flex-wrap items-center justify-between gap-4 border-b border-gray-100 dark:border-gray-800 pb-8">
                             <div className="flex items-center gap-4 text-gray-500 dark:text-gray-400 text-sm">
                                 <div className="flex items-center gap-2">
-                                    <div className="w-8 h-8 rounded-full bg-gray-200 dark:bg-gray-700" />
-                                    <span>Sunil Iyer</span>
+                                    <div className="w-8 h-8 rounded-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center text-xs font-bold text-gray-500">
+                                        {article.author.charAt(0)}
+                                    </div>
+                                    <span>{article.author}</span>
                                 </div>
                                 <span>•</span>
-                                <span>Oct 24, 2024</span>
+                                <span>{article.date}</span>
                                 <span>•</span>
-                                <span>5 min read</span>
+                                <span>{article.readTime}</span>
                             </div>
 
-                            <ShareButtons title="Introduction to AI Governance" url={articleUrl} />
+                            <ShareButtons title={article.title} url={articleUrl} />
                         </div>
+
+                        {article.image && (
+                            <div className="mt-8 relative w-full h-64 md:h-96 rounded-xl overflow-hidden shadow-lg">
+                                <Image
+                                    src={article.image}
+                                    alt={article.title}
+                                    fill
+                                    className="object-cover"
+                                    priority
+                                />
+                            </div>
+                        )}
                     </header>
 
                     <div className="prose prose-lg dark:prose-invert max-w-none">
-                        <p className="lead text-xl text-gray-600 dark:text-gray-300 mb-8">
-                            As artificial intelligence systems become increasingly integrated into our daily lives and critical infrastructure, the need for robust governance frameworks has never been more urgent.
-                        </p>
+                        {article.sections.map((section, index) => (
+                            <div key={index} className="mb-8">
+                                {section.title && (
+                                    <h2 id={section.title.toLowerCase().replace(/\s+/g, '-')}>
+                                        {section.title}
+                                    </h2>
+                                )}
 
-                        <VideoEmbed videoId="dQw4w9WgXcQ" title="AI Governance Explained" />
+                                {section.type === 'text' && (
+                                    <p>{section.content}</p>
+                                )}
 
-                        <h2 id="what-is-ai-governance">What is AI Governance?</h2>
-                        <p>
-                            AI governance refers to the legal frameworks, ethical guidelines, and organizational policies that ensure artificial intelligence technologies are developed and deployed responsibly. It encompasses a wide range of issues, from data privacy and security to fairness, transparency, and accountability.
-                        </p>
+                                {section.type === 'quote' && (
+                                    <blockquote className="border-l-4 border-primary-blue pl-4 italic text-gray-700 dark:text-gray-300 my-6 bg-gray-50 dark:bg-gray-900/50 p-4 rounded-r-lg">
+                                        {section.content}
+                                    </blockquote>
+                                )}
 
-                        <h3 id="key-components">Key Components</h3>
-                        <ul>
-                            <li><strong>Transparency:</strong> Understanding how AI models make decisions.</li>
-                            <li><strong>Fairness:</strong> Ensuring AI systems do not discriminate against protected groups.</li>
-                            <li><strong>Accountability:</strong> Establishing clear lines of responsibility for AI outcomes.</li>
-                            <li><strong>Privacy:</strong> Protecting user data throughout the AI lifecycle.</li>
-                        </ul>
-
-                        <blockquote>
-                            "The goal of AI governance is not to stifle innovation, but to ensure that innovation aligns with human values and societal well-being."
-                        </blockquote>
-
-                        <h2 id="why-now">Why Now?</h2>
-                        <p>
-                            With the rapid advancement of generative AI and large language models, the capabilities of AI systems have expanded exponentially. This growth brings both immense opportunities and significant risks that must be managed proactively.
-                        </p>
+                                {section.type === 'list' && (
+                                    <div>
+                                        <p className="mb-4">{section.content}</p>
+                                        <ul className="list-disc pl-6 space-y-2">
+                                            {section.items?.map((item, i) => (
+                                                <li key={i}>{item}</li>
+                                            ))}
+                                        </ul>
+                                    </div>
+                                )}
+                            </div>
+                        ))}
 
                         <p className="text-sm text-gray-500 mt-8">
                             Current slug: {slug}
@@ -85,7 +107,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
 
                     <div className="mt-12 pt-8 border-t border-gray-100 dark:border-gray-800">
                         <div className="flex flex-wrap gap-2 mb-8">
-                            {["AI Governance", "Ethics", "Introduction"].map(tag => (
+                            {article.tags.map(tag => (
                                 <span key={tag} className="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 rounded-full text-sm font-medium">
                                     #{tag}
                                 </span>
@@ -106,18 +128,16 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
                                 Related Articles
                             </h3>
                             <div className="space-y-4">
-                                {[
-                                    "AI Fundamentals: Types and Applications",
-                                    "The AI Technology Stack Explained",
-                                    "AI Ethics: Core Principles"
-                                ].map((title, i) => (
-                                    <Link key={i} href="#" className="block group">
-                                        <h4 className="text-gray-700 dark:text-gray-300 group-hover:text-primary-blue transition-colors text-sm font-medium leading-snug mb-1">
-                                            {title}
-                                        </h4>
-                                        <span className="text-xs text-gray-500">5 min read</span>
-                                    </Link>
-                                ))}
+                                {Object.values(articles)
+                                    .filter(a => a.slug !== slug)
+                                    .map((a) => (
+                                        <Link key={a.slug} href={`/aidefence/articles/${a.slug}`} className="block group">
+                                            <h4 className="text-gray-700 dark:text-gray-300 group-hover:text-primary-blue transition-colors text-sm font-medium leading-snug mb-1">
+                                                {a.title}
+                                            </h4>
+                                            <span className="text-xs text-gray-500">{a.readTime}</span>
+                                        </Link>
+                                    ))}
                             </div>
                         </div>
                     </div>
