@@ -13,7 +13,7 @@ const sidebarItems = [
     },
     {
         title: "Articles",
-        href: "/articles", // Assuming we might move this later or keep it root
+        href: "/aidefence/articles",
         icon: BookOpen,
     },
     {
