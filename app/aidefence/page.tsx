@@ -3,37 +3,10 @@ import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import Link from "next/link"
 import { BookOpen, TrendingUp, Shield } from "lucide-react"
+import { articles } from "@/lib/articles"
 
 export default function Home() {
-  const articles = [
-    {
-      slug: "eu-ai-act-gold-standard-ai-governance",
-      title: "The New Gold Standard for AI Governance",
-      excerpt: "Understanding the EU AI Act: scope, compliance, penalties, and why it matters.",
-      date: "May 21, 2024",
-      category: "Regulation",
-      readTime: "8 min read",
-      image: "/images/eu-ai-act.png"
-    },
-    {
-      slug: "responsibility-of-responsible-ai",
-      title: "Responsibility of Responsible AI",
-      excerpt: "Why everyone in an organization shares responsibility for AI governance.",
-      date: "May 10, 2024",
-      category: "Strategy",
-      readTime: "3 min read",
-      image: "/images/responsible-ai.png"
-    },
-    {
-      slug: "week-1-building-blocks-what-ai-actually-is",
-      title: "The Building Blocks - What AI Actually Is",
-      excerpt: "Definitions, frameworks, and the socio-technical nature of AI.",
-      date: "Oct 24, 2024",
-      category: "Foundations",
-      readTime: "6 min read",
-      image: "/images/ai-building-blocks.png"
-    }
-  ]
+  const recentArticles = Object.values(articles).slice(0, 3)
 
   return (
     <div className="flex flex-col h-full">
@@ -96,16 +69,22 @@ export default function Home() {
       <section>
         <div className="flex justify-between items-center mb-6">
           <h2 className="text-2xl font-bold text-gray-900 dark:text-white">Recent Insights</h2>
-          <Link href="/articles" className="text-primary-blue hover:underline text-sm font-medium">
+          <Link href="/aidefence/articles" className="text-primary-blue hover:underline text-sm font-medium">
             View all articles →
           </Link>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {articles.map((article) => (
-            <ArticleCard key={article.slug} {...article} />
+          {recentArticles.map((article) => (
+            <ArticleCard
+              key={article.slug}
+              {...article}
+              imageUrl={article.image}
+              excerpt={article.description}
+            />
           ))}
         </div>
       </section>
+
 
     </div>
   )
