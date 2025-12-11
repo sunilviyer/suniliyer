@@ -1850,5 +1850,135 @@ export const articles: Record<string, Article> = {
                 content: "Expect rapid evolution in video generation, real-time interaction, and embodied AI. Governance will likely see stricter regulations on synthetic media and required content provenance."
             }
         ]
+    },
+    "article-14-ai-compute": {
+        slug: "article-14-ai-compute",
+        title: "AI Compute – Why GPUs Rule the AI World",
+        description: "Understanding the hardware that powers AI, from NVIDIA's dominance to the geopolitical chip wars.",
+        date: "Jan 24, 2025",
+        readTime: "13 min read",
+        category: "AI Fundamentals",
+        author: "Sunil Iyer",
+        image: "/images/ai-compute.svg",
+        tldr: [
+            "AI requires specialized hardware (GPUs) for massive parallel computations.",
+            "NVIDIA dominates the market due to hardware performance and the CUDA software ecosystem.",
+            "The supply chain is concentrated in Taiwan (TSMC), creating geopolitical vulnerabilities.",
+            "Training is a massive one-time cost; inference is an ongoing per-use cost.",
+            "Compute governance (monitoring, thresholds) is an emerging regulatory approach."
+        ],
+        sources: [
+            { title: "NVIDIA (2024). \"Data Center Products\"", note: "Hardware specs" },
+            { title: "Epoch AI. \"Trends in Machine Learning Hardware\"" },
+            { title: "Stanford HAI (2024). \"AI Index Report\"", note: "Compute trends" },
+            { title: "CSET Georgetown. \"AI Chips: What They Are and Why They Matter\"" },
+            { title: "Pilz & Heim (2023). \"Compute Governance and AI Safety\"" }
+        ],
+        tags: ["Compute", "GPUs", "NVIDIA", "Geopolitics", "Supply Chain"],
+        sections: [
+            {
+                type: "text",
+                content: "Here's a number that should get your attention: training GPT-4 reportedly required around 25,000 NVIDIA A100 GPUs running for approximately 100 days. At current prices, that's roughly $100 million in compute alone."
+            },
+            {
+                type: "text",
+                content: "AI runs on silicon—specifically, highly specialized chips that can perform trillions of mathematical operations per second. Understanding AI compute is fundamental to understanding why AI development is concentrated among a few wealthy organizations and why geopolitics now involves semiconductor export controls."
+            },
+            {
+                title: "Why AI Needs Specialized Hardware",
+                type: "text",
+                content: "Traditional CPUs are designed for complex, sequential tasks. AI requires massive parallel computation—performing the same simple operation (multiply, add) billions of times. GPUs, originally designed for graphics, are perfect for this."
+            },
+            {
+                title: "The GPU Landscape",
+                type: "text",
+                content: "NVIDIA controls 80-90% of the AI accelerator market, driven by hardware leadership and the CUDA software ecosystem. Competitors like AMD and Google (TPUs) are chasing, but NVIDIA's moat is deep."
+            },
+            {
+                title: "Training vs. Inference",
+                type: "list",
+                content: "Two distinct phases:",
+                items: [
+                    "Training: Teaching the model. Massive, one-time compute cost. Done by developers.",
+                    "Inference: Using the model. Lower compute per request, but accumulates with usage. Done by everyone."
+                ]
+            },
+            {
+                title: "Governance Implications",
+                type: "text",
+                content: "Compute requirements concentrate power. Governments are using export controls to limit AI development in rival nations. Regulators are considering \"compute thresholds\" (like in the EU AI Act) to identify systemic risk models."
+            },
+            {
+                title: "Organizational Governance",
+                type: "text",
+                content: "Organizations must manage compute costs (which can explode), access controls, and vendor dependencies. Cloud vs. on-premise decisions involve tradeoffs between flexibility, cost, and data control."
+            }
+        ]
+    },
+    "article-15-environmental-cost-ai": {
+        slug: "article-15-environmental-cost-ai",
+        title: "The Environmental Cost of AI – Data Centers, Energy, and Sustainability",
+        description: "The hidden carbon footprint of training and running AI models.",
+        date: "Jan 31, 2025",
+        readTime: "12 min read",
+        category: "AI Fundamentals",
+        author: "Sunil Iyer",
+        image: "/images/environmental-cost-ai.svg",
+        tldr: [
+            "AI has a significant carbon footprint from both training and ongoing inference.",
+            "Training a large model can emit as much carbon as 5 cars over their lifetimes.",
+            "Inference at scale (millions of users) often exceeds training emissions over time.",
+            "Location matters: training on a coal-heavy grid emits 10x more than on a green grid.",
+            "Regulations (EU CSRD, AI Act) are making environmental reporting mandatory."
+        ],
+        sources: [
+            { title: "Strubell et al. (2019). \"Energy and Policy Considerations for Deep Learning in NLP\"" },
+            { title: "Patterson et al. (2021). \"Carbon Emissions and Large Neural Network Training\"" },
+            { title: "IEA (2024). \"Data Centres and Data Transmission Networks\"" },
+            { title: "Luccioni et al. (2022). \"Estimating the Carbon Footprint of BLOOM\"" },
+            { title: "OECD (2022). \"Measuring the Environmental Impacts of AI\"" }
+        ],
+        tags: ["Sustainability", "Carbon Footprint", "Energy", "ESG", "Green AI"],
+        sections: [
+            {
+                type: "text",
+                content: "There's an uncomfortable truth the AI industry doesn't like to discuss: artificial intelligence has a carbon footprint, and it's growing fast. Training GPT-3 generated an estimated 552 tons of CO2. Running inference for millions of users compounds this daily."
+            },
+            {
+                type: "text",
+                content: "For governance professionals, this isn't just an ethical consideration—it's increasingly a regulatory requirement and a reputational risk. Stakeholders are asking: what does this AI cost the planet?"
+            },
+            {
+                title: "The Energy Footprint",
+                type: "text",
+                content: "Energy consumption occurs in training (intense bursts), inference (continuous load), and infrastructure (cooling). Training compute is doubling every 6-10 months, outpacing efficiency gains."
+            },
+            {
+                title: "From Energy to Carbon",
+                type: "text",
+                content: "Emissions depend on the electricity source. Training in a coal-powered region emits 10x more carbon than in a renewable-powered region. Embodied carbon in hardware manufacturing is also significant."
+            },
+            {
+                title: "Drivers of Impact",
+                type: "list",
+                content: "Key drivers:",
+                items: [
+                    "Model Size: Larger models require exponentially more energy.",
+                    "Training Inefficiency: Failed experiments and hyperparameter search waste compute.",
+                    "Deployment Scale: Massive user bases multiply inference energy.",
+                    "Infrastructure Overhead: Cooling and redundancy add 30-50% to energy needs."
+                ]
+            },
+            {
+                title: "Mitigation Strategies",
+                type: "text",
+                content: "Use efficient architectures, train in green regions, right-size models to tasks (don't use GPT-4 for simple classification), and extend hardware lifecycles."
+            },
+            {
+                title: "Governance Framework",
+                type: "text",
+                content: "Inventory AI systems, track energy use, set reduction targets, and report transparently. Align with emerging regulations like the EU's CSRD and AI Act environmental provisions."
+            }
+        ]
     }
 }
