@@ -1718,5 +1718,137 @@ export const articles: Record<string, Article> = {
                 content: "You cannot govern AI without governing data. When evaluating AI systems, start with data questions: Where did it come from? Who labeled it? What populations are represented? The answers predict model behavior more reliably than technical specifications."
             }
         ]
+    },
+    "article-12-foundation-models": {
+        slug: "article-12-foundation-models",
+        title: "Foundation Models – The New Building Blocks of AI",
+        description: "How massive, adaptable models like GPT-4 and Claude are reshaping AI development and governance.",
+        date: "Jan 10, 2025",
+        readTime: "12 min read",
+        category: "AI Fundamentals",
+        author: "Sunil Iyer",
+        image: "/images/foundation-models.svg",
+        tldr: [
+            "Foundation models are trained on broad data and can be adapted to many downstream tasks.",
+            "They enable transfer learning, where one expensive training run supports many applications.",
+            "Key types include LLMs, vision models, and multimodal models.",
+            "Governance challenges include opacity, homogenization risk, and emergent capabilities.",
+            "Selection criteria should include capability fit, deployment model, and risk profile."
+        ],
+        sources: [
+            { title: "Bommasani et al. (2021). \"On the Opportunities and Risks of Foundation Models\"", note: "The defining paper" },
+            { title: "Stanford CRFM. \"Foundation Models\"", note: "Ongoing research" },
+            { title: "EU AI Act. \"General-Purpose AI\" provisions", note: "Regulatory requirements" },
+            { title: "Anthropic (2023). \"Core Views on AI Safety\"" },
+            { title: "NIST AI RMF (2024). \"Generative AI Profile\"" }
+        ],
+        tags: ["Foundation Models", "Generative AI", "Governance", "Risk Management", "Transfer Learning"],
+        sections: [
+            {
+                type: "text",
+                content: "Something fundamental shifted in AI around 2020. Instead of training specialized models for each task, researchers discovered they could train a single massive model that could do all of these things and more. These \"foundation models\" have become the new building blocks of AI."
+            },
+            {
+                type: "text",
+                content: "GPT-4, Claude, LLaMA, Gemini—they're all foundation models. Understanding them is no longer optional for governance professionals. They bring governance challenges that don't fit neatly into traditional frameworks."
+            },
+            {
+                title: "What Are Foundation Models?",
+                type: "text",
+                content: "A foundation model is a large AI model trained on broad data that can be adapted to a wide range of downstream tasks. Key characteristics include scale, broad training, adaptability, and emergent capabilities."
+            },
+            {
+                title: "How They Work",
+                type: "text",
+                content: "Foundation models develop broad capabilities during pre-training on massive datasets. They can then be adapted via prompting (zero-shot, few-shot), fine-tuning, or RAG. A striking property is emergence—capabilities that appear at scale without being explicitly trained."
+            },
+            {
+                title: "Governance Challenges",
+                type: "list",
+                content: "Key challenges:",
+                items: [
+                    "The Black Box Problem: Difficult to explain why the model produced a specific output.",
+                    "Homogenization Risk: A single failure can cascade across many dependent applications.",
+                    "Emergent Capabilities: Unexpected abilities may appear that weren't tested for.",
+                    "Accountability Gaps: Unclear responsibility between providers and deployers."
+                ]
+            },
+            {
+                title: "Selection and Due Diligence",
+                type: "text",
+                content: "When selecting models, consider capability fit, deployment model (API vs. self-hosted), cost, terms, and risk profile. Open-weight models offer more control but require more infrastructure; closed models offer state-of-the-art capability but less transparency."
+            },
+            {
+                title: "Governance Framework",
+                type: "text",
+                content: "Governance should be layered (addressing foundation, adaptation, application, and deployment layers) and risk-based. High-risk applications require extensive testing and human oversight."
+            }
+        ]
+    },
+    "article-13-multimodal-ai": {
+        slug: "article-13-multimodal-ai",
+        title: "Multimodal AI – When Machines See, Hear, and Speak",
+        description: "Governance challenges when AI systems can process and generate text, images, audio, and video.",
+        date: "Jan 17, 2025",
+        readTime: "11 min read",
+        category: "AI Fundamentals",
+        author: "Sunil Iyer",
+        image: "/images/multimodal-ai.svg",
+        tldr: [
+            "Multimodal AI processes multiple data types (text, images, audio, video) and understands relationships between them.",
+            "Visual capabilities create privacy risks (face recognition) and deception risks (deepfakes).",
+            "Audio risks include voice cloning and fraud; video risks multiply these concerns at scale.",
+            "Cross-modal attacks (like visual prompt injection) are a new security vector.",
+            "Governance requires content provenance (C2PA), modality-specific policies, and technical controls."
+        ],
+        sources: [
+            { title: "OpenAI (2024). \"GPT-4V System Card\"", note: "Vision capability documentation" },
+            { title: "C2PA. \"Content Authenticity Initiative\"", note: "Provenance standards" },
+            { title: "Hancock & Bailenson (2021). \"The Social Impact of Deepfakes\"" },
+            { title: "Partnership on AI. \"Responsible Practices for Synthetic Media\"" },
+            { title: "NIST (2024). \"Synthetic Media Detection\"" }
+        ],
+        tags: ["Multimodal AI", "Computer Vision", "Deepfakes", "Content Provenance", "Governance"],
+        sections: [
+            {
+                type: "text",
+                content: "For decades, AI systems were specialists. One understood text, another recognized images. That's changing. The latest generation of AI systems are multimodal—they can process and generate multiple types of data: text, images, audio, and video."
+            },
+            {
+                type: "text",
+                content: "For governance professionals, multimodality creates new capabilities and new risks. An AI that can see raises different concerns than one that can only read. An AI that generates images creates different liability questions than one that generates text."
+            },
+            {
+                title: "What Is Multimodal AI?",
+                type: "text",
+                content: "Multimodal AI refers to systems that can process, understand, or generate multiple types of data. Examples include GPT-4V (text + vision), Gemini (multimodal native), and DALL-E (text to image)."
+            },
+            {
+                title: "Governance Challenges",
+                type: "list",
+                content: "New risks emerge with each modality:",
+                items: [
+                    "Visual Content: Privacy risks (face recognition), deception (fake photos), harmful content.",
+                    "Audio/Voice: Voice cloning, impersonation, fraud.",
+                    "Video: Deepfakes, misinformation at scale.",
+                    "Cross-Modal Attacks: Visual prompt injection (hiding instructions in images)."
+                ]
+            },
+            {
+                title: "Use Cases and Risk Assessment",
+                type: "text",
+                content: "Lower-risk uses include image accessibility. Medium-risk uses include content creation. Higher-risk uses include identity verification, medical imaging, and legal evidence analysis."
+            },
+            {
+                title: "Governance Framework",
+                type: "text",
+                content: "Implement modality-specific policies (data handling, content generation). Use technical controls like content filtering and watermarking. Establish content provenance using standards like C2PA."
+            },
+            {
+                title: "Future Trends",
+                type: "text",
+                content: "Expect rapid evolution in video generation, real-time interaction, and embodied AI. Governance will likely see stricter regulations on synthetic media and required content provenance."
+            }
+        ]
     }
 }
