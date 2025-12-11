@@ -1568,5 +1568,155 @@ export const articles: Record<string, Article> = {
                 content: "Don't let marketing buzzwords dictate your governance strategy. Inventory your systems and classify them correctly. If it learns from data, govern it as AI. If it follows rules, govern it as automation. And if it's a hybrid, make sure you're not missing the AI risks hidden inside the automated workflow."
             }
         ]
+    },
+    "article-9-large-language-models": {
+        slug: "article-9-large-language-models",
+        title: "Large Language Models – The Technology Behind the Hype",
+        description: "Understanding how LLMs work, what they can do, and why they hallucinate.",
+        date: "Dec 27, 2024",
+        readTime: "15 min read",
+        category: "AI Fundamentals",
+        author: "Sunil Iyer",
+        image: "/images/large-language-models.svg",
+        tldr: [
+            "LLMs predict the next word based on patterns learned from massive datasets.",
+            "They use Transformer architecture to process relationships across long text sequences.",
+            "Capabilities include text generation, coding, and analysis, but they lack true understanding.",
+            "Key risks include hallucination, inconsistency, and susceptibility to prompt injection.",
+            "Governance requires risk-based oversight, clear policies, and continuous monitoring."
+        ],
+        sources: [
+            { title: "Anthropic (2024). \"The Claude Model Card\"", note: "Capability documentation" },
+            { title: "OpenAI (2023). \"GPT-4 Technical Report\"", note: "Safety testing" },
+            { title: "Bommasani et al. (2021). \"On the Opportunities and Risks of Foundation Models\"" },
+            { title: "Bender et al. (2021). \"On the Dangers of Stochastic Parrots\"", note: "Critical perspective" },
+            { title: "NIST (2024). \"AI RMF Generative AI Profile\"" }
+        ],
+        tags: ["LLMs", "Transformers", "Generative AI", "Hallucination", "Governance"],
+        sections: [
+            {
+                type: "text",
+                content: "In late 2022, ChatGPT shattered every assumption about how quickly AI could capture public attention. Within weeks, everyone from teenagers to senators was talking about large language models. The technology that had been quietly developing in research labs suddenly became dinner table conversation."
+            },
+            {
+                type: "text",
+                content: "But here's the problem: most of that conversation is wrong. Not maliciously wrong—just confused. People think LLMs are search engines. Or databases. Or thinking machines. The reality is more interesting and more nuanced than any of these takes."
+            },
+            {
+                title: "What Is a Large Language Model?",
+                type: "text",
+                content: "A large language model is a type of AI trained on massive amounts of text data to understand and generate human language. At their core, they do one thing: predict the next word. Given a sequence of text, the model calculates probability distributions over all possible next tokens and selects one."
+            },
+            {
+                title: "The Technical Architecture",
+                type: "text",
+                content: "Nearly all modern LLMs are built on the Transformer architecture, introduced by Google in 2017. The key innovation is the \"attention mechanism\"—a way for the model to consider relationships between all words in a sequence simultaneously."
+            },
+            {
+                title: "Capabilities and Limitations",
+                type: "list",
+                content: "LLMs have impressive capabilities but unreliable performance:",
+                items: [
+                    "Can write articles, code, and analyze data.",
+                    "Cannot reliably state facts (hallucination risk).",
+                    "Cannot perform reliable math (pattern matching vs computation).",
+                    "Do not access real-time information (without tools).",
+                    "Do not truly understand the physical world."
+                ]
+            },
+            {
+                title: "Governance Challenges Specific to LLMs",
+                type: "list",
+                content: "Key governance issues:",
+                items: [
+                    "The Hallucination Problem: Generating plausible-sounding false information.",
+                    "Inconsistency: Giving different answers to the same question.",
+                    "Data Privacy: Sending sensitive data to API providers.",
+                    "Prompt Injection: Malicious inputs manipulating behavior.",
+                    "Copyright: Training data IP concerns."
+                ]
+            },
+            {
+                title: "Implementing LLM Governance",
+                type: "text",
+                content: "Categorize LLM uses by risk level. High risk (medical, legal) requires extensive testing and human oversight. Medium risk (content drafting) requires review. Lower risk (brainstorming) requires basic guidelines."
+            },
+            {
+                title: "The Road Ahead",
+                type: "text",
+                content: "LLMs are improving rapidly with longer context windows, better reasoning, and agent capabilities. Governance must evolve to address these new capabilities while maintaining oversight on fundamental risks."
+            }
+        ]
+    },
+    "article-11-data-behind-ai": {
+        slug: "article-11-data-behind-ai",
+        title: "The Data Behind AI – Why Training Data Determines Everything",
+        description: "Garbage in, garbage out: how training data shapes AI behavior, bias, and capabilities.",
+        date: "Jan 3, 2025",
+        readTime: "14 min read",
+        category: "AI Fundamentals",
+        author: "Sunil Iyer",
+        image: "/images/data-behind-ai.svg",
+        tldr: [
+            "Training data fundamentally determines AI behavior, capabilities, and failures.",
+            "Data quality dimensions include accuracy, completeness, representativeness, and consistency.",
+            "Bias enters through historical patterns, representation gaps, and labeling subjectivity.",
+            "Privacy risks include memorization of personal data and consent challenges.",
+            "Data provenance and documentation are essential for accountability and auditing."
+        ],
+        sources: [
+            { title: "Gebru et al. (2021). \"Datasheets for Datasets\"", note: "Documentation standard" },
+            { title: "Paullada et al. (2021). \"Data and Its (Dis)contents\"", note: "Critical survey" },
+            { title: "Sambasivan et al. (2021). \"Everyone Wants to Do the Model Work, Not the Data Work\"" },
+            { title: "Raji et al. (2021). \"AI and the Everything in the Whole Wide World Benchmark\"" },
+            { title: "NIST AI RMF (2023). \"Map function\"", note: "Data documentation requirements" }
+        ],
+        tags: ["Data Quality", "Bias", "Privacy", "Governance", "Training Data"],
+        sections: [
+            {
+                type: "text",
+                content: "There's an old saying in computer science: \"Garbage in, garbage out.\" For AI, we need a stronger version: \"Data in, behavior out.\" The training data doesn't just affect AI performance—it fundamentally determines what the AI is, what it can do, and how it will fail."
+            },
+            {
+                type: "text",
+                content: "When Amazon's hiring AI discriminated against women, it wasn't because someone programmed it to be sexist. The model learned from historical hiring data where men had been disproportionately hired. Understanding training data is not optional for AI governance professionals. It's the foundation."
+            },
+            {
+                title: "The Fundamental Relationship",
+                type: "text",
+                content: "AI systems detect statistical patterns in data. Every pattern in the training data becomes a potential pattern in model behavior. If the data contains errors, falsehoods, or biases, the model will reproduce them."
+            },
+            {
+                title: "Data Quality Dimensions",
+                type: "list",
+                content: "Key dimensions to evaluate:",
+                items: [
+                    "Accuracy: Does the data correctly represent reality?",
+                    "Completeness: Does it cover the full range of relevant scenarios?",
+                    "Representativeness: Does the distribution match real-world conditions?",
+                    "Consistency: Are similar examples treated similarly?"
+                ]
+            },
+            {
+                title: "Bias in Training Data",
+                type: "text",
+                content: "Bias enters through multiple pathways: historical bias (past discrimination), representation bias (underrepresented groups), measurement bias (different metrics), and labeling bias (human subjectivity)."
+            },
+            {
+                title: "Data Privacy and Consent",
+                type: "text",
+                content: "Privacy risks include models memorizing personal information and inference attacks. Consent is a major challenge—most internet data was collected without specific consent for AI training. Governance requires verifying legal basis and implementing privacy-preserving techniques."
+            },
+            {
+                title: "Data Provenance and Documentation",
+                type: "text",
+                content: "Provenance is the documented history of data. Standards like \"Datasheets for Datasets\" help track motivation, composition, collection process, and intended uses. This enables auditing and accountability."
+            },
+            {
+                title: "The Bottom Line",
+                type: "text",
+                content: "You cannot govern AI without governing data. When evaluating AI systems, start with data questions: Where did it come from? Who labeled it? What populations are represented? The answers predict model behavior more reliably than technical specifications."
+            }
+        ]
     }
 }
