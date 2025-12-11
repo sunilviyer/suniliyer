@@ -33,7 +33,7 @@ export const articles: Record<string, Article> = {
         description: "Understanding the EU AI Act: scope, compliance, penalties, and why it matters.",
         date: "May 21, 2024",
         readTime: "8 min read",
-        category: "Regulation",
+        category: "AI Laws",
         author: "Sunil Iyer",
         image: "/images/eu-ai-act.png",
         tldr: [
@@ -230,7 +230,7 @@ export const articles: Record<string, Article> = {
         description: "Why everyone in an organization shares responsibility for AI governance.",
         date: "May 10, 2024",
         readTime: "3 min read",
-        category: "Strategy",
+        category: "AI Risks & Principles",
         author: "Sunil Iyer",
         image: "/images/responsible-ai.png",
         tldr: [
@@ -301,7 +301,7 @@ export const articles: Record<string, Article> = {
         description: "Definitions, frameworks, and the socio-technical nature of AI.",
         date: "Oct 24, 2024",
         readTime: "6 min read",
-        category: "Foundations",
+        category: "AI Fundamentals",
         author: "Sunil Iyer",
         image: "/images/ai-building-blocks.png",
         tldr: [
@@ -477,7 +477,7 @@ export const articles: Record<string, Article> = {
         description: "Understanding Narrow, General, and Super AI, and the difference between Generative and Discriminative models.",
         date: "Nov 01, 2024",
         readTime: "6 min read",
-        category: "Fundamentals",
+        category: "AI Fundamentals",
         author: "Sunil Iyer",
         image: "/images/types-of-ai.png",
         tldr: [
@@ -647,7 +647,7 @@ export const articles: Record<string, Article> = {
         description: "Supervised, Unsupervised, Reinforcement Learning, Transformers, and the difference between RPA and Robotics.",
         date: "Nov 08, 2024",
         readTime: "5 min read",
-        category: "Fundamentals",
+        category: "AI Fundamentals",
         author: "Sunil Iyer",
         image: "/images/machine-learning.png",
         tldr: [
@@ -805,7 +805,7 @@ export const articles: Record<string, Article> = {
         description: "Understanding the 5 layers of AI infrastructure: Chips, Data, Models, Applications, and Governance.",
         date: "Nov 15, 2024",
         readTime: "7 min read",
-        category: "Fundamentals",
+        category: "AI Fundamentals",
         author: "Sunil Iyer",
         image: "/images/ai-tech-stack.png",
         tldr: [
@@ -1000,7 +1000,7 @@ export const articles: Record<string, Article> = {
         description: "A journey through the AI summers and winters, from the 1956 Dartmouth conference to the modern Transformer revolution.",
         date: "Nov 22, 2024",
         readTime: "8 min read",
-        category: "History",
+        category: "AI Fundamentals",
         author: "Sunil Iyer",
         image: "/images/ai-history.svg",
         tldr: [
@@ -1227,7 +1227,7 @@ export const articles: Record<string, Article> = {
         description: "A non-technical explanation of neural networks and deep learning for governance professionals.",
         date: "Dec 11, 2025",
         readTime: "12 min read",
-        category: "AI Technology",
+        category: "AI Fundamentals",
         author: "Sunil Iyer",
         image: "/images/deep-learning-decoded.svg",
         tldr: [
