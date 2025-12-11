@@ -1,0 +1,52 @@
+<svg width="800" height="400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f8fafc;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#e2e8f0;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <rect width="800" height="400" fill="url(#bg)" />
+  
+  <!-- Left Side: Automation (Gears/Rules) -->
+  <g transform="translate(200, 200)">
+    <circle cx="0" cy="0" r="80" fill="#e2e8f0" stroke="#475569" stroke-width="2" />
+    <path d="M-40,-40 L40,40 M-40,40 L40,-40" stroke="#475569" stroke-width="4" />
+    <rect x="-50" y="-10" width="100" height="20" fill="#475569" />
+    <text x="0" y="120" text-anchor="middle" font-family="sans-serif" font-size="20" font-weight="bold" fill="#475569">Automation</text>
+    <text x="0" y="145" text-anchor="middle" font-family="sans-serif" font-size="14" fill="#64748b">Rules-Based</text>
+  </g>
+  
+  <!-- Divider -->
+  <line x1="400" y1="50" x2="400" y2="350" stroke="#cbd5e1" stroke-width="2" stroke-dasharray="5,5" />
+  
+  <!-- Right Side: AI (Neural Network/Brain) -->
+  <g transform="translate(600, 200)">
+    <circle cx="0" cy="0" r="80" fill="#dbeafe" stroke="#2563eb" stroke-width="2" />
+    
+    <!-- Nodes -->
+    <circle cx="-40" cy="-30" r="8" fill="#3b82f6" />
+    <circle cx="-40" cy="30" r="8" fill="#3b82f6" />
+    <circle cx="0" cy="-50" r="8" fill="#3b82f6" />
+    <circle cx="0" cy="0" r="8" fill="#3b82f6" />
+    <circle cx="0" cy="50" r="8" fill="#3b82f6" />
+    <circle cx="40" cy="-30" r="8" fill="#3b82f6" />
+    <circle cx="40" cy="30" r="8" fill="#3b82f6" />
+    
+    <!-- Connections -->
+    <line x1="-40" y1="-30" x2="0" y2="-50" stroke="#93c5fd" stroke-width="2" />
+    <line x1="-40" y1="-30" x2="0" y2="0" stroke="#93c5fd" stroke-width="2" />
+    <line x1="-40" y1="30" x2="0" y2="0" stroke="#93c5fd" stroke-width="2" />
+    <line x1="-40" y1="30" x2="0" y2="50" stroke="#93c5fd" stroke-width="2" />
+    <line x1="0" y1="-50" x2="40" y2="-30" stroke="#93c5fd" stroke-width="2" />
+    <line x1="0" y1="0" x2="40" y2="-30" stroke="#93c5fd" stroke-width="2" />
+    <line x1="0" y1="0" x2="40" y2="30" stroke="#93c5fd" stroke-width="2" />
+    <line x1="0" y1="50" x2="40" y2="30" stroke="#93c5fd" stroke-width="2" />
+    
+    <text x="0" y="120" text-anchor="middle" font-family="sans-serif" font-size="20" font-weight="bold" fill="#2563eb">AI</text>
+    <text x="0" y="145" text-anchor="middle" font-family="sans-serif" font-size="14" fill="#60a5fa">Learning-Based</text>
+  </g>
+  
+  <!-- Title -->
+  <text x="400" y="30" text-anchor="middle" font-family="sans-serif" font-size="24" font-weight="bold" fill="#1e293b">AI vs. Automation</text>
+</svg>

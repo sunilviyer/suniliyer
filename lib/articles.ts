@@ -1472,5 +1472,101 @@ export const articles: Record<string, Article> = {
                 content: "Generative AI is fundamentally different from discriminative AI. Hallucination is inherent, not a bug to be fixed. Evaluation is hard, so accept uncertainty and implement human oversight proportional to risk. And remember: scale changes everything. Capabilities that seem manageable at low volume become serious risks at scale."
             }
         ]
+    },
+    "article-10-ai-vs-automation": {
+        slug: "article-10-ai-vs-automation",
+        title: "AI vs. Automation – Understanding the Distinction",
+        description: "Why confusing AI with automation leads to bad governance, and how to tell them apart.",
+        date: "Dec 20, 2024",
+        readTime: "10 min read",
+        category: "AI Fundamentals",
+        author: "Sunil Iyer",
+        image: "/images/ai-vs-automation.svg",
+        tldr: [
+            "Automation follows predefined rules; AI learns patterns from data.",
+            "RPA is typically automation, not AI, unless it integrates ML components.",
+            "Most real-world systems are hybrids, requiring governance for both rules and models.",
+            "Mislabeling automation as AI leads to wasted resources and inappropriate controls.",
+            "Governance must distinguish between deterministic automation risks and probabilistic AI risks."
+        ],
+        sources: [
+            { title: "IEEE (2017). \"Guide for Terms and Concepts in Intelligent Process Automation\"" },
+            { title: "Gartner. \"Distinguish AI From Automation in Your Enterprise Strategy\"" },
+            { title: "OECD (2019). \"Recommendation on AI\"", note: "Definitions and scope" },
+            { title: "Brynjolfsson & McAfee (2017). \"Machine, Platform, Crowd\"", note: "Automation vs. AI economics" },
+            { title: "Davenport & Ronanki (2018). \"Artificial Intelligence for the Real World\"", note: "HBR" }
+        ],
+        tags: ["AI vs Automation", "RPA", "Governance", "Definitions", "Hybrid Systems"],
+        sections: [
+            {
+                type: "text",
+                content: "Here's a conversation happening in boardrooms everywhere: \"We need to implement AI across our operations.\" The IT director nods thoughtfully, knowing that what the CEO probably means is \"automation\"—and that what marketing is pitching as \"AI-powered\" is really a series of if-then rules dressed up in buzzwords."
+            },
+            {
+                type: "text",
+                content: "The conflation of AI and automation isn't just semantic confusion—it leads to misallocated budgets, unrealistic expectations, inappropriate governance frameworks, and frustrated stakeholders. When everything gets labeled \"AI,\" organizations apply complex AI governance to simple rule-based systems while simultaneously failing to recognize when actual machine learning requires different oversight."
+            },
+            {
+                title: "Defining Our Terms",
+                type: "text",
+                content: "Automation is technology that performs tasks without continuous human intervention, following predefined rules. It is deterministic, predictable, and transparent. Examples include email auto-responders and assembly line robots."
+            },
+            {
+                type: "text",
+                content: "AI refers to systems that can perform tasks typically requiring human intelligence—learning from data, recognizing patterns, making predictions. It is probabilistic, adaptive, and often opaque. Examples include spam filters, image recognition, and ChatGPT."
+            },
+            {
+                title: "The Crucial Difference",
+                type: "list",
+                content: "Key distinctions:",
+                items: [
+                    "Automation: Human writes rules → System follows rules → Predictable output",
+                    "AI: Human provides data → System learns patterns → Probabilistic output",
+                    "Automation fails by doing exactly what it was told; AI fails by making unpredictable errors.",
+                    "Automation is updated by rewriting rules; AI is updated by retraining on new data."
+                ]
+            },
+            {
+                title: "The Spectrum: It's Not Binary",
+                type: "text",
+                content: "In practice, most systems exist on a spectrum. Pure automation (thermostats) is at one end, and pure AI (deep learning) is at the other. In between are hybrid systems like credit card fraud detection, which uses AI for anomaly scoring but automation for blocking rules."
+            },
+            {
+                title: "Robotic Process Automation (RPA): The Great Confusion",
+                type: "text",
+                content: "RPA has \"automation\" in the name, but marketing often conflates it with AI. Traditional RPA is automation—software bots that mimic human clicks and keystrokes. It follows scripts. It becomes \"Intelligent Automation\" only when integrated with AI components like OCR or NLP."
+            },
+            {
+                title: "Why the Distinction Matters for Governance",
+                type: "list",
+                content: "Different technologies require different governance:",
+                items: [
+                    "Risk Profiles: Automation risks include logic errors and brittleness. AI risks include bias, drift, and hallucination.",
+                    "Regulatory Considerations: GDPR and the EU AI Act treat automated decision-making and AI differently.",
+                    "Stakeholder Expectations: Mislabeling automation as AI creates expectation gaps that damage trust."
+                ]
+            },
+            {
+                title: "Practical Classification Framework",
+                type: "list",
+                content: "Ask these questions to classify a system:",
+                items: [
+                    "1. How was it created? (Programmed rules = Automation, Trained on data = AI)",
+                    "2. Can it handle novel situations? (Fails/Defaults = Automation, Attempts prediction = AI)",
+                    "3. How is it updated? (Code changes = Automation, Retraining = AI)",
+                    "4. Is output deterministic? (Yes = Automation, No/Probabilistic = AI)"
+                ]
+            },
+            {
+                title: "Governance Implications",
+                type: "text",
+                content: "For automation, focus on rule documentation and regression testing. For AI, focus on training data documentation, bias testing, and drift monitoring. For hybrid systems, you need both, plus clear boundary identification."
+            },
+            {
+                title: "Practical Takeaways",
+                type: "text",
+                content: "Don't let marketing buzzwords dictate your governance strategy. Inventory your systems and classify them correctly. If it learns from data, govern it as AI. If it follows rules, govern it as automation. And if it's a hybrid, make sure you're not missing the AI risks hidden inside the automated workflow."
+            }
+        ]
     }
 }
