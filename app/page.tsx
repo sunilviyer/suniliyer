@@ -17,7 +17,7 @@ export default function LandingPage() {
             href="/aidefence"
             className="group flex items-center gap-2 text-lg font-medium text-gray-900 dark:text-white hover:text-primary-blue transition-colors"
           >
-            Enter AI Defence
+            Articles
             <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
           </Link>
 
