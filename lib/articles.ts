@@ -1113,5 +1113,224 @@ export const articles: Record<string, Article> = {
                 content: "For AI governance professionals, this history matters. We're not dealing with a technology that emerged fully formed; we're dealing with one that has cycled through hype and disappointment for nearly seventy years. The current capabilities are real, but so is the tendency toward overconfidence. Understanding where AI came from helps us navigate where it's going—and perhaps avoid promising we'll solve everything in eight weeks."
             }
         ]
+    },
+    "article-5-strong-vs-weak-ai": {
+        slug: "article-5-strong-vs-weak-ai",
+        title: "Strong vs. Weak AI – Why the Difference Matters for Governance",
+        description: "Understanding the difference between \"strong\" and \"weak\" AI is fundamental to how we govern these systems.",
+        date: "Dec 11, 2025",
+        readTime: "10 min read",
+        category: "AI Fundamentals",
+        author: "Sunil Iyer",
+        image: "/images/strong-vs-weak-ai.svg",
+        tldr: [
+            "Strong AI (AGI) is hypothetical general intelligence; Weak AI (Narrow AI) is what exists today.",
+            "Current AI systems are sophisticated pattern-matching engines without understanding or consciousness.",
+            "Governance should focus on real risks of Weak AI (bias, errors) rather than hypothetical AGI risks.",
+            "Foundation models are narrow in principle but broad in application, requiring hybrid governance."
+        ],
+        sources: [
+            { title: "Searle, J. (1980). \"Minds, Brains, and Programs\"", note: "The Chinese Room argument" },
+            { title: "Bostrom, N. (2014). \"Superintelligence\"", note: "Arguments for AGI risk" },
+            { title: "Marcus, G. (2022). \"Deep Learning is Hitting a Wall\"", note: "Limitations of current approaches" },
+            { title: "Mitchell, M. (2019). \"Artificial Intelligence: A Guide for Thinking Humans\"", note: "Clear-eyed assessment" },
+            { title: "OECD (2019). \"Recommendation on AI\"", note: "Governance framework for narrow AI" }
+        ],
+        tags: ["AI Fundamentals", "Strong AI", "Weak AI", "AGI", "Governance"],
+        sections: [
+            {
+                type: "text",
+                content: "Every science fiction movie you've ever watched lied to you. The robot uprising, the sentient computer that falls in love, the AI that decides humanity is a virus—none of that exists. Not even close. What we have instead is something simultaneously less dramatic and more immediately useful: artificial intelligence that's incredibly good at specific tasks but couldn't pass a kindergarten common sense test."
+            },
+            {
+                type: "text",
+                content: "Understanding the difference between \"strong\" and \"weak\" AI isn't just academic hairsplitting. It's fundamental to how we govern these systems, what risks we prioritize, and how we communicate with stakeholders who've been fed decades of Hollywood mythology."
+            },
+            {
+                title: "The Great AI Divide: Defining Our Terms",
+                type: "text",
+                content: "Strong AI—also called Artificial General Intelligence (AGI) or \"full AI\"—refers to a hypothetical system that possesses human-level cognitive abilities across all domains. A strong AI could learn any intellectual task a human can perform, transfer knowledge between unrelated domains, understand context and nuance, and possess something resembling consciousness or self-awareness."
+            },
+            {
+                type: "list",
+                content: "Key characteristics of theoretical strong AI:",
+                items: [
+                    "General-purpose reasoning: Can solve novel problems it wasn't specifically trained for",
+                    "Transfer learning at human scale: Knowledge from one domain applies seamlessly to others",
+                    "Common sense understanding: Grasps implicit knowledge humans take for granted",
+                    "Self-awareness: Some level of consciousness or understanding of its own existence",
+                    "Autonomous goal-setting: Can determine its own objectives beyond programmed parameters"
+                ]
+            },
+            {
+                type: "text",
+                content: "Here's the critical point: Strong AI does not exist. Despite breathless headlines and venture capital hype, no system has demonstrated anything approaching general intelligence."
+            },
+            {
+                title: "What is \"Weak\" AI?",
+                type: "text",
+                content: "Weak AI—also called narrow AI or applied AI—describes every AI system that actually exists today. These systems are designed and optimized for specific, well-defined tasks. They can outperform humans dramatically within their narrow domain while being completely helpless outside it."
+            },
+            {
+                type: "list",
+                content: "Examples of weak AI in production:",
+                items: [
+                    "GPT-4/Claude: Generate coherent text, answer questions (but don't truly understand meaning)",
+                    "AlphaGo: Play Go at superhuman level (but can't play chess without retraining)",
+                    "Tesla Autopilot: Lane keeping, adaptive cruise (but can't handle novel construction zones reliably)",
+                    "IBM Watson: Process medical literature (but can't replace physician judgment)",
+                    "Fraud detection: Identify anomalous transactions (but can't explain why fraud is wrong)"
+                ]
+            },
+            {
+                title: "Why This Distinction Matters for Governance",
+                type: "text",
+                content: "The strong/weak distinction fundamentally shapes how we assess AI risks. Weak AI risks are bounded and predictable—they stem from bias in training data, errors in specific use cases, and misapplication to unsuitable domains. Strong AI risks would be existential and unpredictable."
+            },
+            {
+                type: "list",
+                content: "Weak AI governance focuses on:",
+                items: [
+                    "Bias and fairness in specific applications",
+                    "Transparency and explainability for defined decisions",
+                    "Human oversight for bounded use cases",
+                    "Data quality and representativeness",
+                    "Performance monitoring within operational parameters"
+                ]
+            },
+            {
+                title: "The Capability Spectrum",
+                type: "text",
+                content: "Rather than a binary strong/weak divide, it's more accurate to think of AI capabilities as a spectrum with multiple dimensions: Task Breadth, Reasoning Depth, Learning Flexibility, Contextual Understanding, and Autonomy Level."
+            },
+            {
+                type: "text",
+                content: "Current frontier models like GPT-4 and Claude have advanced significantly on several dimensions—they handle multiple tasks, perform multi-step reasoning, and learn from few examples. But they remain fundamentally narrow: their \"understanding\" is statistical, their \"reasoning\" is pattern-matching at scale, and their outputs require human verification."
+            },
+            {
+                title: "Practical Takeaways for Governance Professionals",
+                type: "list",
+                content: "Key Principles:",
+                items: [
+                    "All current AI is weak AI: No exceptions, regardless of impressive demos or marketing claims.",
+                    "Weak AI causes real harm: Discrimination, privacy violations, safety failures, and manipulation don't require consciousness.",
+                    "Governance frameworks should match reality: Apply narrow AI governance to narrow AI systems.",
+                    "Communicate accurately: Help stakeholders understand what AI actually is—both less magical and more risky than they assume.",
+                    "Monitor capability changes: While current AI is narrow, capabilities advance. Build governance that can scale."
+                ]
+            }
+        ]
+    },
+    "article-7-deep-learning-decoded": {
+        slug: "article-7-deep-learning-decoded",
+        title: "Deep Learning Decoded – Neural Networks for Non-Engineers",
+        description: "A non-technical explanation of neural networks and deep learning for governance professionals.",
+        date: "Dec 11, 2025",
+        readTime: "12 min read",
+        category: "AI Technology",
+        author: "Sunil Iyer",
+        image: "/images/deep-learning-decoded.svg",
+        tldr: [
+            "Neural networks are mathematical functions inspired by biological brains but work very differently.",
+            "\"Deep\" learning means many layers of neurons, allowing hierarchical pattern detection.",
+            "Training adjusts weights through repeated cycles of prediction and error correction.",
+            "Deep learning excels at pattern recognition but fails with distribution shift and lacks common sense.",
+            "Neural networks are \"black boxes\" that are hard to explain, creating governance challenges."
+        ],
+        sources: [
+            { title: "Nielsen, M. (2015). \"Neural Networks and Deep Learning\"", note: "Free online book with excellent intuitions" },
+            { title: "Goodfellow, I. et al. (2016). \"Deep Learning\"", note: "The technical bible (advanced)" },
+            { title: "3Blue1Brown YouTube series on neural networks", note: "Visual explanations" },
+            { title: "Karpathy, A. \"A Recipe for Training Neural Networks\"", note: "Practical insights" },
+            { title: "Rudin, C. (2019). \"Stop Explaining Black Box Models\"", note: "The explainability debate" }
+        ],
+        tags: ["Deep Learning", "Neural Networks", "AI Technology", "Explainability"],
+        sections: [
+            {
+                type: "text",
+                content: "You've heard the phrase \"neural network\" a thousand times. You've nodded along in meetings when data scientists throw around terms like \"layers,\" \"weights,\" and \"backpropagation.\" You've smiled knowingly while having absolutely no idea what any of it means. Welcome to the club—it's a big one."
+            },
+            {
+                type: "text",
+                content: "Here's the thing: you don't need a PhD in machine learning to govern AI systems effectively. But you do need a solid conceptual understanding of what's happening under the hood. When someone tells you their neural network is \"learning,\" you should know what that actually means. When a model fails in unexpected ways, you should understand why."
+            },
+            {
+                title: "The Brain Metaphor (And Why It's Misleading)",
+                type: "text",
+                content: "Neural networks are named after neurons—the cells in your brain that process and transmit information. The metaphor made sense in the 1940s when researchers first proposed the idea: artificial systems inspired by biological brains. Unfortunately, the metaphor has created decades of confusion."
+            },
+            {
+                type: "list",
+                content: "Key differences to remember:",
+                items: [
+                    "Biological Brains: Electrochemical processes, Continuous learning, General-purpose, Conscious",
+                    "Artificial Neural Networks: Mathematical operations, Training in defined phases, Task-specific, Not conscious"
+                ]
+            },
+            {
+                title: "How Neural Networks Actually Work",
+                type: "text",
+                content: "Let's start with one artificial neuron—the simplest possible unit. Imagine you're trying to predict whether a customer will buy a product based on two factors: their age and their income."
+            },
+            {
+                type: "list",
+                content: "The process:",
+                items: [
+                    "Inputs arrive: Age = 35, Income = $75,000",
+                    "Weights are applied: Each input gets multiplied by a weight that represents its importance",
+                    "Inputs are summed: The weighted inputs are added together",
+                    "Bias is added: A \"baseline\" number is added",
+                    "Activation function applied: A function determines the final output (e.g., buy or don't buy)"
+                ]
+            },
+            {
+                title: "Layering Neurons: The Network",
+                type: "text",
+                content: "One neuron can only make simple decisions. The power of neural networks comes from connecting many neurons in layers: Input Layer, Hidden Layers, and Output Layer."
+            },
+            {
+                title: "What Makes It \"Deep\"?",
+                type: "text",
+                content: "Deep learning = neural networks with many hidden layers. That's literally the only difference between a regular neural network and a \"deep\" one. Early neural networks had 1-2 hidden layers. Modern deep learning systems have dozens, hundreds, or even thousands."
+            },
+            {
+                title: "The Learning Process: How Networks Get Smart",
+                type: "text",
+                content: "Neural networks learn by adjusting their weights through a process called training. Before training, a network is useless—its weights are random numbers that produce garbage outputs. After training, those weights encode patterns that produce useful predictions."
+            },
+            {
+                type: "list",
+                content: "The training loop:",
+                items: [
+                    "Forward pass: Send training data through the network, get a prediction",
+                    "Calculate error: Compare the prediction to the correct answer",
+                    "Backward pass (backpropagation): Calculate how much each weight contributed to the error",
+                    "Update weights: Adjust weights slightly to reduce the error",
+                    "Repeat: Do this millions of times with different training examples"
+                ]
+            },
+            {
+                title: "Governance Implications",
+                type: "text",
+                content: "You don't need to implement neural networks, but you need to ask the right questions: What architecture is used? What data was used for training? How was the training process validated? What are the known failure modes?"
+            },
+            {
+                title: "The Explainability Challenge",
+                type: "text",
+                content: "Deep neural networks are often called \"black boxes\"—even their creators can't fully explain why they make specific predictions. A network with billions of parameters doesn't have human-interpretable rules; it has billions of numbers that collectively produce outputs. This creates governance challenges for regulatory compliance, bias detection, and trust building."
+            },
+            {
+                title: "Practical Takeaways",
+                type: "list",
+                content: "When you hear \"neural network\" or \"deep learning,\" think:",
+                items: [
+                    "It's pattern matching at scale: The network finds statistical patterns in training data.",
+                    "It's only as good as its data: Biases in data become biases in predictions.",
+                    "It doesn't understand anything: It has no knowledge, beliefs, or understanding.",
+                    "It can fail unexpectedly: Small changes can cause big failures.",
+                    "It's hard to explain: We can describe how they work in general but not specific predictions."
+                ]
+            }
+        ]
     }
 }

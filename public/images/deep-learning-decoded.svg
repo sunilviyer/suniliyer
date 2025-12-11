@@ -1,0 +1,78 @@
+<svg width="800" height="400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f8fafc;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f1f5f9;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <rect width="800" height="400" fill="url(#bg)" />
+  
+  <!-- Title -->
+  <text x="400" y="50" text-anchor="middle" font-family="sans-serif" font-size="24" font-weight="bold" fill="#0f172a">Neural Network Architecture</text>
+  
+  <!-- Input Layer -->
+  <g transform="translate(150, 200)">
+    <circle cx="0" cy="-80" r="15" fill="#94a3b8" />
+    <circle cx="0" cy="-30" r="15" fill="#94a3b8" />
+    <circle cx="0" cy="20" r="15" fill="#94a3b8" />
+    <circle cx="0" cy="70" r="15" fill="#94a3b8" />
+    <text x="0" y="120" text-anchor="middle" font-family="sans-serif" font-size="14" fill="#64748b">Input</text>
+  </g>
+  
+  <!-- Hidden Layer 1 -->
+  <g transform="translate(300, 200)">
+    <circle cx="0" cy="-100" r="15" fill="#3b82f6" />
+    <circle cx="0" cy="-50" r="15" fill="#3b82f6" />
+    <circle cx="0" cy="0" r="15" fill="#3b82f6" />
+    <circle cx="0" cy="50" r="15" fill="#3b82f6" />
+    <circle cx="0" cy="100" r="15" fill="#3b82f6" />
+    <text x="0" y="140" text-anchor="middle" font-family="sans-serif" font-size="14" fill="#3b82f6">Hidden Layers</text>
+  </g>
+  
+  <!-- Hidden Layer 2 -->
+  <g transform="translate(450, 200)">
+    <circle cx="0" cy="-100" r="15" fill="#3b82f6" />
+    <circle cx="0" cy="-50" r="15" fill="#3b82f6" />
+    <circle cx="0" cy="0" r="15" fill="#3b82f6" />
+    <circle cx="0" cy="50" r="15" fill="#3b82f6" />
+    <circle cx="0" cy="100" r="15" fill="#3b82f6" />
+  </g>
+  
+  <!-- Output Layer -->
+  <g transform="translate(600, 200)">
+    <circle cx="0" cy="-30" r="15" fill="#10b981" />
+    <circle cx="0" cy="30" r="15" fill="#10b981" />
+    <text x="0" y="80" text-anchor="middle" font-family="sans-serif" font-size="14" fill="#64748b">Output</text>
+  </g>
+  
+  <!-- Connections (Simplified) -->
+  <g stroke="#cbd5e1" stroke-width="1" opacity="0.6">
+    <!-- Input to Hidden 1 -->
+    <line x1="165" y1="-80" x2="285" y2="-100" />
+    <line x1="165" y1="-80" x2="285" y2="-50" />
+    <line x1="165" y1="-30" x2="285" y2="-50" />
+    <line x1="165" y1="-30" x2="285" y2="0" />
+    <line x1="165" y1="20" x2="285" y2="0" />
+    <line x1="165" y1="20" x2="285" y2="50" />
+    <line x1="165" y1="70" x2="285" y2="50" />
+    <line x1="165" y1="70" x2="285" y2="100" />
+    
+    <!-- Hidden 1 to Hidden 2 -->
+    <line x1="315" y1="-100" x2="435" y2="-100" />
+    <line x1="315" y1="-50" x2="435" y2="-50" />
+    <line x1="315" y1="0" x2="435" y2="0" />
+    <line x1="315" y1="50" x2="435" y2="50" />
+    <line x1="315" y1="100" x2="435" y2="100" />
+    <line x1="315" y1="-50" x2="435" y2="-100" />
+    <line x1="315" y1="50" x2="435" y2="100" />
+    
+    <!-- Hidden 2 to Output -->
+    <line x1="465" y1="-100" x2="585" y2="-30" />
+    <line x1="465" y1="-50" x2="585" y2="-30" />
+    <line x1="465" y1="0" x2="585" y2="-30" />
+    <line x1="465" y1="0" x2="585" y2="30" />
+    <line x1="465" y1="50" x2="585" y2="30" />
+    <line x1="465" y1="100" x2="585" y2="30" />
+  </g>
+</svg>
