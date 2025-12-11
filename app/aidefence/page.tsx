@@ -47,7 +47,10 @@ export default function Home() {
           <p className="text-gray-600 dark:text-gray-300 mb-6">
             Follow the structured 12-week curriculum on AI Governance.
           </p>
-          <Link href="/course-overview" className="block w-full py-2 text-center bg-primary-blue text-white rounded-lg hover:bg-primary-dark transition-colors">
+          <Link
+            href="/aidefence/course-overview"
+            className="inline-flex items-center justify-center w-full sm:w-auto px-6 py-3 bg-white dark:bg-gray-800 text-primary-blue font-semibold rounded-lg border border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
+          >
             Go to Course Overview
           </Link>
         </div>
