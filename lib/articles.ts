@@ -1332,5 +1332,145 @@ export const articles: Record<string, Article> = {
                 ]
             }
         ]
+    },
+    "article-8-generative-ai-explained": {
+        slug: "article-8-generative-ai-explained",
+        title: "Generative AI Explained – How ChatGPT, DALL-E, and Claude Work",
+        description: "Demystifying the technology behind generative AI: how it works, why it fails, and what it means for governance.",
+        date: "Dec 13, 2024",
+        readTime: "12 min read",
+        category: "AI Fundamentals",
+        author: "Sunil Iyer",
+        image: "/images/generative-ai-explained.svg",
+        tldr: [
+            "Generative AI creates new content (text, images, code) rather than just classifying existing data.",
+            "LLMs work by predicting the next word based on massive training data and the Transformer architecture.",
+            "Emergent capabilities arise from scale, allowing models to perform tasks they weren't explicitly trained for.",
+            "Key failure modes include hallucination, bias, inconsistency, and training data memorization.",
+            "Governance requires new approaches for evaluation, IP rights, and managing misuse at scale."
+        ],
+        sources: [
+            { title: "Anthropic (2023). \"Claude's Constitution\"", note: "Constitutional AI approach" },
+            { title: "Bommasani et al. (2021). \"On the Opportunities and Risks of Foundation Models\"", note: "Comprehensive analysis" },
+            { title: "OpenAI (2023). \"GPT-4 Technical Report\"", note: "Capabilities and limitations" },
+            { title: "Partnership on AI. \"Responsible Practices for Synthetic Media\"" },
+            { title: "C2PA. \"Content Authenticity Initiative\"", note: "Provenance standards" }
+        ],
+        tags: ["Generative AI", "LLMs", "Transformers", "Hallucination", "Governance"],
+        sections: [
+            {
+                type: "text",
+                content: "In November 2022, OpenAI released ChatGPT to the public. Within five days, it had one million users. Within two months, 100 million. It became the fastest-growing consumer application in history, and suddenly everyone from your grandmother to your CEO wanted to talk about AI."
+            },
+            {
+                type: "text",
+                content: "But here's the thing: the underlying technology wasn't new. Large language models had existed for years. What changed was accessibility—and with accessibility came a tsunami of questions that governance professionals are still trying to answer. What exactly are these systems doing? How do they generate text that sounds so human? Why do they sometimes confidently state things that are completely false? And how do we govern technology that can produce poetry, code, legal documents, and misinformation with equal facility?"
+            },
+            {
+                type: "text",
+                content: "This article demystifies generative AI—the technology behind ChatGPT, Claude, DALL-E, Midjourney, and countless other systems that create new content rather than just analyzing existing data. You'll understand how they work, why they fail, and what it all means for governance."
+            },
+            {
+                title: "What Makes AI \"Generative\"?",
+                type: "text",
+                content: "Traditional AI systems are discriminative—they classify, categorize, or predict based on input data. Show them an image, they tell you if it's a cat or dog. Feed them transaction data, they flag potential fraud. They analyze and decide."
+            },
+            {
+                type: "text",
+                content: "Generative AI creates. It produces new content that didn't exist before: text, images, audio, video, code, music. The output isn't selected from a database; it's synthesized from patterns learned during training."
+            },
+            {
+                title: "Discriminative vs. Generative AI",
+                type: "list",
+                content: "Key differences:",
+                items: [
+                    "Discriminative: Classifies inputs (Is this spam? What object is this?)",
+                    "Generative: Creates outputs (Write an email. Create an image.)",
+                    "Discriminative: Analyzes existing content",
+                    "Generative: Produces novel content",
+                    "Discriminative: Output is a label or score",
+                    "Generative: Output is new content"
+                ]
+            },
+            {
+                type: "text",
+                content: "This distinction matters enormously for governance. Discriminative AI risks include bias in classification and errors in prediction. Generative AI risks include all of those plus: misinformation at scale, copyright infringement, impersonation, manipulation, and the fundamental challenge of evaluating outputs that have no \"correct\" answer."
+            },
+            {
+                title: "The Core Insight: Next Token Prediction",
+                type: "text",
+                content: "Despite their impressive outputs, large language models (LLMs) like ChatGPT and Claude do something remarkably simple at their core: they predict the next word."
+            },
+            {
+                type: "text",
+                content: "That's it. Given a sequence of words, the model calculates probability distributions over possible next words and selects one. Then it adds that word to the sequence and predicts the next one. Repeat thousands of times, and you get coherent paragraphs, essays, or code."
+            },
+            {
+                type: "text",
+                content: "How does next-word prediction produce coherent essays, working code, or creative fiction? The answer lies in scale and training data. Modern LLMs have hundreds of billions of parameters and train on essentially the entire written internet. When you combine vast capacity with vast training data, capabilities emerge that weren't explicitly programmed."
+            },
+            {
+                title: "How Large Language Models Work",
+                type: "text",
+                content: "Almost all modern LLMs use an architecture called the Transformer, introduced in 2017. The key innovation is attention mechanisms that allow the model to consider relationships between all words in a sequence simultaneously, rather than processing them one by one."
+            },
+            {
+                type: "list",
+                content: "Training typically happens in three phases:",
+                items: [
+                    "Phase 1: Pre-training - Learning language patterns from massive text datasets (trillions of words). This teaches grammar, facts, and reasoning patterns.",
+                    "Phase 2: Supervised Fine-tuning (SFT) - Refining on curated examples of desired behavior (Q&A pairs, helpful responses). This teaches the model to be an assistant.",
+                    "Phase 3: Reinforcement Learning from Human Feedback (RLHF) - Optimizing based on human ratings of outputs. This aligns the model with human values and safety guidelines."
+                ]
+            },
+            {
+                title: "Why Generative AI Fails",
+                type: "text",
+                content: "Understanding failure modes is essential for governance. Generative AI fails in predictable, systematic ways."
+            },
+            {
+                title: "Hallucination",
+                type: "text",
+                content: "Generating confident, plausible-sounding content that is factually incorrect. This happens because the model is predicting likely next words, not retrieving verified facts. \"The Treaty of Westphalia was signed in 1648\" and \"The Treaty of Westphalia was signed in 1653\" are both grammatically valid completions."
+            },
+            {
+                title: "Bias and Stereotypes",
+                type: "text",
+                content: "Generating content that reflects or amplifies societal biases. Training data contains human biases, so the model learns patterns from text written by humans, including their prejudices and stereotypes."
+            },
+            {
+                title: "Inconsistency",
+                type: "text",
+                content: "Contradicting itself across or within responses. Each token prediction is somewhat independent, and the model doesn't have persistent beliefs or memory beyond the immediate context window."
+            },
+            {
+                title: "Governance Challenges Unique to Generative AI",
+                type: "list",
+                content: "Generative AI introduces specific governance headaches:",
+                items: [
+                    "The Evaluation Problem: How do you evaluate outputs that have no single correct answer? Is this essay \"good\"? Is this image \"appropriate\"?",
+                    "Content Provenance: When AI can generate realistic media, how do you know what's real? Detection tools are unreliable.",
+                    "Intellectual Property: Who owns AI-generated content? Were copyrighted works used in training? The legal landscape is unsettled.",
+                    "Scale of Misuse: Generative AI democratizes content creation, enabling misinformation campaigns, phishing, and harassment at unprecedented scale."
+                ]
+            },
+            {
+                title: "Building a Governance Framework",
+                type: "list",
+                content: "Organize governance around specific risk categories:",
+                items: [
+                    "Output Quality Risks: Hallucination, errors. Control with verification and human review.",
+                    "Safety Risks: Harmful content, bias. Control with filtering and safety testing.",
+                    "Security Risks: Prompt injection, data extraction. Control with input sanitization and monitoring.",
+                    "Legal Risks: Copyright, liability. Control with legal review and policy documentation.",
+                    "Reputational Risks: Embarrassing outputs. Control with use case restrictions and disclosure."
+                ]
+            },
+            {
+                title: "Practical Takeaways",
+                type: "text",
+                content: "Generative AI is fundamentally different from discriminative AI. Hallucination is inherent, not a bug to be fixed. Evaluation is hard, so accept uncertainty and implement human oversight proportional to risk. And remember: scale changes everything. Capabilities that seem manageable at low volume become serious risks at scale."
+            }
+        ]
     }
 }
