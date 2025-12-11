@@ -12,9 +12,7 @@ export function Header() {
                     <Link href="/" className="text-sm font-medium hover:text-primary-blue transition-colors">
                         Home
                     </Link>
-                    <Link href="/about" className="text-sm font-medium hover:text-primary-blue transition-colors">
-                        About Me
-                    </Link>
+
                     <ThemeToggle />
                 </nav>
             </div>

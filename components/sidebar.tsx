@@ -16,11 +16,7 @@ const sidebarItems = [
         href: "/aidefence/articles",
         icon: BookOpen,
     },
-    {
-        title: "About Me",
-        href: "/about",
-        icon: User,
-    },
+
 ]
 
 export function Sidebar() {

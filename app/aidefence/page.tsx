@@ -34,7 +34,7 @@ export default function Home() {
             Exploring the ethical implications of Large Language Models and the EU AI Act compliance requirements.
           </p>
           <div className="text-sm font-medium text-gray-500">
-            Week 4 of 12
+            Week 4 of 28
           </div>
         </div>
 
@@ -45,7 +45,7 @@ export default function Home() {
             <h2 className="font-semibold text-lg">Learning Path</h2>
           </div>
           <p className="text-gray-600 dark:text-gray-300 mb-6">
-            Follow the structured 12-week curriculum on AI Governance.
+            Follow the structured 28-week curriculum on AI Governance.
           </p>
           <Link
             href="/aidefence/course-overview"
