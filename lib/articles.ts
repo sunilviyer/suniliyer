@@ -1878,40 +1878,157 @@ export const articles: Record<string, Article> = {
         sections: [
             {
                 type: "text",
-                content: "Here's a number that should get your attention: training GPT-4 reportedly required around 25,000 NVIDIA A100 GPUs running for approximately 100 days. At current prices, that's roughly $100 million in compute alone."
+                content: "Here's a number that should get your attention: training GPT-4 reportedly required around 25,000 NVIDIA A100 GPUs running for approximately 100 days. At current prices, that's roughly $100 million in compute alone—not counting the data, the researchers, or the infrastructure to connect it all."
             },
             {
                 type: "text",
-                content: "AI runs on silicon—specifically, highly specialized chips that can perform trillions of mathematical operations per second. Understanding AI compute is fundamental to understanding why AI development is concentrated among a few wealthy organizations and why geopolitics now involves semiconductor export controls."
+                content: "AI doesn't run on magic. It runs on silicon—specifically, highly specialized chips that can perform trillions of mathematical operations per second. Understanding AI compute isn't just a technical curiosity; it's fundamental to understanding why AI development is concentrated among a few wealthy organizations, why geopolitics now involves semiconductor export controls, and why your organization's AI ambitions may be constrained by hardware you've never thought about."
+            },
+            {
+                type: "text",
+                content: "For governance professionals, compute literacy matters. The hardware layer shapes what's possible, who can do it, and at what cost. This article explains how AI compute works, why GPUs dominate, who controls the supply chain, and what it all means for AI governance."
             },
             {
                 title: "Why AI Needs Specialized Hardware",
                 type: "text",
-                content: "Traditional CPUs are designed for complex, sequential tasks. AI requires massive parallel computation—performing the same simple operation (multiply, add) billions of times. GPUs, originally designed for graphics, are perfect for this."
+                content: "**The Computational Demands of AI**\n\nAI workloads are unlike traditional computing. When you run a spreadsheet or browse the web, your computer performs relatively few operations on relatively small amounts of data. AI—especially deep learning—requires massive parallel computation on enormous datasets."
+            },
+            {
+                type: "list",
+                content: "Training a large language model involves:",
+                items: [
+                    "Trillions of mathematical operations (multiplications and additions)",
+                    "Processing trillions of words of text",
+                    "Adjusting billions or trillions of parameters",
+                    "Repeating the process millions of times (iterations)"
+                ]
+            },
+            {
+                type: "text",
+                content: "**The scale:**\n\n*   **GPT-2 (2019):** 1.5 billion parameters, ~10^20 FLOPs\n*   **GPT-3 (2020):** 175 billion parameters, ~10^23 FLOPs\n*   **GPT-4 (2023):** ~1.8 trillion parameters (est), ~10^25 FLOPs\n\nA FLOP is a \"floating-point operation\"—basically one mathematical calculation. GPT-4's training required roughly 10^25 FLOPs. That's 10,000,000,000,000,000,000,000,000 calculations."
+            },
+            {
+                type: "text",
+                content: "**Why CPUs Aren't Enough**\n\nTraditional CPUs (Central Processing Units) are designed for general-purpose computing—running your operating system, executing programs, handling diverse tasks. They are optimized for complex logic, sequential operations, and low latency.\n\nThe problem for AI is that it needs to perform the same simple operation (multiply, add) billions of times in parallel. CPUs do complex things serially; AI needs simple things done massively in parallel."
+            },
+            {
+                type: "text",
+                content: "**Enter the GPU**\n\nGPUs (Graphics Processing Units) were originally designed for rendering video game graphics—which, it turns out, requires exactly the kind of parallel computation AI needs. Rendering a game frame involves calculating lighting for millions of pixels simultaneously. Training a neural network involves multiplying millions of weights by inputs simultaneously.\n\nComparison:\n*   **CPU:** 4-64 cores, high complexity, optimized for latency.\n*   **GPU:** 5,000-16,000+ cores, low complexity, optimized for throughput (parallel tasks)."
             },
             {
                 title: "The GPU Landscape",
                 type: "text",
-                content: "NVIDIA controls 80-90% of the AI accelerator market, driven by hardware leadership and the CUDA software ecosystem. Competitors like AMD and Google (TPUs) are chasing, but NVIDIA's moat is deep."
+                content: "**NVIDIA's Dominance**\n\nNVIDIA controls approximately 80-90% of the AI accelerator market. This dominance stems from both hardware leadership (consistent architecture improvements, high memory bandwidth) and its software ecosystem (CUDA).\n\nKey products include the A100 (2020), H100 (2022), and the new Blackwell B200 (2024)."
+            },
+            {
+                type: "text",
+                content: "**The Competition**\n\n*   **AMD:** MI300X is competitive with H100 on some benchmarks and has growing market share.\n*   **Intel:** Gaudi accelerators focus on the enterprise market.\n*   **Google TPUs:** Custom AI chips available only through Google Cloud, optimized for TensorFlow/JAX.\n*   **Startups:** Companies like Cerebras, Groq, and SambaNova are exploring novel architectures."
+            },
+            {
+                type: "text",
+                content: "**Why NVIDIA Wins (So Far)**\n\nThe \"CUDA moat\" is the key factor. Most AI software is written for NVIDIA's CUDA platform. Switching to alternatives means rewriting code, testing on new architecture, and risking performance issues. This creates a cycle where more users lead to more software, reinforcing NVIDIA's dominance."
+            },
+            {
+                title: "The Supply Chain",
+                type: "text",
+                content: "**Semiconductor Manufacturing**\n\nModern AI chips are manufactured using cutting-edge semiconductor fabrication. The chain goes from Design (NVIDIA) -> Fabrication (TSMC) -> Packaging -> Integration -> Data Centers.\n\nThe key bottleneck is **TSMC** (Taiwan Semiconductor Manufacturing Company), which fabricates the vast majority of advanced AI chips."
+            },
+            {
+                type: "text",
+                content: "**Geopolitical Implications**\n\nAI chips have become a geopolitical flashpoint. The US has imposed export controls (2022-2024) restricting advanced AI chip exports to China. This has led to China accelerating domestic chip development and NVIDIA creating China-specific chips."
+            },
+            {
+                type: "text",
+                content: "**Supply Constraints**\n\nDemand for AI chips exceeds supply, with wait times for top-tier GPUs measured in months. This constrains AI development, giving advantages to wealthy organizations and cloud providers who can secure allocation."
             },
             {
                 title: "Training vs. Inference",
                 type: "list",
-                content: "Two distinct phases:",
+                content: "**Different Compute Requirements**",
                 items: [
-                    "Training: Teaching the model. Massive, one-time compute cost. Done by developers.",
-                    "Inference: Using the model. Lower compute per request, but accumulates with usage. Done by everyone."
+                    "**Training:** Teaches the model from data. Extremely compute-intensive, happens once (or periodically), requires highest-performance hardware. Done by model developers.",
+                    "**Inference:** Uses the trained model to make predictions. Less compute per request, but happens continuously in production. Latency and cost efficiency matter more. Done by everyone using the model."
                 ]
+            },
+            {
+                type: "text",
+                content: "**Inference at Scale**\n\nWhile training gets headlines, inference at scale matters more for most organizations. For popular applications like ChatGPT, cumulative inference costs often exceed training costs. Optimization techniques like quantization and caching are critical."
+            },
+            {
+                title: "Cloud vs. On-Premises",
+                type: "text",
+                content: "**Cloud GPU Options**\n\nMajor cloud providers (AWS, Azure, Google Cloud, Oracle) offer GPU compute. This offers flexibility (no capex, scale up/down) but comes with ongoing costs and data residency concerns."
+            },
+            {
+                type: "text",
+                content: "**On-Premises Deployment**\n\nRunning your own GPU infrastructure requires significant capital investment, data center space, and technical expertise. It makes sense for continuous high utilization, strict data residency requirements, or long-term cost optimization at scale."
+            },
+            {
+                type: "text",
+                content: "**Hybrid Approaches**\n\nMany organizations use both: Cloud for burst training capacity, and on-premise hardware for predictable inference workloads."
             },
             {
                 title: "Governance Implications",
                 type: "text",
-                content: "Compute requirements concentrate power. Governments are using export controls to limit AI development in rival nations. Regulators are considering \"compute thresholds\" (like in the EU AI Act) to identify systemic risk models."
+                content: "**Compute as Governance Lever**\n\nCompute requirements create natural governance checkpoints. Large training runs require significant resources from identifiable providers, allowing for acceptable use policies and compliance checks."
             },
             {
-                title: "Organizational Governance",
                 type: "text",
-                content: "Organizations must manage compute costs (which can explode), access controls, and vendor dependencies. Cloud vs. on-premise decisions involve tradeoffs between flexibility, cost, and data control."
+                content: "**Concentration of Power**\n\nThe high cost of compute ($100M+ for frontier models) concentrates AI development among a few well-funded organizations. This creates an oligopoly and may reduce safety incentives due to limited competition."
+            },
+            {
+                type: "text",
+                content: "**Compute Governance Proposals**\n\nSome propose governing AI through compute monitoring (tracking large GPU clusters) and thresholds (defining oversight requirements based on FLOPs used for training, as in the EU AI Act)."
+            },
+            {
+                type: "list",
+                content: "**Organizational Governance**",
+                items: [
+                    "**Cost Governance:** Implement budgets and monitoring to prevent unexpected explosions in GPU costs.",
+                    "**Access Governance:** Define who can provision GPU resources and what approvals are needed.",
+                    "**Vendor Governance:** Review cloud provider terms, understand data handling, and plan for availability issues.",
+                    "**Sustainability Governance:** Track energy consumption and consider carbon footprint."
+                ]
+            },
+            {
+                title: "Cost Considerations",
+                type: "text",
+                content: "**Training Costs**\n\n*   1B parameters: $50k - $200k\n*   10B parameters: $500k - $2M\n*   100B parameters: $5M - $20M\n*   1T+ parameters: $50M - $200M+\n\n**Inference Costs**\n\nCosts accumulate with usage. For example, GPT-4 inference can cost ~$30 per 1M input tokens and ~$60 per 1M output tokens (pricing varies)."
+            },
+            {
+                title: "Future Trends",
+                type: "text",
+                content: "**Hardware Evolution:** Continued NVIDIA leadership in the near term, with AMD gaining share. Long-term may see new architectures like photonic or neuromorphic computing.\n\n**Market Dynamics:** Watch for cloud providers developing their own custom chips and geopolitical impacts on supply chains."
+            },
+            {
+                title: "Summary",
+                type: "list",
+                content: "Key Takeaways:",
+                items: [
+                    "AI requires specialized hardware (GPUs) that can perform massive parallel computations.",
+                    "NVIDIA dominates (~80-90% market share) due to hardware performance and the CUDA software ecosystem.",
+                    "The supply chain concentrates in Taiwan (TSMC), creating geopolitical vulnerabilities.",
+                    "Training (one-time, expensive) and inference (ongoing, per-use) have different requirements.",
+                    "Deployment options include cloud, on-premises, and hybrid approaches.",
+                    "Compute concentration means only well-funded organizations can train frontier models.",
+                    "Governance should address costs, access controls, vendor management, and sustainability.",
+                    "Compute-based governance is an emerging regulatory approach."
+                ]
+            },
+            {
+                title: "Practical Checklist",
+                type: "list",
+                content: "For organizations using AI compute:",
+                items: [
+                    "Inventory current GPU/compute usage",
+                    "Establish cost monitoring and budgets",
+                    "Define access controls and approval processes",
+                    "Review cloud provider terms and policies",
+                    "Assess concentration risks (single provider dependency)",
+                    "Consider sustainability implications",
+                    "Plan for supply constraints",
+                    "Stay informed on export control requirements"
+                ]
             }
         ]
     },
@@ -1942,42 +2059,164 @@ export const articles: Record<string, Article> = {
         sections: [
             {
                 type: "text",
-                content: "There's an uncomfortable truth the AI industry doesn't like to discuss: artificial intelligence has a carbon footprint, and it's growing fast. Training GPT-3 generated an estimated 552 tons of CO2. Running inference for millions of users compounds this daily."
+                content: "There's an uncomfortable truth the AI industry doesn't like to discuss: artificial intelligence has a carbon footprint, and it's growing fast. Training GPT-3 generated an estimated 552 tons of CO2—equivalent to driving a car 120 times around the Earth. Running inference for millions of users compounds this daily. The data centers housing AI systems consume as much electricity as some small countries."
             },
             {
                 type: "text",
-                content: "For governance professionals, this isn't just an ethical consideration—it's increasingly a regulatory requirement and a reputational risk. Stakeholders are asking: what does this AI cost the planet?"
+                content: "As AI proliferates into every corner of business and society, its environmental impact scales with it. For governance professionals, this isn't just an ethical consideration—it's increasingly a regulatory requirement, a reputational risk, and a material factor in AI deployment decisions. Stakeholders, regulators, and the public are asking: what does this AI cost the planet?"
             },
             {
-                title: "The Energy Footprint",
                 type: "text",
-                content: "Energy consumption occurs in training (intense bursts), inference (continuous load), and infrastructure (cooling). Training compute is doubling every 6-10 months, outpacing efficiency gains."
+                content: "This article examines the environmental footprint of AI, what drives it, how it can be measured, and what governance frameworks can address it. Because sustainable AI isn't optional—it's becoming mandatory."
             },
             {
-                title: "From Energy to Carbon",
+                title: "The Energy Footprint of AI",
                 type: "text",
-                content: "Emissions depend on the electricity source. Training in a coal-powered region emits 10x more carbon than in a renewable-powered region. Embodied carbon in hardware manufacturing is also significant."
+                content: "**Where the Energy Goes**\n\nAI's energy consumption occurs in three main areas:\n\n1.  **Training:** Teaching models from data—the most energy-intensive phase per model. Large models train for weeks or months on thousands of GPUs, each consuming 300-700 watts plus cooling overhead.\n2.  **Inference:** Using trained models to make predictions. Less intense per query but massive in aggregate. Cumulative energy often exceeds training for popular models.\n3.  **Infrastructure:** Supporting systems like data center cooling (often 30-50% of total energy), networking, and storage."
             },
             {
-                title: "Drivers of Impact",
-                type: "list",
-                content: "Key drivers:",
-                items: [
-                    "Model Size: Larger models require exponentially more energy.",
-                    "Training Inefficiency: Failed experiments and hyperparameter search waste compute.",
-                    "Deployment Scale: Massive user bases multiply inference energy.",
-                    "Infrastructure Overhead: Cooling and redundancy add 30-50% to energy needs."
-                ]
+                type: "text",
+                content: "**Quantifying AI Energy Use**\n\n*   **GPT-3:** ~1,287 MWh (552 tonnes CO2)\n*   **GPT-4:** ~50,000+ MWh (est), 20,000+ tonnes CO2 (est)\n*   **BLOOM:** 433 MWh (25 tonnes CO2 - lower due to French nuclear-powered grid)\n\nFor context, GPT-3 training used as much energy as ~125 US homes for a year."
+            },
+            {
+                type: "text",
+                content: "**The Growth Trajectory**\n\nAI energy consumption is growing exponentially. Training compute doubles every 6-10 months. Projections suggest AI could consume 3.5% of global electricity by 2030."
+            },
+            {
+                title: "The Carbon Footprint",
+                type: "text",
+                content: "**From Energy to Carbon**\n\nEnergy consumption translates to carbon emissions based on electricity source. Training in a coal-powered region emits 10x+ more carbon than in a renewable-powered region (e.g., France or Norway). Geographic location matters enormously."
+            },
+            {
+                type: "text",
+                content: "**Embodied Carbon**\n\nBeyond operational emissions, consider embodied carbon in hardware manufacturing (mining, fabrication, transport). For short-lived hardware, this can exceed operational emissions. A GPU has embodied carbon of 150-350 kg CO2."
+            },
+            {
+                type: "text",
+                content: "**Water Consumption**\n\nAI systems also consume water for cooling. GPT-3 training consumed an estimated 700,000 liters. ChatGPT consumes ~500ml per 20-50 queries. Water stress varies by region, making location critical."
+            },
+            {
+                title: "What Drives AI's Environmental Impact",
+                type: "text",
+                content: "**Model Size**\n\nLarger models require exponentially more energy. Doubling model size often more than doubles energy use. There is competitive pressure to train larger models despite diminishing returns."
+            },
+            {
+                type: "text",
+                content: "**Training Inefficiency**\n\nMuch energy is wasted in the training process. Failed experiments and hyperparameter search can consume 10-100x more compute than the final successful training run."
+            },
+            {
+                type: "text",
+                content: "**Deployment Scale**\n\nInference at scale multiplies training impact. Popular models serve millions of users, and \"always-on\" features add constant load."
+            },
+            {
+                type: "text",
+                content: "**Redundancy and Overhead**\n\nInfrastructure requirements add overhead. Power Usage Effectiveness (PUE) measures efficiency; a PUE of 1.5 means 50% overhead for cooling and power delivery."
+            },
+            {
+                title: "Measuring AI Environmental Impact",
+                type: "text",
+                content: "**Challenges in Measurement**\n\nData availability is low (companies don't disclose), attribution is complex (shared infrastructure), and scope definitions vary."
+            },
+            {
+                type: "text",
+                content: "**Measurement Frameworks**\n\n*   **Machine Learning Emissions Calculator:** Estimates training emissions based on hardware and location.\n*   **CodeCarbon:** Python library to track emissions during code execution.\n*   **Cloud Provider Tools:** AWS, Google, and Azure provide carbon footprint dashboards."
+            },
+            {
+                type: "text",
+                content: "**Metrics to Track**\n\nTraining energy (kWh), Inference energy, Carbon emissions (kg CO2e), PUE, Water usage, and Hardware utilization."
             },
             {
                 title: "Mitigation Strategies",
                 type: "text",
-                content: "Use efficient architectures, train in green regions, right-size models to tasks (don't use GPT-4 for simple classification), and extend hardware lifecycles."
+                content: "**Efficiency Improvements**\n\n*   **Algorithmic:** Sparse models, distillation, pruning.\n*   **Hardware:** Specialized inference chips, efficient GPUs.\n*   **Operational:** Batching, caching, right-sizing deployments."
             },
             {
-                title: "Governance Framework",
                 type: "text",
-                content: "Inventory AI systems, track energy use, set reduction targets, and report transparently. Align with emerging regulations like the EU's CSRD and AI Act environmental provisions."
+                content: "**Clean Energy**\n\nTrain models in low-carbon grid regions. Procure renewable energy (PPAs). Note that \"100% renewable\" claims often rely on offsets rather than direct usage."
+            },
+            {
+                type: "text",
+                content: "**Model Selection**\n\nRight-size models to tasks. Don't use GPT-4 (100x relative cost) for simple tasks where a smaller model (1x relative cost) suffices."
+            },
+            {
+                type: "text",
+                content: "**Lifecycle Thinking**\n\nExtend hardware life, refurbish equipment, and avoid unnecessary retraining."
+            },
+            {
+                title: "Regulatory Landscape",
+                type: "text",
+                content: "**Current Requirements**\n\n*   **EU:** Corporate Sustainability Reporting Directive (CSRD) requires reporting environmental impacts.\n*   **US:** SEC climate disclosure rules are emerging.\n*   **Industry:** Voluntary frameworks (CDP, TCFD) are widely used."
+            },
+            {
+                type: "text",
+                content: "**Emerging Requirements**\n\n**EU AI Act:** Requires energy consumption reporting for high-risk AI and foundation models. Expect stricter data center efficiency standards."
+            },
+            {
+                type: "text",
+                content: "**Governance Integration**\n\nInventory AI systems, track energy use, set reduction targets, and report transparently."
+            },
+            {
+                title: "Organizational Governance Framework",
+                type: "text",
+                content: "**Policy Components**\n\n*   **Environmental AI Policy:** Commitment to sustainable practices.\n*   **Procurement Standards:** Environmental criteria for vendors.\n*   **Development Standards:** Efficiency requirements for new models."
+            },
+            {
+                type: "text",
+                content: "**Implementation Practices**\n\nConduct environmental impact assessments, monitor energy consumption, and optimize deployments."
+            },
+            {
+                type: "text",
+                content: "**Reporting**\n\nReport total AI energy use and carbon emissions annually to stakeholders, aligning with established frameworks."
+            },
+            {
+                title: "The Tradeoffs",
+                type: "text",
+                content: "**Sustainability vs. Capability**\n\nMore capable models often require more compute. Organizations must acknowledge this tension and set boundaries on acceptable impact."
+            },
+            {
+                type: "text",
+                content: "**Accuracy of Claims**\n\nAvoid greenwashing. Be specific about what claims mean and acknowledge limitations of offsets."
+            },
+            {
+                type: "text",
+                content: "**Who Bears the Cost**\n\nEnvironmental impacts are global, while benefits concentrate in developed nations. Equity considerations matter."
+            },
+            {
+                title: "Future Outlook",
+                type: "text",
+                content: "**Technology Trends:** Hardware efficiency is improving, but model growth is outpacing it. Renewable energy expansion helps.\n\n**Regulatory Trends:** Expect mandatory environmental disclosure and efficiency standards.\n\n**Market Trends:** Efficiency will become a competitive differentiator."
+            },
+            {
+                title: "Summary",
+                type: "list",
+                content: "Key Takeaways:",
+                items: [
+                    "AI has a significant and growing environmental footprint (training + inference).",
+                    "Energy consumption drives carbon emissions; location/grid mix matters.",
+                    "Embodied carbon and water consumption are also significant factors.",
+                    "Drivers include model size, inefficiency, and deployment scale.",
+                    "Measurement is challenging but tools exist.",
+                    "Mitigation strategies include efficiency, clean energy, and right-sizing.",
+                    "Regulatory requirements (EU CSRD, AI Act) are emerging.",
+                    "Organizational governance should include policies, monitoring, and reporting."
+                ]
+            },
+            {
+                title: "Practical Checklist",
+                type: "list",
+                content: "For organizations using AI:",
+                items: [
+                    "Inventory AI systems and compute requirements",
+                    "Estimate current energy use and emissions",
+                    "Understand cloud provider sustainability practices",
+                    "Set environmental targets",
+                    "Integrate environmental considerations into governance",
+                    "Track and report metrics",
+                    "Evaluate model efficiency",
+                    "Engage with suppliers",
+                    "Monitor regulatory developments",
+                    "Consider lifecycle impacts"
+                ]
             }
         ]
     }
