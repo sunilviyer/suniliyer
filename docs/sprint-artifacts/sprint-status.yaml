@@ -42,10 +42,10 @@ story_location: docs/sprint-artifacts
 
 development_status:
   # Epic 1: Project Foundation & Development Environment
-  epic-1: in-progress
-  1-1-initialize-nextjs-project-with-security-patches: review
-  1-2-configure-exact-dependency-pinning-and-security: review
-  1-3-establish-project-structure-and-documentation: review
+  epic-1: done
+  1-1-initialize-nextjs-project-with-security-patches: done
+  1-2-configure-exact-dependency-pinning-and-security: done
+  1-3-establish-project-structure-and-documentation: done
   epic-1-retrospective: optional
 
   # Epic 2: Design System & Visual Identity
