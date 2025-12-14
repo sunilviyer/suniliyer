@@ -1,26 +1,163 @@
 @import "tailwindcss";
 
+/* ============================================
+   AIDefence Design System - CSS Custom Properties
+   Story: 2.1 - Define CSS Custom Properties and Design Tokens
+   ============================================ */
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* ===== Structural Colors (Dark Mode Default) ===== */
+  /* Background: Charcoal Brown - Main app background */
+  --color-background: #333d29;
+
+  /* Surface: Slightly lighter than background for cards/panels */
+  --color-surface: #3d4831;
+
+  /* Surface Elevated: Even lighter for floating elements */
+  --color-surface-elevated: #4a5339;
+
+  /* Text Colors - Target 7:1 contrast ratio (WCAG AAA) */
+  --color-text-primary: #F5F5DC;    /* Beige Ivory - Primary text */
+  --color-text-secondary: #E8E6D5;  /* Slightly darker for secondary text */
+  --color-text-tertiary: #D4D2C1;   /* Even darker for tertiary text */
+
+  /* ===== Category Colors (11 Categories - Constant Across Themes) ===== */
+  /* AI Fundamentals: Toffee Brown */
+  --color-cat-ai-fundamentals: #A67C52;
+
+  /* Risks & Principles: Dark Walnut */
+  --color-cat-risks-principles: #654321;
+
+  /* Legal Frameworks: Saddle Brown */
+  --color-cat-legal-frameworks: #8B4513;
+
+  /* AI Laws: Camel */
+  --color-cat-ai-laws: #C19A6B;
+
+  /* Risk Frameworks: Dry Sage */
+  --color-cat-risk-frameworks: #9FA99F;
+
+  /* Development Lifecycle: Khaki Beige */
+  --color-cat-development-lifecycle: #C3B091;
+
+  /* Governance: Tan */
+  --color-cat-governance: #D2B48C;
+
+  /* Auditing & Assessment: Sage Green */
+  --color-cat-auditing-assessment: #8A9A5B;
+
+  /* Industry Perspectives: Moss Green */
+  --color-cat-industry-perspectives: #698B69;
+
+  /* Explainability: Forest Green */
+  --color-cat-explainability: #6B8E23;
+
+  /* Videos: Olive Green */
+  --color-cat-videos: #6B7A3C;
+
+  /* ===== Whitespace Scale (8px base) ===== */
+  --space-xs: 8px;
+  --space-sm: 16px;
+  --space-md: 32px;
+  --space-lg: 64px;
+  --space-xl: 96px;
+  --space-2xl: 160px;
+
+  /* ===== Typography Tokens ===== */
+  /* Font Sizes */
+  --font-size-h1: 48px;
+  --font-size-h2: 32px;
+  --font-size-h3: 24px;
+  --font-size-body: 16px;
+
+  /* Line Heights */
+  --line-height-tight: 1.2;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.8;
+
+  /* Font Weights */
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+
+  /* Font Family - System Font Stack for Performance */
+  --font-family-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-family-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+
+  /* ===== Animation Timing Tokens ===== */
+  --timing-fast: 150ms;
+  --timing-base: 250ms;
+  --easing-standard: cubic-bezier(0.4, 0.0, 0.2, 1);
+
+  /* ===== Layout Tokens ===== */
+  --content-max-width: 1200px;
+  --article-max-width: 680px;
+  --menu-button-size: 48px;
+  --menu-bar-height: 72px;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  /* Tailwind CSS v4 theme integration */
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  /* Colors */
+  --color-background: var(--color-background);
+  --color-foreground: var(--color-text-primary);
+  --color-surface: var(--color-surface);
+  --color-surface-elevated: var(--color-surface-elevated);
+  --color-text-secondary: var(--color-text-secondary);
+  --color-text-tertiary: var(--color-text-tertiary);
+
+  /* Category Colors */
+  --color-cat-ai-fundamentals: var(--color-cat-ai-fundamentals);
+  --color-cat-risks-principles: var(--color-cat-risks-principles);
+  --color-cat-legal-frameworks: var(--color-cat-legal-frameworks);
+  --color-cat-ai-laws: var(--color-cat-ai-laws);
+  --color-cat-risk-frameworks: var(--color-cat-risk-frameworks);
+  --color-cat-development-lifecycle: var(--color-cat-development-lifecycle);
+  --color-cat-governance: var(--color-cat-governance);
+  --color-cat-auditing-assessment: var(--color-cat-auditing-assessment);
+  --color-cat-industry-perspectives: var(--color-cat-industry-perspectives);
+  --color-cat-explainability: var(--color-cat-explainability);
+  --color-cat-videos: var(--color-cat-videos);
+
+  /* Spacing */
+  --spacing-xs: var(--space-xs);
+  --spacing-sm: var(--space-sm);
+  --spacing-md: var(--space-md);
+  --spacing-lg: var(--space-lg);
+  --spacing-xl: var(--space-xl);
+  --spacing-2xl: var(--space-2xl);
+
+  /* Typography */
+  --font-sans: var(--font-family-sans);
+  --font-mono: var(--font-family-mono);
+  --font-size-h1: var(--font-size-h1);
+  --font-size-h2: var(--font-size-h2);
+  --font-size-h3: var(--font-size-h3);
+  --font-size-body: var(--font-size-body);
+  --line-height-tight: var(--line-height-tight);
+  --line-height-normal: var(--line-height-normal);
+  --line-height-relaxed: var(--line-height-relaxed);
+  --font-weight-regular: var(--font-weight-regular);
+  --font-weight-medium: var(--font-weight-medium);
+  --font-weight-bold: var(--font-weight-bold);
+
+  /* Animation */
+  --timing-fast: var(--timing-fast);
+  --timing-base: var(--timing-base);
+  --easing-standard: var(--easing-standard);
+
+  /* Layout */
+  --content-max-width: var(--content-max-width);
+  --article-max-width: var(--article-max-width);
+  --menu-button-size: var(--menu-button-size);
+  --menu-bar-height: var(--menu-bar-height);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-background);
+  color: var(--color-text-primary);
+  font-family: var(--font-family-sans);
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-relaxed);
 }
