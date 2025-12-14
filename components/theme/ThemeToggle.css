@@ -1,0 +1,58 @@
+/* Theme Toggle Component Styles
+   Story: 2.3 - Create Theme Toggle Component */
+
+.theme-toggle {
+  /* Layout & Sizing */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
+  padding: var(--space-xs);
+
+  /* Colors */
+  background: var(--color-surface-elevated);
+  border: 2px solid var(--color-cat-governance); /* Category accent */
+  border-radius: 4px;
+  color: var(--color-text-primary);
+
+  /* Typography */
+  font-size: 24px;
+  line-height: 1;
+
+  /* Interaction */
+  cursor: pointer;
+  transition: all var(--timing-fast) var(--easing-standard);
+
+  /* Reset button styles */
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.theme-toggle:hover {
+  /* Category color glow on hover */
+  box-shadow: 0 0 8px var(--color-cat-governance);
+  transform: translateY(-1px);
+}
+
+.theme-toggle:focus-visible {
+  /* Visible focus indicator (2px outline, category accent) */
+  outline: 2px solid var(--color-cat-governance);
+  outline-offset: 2px;
+}
+
+.theme-toggle:active {
+  transform: translateY(0);
+}
+
+.theme-toggle:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.theme-toggle__icon {
+  display: block;
+  width: 24px;
+  height: 24px;
+  text-align: center;
+}

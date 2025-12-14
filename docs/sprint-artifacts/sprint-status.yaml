@@ -51,9 +51,9 @@ development_status:
   # Epic 2: Design System & Visual Identity
   epic-2: in-progress
   2-1-define-css-custom-properties-and-design-tokens: done
-  2-2-implement-dual-theme-system-with-next-themes: ready-for-dev
-  2-3-create-theme-toggle-component: ready-for-dev
-  2-4-implement-smart-badge-contrast-logic: ready-for-dev
+  2-2-implement-dual-theme-system-with-next-themes: done
+  2-3-create-theme-toggle-component: done
+  2-4-implement-smart-badge-contrast-logic: done
   epic-2-retrospective: optional
 
   # Epic 3: Content Management Pipeline

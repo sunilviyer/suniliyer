@@ -1,8 +1,20 @@
 import Image from "next/image";
+import ThemeToggle from "@/components/theme/ThemeToggle";
+import CategoryBadge from "@/components/articles/CategoryBadge";
+import { VALID_CATEGORIES } from "@/lib/constants";
 
 export default function Home() {
   return (
     <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
+      <div style={{ position: 'fixed', top: '20px', right: '20px', zIndex: 1000 }}>
+        <ThemeToggle />
+      </div>
+      <div style={{ position: 'fixed', top: '80px', right: '20px', zIndex: 1000, display: 'flex', flexDirection: 'column', gap: '8px', maxWidth: '200px' }}>
+        <h3 style={{ fontSize: '12px', fontWeight: 'bold', color: 'var(--color-text-primary)' }}>Category Badges:</h3>
+        {VALID_CATEGORIES.map((category) => (
+          <CategoryBadge key={category} category={category} />
+        ))}
+      </div>
       <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
         <Image
           className="dark:invert"

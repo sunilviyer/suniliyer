@@ -96,6 +96,31 @@
   --menu-bar-height: 72px;
 }
 
+/* ============================================
+   Light Mode Theme Overrides
+   Story: 2.2 - Implement Dual Theme System
+   ============================================ */
+
+[data-theme="light"] {
+  /* ===== Light Mode Structural Colors ===== */
+  /* Background: Beige Ivory - Light mode background */
+  --color-background: #F5F5DC;
+
+  /* Surface: Slightly darker than background for contrast */
+  --color-surface: #EBE8D8;
+
+  /* Surface Elevated: Even darker for floating elements */
+  --color-surface-elevated: #E0DCC8;
+
+  /* Text Colors - Inverted for light mode (Target 7:1 contrast ratio) */
+  --color-text-primary: #333d29;    /* Charcoal Brown - Primary text */
+  --color-text-secondary: #3d4831;  /* Slightly lighter for secondary text */
+  --color-text-tertiary: #4a5339;   /* Even lighter for tertiary text */
+
+  /* ===== Category Colors Remain Unchanged ===== */
+  /* All 11 category colors stay constant across themes for brand identity */
+}
+
 @theme inline {
   /* Tailwind CSS v4 theme integration */
 
