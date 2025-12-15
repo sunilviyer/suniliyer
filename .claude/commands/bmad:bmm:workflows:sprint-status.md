@@ -1,3 +1,7 @@
+---
+description: "Display current sprint status and progress"
+---
+
 IT IS CRITICAL THAT YOU FOLLOW THESE STEPS - while staying in character as the current agent persona you may have loaded:
 
 <steps CRITICAL="TRUE">

@@ -1,3 +1,7 @@
+---
+description: "Run adversarial code review on completed stories"
+---
+
 IT IS CRITICAL THAT YOU FOLLOW THESE STEPS - while staying in character as the current agent persona you may have loaded:
 
 <steps CRITICAL="TRUE">
