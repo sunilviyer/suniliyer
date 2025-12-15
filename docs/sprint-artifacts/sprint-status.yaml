@@ -57,23 +57,23 @@ development_status:
   epic-2-retrospective: optional
 
   # Epic 3: Content Management Pipeline
-  epic-3: in-progress
-  3-1-define-article-typescript-interface-and-frontmatter-schema: ready-for-dev
-  3-2-implement-markdown-parsing-with-frontmatter-extraction: ready-for-dev
-  3-3-implement-mdx-compilation-with-syntax-highlighting: ready-for-dev
-  3-4-create-article-discovery-utilities: ready-for-dev
-  3-5-implement-related-articles-algorithm: ready-for-dev
-  3-6-generate-seo-metadata-from-frontmatter: ready-for-dev
-  3-7-create-automatic-sitemap-generation-script: ready-for-dev
-  3-8-create-sample-article-for-testing: ready-for-dev
+  epic-3: done
+  3-1-define-article-typescript-interface-and-frontmatter-schema: done
+  3-2-implement-markdown-parsing-with-frontmatter-extraction: done
+  3-3-implement-mdx-compilation-with-syntax-highlighting: done
+  3-4-create-article-discovery-utilities: done
+  3-5-implement-related-articles-algorithm: done
+  3-6-generate-seo-metadata-from-frontmatter: done
+  3-7-create-automatic-sitemap-generation-script: done
+  3-8-create-sample-article-for-testing: done
   epic-3-retrospective: optional
 
   # Epic 4: Homepage & Global Navigation
-  epic-4: backlog
-  4-1-create-homepage-layout-with-hero-section: backlog
-  4-2-add-portfolio-and-featured-articles-sections: backlog
-  4-3-implement-floating-menu-component: backlog
-  4-4-implement-context-aware-navigation: backlog
+  epic-4: done
+  4-1-create-homepage-layout-with-hero-section: done
+  4-2-add-portfolio-and-featured-articles-sections: done
+  4-3-implement-floating-menu-component: done
+  4-4-implement-context-aware-navigation: done
   epic-4-retrospective: optional
 
   # Epic 5: Article Discovery & Grid View
