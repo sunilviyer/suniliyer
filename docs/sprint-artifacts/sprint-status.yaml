@@ -59,13 +59,13 @@ development_status:
   # Epic 3: Content Management Pipeline
   epic-3: in-progress
   3-1-define-article-typescript-interface-and-frontmatter-schema: ready-for-dev
-  3-2-implement-markdown-parsing-with-frontmatter-extraction: backlog
-  3-3-implement-mdx-compilation-with-syntax-highlighting: backlog
-  3-4-create-article-discovery-utilities: backlog
-  3-5-implement-related-articles-algorithm: backlog
-  3-6-generate-seo-metadata-from-frontmatter: backlog
-  3-7-create-automatic-sitemap-generation-script: backlog
-  3-8-create-sample-article-for-testing: backlog
+  3-2-implement-markdown-parsing-with-frontmatter-extraction: ready-for-dev
+  3-3-implement-mdx-compilation-with-syntax-highlighting: ready-for-dev
+  3-4-create-article-discovery-utilities: ready-for-dev
+  3-5-implement-related-articles-algorithm: ready-for-dev
+  3-6-generate-seo-metadata-from-frontmatter: ready-for-dev
+  3-7-create-automatic-sitemap-generation-script: ready-for-dev
+  3-8-create-sample-article-for-testing: ready-for-dev
   epic-3-retrospective: optional
 
   # Epic 4: Homepage & Global Navigation
