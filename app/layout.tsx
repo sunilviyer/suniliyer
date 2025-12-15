@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { ThemeProvider } from 'next-themes';
+import { FloatingMenu } from '@/components/navigation/FloatingMenu';
 import "./globals.css";
 
 const geistSans = Geist({
@@ -30,6 +31,7 @@ export default function RootLayout({
       >
         <ThemeProvider attribute="data-theme" defaultTheme="dark" enableSystem>
           {children}
+          <FloatingMenu />
         </ThemeProvider>
       </body>
     </html>

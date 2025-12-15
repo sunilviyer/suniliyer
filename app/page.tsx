@@ -1,77 +1,83 @@
-import Image from "next/image";
-import ThemeToggle from "@/components/theme/ThemeToggle";
-import CategoryBadge from "@/components/articles/CategoryBadge";
-import { VALID_CATEGORIES } from "@/lib/constants";
+import Link from 'next/link';
+import { getAllArticles } from '@/lib/article-utils';
+import { portfolioProjects } from '@/lib/portfolio-data';
+import { PortfolioCard } from '@/components/portfolio/PortfolioCard';
+import { FeaturedArticle } from '@/components/portfolio/FeaturedArticle';
 
-export default function Home() {
+export default async function HomePage() {
+  // Fetch all articles and get top 3 for featured section
+  const allArticles = await getAllArticles();
+  const featuredArticles = allArticles.slice(0, 3);
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <div style={{ position: 'fixed', top: '20px', right: '20px', zIndex: 1000 }}>
-        <ThemeToggle />
-      </div>
-      <div style={{ position: 'fixed', top: '80px', right: '20px', zIndex: 1000, display: 'flex', flexDirection: 'column', gap: '8px', maxWidth: '200px' }}>
-        <h3 style={{ fontSize: '12px', fontWeight: 'bold', color: 'var(--color-text-primary)' }}>Category Badges:</h3>
-        {VALID_CATEGORIES.map((category) => (
-          <CategoryBadge key={category} category={category} />
-        ))}
-      </div>
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <>
+      {/* Skip to Main Content Link for Accessibility */}
+      <a href="#main-content" className="skip-link">
+        Skip to main content
+      </a>
+
+      <main id="main-content" className="homepage-main">
+        {/* Hero Section */}
+        <section id="hero" className="hero-section">
+          <h1 className="hero-title">Sunil Iyer</h1>
+
+          <p className="hero-subtitle">
+            AI Governance Expert, Security Professional
           </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+
+          <p className="hero-description">
+            With over two decades of experience in cybersecurity and technology
+            leadership, I specialize in AI governance, risk management, and
+            secure development practices. Explore my insights on responsible AI
+            deployment and security frameworks.
+          </p>
+
+          {/* CTA Button */}
+          <Link
+            href="/articles"
+            className="cta-button"
+            aria-label="Explore articles on AI governance and security"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
+            Explore Articles
+          </Link>
+        </section>
+
+        {/* Resume/Experience Section - Placeholder */}
+        <section id="resume" className="content-section">
+          <h2 className="section-heading">Experience & Background</h2>
+          <p style={{ maxWidth: 'var(--content-max-width)', margin: '0 auto', color: 'var(--color-text-secondary)' }}>
+            20+ years in cybersecurity and technology leadership. Former CISO with
+            expertise in AI governance, risk management, and secure development
+            frameworks. Passionate about responsible AI deployment and regulatory
+            compliance.
+          </p>
+        </section>
+
+        {/* Portfolio Section */}
+        <section id="portfolio" className="content-section">
+          <h2 className="section-heading">Portfolio</h2>
+          <div className="portfolio-grid">
+            {portfolioProjects.map((project, index) => (
+              <PortfolioCard
+                key={index}
+                title={project.title}
+                description={project.description}
+                thumbnailUrl={project.thumbnailUrl}
+                externalLink={project.externalLink}
+              />
+            ))}
+          </div>
+        </section>
+
+        {/* Featured Articles Section */}
+        <section id="featured-articles" className="content-section">
+          <h2 className="section-heading">Featured Articles</h2>
+          <div className="portfolio-grid">
+            {featuredArticles.map((article) => (
+              <FeaturedArticle key={article.slug} article={article} />
+            ))}
+          </div>
+        </section>
       </main>
-    </div>
+    </>
   );
 }

@@ -1,70 +1,122 @@
-// types/article.ts
+/**
+ * Article Type Definitions
+ *
+ * Defines TypeScript interfaces for article data structures used throughout the application.
+ * Provides type safety for frontmatter parsing, article processing, and rendering.
+ */
 
 import type { MDXRemoteSerializeResult } from 'next-mdx-remote';
+import type { Category } from '@/lib/constants';
 
 /**
- * Article Type Definition
+ * Article interface representing a parsed markdown article with frontmatter.
  *
- * This interface defines the structure of article data used throughout AIDefence.
- * Articles are created from markdown files with YAML frontmatter.
+ * **Naming Conventions:**
+ * - Frontmatter fields use snake_case naming (reading_time, not readingTime)
+ * - Date must be in YYYY-MM-DD format
+ * - Category must match one of 11 valid categories exactly (Title Case)
  *
- * Naming Conventions:
- * - Interface name: PascalCase (Article, not IArticle)
- * - Frontmatter fields: snake_case (reading_time, not readingTime)
- * - Date format: YYYY-MM-DD
+ * **Runtime Validation:**
+ * ⚠️ TypeScript types are compile-time only. Implement runtime validation in
+ * markdown parsing (Story 3.2) to catch invalid frontmatter at build time.
  *
- * This is a STUB file that will be fully implemented in Epic 3: Content Management Pipeline.
- */
-
-/**
- * Valid article categories (must match exactly - Title Case)
- */
-export const VALID_CATEGORIES = [
-  "AI Fundamentals",
-  "Risks & Principles",
-  "Legal Frameworks",
-  "AI Laws",
-  "Risk Frameworks",
-  "Development Lifecycle",
-  "Governance",
-  "Auditing & Assessment",
-  "Industry Perspectives",
-  "Explainability",
-  "Videos",
-] as const;
-
-export type Category = typeof VALID_CATEGORIES[number];
-
-/**
- * Article interface representing a single article with metadata and content
+ * **Valid Frontmatter Example:**
+ * ```yaml
+ * title: "Large Language Models Explained"
+ * category: "AI Fundamentals"
+ * tags: ["llm", "transformer", "neural-networks"]
+ * date: "2025-12-14"
+ * reading_time: 8
+ * excerpt: "A comprehensive guide to understanding large language models"
+ * video_url: "https://youtube.com/watch?v=..."
+ * seo_title: "LLMs Explained - Complete Guide"
+ * seo_description: "Learn about LLMs, transformers, and neural networks"
+ * related_context: "transformer architecture attention mechanism"
+ * ```
+ *
+ * **Invalid Frontmatter Examples (will cause runtime errors):**
+ * ```yaml
+ * # ❌ INVALID - Wrong category (not in VALID_CATEGORIES)
+ * category: "Machine Learning"
+ *
+ * # ❌ INVALID - Wrong date format (must be YYYY-MM-DD)
+ * date: "12/14/2025"
+ *
+ * # ❌ INVALID - reading_time as string (must be number)
+ * reading_time: "8 minutes"
+ *
+ * # ❌ INVALID - camelCase field names (must be snake_case)
+ * readingTime: 8
+ * videoUrl: "https://..."
+ *
+ * # ❌ INVALID - missing required fields
+ * title: "Test"
+ * # Missing: category, tags, date, reading_time, excerpt, slug
+ * ```
  */
 export interface Article {
-  // Required fields (from frontmatter)
-  title: string;                    // Article title
-  slug: string;                     // URL-friendly slug (derived from filename)
-  category: Category;               // Must match one of VALID_CATEGORIES
-  tags: string[];                   // Array of tags for filtering and related articles
-  date: string;                     // Publication date in YYYY-MM-DD format
-  reading_time: number;             // Estimated reading time in minutes (integer)
+  /** Article title from frontmatter */
+  title: string;
 
-  // Optional SEO fields (from frontmatter)
-  meta_description?: string;        // SEO description for search engines
-  seo_title?: string;              // Custom SEO title (defaults to title)
-  related_context?: string;        // Keywords for related article algorithm
-  video_url?: string;              // Optional YouTube video URL
+  /** URL-safe slug derived from filename */
+  slug: string;
 
-  // Computed fields (added during build processing)
-  related_articles?: string[];     // Array of related article slugs (computed by algorithm)
-  content?: MDXRemoteSerializeResult;  // Compiled MDX content from next-mdx-remote
+  /** One of 11 valid categories (from VALID_CATEGORIES) */
+  category: Category;
+
+  /** Array of tags for filtering and related articles */
+  tags: string[];
+
+  /**
+   * Publication date in YYYY-MM-DD format
+   *
+   * ⚠️ Type is `string` but must match regex: /^\d{4}-\d{2}-\d{2}$/
+   * Example: "2025-12-14"
+   * Runtime validation required to enforce format
+   */
+  date: string;
+
+  /**
+   * Estimated reading time in minutes
+   *
+   * ⚠️ Type is `number` but should be positive integer
+   * TypeScript accepts floats (e.g., 5.7) but application expects integers
+   * Runtime validation should enforce: Math.floor(reading_time) === reading_time
+   */
+  reading_time: number;
+
+  /** Short description for article cards */
+  excerpt: string;
+
+  /** YouTube video URL if article has companion video */
+  video_url?: string;
+
+  /** Custom SEO title (defaults to title if not provided) */
+  seo_title?: string;
+
+  /** Custom SEO description (defaults to excerpt if not provided) */
+  seo_description?: string;
+
+  /** Keywords for algorithmic related article matching */
+  related_context?: string;
 }
 
 /**
- * Partial article metadata for preview cards (grid display)
+ * Compiled Article with MDX content and computed fields.
+ *
+ * Extends Article interface with:
+ * - Compiled MDX content ready for rendering
+ * - Related articles computed at build time
+ *
+ * Used by:
+ * - lib/markdown-parser.ts (returns CompiledArticle after parsing)
+ * - lib/article-utils.ts (getAllArticles returns CompiledArticle[])
+ * - app/articles/[slug]/page.tsx (receives CompiledArticle for rendering)
  */
-export interface ArticlePreview {
-  title: string;
-  slug: string;
-  category: Category;
-  date: string;
-  reading_time: number;
+export interface CompiledArticle extends Article {
+  /** Compiled MDX content ready for rendering with next-mdx-remote */
+  content: MDXRemoteSerializeResult;
+
+  /** Slugs of related articles (computed at build time by related-articles.ts) */
+  related_articles: string[];
 }

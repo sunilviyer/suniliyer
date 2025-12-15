@@ -1,6 +1,6 @@
 # Story 3.4: Create Article Discovery Utilities
 
-Status: ready-for-dev
+Status: Done
 
 ## Story
 
@@ -21,76 +21,76 @@ so that **pages can access article data for display**.
 
 ## Tasks / Subtasks
 
-- [ ] Create lib/article-utils.ts file (AC: #2)
-  - [ ] Create file with proper imports (fs, path, Article types, markdown-parser)
-  - [ ] Add file-level JSDoc documenting the module's purpose
-  - [ ] Import necessary Node.js modules: `fs`, `path`
-  - [ ] Import `parseMarkdownFile` from `@/lib/markdown-parser`
-  - [ ] Import types: `Article`, `CompiledArticle` from `@/types/article`
+- [x] Create lib/article-utils.ts file (AC: #2)
+  - [x] Create file with proper imports (fs, path, Article types, markdown-parser)
+  - [x] Add file-level JSDoc documenting the module's purpose
+  - [x] Import necessary Node.js modules: `fs`, `path`
+  - [x] Import `parseAndCompileMarkdown` from `@/lib/markdown-parser`
+  - [x] Import types: `Article`, `CompiledArticle` from `@/types/article`
 
-- [ ] Define articles directory constant (AC: #4)
-  - [ ] `const ARTICLES_DIR = path.join(process.cwd(), 'content', 'articles')`
-  - [ ] Centralize directory path for easy maintenance
-  - [ ] Use `process.cwd()` to get project root (works in any environment)
+- [x] Define articles directory constant (AC: #4)
+  - [x] `const ARTICLES_DIR = path.join(process.cwd(), 'content', 'articles')`
+  - [x] Centralize directory path for easy maintenance
+  - [x] Use `process.cwd()` to get project root (works in any environment)
 
-- [ ] Implement getAllArticles function (AC: #1, #4)
-  - [ ] Function signature: `export async function getAllArticles(): Promise<CompiledArticle[]>`
-  - [ ] Read all files from ARTICLES_DIR using `fs.readdirSync()` or `fs.promises.readdir()`
-  - [ ] Filter for .md files only
-  - [ ] For each .md file:
-    - Call `parseMarkdownFile(filePath)` to get frontmatter and compiled content
+- [x] Implement getAllArticles function (AC: #1, #4)
+  - [x] Function signature: `export async function getAllArticles(): Promise<CompiledArticle[]>`
+  - [x] Read all files from ARTICLES_DIR using `fs.promises.readdir()`
+  - [x] Filter for .md files only
+  - [x] For each .md file:
+    - Call `parseAndCompileMarkdown(filePath)` to get frontmatter and compiled content
     - Build CompiledArticle object
-  - [ ] Sort articles by date field (descending - newest first)
-  - [ ] Return array of CompiledArticle objects
+  - [x] Sort articles by date field (descending - newest first)
+  - [x] Return array of CompiledArticle objects
 
-- [ ] Implement getArticleBySlug function (AC: #2, #4, #6)
-  - [ ] Function signature: `export async function getArticleBySlug(slug: string): Promise<CompiledArticle>`
-  - [ ] Construct file path: `path.join(ARTICLES_DIR, ${slug}.md)`
-  - [ ] Check if file exists using `fs.existsSync(filePath)`
-  - [ ] If file doesn't exist: `throw new Error(`Article not found: ${slug}`)`
-  - [ ] If file exists: call `parseMarkdownFile(filePath)`
-  - [ ] Return CompiledArticle object
-  - [ ] Follow error handling pattern (throw errors, don't catch)
+- [x] Implement getArticleBySlug function (AC: #2, #4, #6)
+  - [x] Function signature: `export async function getArticleBySlug(slug: string): Promise<CompiledArticle>`
+  - [x] Construct file path: `path.join(ARTICLES_DIR, ${slug}.md)`
+  - [x] Check if file exists using `fs.promises.access(filePath)`
+  - [x] If file doesn't exist: `throw new Error(`Article not found: ${slug}`)`
+  - [x] If file exists: call `parseAndCompileMarkdown(filePath)`
+  - [x] Return CompiledArticle object
+  - [x] Follow error handling pattern (throw errors, don't catch)
 
-- [ ] Implement getArticlesByCategory function (AC: #3, #4)
-  - [ ] Function signature: `export async function getArticlesByCategory(category: string): Promise<CompiledArticle[]>`
-  - [ ] Call `getAllArticles()` to get all articles
-  - [ ] Filter articles where `article.category === category`
-  - [ ] Return filtered array (already sorted by date from getAllArticles)
-  - [ ] Optional: validate category against VALID_CATEGORIES before filtering
+- [x] Implement getArticlesByCategory function (AC: #3, #4)
+  - [x] Function signature: `export async function getArticlesByCategory(category: string): Promise<CompiledArticle[]>`
+  - [x] Call `getAllArticles()` to get all articles
+  - [x] Filter articles where `article.category === category`
+  - [x] Return filtered array (already sorted by date from getAllArticles)
+  - [x] No category validation needed - filter returns empty array for invalid categories
 
-- [ ] Implement date sorting logic (AC: #1)
-  - [ ] Parse date strings to Date objects for comparison
-  - [ ] Add timezone to prevent date shifts: `new Date(article.date + 'T00:00:00')`
-  - [ ] Sort descending: `articles.sort((a, b) => new Date(b.date + 'T00:00:00').getTime() - new Date(a.date + 'T00:00:00').getTime())`
-  - [ ] Most recent articles appear first in array
+- [x] Implement date sorting logic (AC: #1)
+  - [x] Parse date strings to Date objects for comparison
+  - [x] Add timezone to prevent date shifts: `new Date(article.date + 'T00:00:00')`
+  - [x] Sort descending: `articles.sort((a, b) => new Date(b.date + 'T00:00:00').getTime() - new Date(a.date + 'T00:00:00').getTime())`
+  - [x] Most recent articles appear first in array
 
-- [ ] Ensure functions are pure and deterministic (AC: #5)
-  - [ ] No side effects (no file writes, no external API calls)
-  - [ ] Same input always produces same output
-  - [ ] Read-only operations on filesystem
-  - [ ] No random number generation or timestamp usage
-  - [ ] Functions can be called multiple times safely
+- [x] Ensure functions are pure and deterministic (AC: #5)
+  - [x] No side effects (no file writes, no external API calls)
+  - [x] Same input always produces same output
+  - [x] Read-only operations on filesystem
+  - [x] No random number generation or timestamp usage
+  - [x] Functions can be called multiple times safely
 
-- [ ] Follow function naming patterns (ARCH-13)
-  - [ ] Use verb-noun pattern: ✅ `getAllArticles()`, `getArticleBySlug()`, `getArticlesByCategory()`
-  - [ ] Avoid: ❌ `articles()`, `article()`, `get()`
+- [x] Follow function naming patterns (ARCH-13)
+  - [x] Use verb-noun pattern: ✅ `getAllArticles()`, `getArticleBySlug()`, `getArticlesByCategory()`
+  - [x] Avoid: ❌ `articles()`, `article()`, `get()`
 
-- [ ] Add comprehensive JSDoc documentation
-  - [ ] Document what each function does
-  - [ ] Document parameters and return types
-  - [ ] Document @throws for error conditions
-  - [ ] Document example usage
-  - [ ] Document that functions run at build time
+- [x] Add comprehensive JSDoc documentation
+  - [x] Document what each function does
+  - [x] Document parameters and return types
+  - [x] Document @throws for error conditions
+  - [x] Document example usage
+  - [x] Document that functions run at build time
 
-- [ ] Test article discovery functions
-  - [ ] Create 2-3 test markdown files in /content/articles/
-  - [ ] Run `getAllArticles()` and verify all articles are returned
-  - [ ] Verify articles are sorted by date (newest first)
-  - [ ] Run `getArticleBySlug('test-article')` and verify correct article is returned
-  - [ ] Run `getArticleBySlug('non-existent')` and verify error is thrown
-  - [ ] Run `getArticlesByCategory('AI Fundamentals')` and verify filtering works
-  - [ ] Verify all returned objects match CompiledArticle interface
+- [x] Test article discovery functions
+  - [x] Create 2-3 test markdown files in /content/articles/
+  - [x] Run `getAllArticles()` and verify all articles are returned
+  - [x] Verify articles are sorted by date (newest first)
+  - [x] Run `getArticleBySlug('test-article')` and verify correct article is returned
+  - [x] Run `getArticleBySlug('non-existent')` and verify error is thrown
+  - [x] Run `getArticlesByCategory('AI Fundamentals')` and verify filtering works
+  - [x] Verify all returned objects match CompiledArticle interface
 
 ## Dev Notes
 
@@ -194,4 +194,83 @@ Claude Sonnet 4.5 (claude-sonnet-4-5-20250929)
 
 ### Completion Notes List
 
+✅ **Story 3.4 Implementation Complete** (2025-12-14)
+
+**Implementation Summary:**
+- Created lib/article-utils.ts with 3 article discovery functions
+- All functions use async/await with fs/promises for file operations
+- Comprehensive JSDoc documentation with @throws and @example tags
+- Created 7 passing tests covering all functions and edge cases
+- All acceptance criteria met
+
+**Article Discovery Functions:**
+- ✅ `getAllArticles()` - Returns all articles sorted by date (newest first)
+- ✅ `getArticleBySlug(slug)` - Returns single article or throws error if not found
+- ✅ `getArticlesByCategory(category)` - Returns filtered articles by category
+
+**Implementation Details:**
+- Uses `parseAndCompileMarkdown()` from Story 3.3 for MDX compilation
+- Date sorting includes timezone (`T00:00:00`) to prevent date shifts
+- File existence check uses `fs.promises.access()` with try/catch
+- All functions are pure and deterministic (no side effects)
+- CompiledArticle objects include `related_articles: []` placeholder for Story 3.5
+
+**Test Coverage:**
+- 7 tests in lib/__tests__/article-utils.test.ts
+- Tests verify: array return, date sorting, field presence, error handling, category filtering
+- Created 2 test articles: test-neural-networks.md (2025-12-20), test-eu-ai-act.md (2025-11-01)
+- All tests pass with mocked next-mdx-remote to avoid ESM issues
+- Full test suite: 57 tests passing (no regressions)
+
+**Architecture Compliance:**
+- ✅ Function naming: verb-noun pattern (getAllArticles, getArticleBySlug) per ARCH-13
+- ✅ Error handling: throw from utilities per ARCH-14
+- ✅ File naming: kebab-case (article-utils.ts) per ARCH-9
+- ✅ Pure functions: deterministic, no side effects per ARCH requirement
+
+**All Acceptance Criteria Met:**
+1. ✅ `getAllArticles()` returns array sorted by date (newest first)
+2. ✅ `getArticleBySlug(slug)` returns single article or throws error
+3. ✅ `getArticlesByCategory(category)` returns filtered articles
+4. ✅ All functions read from `/content/articles/*.md`
+5. ✅ Functions are pure and deterministic (same input = same output)
+6. ✅ Error handling throws from utilities for components to catch
+
+**Integration Points Ready:**
+- lib/article-utils.ts can be used by article pages (Epic 5, Epic 6)
+- Functions will be used by sitemap generation (Story 3.7)
+- Functions will be used by related articles algorithm (Story 3.5)
+
+**Code Review Fixes (2025-12-14):**
+
+**HIGH Severity (2 fixes):**
+1. ✅ Added slug validation to prevent path traversal attacks - regex pattern ensures lowercase kebab-case only
+2. ✅ Added error handling for missing articles directory - descriptive error messages for ENOENT and other failures
+
+**MEDIUM Severity (5 fixes):**
+3. ✅ Optimized getArticlesByCategory() - now parses frontmatter first, filters, then compiles only matching articles (major performance improvement for large article counts)
+4. ✅ Added category validation - throws error for invalid categories to catch typos early
+5. ✅ Fixed test date parsing - tests now use same 'T00:00:00' timezone logic as implementation
+6. ✅ Added comprehensive error handling tests - path traversal, invalid slugs, invalid categories, all valid categories
+7. ✅ Updated File List documentation - explicitly listed markdown-parser.test.ts changes
+
+**Bug Fixes:**
+- Fixed variable shadowing in markdown-parser.test.ts (content vs compiledContent)
+- Fixed lint warnings: removed `any` types, proper Article interface typing
+
 ### File List
+
+**Implementation Files:**
+- lib/article-utils.ts (created - article discovery functions with slug validation, error handling, category validation)
+- lib/__tests__/article-utils.test.ts (created - 15 tests including security and error handling tests)
+
+**Test Data Files:**
+- content/articles/test-neural-networks.md (created - test article for date sorting and filtering)
+- content/articles/test-eu-ai-act.md (created - test article for category filtering)
+
+**Related Changes:**
+- lib/__tests__/markdown-parser.test.ts (modified - fixed variable shadowing in parseAndCompileMarkdown tests, line 692 and 713)
+
+**Configuration Files:**
+- package.json (no changes - no new dependencies)
+- package-lock.json (no changes)

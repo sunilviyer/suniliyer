@@ -1,0 +1,9 @@
+# AIDefence - robots.txt
+# All content is publicly accessible
+
+# Allow all crawlers
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://www.suniliyer.ca/sitemap.xml
