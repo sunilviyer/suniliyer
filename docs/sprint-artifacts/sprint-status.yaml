@@ -49,7 +49,7 @@ development_status:
   epic-1-retrospective: optional
 
   # Epic 2: Design System & Visual Identity
-  epic-2: in-progress
+  epic-2: done
   2-1-define-css-custom-properties-and-design-tokens: done
   2-2-implement-dual-theme-system-with-next-themes: done
   2-3-create-theme-toggle-component: done
