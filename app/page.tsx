@@ -1,3 +1,7 @@
+// UNDER CONSTRUCTION PAGE - Temporary landing page with pancake animation
+// Original homepage content commented out below for restoration later
+
+/*
 import Link from 'next/link';
 import { getAllArticles } from '@/lib/article-utils';
 import { portfolioProjects } from '@/lib/portfolio-data';
@@ -10,13 +14,11 @@ export default async function HomePage() {
   const featuredArticles = allArticles.slice(0, 3);
   return (
     <>
-      {/* Skip to Main Content Link for Accessibility */}
       <a href="#main-content" className="skip-link">
         Skip to main content
       </a>
 
       <main id="main-content" className="homepage-main">
-        {/* Hero Section */}
         <section id="hero" className="hero-section">
           <h1 className="hero-title">Sunil Iyer</h1>
 
@@ -31,7 +33,6 @@ export default async function HomePage() {
             deployment and security frameworks.
           </p>
 
-          {/* CTA Button */}
           <Link
             href="/articles"
             className="cta-button"
@@ -41,7 +42,6 @@ export default async function HomePage() {
           </Link>
         </section>
 
-        {/* Resume/Experience Section - Placeholder */}
         <section id="resume" className="content-section">
           <h2 className="section-heading">Experience & Background</h2>
           <p style={{ maxWidth: 'var(--content-max-width)', margin: '0 auto', color: 'var(--color-text-secondary)' }}>
@@ -52,7 +52,6 @@ export default async function HomePage() {
           </p>
         </section>
 
-        {/* Portfolio Section */}
         <section id="portfolio" className="content-section">
           <h2 className="section-heading">Portfolio</h2>
           <div className="portfolio-grid">
@@ -68,7 +67,6 @@ export default async function HomePage() {
           </div>
         </section>
 
-        {/* Featured Articles Section */}
         <section id="featured-articles" className="content-section">
           <h2 className="section-heading">Featured Articles</h2>
           <div className="portfolio-grid">
@@ -79,5 +77,33 @@ export default async function HomePage() {
         </section>
       </main>
     </>
+  );
+}
+*/
+
+export default function UnderConstruction() {
+  return (
+    <div className="under-construction-page">
+      <h1>Something Magical is Cooking</h1>
+
+      <div id="cooking">
+        <div className="bubble"></div>
+        <div className="bubble"></div>
+        <div className="bubble"></div>
+        <div className="bubble"></div>
+        <div className="bubble"></div>
+
+        <div id="area">
+          <div id="sides">
+            <div id="pan"></div>
+            <div id="handle"></div>
+          </div>
+
+          <div id="pancake">
+            <div id="pastry"></div>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 }
