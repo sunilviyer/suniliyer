@@ -1,5 +1,4 @@
 @import "tailwindcss";
-@import url('https://fonts.googleapis.com/css?family=Amatic+SC');
 
 /* ============================================
    AIDefence Design System - CSS Custom Properties
@@ -2326,8 +2325,9 @@ code[class*="language-"] {
   top: 25vh;
   width: 100vw;
   text-align: center;
-  font-family: 'Amatic SC', cursive;
+  font-family: var(--font-family-sans);
   font-size: 6vh;
+  font-weight: var(--font-weight-medium);
   color: #333;
   opacity: .75;
   animation: pulse 2.5s linear infinite;
