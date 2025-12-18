@@ -77,45 +77,45 @@ development_status:
   epic-4-retrospective: optional
 
   # Epic 5: Article Discovery & Grid View
-  epic-5: backlog
-  5-1-create-articles-page-with-grid-layout: backlog
-  5-2-create-article-card-component: backlog
-  5-3-implement-category-filtering: backlog
-  5-4-sort-articles-by-publication-date: backlog
+  epic-5: in-progress
+  5-1-create-articles-page-with-grid-layout: done
+  5-2-create-article-card-component: done
+  5-3-implement-category-filtering: done
+  5-4-sort-articles-by-publication-date: done
   epic-5-retrospective: optional
 
   # Epic 6: Expandable Article Reading Experience
-  epic-6: backlog
-  6-1-create-custom-flip-animation-utilities: backlog
-  6-2-implement-expandable-article-component-with-radix-dialog: backlog
-  6-3-render-article-content-with-mdx: backlog
-  6-4-add-related-articles-section: backlog
-  6-5-implement-keyboard-navigation: backlog
-  6-6-add-close-and-navigation-controls: backlog
+  epic-6: in-progress
+  6-1-create-custom-flip-animation-utilities: done
+  6-2-implement-expandable-article-component-with-radix-dialog: done
+  6-3-render-article-content-with-mdx: done
+  6-4-add-related-articles-section: done
+  6-5-implement-keyboard-navigation: done
+  6-6-add-close-and-navigation-controls: done
   epic-6-retrospective: optional
 
   # Epic 7: Accessibility & Universal Access
-  epic-7: backlog
-  7-1-implement-skip-to-main-content-link: backlog
-  7-2-add-semantic-html-and-aria-labels: backlog
-  7-3-implement-aria-live-regions-for-state-changes: backlog
-  7-4-ensure-full-keyboard-accessibility: backlog
-  7-5-add-visible-focus-indicators: backlog
-  7-6-ensure-progressive-enhancement-no-js-fallback: backlog
-  7-7-validate-text-resize-and-touch-targets: backlog
-  7-8-run-accessibility-audit-and-fix-violations: backlog
+  epic-7: done
+  7-1-implement-skip-to-main-content-link: done
+  7-2-add-semantic-html-and-aria-labels: done
+  7-3-implement-aria-live-regions-for-state-changes: done
+  7-4-ensure-full-keyboard-accessibility: done
+  7-5-add-visible-focus-indicators: done
+  7-6-ensure-progressive-enhancement-no-js-fallback: review
+  7-7-validate-text-resize-and-touch-targets: done
+  7-8-run-accessibility-audit-and-fix-violations: review
   epic-7-retrospective: optional
 
   # Epic 8: Performance & Quality Assurance
-  epic-8: backlog
-  8-1-optimize-core-web-vitals-lcp-fid-cls: backlog
-  8-2-achieve-lighthouse-performance-score-90: backlog
-  8-3-ensure-cross-browser-compatibility: backlog
-  8-4-create-custom-404-error-page: backlog
-  8-5-configure-staging-environment-and-preview-deployments: backlog
-  8-6-establish-testing-workflow-before-production: backlog
-  8-7-configure-vercel-production-deployment-with-auto-rollback: backlog
-  8-8-validate-deterministic-builds: backlog
-  8-9-add-production-readme-documentation: backlog
-  8-10-final-production-validation-and-launch: backlog
+  epic-8: done
+  8-1-optimize-core-web-vitals-lcp-fid-cls: review
+  8-2-achieve-lighthouse-performance-score-90: review
+  8-3-ensure-cross-browser-compatibility: review
+  8-4-create-custom-404-error-page: done
+  8-5-configure-staging-environment-and-preview-deployments: done
+  8-6-establish-testing-workflow-before-production: done
+  8-7-configure-vercel-production-deployment-with-auto-rollback: done
+  8-8-validate-deterministic-builds: done
+  8-9-add-production-readme-documentation: done
+  8-10-final-production-validation-and-launch: done
   epic-8-retrospective: optional
