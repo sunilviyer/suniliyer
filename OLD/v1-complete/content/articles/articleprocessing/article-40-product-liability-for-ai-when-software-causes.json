@@ -1,0 +1,110 @@
+{
+  "file_status": {
+    "suggested_slug": "article-40-product-liability-for-ai-when-software-causes-har",
+    "category": "Legal Frameworks",
+    "word_count_check": {
+      "target": null,
+      "actual": 3833,
+      "status": "under"
+    }
+  },
+  "content_validation": {
+    "structure": {
+      "has_h1": true,
+      "has_intro": true,
+      "has_conclusion": true,
+      "header_depth_valid": true
+    },
+    "generated_elements": {
+      "tldr_was_missing": true,
+      "objectives_were_missing": false,
+      "keywords_were_missing": false
+    }
+  },
+  "component_inventory": {
+    "has_components": true,
+    "items": [
+      {
+        "type": "flowchart",
+        "label": "Sources Process",
+        "detected_at_section": "Sources"
+      },
+      {
+        "type": "template",
+        "label": "Example:",
+        "detected_at_section": "Problem 1: Is Software a \"Product\"?",
+        "template_link": "/templates/example.md"
+      },
+      {
+        "type": "template",
+        "label": "Example:",
+        "detected_at_section": "Problem 2: Who Is the \"Manufacturer\"?",
+        "template_link": "/templates/example.md"
+      },
+      {
+        "type": "template",
+        "label": "Example:",
+        "detected_at_section": "Problem 4: The Learning Problem",
+        "template_link": "/templates/example.md"
+      },
+      {
+        "type": "template",
+        "label": "The European Approach: Liability Reform",
+        "detected_at_section": "The European Approach: Liability Reform",
+        "template_link": "/templates/the-european-approach-liability-reform.md"
+      }
+    ]
+  },
+  "extracted_data": {
+    "title": "Article 40: Product Liability for AI – When Software Causes Harm",
+    "tldr": "",
+    "learning_objectives": [
+      "Understand the key concepts and principles of ai governance frameworks",
+      "Implement compliance strategies in real-world scenarios",
+      "Evaluate regulatory requirements for organizational compliance"
+    ],
+    "seo_keywords": [
+      "article",
+      "product",
+      "AI governance",
+      "artificial intelligence",
+      "product liability"
+    ],
+    "references": []
+  },
+  "cross_reference_data": {
+    "topic_fingerprint": [
+      "machine learning",
+      "foundation model",
+      "deep learning",
+      "explainability",
+      "oversight"
+    ],
+    "named_examples": [
+      "anthropic",
+      "european commission",
+      "european parliament",
+      "google",
+      "ibm",
+      "manufacturing",
+      "meta",
+      "microsoft",
+      "nvidia",
+      "openai",
+      "tesla",
+      "tesla autopilot",
+      "twitter",
+      "uber",
+      "watson"
+    ]
+  },
+  "image_generation": {
+    "prompt": {
+      "formula": "Abstract geometric illustration, earth tones, minimalist, professional",
+      "category_motif": "scales",
+      "master_size": "1200x750px",
+      "css_filters": true
+    },
+    "placeholder": "![Article 40: Product Liability for AI – When Software Causes Harm]({{IMAGE_PLACEHOLDER_article-40-product-liability-for-ai-when-software-causes-har}})"
+  }
+}

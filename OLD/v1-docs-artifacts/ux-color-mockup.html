@@ -1,0 +1,1385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AIDefence - Color & Whitespace Mockup</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Color Variables - Dark Mode */
+        :root {
+            --bg: #333d29;
+            --surface: #414833;
+            --surface-elevated: #656d4a;
+
+            --text-primary: #F5F5DC;
+            --text-secondary: #b6ad90;
+            --text-tertiary: #a68a64;
+
+            /* Category Colors - Stay same in both modes */
+            --cat-ai-fundamentals: #936639;
+            --cat-risks-principles: #a68a64;
+            --cat-legal-frameworks: #a4ac86;
+            --cat-ai-laws: #7f4f24;
+            --cat-risk-frameworks: #582f0e;
+            --cat-dev-lifecycle: #b6ad90;
+            --cat-governance: #c2c5aa;
+            --cat-auditing: #656d4a;
+            --cat-future-concerns: #936639;
+            --cat-industry: #a68a64;
+            --cat-practical: #c2c5aa;
+
+            /* Whitespace System */
+            --space-xs: 8px;
+            --space-sm: 16px;
+            --space-md: 32px;
+            --space-lg: 64px;
+            --space-xl: 96px;
+            --space-2xl: 160px;
+        }
+
+        /* Light Mode */
+        body.light-mode {
+            --bg: #F5F5DC;
+            --surface: #FFFFFF;
+            --surface-elevated: #b6ad90;
+
+            --text-primary: #333d29;
+            --text-secondary: #414833;
+            --text-tertiary: #656d4a;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: var(--bg);
+            color: var(--text-primary);
+            line-height: 1.8;
+            transition: all 0.3s ease;
+        }
+
+        /* Floating Menu Button (Collapsed State) */
+        .menu-button {
+            position: fixed;
+            top: var(--space-md);
+            right: var(--space-md);
+            width: 48px;
+            height: 48px;
+            background: var(--surface-elevated);
+            opacity: 0.8;
+            border: 2px solid var(--cat-ai-fundamentals);
+            border-radius: 8px;
+            color: var(--text-primary);
+            cursor: pointer;
+            z-index: 1001;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            transition: all 0.2s ease;
+        }
+
+        .menu-button:hover {
+            opacity: 1;
+            box-shadow: 0 0 20px rgba(147, 102, 57, 0.4);
+            transform: scale(1.05);
+        }
+
+        .menu-button.menu-open {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        /* Expanded Menu Bar */
+        .menu-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 72px;
+            background: var(--surface);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            opacity: 0.95;
+            border-bottom: 1px solid var(--surface-elevated);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 var(--space-md);
+            transform: translateY(-100%);
+            transition: transform 0.25s cubic-bezier(0.4, 0.0, 0.2, 1);
+        }
+
+        .menu-bar.menu-open {
+            transform: translateY(0);
+        }
+
+        .menu-wordmark {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .menu-nav {
+            display: flex;
+            gap: var(--space-md);
+            align-items: center;
+        }
+
+        .menu-nav a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 400;
+            padding: var(--space-xs) var(--space-sm);
+            border-radius: 4px;
+            transition: all 0.15s ease;
+            position: relative;
+        }
+
+        .menu-nav a:hover {
+            color: var(--text-primary);
+        }
+
+        .menu-nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: var(--cat-ai-fundamentals);
+            transition: all 0.15s ease;
+            transform: translateX(-50%);
+        }
+
+        .menu-nav a:hover::after {
+            width: 80%;
+        }
+
+        .menu-nav a.active {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        .menu-nav a.active::after {
+            width: 80%;
+        }
+
+        .menu-utilities {
+            display: flex;
+            gap: var(--space-sm);
+            align-items: center;
+        }
+
+        .menu-close,
+        .theme-toggle-btn {
+            background: none;
+            border: none;
+            color: var(--text-primary);
+            font-size: 24px;
+            cursor: pointer;
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 4px;
+            transition: all 0.2s ease;
+        }
+
+        .menu-close:hover,
+        .theme-toggle-btn:hover {
+            background: var(--surface-elevated);
+        }
+
+        /* Page Type Selector (Demo Only) */
+        .page-selector {
+            position: fixed;
+            bottom: var(--space-md);
+            left: var(--space-md);
+            background: var(--surface);
+            padding: var(--space-sm) var(--space-md);
+            border-radius: 8px;
+            border: 2px solid var(--surface-elevated);
+            z-index: 999;
+        }
+
+        .page-selector button {
+            background: var(--surface-elevated);
+            border: none;
+            color: var(--text-primary);
+            padding: var(--space-xs) var(--space-sm);
+            margin: 0 var(--space-xs);
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.875rem;
+            transition: all 0.2s ease;
+        }
+
+        .page-selector button.active {
+            background: var(--cat-ai-fundamentals);
+            color: #F5F5DC;
+        }
+
+        .page-selector button:hover {
+            transform: scale(1.05);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: var(--space-xl) 80px;
+        }
+
+        /* Header */
+        .header {
+            margin-bottom: var(--space-2xl);
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: var(--space-md);
+            color: var(--text-primary);
+        }
+
+        .subtitle {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            line-height: 2.0;
+        }
+
+        /* Section Breaks */
+        section {
+            margin-bottom: var(--space-2xl);
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: var(--space-lg);
+            color: var(--text-primary);
+        }
+
+        /* Color Palette Display */
+        .color-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--space-md);
+            margin-bottom: var(--space-xl);
+        }
+
+        .color-swatch {
+            background: var(--surface);
+            border-radius: 12px;
+            padding: var(--space-md);
+            text-align: center;
+            transition: transform 0.2s ease;
+        }
+
+        .color-swatch:hover {
+            transform: translateY(-4px);
+        }
+
+        .color-circle {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin: 0 auto var(--space-sm);
+        }
+
+        .color-name {
+            font-weight: 600;
+            margin-bottom: var(--space-xs);
+            color: var(--text-primary);
+        }
+
+        .color-hex {
+            font-family: 'Courier New', monospace;
+            font-size: 0.875rem;
+            color: var(--text-tertiary);
+        }
+
+        /* Masonry Grid Mockup */
+        .masonry-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--space-md);
+        }
+
+        .article-card {
+            background: var(--surface);
+            border-radius: 16px;
+            padding: 0;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .article-card-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, var(--category-color), var(--surface-elevated));
+            border-radius: 16px 16px 0 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .article-card-image::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 4rem;
+            opacity: 0.2;
+        }
+
+        .article-card-content {
+            padding: var(--space-lg);
+        }
+
+        .article-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--category-color);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .article-card:hover::before {
+            opacity: 1;
+        }
+
+        .article-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Expanded Article State */
+        body.article-expanded .masonry-grid {
+            filter: blur(8px);
+            opacity: 0.3;
+            pointer-events: none;
+        }
+
+        body.article-expanded .menu-button {
+            opacity: 0.6;
+        }
+
+        .article-expanded-view {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 900;
+            overflow-y: auto;
+            background: var(--bg);
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.25s ease;
+        }
+
+        .article-expanded-view.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .article-content-wrapper {
+            max-width: 680px;
+            margin: 0 auto;
+            padding: var(--space-2xl) var(--space-md);
+        }
+
+        .article-header {
+            margin-bottom: var(--space-xl);
+            padding: var(--space-xl);
+            border-radius: 16px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .article-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, var(--category-color), var(--surface-elevated));
+            opacity: 0.15;
+            filter: blur(20px);
+            z-index: 0;
+        }
+
+        .article-header > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        .article-close {
+            position: fixed;
+            top: var(--space-md);
+            left: var(--space-md);
+            width: 48px;
+            height: 48px;
+            background: var(--surface-elevated);
+            border: 2px solid var(--cat-ai-fundamentals);
+            border-radius: 8px;
+            color: var(--text-primary);
+            font-size: 24px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 901;
+            transition: all 0.2s ease;
+        }
+
+        .article-close:hover {
+            background: var(--cat-ai-fundamentals);
+            transform: scale(1.1);
+        }
+
+        .article-nav-buttons {
+            position: fixed;
+            bottom: var(--space-xl);
+            right: var(--space-xl);
+            display: flex;
+            gap: var(--space-sm);
+            z-index: 901;
+        }
+
+        .article-nav-btn {
+            width: 48px;
+            height: 48px;
+            background: var(--surface-elevated);
+            border: 2px solid var(--cat-ai-fundamentals);
+            border-radius: 8px;
+            color: var(--text-primary);
+            font-size: 20px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+        }
+
+        .article-nav-btn:hover {
+            background: var(--cat-ai-fundamentals);
+            transform: scale(1.1);
+        }
+
+        .article-summary {
+            background: var(--surface);
+            padding: var(--space-lg);
+            border-radius: 12px;
+            border-left: 4px solid var(--category-color);
+            margin-bottom: var(--space-xl);
+        }
+
+        .article-summary h3 {
+            color: var(--text-primary);
+            font-size: 1.25rem;
+            margin-bottom: var(--space-md);
+        }
+
+        .article-body {
+            margin-bottom: var(--space-xl);
+        }
+
+        .article-body h2 {
+            color: var(--text-primary);
+            font-size: 2rem;
+            margin-top: var(--space-xl);
+            margin-bottom: var(--space-md);
+        }
+
+        .article-body h3 {
+            color: var(--text-primary);
+            font-size: 1.5rem;
+            margin-top: var(--space-lg);
+            margin-bottom: var(--space-md);
+        }
+
+        .article-body p {
+            margin-bottom: var(--space-md);
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+
+        .article-body ul {
+            margin: var(--space-md) 0;
+            padding-left: var(--space-lg);
+        }
+
+        .article-body li {
+            margin-bottom: var(--space-sm);
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+
+        .article-body table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: var(--space-lg) 0;
+            background: var(--surface);
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid var(--surface-elevated);
+        }
+
+        .article-body thead {
+            background: var(--surface-elevated);
+        }
+
+        .article-body th {
+            padding: var(--space-md);
+            text-align: left;
+            font-weight: 600;
+            color: var(--text-primary);
+            border-bottom: 2px solid var(--category-color);
+        }
+
+        .article-body td {
+            padding: var(--space-md);
+            color: var(--text-secondary);
+            border-bottom: 1px solid var(--surface-elevated);
+        }
+
+        .article-body tbody tr:nth-child(even) {
+            background: rgba(0, 0, 0, 0.05);
+        }
+
+        body.light-mode .article-body tbody tr:nth-child(even) {
+            background: rgba(0, 0, 0, 0.02);
+        }
+
+        .article-body tbody tr:hover {
+            background: var(--surface-elevated);
+            transition: background 0.15s ease;
+        }
+
+        .article-body tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* Code blocks */
+        .article-body code {
+            background: var(--surface-elevated);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+            color: var(--cat-ai-fundamentals);
+        }
+
+        .article-body pre {
+            background: var(--surface);
+            padding: var(--space-md);
+            border-radius: 8px;
+            border-left: 4px solid var(--category-color);
+            overflow-x: auto;
+            margin: var(--space-lg) 0;
+        }
+
+        .article-body pre code {
+            background: none;
+            padding: 0;
+            color: var(--text-secondary);
+        }
+
+        /* Blockquotes */
+        .article-body blockquote {
+            border-left: 4px solid var(--category-color);
+            padding-left: var(--space-lg);
+            margin: var(--space-lg) 0;
+            color: var(--text-tertiary);
+            font-style: italic;
+        }
+
+        .related-articles {
+            border-top: 2px solid var(--surface-elevated);
+            padding-top: var(--space-xl);
+            margin-top: var(--space-2xl);
+        }
+
+        .related-articles h3 {
+            color: var(--text-primary);
+            font-size: 1.5rem;
+            margin-bottom: var(--space-lg);
+        }
+
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--space-md);
+        }
+
+        .related-card {
+            background: var(--surface);
+            padding: var(--space-md);
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            border: 2px solid transparent;
+        }
+
+        .related-card:hover {
+            border-color: var(--cat-ai-fundamentals);
+            transform: translateY(-4px);
+        }
+
+        .related-card-title {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: var(--space-xs);
+        }
+
+        .related-card-meta {
+            font-size: 0.875rem;
+            color: var(--text-tertiary);
+        }
+
+        .category-badge {
+            display: inline-block;
+            padding: var(--space-xs) var(--space-sm);
+            background: var(--category-color);
+            color: var(--badge-text);
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: var(--space-md);
+        }
+
+        /* Smart badge text colors - dark badges get light text, light badges get dark text */
+        .cat-ai-fundamentals { --category-color: var(--cat-ai-fundamentals); --badge-text: #F5F5DC; }
+        .cat-risks-principles { --category-color: var(--cat-risks-principles); --badge-text: #333d29; }
+        .cat-legal-frameworks { --category-color: var(--cat-legal-frameworks); --badge-text: #333d29; }
+        .cat-ai-laws { --category-color: var(--cat-ai-laws); --badge-text: #F5F5DC; }
+        .cat-risk-frameworks { --category-color: var(--cat-risk-frameworks); --badge-text: #F5F5DC; }
+        .cat-governance { --category-color: var(--cat-governance); --badge-text: #333d29; }
+
+        .article-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: var(--space-sm);
+            color: var(--text-primary);
+            line-height: 1.4;
+        }
+
+        .article-meta {
+            display: flex;
+            gap: var(--space-sm);
+            color: var(--text-tertiary);
+            font-size: 0.875rem;
+            margin-bottom: var(--space-md);
+        }
+
+        .article-excerpt {
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+
+
+        /* Whitespace Demo Section */
+        .whitespace-demo {
+            background: var(--surface);
+            padding: var(--space-xl);
+            border-radius: 16px;
+        }
+
+        .spacing-example {
+            margin-bottom: var(--space-lg);
+        }
+
+        .spacing-label {
+            color: var(--text-tertiary);
+            font-size: 0.875rem;
+            margin-bottom: var(--space-xs);
+            font-family: 'Courier New', monospace;
+        }
+
+        .spacing-block {
+            background: var(--cat-ai-fundamentals);
+            height: 40px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--bg);
+            font-weight: 600;
+        }
+
+        /* Typography Scale */
+        .type-scale h1 { font-size: 3.5rem; margin-bottom: var(--space-md); }
+        .type-scale h2 { font-size: 2.5rem; margin-bottom: var(--space-md); }
+        .type-scale h3 { font-size: 2rem; margin-bottom: var(--space-md); }
+        .type-scale h4 { font-size: 1.5rem; margin-bottom: var(--space-md); }
+        .type-scale p { font-size: 1rem; line-height: 1.8; color: var(--text-secondary); }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .masonry-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .container {
+                padding: var(--space-lg) var(--space-md);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .masonry-grid {
+                grid-template-columns: 1fr;
+            }
+            h1 {
+                font-size: 2.5rem;
+            }
+            .container {
+                padding: var(--space-md) var(--space-sm);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating Menu Button (Collapsed) -->
+    <button class="menu-button" onclick="toggleMenu()" id="menuButton">☰</button>
+
+    <!-- Expanded Menu Bar -->
+    <div class="menu-bar" id="menuBar">
+        <div class="menu-wordmark">AIDefence</div>
+        <nav class="menu-nav" id="menuNav">
+            <!-- Menu items will be populated by JavaScript based on page type -->
+        </nav>
+        <div class="menu-utilities">
+            <button class="theme-toggle-btn" onclick="toggleTheme()" title="Toggle Theme">◐</button>
+            <button class="menu-close" onclick="toggleMenu()" title="Close Menu">×</button>
+        </div>
+    </div>
+
+    <!-- Page Type Selector (Demo Only) -->
+    <div class="page-selector">
+        <span style="color: var(--text-tertiary); font-size: 0.875rem; margin-right: 8px;">Demo:</span>
+        <button onclick="setPageType('homepage')" id="btnHomepage">Homepage Menu</button>
+        <button onclick="setPageType('articles')" id="btnArticles" class="active">Articles Menu</button>
+    </div>
+
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1>AIDefence</h1>
+            <p class="subtitle">Color System & Whitespace Mockup - Your elegant, earth-toned palette with generous breathing room, inspired by Maude's sophistication.</p>
+        </header>
+
+        <!-- Color Palette -->
+        <section>
+            <h2>Category Color Palette</h2>
+            <div class="color-grid">
+                <div class="color-swatch">
+                    <div class="color-circle" style="background: #936639;"></div>
+                    <div class="color-name">AI Fundamentals</div>
+                    <div class="color-hex">#936639 Toffee Brown</div>
+                </div>
+                <div class="color-swatch">
+                    <div class="color-circle" style="background: #a68a64;"></div>
+                    <div class="color-name">AI Risks & Principles</div>
+                    <div class="color-hex">#a68a64 Camel</div>
+                </div>
+                <div class="color-swatch">
+                    <div class="color-circle" style="background: #a4ac86;"></div>
+                    <div class="color-name">Legal Frameworks</div>
+                    <div class="color-hex">#a4ac86 Dry Sage</div>
+                </div>
+                <div class="color-swatch">
+                    <div class="color-circle" style="background: #7f4f24;"></div>
+                    <div class="color-name">AI Laws</div>
+                    <div class="color-hex">#7f4f24 Saddle Brown</div>
+                </div>
+                <div class="color-swatch">
+                    <div class="color-circle" style="background: #582f0e;"></div>
+                    <div class="color-name">Risk Frameworks</div>
+                    <div class="color-hex">#582f0e Dark Walnut</div>
+                </div>
+                <div class="color-swatch">
+                    <div class="color-circle" style="background: #b6ad90;"></div>
+                    <div class="color-name">Dev Lifecycle</div>
+                    <div class="color-hex">#b6ad90 Khaki Beige</div>
+                </div>
+                <div class="color-swatch">
+                    <div class="color-circle" style="background: #c2c5aa;"></div>
+                    <div class="color-name">Governance</div>
+                    <div class="color-hex">#c2c5aa Dry Sage (Alt)</div>
+                </div>
+                <div class="color-swatch">
+                    <div class="color-circle" style="background: #656d4a;"></div>
+                    <div class="color-name">Auditing</div>
+                    <div class="color-hex">#656d4a Dusty Olive</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Structural Colors -->
+        <section>
+            <h2>Structural Colors</h2>
+            <div class="color-grid">
+                <div class="color-swatch">
+                    <div class="color-circle" style="background: #333d29;"></div>
+                    <div class="color-name">Background</div>
+                    <div class="color-hex">#333d29 Charcoal Brown</div>
+                </div>
+                <div class="color-swatch">
+                    <div class="color-circle" style="background: #414833;"></div>
+                    <div class="color-name">Surface (Cards)</div>
+                    <div class="color-hex">#414833 Ebony</div>
+                </div>
+                <div class="color-swatch">
+                    <div class="color-circle" style="background: #656d4a;"></div>
+                    <div class="color-name">Surface Elevated</div>
+                    <div class="color-hex">#656d4a Dusty Olive</div>
+                </div>
+                <div class="color-swatch">
+                    <div class="color-circle" style="background: #F5F5DC;"></div>
+                    <div class="color-name">Text Primary</div>
+                    <div class="color-hex">#F5F5DC Beige</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Masonry Grid Example -->
+        <section>
+            <h2>Article Cards with Generous Whitespace</h2>
+            <p class="subtitle" style="margin-bottom: var(--space-lg);">Click any card to see the expandable inline reading experience with smooth animations.</p>
+            <div class="masonry-grid">
+                <div class="article-card cat-ai-fundamentals" onclick="expandArticle(0)">
+                    <div class="article-card-image"></div>
+                    <div class="article-card-content">
+                        <span class="category-badge">AI Fundamentals</span>
+                        <h3 class="article-title">Large Language Models Explained</h3>
+                        <div class="article-meta">
+                            <span>12 min read</span>
+                            <span>•</span>
+                            <span>Dec 15, 2025</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="article-card cat-legal-frameworks" onclick="expandArticle(1)">
+                    <div class="article-card-image"></div>
+                    <div class="article-card-content">
+                        <span class="category-badge">Legal Frameworks</span>
+                        <h3 class="article-title">EU AI Act Compliance Guide</h3>
+                        <div class="article-meta">
+                            <span>18 min read</span>
+                            <span>•</span>
+                            <span>Dec 12, 2025</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="article-card cat-risks-principles" onclick="expandArticle(2)">
+                    <div class="article-card-image"></div>
+                    <div class="article-card-content">
+                        <span class="category-badge">AI Risks</span>
+                        <h3 class="article-title">Bias Detection in AI Systems</h3>
+                        <div class="article-meta">
+                            <span>10 min read</span>
+                            <span>•</span>
+                            <span>Dec 10, 2025</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="article-card cat-ai-laws" onclick="expandArticle(3)">
+                    <div class="article-card-image"></div>
+                    <div class="article-card-content">
+                        <span class="category-badge">AI Laws</span>
+                        <h3 class="article-title">International AI Regulations</h3>
+                        <div class="article-meta">
+                            <span>15 min read</span>
+                            <span>•</span>
+                            <span>Dec 8, 2025</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="article-card cat-governance" onclick="expandArticle(4)">
+                    <div class="article-card-image"></div>
+                    <div class="article-card-content">
+                        <span class="category-badge">Governance</span>
+                        <h3 class="article-title">AI Ethics Frameworks</h3>
+                        <div class="article-meta">
+                            <span>14 min read</span>
+                            <span>•</span>
+                            <span>Dec 5, 2025</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="article-card cat-risk-frameworks" onclick="expandArticle(5)">
+                    <div class="article-card-image"></div>
+                    <div class="article-card-content">
+                        <span class="category-badge">Risk Frameworks</span>
+                        <h3 class="article-title">NIST AI Risk Management</h3>
+                        <div class="article-meta">
+                            <span>16 min read</span>
+                            <span>•</span>
+                            <span>Dec 1, 2025</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Expanded Article View (Hidden by default) -->
+        <div class="article-expanded-view" id="articleExpandedView">
+            <button class="article-close" onclick="closeArticle()">←</button>
+
+            <div class="article-nav-buttons">
+                <button class="article-nav-btn" onclick="navigateArticle('prev')" title="Previous Article">◄</button>
+                <button class="article-nav-btn" onclick="navigateArticle('next')" title="Next Article">►</button>
+            </div>
+
+            <div class="article-content-wrapper" id="articleContentWrapper">
+                <!-- Content will be dynamically loaded here -->
+            </div>
+        </div>
+
+        <!-- Whitespace System -->
+        <section>
+            <h2>Whitespace System</h2>
+            <div class="whitespace-demo">
+                <div class="spacing-example">
+                    <div class="spacing-label">--space-xs: 8px (tight grouping)</div>
+                    <div style="display: flex; gap: 8px;">
+                        <div class="spacing-block" style="flex: 1;">8px</div>
+                        <div class="spacing-block" style="flex: 1;">8px</div>
+                        <div class="spacing-block" style="flex: 1;">8px</div>
+                    </div>
+                </div>
+
+                <div class="spacing-example">
+                    <div class="spacing-label">--space-md: 32px (card padding)</div>
+                    <div style="display: flex; gap: 32px;">
+                        <div class="spacing-block" style="flex: 1;">32px</div>
+                        <div class="spacing-block" style="flex: 1;">32px</div>
+                    </div>
+                </div>
+
+                <div class="spacing-example">
+                    <div class="spacing-label">--space-lg: 64px (between cards)</div>
+                    <div style="display: flex; gap: 64px;">
+                        <div class="spacing-block" style="flex: 1;">64px</div>
+                        <div class="spacing-block" style="flex: 1;">64px</div>
+                    </div>
+                </div>
+
+                <div class="spacing-example">
+                    <div class="spacing-label">--space-2xl: 160px (major sections)</div>
+                    <div class="spacing-block">160px</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Typography -->
+        <section class="type-scale">
+            <h2>Typography Scale</h2>
+            <div class="whitespace-demo">
+                <h1>Heading 1 - 3.5rem</h1>
+                <h2>Heading 2 - 2.5rem</h2>
+                <h3>Heading 3 - 2rem</h3>
+                <h4>Heading 4 - 1.5rem</h4>
+                <p>Body text - 1rem with 1.8 line height for comfortable reading. Notice how the generous line height makes long-form content feel less dense and more inviting to read.</p>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // State
+        let currentPageType = 'articles'; // Default to articles page
+        let menuOpen = false;
+        let currentArticleIndex = 0;
+        let articleExpanded = false;
+
+        // Menu items for each page type
+        const menuItems = {
+            homepage: [
+                { label: 'About', href: '#', active: false },
+                { label: 'Resume', href: '#', active: false },
+                { label: 'Portfolio', href: '#', active: false },
+                { label: 'Articles', href: '#', active: false }
+            ],
+            articles: [
+                { label: 'Home', href: '#', active: false },
+                { label: 'Portfolio', href: '#', active: false },
+                { label: 'Articles', href: '#', active: true }
+            ]
+        };
+
+        // Toggle menu open/closed
+        function toggleMenu() {
+            menuOpen = !menuOpen;
+            const menuBar = document.getElementById('menuBar');
+            const menuButton = document.getElementById('menuButton');
+
+            if (menuOpen) {
+                menuBar.classList.add('menu-open');
+                menuButton.classList.add('menu-open');
+            } else {
+                menuBar.classList.remove('menu-open');
+                menuButton.classList.remove('menu-open');
+            }
+        }
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const menuBar = document.getElementById('menuBar');
+            const menuButton = document.getElementById('menuButton');
+
+            if (menuOpen &&
+                !menuBar.contains(event.target) &&
+                !menuButton.contains(event.target)) {
+                toggleMenu();
+            }
+        });
+
+        // Set page type (Homepage vs Articles)
+        function setPageType(type) {
+            currentPageType = type;
+
+            // Update button states
+            document.getElementById('btnHomepage').classList.toggle('active', type === 'homepage');
+            document.getElementById('btnArticles').classList.toggle('active', type === 'articles');
+
+            // Update menu items
+            renderMenuItems();
+        }
+
+        // Render menu items based on current page type
+        function renderMenuItems() {
+            const menuNav = document.getElementById('menuNav');
+            const items = menuItems[currentPageType];
+
+            menuNav.innerHTML = items.map(item =>
+                `<a href="${item.href}" class="${item.active ? 'active' : ''}">${item.label}</a>`
+            ).join('');
+        }
+
+        // Toggle theme
+        function toggleTheme() {
+            document.body.classList.toggle('light-mode');
+        }
+
+        // Article Data
+        const articles = [
+            {
+                category: 'AI Fundamentals',
+                categoryClass: 'cat-ai-fundamentals',
+                title: 'Large Language Models Explained',
+                readTime: '12 min read',
+                date: 'Dec 15, 2025',
+                summary: 'Large Language Models (LLMs) represent a breakthrough in artificial intelligence, capable of understanding and generating human-like text through sophisticated neural architectures. This article explores how these models work and their implications for AI governance.',
+                content: `
+                    <h2>What Are Large Language Models?</h2>
+                    <p>Large Language Models are transformer-based neural networks trained on vast amounts of text data. They learn patterns, context, and relationships in language, enabling them to generate coherent and contextually relevant responses.</p>
+
+                    <h3>Key Components</h3>
+                    <ul>
+                        <li><strong>Transformer Architecture:</strong> Self-attention mechanisms that allow the model to weigh the importance of different words in context.</li>
+                        <li><strong>Training Scale:</strong> Billions of parameters trained on diverse internet text, books, and specialized datasets.</li>
+                        <li><strong>Emergent Capabilities:</strong> Abilities like reasoning, translation, and code generation that emerge from scale.</li>
+                    </ul>
+
+                    <h3>Applications in AI Governance</h3>
+                    <p>Understanding LLMs is crucial for governance because they introduce unique risks: bias amplification, hallucinations, and opacity in decision-making. Effective governance requires technical literacy about how these systems function.</p>
+
+                    <h2>Implications for Regulation</h2>
+                    <p>Regulators must balance innovation with safety. Key considerations include transparency requirements, accountability frameworks, and testing protocols for high-risk applications.</p>
+                `
+            },
+            {
+                category: 'Legal Frameworks',
+                categoryClass: 'cat-legal-frameworks',
+                title: 'EU AI Act Compliance Guide',
+                readTime: '18 min read',
+                date: 'Dec 12, 2025',
+                summary: 'The European Union AI Act establishes the world\'s first comprehensive legal framework for artificial intelligence. Organizations must understand their compliance obligations based on risk classifications.',
+                content: `
+                    <h2>Understanding Risk-Based Classification</h2>
+                    <p>The EU AI Act categorizes AI systems into four risk levels: unacceptable risk (banned), high risk (strict requirements), limited risk (transparency obligations), and minimal risk (voluntary codes).</p>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Risk Level</th>
+                                <th>Examples</th>
+                                <th>Requirements</th>
+                                <th>Penalties</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Unacceptable</strong></td>
+                                <td>Social scoring, manipulative AI, real-time biometric ID (public)</td>
+                                <td>Banned outright</td>
+                                <td>Up to €35M or 7% revenue</td>
+                            </tr>
+                            <tr>
+                                <td><strong>High Risk</strong></td>
+                                <td>Critical infrastructure, employment, law enforcement, education</td>
+                                <td>Strict compliance: risk mgmt, documentation, oversight</td>
+                                <td>Up to €15M or 3% revenue</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Limited Risk</strong></td>
+                                <td>Chatbots, emotion recognition, deepfakes</td>
+                                <td>Transparency obligations (disclosure)</td>
+                                <td>Up to €7.5M or 1.5% revenue</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Minimal Risk</strong></td>
+                                <td>Spam filters, video games, inventory management</td>
+                                <td>Voluntary codes of conduct</td>
+                                <td>None (voluntary)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h3>High-Risk AI Systems</h3>
+                    <ul>
+                        <li><strong>Critical infrastructure:</strong> Systems controlling water, gas, electricity, or transport</li>
+                        <li><strong>Education and employment:</strong> CV screening, exam scoring, hiring decisions</li>
+                        <li><strong>Law enforcement:</strong> Predictive policing, evidence evaluation, lie detection</li>
+                        <li><strong>Migration and border control:</strong> Visa processing, asylum applications</li>
+                    </ul>
+
+                    <h2>Compliance Requirements</h2>
+                    <p>High-risk systems must implement risk management, data governance, technical documentation, transparency, human oversight, and accuracy/robustness measures. Non-compliance can result in fines up to €15 million or 3% of global annual revenue, whichever is higher.</p>
+
+                    <blockquote>
+                        "The EU AI Act represents a paradigm shift in how we regulate emerging technologies—moving from reactive enforcement to proactive risk management." — European Commission
+                    </blockquote>
+
+                    <h3>Key Compliance Steps</h3>
+                    <p>Organizations should begin by conducting a <code>risk assessment</code> to determine their AI system's classification. For high-risk systems, establish a comprehensive compliance program including:</p>
+                    <ul>
+                        <li>Documented risk management system</li>
+                        <li>Data quality and governance protocols</li>
+                        <li>Technical documentation and record-keeping</li>
+                        <li>Transparency and information to users</li>
+                        <li>Human oversight mechanisms</li>
+                    </ul>
+                `
+            },
+            {
+                category: 'AI Risks & Principles',
+                categoryClass: 'cat-risks-principles',
+                title: 'Bias Detection in AI Systems',
+                readTime: '10 min read',
+                date: 'Dec 10, 2025',
+                summary: 'Algorithmic bias can perpetuate and amplify societal inequalities. This guide provides practical methods for detecting and mitigating bias across the AI development lifecycle.',
+                content: `
+                    <h2>Sources of Bias</h2>
+                    <p>Bias enters AI systems through multiple pathways: biased training data, flawed feature selection, optimization objectives misaligned with fairness, and deployment contexts that differ from training scenarios.</p>
+
+                    <h3>Detection Methods</h3>
+                    <ul>
+                        <li><strong>Disparate Impact Analysis:</strong> Measure performance differences across demographic groups</li>
+                        <li><strong>Fairness Metrics:</strong> Apply demographic parity, equalized odds, or calibration metrics</li>
+                        <li><strong>Bias Audits:</strong> Independent third-party evaluation of model behavior</li>
+                    </ul>
+
+                    <h2>Mitigation Strategies</h2>
+                    <p>Effective mitigation requires a multi-pronged approach: diversify training data, implement fairness constraints during training, conduct ongoing monitoring, and establish human review processes for high-stakes decisions.</p>
+                `
+            },
+            {
+                category: 'AI Laws',
+                categoryClass: 'cat-ai-laws',
+                title: 'International AI Regulations',
+                readTime: '15 min read',
+                date: 'Dec 8, 2025',
+                summary: 'A comparative analysis of AI regulatory frameworks across major jurisdictions reveals divergent approaches balancing innovation, safety, and human rights.',
+                content: `
+                    <h2>Global Regulatory Landscape</h2>
+                    <p>Different regions are taking distinct approaches: the EU prioritizes rights-based regulation, the US favors sector-specific guidance, and China emphasizes algorithmic accountability and content control.</p>
+
+                    <h3>Key Jurisdictions</h3>
+                    <ul>
+                        <li><strong>European Union:</strong> Comprehensive AI Act with risk-based framework</li>
+                        <li><strong>United States:</strong> Executive orders, agency guidance, and state-level laws</li>
+                        <li><strong>China:</strong> Algorithmic recommendation regulations and content moderation</li>
+                        <li><strong>United Kingdom:</strong> Pro-innovation approach with sector regulators</li>
+                    </ul>
+
+                    <h2>Convergence and Divergence</h2>
+                    <p>While approaches differ, common themes emerge: transparency requirements, human oversight mandates, and accountability frameworks. Organizations operating globally must navigate this patchwork of regulations.</p>
+                `
+            },
+            {
+                category: 'Governance',
+                categoryClass: 'cat-governance',
+                title: 'AI Ethics Frameworks',
+                readTime: '14 min read',
+                date: 'Dec 5, 2025',
+                summary: 'Establishing robust ethical guidelines is essential for responsible AI development. This article examines leading frameworks and best practices for organizational AI ethics.',
+                content: `
+                    <h2>Foundational Principles</h2>
+                    <p>Most AI ethics frameworks converge on core principles: fairness, transparency, accountability, privacy, safety, and human autonomy. The challenge lies in operationalizing these abstract values.</p>
+
+                    <h3>Leading Frameworks</h3>
+                    <ul>
+                        <li><strong>OECD AI Principles:</strong> Inclusive growth, sustainable development, human-centered values</li>
+                        <li><strong>IEEE Ethically Aligned Design:</strong> Technical standards for ethical AI implementation</li>
+                        <li><strong>Montreal Declaration:</strong> Rights-based approach to AI development</li>
+                    </ul>
+
+                    <h2>Implementation Strategies</h2>
+                    <p>Effective implementation requires governance structures (ethics boards, review processes), technical tools (bias detection, explainability), training programs, and accountability mechanisms including incident reporting and redress pathways.</p>
+                `
+            },
+            {
+                category: 'Risk Frameworks',
+                categoryClass: 'cat-risk-frameworks',
+                title: 'NIST AI Risk Management',
+                readTime: '16 min read',
+                date: 'Dec 1, 2025',
+                summary: 'The NIST AI Risk Management Framework provides a structured approach to identifying, assessing, and managing risks throughout the AI lifecycle.',
+                content: `
+                    <h2>Framework Overview</h2>
+                    <p>NIST's framework is voluntary, risk-based, and designed to be flexible across sectors and organization sizes. It organizes risk management into four functions: Govern, Map, Measure, and Manage.</p>
+
+                    <h3>The Four Functions</h3>
+                    <ul>
+                        <li><strong>Govern:</strong> Establish policies, oversight, and accountability structures</li>
+                        <li><strong>Map:</strong> Identify context, risks, and impacts of AI systems</li>
+                        <li><strong>Measure:</strong> Assess, benchmark, and monitor identified risks</li>
+                        <li><strong>Manage:</strong> Prioritize and respond to risks through mitigation strategies</li>
+                    </ul>
+
+                    <h2>Integration with Existing Processes</h2>
+                    <p>The framework aligns with enterprise risk management and can be integrated with existing quality assurance, compliance, and security processes. It emphasizes continuous improvement and adaptation to emerging risks.</p>
+                `
+            }
+        ];
+
+        // Expand article
+        function expandArticle(index) {
+            currentArticleIndex = index;
+            articleExpanded = true;
+
+            const article = articles[index];
+            const expandedView = document.getElementById('articleExpandedView');
+            const contentWrapper = document.getElementById('articleContentWrapper');
+
+            // Build article content
+            contentWrapper.innerHTML = `
+                <div class="article-header ${article.categoryClass}">
+                    <span class="category-badge">${article.category}</span>
+                    <h1 class="article-title">${article.title}</h1>
+                    <div class="article-meta">
+                        <span>${article.readTime}</span>
+                        <span>•</span>
+                        <span>${article.date}</span>
+                    </div>
+                </div>
+
+                <div class="article-summary ${article.categoryClass}">
+                    <h3>Summary</h3>
+                    <p>${article.summary}</p>
+                </div>
+
+                <div class="article-body">
+                    ${article.content}
+                </div>
+
+                <div class="related-articles">
+                    <h3>Related Articles</h3>
+                    <div class="related-grid">
+                        ${getRelatedArticles(index)}
+                    </div>
+                </div>
+            `;
+
+            // Show expanded view with animation
+            document.body.classList.add('article-expanded');
+            setTimeout(() => {
+                expandedView.classList.add('active');
+            }, 50);
+
+            // Scroll to top
+            expandedView.scrollTop = 0;
+        }
+
+        // Close article
+        function closeArticle() {
+            articleExpanded = false;
+            const expandedView = document.getElementById('articleExpandedView');
+
+            expandedView.classList.remove('active');
+            setTimeout(() => {
+                document.body.classList.remove('article-expanded');
+            }, 250);
+        }
+
+        // Navigate between articles
+        function navigateArticle(direction) {
+            if (direction === 'next') {
+                currentArticleIndex = (currentArticleIndex + 1) % articles.length;
+            } else {
+                currentArticleIndex = (currentArticleIndex - 1 + articles.length) % articles.length;
+            }
+            expandArticle(currentArticleIndex);
+        }
+
+        // Get related articles (exclude current article)
+        function getRelatedArticles(currentIndex) {
+            const relatedIndices = [0, 1, 2, 3].filter(i => i !== currentIndex).slice(0, 3);
+            return relatedIndices.map(i => {
+                const article = articles[i];
+                return `
+                    <div class="related-card ${article.categoryClass}" onclick="expandArticle(${i})">
+                        <span class="category-badge">${article.category}</span>
+                        <div class="related-card-title">${article.title}</div>
+                        <div class="related-card-meta">${article.readTime}</div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', function(e) {
+            if (articleExpanded) {
+                if (e.key === 'Escape') {
+                    closeArticle();
+                } else if (e.key === 'ArrowLeft') {
+                    navigateArticle('prev');
+                } else if (e.key === 'ArrowRight') {
+                    navigateArticle('next');
+                }
+            }
+        });
+
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            renderMenuItems();
+        });
+    </script>
+</body>
+</html>

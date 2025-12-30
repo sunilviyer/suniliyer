@@ -1,0 +1,115 @@
+{
+  "file_status": {
+    "suggested_slug": "article-63-brazils-ai-bill-regulation-in-latin-america",
+    "category": "AI Laws",
+    "word_count_check": {
+      "target": null,
+      "actual": 2146,
+      "status": "under"
+    }
+  },
+  "content_validation": {
+    "structure": {
+      "has_h1": true,
+      "has_intro": true,
+      "has_conclusion": true,
+      "header_depth_valid": true
+    },
+    "generated_elements": {
+      "tldr_was_missing": true,
+      "objectives_were_missing": false,
+      "keywords_were_missing": false
+    }
+  },
+  "component_inventory": {
+    "has_components": true,
+    "items": [
+      {
+        "type": "table",
+        "label": "Requirement vs Description Table",
+        "detected_at_section": "Governance Requirements for High-Risk AI"
+      },
+      {
+        "type": "table",
+        "label": "Aspect vs Brazil AI Bill Table",
+        "detected_at_section": "Brazil vs. EU AI Act"
+      },
+      {
+        "type": "table",
+        "label": "Aspect vs Brazil Table",
+        "detected_at_section": "Brazil vs. US Approach"
+      },
+      {
+        "type": "table",
+        "label": "Phase vs Timeframe Table",
+        "detected_at_section": "Timeline for Preparation"
+      },
+      {
+        "type": "flowchart",
+        "label": "Rights for People Affected by AI Process",
+        "detected_at_section": "Rights for People Affected by AI"
+      },
+      {
+        "type": "flowchart",
+        "label": "Preparation Steps Process",
+        "detected_at_section": "Preparation Steps"
+      },
+      {
+        "type": "flowchart",
+        "label": "Conclusion Process",
+        "detected_at_section": "Conclusion"
+      },
+      {
+        "type": "flowchart",
+        "label": "Sources Process",
+        "detected_at_section": "Sources"
+      },
+      {
+        "type": "list",
+        "label": "Governance Requirements for High-Risk AI",
+        "detected_at_section": "Governance Requirements for High-Risk AI"
+      }
+    ]
+  },
+  "extracted_data": {
+    "title": "Article 63: Brazil's AI Bill – Regulation in Latin America",
+    "tldr": "",
+    "learning_objectives": [
+      "Understand the key concepts and principles of ai governance frameworks",
+      "Implement model validation processes in real-world scenarios",
+      "Evaluate regulatory requirements for organizational compliance"
+    ],
+    "seo_keywords": [
+      "article",
+      "brazil",
+      "AI governance",
+      "artificial intelligence",
+      "AI ethics"
+    ],
+    "references": []
+  },
+  "cross_reference_data": {
+    "topic_fingerprint": [
+      "governance framework",
+      "transparency",
+      "oversight",
+      "risk assessment",
+      "accountability"
+    ],
+    "named_examples": [
+      "congress",
+      "eu ai act",
+      "fintech",
+      "gdpr"
+    ]
+  },
+  "image_generation": {
+    "prompt": {
+      "formula": "Abstract geometric illustration, earth tones, minimalist, professional",
+      "category_motif": "legal documents",
+      "master_size": "1200x750px",
+      "css_filters": true
+    },
+    "placeholder": "![Article 63: Brazil's AI Bill – Regulation in Latin America]({{IMAGE_PLACEHOLDER_article-63-brazils-ai-bill-regulation-in-latin-america}})"
+  }
+}

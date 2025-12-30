@@ -1,0 +1,74 @@
+# === FILE STATUS ===
+suggested_slug: "article-50-the-eu-ai-liability-directive-shifting-the-burden"
+category: "Legal Frameworks"
+word_count:
+  target: null
+  actual: 2998
+  status: "no_target"
+
+# === CONTENT VALIDATION ===
+structure:
+  has_h1: true
+  has_intro: true
+  has_conclusion: true
+  header_depth_valid: true
+generated_elements:
+  tldr_was_missing: true
+  objectives_were_missing: false
+  keywords_were_missing: false
+
+# === COMPONENT INVENTORY ===
+has_components: true
+components:
+  - type: "flowchart"
+    label: "The EU's Response Process"
+    detected_at_section: "The EU's Response"
+  - type: "flowchart"
+    label: "The Core Mechanism Process"
+    detected_at_section: "The Core Mechanism"
+  - type: "flowchart"
+    label: "Sources Process"
+    detected_at_section: "Sources"
+  - type: "template"
+    label: "The Problem of Information Asymmetry"
+    detected_at_section: "The Problem of Information Asymmetry"
+    template_link: "/templates/the-problem-of-information-asymmetry.md"
+  - type: "template"
+    label: "Protecting Confidential Information"
+    detected_at_section: "Protecting Confidential Information"
+    template_link: "/templates/protecting-confidential-information.md"
+
+# === EXTRACTED DATA ===
+title: "Article 50: The EU AI Liability Directive – Shifting the Burden"
+tldr: ""
+learning_objectives:
+  - "Understand the key concepts and principles of ai governance frameworks"
+  - "Implement compliance strategies in real-world scenarios"
+  - "Evaluate regulatory requirements for organizational compliance"
+seo_keywords:
+  - "article"
+  - "liability"
+  - "artificial intelligence"
+  - "AI compliance"
+  - "AI risk management"
+
+# === CROSS REFERENCE DATA ===
+topic_fingerprint:
+  - "machine learning"
+  - "accountability"
+  - "transparency"
+  - "oversight"
+  - "explainability"
+named_examples:
+  - "defense"
+  - "european commission"
+  - "european parliament"
+  - "gdpr"
+
+# === IMAGE GENERATION ===
+image_prompt:
+  formula: "Abstract geometric illustration, earth tones, minimalist, professional"
+  category_motif: "scales"
+  master_size: "1200x750px"
+  css_filters: true
+image_placeholder: "![Article 50: The EU AI Liability Directive – Shifting the Burden]({{IMAGE_PLACEHOLDER_article-50-the-eu-ai-liability-directive-shifting-the-burden}})"

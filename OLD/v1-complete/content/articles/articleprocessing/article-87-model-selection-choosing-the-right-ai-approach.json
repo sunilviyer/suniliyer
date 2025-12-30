@@ -1,0 +1,121 @@
+{
+  "file_status": {
+    "suggested_slug": "article-87-model-selection-choosing-the-right-ai-approach",
+    "category": "AI Fundamentals",
+    "word_count_check": {
+      "target": null,
+      "actual": 1977,
+      "status": "under"
+    }
+  },
+  "content_validation": {
+    "structure": {
+      "has_h1": true,
+      "has_intro": true,
+      "has_conclusion": true,
+      "header_depth_valid": true
+    },
+    "generated_elements": {
+      "tldr_was_missing": true,
+      "objectives_were_missing": false,
+      "keywords_were_missing": false
+    }
+  },
+  "component_inventory": {
+    "has_components": true,
+    "items": [
+      {
+        "type": "table",
+        "label": "Task Type vs What It Does Table",
+        "detected_at_section": "First: What Are You Trying to Do?"
+      },
+      {
+        "type": "table",
+        "label": "Model Type vs Data Needed Table",
+        "detected_at_section": "Trade-off 2: Performance vs. Data Requirements"
+      },
+      {
+        "type": "table",
+        "label": "Model Type vs Training Time Table",
+        "detected_at_section": "Trade-off 3: Speed vs. Sophistication"
+      },
+      {
+        "type": "table",
+        "label": "Question vs Impact on Model Selection Table",
+        "detected_at_section": "Step 2: Understand Your Data"
+      },
+      {
+        "type": "table",
+        "label": "Model vs Accuracy Table",
+        "detected_at_section": "Step 5: Experiment and Compare"
+      },
+      {
+        "type": "flowchart",
+        "label": "Conclusion Process",
+        "detected_at_section": "Conclusion"
+      },
+      {
+        "type": "flowchart",
+        "label": "Sources and Further Reading Process",
+        "detected_at_section": "Sources and Further Reading"
+      },
+      {
+        "type": "template",
+        "label": "Trade-off 2: Performance vs. Data Requirements",
+        "detected_at_section": "Trade-off 2: Performance vs. Data Requirements",
+        "template_link": "/templates/trade-off-2-performance-vs-data-requirements.md"
+      },
+      {
+        "type": "template",
+        "label": "Example:",
+        "detected_at_section": "Step 1: Define the Problem Clearly",
+        "template_link": "/templates/example.md"
+      },
+      {
+        "type": "list",
+        "label": "Trade-off 2: Performance vs. Data Requirements",
+        "detected_at_section": "Trade-off 2: Performance vs. Data Requirements"
+      }
+    ]
+  },
+  "extracted_data": {
+    "title": "Article 87: Model Selection – Choosing the Right AI Approach",
+    "tldr": "",
+    "learning_objectives": [
+      "Understand the key concepts and principles of bias detection techniques",
+      "Implement regulatory requirements in real-world scenarios",
+      "Evaluate risk assessment frameworks for organizational compliance"
+    ],
+    "seo_keywords": [
+      "article",
+      "model",
+      "AI governance",
+      "model selection",
+      "choosing"
+    ],
+    "references": []
+  },
+  "cross_reference_data": {
+    "topic_fingerprint": [
+      "deep learning",
+      "neural network",
+      "large language model",
+      "foundation model",
+      "multimodal"
+    ],
+    "named_examples": [
+      "google",
+      "nist",
+      "stanford"
+    ]
+  },
+  "image_generation": {
+    "prompt": {
+      "formula": "Abstract geometric illustration, earth tones, minimalist, professional",
+      "category_motif": "neural networks",
+      "master_size": "1200x750px",
+      "css_filters": true
+    },
+    "placeholder": "![Article 87: Model Selection – Choosing the Right AI Approach]({{IMAGE_PLACEHOLDER_article-87-model-selection-choosing-the-right-ai-approach}})"
+  }
+}

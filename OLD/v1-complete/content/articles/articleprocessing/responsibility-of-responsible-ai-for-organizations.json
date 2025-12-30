@@ -1,0 +1,66 @@
+{
+  "file_status": {
+    "suggested_slug": "responsibility-of-responsible-ai-for-organizations",
+    "category": "AI Risks & Principles",
+    "word_count_check": {
+      "target": null,
+      "actual": 401,
+      "status": "under"
+    }
+  },
+  "content_validation": {
+    "structure": {
+      "has_h1": true,
+      "has_intro": true,
+      "has_conclusion": false,
+      "header_depth_valid": true
+    },
+    "generated_elements": {
+      "tldr_was_missing": false,
+      "objectives_were_missing": false,
+      "keywords_were_missing": true
+    }
+  },
+  "component_inventory": {
+    "has_components": false,
+    "items": []
+  },
+  "extracted_data": {
+    "title": "Responsibility of Responsible AI for Organizations",
+    "tldr": "This article provides a comprehensive framework for AI governance and implementation. It provides actionable insights for achieving regulatory compliance and organizational readiness.",
+    "learning_objectives": [
+      "Understand the key concepts and principles of ai governance frameworks",
+      "Implement best practices in real-world scenarios",
+      "Evaluate risk assessment frameworks for organizational compliance"
+    ],
+    "seo_keywords": [
+      "responsible AI",
+      "governance",
+      "ethics",
+      "EU AI Act",
+      "organizational structure"
+    ],
+    "references": []
+  },
+  "cross_reference_data": {
+    "topic_fingerprint": [
+      "chatgpt",
+      "responsible ai",
+      "explainability",
+      "transparency"
+    ],
+    "named_examples": [
+      "eu ai act",
+      "nist"
+    ]
+  },
+  "image_generation": {
+    "prompt": {
+      "formula": "Abstract geometric illustration, earth tones, minimalist, professional",
+      "category_motif": "warning triangles",
+      "master_size": "1200x750px",
+      "css_filters": true
+    },
+    "placeholder": "![Responsibility of Responsible AI for Organizations]({{IMAGE_PLACEHOLDER_responsibility-of-responsible-ai-for-organizations}})"
+  }
+}

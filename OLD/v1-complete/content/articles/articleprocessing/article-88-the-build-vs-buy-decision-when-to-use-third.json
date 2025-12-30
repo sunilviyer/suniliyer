@@ -1,0 +1,186 @@
+{
+  "file_status": {
+    "suggested_slug": "article-88-the-build-vs-buy-decision-when-to-use-third-party",
+    "category": "AI Fundamentals",
+    "word_count_check": {
+      "target": null,
+      "actual": 1935,
+      "status": "under"
+    }
+  },
+  "content_validation": {
+    "structure": {
+      "has_h1": true,
+      "has_intro": true,
+      "has_conclusion": true,
+      "header_depth_valid": true
+    },
+    "generated_elements": {
+      "tldr_was_missing": true,
+      "objectives_were_missing": false,
+      "keywords_were_missing": false
+    }
+  },
+  "component_inventory": {
+    "has_components": true,
+    "items": [
+      {
+        "type": "table",
+        "label": "Strategic Importance vs Implication Table",
+        "detected_at_section": "Factor 1: Strategic Importance"
+      },
+      {
+        "type": "table",
+        "label": "Requirement Uniqueness vs Implication Table",
+        "detected_at_section": "Factor 2: Uniqueness of Requirements"
+      },
+      {
+        "type": "table",
+        "label": "Data Sensitivity vs Implication Table",
+        "detected_at_section": "Factor 3: Data Sensitivity"
+      },
+      {
+        "type": "table",
+        "label": "Resource vs Build Requirements Table",
+        "detected_at_section": "Factor 4: Available Resources"
+      },
+      {
+        "type": "table",
+        "label": "Time Pressure vs Implication Table",
+        "detected_at_section": "Factor 5: Speed to Value"
+      },
+      {
+        "type": "table",
+        "label": "Risk Type vs Build Table",
+        "detected_at_section": "Factor 6: Risk Tolerance"
+      },
+      {
+        "type": "table",
+        "label": "Aspect vs Build Table",
+        "detected_at_section": "Control Comparison"
+      },
+      {
+        "type": "table",
+        "label": "Risk vs Build Table",
+        "detected_at_section": "Risk Comparison"
+      },
+      {
+        "type": "table",
+        "label": "Factor vs Build Score (1-5) Table",
+        "detected_at_section": "Quick Assessment Tool"
+      },
+      {
+        "type": "table",
+        "label": "Question vs Why It Matters Table",
+        "detected_at_section": "Technical Due Diligence"
+      },
+      {
+        "type": "table",
+        "label": "Question vs Why It Matters Table",
+        "detected_at_section": "Governance Due Diligence"
+      },
+      {
+        "type": "table",
+        "label": "Question vs Why It Matters Table",
+        "detected_at_section": "Business Due Diligence"
+      },
+      {
+        "type": "flowchart",
+        "label": "Conclusion Process",
+        "detected_at_section": "Conclusion"
+      },
+      {
+        "type": "flowchart",
+        "label": "Sources and Further Reading Process",
+        "detected_at_section": "Sources and Further Reading"
+      },
+      {
+        "type": "template",
+        "label": "Option 3: AI as a Service (APIs/Platforms)",
+        "detected_at_section": "Option 3: AI as a Service (APIs/Platforms)",
+        "template_link": "/templates/option-3-ai-as-a-service-apisplatforms.md"
+      },
+      {
+        "type": "template",
+        "label": "Example:",
+        "detected_at_section": "Factor 1: Strategic Importance",
+        "template_link": "/templates/example.md"
+      },
+      {
+        "type": "template",
+        "label": "Example:",
+        "detected_at_section": "Factor 2: Uniqueness of Requirements",
+        "template_link": "/templates/example.md"
+      },
+      {
+        "type": "template",
+        "label": "Example:",
+        "detected_at_section": "Factor 3: Data Sensitivity",
+        "template_link": "/templates/example.md"
+      },
+      {
+        "type": "template",
+        "label": "*Example",
+        "detected_at_section": "Common Hybrid Patterns",
+        "template_link": "/templates/example.md"
+      },
+      {
+        "type": "list",
+        "label": "Factor 2: Uniqueness of Requirements",
+        "detected_at_section": "Factor 2: Uniqueness of Requirements"
+      },
+      {
+        "type": "list",
+        "label": "Common Mistakes",
+        "detected_at_section": "Common Mistakes"
+      }
+    ]
+  },
+  "extracted_data": {
+    "title": "Article 88: The Build vs. Buy Decision – When to Use Third-Party AI",
+    "tldr": "",
+    "learning_objectives": [
+      "Understand the key concepts and principles of ai governance frameworks",
+      "Implement model validation processes in real-world scenarios",
+      "Evaluate regulatory requirements for organizational compliance"
+    ],
+    "seo_keywords": [
+      "article",
+      "build",
+      "AI governance",
+      "the build",
+      "buy decision"
+    ],
+    "references": []
+  },
+  "cross_reference_data": {
+    "topic_fingerprint": [
+      "llm",
+      "nlp",
+      "gpt",
+      "claude",
+      "audit"
+    ],
+    "named_examples": [
+      "anthropic",
+      "eu ai act",
+      "gdpr",
+      "google",
+      "harvard",
+      "mit",
+      "nist",
+      "openai",
+      "salesforce",
+      "tesla"
+    ]
+  },
+  "image_generation": {
+    "prompt": {
+      "formula": "Abstract geometric illustration, earth tones, minimalist, professional",
+      "category_motif": "neural networks",
+      "master_size": "1200x750px",
+      "css_filters": true
+    },
+    "placeholder": "![Article 88: The Build vs. Buy Decision – When to Use Third-Party AI]({{IMAGE_PLACEHOLDER_article-88-the-build-vs-buy-decision-when-to-use-third-party}})"
+  }
+}

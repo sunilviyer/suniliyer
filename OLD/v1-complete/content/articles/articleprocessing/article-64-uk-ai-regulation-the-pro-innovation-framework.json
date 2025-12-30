@@ -1,0 +1,92 @@
+{
+  "file_status": {
+    "suggested_slug": "article-64-uk-ai-regulation-the-pro-innovation-framework",
+    "category": "AI Laws",
+    "word_count_check": {
+      "target": null,
+      "actual": 1959,
+      "status": "under"
+    }
+  },
+  "content_validation": {
+    "structure": {
+      "has_h1": true,
+      "has_intro": true,
+      "has_conclusion": true,
+      "header_depth_valid": true
+    },
+    "generated_elements": {
+      "tldr_was_missing": true,
+      "objectives_were_missing": false,
+      "keywords_were_missing": false
+    }
+  },
+  "component_inventory": {
+    "has_components": true,
+    "items": [
+      {
+        "type": "flowchart",
+        "label": "Sources and Further Reading Process",
+        "detected_at_section": "Sources and Further Reading"
+      },
+      {
+        "type": "template",
+        "label": "*Example",
+        "detected_at_section": "The Five Principles",
+        "template_link": "/templates/example.md"
+      },
+      {
+        "type": "template",
+        "label": "*Example",
+        "detected_at_section": "What Businesses Need to Do",
+        "template_link": "/templates/example.md"
+      },
+      {
+        "type": "list",
+        "label": "The Five Principles",
+        "detected_at_section": "The Five Principles"
+      }
+    ]
+  },
+  "extracted_data": {
+    "title": "Article 64: UK AI Regulation – The Pro-Innovation Framework",
+    "tldr": "",
+    "learning_objectives": [
+      "Understand the key concepts and principles of regulatory requirements",
+      "Implement best practices in real-world scenarios",
+      "Evaluate risk assessment frameworks for organizational compliance"
+    ],
+    "seo_keywords": [
+      "article",
+      "regulation",
+      "AI governance",
+      "the pro",
+      "innovation framework"
+    ],
+    "references": []
+  },
+  "cross_reference_data": {
+    "topic_fingerprint": [
+      "foundation model",
+      "machine learning",
+      "large language model",
+      "generative ai",
+      "chatgpt"
+    ],
+    "named_examples": [
+      "deepfakes",
+      "eu ai act",
+      "fintech",
+      "gdpr"
+    ]
+  },
+  "image_generation": {
+    "prompt": {
+      "formula": "Abstract geometric illustration, earth tones, minimalist, professional",
+      "category_motif": "legal documents",
+      "master_size": "1200x750px",
+      "css_filters": true
+    },
+    "placeholder": "![Article 64: UK AI Regulation – The Pro-Innovation Framework]({{IMAGE_PLACEHOLDER_article-64-uk-ai-regulation-the-pro-innovation-framework}})"
+  }
+}

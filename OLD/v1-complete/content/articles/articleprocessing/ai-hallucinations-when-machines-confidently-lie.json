@@ -1,0 +1,108 @@
+{
+  "file_status": {
+    "suggested_slug": "ai-hallucinations-when-machines-confidently-lie",
+    "category": "AI Risks & Principles",
+    "word_count_check": {
+      "target": null,
+      "actual": 2873,
+      "status": "under"
+    }
+  },
+  "content_validation": {
+    "structure": {
+      "has_h1": true,
+      "has_intro": true,
+      "has_conclusion": true,
+      "header_depth_valid": true
+    },
+    "generated_elements": {
+      "tldr_was_missing": true,
+      "objectives_were_missing": false,
+      "keywords_were_missing": false
+    }
+  },
+  "component_inventory": {
+    "has_components": true,
+    "items": [
+      {
+        "type": "flowchart",
+        "label": "Sources Process",
+        "detected_at_section": "Sources"
+      },
+      {
+        "type": "template",
+        "label": "Example: The Fake Professor",
+        "detected_at_section": "What Are AI Hallucinations?",
+        "template_link": "/templates/example-the-fake-professor.md"
+      },
+      {
+        "type": "template",
+        "label": "Example: The Invented Ingredient",
+        "detected_at_section": "Filling Gaps Creatively",
+        "template_link": "/templates/example-the-invented-ingredient.md"
+      },
+      {
+        "type": "template",
+        "label": "Example: The Phantom CEO Quote",
+        "detected_at_section": "Academic Integrity",
+        "template_link": "/templates/example-the-phantom-ceo-quote.md"
+      },
+      {
+        "type": "template",
+        "label": "Example: The Verified Customer Service Bot",
+        "detected_at_section": "Use AI for Draft Generation, Not Final Output",
+        "template_link": "/templates/example-the-verified-customer-service-bot.md"
+      },
+      {
+        "type": "list",
+        "label": "Disclosure Requirements",
+        "detected_at_section": "Disclosure Requirements"
+      },
+      {
+        "type": "list",
+        "label": "Acceptable Use Guidelines",
+        "detected_at_section": "Acceptable Use Guidelines"
+      }
+    ]
+  },
+  "extracted_data": {
+    "title": "AI Hallucinations – When Machines Confidently Lie",
+    "tldr": "",
+    "learning_objectives": [
+      "Understand the key concepts and principles of ai governance principles",
+      "Implement implementation strategies in real-world scenarios",
+      "Evaluate compliance frameworks for organizational compliance"
+    ],
+    "seo_keywords": [
+      "hallucinations",
+      "when",
+      "artificial intelligence",
+      "when machines confidently lie",
+      "this"
+    ],
+    "references": []
+  },
+  "cross_reference_data": {
+    "topic_fingerprint": [
+      "large language model",
+      "llm",
+      "foundation model",
+      "natural language processing",
+      "nlp"
+    ],
+    "named_examples": [
+      "anthropic",
+      "openai",
+      "stanford"
+    ]
+  },
+  "image_generation": {
+    "prompt": {
+      "formula": "Abstract geometric illustration, earth tones, minimalist, professional",
+      "category_motif": "warning triangles",
+      "master_size": "1200x750px",
+      "css_filters": true
+    },
+    "placeholder": "![AI Hallucinations – When Machines Confidently Lie]({{IMAGE_PLACEHOLDER_ai-hallucinations-when-machines-confidently-lie}})"
+  }
+}

@@ -1,0 +1,115 @@
+# === FILE STATUS ===
+suggested_slug: "article-79-before-you-build-ai-system-planning-essentials"
+category: "Governance Implementation"
+word_count:
+  target: null
+  actual: 2534
+  status: "no_target"
+
+# === CONTENT VALIDATION ===
+structure:
+  has_h1: true
+  has_intro: true
+  has_conclusion: true
+  header_depth_valid: true
+generated_elements:
+  tldr_was_missing: true
+  objectives_were_missing: false
+  keywords_were_missing: false
+
+# === COMPONENT INVENTORY ===
+has_components: true
+components:
+  - type: "checklist"
+    label: "Bringing It Together: The Planning Checklist"
+    detected_at_section: "Bringing It Together: The Planning Checklist"
+  - type: "checklist"
+    label: "Bringing It Together: The Planning Checklist"
+    detected_at_section: "Problem Definition ✓"
+  - type: "checklist"
+    label: "Stakeholders ✓"
+    detected_at_section: "Stakeholders ✓"
+  - type: "checklist"
+    label: "Feasibility ✓"
+    detected_at_section: "Feasibility ✓"
+  - type: "checklist"
+    label: "Ethical Pre-Screening ✓"
+    detected_at_section: "Ethical Pre-Screening ✓"
+  - type: "checklist"
+    label: "Governance ✓"
+    detected_at_section: "Governance ✓"
+  - type: "table"
+    label: "Stakeholder vs Interest/Concern Table"
+    detected_at_section: "Stakeholder Analysis Template"
+  - type: "table"
+    label: "Factor vs Assessment Table"
+    detected_at_section: "Feasibility Decision Matrix"
+  - type: "table"
+    label: "Dimension vs Low Risk Table"
+    detected_at_section: "Pre-Screening Assessment"
+  - type: "flowchart"
+    label: "Conclusion Process"
+    detected_at_section: "Conclusion"
+  - type: "flowchart"
+    label: "Sources and Further Reading Process"
+    detected_at_section: "Sources and Further Reading"
+  - type: "template"
+    label: "*Example"
+    detected_at_section: "The Problem Definition Process"
+    template_link: "/templates/example.md"
+  - type: "template"
+    label: "*Example"
+    detected_at_section: "Is AI Even the Right Solution?"
+    template_link: "/templates/example.md"
+  - type: "template"
+    label: "Stakeholder Analysis Template"
+    detected_at_section: "Stakeholder Analysis Template"
+    template_link: "/templates/stakeholder-analysis-template.md"
+  - type: "template"
+    label: "*Example"
+    detected_at_section: "The \"Affected But Not Consulted\" Problem"
+    template_link: "/templates/example.md"
+  - type: "template"
+    label: "*Example"
+    detected_at_section: "Technical Feasibility"
+    template_link: "/templates/example.md"
+
+# === EXTRACTED DATA ===
+title: "Article 79: Before You Build – AI System Planning Essentials"
+tldr: ""
+learning_objectives:
+  - "Understand the key concepts and principles of ai governance frameworks"
+  - "Implement model validation processes in real-world scenarios"
+  - "Evaluate regulatory requirements for organizational compliance"
+seo_keywords:
+  - "article"
+  - "before"
+  - "AI governance"
+  - "AI ethics"
+  - "before you build"
+
+# === CROSS REFERENCE DATA ===
+topic_fingerprint:
+  - "machine learning"
+  - "transparency"
+  - "fairness"
+  - "oversight"
+  - "accountability"
+named_examples:
+  - "fair"
+  - "gdpr"
+  - "google"
+  - "harvard"
+  - "ibm"
+  - "microsoft"
+  - "mit"
+  - "nist"
+  - "stanford"
+
+# === IMAGE GENERATION ===
+image_prompt:
+  formula: "Abstract geometric illustration, earth tones, minimalist, professional"
+  category_motif: "org charts"
+  master_size: "1200x750px"
+  css_filters: true
+image_placeholder: "![Article 79: Before You Build – AI System Planning Essentials]({{IMAGE_PLACEHOLDER_article-79-before-you-build-ai-system-planning-essentials}})"

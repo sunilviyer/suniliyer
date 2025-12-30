@@ -1,109 +1,43 @@
-// UNDER CONSTRUCTION PAGE - Temporary landing page with pancake animation
-// Original homepage content commented out below for restoration later
+import { Hero } from '@/components/homepage/Hero';
+import { PathPreviewCard } from '@/components/homepage/PathPreviewCard';
+import { LEARNING_PATHS } from '@/lib/constants';
 
-/*
-import Link from 'next/link';
-import { getAllArticles } from '@/lib/article-utils';
-import { portfolioProjects } from '@/lib/portfolio-data';
-import { PortfolioCard } from '@/components/portfolio/PortfolioCard';
-import { FeaturedArticle } from '@/components/portfolio/FeaturedArticle';
-
-export default async function HomePage() {
-  // Fetch all articles and get top 3 for featured section
-  const allArticles = await getAllArticles();
-  const featuredArticles = allArticles.slice(0, 3);
+export default function HomePage() {
   return (
-    <>
-      <a href="#main-content" className="skip-link">
-        Skip to main content
-      </a>
+    <main className="pt-16">
+      <Hero />
 
-      <main id="main-content" className="homepage-main">
-        <section id="hero" className="hero-section">
-          <h1 className="hero-title">Sunil Iyer</h1>
-
-          <p className="hero-subtitle">
-            AI Governance Expert, Security Professional
+      {/* Learning Paths Section */}
+      <section id="paths" className="min-h-screen py-20 px-4 bg-gradient-to-b from-charcoal to-moss">
+        <div className="container mx-auto max-w-7xl">
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-4 text-ivory">
+            5 Learning Paths
+          </h2>
+          <p className="text-center text-cream mb-12 max-w-2xl mx-auto">
+            Comprehensive, expert-curated content to master AI governance, from foundational concepts to advanced compliance strategies.
           </p>
 
-          <p className="hero-description">
-            With over two decades of experience in cybersecurity and technology
-            leadership, I specialize in AI governance, risk management, and
-            secure development practices. Explore my insights on responsible AI
-            deployment and security frameworks.
-          </p>
-
-          <Link
-            href="/articles"
-            className="cta-button"
-            aria-label="Explore articles on AI governance and security"
-          >
-            Explore Articles
-          </Link>
-        </section>
-
-        <section id="resume" className="content-section">
-          <h2 className="section-heading">Experience & Background</h2>
-          <p style={{ maxWidth: 'var(--content-max-width)', margin: '0 auto', color: 'var(--color-text-secondary)' }}>
-            20+ years in cybersecurity and technology leadership. Former CISO with
-            expertise in AI governance, risk management, and secure development
-            frameworks. Passionate about responsible AI deployment and regulatory
-            compliance.
-          </p>
-        </section>
-
-        <section id="portfolio" className="content-section">
-          <h2 className="section-heading">Portfolio</h2>
-          <div className="portfolio-grid">
-            {portfolioProjects.map((project, index) => (
-              <PortfolioCard
-                key={index}
-                title={project.title}
-                description={project.description}
-                thumbnailUrl={project.thumbnailUrl}
-                externalLink={project.externalLink}
-              />
+          {/* Path Cards Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+            {LEARNING_PATHS.map((path) => (
+              <PathPreviewCard key={path.id} path={path} />
             ))}
           </div>
-        </section>
 
-        <section id="featured-articles" className="content-section">
-          <h2 className="section-heading">Featured Articles</h2>
-          <div className="portfolio-grid">
-            {featuredArticles.map((article) => (
-              <FeaturedArticle key={article.slug} article={article} />
-            ))}
-          </div>
-        </section>
-      </main>
-    </>
-  );
-}
-*/
-
-export default function UnderConstruction() {
-  return (
-    <div className="under-construction-page">
-      <h1>Something Magical is Cooking</h1>
-
-      <div id="cooking">
-        <div className="bubble"></div>
-        <div className="bubble"></div>
-        <div className="bubble"></div>
-        <div className="bubble"></div>
-        <div className="bubble"></div>
-
-        <div id="area">
-          <div id="sides">
-            <div id="pan"></div>
-            <div id="handle"></div>
-          </div>
-
-          <div id="pancake">
-            <div id="pastry"></div>
+          {/* Call to Action */}
+          <div className="text-center mt-16">
+            <p className="text-cream mb-4">
+              Ready to build your AI governance expertise?
+            </p>
+            <a
+              href="#paths"
+              className="inline-block px-6 py-3 bg-toffee text-ivory font-semibold rounded-lg hover:bg-saddle transition-all duration-300"
+            >
+              Choose Your Path
+            </a>
           </div>
         </div>
-      </div>
-    </div>
+      </section>
+    </main>
   );
 }

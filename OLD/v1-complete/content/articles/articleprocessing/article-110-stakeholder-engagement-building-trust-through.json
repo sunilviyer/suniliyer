@@ -1,0 +1,126 @@
+{
+  "file_status": {
+    "suggested_slug": "article-110-stakeholder-engagement-building-trust-through-tr",
+    "category": "Governance Implementation",
+    "word_count_check": {
+      "target": null,
+      "actual": 1737,
+      "status": "under"
+    }
+  },
+  "content_validation": {
+    "structure": {
+      "has_h1": true,
+      "has_intro": true,
+      "has_conclusion": true,
+      "header_depth_valid": true
+    },
+    "generated_elements": {
+      "tldr_was_missing": true,
+      "objectives_were_missing": false,
+      "keywords_were_missing": false
+    }
+  },
+  "component_inventory": {
+    "has_components": true,
+    "items": [
+      {
+        "type": "table",
+        "label": "Survey Finding vs Source Table",
+        "detected_at_section": "The Trust Deficit"
+      },
+      {
+        "type": "table",
+        "label": "Level vs Methods Table",
+        "detected_at_section": "Engagement Methods by Level"
+      },
+      {
+        "type": "table",
+        "label": "Situation vs Recommended Approach Table",
+        "detected_at_section": "Choosing the Right Method"
+      },
+      {
+        "type": "table",
+        "label": "Metric vs What It Measures Table",
+        "detected_at_section": "Engagement Metrics"
+      },
+      {
+        "type": "table",
+        "label": "Metric vs What It Measures Table",
+        "detected_at_section": "Outcome Metrics"
+      },
+      {
+        "type": "flowchart",
+        "label": "Prioritization Process",
+        "detected_at_section": "Prioritization"
+      },
+      {
+        "type": "flowchart",
+        "label": "Conclusion Process",
+        "detected_at_section": "Conclusion"
+      },
+      {
+        "type": "flowchart",
+        "label": "Sources and Further Reading Process",
+        "detected_at_section": "Sources and Further Reading"
+      },
+      {
+        "type": "template",
+        "label": "Engagement Planning Template",
+        "detected_at_section": "Engagement Planning Template",
+        "template_link": "/templates/engagement-planning-template.md"
+      },
+      {
+        "type": "template",
+        "label": "Transparency Report Template",
+        "detected_at_section": "Transparency Report Template",
+        "template_link": "/templates/transparency-report-template.md"
+      },
+      {
+        "type": "list",
+        "label": "Communication Principles",
+        "detected_at_section": "Communication Principles"
+      }
+    ]
+  },
+  "extracted_data": {
+    "title": "Article 110: Stakeholder Engagement – Building Trust Through Transparency",
+    "tldr": "",
+    "learning_objectives": [
+      "Understand the key concepts and principles of ethical ai principles",
+      "Implement stakeholder engagement in real-world scenarios",
+      "Evaluate policy development for organizational compliance"
+    ],
+    "seo_keywords": [
+      "article",
+      "stakeholder",
+      "AI governance",
+      "stakeholder engagement",
+      "good"
+    ],
+    "references": []
+  },
+  "cross_reference_data": {
+    "topic_fingerprint": [
+      "transparency",
+      "fairness",
+      "oversight",
+      "responsible ai",
+      "accountability"
+    ],
+    "named_examples": [
+      "european commission",
+      "fair",
+      "ieee"
+    ]
+  },
+  "image_generation": {
+    "prompt": {
+      "formula": "Abstract geometric illustration, earth tones, minimalist, professional",
+      "category_motif": "org charts",
+      "master_size": "1200x750px",
+      "css_filters": true
+    },
+    "placeholder": "![Article 110: Stakeholder Engagement – Building Trust Through Transparency]({{IMAGE_PLACEHOLDER_article-110-stakeholder-engagement-building-trust-through-tr}})"
+  }
+}

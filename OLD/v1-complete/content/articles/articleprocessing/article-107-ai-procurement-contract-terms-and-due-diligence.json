@@ -1,0 +1,122 @@
+{
+  "file_status": {
+    "suggested_slug": "article-107-ai-procurement-contract-terms-and-due-diligence",
+    "category": "AI Development Lifecycle",
+    "word_count_check": {
+      "target": null,
+      "actual": 896,
+      "status": "under"
+    }
+  },
+  "content_validation": {
+    "structure": {
+      "has_h1": true,
+      "has_intro": true,
+      "has_conclusion": true,
+      "header_depth_valid": true
+    },
+    "generated_elements": {
+      "tldr_was_missing": true,
+      "objectives_were_missing": false,
+      "keywords_were_missing": false
+    }
+  },
+  "component_inventory": {
+    "has_components": true,
+    "items": [
+      {
+        "type": "checklist",
+        "label": "Due Diligence Checklist",
+        "detected_at_section": "Due Diligence Checklist"
+      },
+      {
+        "type": "table",
+        "label": "Aspect vs Traditional Software Table",
+        "detected_at_section": "Traditional Software vs. AI"
+      },
+      {
+        "type": "table",
+        "label": "Vendor Says vs You Can Respond Table",
+        "detected_at_section": "Common Vendor Pushback"
+      },
+      {
+        "type": "flowchart",
+        "label": "Renewal Considerations Process",
+        "detected_at_section": "Renewal Considerations"
+      },
+      {
+        "type": "flowchart",
+        "label": "Conclusion Process",
+        "detected_at_section": "Conclusion"
+      },
+      {
+        "type": "flowchart",
+        "label": "Sources and Further Reading Process",
+        "detected_at_section": "Sources and Further Reading"
+      },
+      {
+        "type": "template",
+        "label": "2. Performance Requirements",
+        "detected_at_section": "2. Performance Requirements",
+        "template_link": "/templates/2-performance-requirements.md"
+      },
+      {
+        "type": "template",
+        "label": "Vendor Questionnaire",
+        "detected_at_section": "Vendor Questionnaire",
+        "template_link": "/templates/vendor-questionnaire.md"
+      },
+      {
+        "type": "list",
+        "label": "2. Performance Requirements",
+        "detected_at_section": "2. Performance Requirements"
+      },
+      {
+        "type": "list",
+        "label": "3. Fairness and Bias Requirements",
+        "detected_at_section": "3. Fairness and Bias Requirements"
+      }
+    ]
+  },
+  "extracted_data": {
+    "title": "Article 107: AI Procurement – Contract Terms and Due Diligence",
+    "tldr": "",
+    "learning_objectives": [
+      "Understand the key concepts and principles of ai governance principles",
+      "Implement implementation strategies in real-world scenarios",
+      "Evaluate compliance frameworks for organizational compliance"
+    ],
+    "seo_keywords": [
+      "article",
+      "procurement",
+      "AI governance",
+      "contract terms",
+      "due diligence"
+    ],
+    "references": []
+  },
+  "cross_reference_data": {
+    "topic_fingerprint": [
+      "machine learning",
+      "supervised learning",
+      "neural network",
+      "audit",
+      "fairness"
+    ],
+    "named_examples": [
+      "eu ai act",
+      "ieee",
+      "nist",
+      "stanford"
+    ]
+  },
+  "image_generation": {
+    "prompt": {
+      "formula": "Abstract geometric illustration, earth tones, minimalist, professional",
+      "category_motif": "flowcharts",
+      "master_size": "1200x750px",
+      "css_filters": true
+    },
+    "placeholder": "![Article 107: AI Procurement – Contract Terms and Due Diligence]({{IMAGE_PLACEHOLDER_article-107-ai-procurement-contract-terms-and-due-diligence}})"
+  }
+}

@@ -1,0 +1,197 @@
+{
+  "file_status": {
+    "suggested_slug": "article-44-data-protection-impact-assessments-the-ai-dpia-gu",
+    "category": "AI Fundamentals",
+    "word_count_check": {
+      "target": null,
+      "actual": 3588,
+      "status": "under"
+    }
+  },
+  "content_validation": {
+    "structure": {
+      "has_h1": true,
+      "has_intro": true,
+      "has_conclusion": true,
+      "header_depth_valid": true
+    },
+    "generated_elements": {
+      "tldr_was_missing": true,
+      "objectives_were_missing": false,
+      "keywords_were_missing": false
+    }
+  },
+  "component_inventory": {
+    "has_components": true,
+    "items": [
+      {
+        "type": "table",
+        "label": "Criterion vs AI Example Table",
+        "detected_at_section": "The Nine Criteria"
+      },
+      {
+        "type": "table",
+        "label": "Question vs Analysis Table",
+        "detected_at_section": "Step 3: Assess Necessity and Proportionality"
+      },
+      {
+        "type": "table",
+        "label": "Question vs Analysis Table",
+        "detected_at_section": "Step 3: Assess Necessity and Proportionality"
+      },
+      {
+        "type": "table",
+        "label": "Risk Category vs Specific Risks Table",
+        "detected_at_section": "Step 5: Identify and Assess Risks"
+      },
+      {
+        "type": "table",
+        "label": "Risk vs Likelihood Table",
+        "detected_at_section": "Step 5: Identify and Assess Risks"
+      },
+      {
+        "type": "table",
+        "label": "Risk vs Mitigation Measures Table",
+        "detected_at_section": "Step 6: Identify Mitigation Measures"
+      },
+      {
+        "type": "table",
+        "label": "Version vs Date Table",
+        "detected_at_section": "Cover Page"
+      },
+      {
+        "type": "table",
+        "label": "Data Category vs Source Table",
+        "detected_at_section": "Section 1: Processing Description"
+      },
+      {
+        "type": "table",
+        "label": "Data Type vs Retention Period Table",
+        "detected_at_section": "Section 1: Processing Description"
+      },
+      {
+        "type": "table",
+        "label": "Stakeholder vs Date Table",
+        "detected_at_section": "Section 3: Stakeholder Consultation"
+      },
+      {
+        "type": "table",
+        "label": "Stakeholder vs Date Table",
+        "detected_at_section": "Section 3: Stakeholder Consultation"
+      },
+      {
+        "type": "table",
+        "label": "ID vs Risk Description Table",
+        "detected_at_section": "Section 4: Risk Assessment"
+      },
+      {
+        "type": "table",
+        "label": "ID vs Likelihood Table",
+        "detected_at_section": "Section 4: Risk Assessment"
+      },
+      {
+        "type": "table",
+        "label": "Risk ID vs Mitigation Measure Table",
+        "detected_at_section": "Section 5: Mitigation Measures"
+      },
+      {
+        "type": "table",
+        "label": "Risk ID vs Residual Level Table",
+        "detected_at_section": "Section 5: Mitigation Measures"
+      },
+      {
+        "type": "table",
+        "label": "Role vs Name Table",
+        "detected_at_section": "Section 7: Conclusion and Approval"
+      },
+      {
+        "type": "flowchart",
+        "label": "Definition and Purpose Process",
+        "detected_at_section": "Definition and Purpose"
+      },
+      {
+        "type": "flowchart",
+        "label": "Conclusion Process",
+        "detected_at_section": "Conclusion"
+      },
+      {
+        "type": "flowchart",
+        "label": "Sources Process",
+        "detected_at_section": "Sources"
+      },
+      {
+        "type": "template",
+        "label": "Example",
+        "detected_at_section": "Step 5: Identify and Assess Risks",
+        "template_link": "/templates/example.md"
+      },
+      {
+        "type": "template",
+        "label": "DPIA Template for AI Systems",
+        "detected_at_section": "DPIA Template for AI Systems",
+        "template_link": "/templates/dpia-template-for-ai-systems.md"
+      },
+      {
+        "type": "template",
+        "label": "Mistake 1: Treating DPIA as a Formality",
+        "detected_at_section": "Mistake 1: Treating DPIA as a Formality",
+        "template_link": "/templates/mistake-1-treating-dpia-as-a-formality.md"
+      },
+      {
+        "type": "list",
+        "label": "The Nine Criteria",
+        "detected_at_section": "The Nine Criteria"
+      },
+      {
+        "type": "list",
+        "label": "Minimum Requirements",
+        "detected_at_section": "Minimum Requirements"
+      },
+      {
+        "type": "list",
+        "label": "Expanded Requirements for AI",
+        "detected_at_section": "Expanded Requirements for AI"
+      }
+    ]
+  },
+  "extracted_data": {
+    "title": "Article 44: Data Protection Impact Assessments – The AI DPIA Guide",
+    "tldr": "",
+    "learning_objectives": [
+      "Understand the key concepts and principles of ethical ai principles",
+      "Implement bias detection techniques in real-world scenarios",
+      "Evaluate regulatory requirements for organizational compliance"
+    ],
+    "seo_keywords": [
+      "article",
+      "data",
+      "artificial intelligence",
+      "AI ethics",
+      "guide"
+    ],
+    "references": []
+  },
+  "cross_reference_data": {
+    "topic_fingerprint": [
+      "machine learning",
+      "generative ai",
+      "deep learning",
+      "impact assessment",
+      "transparency"
+    ],
+    "named_examples": [
+      "eu ai act",
+      "european commission",
+      "gdpr"
+    ]
+  },
+  "image_generation": {
+    "prompt": {
+      "formula": "Abstract geometric illustration, earth tones, minimalist, professional",
+      "category_motif": "neural networks",
+      "master_size": "1200x750px",
+      "css_filters": true
+    },
+    "placeholder": "![Article 44: Data Protection Impact Assessments – The AI DPIA Guide]({{IMAGE_PLACEHOLDER_article-44-data-protection-impact-assessments-the-ai-dpia-gu}})"
+  }
+}

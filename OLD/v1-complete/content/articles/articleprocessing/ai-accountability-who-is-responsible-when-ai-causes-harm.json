@@ -1,0 +1,111 @@
+{
+  "file_status": {
+    "suggested_slug": "ai-accountability-who-is-responsible-when-ai-causes-harm",
+    "category": "AI Risks & Principles",
+    "word_count_check": {
+      "target": null,
+      "actual": 3214,
+      "status": "under"
+    }
+  },
+  "content_validation": {
+    "structure": {
+      "has_h1": true,
+      "has_intro": true,
+      "has_conclusion": true,
+      "header_depth_valid": true
+    },
+    "generated_elements": {
+      "tldr_was_missing": true,
+      "objectives_were_missing": false,
+      "keywords_were_missing": false
+    }
+  },
+  "component_inventory": {
+    "has_components": true,
+    "items": [
+      {
+        "type": "flowchart",
+        "label": "Sources Process",
+        "detected_at_section": "Sources"
+      },
+      {
+        "type": "template",
+        "label": "Example: The Distributed Failure",
+        "detected_at_section": "The Accountability Gap",
+        "template_link": "/templates/example-the-distributed-failure.md"
+      },
+      {
+        "type": "template",
+        "label": "Example: The Liability Puzzle",
+        "detected_at_section": "Regulatory Enforcement",
+        "template_link": "/templates/example-the-liability-puzzle.md"
+      },
+      {
+        "type": "template",
+        "label": "Example: The Accountability Framework",
+        "detected_at_section": "Training and Awareness",
+        "template_link": "/templates/example-the-accountability-framework.md"
+      },
+      {
+        "type": "template",
+        "label": "Example: The Incident Response",
+        "detected_at_section": "External Accountability",
+        "template_link": "/templates/example-the-incident-response.md"
+      },
+      {
+        "type": "list",
+        "label": "Documentation Requirements",
+        "detected_at_section": "Documentation Requirements"
+      },
+      {
+        "type": "list",
+        "label": "The Principle of No Accountability, No Deployment",
+        "detected_at_section": "The Principle of No Accountability, No Deployment"
+      }
+    ]
+  },
+  "extracted_data": {
+    "title": "AI Accountability – Who Is Responsible When AI Causes Harm",
+    "tldr": "",
+    "learning_objectives": [
+      "Understand the key concepts and principles of ai governance frameworks",
+      "Implement regulatory requirements in real-world scenarios",
+      "Evaluate audit procedures for organizational compliance"
+    ],
+    "seo_keywords": [
+      "accountability",
+      "responsible",
+      "AI governance",
+      "artificial intelligence",
+      "AI ethics"
+    ],
+    "references": []
+  },
+  "cross_reference_data": {
+    "topic_fingerprint": [
+      "accountability",
+      "oversight",
+      "audit",
+      "ai ethics",
+      "risk assessment"
+    ],
+    "named_examples": [
+      "artificial intelligence act",
+      "eu ai act",
+      "european commission",
+      "national institute of standards",
+      "nist",
+      "uber"
+    ]
+  },
+  "image_generation": {
+    "prompt": {
+      "formula": "Abstract geometric illustration, earth tones, minimalist, professional",
+      "category_motif": "warning triangles",
+      "master_size": "1200x750px",
+      "css_filters": true
+    },
+    "placeholder": "![AI Accountability – Who Is Responsible When AI Causes Harm]({{IMAGE_PLACEHOLDER_ai-accountability-who-is-responsible-when-ai-causes-harm}})"
+  }
+}

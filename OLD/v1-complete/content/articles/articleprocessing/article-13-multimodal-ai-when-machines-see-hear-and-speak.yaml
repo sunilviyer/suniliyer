@@ -1,0 +1,100 @@
+# === FILE STATUS ===
+suggested_slug: "article-13-multimodal-ai-when-machines-see-hear-and-speak"
+category: "AI Risks & Principles"
+word_count:
+  target: null
+  actual: 2150
+  status: "no_target"
+
+# === CONTENT VALIDATION ===
+structure:
+  has_h1: true
+  has_intro: true
+  has_conclusion: true
+  header_depth_valid: true
+generated_elements:
+  tldr_was_missing: false
+  objectives_were_missing: false
+  keywords_were_missing: false
+
+# === COMPONENT INVENTORY ===
+has_components: true
+components:
+  - type: "checklist"
+    label: "Practical Checklist"
+    detected_at_section: "Practical Checklist"
+  - type: "table"
+    label: "Input vs Output Table"
+    detected_at_section: "The Definition"
+  - type: "table"
+    label: "Encoder vs Method Table"
+    detected_at_section: "Vision Encoders"
+  - type: "table"
+    label: "Model vs Developer Table"
+    detected_at_section: "Vision-Language Models"
+  - type: "table"
+    label: "Model vs Developer Table"
+    detected_at_section: "Image Generation Models"
+  - type: "table"
+    label: "Model vs Developer Table"
+    detected_at_section: "Audio and Speech Models"
+  - type: "table"
+    label: "Model vs Developer Table"
+    detected_at_section: "Video Models"
+  - type: "table"
+    label: "Risk vs Mitigation Table"
+    detected_at_section: "Image Generation Governance"
+  - type: "table"
+    label: "Jurisdiction vs Multimodal Considerations Table"
+    detected_at_section: "Compliance Considerations"
+  - type: "flowchart"
+    label: "Vision Encoders Process"
+    detected_at_section: "Vision Encoders"
+  - type: "template"
+    label: "Example:"
+    detected_at_section: "Cross-Modal Attacks"
+    template_link: "/templates/example.md"
+
+# === EXTRACTED DATA ===
+title: "Article 13: Multimodal AI – When Machines See, Hear, and Speak"
+tldr: "This article provides a comprehensive framework for AI governance and implementation. It provides actionable insights for achieving regulatory compliance and organizational readiness."
+learning_objectives:
+  - "Understand the key concepts and principles of ai governance frameworks"
+  - "Implement bias detection techniques in real-world scenarios"
+  - "Evaluate regulatory requirements for organizational compliance"
+seo_keywords:
+  - "article"
+  - "multimodal"
+  - "AI governance"
+  - "when machines see"
+  - "hear"
+
+# === CROSS REFERENCE DATA ===
+topic_fingerprint:
+  - "multimodal"
+  - "transformer"
+  - "neural network"
+  - "gpt"
+  - "gemini"
+named_examples:
+  - "adobe"
+  - "alibaba"
+  - "anthropic"
+  - "deepfakes"
+  - "eu ai act"
+  - "ftc"
+  - "google"
+  - "meta"
+  - "midjourney"
+  - "nist"
+  - "openai"
+  - "runway"
+  - "stability ai"
+
+# === IMAGE GENERATION ===
+image_prompt:
+  formula: "Abstract geometric illustration, earth tones, minimalist, professional"
+  category_motif: "warning triangles"
+  master_size: "1200x750px"
+  css_filters: true
+image_placeholder: "![Article 13: Multimodal AI – When Machines See, Hear, and Speak]({{IMAGE_PLACEHOLDER_article-13-multimodal-ai-when-machines-see-hear-and-speak}})"

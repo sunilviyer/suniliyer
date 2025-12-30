@@ -1,0 +1,17 @@
+{
+  "ollama": {
+    "model": "llama2",
+    "endpoint": "http://localhost:11434",
+    "timeout": 30000
+  },
+  "directories": {
+    "drafts": "content/articles/drafts",
+    "processing": "content/articles/articleprocessing",
+    "review": "content/articles/review",
+    "clean": "content/articles/clean"
+  },
+  "logging": {
+    "verbose": false,
+    "showProgress": true
+  }
+}

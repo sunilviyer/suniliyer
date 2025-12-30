@@ -1,0 +1,134 @@
+{
+  "file_status": {
+    "suggested_slug": "article-153-ai-as-therapist-and-support-tool-risks-pitfalls-",
+    "category": "AI Risks & Principles",
+    "word_count_check": {
+      "target": null,
+      "actual": 2338,
+      "status": "under"
+    }
+  },
+  "content_validation": {
+    "structure": {
+      "has_h1": true,
+      "has_intro": true,
+      "has_conclusion": true,
+      "header_depth_valid": true
+    },
+    "generated_elements": {
+      "tldr_was_missing": true,
+      "objectives_were_missing": false,
+      "keywords_were_missing": false
+    }
+  },
+  "component_inventory": {
+    "has_components": true,
+    "items": [
+      {
+        "type": "table",
+        "label": "Example vs Description Table",
+        "detected_at_section": "Types of AI Mental Health Tools"
+      },
+      {
+        "type": "table",
+        "label": "Example vs Description Table",
+        "detected_at_section": "Types of AI Mental Health Tools"
+      },
+      {
+        "type": "table",
+        "label": "Factor vs Explanation Table",
+        "detected_at_section": "Why People Use Them"
+      },
+      {
+        "type": "table",
+        "label": "Limitation vs Why It Matters Table",
+        "detected_at_section": "The Limitations"
+      },
+      {
+        "type": "table",
+        "label": "What They Claim vs Regulatory Status Table",
+        "detected_at_section": "Current Regulation"
+      },
+      {
+        "type": "table",
+        "label": "Jurisdiction vs Approach Table",
+        "detected_at_section": "International Approaches"
+      },
+      {
+        "type": "table",
+        "label": "User Needs vs Company Incentives Table",
+        "detected_at_section": "Commercial Incentives"
+      },
+      {
+        "type": "table",
+        "label": "Do vs Don't Table",
+        "detected_at_section": "For Users"
+      },
+      {
+        "type": "flowchart",
+        "label": "Conclusion Process",
+        "detected_at_section": "Conclusion"
+      },
+      {
+        "type": "flowchart",
+        "label": "Sources and Further Reading Process",
+        "detected_at_section": "Sources and Further Reading"
+      },
+      {
+        "type": "template",
+        "label": "Example:",
+        "detected_at_section": "Risk 6: Manipulation and Exploitation",
+        "template_link": "/templates/example.md"
+      },
+      {
+        "type": "template",
+        "label": "Informed Consent",
+        "detected_at_section": "Informed Consent",
+        "template_link": "/templates/informed-consent.md"
+      },
+      {
+        "type": "list",
+        "label": "Best Practices and Recommendations",
+        "detected_at_section": "Best Practices and Recommendations"
+      }
+    ]
+  },
+  "extracted_data": {
+    "title": "Article 153: AI as Therapist and Support Tool – Risks, Pitfalls, and Challenges",
+    "tldr": "",
+    "learning_objectives": [
+      "Understand the key concepts and principles of regulatory requirements",
+      "Implement transparency measures in real-world scenarios",
+      "Evaluate risk assessment frameworks for organizational compliance"
+    ],
+    "seo_keywords": [
+      "article",
+      "therapist",
+      "AI governance",
+      "AI ethics",
+      "support tool"
+    ],
+    "references": []
+  },
+  "cross_reference_data": {
+    "topic_fingerprint": [
+      "oversight",
+      "accountability",
+      "transparency",
+      "ai ethics"
+    ],
+    "named_examples": [
+      "energy",
+      "gdpr"
+    ]
+  },
+  "image_generation": {
+    "prompt": {
+      "formula": "Abstract geometric illustration, earth tones, minimalist, professional",
+      "category_motif": "warning triangles",
+      "master_size": "1200x750px",
+      "css_filters": true
+    },
+    "placeholder": "![Article 153: AI as Therapist and Support Tool – Risks, Pitfalls, and Challenges]({{IMAGE_PLACEHOLDER_article-153-ai-as-therapist-and-support-tool-risks-pitfalls-}})"
+  }
+}

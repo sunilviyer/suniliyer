@@ -1,0 +1,117 @@
+{
+  "file_status": {
+    "suggested_slug": "article-38-anti-discrimination-laws-and-ai-civil-rights-in-t",
+    "category": "Legal Frameworks",
+    "word_count_check": {
+      "target": null,
+      "actual": 3584,
+      "status": "under"
+    }
+  },
+  "content_validation": {
+    "structure": {
+      "has_h1": true,
+      "has_intro": true,
+      "has_conclusion": true,
+      "header_depth_valid": true
+    },
+    "generated_elements": {
+      "tldr_was_missing": true,
+      "objectives_were_missing": false,
+      "keywords_were_missing": false
+    }
+  },
+  "component_inventory": {
+    "has_components": true,
+    "items": [
+      {
+        "type": "table",
+        "label": "Law vs Protected Characteristics Table",
+        "detected_at_section": "Step 1: Identify Protected Characteristics"
+      },
+      {
+        "type": "flowchart",
+        "label": "Step 5: Investigate and Remediate Process",
+        "detected_at_section": "Step 5: Investigate and Remediate"
+      },
+      {
+        "type": "flowchart",
+        "label": "Conclusion Process",
+        "detected_at_section": "Conclusion"
+      },
+      {
+        "type": "flowchart",
+        "label": "Sources Process",
+        "detected_at_section": "Sources"
+      },
+      {
+        "type": "template",
+        "label": "Example:",
+        "detected_at_section": "The Disparate Impact Framework for Employment",
+        "template_link": "/templates/example.md"
+      },
+      {
+        "type": "template",
+        "label": "Example:",
+        "detected_at_section": "Algorithmic Steering",
+        "template_link": "/templates/example.md"
+      },
+      {
+        "type": "template",
+        "label": "Example:",
+        "detected_at_section": "AI and Disability Discrimination",
+        "template_link": "/templates/example.md"
+      },
+      {
+        "type": "template",
+        "label": "Example:",
+        "detected_at_section": "Step 4: Apply the Four-Fifths Rule",
+        "template_link": "/templates/example.md"
+      }
+    ]
+  },
+  "extracted_data": {
+    "title": "Article 38: Anti-Discrimination Laws and AI – Civil Rights in the Algorithm Age",
+    "tldr": "",
+    "learning_objectives": [
+      "Understand the key concepts and principles of regulatory requirements",
+      "Implement audit procedures in real-world scenarios",
+      "Evaluate risk assessment frameworks for organizational compliance"
+    ],
+    "seo_keywords": [
+      "article",
+      "anti",
+      "artificial intelligence",
+      "discrimination laws",
+      "civil rights"
+    ],
+    "references": []
+  },
+  "cross_reference_data": {
+    "topic_fingerprint": [
+      "machine learning",
+      "neural network",
+      "fairness",
+      "explainability",
+      "accountability"
+    ],
+    "named_examples": [
+      "amazon",
+      "apple",
+      "facebook",
+      "fair",
+      "fdic",
+      "fintech",
+      "occ"
+    ]
+  },
+  "image_generation": {
+    "prompt": {
+      "formula": "Abstract geometric illustration, earth tones, minimalist, professional",
+      "category_motif": "scales",
+      "master_size": "1200x750px",
+      "css_filters": true
+    },
+    "placeholder": "![Article 38: Anti-Discrimination Laws and AI – Civil Rights in the Algorithm Age]({{IMAGE_PLACEHOLDER_article-38-anti-discrimination-laws-and-ai-civil-rights-in-t}})"
+  }
+}

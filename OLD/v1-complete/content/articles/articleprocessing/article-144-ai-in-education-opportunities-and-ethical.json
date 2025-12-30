@@ -1,0 +1,119 @@
+{
+  "file_status": {
+    "suggested_slug": "article-144-ai-in-education-opportunities-and-ethical-concer",
+    "category": "Industry-Specific Insights",
+    "word_count_check": {
+      "target": null,
+      "actual": 2120,
+      "status": "under"
+    }
+  },
+  "content_validation": {
+    "structure": {
+      "has_h1": true,
+      "has_intro": true,
+      "has_conclusion": true,
+      "header_depth_valid": true
+    },
+    "generated_elements": {
+      "tldr_was_missing": true,
+      "objectives_were_missing": false,
+      "keywords_were_missing": false
+    }
+  },
+  "component_inventory": {
+    "has_components": true,
+    "items": [
+      {
+        "type": "table",
+        "label": "Requirement vs Implication for AI Table",
+        "detected_at_section": "FERPA (Family Educational Rights and Privacy Act)"
+      },
+      {
+        "type": "table",
+        "label": "Requirement vs Implication for AI Table",
+        "detected_at_section": "COPPA (Children's Online Privacy Protection Act)"
+      },
+      {
+        "type": "table",
+        "label": "State vs Law Table",
+        "detected_at_section": "State Student Privacy Laws"
+      },
+      {
+        "type": "table",
+        "label": "Source vs Example Table",
+        "detected_at_section": "Challenge 2: Algorithmic Bias and Equity"
+      },
+      {
+        "type": "table",
+        "label": "Question vs Why It Matters Table",
+        "detected_at_section": "Tool Evaluation Framework"
+      },
+      {
+        "type": "table",
+        "label": "Area vs Questions Table",
+        "detected_at_section": "Tool Evaluation Framework"
+      },
+      {
+        "type": "table",
+        "label": "Decision Type vs AI Role Table",
+        "detected_at_section": "Human Oversight"
+      },
+      {
+        "type": "flowchart",
+        "label": "Conclusion Process",
+        "detected_at_section": "Conclusion"
+      },
+      {
+        "type": "flowchart",
+        "label": "Sources and Further Reading Process",
+        "detected_at_section": "Sources and Further Reading"
+      },
+      {
+        "type": "list",
+        "label": "Best Practices for Education AI",
+        "detected_at_section": "Best Practices for Education AI"
+      }
+    ]
+  },
+  "extracted_data": {
+    "title": "Article 144: AI in Education – Opportunities and Ethical Concerns",
+    "tldr": "",
+    "learning_objectives": [
+      "Understand the key concepts and principles of regulatory requirements",
+      "Implement stakeholder engagement in real-world scenarios",
+      "Evaluate policy development for organizational compliance"
+    ],
+    "seo_keywords": [
+      "article",
+      "education",
+      "AI governance",
+      "artificial intelligence",
+      "opportunities"
+    ],
+    "references": []
+  },
+  "cross_reference_data": {
+    "topic_fingerprint": [
+      "generative ai",
+      "large language model",
+      "chatgpt",
+      "claude",
+      "algorithmic bias"
+    ],
+    "named_examples": [
+      "federal trade commission",
+      "gdpr",
+      "stanford"
+    ]
+  },
+  "image_generation": {
+    "prompt": {
+      "formula": "Abstract geometric illustration, earth tones, minimalist, professional",
+      "category_motif": "industry icons",
+      "master_size": "1200x750px",
+      "css_filters": true
+    },
+    "placeholder": "![Article 144: AI in Education – Opportunities and Ethical Concerns]({{IMAGE_PLACEHOLDER_article-144-ai-in-education-opportunities-and-ethical-concer}})"
+  }
+}

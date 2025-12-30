@@ -1,0 +1,90 @@
+{
+  "file_status": {
+    "suggested_slug": "the-ai-family-tree-types-of-ai-systems",
+    "category": "AI Fundamentals",
+    "word_count_check": {
+      "target": null,
+      "actual": 1961,
+      "status": "under"
+    }
+  },
+  "content_validation": {
+    "structure": {
+      "has_h1": true,
+      "has_intro": false,
+      "has_conclusion": false,
+      "header_depth_valid": true
+    },
+    "generated_elements": {
+      "tldr_was_missing": false,
+      "objectives_were_missing": true,
+      "keywords_were_missing": false
+    }
+  },
+  "component_inventory": {
+    "has_components": true,
+    "items": [
+      {
+        "type": "flowchart",
+        "label": "Key Learning Objectives Process",
+        "detected_at_section": "Key Learning Objectives"
+      },
+      {
+        "type": "flowchart",
+        "label": "References Process",
+        "detected_at_section": "References"
+      },
+      {
+        "type": "template",
+        "label": "Unsupervised Learning",
+        "detected_at_section": "Section 2: How Machines Learn — The Four Training Methods",
+        "template_link": "/templates/unsupervised-learning.md"
+      },
+      {
+        "type": "template",
+        "label": "Section 3: Deep Learning and the Transformer Revolution",
+        "detected_at_section": "Section 3: Deep Learning and the Transformer Revolution",
+        "template_link": "/templates/section-3-deep-learning-and-the-transformer-revolution.md"
+      }
+    ]
+  },
+  "extracted_data": {
+    "title": "The AI Family Tree - Types of AI Systems",
+    "tldr": "This article provides a comprehensive framework for AI governance and implementation. It provides actionable insights for achieving regulatory compliance and organizational readiness.",
+    "learning_objectives": [],
+    "seo_keywords": [
+      "family",
+      "tree",
+      "AI governance",
+      "artificial intelligence",
+      "family tree"
+    ],
+    "references": []
+  },
+  "cross_reference_data": {
+    "topic_fingerprint": [
+      "machine learning",
+      "transformer",
+      "natural language processing",
+      "supervised learning",
+      "unsupervised learning"
+    ],
+    "named_examples": [
+      "amazon",
+      "eu ai act",
+      "ibm",
+      "manufacturing",
+      "netflix",
+      "nvidia"
+    ]
+  },
+  "image_generation": {
+    "prompt": {
+      "formula": "Abstract geometric illustration, earth tones, minimalist, professional",
+      "category_motif": "neural networks",
+      "master_size": "1200x750px",
+      "css_filters": true
+    },
+    "placeholder": "![The AI Family Tree - Types of AI Systems]({{IMAGE_PLACEHOLDER_the-ai-family-tree-types-of-ai-systems}})"
+  }
+}

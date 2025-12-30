@@ -1,0 +1,100 @@
+{
+  "file_status": {
+    "suggested_slug": "article-128-ai-existential-risk-separating-signal-from-noise",
+    "category": "AI Risks & Principles",
+    "word_count_check": {
+      "target": null,
+      "actual": 2441,
+      "status": "under"
+    }
+  },
+  "content_validation": {
+    "structure": {
+      "has_h1": true,
+      "has_intro": true,
+      "has_conclusion": true,
+      "header_depth_valid": true
+    },
+    "generated_elements": {
+      "tldr_was_missing": true,
+      "objectives_were_missing": false,
+      "keywords_were_missing": false
+    }
+  },
+  "component_inventory": {
+    "has_components": true,
+    "items": [
+      {
+        "type": "table",
+        "label": "Claim vs Assessment Table",
+        "detected_at_section": "A Balanced Assessment"
+      },
+      {
+        "type": "flowchart",
+        "label": "The Core Concern Process",
+        "detected_at_section": "The Core Concern"
+      },
+      {
+        "type": "flowchart",
+        "label": "Questions to Ask Process",
+        "detected_at_section": "Questions to Ask"
+      },
+      {
+        "type": "flowchart",
+        "label": "Conclusion Process",
+        "detected_at_section": "Conclusion"
+      },
+      {
+        "type": "flowchart",
+        "label": "Sources and Further Reading Process",
+        "detected_at_section": "Sources and Further Reading"
+      }
+    ]
+  },
+  "extracted_data": {
+    "title": "Article 128: AI Existential Risk – Separating Signal from Noise",
+    "tldr": "",
+    "learning_objectives": [
+      "Understand the key concepts and principles of ai governance frameworks",
+      "Implement policy development in real-world scenarios",
+      "Evaluate risk assessment frameworks for organizational compliance"
+    ],
+    "seo_keywords": [
+      "article",
+      "existential",
+      "AI governance",
+      "artificial intelligence",
+      "AI ethics"
+    ],
+    "references": []
+  },
+  "cross_reference_data": {
+    "topic_fingerprint": [
+      "deep learning",
+      "machine learning",
+      "ai safety",
+      "ai ethics",
+      "accountability"
+    ],
+    "named_examples": [
+      "anthropic",
+      "berkeley",
+      "deepmind",
+      "google",
+      "meta",
+      "mit",
+      "openai",
+      "oxford",
+      "stanford"
+    ]
+  },
+  "image_generation": {
+    "prompt": {
+      "formula": "Abstract geometric illustration, earth tones, minimalist, professional",
+      "category_motif": "warning triangles",
+      "master_size": "1200x750px",
+      "css_filters": true
+    },
+    "placeholder": "![Article 128: AI Existential Risk – Separating Signal from Noise]({{IMAGE_PLACEHOLDER_article-128-ai-existential-risk-separating-signal-from-noise}})"
+  }
+}

@@ -1,0 +1,134 @@
+{
+  "file_status": {
+    "suggested_slug": "article-91-model-training-hyperparameters-validation-and-ove",
+    "category": "AI Development Lifecycle",
+    "word_count_check": {
+      "target": null,
+      "actual": 1935,
+      "status": "under"
+    }
+  },
+  "content_validation": {
+    "structure": {
+      "has_h1": true,
+      "has_intro": true,
+      "has_conclusion": true,
+      "header_depth_valid": true
+    },
+    "generated_elements": {
+      "tldr_was_missing": true,
+      "objectives_were_missing": false,
+      "keywords_were_missing": false
+    }
+  },
+  "component_inventory": {
+    "has_components": true,
+    "items": [
+      {
+        "type": "checklist",
+        "label": "Training Process Checklist",
+        "detected_at_section": "Training Process Checklist"
+      },
+      {
+        "type": "table",
+        "label": "Learning Rate vs Behavior Table",
+        "detected_at_section": "Key Hyperparameters"
+      },
+      {
+        "type": "table",
+        "label": "Batch Size vs Trade-offs Table",
+        "detected_at_section": "Key Hyperparameters"
+      },
+      {
+        "type": "table",
+        "label": "Training Duration vs Risk Table",
+        "detected_at_section": "Key Hyperparameters"
+      },
+      {
+        "type": "table",
+        "label": "Metric vs What It Tells You Table",
+        "detected_at_section": "What to Monitor During Validation"
+      },
+      {
+        "type": "table",
+        "label": "Sign vs What It Means Table",
+        "detected_at_section": "Signs of Overfitting"
+      },
+      {
+        "type": "flowchart",
+        "label": "What Happens During Training Process",
+        "detected_at_section": "What Happens During Training"
+      },
+      {
+        "type": "flowchart",
+        "label": "Cross-Validation Process",
+        "detected_at_section": "Cross-Validation"
+      },
+      {
+        "type": "flowchart",
+        "label": "Strategy 4: Early Stopping Process",
+        "detected_at_section": "Strategy 4: Early Stopping"
+      },
+      {
+        "type": "flowchart",
+        "label": "Conclusion Process",
+        "detected_at_section": "Conclusion"
+      },
+      {
+        "type": "flowchart",
+        "label": "Sources and Further Reading Process",
+        "detected_at_section": "Sources and Further Reading"
+      },
+      {
+        "type": "template",
+        "label": "├── subsample",
+        "detected_at_section": "Hyperparameter Documentation",
+        "template_link": "/templates/-subsample.md"
+      },
+      {
+        "type": "template",
+        "label": "Example:",
+        "detected_at_section": "Strategy 4: Early Stopping",
+        "template_link": "/templates/example.md"
+      }
+    ]
+  },
+  "extracted_data": {
+    "title": "Article 91: Model Training – Hyperparameters, Validation, and Overfitting",
+    "tldr": "",
+    "learning_objectives": [
+      "Understand the key concepts and principles of compliance strategies",
+      "Implement best practices in real-world scenarios",
+      "Evaluate risk assessment frameworks for organizational compliance"
+    ],
+    "seo_keywords": [
+      "article",
+      "model",
+      "AI governance",
+      "model training",
+      "hyperparameters"
+    ],
+    "references": []
+  },
+  "cross_reference_data": {
+    "topic_fingerprint": [
+      "machine learning",
+      "neural network",
+      "deep learning",
+      "fairness",
+      "trustworthy ai"
+    ],
+    "named_examples": [
+      "google"
+    ]
+  },
+  "image_generation": {
+    "prompt": {
+      "formula": "Abstract geometric illustration, earth tones, minimalist, professional",
+      "category_motif": "flowcharts",
+      "master_size": "1200x750px",
+      "css_filters": true
+    },
+    "placeholder": "![Article 91: Model Training – Hyperparameters, Validation, and Overfitting]({{IMAGE_PLACEHOLDER_article-91-model-training-hyperparameters-validation-and-ove}})"
+  }
+}

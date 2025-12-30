@@ -1,0 +1,646 @@
+{
+  "file_status": {
+    "suggested_slug": "article-150-how-to-conduct-an-ai-impact-assessment-step-by-s",
+    "category": "AI Auditing & Accountability",
+    "word_count_check": {
+      "target": null,
+      "actual": 1198,
+      "status": "under"
+    }
+  },
+  "content_validation": {
+    "structure": {
+      "has_h1": true,
+      "has_intro": true,
+      "has_conclusion": true,
+      "header_depth_valid": true
+    },
+    "generated_elements": {
+      "tldr_was_missing": true,
+      "objectives_were_missing": false,
+      "keywords_were_missing": false
+    }
+  },
+  "component_inventory": {
+    "has_components": true,
+    "items": [
+      {
+        "type": "checklist",
+        "label": "3.1 Documentation Checklist",
+        "detected_at_section": "3.1 Documentation Checklist"
+      },
+      {
+        "type": "checklist",
+        "label": "Template 2: Quick Risk Assessment Checklist",
+        "detected_at_section": "Template 2: Quick Risk Assessment Checklist"
+      },
+      {
+        "type": "table",
+        "label": "Reason vs Benefit Table",
+        "detected_at_section": "Why Conduct an AIA?"
+      },
+      {
+        "type": "table",
+        "label": "Type vs Focus Table",
+        "detected_at_section": "Types of AI Impact Assessments"
+      },
+      {
+        "type": "table",
+        "label": "Timing vs Purpose Table",
+        "detected_at_section": "When to Conduct an AIA"
+      },
+      {
+        "type": "table",
+        "label": "Risk Level vs Assessment Depth Table",
+        "detected_at_section": "1.4 Determine Assessment Depth"
+      },
+      {
+        "type": "table",
+        "label": "Role vs Responsibility Table",
+        "detected_at_section": "2.1 Define Required Roles"
+      },
+      {
+        "type": "table",
+        "label": "Role vs Responsibility Table",
+        "detected_at_section": "2.1 Define Required Roles"
+      },
+      {
+        "type": "table",
+        "label": "Name vs Role Table",
+        "detected_at_section": "2.2 Document the Team"
+      },
+      {
+        "type": "table",
+        "label": "------ vs ------ Table",
+        "detected_at_section": "2.2 Document the Team"
+      },
+      {
+        "type": "table",
+        "label": "2.2 Document the Team Table",
+        "detected_at_section": "2.2 Document the Team"
+      },
+      {
+        "type": "table",
+        "label": "2.2 Document the Team Table",
+        "detected_at_section": "2.2 Document the Team"
+      },
+      {
+        "type": "table",
+        "label": "Name vs Role Table",
+        "detected_at_section": "2.2 Document the Team"
+      },
+      {
+        "type": "table",
+        "label": "------ vs ------ Table",
+        "detected_at_section": "2.2 Document the Team"
+      },
+      {
+        "type": "table",
+        "label": "2.2 Document the Team Table",
+        "detected_at_section": "2.2 Document the Team"
+      },
+      {
+        "type": "table",
+        "label": "Name/Organization vs Role Table",
+        "detected_at_section": "2.2 Document the Team"
+      },
+      {
+        "type": "table",
+        "label": "------------------- vs ------ Table",
+        "detected_at_section": "2.2 Document the Team"
+      },
+      {
+        "type": "table",
+        "label": "Document vs Owner Table",
+        "detected_at_section": "3.1 Documentation Checklist"
+      },
+      {
+        "type": "table",
+        "label": "---------- vs ------- Table",
+        "detected_at_section": "3.1 Documentation Checklist"
+      },
+      {
+        "type": "table",
+        "label": "Component vs Function Table",
+        "detected_at_section": "4.2 Technical Description"
+      },
+      {
+        "type": "table",
+        "label": "----------- vs ---------- Table",
+        "detected_at_section": "4.2 Technical Description"
+      },
+      {
+        "type": "table",
+        "label": "4.2 Technical Description Table",
+        "detected_at_section": "4.2 Technical Description"
+      },
+      {
+        "type": "table",
+        "label": "Component vs Vendor Table",
+        "detected_at_section": "4.2 Technical Description"
+      },
+      {
+        "type": "table",
+        "label": "----------- vs -------- Table",
+        "detected_at_section": "4.2 Technical Description"
+      },
+      {
+        "type": "table",
+        "label": "Data Source vs Data Type Table",
+        "detected_at_section": "4.3 Data Description"
+      },
+      {
+        "type": "table",
+        "label": "------------- vs ----------- Table",
+        "detected_at_section": "4.3 Data Description"
+      },
+      {
+        "type": "table",
+        "label": "4.3 Data Description Table",
+        "detected_at_section": "4.3 Data Description"
+      },
+      {
+        "type": "table",
+        "label": "Input vs Source Table",
+        "detected_at_section": "4.3 Data Description"
+      },
+      {
+        "type": "table",
+        "label": "------- vs -------- Table",
+        "detected_at_section": "4.3 Data Description"
+      },
+      {
+        "type": "table",
+        "label": "Output vs Type Table",
+        "detected_at_section": "4.3 Data Description"
+      },
+      {
+        "type": "table",
+        "label": "-------- vs ------ Table",
+        "detected_at_section": "4.3 Data Description"
+      },
+      {
+        "type": "table",
+        "label": "Decision vs Fully Automated? Table",
+        "detected_at_section": "4.4 Decision Framework"
+      },
+      {
+        "type": "table",
+        "label": "---------- vs ------------------ Table",
+        "detected_at_section": "4.4 Decision Framework"
+      },
+      {
+        "type": "table",
+        "label": "4.4 Decision Framework Table",
+        "detected_at_section": "4.4 Decision Framework"
+      },
+      {
+        "type": "table",
+        "label": "User Type vs Number Table",
+        "detected_at_section": "4.5 Operational Context"
+      },
+      {
+        "type": "table",
+        "label": "----------- vs -------- Table",
+        "detected_at_section": "4.5 Operational Context"
+      },
+      {
+        "type": "table",
+        "label": "Connected System vs Integration Type Table",
+        "detected_at_section": "4.5 Operational Context"
+      },
+      {
+        "type": "table",
+        "label": "------------------ vs ------------------ Table",
+        "detected_at_section": "4.5 Operational Context"
+      },
+      {
+        "type": "table",
+        "label": "Stakeholder vs Role Table",
+        "detected_at_section": "5.1 Stakeholder Identification"
+      },
+      {
+        "type": "table",
+        "label": "5.1 Stakeholder Identification Table",
+        "detected_at_section": "5.1 Stakeholder Identification"
+      },
+      {
+        "type": "table",
+        "label": "Stakeholder vs Relationship Table",
+        "detected_at_section": "5.1 Stakeholder Identification"
+      },
+      {
+        "type": "table",
+        "label": "5.1 Stakeholder Identification Table",
+        "detected_at_section": "5.1 Stakeholder Identification"
+      },
+      {
+        "type": "table",
+        "label": "Group vs How Affected Table",
+        "detected_at_section": "5.2 Affected Persons Analysis"
+      },
+      {
+        "type": "table",
+        "label": "------- vs -------------- Table",
+        "detected_at_section": "5.2 Affected Persons Analysis"
+      },
+      {
+        "type": "table",
+        "label": "5.2 Affected Persons Analysis Table",
+        "detected_at_section": "5.2 Affected Persons Analysis"
+      },
+      {
+        "type": "table",
+        "label": "Group vs Specific Vulnerabilities Table",
+        "detected_at_section": "5.2 Affected Persons Analysis"
+      },
+      {
+        "type": "table",
+        "label": "------- vs ------------------------- Table",
+        "detected_at_section": "5.2 Affected Persons Analysis"
+      },
+      {
+        "type": "table",
+        "label": "Stakeholder vs Engagement Method Table",
+        "detected_at_section": "5.3 Stakeholder Engagement Plan"
+      },
+      {
+        "type": "table",
+        "label": "------------- vs ------------------- Table",
+        "detected_at_section": "5.3 Stakeholder Engagement Plan"
+      },
+      {
+        "type": "table",
+        "label": "Barrier vs Mitigation Table",
+        "detected_at_section": "5.3 Stakeholder Engagement Plan"
+      },
+      {
+        "type": "table",
+        "label": "--------- vs ------------ Table",
+        "detected_at_section": "5.3 Stakeholder Engagement Plan"
+      },
+      {
+        "type": "table",
+        "label": "Date vs Stakeholder Table",
+        "detected_at_section": "5.3 Stakeholder Engagement Plan"
+      },
+      {
+        "type": "table",
+        "label": "------ vs ------------- Table",
+        "detected_at_section": "5.3 Stakeholder Engagement Plan"
+      },
+      {
+        "type": "table",
+        "label": "Failure Mode vs Cause Table",
+        "detected_at_section": "6.2 Impact Identification Techniques"
+      },
+      {
+        "type": "table",
+        "label": "Similar System vs Harm Caused Table",
+        "detected_at_section": "6.2 Impact Identification Techniques"
+      },
+      {
+        "type": "table",
+        "label": "---------------- vs ------------- Table",
+        "detected_at_section": "6.2 Impact Identification Techniques"
+      },
+      {
+        "type": "table",
+        "label": "6.2 Impact Identification Techniques Table",
+        "detected_at_section": "6.2 Impact Identification Techniques"
+      },
+      {
+        "type": "table",
+        "label": "Stakeholder vs Concerns Raised Table",
+        "detected_at_section": "6.2 Impact Identification Techniques"
+      },
+      {
+        "type": "table",
+        "label": "------------- vs ----------------- Table",
+        "detected_at_section": "6.2 Impact Identification Techniques"
+      },
+      {
+        "type": "table",
+        "label": "6.2 Impact Identification Techniques Table",
+        "detected_at_section": "6.2 Impact Identification Techniques"
+      },
+      {
+        "type": "table",
+        "label": "ID vs Impact Description Table",
+        "detected_at_section": "6.3 Compile Impact Inventory"
+      },
+      {
+        "type": "table",
+        "label": "Level vs Description Table",
+        "detected_at_section": "7.1 Assessment Criteria"
+      },
+      {
+        "type": "table",
+        "label": "Level vs Description Table",
+        "detected_at_section": "7.1 Assessment Criteria"
+      },
+      {
+        "type": "table",
+        "label": "Level vs Description Table",
+        "detected_at_section": "7.1 Assessment Criteria"
+      },
+      {
+        "type": "table",
+        "label": "Level vs Description Table",
+        "detected_at_section": "7.1 Assessment Criteria"
+      },
+      {
+        "type": "table",
+        "label": "ID vs Impact Table",
+        "detected_at_section": "7.2 Impact Assessment Matrix"
+      },
+      {
+        "type": "table",
+        "label": "Score Range vs Risk Level Table",
+        "detected_at_section": "7.2 Impact Assessment Matrix"
+      },
+      {
+        "type": "table",
+        "label": "ID vs Benefit Description Table",
+        "detected_at_section": "7.4 Benefits Assessment"
+      },
+      {
+        "type": "table",
+        "label": "Category vs Positive Score Table",
+        "detected_at_section": "7.5 Net Impact Analysis"
+      },
+      {
+        "type": "table",
+        "label": "Option vs Type Table",
+        "detected_at_section": "8.2 Mitigation Planning"
+      },
+      {
+        "type": "table",
+        "label": "H/M/L vs H/M/L Table",
+        "detected_at_section": "8.2 Mitigation Planning"
+      },
+      {
+        "type": "table",
+        "label": "8.2 Mitigation Planning Table",
+        "detected_at_section": "8.2 Mitigation Planning"
+      },
+      {
+        "type": "table",
+        "label": "Impact ID vs Mitigation Table",
+        "detected_at_section": "8.3 Consolidated Mitigation Plan"
+      },
+      {
+        "type": "table",
+        "label": "----------- vs ------------ Table",
+        "detected_at_section": "8.3 Consolidated Mitigation Plan"
+      },
+      {
+        "type": "table",
+        "label": "8.3 Consolidated Mitigation Plan Table",
+        "detected_at_section": "8.3 Consolidated Mitigation Plan"
+      },
+      {
+        "type": "table",
+        "label": "8.3 Consolidated Mitigation Plan Table",
+        "detected_at_section": "8.3 Consolidated Mitigation Plan"
+      },
+      {
+        "type": "table",
+        "label": "Impact ID vs Original Risk Table",
+        "detected_at_section": "8.4 Residual Risk Summary"
+      },
+      {
+        "type": "table",
+        "label": "----------- vs --------------- Table",
+        "detected_at_section": "8.4 Residual Risk Summary"
+      },
+      {
+        "type": "table",
+        "label": "8.4 Residual Risk Summary Table",
+        "detected_at_section": "8.4 Residual Risk Summary"
+      },
+      {
+        "type": "table",
+        "label": "Risk vs Reason Not Mitigated Table",
+        "detected_at_section": "8.4 Residual Risk Summary"
+      },
+      {
+        "type": "table",
+        "label": "------ vs --------------------- Table",
+        "detected_at_section": "8.4 Residual Risk Summary"
+      },
+      {
+        "type": "table",
+        "label": "Condition vs Owner Table",
+        "detected_at_section": "9.2 Recommendation Development"
+      },
+      {
+        "type": "table",
+        "label": "----------- vs ------- Table",
+        "detected_at_section": "9.2 Recommendation Development"
+      },
+      {
+        "type": "table",
+        "label": "9.2 Recommendation Development Table",
+        "detected_at_section": "9.2 Recommendation Development"
+      },
+      {
+        "type": "table",
+        "label": "Approver vs Role Table",
+        "detected_at_section": "9.2 Recommendation Development"
+      },
+      {
+        "type": "table",
+        "label": "---------- vs ------ Table",
+        "detected_at_section": "9.2 Recommendation Development"
+      },
+      {
+        "type": "table",
+        "label": "9.2 Recommendation Development Table",
+        "detected_at_section": "9.2 Recommendation Development"
+      },
+      {
+        "type": "table",
+        "label": "Metric/Indicator vs Target Table",
+        "detected_at_section": "10.2 Monitoring Plan"
+      },
+      {
+        "type": "table",
+        "label": "------------------ vs -------- Table",
+        "detected_at_section": "10.2 Monitoring Plan"
+      },
+      {
+        "type": "table",
+        "label": "10.2 Monitoring Plan Table",
+        "detected_at_section": "10.2 Monitoring Plan"
+      },
+      {
+        "type": "table",
+        "label": "10.2 Monitoring Plan Table",
+        "detected_at_section": "10.2 Monitoring Plan"
+      },
+      {
+        "type": "table",
+        "label": "Impact ID vs Monitoring Approach Table",
+        "detected_at_section": "10.2 Monitoring Plan"
+      },
+      {
+        "type": "table",
+        "label": "----------- vs -------------------- Table",
+        "detected_at_section": "10.2 Monitoring Plan"
+      },
+      {
+        "type": "table",
+        "label": "10.2 Monitoring Plan Table",
+        "detected_at_section": "10.2 Monitoring Plan"
+      },
+      {
+        "type": "table",
+        "label": "Review Type vs Frequency Table",
+        "detected_at_section": "10.2 Monitoring Plan"
+      },
+      {
+        "type": "table",
+        "label": "Audience vs Information Table",
+        "detected_at_section": "10.3 Communication Plan"
+      },
+      {
+        "type": "table",
+        "label": "Audience vs Information Table",
+        "detected_at_section": "10.3 Communication Plan"
+      },
+      {
+        "type": "table",
+        "label": "Finding vs Risk Level Table",
+        "detected_at_section": "Template 1: AIA Executive Summary"
+      },
+      {
+        "type": "table",
+        "label": "--------- vs ------------ Table",
+        "detected_at_section": "Template 1: AIA Executive Summary"
+      },
+      {
+        "type": "table",
+        "label": "Template 1: AIA Executive Summary Table",
+        "detected_at_section": "Template 1: AIA Executive Summary"
+      },
+      {
+        "type": "table",
+        "label": "Risk vs Accepted By Table",
+        "detected_at_section": "Template 1: AIA Executive Summary"
+      },
+      {
+        "type": "table",
+        "label": "------ vs ------------- Table",
+        "detected_at_section": "Template 1: AIA Executive Summary"
+      },
+      {
+        "type": "table",
+        "label": "Name vs Role Table",
+        "detected_at_section": "Template 1: AIA Executive Summary"
+      },
+      {
+        "type": "table",
+        "label": "------ vs ------ Table",
+        "detected_at_section": "Template 1: AIA Executive Summary"
+      },
+      {
+        "type": "table",
+        "label": "Challenge vs Solution Table",
+        "detected_at_section": "Common Challenges and Solutions"
+      },
+      {
+        "type": "table",
+        "label": "Assessment Depth vs Preparation Table",
+        "detected_at_section": "Time Estimates"
+      },
+      {
+        "type": "flowchart",
+        "label": "Summary Process",
+        "detected_at_section": "Summary"
+      },
+      {
+        "type": "template",
+        "label": "Templates and Tools",
+        "detected_at_section": "Templates and Tools",
+        "template_link": "/templates/templates-and-tools.md"
+      },
+      {
+        "type": "template",
+        "label": "Template 1: AIA Executive Summary",
+        "detected_at_section": "Template 1: AIA Executive Summary",
+        "template_link": "/templates/template-1-aia-executive-summary.md"
+      },
+      {
+        "type": "template",
+        "label": "Template 2: Quick Risk Assessment Checklist",
+        "detected_at_section": "Template 2: Quick Risk Assessment Checklist",
+        "template_link": "/templates/template-2-quick-risk-assessment-checklist.md"
+      },
+      {
+        "type": "template",
+        "label": "Template 3: Stakeholder Interview Guide",
+        "detected_at_section": "Template 3: Stakeholder Interview Guide",
+        "template_link": "/templates/template-3-stakeholder-interview-guide.md"
+      },
+      {
+        "type": "list",
+        "label": "7.1 Assessment Criteria",
+        "detected_at_section": "7.1 Assessment Criteria"
+      },
+      {
+        "type": "list",
+        "label": "EU AI Act Requirements",
+        "detected_at_section": "EU AI Act Requirements"
+      },
+      {
+        "type": "list",
+        "label": "Canada AIDA Requirements",
+        "detected_at_section": "Canada AIDA Requirements"
+      }
+    ]
+  },
+  "extracted_data": {
+    "title": "Article 150: How to Conduct an AI Impact Assessment — Step by Step",
+    "tldr": "",
+    "learning_objectives": [
+      "Understand the key concepts and principles of regulatory requirements",
+      "Implement stakeholder engagement in real-world scenarios",
+      "Evaluate risk assessment frameworks for organizational compliance"
+    ],
+    "seo_keywords": [
+      "article",
+      "conduct",
+      "impact assessment",
+      "step",
+      "step comprehensive step"
+    ],
+    "references": []
+  },
+  "cross_reference_data": {
+    "topic_fingerprint": [
+      "machine learning",
+      "deep learning",
+      "neural network",
+      "generative ai",
+      "foundation model"
+    ],
+    "named_examples": [
+      "aida",
+      "canada aida",
+      "energy",
+      "eu ai act",
+      "fair",
+      "gdpr"
+    ]
+  },
+  "image_generation": {
+    "prompt": {
+      "formula": "Abstract geometric illustration, earth tones, minimalist, professional",
+      "category_motif": "magnifying glass",
+      "master_size": "1200x750px",
+      "css_filters": true
+    },
+    "placeholder": "![Article 150: How to Conduct an AI Impact Assessment — Step by Step]({{IMAGE_PLACEHOLDER_article-150-how-to-conduct-an-ai-impact-assessment-step-by-s}})"
+  }
+}

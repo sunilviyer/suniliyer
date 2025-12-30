@@ -1,0 +1,117 @@
+# === FILE STATUS ===
+suggested_slug: "article-98-monitoring-ai-in-production-drift-degradation-and"
+category: "AI Development Lifecycle"
+word_count:
+  target: null
+  actual: 1722
+  status: "no_target"
+
+# === CONTENT VALIDATION ===
+structure:
+  has_h1: true
+  has_intro: true
+  has_conclusion: true
+  header_depth_valid: true
+generated_elements:
+  tldr_was_missing: true
+  objectives_were_missing: false
+  keywords_were_missing: false
+
+# === COMPONENT INVENTORY ===
+has_components: true
+components:
+  - type: "checklist"
+    label: "Monitoring Checklist"
+    detected_at_section: "Monitoring Checklist"
+  - type: "checklist"
+    label: "Monitoring Checklist"
+    detected_at_section: "At Deployment:"
+  - type: "checklist"
+    label: "Ongoing:"
+    detected_at_section: "Ongoing:"
+  - type: "table"
+    label: "Aspect vs Traditional Software Table"
+    detected_at_section: "Traditional Software vs. AI Systems"
+  - type: "table"
+    label: "Metric vs What It Tells You Table"
+    detected_at_section: "Level 1: Operational Metrics"
+  - type: "table"
+    label: "Metric Type vs Warning Threshold Table"
+    detected_at_section: "Setting Alert Thresholds"
+  - type: "table"
+    label: "Issue vs Possible Actions Table"
+    detected_at_section: "Action Options"
+  - type: "flowchart"
+    label: "The Silent Degradation Problem Process"
+    detected_at_section: "The Silent Degradation Problem"
+  - type: "flowchart"
+    label: "Alert Triage Process"
+    detected_at_section: "Alert Triage"
+  - type: "flowchart"
+    label: "Response Actions by Severity Process"
+    detected_at_section: "Response Actions by Severity"
+  - type: "flowchart"
+    label: "Root Cause Investigation Process"
+    detected_at_section: "Root Cause Investigation"
+  - type: "flowchart"
+    label: "Conclusion Process"
+    detected_at_section: "Conclusion"
+  - type: "flowchart"
+    label: "Sources and Further Reading Process"
+    detected_at_section: "Sources and Further Reading"
+  - type: "template"
+    label: "Level 4: Performance Monitoring"
+    detected_at_section: "Level 4: Performance Monitoring"
+    template_link: "/templates/level-4-performance-monitoring.md"
+  - type: "template"
+    label: "Example:"
+    detected_at_section: "Data Drift (Covariate Shift)"
+    template_link: "/templates/example.md"
+  - type: "template"
+    label: "Example:"
+    detected_at_section: "Concept Drift"
+    template_link: "/templates/example.md"
+  - type: "template"
+    label: "Example:"
+    detected_at_section: "Label Drift"
+    template_link: "/templates/example.md"
+  - type: "template"
+    label: "Example:"
+    detected_at_section: "Upstream Data Drift"
+    template_link: "/templates/example.md"
+  - type: "list"
+    label: "Monitoring Best Practices"
+    detected_at_section: "Monitoring Best Practices"
+
+# === EXTRACTED DATA ===
+title: "Article 98: Monitoring AI in Production – Drift, Degradation, and Detection"
+tldr: ""
+learning_objectives:
+  - "Understand the key concepts and principles of bias detection techniques"
+  - "Implement best practices in real-world scenarios"
+  - "Evaluate risk assessment frameworks for organizational compliance"
+seo_keywords:
+  - "article"
+  - "monitoring"
+  - "AI governance"
+  - "production"
+  - "drift"
+
+# === CROSS REFERENCE DATA ===
+topic_fingerprint:
+  - "machine learning"
+  - "fairness"
+  - "nist ai rmf"
+  - "data drift"
+  - "model drift"
+named_examples:
+  - "google"
+  - "nist"
+
+# === IMAGE GENERATION ===
+image_prompt:
+  formula: "Abstract geometric illustration, earth tones, minimalist, professional"
+  category_motif: "flowcharts"
+  master_size: "1200x750px"
+  css_filters: true
+image_placeholder: "![Article 98: Monitoring AI in Production – Drift, Degradation, and Detection]({{IMAGE_PLACEHOLDER_article-98-monitoring-ai-in-production-drift-degradation-and}})"

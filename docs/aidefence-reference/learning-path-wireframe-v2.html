@@ -1,0 +1,1162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning Path Page - AIDefence V2 Wireframe</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            /* Color Palette - PRD V2 */
+            --color-black: #000000;
+            --color-white: #FFFFFF;
+            --color-charcoal-brown: #333d29;
+            --color-moss-green: #414833;
+            --color-beige-ivory: #F5F5DC;
+            --color-earth-tone-accent: #936639;
+
+            /* Spacing */
+            --spacing-xs: 0.5rem;
+            --spacing-sm: 1rem;
+            --spacing-md: 1.5rem;
+            --spacing-lg: 2rem;
+            --spacing-xl: 3rem;
+
+            /* Typography */
+            --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            --font-mono: 'Courier New', monospace;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            background: var(--color-white);
+            color: var(--color-black);
+            line-height: 1.6;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        body.dark-mode {
+            background: var(--color-black);
+            color: var(--color-white);
+        }
+
+        /* Header */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 60px;
+            background: var(--color-white);
+            border-bottom: 1px solid #e5e5e5;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 var(--spacing-lg);
+            z-index: 1000;
+            transition: background-color 0.3s;
+        }
+
+        body.dark-mode .header {
+            background: var(--color-black);
+            border-bottom-color: #333;
+        }
+
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            font-size: 14px;
+        }
+
+        .breadcrumb a {
+            color: var(--color-charcoal-brown);
+            text-decoration: none;
+        }
+
+        body.dark-mode .breadcrumb a {
+            color: var(--color-beige-ivory);
+        }
+
+        .breadcrumb span {
+            color: #999;
+        }
+
+        .header-actions {
+            display: flex;
+            gap: var(--spacing-sm);
+        }
+
+        .theme-toggle {
+            background: transparent;
+            border: 1px solid #e5e5e5;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        body.dark-mode .theme-toggle {
+            border-color: #333;
+            color: var(--color-white);
+        }
+
+        /* Main Layout */
+        .main-container {
+            margin-top: 60px;
+            display: flex;
+            min-height: calc(100vh - 60px);
+        }
+
+        /* Sidebar */
+        .sidebar {
+            position: sticky;
+            top: 60px;
+            width: 300px;
+            height: calc(100vh - 60px);
+            border-right: 1px solid #e5e5e5;
+            padding: var(--spacing-lg);
+            overflow-y: auto;
+            background: var(--color-white);
+            transition: background-color 0.3s;
+        }
+
+        body.dark-mode .sidebar {
+            background: var(--color-black);
+            border-right-color: #333;
+        }
+
+        .sidebar h3 {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: var(--spacing-md);
+            color: #666;
+        }
+
+        body.dark-mode .sidebar h3 {
+            color: #999;
+        }
+
+        /* Mini Map */
+        .mini-map {
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .mini-map-item {
+            padding: 0.75rem;
+            margin-bottom: 0.5rem;
+            border-left: 2px solid transparent;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.2s;
+        }
+
+        .mini-map-item:hover {
+            background: rgba(147, 102, 57, 0.1);
+            border-left-color: var(--color-earth-tone-accent);
+        }
+
+        .mini-map-item.active {
+            background: rgba(147, 102, 57, 0.15);
+            border-left-color: var(--color-earth-tone-accent);
+            font-weight: 500;
+        }
+
+        .mini-map-item .card-number {
+            color: #999;
+            font-size: 12px;
+            margin-right: 0.5rem;
+        }
+
+        /* Cross-references */
+        .cross-refs {
+            margin-top: var(--spacing-xl);
+        }
+
+        .cross-ref-item {
+            padding: 0.75rem;
+            margin-bottom: 0.5rem;
+            background: rgba(147, 102, 57, 0.05);
+            border-radius: 4px;
+            font-size: 13px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .cross-ref-item:hover {
+            background: rgba(147, 102, 57, 0.15);
+        }
+
+        .cross-ref-item .ref-type {
+            display: block;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #999;
+            margin-bottom: 0.25rem;
+        }
+
+        /* Content Area */
+        .content-area {
+            flex: 1;
+            padding: var(--spacing-xl);
+            max-width: 900px;
+        }
+
+        /* Card Stack Container */
+        .card-stack {
+            position: relative;
+        }
+
+        /* Concept Card */
+        .concept-card {
+            background: var(--color-white);
+            border: 1px solid #e5e5e5;
+            border-radius: 8px;
+            margin-bottom: var(--spacing-xl);
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        body.dark-mode .concept-card {
+            background: #1a1a1a;
+            border-color: #333;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .concept-card.collapsed {
+            cursor: pointer;
+        }
+
+        .concept-card.collapsed:hover {
+            border-color: var(--color-earth-tone-accent);
+            box-shadow: 0 4px 12px rgba(147, 102, 57, 0.15);
+        }
+
+        /* Card Header */
+        .card-header {
+            padding: var(--spacing-lg);
+            border-bottom: 1px solid #e5e5e5;
+            transition: background-color 0.3s;
+        }
+
+        body.dark-mode .card-header {
+            border-bottom-color: #333;
+        }
+
+        .concept-card.collapsed .card-header {
+            border-bottom: none;
+        }
+
+        .card-title {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: var(--spacing-sm);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+        }
+
+        .card-number {
+            display: inline-block;
+            background: var(--color-earth-tone-accent);
+            color: white;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .card-tldr {
+            font-size: 16px;
+            color: #666;
+            line-height: 1.5;
+        }
+
+        body.dark-mode .card-tldr {
+            color: #999;
+        }
+
+        /* Card Body */
+        .card-body {
+            padding: var(--spacing-lg);
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .concept-card.expanded .card-body {
+            max-height: 10000px;
+            opacity: 1;
+        }
+
+        /* Content Sections */
+        .content-section {
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .content-section h3 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: var(--spacing-md);
+            color: var(--color-charcoal-brown);
+        }
+
+        body.dark-mode .content-section h3 {
+            color: var(--color-beige-ivory);
+        }
+
+        .content-section p {
+            margin-bottom: var(--spacing-md);
+            line-height: 1.7;
+        }
+
+        /* Curved Box Component */
+        .curved-box {
+            background: linear-gradient(135deg, rgba(147, 102, 57, 0.05) 0%, rgba(65, 72, 51, 0.05) 100%);
+            border-left: 3px solid var(--color-earth-tone-accent);
+            border-radius: 8px;
+            padding: var(--spacing-lg);
+            margin: var(--spacing-lg) 0;
+        }
+
+        body.dark-mode .curved-box {
+            background: linear-gradient(135deg, rgba(147, 102, 57, 0.1) 0%, rgba(65, 72, 51, 0.1) 100%);
+        }
+
+        .curved-box h4 {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: var(--spacing-sm);
+            color: var(--color-earth-tone-accent);
+        }
+
+        /* Table Component */
+        .component-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: var(--spacing-lg) 0;
+            font-size: 14px;
+        }
+
+        .component-table th,
+        .component-table td {
+            padding: var(--spacing-sm);
+            text-align: left;
+            border-bottom: 1px solid #e5e5e5;
+        }
+
+        body.dark-mode .component-table th,
+        body.dark-mode .component-table td {
+            border-bottom-color: #333;
+        }
+
+        .component-table th {
+            background: rgba(147, 102, 57, 0.1);
+            font-weight: 600;
+        }
+
+        .component-table tr:hover {
+            background: rgba(147, 102, 57, 0.05);
+        }
+
+        /* List Component */
+        .component-list {
+            margin: var(--spacing-lg) 0;
+        }
+
+        .component-list li {
+            margin-bottom: var(--spacing-sm);
+            padding-left: var(--spacing-md);
+            position: relative;
+        }
+
+        .component-list li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--color-earth-tone-accent);
+            font-weight: bold;
+        }
+
+        /* Checklist Component */
+        .component-checklist {
+            margin: var(--spacing-lg) 0;
+        }
+
+        .component-checklist li {
+            list-style: none;
+            margin-bottom: var(--spacing-sm);
+            padding-left: 2rem;
+            position: relative;
+        }
+
+        .component-checklist li::before {
+            content: "☐";
+            position: absolute;
+            left: 0;
+            font-size: 18px;
+            color: var(--color-earth-tone-accent);
+        }
+
+        /* Template Component */
+        .component-template {
+            background: #f8f8f8;
+            border: 1px dashed #ccc;
+            border-radius: 4px;
+            padding: var(--spacing-lg);
+            margin: var(--spacing-lg) 0;
+            font-family: var(--font-mono);
+            font-size: 13px;
+        }
+
+        body.dark-mode .component-template {
+            background: #2a2a2a;
+            border-color: #444;
+        }
+
+        /* Image Prompt Component */
+        .component-image-prompt {
+            background: linear-gradient(135deg, #f0f0f0 0%, #e0e0e0 100%);
+            border: 2px dashed #999;
+            border-radius: 8px;
+            padding: var(--spacing-xl);
+            margin: var(--spacing-lg) 0;
+            text-align: center;
+            min-height: 300px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        body.dark-mode .component-image-prompt {
+            background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
+            border-color: #555;
+        }
+
+        .component-image-prompt .icon {
+            font-size: 48px;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .component-image-prompt .prompt-text {
+            font-size: 14px;
+            color: #666;
+            font-style: italic;
+        }
+
+        body.dark-mode .component-image-prompt .prompt-text {
+            color: #999;
+        }
+
+        /* Card Footer */
+        .card-footer {
+            padding: var(--spacing-lg);
+            border-top: 1px solid #e5e5e5;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        body.dark-mode .card-footer {
+            border-top-color: #333;
+        }
+
+        .card-tags {
+            display: flex;
+            gap: var(--spacing-xs);
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background: rgba(147, 102, 57, 0.1);
+            color: var(--color-earth-tone-accent);
+            padding: 0.25rem 0.75rem;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        .card-meta {
+            font-size: 12px;
+            color: #999;
+        }
+
+        /* Scroll Progress Indicator */
+        .scroll-progress {
+            position: fixed;
+            top: 60px;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: #e5e5e5;
+            z-index: 999;
+        }
+
+        body.dark-mode .scroll-progress {
+            background: #333;
+        }
+
+        .scroll-progress-bar {
+            height: 100%;
+            background: var(--color-earth-tone-accent);
+            width: 0%;
+            transition: width 0.1s;
+        }
+
+        /* Annotation Hint */
+        .annotation {
+            position: absolute;
+            background: #fff;
+            border: 1px solid var(--color-earth-tone-accent);
+            padding: var(--spacing-sm);
+            border-radius: 4px;
+            font-size: 12px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            max-width: 250px;
+            z-index: 100;
+        }
+
+        body.dark-mode .annotation {
+            background: #2a2a2a;
+            border-color: var(--color-earth-tone-accent);
+        }
+
+        .annotation::before {
+            content: "";
+            position: absolute;
+            top: -6px;
+            left: 20px;
+            width: 0;
+            height: 0;
+            border-left: 6px solid transparent;
+            border-right: 6px solid transparent;
+            border-bottom: 6px solid var(--color-earth-tone-accent);
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .sidebar {
+                width: 250px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .sidebar {
+                display: none;
+            }
+
+            .content-area {
+                padding: var(--spacing-md);
+            }
+
+            .card-title {
+                font-size: 20px;
+            }
+        }
+
+        /* Wireframe Annotations Layer */
+        .wireframe-notes {
+            position: fixed;
+            bottom: var(--spacing-lg);
+            right: var(--spacing-lg);
+            background: var(--color-earth-tone-accent);
+            color: white;
+            padding: var(--spacing-md);
+            border-radius: 8px;
+            max-width: 300px;
+            font-size: 13px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+        }
+
+        .wireframe-notes h4 {
+            font-size: 14px;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .wireframe-notes ul {
+            list-style: none;
+        }
+
+        .wireframe-notes li {
+            margin-bottom: 0.5rem;
+            padding-left: 1rem;
+            position: relative;
+        }
+
+        .wireframe-notes li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+        }
+
+        .expand-collapse-hint {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0, 0, 0, 0.9);
+            color: white;
+            padding: var(--spacing-lg);
+            border-radius: 8px;
+            font-size: 16px;
+            z-index: 2000;
+            animation: fadeInOut 3s ease-in-out;
+            pointer-events: none;
+        }
+
+        @keyframes fadeInOut {
+            0%, 100% { opacity: 0; }
+            50% { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="breadcrumb">
+            <a href="#">Home</a>
+            <span>/</span>
+            <a href="#">Learn</a>
+            <span>/</span>
+            <strong>History of Machine Learning</strong>
+        </div>
+        <div class="header-actions">
+            <button class="theme-toggle" onclick="toggleTheme()">🌓 Toggle Theme</button>
+        </div>
+    </header>
+
+    <!-- Scroll Progress -->
+    <div class="scroll-progress">
+        <div class="scroll-progress-bar" id="scrollProgress"></div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="main-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <!-- Mini Map -->
+            <div class="mini-map">
+                <h3>Path Progress</h3>
+                <div class="mini-map-item active" data-card="1">
+                    <span class="card-number">1</span>
+                    What is Machine Learning?
+                </div>
+                <div class="mini-map-item" data-card="2">
+                    <span class="card-number">2</span>
+                    Early Foundations (1950s-1960s)
+                </div>
+                <div class="mini-map-item" data-card="3">
+                    <span class="card-number">3</span>
+                    AI Winter & Expert Systems
+                </div>
+                <div class="mini-map-item" data-card="4">
+                    <span class="card-number">4</span>
+                    The Neural Network Renaissance
+                </div>
+                <div class="mini-map-item" data-card="5">
+                    <span class="card-number">5</span>
+                    Deep Learning Revolution
+                </div>
+                <div class="mini-map-item" data-card="6">
+                    <span class="card-number">6</span>
+                    Transformer Architecture
+                </div>
+                <div class="mini-map-item" data-card="7">
+                    <span class="card-number">7</span>
+                    Large Language Models Era
+                </div>
+            </div>
+
+            <!-- Cross-references -->
+            <div class="cross-refs">
+                <h3>Related Concepts</h3>
+                <div class="cross-ref-item">
+                    <span class="ref-type">Terminology</span>
+                    Supervised vs. Unsupervised Learning
+                </div>
+                <div class="cross-ref-item">
+                    <span class="ref-type">Terminology</span>
+                    Neural Networks Architecture
+                </div>
+                <div class="cross-ref-item">
+                    <span class="ref-type">Risk</span>
+                    Algorithmic Bias in Training Data
+                </div>
+                <div class="cross-ref-item">
+                    <span class="ref-type">Example</span>
+                    Amazon Hiring Algorithm (2018)
+                </div>
+            </div>
+        </aside>
+
+        <!-- Content Area -->
+        <main class="content-area">
+            <div class="card-stack">
+                <!-- Card 1 - Expanded State -->
+                <article class="concept-card expanded" data-card="1">
+                    <div class="card-header">
+                        <h2 class="card-title">
+                            <span class="card-number">1</span>
+                            What is Machine Learning?
+                        </h2>
+                        <p class="card-tldr">
+                            Machine learning enables computers to learn from data without explicit programming, using statistical patterns to make predictions and decisions.
+                        </p>
+                    </div>
+
+                    <div class="card-body">
+                        <div class="content-section">
+                            <h3>Core Concept</h3>
+                            <p>
+                                Machine learning is a subset of artificial intelligence that focuses on building systems that learn from and make decisions based on data. Rather than following explicitly programmed rules, ML algorithms identify patterns in data and use those patterns to make predictions or decisions without human intervention.
+                            </p>
+                            <p>
+                                Tom Mitchell's formal definition (1997) states: "A computer program is said to learn from experience E with respect to some class of tasks T and performance measure P, if its performance at tasks in T, as measured by P, improves with experience E."
+                            </p>
+                        </div>
+
+                        <div class="curved-box">
+                            <h4>Key Insight</h4>
+                            <p>
+                                The power of machine learning lies in its ability to discover patterns that humans might not recognize, especially in high-dimensional data spaces with millions of variables.
+                            </p>
+                        </div>
+
+                        <div class="content-section">
+                            <h3>Three Learning Paradigms</h3>
+                            <table class="component-table">
+                                <thead>
+                                    <tr>
+                                        <th>Paradigm</th>
+                                        <th>Training Data</th>
+                                        <th>Learning Mechanism</th>
+                                        <th>Example Use Case</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>Supervised Learning</strong></td>
+                                        <td>Labeled examples</td>
+                                        <td>Learn patterns mapping inputs to outputs</td>
+                                        <td>Image classification, spam detection</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Unsupervised Learning</strong></td>
+                                        <td>Unlabeled data</td>
+                                        <td>Discover hidden patterns and structure</td>
+                                        <td>Customer segmentation, anomaly detection</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Reinforcement Learning</strong></td>
+                                        <td>Reward signals</td>
+                                        <td>Learn through trial-and-error interaction</td>
+                                        <td>Game playing, robotics control</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="content-section">
+                            <h3>Historical Context</h3>
+                            <p>
+                                The term "machine learning" was coined by Arthur Samuel in 1959 while working on a checkers-playing program at IBM. However, the theoretical foundations trace back to the 1940s with early work on neural networks and pattern recognition.
+                            </p>
+                        </div>
+
+                        <div class="component-image-prompt">
+                            <div class="icon">📊</div>
+                            <p class="prompt-text">
+                                Image: Timeline visualization showing the evolution from 1940s neural networks → 1959 Arthur Samuel's checkers program → 1980s backpropagation → 2012 deep learning breakthrough → 2017 transformer architecture → 2022 ChatGPT
+                            </p>
+                        </div>
+
+                        <div class="content-section">
+                            <h3>Governance Implications</h3>
+                            <ul class="component-list">
+                                <li><strong>Transparency:</strong> ML models can be "black boxes," making it difficult to explain why specific decisions were made</li>
+                                <li><strong>Bias Amplification:</strong> Models learn from historical data, potentially perpetuating or amplifying existing biases</li>
+                                <li><strong>Data Privacy:</strong> ML systems require large datasets, raising concerns about data collection and use</li>
+                                <li><strong>Accountability:</strong> When ML systems make mistakes, determining responsibility becomes complex</li>
+                            </ul>
+                        </div>
+
+                        <div class="curved-box">
+                            <h4>Regulation Watch</h4>
+                            <p>
+                                The EU AI Act (2024) classifies ML systems by risk level, with high-risk applications like hiring and credit scoring facing strict transparency and testing requirements.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="card-footer">
+                        <div class="card-tags">
+                            <span class="tag">Foundational</span>
+                            <span class="tag">History</span>
+                            <span class="tag">Terminology</span>
+                        </div>
+                        <div class="card-meta">
+                            Last updated: Dec 2024 • 2,418 words • 8 min read
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card 2 - Collapsed State -->
+                <article class="concept-card collapsed" data-card="2" onclick="expandCard(2)">
+                    <div class="card-header">
+                        <h2 class="card-title">
+                            <span class="card-number">2</span>
+                            Early Foundations (1950s-1960s)
+                        </h2>
+                        <p class="card-tldr">
+                            The 1950s-1960s established the theoretical foundations with the perceptron, early neural networks, and pioneering work in pattern recognition.
+                        </p>
+                    </div>
+
+                    <div class="card-body">
+                        <div class="content-section">
+                            <h3>The Perceptron (1957)</h3>
+                            <p>
+                                Frank Rosenblatt's perceptron was the first algorithm capable of learning from examples. This single-layer neural network could classify inputs into one of two categories by adjusting weights based on training errors.
+                            </p>
+                        </div>
+
+                        <div class="curved-box">
+                            <h4>Key Breakthrough</h4>
+                            <p>
+                                The perceptron learning algorithm demonstrated that machines could automatically learn to classify patterns without being explicitly programmed for every scenario.
+                            </p>
+                        </div>
+
+                        <div class="content-section">
+                            <h3>Limitations and Setbacks</h3>
+                            <p>
+                                Marvin Minsky and Seymour Papert's 1969 book "Perceptrons" proved that single-layer perceptrons couldn't solve the XOR problem (a simple logical function). This limitation, combined with funding challenges, contributed to the first "AI Winter."
+                            </p>
+                        </div>
+
+                        <div class="component-checklist">
+                            <h4>Paradigm Selection Decision Tree</h4>
+                            <ul>
+                                <li>Do you have labeled training data?
+                                    <ul style="margin-left: 2rem; list-style: none;">
+                                        <li>→ Yes, abundant labeled data → <strong>Supervised learning</strong></li>
+                                        <li>→ Yes, small labeled + large unlabeled → <strong>Semi-supervised learning</strong></li>
+                                        <li>→ No labeled data → Continue to next question</li>
+                                    </ul>
+                                </li>
+                                <li>Do you need to discover patterns without predefined outputs?
+                                    <ul style="margin-left: 2rem; list-style: none;">
+                                        <li>→ Yes → <strong>Unsupervised learning</strong></li>
+                                        <li>→ No → Continue to next question</li>
+                                    </ul>
+                                </li>
+                                <li>Does your system interact with an environment and receive rewards?
+                                    <ul style="margin-left: 2rem; list-style: none;">
+                                        <li>→ Yes → <strong>Reinforcement learning</strong></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="card-footer">
+                        <div class="card-tags">
+                            <span class="tag">History</span>
+                            <span class="tag">Neural Networks</span>
+                        </div>
+                        <div class="card-meta">
+                            Last updated: Dec 2024 • 1,892 words • 6 min read
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card 3 - Collapsed State -->
+                <article class="concept-card collapsed" data-card="3" onclick="expandCard(3)">
+                    <div class="card-header">
+                        <h2 class="card-title">
+                            <span class="card-number">3</span>
+                            AI Winter & Expert Systems (1970s-1980s)
+                        </h2>
+                        <p class="card-tldr">
+                            Following the perceptron's limitations, the field shifted toward rule-based expert systems, while neural network research entered a prolonged "winter."
+                        </p>
+                    </div>
+
+                    <div class="card-body">
+                        <p>Content would appear here when expanded...</p>
+                    </div>
+
+                    <div class="card-footer">
+                        <div class="card-tags">
+                            <span class="tag">History</span>
+                            <span class="tag">Expert Systems</span>
+                        </div>
+                        <div class="card-meta">
+                            Last updated: Dec 2024 • 2,156 words • 7 min read
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card 4 - Collapsed State -->
+                <article class="concept-card collapsed" data-card="4" onclick="expandCard(4)">
+                    <div class="card-header">
+                        <h2 class="card-title">
+                            <span class="card-number">4</span>
+                            The Neural Network Renaissance (1980s-2000s)
+                        </h2>
+                        <p class="card-tldr">
+                            Backpropagation's discovery enabled multi-layer neural networks, rekindling interest and laying groundwork for modern deep learning.
+                        </p>
+                    </div>
+
+                    <div class="card-body">
+                        <p>Content would appear here when expanded...</p>
+                    </div>
+
+                    <div class="card-footer">
+                        <div class="card-tags">
+                            <span class="tag">History</span>
+                            <span class="tag">Backpropagation</span>
+                            <span class="tag">Neural Networks</span>
+                        </div>
+                        <div class="card-meta">
+                            Last updated: Dec 2024 • 2,734 words • 9 min read
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card 5 - Collapsed State -->
+                <article class="concept-card collapsed" data-card="5" onclick="expandCard(5)">
+                    <div class="card-header">
+                        <h2 class="card-title">
+                            <span class="card-number">5</span>
+                            Deep Learning Revolution (2006-2016)
+                        </h2>
+                        <p class="card-tldr">
+                            The convergence of big data, GPU computing, and algorithmic innovations sparked the deep learning revolution that transformed AI.
+                        </p>
+                    </div>
+
+                    <div class="card-body">
+                        <p>Content would appear here when expanded...</p>
+                    </div>
+
+                    <div class="card-footer">
+                        <div class="card-tags">
+                            <span class="tag">History</span>
+                            <span class="tag">Deep Learning</span>
+                            <span class="tag">GPUs</span>
+                        </div>
+                        <div class="card-meta">
+                            Last updated: Dec 2024 • 3,124 words • 10 min read
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card 6 - Collapsed State -->
+                <article class="concept-card collapsed" data-card="6" onclick="expandCard(6)">
+                    <div class="card-header">
+                        <h2 class="card-title">
+                            <span class="card-number">6</span>
+                            Transformer Architecture (2017-2020)
+                        </h2>
+                        <p class="card-tldr">
+                            "Attention is All You Need" introduced transformers, enabling parallel processing and revolutionizing natural language processing.
+                        </p>
+                    </div>
+
+                    <div class="card-body">
+                        <p>Content would appear here when expanded...</p>
+                    </div>
+
+                    <div class="card-footer">
+                        <div class="card-tags">
+                            <span class="tag">History</span>
+                            <span class="tag">Transformers</span>
+                            <span class="tag">Attention Mechanism</span>
+                        </div>
+                        <div class="card-meta">
+                            Last updated: Dec 2024 • 2,891 words • 9 min read
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card 7 - Collapsed State -->
+                <article class="concept-card collapsed" data-card="7" onclick="expandCard(7)">
+                    <div class="card-header">
+                        <h2 class="card-title">
+                            <span class="card-number">7</span>
+                            Large Language Models Era (2020-Present)
+                        </h2>
+                        <p class="card-tldr">
+                            The scaling of transformer models to billions of parameters created LLMs like GPT-4 and Claude, capable of human-like text generation and reasoning.
+                        </p>
+                    </div>
+
+                    <div class="card-body">
+                        <p>Content would appear here when expanded...</p>
+                    </div>
+
+                    <div class="card-footer">
+                        <div class="card-tags">
+                            <span class="tag">History</span>
+                            <span class="tag">LLMs</span>
+                            <span class="tag">GPT</span>
+                            <span class="tag">Claude</span>
+                        </div>
+                        <div class="card-meta">
+                            Last updated: Dec 2024 • 3,456 words • 11 min read
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </main>
+    </div>
+
+    <!-- Wireframe Notes -->
+    <div class="wireframe-notes">
+        <h4>🎨 Design Notes</h4>
+        <ul>
+            <li>StackCards scroll-pinning</li>
+            <li>Collapsed → Expanded transition</li>
+            <li>Curved box components</li>
+            <li>Sticky sidebar mini-map</li>
+            <li>Cross-reference navigation</li>
+            <li>Scroll progress indicator</li>
+            <li>Component markup rendering</li>
+        </ul>
+    </div>
+
+    <!-- Initial Hint -->
+    <div class="expand-collapse-hint" id="expandHint">
+        👆 Click any collapsed card to expand it
+    </div>
+
+    <script>
+        // Theme Toggle
+        function toggleTheme() {
+            document.body.classList.toggle('dark-mode');
+            localStorage.setItem('theme', document.body.classList.contains('dark-mode') ? 'dark' : 'light');
+        }
+
+        // Auto-detect theme based on time
+        function detectTheme() {
+            const hour = new Date().getHours();
+            const savedTheme = localStorage.getItem('theme');
+
+            if (savedTheme) {
+                if (savedTheme === 'dark') {
+                    document.body.classList.add('dark-mode');
+                }
+            } else if (hour >= 20 || hour < 6) {
+                document.body.classList.add('dark-mode');
+            }
+        }
+
+        // Expand Card
+        function expandCard(cardNumber) {
+            const cards = document.querySelectorAll('.concept-card');
+            const targetCard = document.querySelector(`[data-card="${cardNumber}"]`);
+
+            // Collapse all cards
+            cards.forEach(card => {
+                card.classList.remove('expanded');
+                card.classList.add('collapsed');
+            });
+
+            // Expand target card
+            targetCard.classList.remove('collapsed');
+            targetCard.classList.add('expanded');
+            targetCard.onclick = null; // Remove click handler for expanded card
+
+            // Scroll to card
+            targetCard.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+            // Update mini-map
+            updateMiniMap(cardNumber);
+        }
+
+        // Update Mini-map
+        function updateMiniMap(activeCard) {
+            const items = document.querySelectorAll('.mini-map-item');
+            items.forEach(item => {
+                item.classList.remove('active');
+                if (item.dataset.card == activeCard) {
+                    item.classList.add('active');
+                }
+            });
+        }
+
+        // Mini-map Navigation
+        document.querySelectorAll('.mini-map-item').forEach(item => {
+            item.addEventListener('click', function() {
+                const cardNumber = this.dataset.card;
+                expandCard(cardNumber);
+            });
+        });
+
+        // Scroll Progress
+        function updateScrollProgress() {
+            const contentArea = document.querySelector('.content-area');
+            const scrollTop = window.scrollY;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const scrollPercent = (scrollTop / docHeight) * 100;
+
+            document.getElementById('scrollProgress').style.width = scrollPercent + '%';
+        }
+
+        window.addEventListener('scroll', updateScrollProgress);
+
+        // Hide expand hint after 3 seconds
+        setTimeout(() => {
+            const hint = document.getElementById('expandHint');
+            if (hint) {
+                hint.style.display = 'none';
+            }
+        }, 3000);
+
+        // Initialize
+        detectTheme();
+        updateScrollProgress();
+
+        // Simulate scroll-pinning behavior (actual implementation would use GSAP ScrollTrigger)
+        let lastScrollTop = 0;
+        window.addEventListener('scroll', function() {
+            const scrollTop = window.scrollY;
+
+            // Find which card is in view
+            const cards = document.querySelectorAll('.concept-card');
+            cards.forEach((card, index) => {
+                const rect = card.getBoundingClientRect();
+                if (rect.top <= 100 && rect.bottom >= 100) {
+                    updateMiniMap(index + 1);
+                }
+            });
+
+            lastScrollTop = scrollTop;
+        });
+
+        // Cross-reference navigation (demo)
+        document.querySelectorAll('.cross-ref-item').forEach(item => {
+            item.addEventListener('click', function() {
+                alert('Cross-reference navigation: This would navigate to the related concept card in a different learning path.');
+            });
+        });
+    </script>
+</body>
+</html>

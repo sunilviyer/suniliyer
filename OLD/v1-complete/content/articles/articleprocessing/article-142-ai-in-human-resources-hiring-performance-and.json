@@ -1,0 +1,174 @@
+{
+  "file_status": {
+    "suggested_slug": "article-142-ai-in-human-resources-hiring-performance-and-ret",
+    "category": "Industry-Specific Insights",
+    "word_count_check": {
+      "target": null,
+      "actual": 2248,
+      "status": "under"
+    }
+  },
+  "content_validation": {
+    "structure": {
+      "has_h1": true,
+      "has_intro": true,
+      "has_conclusion": true,
+      "header_depth_valid": true
+    },
+    "generated_elements": {
+      "tldr_was_missing": true,
+      "objectives_were_missing": false,
+      "keywords_were_missing": false
+    }
+  },
+  "component_inventory": {
+    "has_components": true,
+    "items": [
+      {
+        "type": "table",
+        "label": "Requirement vs Details Table",
+        "detected_at_section": "NYC Local Law 144"
+      },
+      {
+        "type": "table",
+        "label": "Jurisdiction vs Requirement Table",
+        "detected_at_section": "Other Regulations"
+      },
+      {
+        "type": "table",
+        "label": "Proxy vs What It May Encode Table",
+        "detected_at_section": "Challenge 2: Proxy Discrimination"
+      },
+      {
+        "type": "table",
+        "label": "Question vs Why It Matters Table",
+        "detected_at_section": "Pre-Deployment Assessment"
+      },
+      {
+        "type": "table",
+        "label": "Test vs Purpose Table",
+        "detected_at_section": "Bias Testing Framework"
+      },
+      {
+        "type": "table",
+        "label": "Timing vs What to Communicate Table",
+        "detected_at_section": "Transparency Requirements"
+      },
+      {
+        "type": "table",
+        "label": "Level vs Description Table",
+        "detected_at_section": "Human Oversight"
+      },
+      {
+        "type": "table",
+        "label": "Area vs Questions to Ask Table",
+        "detected_at_section": "Vendor Management"
+      },
+      {
+        "type": "flowchart",
+        "label": "Conclusion Process",
+        "detected_at_section": "Conclusion"
+      },
+      {
+        "type": "flowchart",
+        "label": "Sources and Further Reading Process",
+        "detected_at_section": "Sources and Further Reading"
+      },
+      {
+        "type": "template",
+        "label": "Article 142: AI in Human Resources – Hiring, Performance, and Retention",
+        "detected_at_section": "Article 142: AI in Human Resources – Hiring, Performance, and Retention",
+        "template_link": "/templates/article-142-ai-in-human-resources-hiring-performance-and-retention.md"
+      },
+      {
+        "type": "template",
+        "label": "Performance Management",
+        "detected_at_section": "Performance Management",
+        "template_link": "/templates/performance-management.md"
+      },
+      {
+        "type": "template",
+        "label": "Example:",
+        "detected_at_section": "Challenge 5: The \"Black Box\" Problem",
+        "template_link": "/templates/example.md"
+      },
+      {
+        "type": "template",
+        "label": "Remote/Gig Work Platforms",
+        "detected_at_section": "Remote/Gig Work Platforms",
+        "template_link": "/templates/remotegig-work-platforms.md"
+      },
+      {
+        "type": "template",
+        "label": "The Performance and Retention Dimension",
+        "detected_at_section": "The Performance and Retention Dimension",
+        "template_link": "/templates/the-performance-and-retention-dimension.md"
+      },
+      {
+        "type": "template",
+        "label": "AI in Performance Management",
+        "detected_at_section": "AI in Performance Management",
+        "template_link": "/templates/ai-in-performance-management.md"
+      },
+      {
+        "type": "list",
+        "label": "Best Practices for HR AI Governance",
+        "detected_at_section": "Best Practices for HR AI Governance"
+      },
+      {
+        "type": "list",
+        "label": "Transparency Requirements",
+        "detected_at_section": "Transparency Requirements"
+      }
+    ]
+  },
+  "extracted_data": {
+    "title": "Article 142: AI in Human Resources – Hiring, Performance, and Retention",
+    "tldr": "",
+    "learning_objectives": [
+      "Understand the key concepts and principles of model validation processes",
+      "Implement regulatory requirements in real-world scenarios",
+      "Evaluate risk assessment frameworks for organizational compliance"
+    ],
+    "seo_keywords": [
+      "article",
+      "human",
+      "AI governance",
+      "artificial intelligence",
+      "human resources"
+    ],
+    "references": []
+  },
+  "cross_reference_data": {
+    "topic_fingerprint": [
+      "transparency",
+      "oversight",
+      "fairness",
+      "audit",
+      "accountability"
+    ],
+    "named_examples": [
+      "aedt",
+      "amazon",
+      "ccpa",
+      "colorado ai act",
+      "cpra",
+      "eu ai act",
+      "european parliament",
+      "fair",
+      "federal trade commission",
+      "ftc",
+      "gdpr",
+      "nyc local law 144"
+    ]
+  },
+  "image_generation": {
+    "prompt": {
+      "formula": "Abstract geometric illustration, earth tones, minimalist, professional",
+      "category_motif": "industry icons",
+      "master_size": "1200x750px",
+      "css_filters": true
+    },
+    "placeholder": "![Article 142: AI in Human Resources – Hiring, Performance, and Retention]({{IMAGE_PLACEHOLDER_article-142-ai-in-human-resources-hiring-performance-and-ret}})"
+  }
+}

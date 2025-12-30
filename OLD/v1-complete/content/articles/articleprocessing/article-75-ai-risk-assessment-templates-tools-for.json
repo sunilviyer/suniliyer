@@ -1,0 +1,133 @@
+{
+  "file_status": {
+    "suggested_slug": "article-75-ai-risk-assessment-templates-tools-for-practition",
+    "category": "AI Risks & Principles",
+    "word_count_check": {
+      "target": null,
+      "actual": 716,
+      "status": "under"
+    }
+  },
+  "content_validation": {
+    "structure": {
+      "has_h1": true,
+      "has_intro": true,
+      "has_conclusion": true,
+      "header_depth_valid": true
+    },
+    "generated_elements": {
+      "tldr_was_missing": true,
+      "objectives_were_missing": false,
+      "keywords_were_missing": false
+    }
+  },
+  "component_inventory": {
+    "has_components": true,
+    "items": [
+      {
+        "type": "checklist",
+        "label": "Template 4: AI Bias Assessment Checklist",
+        "detected_at_section": "Template 4: AI Bias Assessment Checklist"
+      },
+      {
+        "type": "flowchart",
+        "label": "Customization Tips Process",
+        "detected_at_section": "Customization Tips"
+      },
+      {
+        "type": "flowchart",
+        "label": "Sources and Further Reading Process",
+        "detected_at_section": "Sources and Further Reading"
+      },
+      {
+        "type": "template",
+        "label": "Article 75: AI Risk Assessment Templates – Tools for Practitioners",
+        "detected_at_section": "Article 75: AI Risk Assessment Templates – Tools for Practitioners",
+        "template_link": "/templates/article-75-ai-risk-assessment-templates-tools-for-practitioners.md"
+      },
+      {
+        "type": "template",
+        "label": "Template 1: AI System Initial Risk Screening",
+        "detected_at_section": "Template 1: AI System Initial Risk Screening",
+        "template_link": "/templates/template-1-ai-system-initial-risk-screening.md"
+      },
+      {
+        "type": "template",
+        "label": "Template",
+        "detected_at_section": "Template",
+        "template_link": "/templates/template.md"
+      },
+      {
+        "type": "template",
+        "label": "Template 2: Standard AI Risk Assessment",
+        "detected_at_section": "Template 2: Standard AI Risk Assessment",
+        "template_link": "/templates/template-2-standard-ai-risk-assessment.md"
+      },
+      {
+        "type": "template",
+        "label": "Template 3: AI Risk Register",
+        "detected_at_section": "Template 3: AI Risk Register",
+        "template_link": "/templates/template-3-ai-risk-register.md"
+      },
+      {
+        "type": "template",
+        "label": "Template 4: AI Bias Assessment Checklist",
+        "detected_at_section": "Template 4: AI Bias Assessment Checklist",
+        "template_link": "/templates/template-4-ai-bias-assessment-checklist.md"
+      },
+      {
+        "type": "template",
+        "label": "Template 5: AI Incident Report",
+        "detected_at_section": "Template 5: AI Incident Report",
+        "template_link": "/templates/template-5-ai-incident-report.md"
+      },
+      {
+        "type": "template",
+        "label": "Using These Templates",
+        "detected_at_section": "Using These Templates",
+        "template_link": "/templates/using-these-templates.md"
+      }
+    ]
+  },
+  "extracted_data": {
+    "title": "Article 75: AI Risk Assessment Templates – Tools for Practitioners",
+    "tldr": "",
+    "learning_objectives": [
+      "Understand the key concepts and principles of ai governance frameworks",
+      "Implement best practices in real-world scenarios",
+      "Evaluate risk assessment frameworks for organizational compliance"
+    ],
+    "seo_keywords": [
+      "article",
+      "risk",
+      "AI governance",
+      "AI risk management",
+      "risk assessment templates"
+    ],
+    "references": []
+  },
+  "cross_reference_data": {
+    "topic_fingerprint": [
+      "machine learning",
+      "nlp",
+      "computer vision",
+      "risk assessment",
+      "oversight"
+    ],
+    "named_examples": [
+      "energy",
+      "eu ai act",
+      "iso",
+      "nist"
+    ]
+  },
+  "image_generation": {
+    "prompt": {
+      "formula": "Abstract geometric illustration, earth tones, minimalist, professional",
+      "category_motif": "warning triangles",
+      "master_size": "1200x750px",
+      "css_filters": true
+    },
+    "placeholder": "![Article 75: AI Risk Assessment Templates – Tools for Practitioners]({{IMAGE_PLACEHOLDER_article-75-ai-risk-assessment-templates-tools-for-practition}})"
+  }
+}

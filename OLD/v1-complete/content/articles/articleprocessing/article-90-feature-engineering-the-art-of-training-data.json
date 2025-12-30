@@ -1,0 +1,141 @@
+{
+  "file_status": {
+    "suggested_slug": "article-90-feature-engineering-the-art-of-training-data-prep",
+    "category": "AI Development Lifecycle",
+    "word_count_check": {
+      "target": null,
+      "actual": 1997,
+      "status": "under"
+    }
+  },
+  "content_validation": {
+    "structure": {
+      "has_h1": true,
+      "has_intro": true,
+      "has_conclusion": true,
+      "header_depth_valid": true
+    },
+    "generated_elements": {
+      "tldr_was_missing": true,
+      "objectives_were_missing": false,
+      "keywords_were_missing": false
+    }
+  },
+  "component_inventory": {
+    "has_components": true,
+    "items": [
+      {
+        "type": "table",
+        "label": "Approach vs Typical Outcome Table",
+        "detected_at_section": "The 80/20 Rule of ML"
+      },
+      {
+        "type": "table",
+        "label": "Method vs Best For Table",
+        "detected_at_section": "Technique 5: Encoding Techniques"
+      },
+      {
+        "type": "flowchart",
+        "label": "Why Governance Cares About Features Process",
+        "detected_at_section": "Why Governance Cares About Features"
+      },
+      {
+        "type": "flowchart",
+        "label": "Conclusion Process",
+        "detected_at_section": "Conclusion"
+      },
+      {
+        "type": "flowchart",
+        "label": "Sources and Further Reading Process",
+        "detected_at_section": "Sources and Further Reading"
+      },
+      {
+        "type": "template",
+        "label": "Example: Credit risk",
+        "detected_at_section": "Technique 1: Domain-Driven Features",
+        "template_link": "/templates/example-credit-risk.md"
+      },
+      {
+        "type": "template",
+        "label": "Example: Retail churn",
+        "detected_at_section": "Technique 1: Domain-Driven Features",
+        "template_link": "/templates/example-retail-churn.md"
+      },
+      {
+        "type": "template",
+        "label": "Example: Time series forecasting",
+        "detected_at_section": "Technique 4: Lag Features",
+        "template_link": "/templates/example-time-series-forecasting.md"
+      },
+      {
+        "type": "template",
+        "label": "Example:",
+        "detected_at_section": "Pitfall 2: High Cardinality Explosion",
+        "template_link": "/templates/example.md"
+      },
+      {
+        "type": "template",
+        "label": "Example:",
+        "detected_at_section": "Pitfall 3: Training-Serving Skew",
+        "template_link": "/templates/example.md"
+      },
+      {
+        "type": "template",
+        "label": "Example:",
+        "detected_at_section": "Pitfall 4: Encoding Bias",
+        "template_link": "/templates/example.md"
+      },
+      {
+        "type": "template",
+        "label": "Feature Documentation Template",
+        "detected_at_section": "Feature Documentation Template",
+        "template_link": "/templates/feature-documentation-template.md"
+      },
+      {
+        "type": "list",
+        "label": "Best Practices Summary",
+        "detected_at_section": "Best Practices Summary"
+      }
+    ]
+  },
+  "extracted_data": {
+    "title": "Article 90: Feature Engineering – The Art of Training Data Preparation",
+    "tldr": "",
+    "learning_objectives": [
+      "Understand the key concepts and principles of stakeholder engagement",
+      "Implement best practices in real-world scenarios",
+      "Evaluate risk assessment frameworks for organizational compliance"
+    ],
+    "seo_keywords": [
+      "article",
+      "feature",
+      "AI governance",
+      "feature engineering",
+      "the art"
+    ],
+    "references": []
+  },
+  "cross_reference_data": {
+    "topic_fingerprint": [
+      "machine learning",
+      "neural network",
+      "interpretability",
+      "fairness",
+      "explainability"
+    ],
+    "named_examples": [
+      "google",
+      "nist",
+      "toronto"
+    ]
+  },
+  "image_generation": {
+    "prompt": {
+      "formula": "Abstract geometric illustration, earth tones, minimalist, professional",
+      "category_motif": "flowcharts",
+      "master_size": "1200x750px",
+      "css_filters": true
+    },
+    "placeholder": "![Article 90: Feature Engineering – The Art of Training Data Preparation]({{IMAGE_PLACEHOLDER_article-90-feature-engineering-the-art-of-training-data-prep}})"
+  }
+}

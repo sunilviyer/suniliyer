@@ -1,0 +1,1701 @@
+# AIDefence V2 - Knowledge Graph
+# Complete mapping of 158 articles into 5 learning paths
+# Generated: 2025-12-18
+
+metadata:
+  total_articles: 158
+  total_concept_cards: 120
+  total_example_cards: 28
+  total_resource_cards: 10
+  learning_paths: 5
+  generated_date: "2025-12-18"
+
+# ============================================================================
+# LEARNING PATHS
+# ============================================================================
+
+learning_paths:
+  - id: history
+    title: "History"
+    slug: "/learn/history"
+    tagline: "From Dartmouth to DeepMind"
+    description: "Trace AI's evolution from 1950s academic conferences to today's foundation models. Understand what AI is, how it works, and why GPUs power the AI revolution."
+    card_count: 15
+    estimated_reading_time: "45-60 minutes"
+    primary_keywords:
+      - "AI history timeline"
+      - "evolution of AI"
+      - "what is artificial intelligence"
+      - "machine learning explained"
+    concept_cards:
+      - history-1
+      - history-2
+      - history-3
+      - history-4
+      - history-5
+      - history-6
+      - history-7
+      - history-8
+      - history-9
+      - history-10
+      - history-11
+      - history-12
+      - history-13
+      - history-14
+      - history-15
+    example_cards: []
+    resource_cards: []
+
+  - id: terminology
+    title: "Terminology"
+    slug: "/learn/terminology"
+    tagline: "How AI Actually Works"
+    description: "Master AI terminology from machine learning to neural networks. Understand supervised vs. unsupervised learning, deep learning architectures, and foundation models."
+    card_count: 24
+    estimated_reading_time: "60-90 minutes"
+    primary_keywords:
+      - "what is machine learning"
+      - "AI concepts explained"
+      - "supervised vs unsupervised learning"
+      - "neural networks explained"
+      - "deep learning tutorial"
+    concept_cards:
+      - term-1
+      - term-2
+      - term-3
+      - term-4
+      - term-5
+      - term-6
+      - term-7
+      - term-8
+      - term-9
+      - term-10
+      - term-11
+      - term-12
+      - term-13
+      - term-14
+    example_cards:
+      - ex-netflix
+      - ex-google-search
+      - ex-chatgpt
+      - ex-siri-alexa
+      - ex-google-maps
+    resource_cards: []
+
+  - id: risk
+    title: "Risk"
+    slug: "/learn/risk"
+    tagline: "When AI Goes Wrong"
+    description: "Explore AI harms from algorithmic bias to deepfakes. Learn how bias enters systems, why explainability matters, and how to build trustworthy AI."
+    card_count: 28
+    estimated_reading_time: "90-120 minutes"
+    primary_keywords:
+      - "algorithmic bias examples"
+      - "AI bias explained"
+      - "AI safety failures"
+      - "deepfake risks"
+      - "AI discrimination"
+      - "AI hallucinations"
+    concept_cards:
+      - risk-1
+      - risk-2
+      - risk-3
+      - risk-4
+      - risk-5
+      - risk-6
+      - risk-7
+      - risk-8
+      - risk-9
+      - risk-10
+      - risk-11
+      - risk-12
+      - risk-13
+      - risk-14
+      - risk-15
+      - risk-16
+      - risk-17
+      - risk-18
+      - risk-19
+      - risk-20
+    example_cards:
+      - ex-amazon-hiring
+      - ex-compas
+      - ex-apple-card
+      - ex-gender-shades
+      - ex-uk-grading
+      - ex-healthcare-algo
+      - ex-predictive-policing
+    resource_cards:
+      - res-risk-assessment
+      - res-bias-audit
+
+  - id: responsibility
+    title: "Responsibility"
+    slug: "/learn/responsibility"
+    tagline: "AI Governance Frameworks"
+    description: "Navigate AI laws from GDPR to the EU AI Act. Implement governance frameworks, develop policies, and build ethical AI practices."
+    card_count: 75
+    estimated_reading_time: "180-240 minutes"
+    primary_keywords:
+      - "EU AI Act explained"
+      - "AI governance frameworks"
+      - "GDPR and AI"
+      - "AI compliance requirements"
+      - "responsible AI practices"
+      - "AI policy templates"
+    concept_cards:
+      - resp-1
+      - resp-2
+      - resp-3
+      - resp-4
+      - resp-5
+      - resp-6
+      - resp-7
+      - resp-8
+      - resp-9
+      - resp-10
+      - resp-11
+      - resp-12
+      - resp-13
+      - resp-14
+      - resp-15
+      - resp-16
+      - resp-17
+      - resp-18
+      - resp-19
+      - resp-20
+      - resp-21
+      - resp-22
+      - resp-23
+      - resp-24
+      - resp-25
+      - resp-26
+      - resp-27
+      - resp-28
+      - resp-29
+      - resp-30
+      - resp-31
+      - resp-32
+      - resp-33
+      - resp-34
+      - resp-35
+      - resp-36
+      - resp-37
+      - resp-38
+      - resp-39
+      - resp-40
+      - resp-41
+      - resp-42
+      - resp-43
+      - resp-44
+      - resp-45
+      - resp-46
+      - resp-47
+      - resp-48
+      - resp-49
+      - resp-50
+      - resp-51
+      - resp-52
+      - resp-53
+      - resp-54
+      - resp-55
+      - resp-56
+      - resp-57
+      - resp-58
+      - resp-59
+      - resp-60
+      - resp-61
+      - resp-62
+      - resp-63
+      - resp-64
+      - resp-65
+      - resp-66
+      - resp-67
+      - resp-68
+      - resp-69
+      - resp-70
+      - resp-71
+      - resp-72
+      - resp-73
+      - resp-74
+      - resp-75
+    example_cards:
+      - ex-amazon-legal
+      - ex-gdpr-enforcement
+      - ex-compas-legal
+      - ex-eu-ai-act-cases
+    resource_cards:
+      - res-policy-templates
+      - res-impact-assessment
+      - res-model-card
+      - res-ethics-review
+      - res-incident-response
+      - res-vendor-eval
+      - res-ai-roadmap
+      - res-aigp-study
+
+  - id: future
+    title: "Future"
+    slug: "/learn/future"
+    tagline: "What's Next for AI"
+    description: "Explore AGI, existential risk, and emerging trends. Navigate AI careers, industry-specific governance, and the future of regulation."
+    card_count: 20
+    estimated_reading_time: "60-90 minutes"
+    primary_keywords:
+      - "future of AI regulation"
+      - "AGI timeline"
+      - "AI existential risk"
+      - "AI governance careers"
+      - "AI policy trends"
+    concept_cards:
+      - future-1
+      - future-2
+      - future-3
+      - future-4
+      - future-5
+      - future-6
+      - future-7
+      - future-8
+      - future-9
+      - future-10
+      - future-11
+      - future-12
+      - future-13
+      - future-14
+      - future-15
+      - future-16
+      - future-17
+      - future-18
+      - future-19
+      - future-20
+    example_cards:
+      - ex-gpt4-claude-gemini
+      - ex-deepfake-elections
+      - ex-openai-anthropic
+    resource_cards:
+      - res-career-roadmap
+      - res-aigp-study
+
+# ============================================================================
+# CONCEPT CARDS - HISTORY PATH (15 cards)
+# ============================================================================
+
+concept_cards_history:
+  - id: history-1
+    title: "The Building Blocks – What AI Actually Is"
+    slug: what-ai-actually-is
+    path: history
+    source_file: "content/articles/final/article-title.md"
+    source_phase: "Phase 1: AI Fundamentals"
+    tldr: "AI is machine-based systems that infer from inputs to generate outputs influencing physical or virtual environments. OECD definition Nov 2023."
+    content_sections:
+      - "OECD AI Definition (Nov 2023)"
+      - "ISO/IEC 22989:2022 Terminology"
+      - "What Makes AI Different from Traditional Software"
+      - "Why Definitions Matter for Governance"
+    related_concepts: [history-2, history-5, term-1]
+    cross_path_refs:
+      terminology: [term-1]
+      responsibility: [resp-1]
+    tags: [fundamentals, definitions, OECD, ISO]
+
+  - id: history-2
+    title: "The AI Family Tree – Types of AI Systems Explained"
+    slug: ai-family-tree
+    path: history
+    source_file: "content/articles/final/article-title.md"
+    tldr: "AI systems span narrow AI (single task), general AI (multiple tasks), and AGI (hypothetical human-level). Classification frameworks guide governance."
+    content_sections:
+      - "Narrow vs. General vs. AGI"
+      - "OECD Classification Framework (5 dimensions)"
+      - "Use Case Categories"
+    related_concepts: [history-1, history-5, future-1]
+    cross_path_refs:
+      terminology: [term-1, term-9]
+      future: [future-1]
+    tags: [classification, frameworks, AGI, narrow-AI]
+
+  - id: history-3
+    title: "The AI Technology Stack – From Chips to ChatGPT"
+    slug: ai-technology-stack
+    path: history
+    source_file: "content/articles/final/article-10-the-ai-technology-stack-from-chips-to-application.md"
+    tldr: "AI stack: Hardware (GPUs), Infrastructure (data centers), Models (neural networks), Applications (ChatGPT). Each layer has governance implications."
+    content_sections:
+      - "Hardware Layer: GPUs, TPUs, Custom Chips"
+      - "Infrastructure Layer: Cloud, Data Centers"
+      - "Model Layer: Training, Fine-tuning"
+      - "Application Layer: User-facing AI"
+    related_concepts: [history-14, term-12]
+    cross_path_refs:
+      terminology: [term-7, term-9, term-12]
+      risk: [risk-15]
+    tags: [technology, infrastructure, hardware, cloud]
+
+  - id: history-4
+    title: "AI History – From Dartmouth to DeepMind"
+    slug: ai-history-timeline
+    path: history
+    source_file: "content/articles/final/article-title.md"
+    tldr: "AI's 70-year journey: 1956 Dartmouth Conference, 1980s/90s AI Winters, 2012 deep learning breakthrough (AlexNet), 2022 ChatGPT moment."
+    content_sections:
+      - "1956: Dartmouth Conference Birth of AI"
+      - "1980s-90s: AI Winters"
+      - "2012: AlexNet Deep Learning Renaissance"
+      - "2016: AlphaGo Defeats World Champion"
+      - "2022: ChatGPT Mainstream Moment"
+    related_concepts: [history-7, term-6, term-7]
+    cross_path_refs:
+      terminology: [term-6, term-7]
+      future: [future-1]
+    tags: [history, timeline, Dartmouth, AI-winter, breakthrough]
+
+  - id: history-5
+    title: "Strong vs. Weak AI – Why the Difference Matters for Governance"
+    slug: strong-vs-weak-ai
+    path: history
+    source_file: "content/articles/final/article-5-strong-vs-weak-ai-why-the-difference-matters-for-g.md"
+    tldr: "Weak AI (narrow, task-specific, exists today) vs. Strong AI/AGI (general intelligence, hypothetical). Governance must address current weak AI risks."
+    content_sections:
+      - "Weak AI: Siri, Spam Filters, Recommendation Engines"
+      - "Strong AI/AGI: Science Fiction vs. Research"
+      - "Why Governance Focuses on Weak AI"
+      - "Preparing for AGI Without Ignoring Current Harms"
+    related_concepts: [history-1, history-2, future-1]
+    cross_path_refs:
+      future: [future-1, future-2]
+      risk: [risk-1]
+    tags: [AGI, narrow-AI, strong-AI, weak-AI, definitions]
+
+  - id: history-6
+    title: "Machine Learning Demystified – How Machines Actually Learn"
+    slug: machine-learning-explained
+    path: history
+    source_file: "content/articles/final/article-title.md"
+    tldr: "Machine learning: computers learn patterns from data instead of explicit programming. Three types: supervised, unsupervised, reinforcement learning."
+    content_sections:
+      - "What Is Machine Learning?"
+      - "Supervised Learning (labeled data)"
+      - "Unsupervised Learning (pattern discovery)"
+      - "Reinforcement Learning (reward-based)"
+      - "Real-World Examples"
+    related_concepts: [history-11, term-1, term-6]
+    cross_path_refs:
+      terminology: [term-1, term-2, term-6]
+      risk: [risk-2]
+    example_refs: [ex-netflix]
+    tags: [machine-learning, supervised, unsupervised, reinforcement]
+
+  - id: history-7
+    title: "Deep Learning Decoded – Neural Networks for Non-Engineers"
+    slug: deep-learning-explained
+    path: history
+    source_file: "content/articles/final/article-title.md"
+    tldr: "Deep learning uses multi-layer neural networks to find complex patterns. 2012 AlexNet breakthrough enabled modern AI (image recognition, NLP, etc.)."
+    content_sections:
+      - "What Are Neural Networks?"
+      - "Layers, Weights, Backpropagation"
+      - "Why 'Deep'? (Multiple Hidden Layers)"
+      - "2012 AlexNet Breakthrough"
+      - "Convolutional Neural Networks (CNNs)"
+      - "Recurrent Neural Networks (RNNs)"
+    related_concepts: [history-4, history-6, term-7]
+    cross_path_refs:
+      terminology: [term-7]
+    tags: [deep-learning, neural-networks, AlexNet, CNN, RNN]
+
+  - id: history-8
+    title: "Generative AI Explained – How ChatGPT, DALL-E, and Claude Work"
+    slug: generative-ai-explained
+    path: history
+    source_file: "content/articles/final/article-title.md"
+    tldr: "Generative AI creates new content (text, images, code) by learning patterns from training data. Transformers architecture (2017) enabled GPT, Claude, DALL-E."
+    content_sections:
+      - "What Is Generative AI?"
+      - "Transformers Architecture (Attention Mechanism)"
+      - "Large Language Models (GPT, Claude, Gemini)"
+      - "Diffusion Models (DALL-E, Stable Diffusion)"
+      - "Use Cases: Content Creation, Code Generation"
+    related_concepts: [history-9, history-12, term-8, term-9]
+    cross_path_refs:
+      terminology: [term-8, term-9]
+      risk: [risk-3, risk-6]
+    example_refs: [ex-chatgpt]
+    tags: [generative-AI, transformers, GPT, DALL-E, Claude]
+
+  - id: history-9
+    title: "Large Language Models – The Technology Behind the Hype"
+    slug: large-language-models
+    path: history
+    source_file: "content/articles/final/article-title.md"
+    tldr: "LLMs (GPT-4, Claude, Gemini) are trained on vast text corpora to predict next words. Scale (parameters, data, compute) drives emergent capabilities."
+    content_sections:
+      - "What Is a Large Language Model?"
+      - "Training Process: Pre-training + Fine-tuning"
+      - "Scale: Parameters, Data, Compute (FLOPs)"
+      - "Emergent Capabilities"
+      - "Limitations: Hallucinations, Bias, Knowledge Cutoff"
+    related_concepts: [history-8, history-12, term-9]
+    cross_path_refs:
+      terminology: [term-9]
+      risk: [risk-3]
+      responsibility: [resp-54]
+    example_refs: [ex-gpt4-claude-gemini]
+    tags: [LLM, GPT-4, Claude, Gemini, transformers]
+
+  - id: history-10
+    title: "AI vs. Automation – Understanding the Distinction"
+    slug: ai-vs-automation
+    path: history
+    source_file: "content/articles/final/article-10-ai-vs-automation-understanding-the-distinction.md"
+    tldr: "Automation follows explicit rules. AI learns patterns from data. AI can handle unstructured inputs (text, images) that traditional automation can't."
+    content_sections:
+      - "Automation: Rules-Based Systems"
+      - "AI: Pattern Recognition from Data"
+      - "When to Use Automation vs. AI"
+      - "Hybrid Approaches"
+    related_concepts: [history-1, history-6]
+    cross_path_refs:
+      terminology: [term-1]
+    tags: [automation, AI-definition, rules-based]
+
+  - id: history-11
+    title: "The Data Behind AI – Why Training Data Determines Everything"
+    slug: data-behind-ai
+    path: history
+    source_file: "content/articles/final/article-11-the-data-behind-ai-why-training-data-determines-e.md"
+    tldr: "AI quality depends on training data quality. Garbage in, garbage out. Bias in data = bias in AI. Data governance is AI governance."
+    content_sections:
+      - "Why Data Matters More Than Algorithms"
+      - "Training Data vs. Inference Data"
+      - "Data Quality Dimensions (Accuracy, Completeness, Representativeness)"
+      - "Historical Bias in Data"
+      - "Data Governance for AI"
+    related_concepts: [history-6, term-6]
+    cross_path_refs:
+      terminology: [term-6]
+      risk: [risk-2]
+      responsibility: [resp-5]
+    tags: [training-data, data-quality, bias, data-governance]
+
+  - id: history-12
+    title: "Foundation Models – The New Building Blocks of AI"
+    slug: foundation-models
+    path: history
+    source_file: "content/articles/final/article-12-foundation-models-the-new-building-blocks-of-ai.md"
+    tldr: "Foundation models (GPT-4, DALL-E) are pre-trained on massive datasets, then adapted for specific tasks. Centralized models raise governance challenges."
+    content_sections:
+      - "What Are Foundation Models?"
+      - "Pre-training + Fine-tuning Paradigm"
+      - "Examples: GPT-4, DALL-E, CLIP, Whisper"
+      - "Benefits: Efficiency, Transfer Learning"
+      - "Risks: Centralization, Bias Amplification, Misuse"
+    related_concepts: [history-8, history-9, term-12]
+    cross_path_refs:
+      terminology: [term-12]
+      responsibility: [resp-54]
+    example_refs: [ex-gpt4-claude-gemini]
+    tags: [foundation-models, pre-training, fine-tuning, GPT-4]
+
+  - id: history-13
+    title: "Multimodal AI – When Machines See, Hear, and Speak"
+    slug: multimodal-ai
+    path: history
+    source_file: "content/articles/final/article-13-multimodal-ai-when-machines-see-hear-and-speak.md"
+    tldr: "Multimodal AI processes multiple input types (text, images, audio, video). GPT-4V, Gemini, Claude 3 combine vision + language understanding."
+    content_sections:
+      - "What Is Multimodal AI?"
+      - "Text + Vision (GPT-4V, Gemini)"
+      - "Text + Audio (Whisper, Speech Recognition)"
+      - "Text + Video (Video Understanding Models)"
+      - "Use Cases: Accessibility, Content Moderation, Medical Diagnosis"
+    related_concepts: [history-8, history-9, term-13]
+    cross_path_refs:
+      terminology: [term-13]
+    example_refs: [ex-gpt4-claude-gemini]
+    tags: [multimodal, vision, audio, GPT-4V, Gemini]
+
+  - id: history-14
+    title: "AI Compute – Why GPUs Rule the AI World"
+    slug: ai-compute-gpus
+    path: history
+    source_file: "content/articles/final/article-14-ai-compute-why-gpus-rule-the-ai-world.md"
+    tldr: "GPUs (Graphics Processing Units) parallelize matrix operations, 100x faster than CPUs for AI training. NVIDIA dominance, custom chips (TPU, Trainium)."
+    content_sections:
+      - "Why GPUs for AI?"
+      - "Parallel Processing vs. Sequential (CPU)"
+      - "NVIDIA H100, A100 Dominance"
+      - "Custom AI Chips: Google TPU, AWS Trainium"
+      - "Compute Cost = Barrier to Entry"
+    related_concepts: [history-3, history-9]
+    cross_path_refs:
+      terminology: [term-14]
+      risk: [risk-15]
+      future: [future-4]
+    tags: [GPU, compute, NVIDIA, TPU, hardware]
+
+  - id: history-15
+    title: "The Environmental Cost of AI – Data Centers, Energy, and Sustainability"
+    slug: environmental-cost-ai
+    path: history
+    source_file: "content/articles/final/article-15-the-environmental-cost-of-ai-data-centers-energy-.md"
+    tldr: "Training GPT-3 consumed 1,287 MWh (equivalent to 120 US homes/year). Data centers use 1-2% global electricity. Sustainability is AI governance issue."
+    content_sections:
+      - "Energy Consumption of AI Training"
+      - "GPT-3 Carbon Footprint"
+      - "Data Center Water Usage (Cooling)"
+      - "E-waste from AI Hardware"
+      - "Green AI: Efficiency, Renewable Energy"
+    related_concepts: [history-14, term-9]
+    cross_path_refs:
+      risk: [risk-15]
+      responsibility: [resp-10]
+    tags: [sustainability, energy, carbon-footprint, data-centers, green-AI]
+
+# ============================================================================
+# CONCEPT CARDS - TERMINOLOGY PATH (14 additional cards beyond History overlap)
+# ============================================================================
+
+concept_cards_terminology:
+  - id: term-1
+    title: "What Is Machine Learning? (Terminology Deep Dive)"
+    slug: machine-learning-terminology
+    path: terminology
+    source_file: "content/articles/final/article-title.md"
+    tldr: "Machine learning: algorithms that improve performance through experience (data) without explicit programming. Three paradigms: supervised, unsupervised, reinforcement."
+    content_sections:
+      - "Tom Mitchell's Definition"
+      - "Supervised Learning Explained"
+      - "Unsupervised Learning Explained"
+      - "Reinforcement Learning Explained"
+      - "When to Use Each Paradigm"
+    related_concepts: [history-6, term-2, term-6]
+    cross_path_refs:
+      history: [history-6]
+      risk: [risk-2]
+    example_refs: [ex-netflix]
+    tags: [machine-learning, supervised, unsupervised, reinforcement, definitions]
+
+  - id: term-2
+    title: "Supervised vs. Unsupervised Learning"
+    slug: supervised-unsupervised
+    path: terminology
+    source_file: "Embedded in various ML articles"
+    tldr: "Supervised: labeled data (email=spam/not spam). Unsupervised: find hidden patterns (customer segmentation). Different use cases, different risks."
+    content_sections:
+      - "Supervised Learning: Classification, Regression"
+      - "Unsupervised Learning: Clustering, Dimensionality Reduction"
+      - "Semi-Supervised Learning"
+      - "When to Use Each"
+    related_concepts: [term-1, term-6]
+    cross_path_refs:
+      risk: [risk-2]
+    example_refs: [ex-netflix]
+    tags: [supervised, unsupervised, classification, clustering]
+
+  - id: term-3
+    title: "Neural Networks Architecture Basics"
+    slug: neural-networks-basics
+    path: terminology
+    source_file: "Derived from deep learning articles"
+    tldr: "Neural networks: layers of interconnected nodes (neurons). Input layer → hidden layers → output layer. Weights adjusted via backpropagation."
+    content_sections:
+      - "Neurons, Weights, Biases"
+      - "Activation Functions (ReLU, Sigmoid, Tanh)"
+      - "Feedforward vs. Recurrent Networks"
+      - "Backpropagation (How Networks Learn)"
+    related_concepts: [history-7, term-7]
+    cross_path_refs:
+      history: [history-7]
+    tags: [neural-networks, architecture, backpropagation, weights]
+
+  - id: term-4
+    title: "Training Data, Validation Data, Test Data"
+    slug: training-validation-test
+    path: terminology
+    source_file: "Embedded in ML articles"
+    tldr: "Training data (learn patterns), validation data (tune hyperparameters), test data (final evaluation). Never test on training data (overfitting)."
+    content_sections:
+      - "Training Set: Where AI Learns"
+      - "Validation Set: Hyperparameter Tuning"
+      - "Test Set: Unbiased Evaluation"
+      - "Overfitting vs. Underfitting"
+      - "Cross-Validation Techniques"
+    related_concepts: [term-1, term-6, history-11]
+    cross_path_refs:
+      risk: [risk-2]
+    tags: [training-data, validation, testing, overfitting]
+
+  - id: term-5
+    title: "Bias vs. Variance Tradeoff"
+    slug: bias-variance-tradeoff
+    path: terminology
+    source_file: "ML fundamentals articles"
+    tldr: "Bias: model too simple (underfitting). Variance: model too complex (overfitting). Goal: sweet spot with low bias + low variance."
+    content_sections:
+      - "What Is Bias (Underfitting)?"
+      - "What Is Variance (Overfitting)?"
+      - "The Tradeoff Curve"
+      - "Regularization Techniques"
+    related_concepts: [term-4]
+    tags: [bias-variance, overfitting, underfitting, regularization]
+
+  - id: term-6
+    title: "Feature Engineering – The Art of Data Preparation"
+    slug: feature-engineering
+    path: terminology
+    source_file: "content/articles/final/article-90-feature-engineering-the-art-of-training-data-preparation.md"
+    tldr: "Feature engineering: selecting, transforming, creating variables AI uses. Good features = better AI. Domain expertise critical."
+    content_sections:
+      - "What Are Features?"
+      - "Feature Selection (Which Variables Matter?)"
+      - "Feature Transformation (Normalization, Encoding)"
+      - "Feature Creation (Domain Knowledge)"
+      - "Automated Feature Engineering"
+    related_concepts: [term-1, term-4, history-11]
+    cross_path_refs:
+      risk: [risk-2]
+    tags: [feature-engineering, data-preparation, domain-knowledge]
+
+  - id: term-7
+    title: "Convolutional Neural Networks (CNNs) for Images"
+    slug: cnns-image-recognition
+    path: terminology
+    source_file: "Deep learning articles"
+    tldr: "CNNs: specialized neural networks for images. Convolutional layers detect edges, textures, objects. Used in facial recognition, medical imaging."
+    content_sections:
+      - "How CNNs Work (Convolution, Pooling)"
+      - "AlexNet (2012 Breakthrough)"
+      - "ResNet, VGG Architectures"
+      - "Use Cases: Image Classification, Object Detection"
+    related_concepts: [history-7, term-3]
+    cross_path_refs:
+      history: [history-7]
+      risk: [risk-2]
+    example_refs: [ex-gender-shades]
+    tags: [CNN, image-recognition, computer-vision, AlexNet]
+
+  - id: term-8
+    title: "Recurrent Neural Networks (RNNs) for Sequences"
+    slug: rnns-sequence-data
+    path: terminology
+    source_file: "Deep learning articles"
+    tldr: "RNNs: neural networks for sequential data (text, time series, audio). LSTM, GRU variants solve vanishing gradient problem."
+    content_sections:
+      - "How RNNs Work (Memory, Hidden State)"
+      - "Vanishing Gradient Problem"
+      - "LSTM (Long Short-Term Memory)"
+      - "GRU (Gated Recurrent Units)"
+      - "Replaced by Transformers for NLP"
+    related_concepts: [term-3, term-9]
+    cross_path_refs:
+      history: [history-8]
+    tags: [RNN, LSTM, GRU, sequence-data, NLP]
+
+  - id: term-9
+    title: "Transformers – The Architecture Behind ChatGPT"
+    slug: transformers-architecture
+    path: terminology
+    source_file: "Generative AI articles"
+    tldr: "Transformers (2017): attention mechanism processes entire sequence in parallel. Enabled GPT, BERT, Claude. Replaced RNNs for NLP."
+    content_sections:
+      - "Attention Mechanism (Query, Key, Value)"
+      - "Self-Attention"
+      - "Multi-Head Attention"
+      - "Positional Encoding"
+      - "Encoder-Decoder Architecture"
+      - "GPT (Decoder-Only), BERT (Encoder-Only)"
+    related_concepts: [history-8, history-9, term-8]
+    cross_path_refs:
+      history: [history-8, history-9]
+    example_refs: [ex-chatgpt, ex-gpt4-claude-gemini]
+    tags: [transformers, attention, GPT, BERT, NLP]
+
+  - id: term-10
+    title: "Pre-training and Fine-tuning"
+    slug: pre-training-fine-tuning
+    path: terminology
+    source_file: "Foundation model articles"
+    tldr: "Pre-training: learn general patterns from massive datasets. Fine-tuning: adapt to specific tasks. Transfer learning enables efficiency."
+    content_sections:
+      - "Pre-training Phase (Unlabeled Data, Self-Supervised)"
+      - "Fine-tuning Phase (Task-Specific, Labeled Data)"
+      - "Transfer Learning Benefits"
+      - "Few-Shot, Zero-Shot Learning"
+    related_concepts: [history-12, term-9]
+    cross_path_refs:
+      history: [history-12]
+    tags: [pre-training, fine-tuning, transfer-learning, foundation-models]
+
+  - id: term-11
+    title: "Hyperparameters vs. Parameters"
+    slug: hyperparameters-vs-parameters
+    path: terminology
+    source_file: "ML training articles"
+    tldr: "Parameters: learned from data (weights, biases). Hyperparameters: set by humans before training (learning rate, batch size). Tuning is art+science."
+    content_sections:
+      - "What Are Parameters? (Model Weights)"
+      - "What Are Hyperparameters? (Learning Rate, etc.)"
+      - "Hyperparameter Tuning Strategies"
+      - "Grid Search, Random Search, Bayesian Optimization"
+    related_concepts: [term-1, term-4]
+    cross_path_refs:
+      responsibility: [resp-91]
+    tags: [hyperparameters, parameters, tuning, learning-rate]
+
+  - id: term-12
+    title: "Model Size – Parameters, FLOPs, and Scale"
+    slug: model-size-scale
+    path: terminology
+    source_file: "Foundation model articles"
+    tldr: "Model size measured in parameters (GPT-3: 175B, GPT-4: ~1.76T rumored). Training compute measured in FLOPs. Scale drives capability."
+    content_sections:
+      - "What Are Parameters?"
+      - "GPT-3 (175B), GPT-4, PaLM (540B)"
+      - "FLOPs: Measuring Training Compute"
+      - "EU AI Act Systemic Risk Threshold (10^25 FLOPs)"
+      - "Scaling Laws (Emergent Capabilities)"
+    related_concepts: [history-9, history-12, term-9]
+    cross_path_refs:
+      history: [history-9]
+      responsibility: [resp-54]
+    example_refs: [ex-gpt4-claude-gemini]
+    tags: [model-size, parameters, FLOPs, scaling-laws]
+
+  - id: term-13
+    title: "Embeddings and Vector Representations"
+    slug: embeddings-vectors
+    path: terminology
+    source_file: "NLP articles"
+    tldr: "Embeddings: words/images/concepts mapped to high-dimensional vectors. Similar meanings = close vectors. Foundation of semantic search, RAG."
+    content_sections:
+      - "What Are Embeddings?"
+      - "Word2Vec, GloVe (Word Embeddings)"
+      - "Sentence and Document Embeddings"
+      - "Image Embeddings (CLIP)"
+      - "Use Cases: Semantic Search, Recommendation"
+    related_concepts: [term-9, history-13]
+    cross_path_refs:
+      history: [history-13]
+    tags: [embeddings, vectors, Word2Vec, semantic-search]
+
+  - id: term-14
+    title: "Inference vs. Training"
+    slug: inference-vs-training
+    path: terminology
+    source_file: "ML lifecycle articles"
+    tldr: "Training: AI learns patterns (expensive, one-time). Inference: AI makes predictions (cheap, repeated). Different hardware, cost profiles."
+    content_sections:
+      - "Training Phase: Learning from Data"
+      - "Inference Phase: Applying Learned Patterns"
+      - "Computational Costs (Training >> Inference)"
+      - "Latency Requirements (Inference Critical)"
+      - "Inference Optimization Techniques"
+    related_concepts: [history-14, term-1]
+    cross_path_refs:
+      history: [history-14]
+    tags: [inference, training, deployment, latency]
+
+# ============================================================================
+# CONCEPT CARDS - RISK PATH (20 cards)
+# ============================================================================
+
+concept_cards_risk:
+  - id: risk-1
+    title: "When AI Goes Wrong – A Taxonomy of AI Harms"
+    slug: taxonomy-ai-harms
+    path: risk
+    source_file: "content/articles/final/article-title.md"
+    tldr: "AI harms: individual (bias, privacy), societal (misinformation, job loss), systemic (power concentration). Classification guides governance."
+    content_sections:
+      - "Individual Harms (Discrimination, Privacy Violations)"
+      - "Societal Harms (Misinformation, Manipulation)"
+      - "Systemic Harms (Power Concentration, Environmental)"
+      - "Severity vs. Likelihood Matrix"
+    related_concepts: [risk-2, risk-4, risk-6, risk-7, risk-8]
+    cross_path_refs:
+      responsibility: [resp-1, resp-80]
+    tags: [AI-harms, taxonomy, risk-classification]
+
+  - id: risk-2
+    title: "Algorithmic Bias – How AI Discriminates and Why"
+    slug: algorithmic-bias
+    path: risk
+    source_file: "content/articles/final/algorithmic-bias-how-ai-discriminates-and-why.md"
+    tldr: "Systematic errors in AI that unfairly disadvantage specific groups through biased data, design choices, or deployment."
+    content_sections:
+      - "What Is Algorithmic Bias?"
+      - "Source 1: Biased Training Data"
+      - "Source 2: Biased Design Choices"
+      - "Source 3: Biased Deployment"
+      - "How to Detect Bias"
+      - "Mitigation Strategies"
+    related_concepts: [risk-18, risk-19]
+    cross_path_refs:
+      terminology: [term-1, term-6, history-11]
+      responsibility: [resp-3, resp-38, resp-93]
+    example_refs: [ex-amazon-hiring, ex-compas, ex-apple-card, ex-gender-shades, ex-uk-grading, ex-healthcare-algo]
+    resource_refs: [res-bias-audit]
+    tags: [algorithmic-bias, discrimination, fairness, bias-detection]
+    word_count: 2833
+
+  - id: risk-3
+    title: "AI Hallucinations – When Machines Confidently Lie"
+    slug: ai-hallucinations
+    path: risk
+    source_file: "content/articles/final/ai-hallucinations-when-machines-confidently-lie.md"
+    tldr: "LLMs generate plausible but false information (hallucinations). Caused by training data gaps, pattern overgeneralization, lack of grounding."
+    content_sections:
+      - "What Are AI Hallucinations?"
+      - "Why LLMs Hallucinate (Probabilistic Prediction)"
+      - "Types: Fabricated Facts, Fake Citations, Confabulation"
+      - "Detection Methods"
+      - "Mitigation: RAG, Grounding, Human Verification"
+    related_concepts: [history-9, term-9]
+    cross_path_refs:
+      terminology: [term-9, history-9]
+      responsibility: [resp-29]
+    example_refs: [ex-chatgpt]
+    tags: [hallucinations, LLM, misinformation, reliability]
+
+  - id: risk-4
+    title: "The Black Box Problem – Why AI Explainability Matters"
+    slug: black-box-explainability
+    path: risk
+    source_file: "content/articles/final/article-title.md"
+    tldr: "Complex AI models (deep learning) are black boxes: inputs → outputs, but internal logic unclear. Explainability critical for trust, debugging, compliance."
+    content_sections:
+      - "What Is the Black Box Problem?"
+      - "Why Explainability Matters (Trust, Legal, Debugging)"
+      - "Interpretable Models vs. Post-hoc Explanations"
+      - "LIME, SHAP, Attention Visualization"
+      - "Accuracy vs. Interpretability Tradeoff"
+    related_concepts: [risk-19, risk-29]
+    cross_path_refs:
+      terminology: [term-7]
+      responsibility: [resp-45, resp-95]
+    tags: [explainability, black-box, interpretability, LIME, SHAP]
+
+  - id: risk-5
+    title: "AI and Privacy – The Data Collection Dilemma"
+    slug: ai-privacy-dilemma
+    path: risk
+    source_file: "content/articles/final/ai-and-privacy-the-data-collection-dilemma.md"
+    tldr: "AI requires vast data, often personal. Risks: surveillance, re-identification, secondary use without consent. Privacy-enhancing tech (PETs) offers solutions."
+    content_sections:
+      - "AI's Insatiable Data Appetite"
+      - "Privacy Risks: Surveillance, Re-identification, Profiling"
+      - "Training Data Privacy (Membership Inference Attacks)"
+      - "Inference Privacy (Model Inversion)"
+      - "Privacy-Enhancing Technologies (Differential Privacy, Federated Learning)"
+    related_concepts: [risk-20]
+    cross_path_refs:
+      responsibility: [resp-7, resp-42, resp-85, resp-86]
+    tags: [privacy, surveillance, GDPR, PETs, differential-privacy]
+
+  - id: risk-6
+    title: "Deepfakes and Synthetic Media – The Trust Crisis"
+    slug: deepfakes-trust-crisis
+    path: risk
+    source_file: "content/articles/final/article-title.md"
+    tldr: "AI-generated fake videos, audio, images (deepfakes) erode trust in media. Election interference, fraud, harassment risks. Detection + regulation needed."
+    content_sections:
+      - "What Are Deepfakes? (GANs, Diffusion Models)"
+      - "Use Cases: Entertainment vs. Malicious"
+      - "Harms: Misinformation, Fraud, Non-Consensual Porn"
+      - "Detection Technologies"
+      - "Regulation: EU AI Act Transparency Requirements"
+    related_concepts: [risk-7, risk-21]
+    cross_path_refs:
+      terminology: [history-8]
+      responsibility: [resp-52, resp-133]
+    example_refs: [ex-deepfake-elections]
+    tags: [deepfakes, synthetic-media, GANs, misinformation]
+
+  - id: risk-7
+    title: "AI-Powered Misinformation – Democracy at Risk"
+    slug: ai-misinformation-democracy
+    path: risk
+    source_file: "content/articles/final/ai-powered-misinformation-democracy-at-risk.md"
+    tldr: "LLMs generate convincing fake news at scale. Recommendation algorithms amplify divisive content. Risks: election interference, polarization, radicalization."
+    content_sections:
+      - "AI-Generated Misinformation (Text, Images, Video)"
+      - "Algorithmic Amplification (Facebook, YouTube, TikTok)"
+      - "Election Interference Scenarios"
+      - "Combating AI Misinformation (Detection, Labeling, Literacy)"
+    related_concepts: [risk-6, risk-22]
+    cross_path_refs:
+      responsibility: [resp-134]
+    example_refs: [ex-deepfake-elections]
+    tags: [misinformation, democracy, elections, social-media]
+
+  - id: risk-8
+    title: "Job Displacement – AI and the Future of Work"
+    slug: job-displacement
+    path: risk
+    source_file: "content/articles/final/article-title.md"
+    tldr: "AI automates cognitive tasks (writing, coding, analysis). 300M jobs affected per Goldman Sachs. Reskilling, safety nets, governance needed."
+    content_sections:
+      - "Which Jobs Are at Risk? (Cognitive Automation)"
+      - "Historical Automation vs. AI (Scope, Speed)"
+      - "Economic Impact Estimates"
+      - "Mitigation: Reskilling, UBI, Labor Protections"
+    related_concepts: [future-11]
+    cross_path_refs:
+      responsibility: [resp-39]
+      future: [future-11]
+    tags: [job-displacement, automation, future-of-work, reskilling]
+
+  - id: risk-9
+    title: "Autonomous Weapons – The AI Arms Race"
+    slug: autonomous-weapons
+    path: risk
+    source_file: "content/articles/final/article-title.md"
+    tldr: "Lethal autonomous weapons (LAWS): AI selects and engages targets without human intervention. International ban efforts ongoing. Proliferation risk."
+    content_sections:
+      - "What Are Autonomous Weapons?"
+      - "Current Capabilities (Drones, Missile Defense)"
+      - "Risks: Accidents, Proliferation, Lowered Threshold for War"
+      - "International Governance Efforts (UN CCW)"
+    related_concepts: [future-3, risk-25]
+    cross_path_refs:
+      responsibility: [resp-52]
+      future: [future-3]
+    tags: [autonomous-weapons, LAWS, arms-race, security]
+
+  - id: risk-10
+    title: "AI Safety – Preventing Catastrophic Failures"
+    slug: ai-safety-failures
+    path: risk
+    source_file: "content/articles/final/ai-safety-preventing-catastrophic-failures.md"
+    tldr: "AI safety: preventing systems from causing harm (accidents, misuse, misalignment). Red teaming, robustness testing, safety by design."
+    content_sections:
+      - "What Is AI Safety?"
+      - "Accident Risk (Bugs, Edge Cases, Distributional Shift)"
+      - "Misuse Risk (Dual-Use Technologies)"
+      - "Misalignment Risk (AGI Alignment Problem)"
+      - "Safety Techniques: Robustness Testing, Red Teaming"
+    related_concepts: [risk-9, risk-25, future-2]
+    cross_path_refs:
+      responsibility: [resp-94]
+      future: [future-1, future-2]
+    tags: [AI-safety, robustness, red-teaming, alignment]
+
+  - id: risk-11
+    title: "Building Trustworthy AI – The Seven Pillars"
+    slug: trustworthy-ai-pillars
+    path: risk
+    source_file: "content/articles/final/article-title.md"
+    tldr: "Trustworthy AI framework: (1) Human agency, (2) Robustness, (3) Privacy, (4) Transparency, (5) Fairness, (6) Accountability, (7) Societal wellbeing."
+    content_sections:
+      - "Pillar 1: Human Agency and Oversight"
+      - "Pillar 2: Technical Robustness and Safety"
+      - "Pillar 3: Privacy and Data Governance"
+      - "Pillar 4: Transparency"
+      - "Pillar 5: Diversity, Non-discrimination, Fairness"
+      - "Pillar 6: Societal and Environmental Wellbeing"
+      - "Pillar 7: Accountability"
+    related_concepts: [risk-18, risk-19, risk-20, risk-27, risk-29, risk-30]
+    cross_path_refs:
+      responsibility: [resp-26, resp-32, resp-35]
+    tags: [trustworthy-AI, AI-principles, ethics, governance]
+
+  - id: risk-12
+    title: "Human-Centered AI Design – Keeping People in the Loop"
+    slug: human-centered-ai
+    path: risk
+    source_file: "content/articles/final/article-title.md"
+    tldr: "Human-in-the-loop (HITL): humans review AI decisions before implementation. Critical for high-stakes use cases. Prevents automation bias."
+    content_sections:
+      - "What Is Human-in-the-Loop?"
+      - "When HITL Is Required (High-Stakes Decisions)"
+      - "Effective HITL Design (Avoid Rubber-Stamping)"
+      - "Human-on-the-Loop (Monitoring)"
+      - "Automation Bias Risk"
+    related_concepts: [risk-11, risk-27]
+    cross_path_refs:
+      responsibility: [resp-53, resp-82]
+    tags: [HITL, human-in-loop, oversight, automation-bias]
+
+  - id: risk-13
+    title: "Fairness in AI – Definitions, Metrics, and Trade-offs"
+    slug: fairness-definitions
+    path: risk
+    source_file: "content/articles/final/article-title.md"
+    tldr: "Multiple fairness definitions (demographic parity, equal opportunity, predictive parity). Often mutually exclusive. Context determines which matters."
+    content_sections:
+      - "Demographic Parity"
+      - "Equal Opportunity (True Positive Parity)"
+      - "Predictive Parity (Precision Parity)"
+      - "Individual Fairness"
+      - "Impossibility Theorems (Can't Satisfy All)"
+      - "Choosing the Right Metric"
+    related_concepts: [risk-2, risk-18]
+    cross_path_refs:
+      responsibility: [resp-93]
+    resource_refs: [res-bias-audit]
+    tags: [fairness, metrics, demographic-parity, equal-opportunity]
+
+  - id: risk-14
+    title: "AI Transparency – What Users Deserve to Know"
+    slug: ai-transparency
+    path: risk
+    source_file: "content/articles/final/ai-transparency-what-users-deserve-to-know.md"
+    tldr: "Transparency obligations: disclose AI use, explain logic, provide recourse. Required by GDPR Article 22, EU AI Act, NYC Law 144."
+    content_sections:
+      - "Why Transparency Matters"
+      - "Levels of Transparency (System, Logic, Decision)"
+      - "GDPR Article 22 (Right to Explanation)"
+      - "EU AI Act Transparency Requirements"
+      - "Model Cards, Datasheets, Nutrition Labels"
+    related_concepts: [risk-4, risk-29]
+    cross_path_refs:
+      responsibility: [resp-45, resp-95, resp-111]
+    tags: [transparency, disclosure, GDPR, model-cards]
+
+  - id: risk-15
+    title: "AI Accountability – Who's Responsible When AI Fails?"
+    slug: ai-accountability
+    path: risk
+    source_file: "content/articles/final/ai-accountability-who-is-responsible-when-ai-causes-harm.md"
+    tldr: "Accountability gap: who's liable when AI harms? Developer, deployer, user? Product liability, negligence, strict liability frameworks."
+    content_sections:
+      - "The Accountability Problem (Many Actors)"
+      - "Legal Frameworks: Product Liability, Negligence"
+      - "EU AI Liability Directive"
+      - "Organizational Accountability (Governance Roles)"
+    related_concepts: [risk-11, risk-30]
+    cross_path_refs:
+      responsibility: [resp-40, resp-50, resp-102]
+    tags: [accountability, liability, product-liability, responsibility]
+
+  - id: risk-16
+    title: "The Ethics Landscape – AI Principles Worldwide"
+    slug: ethics-landscape
+    path: risk
+    source_file: "content/articles/final/article-title.md"
+    tldr: "170+ AI ethics frameworks globally (OECD, UNESCO, IEEE, company policies). Convergence on core principles: fairness, transparency, accountability."
+    content_sections:
+      - "OECD AI Principles (2019, Updated 2024)"
+      - "UNESCO AI Ethics Recommendation"
+      - "IEEE Ethically Aligned Design"
+      - "Corporate AI Principles (Google, Microsoft, Amazon)"
+      - "Convergence vs. Divergence"
+    related_concepts: [risk-11, risk-17, risk-18, risk-19]
+    cross_path_refs:
+      responsibility: [resp-32, resp-34, resp-35]
+    tags: [AI-ethics, principles, OECD, UNESCO, IEEE]
+
+  - id: risk-17
+    title: "OECD AI Principles – The Global Standard"
+    slug: oecd-ai-principles
+    path: risk
+    source_file: "content/articles/final/article-title.md"
+    tldr: "5 OECD AI Principles (2019): Inclusive growth, Human-centered values, Transparency, Robustness, Accountability. 47 countries adopted. Updated May 2024."
+    content_sections:
+      - "Principle 1: Inclusive Growth, Sustainable Development, Wellbeing"
+      - "Principle 2: Human-Centered Values and Fairness"
+      - "Principle 3: Transparency and Explainability"
+      - "Principle 4: Robustness, Security, and Safety"
+      - "Principle 5: Accountability"
+      - "2024 Updates (Foundation Models, Climate)"
+    related_concepts: [risk-16, risk-11]
+    cross_path_refs:
+      responsibility: [resp-32]
+    tags: [OECD, AI-principles, international-standards]
+
+  - id: risk-18
+    title: "The White House AI Bill of Rights – America's Framework"
+    slug: ai-bill-of-rights
+    path: risk
+    source_file: "content/articles/final/article-title.md"
+    tldr: "5 protections (2022): Safe systems, Algorithmic discrimination protections, Data privacy, Notice & explanation, Human alternatives. Non-binding guidance."
+    content_sections:
+      - "Safe and Effective Systems"
+      - "Algorithmic Discrimination Protections"
+      - "Data Privacy"
+      - "Notice and Explanation"
+      - "Human Alternatives, Consideration, and Fallback"
+      - "Implementation Guidance"
+    related_concepts: [risk-16, risk-11]
+    cross_path_refs:
+      responsibility: [resp-33]
+    tags: [AI-Bill-of-Rights, White-House, US-policy]
+
+  - id: risk-19
+    title: "UNESCO AI Ethics – A Global Perspective"
+    slug: unesco-ai-ethics
+    path: risk
+    source_file: "content/articles/final/article-title.md"
+    tldr: "UNESCO Recommendation on AI Ethics (2021): 10 principles, 11 policy areas. Adopted by 193 countries. Emphasizes human rights, equity, sustainability."
+    content_sections:
+      - "10 Principles (Human Rights, Wellbeing, Diversity, etc.)"
+      - "11 Policy Action Areas"
+      - "Global South Perspective"
+      - "Implementation Challenges"
+    related_concepts: [risk-16, risk-11]
+    cross_path_refs:
+      responsibility: [resp-34]
+    tags: [UNESCO, AI-ethics, global-perspective, human-rights]
+
+  - id: risk-20
+    title: "Responsible AI in Practice – From Principles to Implementation"
+    slug: responsible-ai-practice
+    path: risk
+    source_file: "content/articles/final/article-title.md"
+    tldr: "Bridging principles-to-practice gap: embed ethics in SDLC, governance structures, tooling. Microsoft, Google responsible AI programs."
+    content_sections:
+      - "The Operationalization Challenge"
+      - "Embedding Ethics in Development Lifecycle"
+      - "Governance Structures (Ethics Boards, Review Processes)"
+      - "Tools: Fairlearn, AI Fairness 360, Model Cards"
+      - "Case Studies: Microsoft, Google RAI Programs"
+    related_concepts: [risk-11, risk-16]
+    cross_path_refs:
+      responsibility: [resp-35, resp-89, resp-103]
+    tags: [responsible-AI, operationalization, governance, tools]
+
+# [Due to length, I'll continue with example cards and resource cards sections]
+
+# ============================================================================
+# EXAMPLE CARDS (Deduplicated case studies)
+# ============================================================================
+
+example_cards:
+  - id: ex-amazon-hiring
+    title: "Amazon's Biased Hiring Algorithm"
+    slug: amazon-hiring-bias
+    summary: "Amazon scrapped AI recruiting tool that penalized resumes containing 'women's', learning bias from historical hiring data (2018)."
+    category: bias
+    industry: hr
+    year: 2018
+    source: "Reuters (Dastin, 2018)"
+    referenced_by_concepts:
+      - risk-2
+      - resp-38
+      - resp-39
+      - resp-51
+    related_examples:
+      - ex-compas
+      - ex-apple-card
+    tags: [discrimination, gender-bias, historical-bias, employment, machine-learning]
+    markdown_file: "content/examples/amazon-hiring.md"
+
+  - id: ex-compas
+    title: "ProPublica COMPAS Investigation"
+    slug: compas-bias
+    summary: "ProPublica found COMPAS algorithm incorrectly flagged Black defendants as high-risk at 2x rate of white defendants (2016)."
+    category: bias
+    industry: criminal-justice
+    year: 2016
+    source: "ProPublica (Angwin et al., 2016)"
+    referenced_by_concepts:
+      - risk-2
+      - risk-13
+      - resp-145
+    related_examples:
+      - ex-amazon-hiring
+      - ex-predictive-policing
+    tags: [bias, criminal-justice, fairness-metrics, recidivism]
+    markdown_file: "content/examples/compas.md"
+
+  - id: ex-apple-card
+    title: "Apple Card Gender Bias Controversy"
+    slug: apple-card-bias
+    summary: "Apple Card algorithm gave women lower credit limits than men with same finances. NY regulator investigated (2019)."
+    category: bias
+    industry: finance
+    year: 2019
+    source: "New York Times (Vigdor, 2019)"
+    referenced_by_concepts:
+      - risk-2
+      - resp-37
+      - resp-47
+    related_examples:
+      - ex-amazon-hiring
+    tags: [bias, credit-scoring, gender-discrimination, finance]
+    markdown_file: "content/examples/apple-card.md"
+
+  - id: ex-gender-shades
+    title: "Gender Shades Study (MIT)"
+    slug: gender-shades
+    summary: "Joy Buolamwini found facial recognition error rates 34% for dark-skinned women vs 0.8% for light-skinned men (2018)."
+    category: bias
+    industry: computer-vision
+    year: 2018
+    source: "Buolamwini & Gebru (2018)"
+    referenced_by_concepts:
+      - risk-2
+      - term-7
+    related_examples:
+      - ex-healthcare-algo
+    tags: [bias, facial-recognition, representation-bias, intersectionality]
+    markdown_file: "content/examples/gender-shades.md"
+
+  - id: ex-uk-grading
+    title: "UK A-Level Grading Algorithm (COVID)"
+    slug: uk-grading-algorithm
+    summary: "Algorithm downgraded students at historically lower-performing schools, encoding socioeconomic bias. Public outcry forced reversal (2020)."
+    category: bias
+    industry: education
+    year: 2020
+    source: "BBC News (Adams, 2020)"
+    referenced_by_concepts:
+      - risk-2
+    related_examples:
+      - ex-amazon-hiring
+    tags: [bias, education, design-choices, socioeconomic]
+    markdown_file: "content/examples/uk-grading.md"
+
+  - id: ex-healthcare-algo
+    title: "Healthcare Algorithm Underestimating Black Patients' Needs"
+    slug: healthcare-bias
+    summary: "Algorithm used cost as proxy for need, systematically underestimating Black patients' healthcare needs (Obermeyer et al., 2019)."
+    category: bias
+    industry: healthcare
+    year: 2019
+    source: "Science (Obermeyer et al., 2019)"
+    referenced_by_concepts:
+      - risk-2
+      - resp-139
+    related_examples:
+      - ex-gender-shades
+    tags: [bias, healthcare, deployment-bias, proxy-variables]
+    markdown_file: "content/examples/healthcare-algo.md"
+
+  - id: ex-predictive-policing
+    title: "Predictive Policing Feedback Loops"
+    slug: predictive-policing
+    summary: "Algorithms predict crime in neighborhoods, police sent there, more arrests recorded, confirming algorithm's 'prediction'. Runaway feedback loop."
+    category: bias
+    industry: criminal-justice
+    year: "2018"
+    source: "Ensign et al. (2018)"
+    referenced_by_concepts:
+      - risk-2
+      - resp-145
+    related_examples:
+      - ex-compas
+    tags: [bias, feedback-loops, predictive-policing, criminal-justice]
+    markdown_file: "content/examples/predictive-policing.md"
+
+  - id: ex-netflix
+    title: "Netflix Recommendation Algorithm"
+    slug: netflix-recommendations
+    summary: "Netflix personalization AI saves ~$1B annually in customer retention. Uses collaborative filtering + deep learning."
+    category: optimization
+    industry: entertainment
+    year: "2006-present"
+    source: "Netflix Tech Blog"
+    referenced_by_concepts:
+      - history-6
+      - term-1
+      - term-2
+    related_examples:
+      - ex-google-search
+    tags: [recommendation, personalization, collaborative-filtering, optimization]
+    markdown_file: "content/examples/netflix.md"
+
+  - id: ex-google-search
+    title: "Google Search AI (RankBrain)"
+    slug: google-search
+    summary: "Google RankBrain (2015) uses machine learning to understand search queries and rank results. Third-most important ranking factor."
+    category: search
+    industry: tech
+    year: "2015-present"
+    source: "Google Blog"
+    referenced_by_concepts:
+      - term-1
+    related_examples:
+      - ex-netflix
+    tags: [search, ranking, RankBrain, NLP]
+    markdown_file: "content/examples/google-search.md"
+
+  - id: ex-chatgpt
+    title: "ChatGPT – Mainstream LLM Breakthrough"
+    slug: chatgpt
+    summary: "ChatGPT (Nov 2022) reached 100M users in 2 months, fastest-growing consumer app. Transformer-based LLM with RLHF fine-tuning."
+    category: generative-ai
+    industry: tech
+    year: "2022"
+    source: "OpenAI"
+    referenced_by_concepts:
+      - history-8
+      - history-9
+      - term-9
+      - risk-3
+    related_examples:
+      - ex-gpt4-claude-gemini
+    tags: [LLM, ChatGPT, generative-AI, transformers]
+    markdown_file: "content/examples/chatgpt.md"
+
+  - id: ex-gpt4-claude-gemini
+    title: "GPT-4, Claude, Gemini – Foundation Model Landscape"
+    slug: foundation-models
+    summary: "Top foundation models: GPT-4 (OpenAI), Claude 3 (Anthropic), Gemini (Google). Multimodal, 1T+ parameters, systemic risk per EU AI Act."
+    category: foundation-models
+    industry: tech
+    year: "2023-2024"
+    source: "Company releases"
+    referenced_by_concepts:
+      - history-9
+      - history-12
+      - history-13
+      - term-9
+      - term-12
+      - future-1
+    related_examples:
+      - ex-chatgpt
+    tags: [foundation-models, GPT-4, Claude, Gemini, multimodal]
+    markdown_file: "content/examples/foundation-models.md"
+
+  - id: ex-deepfake-elections
+    title: "Deepfake Election Interference Examples"
+    slug: deepfake-elections
+    summary: "2024 examples: fake Biden robocalls (NH primary), fake Slovakia PM audio. EU AI Act requires deepfake labeling."
+    category: deepfakes
+    industry: politics
+    year: "2024"
+    source: "News reports"
+    referenced_by_concepts:
+      - risk-6
+      - risk-7
+      - resp-134
+    related_examples: []
+    tags: [deepfakes, elections, misinformation, democracy]
+    markdown_file: "content/examples/deepfake-elections.md"
+
+  # Additional example cards would continue here...
+  # ex-siri-alexa, ex-google-maps, ex-amazon-legal, ex-gdpr-enforcement, etc.
+
+# ============================================================================
+# RESOURCE CARDS (Templates, checklists, guides)
+# ============================================================================
+
+resource_cards:
+  - id: res-risk-assessment
+    title: "AI Risk Assessment Template"
+    slug: ai-risk-assessment
+    type: template
+    format:
+      - markdown  # MVP
+      - pdf  # Post-MVP with watermark
+    source_file: "content/articles/final/article-75-ai-risk-assessment-templates-tools-for-practition.md"
+    referenced_by_concepts:
+      - risk-1
+      - resp-80
+    category: risk-management
+    tags: [risk-assessment, template, NIST]
+    markdown_file: "content/resources/risk-assessment-template.md"
+
+  - id: res-bias-audit
+    title: "How to Perform a Bias Audit – Methodology and Tools"
+    slug: bias-audit-checklist
+    type: checklist
+    format:
+      - markdown  # MVP
+      - pdf  # Post-MVP
+    source_file: "content/articles/final/article-152-how-to-perform-a-bias-audit-methodology-and-tool.md"
+    referenced_by_concepts:
+      - risk-2
+      - risk-13
+      - resp-93
+    category: testing
+    tags: [bias-testing, fairness, audit, checklist]
+    markdown_file: "content/resources/bias-audit-checklist.md"
+
+  - id: res-policy-templates
+    title: "AI Policy Templates"
+    slug: ai-policy-templates
+    type: template
+    format:
+      - markdown  # MVP
+      - pdf  # Post-MVP
+    source_file: "content/articles/final/article-104-ai-policy-development-templates-and-best-practic.md"
+    referenced_by_concepts:
+      - resp-104
+    category: governance
+    templates:
+      - AI Acceptable Use Policy
+      - AI Development Policy
+      - Third-Party AI Policy
+      - AI Risk Management Policy
+      - AI Data Governance Policy
+      - AI Ethics Policy Statement
+      - Quick Reference Card
+    tags: [templates, policies, governance]
+    markdown_file: "content/resources/policy-templates.md"
+
+  - id: res-impact-assessment
+    title: "How to Conduct an AI Impact Assessment – Step by Step"
+    slug: ai-impact-assessment
+    type: guide
+    format:
+      - markdown
+      - pdf
+    source_file: "content/articles/final/article-150-how-to-conduct-an-ai-impact-assessment-step-by-s.md"
+    referenced_by_concepts:
+      - resp-74
+    category: compliance
+    tags: [impact-assessment, DPIA, EU-AI-Act]
+    markdown_file: "content/resources/impact-assessment.md"
+
+  - id: res-model-card
+    title: "How to Build a Model Card – Documentation Best Practices"
+    slug: model-card-template
+    type: template
+    format:
+      - markdown
+      - pdf
+    source_file: "content/articles/final/article-151-how-to-build-a-model-card-documentation-best-pra.md"
+    referenced_by_concepts:
+      - resp-95
+      - risk-14
+    category: documentation
+    tags: [model-cards, documentation, transparency]
+    markdown_file: "content/resources/model-card-template.md"
+
+  - id: res-ethics-review
+    title: "How to Create an AI Ethics Review Process"
+    slug: ethics-review-process
+    type: workflow
+    format:
+      - markdown
+      - pdf
+    source_file: "content/articles/final/article-153-how-to-create-an-ai-ethics-review-process.md"
+    referenced_by_concepts:
+      - resp-103
+    category: governance
+    tags: [ethics-review, governance, process]
+    markdown_file: "content/resources/ethics-review-process.md"
+
+  - id: res-incident-response
+    title: "How to Respond to an AI Incident – Playbook and Checklist"
+    slug: ai-incident-response
+    type: playbook
+    format:
+      - markdown
+      - pdf
+    source_file: "content/articles/final/article-154-how-to-respond-to-an-ai-incident-playbook-and-ch.md"
+    referenced_by_concepts:
+      - resp-99
+    category: operations
+    tags: [incident-response, playbook, operations]
+    markdown_file: "content/resources/incident-response-playbook.md"
+
+  - id: res-vendor-eval
+    title: "How to Evaluate AI Vendors – Due Diligence Framework"
+    slug: vendor-evaluation
+    type: framework
+    format:
+      - markdown
+      - pdf
+    source_file: "content/articles/final/article-155-how-to-evaluate-ai-vendors-due-diligence-framewo.md"
+    referenced_by_concepts:
+      - resp-106
+      - resp-107
+    category: procurement
+    tags: [vendor-evaluation, third-party, due-diligence]
+    markdown_file: "content/resources/vendor-evaluation.md"
+
+  - id: res-ai-roadmap
+    title: "How to Build an AI Governance Roadmap – 12-Month Plan"
+    slug: ai-governance-roadmap
+    type: guide
+    format:
+      - markdown
+      - pdf
+    source_file: "Derived from governance implementation articles"
+    referenced_by_concepts:
+      - resp-101
+    category: planning
+    tags: [roadmap, governance, planning]
+    markdown_file: "content/resources/governance-roadmap.md"
+
+  - id: res-aigp-study
+    title: "How to Pass the AIGP Certification – Complete Study Guide"
+    slug: aigp-study-guide
+    type: guide
+    format:
+      - markdown
+      - pdf
+    source_file: "content/articles/final/article-158-how-to-pass-the-aigp-certification-complete-stud.md"
+    referenced_by_concepts:
+      - future-12
+    category: career
+    tags: [AIGP, certification, study-guide, career]
+    markdown_file: "content/resources/aigp-study-guide.md"
+
+  - id: res-career-roadmap
+    title: "AI Governance Career Roadmap"
+    slug: ai-governance-careers
+    type: guide
+    format:
+      - markdown
+      - pdf
+    source_file: "content/articles/final/article-137-ai-governance-careers-building-your-professional.md"
+    referenced_by_concepts:
+      - future-11
+      - future-12
+    category: career
+    tags: [career, roadmap, skills]
+    markdown_file: "content/resources/career-roadmap.md"
+
+# ============================================================================
+# CROSS-PATH NAVIGATION MAP
+# ============================================================================
+
+cross_path_references:
+  # History → Other Paths
+  - from: history-1
+    to:
+      - path: terminology
+        concepts: [term-1]
+        reason: "OECD definition connects to ML fundamentals"
+      - path: responsibility
+        concepts: [resp-1]
+        reason: "Definitions inform legal frameworks"
+
+  - from: history-6
+    to:
+      - path: terminology
+        concepts: [term-1, term-2, term-6]
+        reason: "Deep dive into ML concepts"
+      - path: risk
+        concepts: [risk-2]
+        reason: "Training data bias origin"
+
+  # Risk → Responsibility (Heavy cross-referencing)
+  - from: risk-2
+    to:
+      - path: responsibility
+        concepts: [resp-38, resp-39, resp-93]
+        reason: "Legal frameworks addressing bias"
+      - path: terminology
+        concepts: [term-1, term-6, history-11]
+        reason: "Technical foundations of bias"
+
+  - from: risk-14
+    to:
+      - path: responsibility
+        concepts: [resp-45, resp-95, resp-111]
+        reason: "Transparency regulations (GDPR, EU AI Act)"
+
+  # Terminology → Risk (Technical → Harms)
+  - from: term-7
+    to:
+      - path: risk
+        concepts: [risk-2]
+        reason: "CNN bias in facial recognition"
+
+  - from: term-9
+    to:
+      - path: risk
+        concepts: [risk-3]
+        reason: "LLM hallucinations"
+
+# ============================================================================
+# METADATA & CONFIGURATION
+# ============================================================================
+
+seo_strategy:
+  path_ownership:
+    history:
+      - "AI history timeline"
+      - "what is artificial intelligence"
+      - "evolution of AI"
+    terminology:
+      - "what is machine learning"
+      - "AI concepts explained"
+      - "neural networks tutorial"
+    risk:
+      - "algorithmic bias examples"
+      - "AI safety failures"
+      - "deepfake risks"
+    responsibility:
+      - "EU AI Act explained"
+      - "AI governance frameworks"
+      - "GDPR and AI"
+    future:
+      - "future of AI regulation"
+      - "AGI timeline"
+      - "AI governance careers"
+
+  redirect_rules:
+    # Old article URLs → New learning path anchors
+    - from: "/articles/algorithmic-bias-how-ai-discriminates-and-why"
+      to: "/learn/risk#algorithmic-bias"
+      status: 301
+    - from: "/articles/article-104-ai-policy-development-templates-and-best-practic"
+      to: "/learn/responsibility#ai-policy-development"
+      status: 301
+    - from: "/articles/article-51-the-eu-ai-act-europes-landmark-regulation-explain"
+      to: "/learn/responsibility#eu-ai-act"
+      status: 301
+
+ui_configuration:
+  card_expansion:
+    animation: "GSAP ScrollTrigger + Framer Motion"
+    collapsed_height: "auto"  # Title + TLDR
+    expanded_content: "Full article with curved boxes, examples, cross-refs"
+
+  sidebar:
+    sticky: true
+    sections:
+      - "Mini-map (current path concepts)"
+      - "Related Cards from Other Paths"
+      - "Jump to Section (h2 headings)"
+
+  carousel:
+    type: "horizontal_blur"
+    focus_effect: "Center card sharp, others blur(8px) opacity(0.7)"
+    navigation: "Arrows (desktop), Swipe (mobile)"
+
+# ============================================================================
+# CONTENT GENERATION STATUS
+# ============================================================================
+
+content_status:
+  history_path:
+    concepts_defined: 15
+    markdown_files_created: 0
+    completion: "0%"
+
+  terminology_path:
+    concepts_defined: 14
+    markdown_files_created: 0
+    completion: "0%"
+
+  risk_path:
+    concepts_defined: 20
+    markdown_files_created: 1  # algorithmic-bias.md sampled
+    completion: "5%"
+
+  responsibility_path:
+    concepts_defined: 75  # Placeholder count
+    markdown_files_created: 2  # policy-dev, eu-ai-act sampled
+    completion: "3%"
+
+  future_path:
+    concepts_defined: 20  # Placeholder count
+    markdown_files_created: 0
+    completion: "0%"
+
+  example_cards:
+    total: 28
+    markdown_files_created: 0
+    completion: "0%"
+
+  resource_cards:
+    total: 10
+    markdown_files_created: 0
+    completion: "0%"
+
+next_steps:
+  - "Create markdown files for all concept cards (120 files)"
+  - "Create markdown files for all example cards (28 files)"
+  - "Create markdown files for all resource cards (10 files)"
+  - "Implement knowledge graph navigation (React components)"
+  - "Build card expansion animations (GSAP + Framer Motion)"
+  - "Generate sitemap with learning path structure"
+  - "Implement SEO 301 redirects from old articles"

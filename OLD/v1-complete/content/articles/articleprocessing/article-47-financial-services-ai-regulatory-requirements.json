@@ -1,0 +1,108 @@
+{
+  "file_status": {
+    "suggested_slug": "article-47-financial-services-ai-regulatory-requirements-exp",
+    "category": "Industry-Specific Insights",
+    "word_count_check": {
+      "target": null,
+      "actual": 3190,
+      "status": "under"
+    }
+  },
+  "content_validation": {
+    "structure": {
+      "has_h1": true,
+      "has_intro": true,
+      "has_conclusion": true,
+      "header_depth_valid": true
+    },
+    "generated_elements": {
+      "tldr_was_missing": true,
+      "objectives_were_missing": false,
+      "keywords_were_missing": false
+    }
+  },
+  "component_inventory": {
+    "has_components": true,
+    "items": [
+      {
+        "type": "flowchart",
+        "label": "CFPB Circular 2022-03 Process",
+        "detected_at_section": "CFPB Circular 2022-03"
+      },
+      {
+        "type": "flowchart",
+        "label": "Compliance Approaches Process",
+        "detected_at_section": "Compliance Approaches"
+      },
+      {
+        "type": "flowchart",
+        "label": "Conclusion Process",
+        "detected_at_section": "Conclusion"
+      },
+      {
+        "type": "flowchart",
+        "label": "Sources Process",
+        "detected_at_section": "Sources"
+      },
+      {
+        "type": "list",
+        "label": "Article 47: Financial Services AI – Regulatory Requirements Explained",
+        "detected_at_section": "Article 47: Financial Services AI – Regulatory Requirements Explained"
+      },
+      {
+        "type": "list",
+        "label": "Step 2: Assess Regulatory Requirements",
+        "detected_at_section": "Step 2: Assess Regulatory Requirements"
+      }
+    ]
+  },
+  "extracted_data": {
+    "title": "Article 47: Financial Services AI – Regulatory Requirements Explained",
+    "tldr": "",
+    "learning_objectives": [
+      "Understand the key concepts and principles of ai governance frameworks",
+      "Implement compliance strategies in real-world scenarios",
+      "Evaluate bias detection techniques for organizational compliance"
+    ],
+    "seo_keywords": [
+      "article",
+      "financial",
+      "AI governance",
+      "artificial intelligence",
+      "financial services"
+    ],
+    "references": []
+  },
+  "cross_reference_data": {
+    "topic_fingerprint": [
+      "deep learning",
+      "machine learning",
+      "explainability",
+      "oversight",
+      "fairness"
+    ],
+    "named_examples": [
+      "ccpa",
+      "colorado ai act",
+      "cpra",
+      "eu ai act",
+      "european parliament",
+      "fair",
+      "fdic",
+      "federal trade commission",
+      "occ",
+      "sec",
+      "securities and exchange commission",
+      "senate"
+    ]
+  },
+  "image_generation": {
+    "prompt": {
+      "formula": "Abstract geometric illustration, earth tones, minimalist, professional",
+      "category_motif": "industry icons",
+      "master_size": "1200x750px",
+      "css_filters": true
+    },
+    "placeholder": "![Article 47: Financial Services AI – Regulatory Requirements Explained]({{IMAGE_PLACEHOLDER_article-47-financial-services-ai-regulatory-requirements-exp}})"
+  }
+}

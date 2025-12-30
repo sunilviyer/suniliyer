@@ -1,0 +1,138 @@
+# === FILE STATUS ===
+suggested_slug: "article-96-launch-readiness-the-ai-deployment-checklist"
+category: "AI Development Lifecycle"
+word_count:
+  target: null
+  actual: 1592
+  status: "no_target"
+
+# === CONTENT VALIDATION ===
+structure:
+  has_h1: true
+  has_intro: true
+  has_conclusion: true
+  header_depth_valid: true
+generated_elements:
+  tldr_was_missing: true
+  objectives_were_missing: false
+  keywords_were_missing: false
+
+# === COMPONENT INVENTORY ===
+has_components: true
+components:
+  - type: "checklist"
+    label: "Article 96: Launch Readiness – The AI Deployment Checklist"
+    detected_at_section: "Article 96: Launch Readiness – The AI Deployment Checklist"
+  - type: "checklist"
+    label: "Performance meets requirements:"
+    detected_at_section: "Model Validation"
+  - type: "checklist"
+    label: "Compute resources:"
+    detected_at_section: "Infrastructure Readiness"
+  - type: "checklist"
+    label: "Access controls:"
+    detected_at_section: "Security Readiness"
+  - type: "checklist"
+    label: "Performance monitoring:"
+    detected_at_section: "Monitoring Setup"
+  - type: "checklist"
+    label: "Alerts defined for:"
+    detected_at_section: "Alerting Configuration"
+  - type: "checklist"
+    label: "Operational runbook:"
+    detected_at_section: "Runbooks and Procedures"
+  - type: "checklist"
+    label: "Rollback plan:"
+    detected_at_section: "Rollback Capability"
+  - type: "checklist"
+    label: "Model documentation:"
+    detected_at_section: "Documentation Complete"
+  - type: "checklist"
+    label: "Technical approvals:"
+    detected_at_section: "Approvals Obtained"
+  - type: "checklist"
+    label: "Regulatory compliance:"
+    detected_at_section: "Compliance Verification"
+  - type: "checklist"
+    label: "Residual risks:"
+    detected_at_section: "Risk Acceptance"
+  - type: "checklist"
+    label: "Operations team:"
+    detected_at_section: "Team Readiness"
+  - type: "checklist"
+    label: "Internal communication:"
+    detected_at_section: "Communication Ready"
+  - type: "checklist"
+    label: "Pre-Launch Checklist"
+    detected_at_section: "Pre-Launch Checklist"
+  - type: "checklist"
+    label: "Launch communication:"
+    detected_at_section: "Launch Execution"
+  - type: "checklist"
+    label: "Launch Readiness Checklist Template"
+    detected_at_section: "Launch Readiness Checklist Template"
+  - type: "checklist"
+    label: "Summary Checklist"
+    detected_at_section: "Summary Checklist"
+  - type: "table"
+    label: "Failure Type vs Consequence Table"
+    detected_at_section: "The Cost of Premature Launch"
+  - type: "flowchart"
+    label: "Formal Review Process Process"
+    detected_at_section: "Formal Review Process"
+  - type: "flowchart"
+    label: "Launch Execution Process"
+    detected_at_section: "Launch Execution"
+  - type: "flowchart"
+    label: "Conclusion Process"
+    detected_at_section: "Conclusion"
+  - type: "flowchart"
+    label: "Sources and Further Reading Process"
+    detected_at_section: "Sources and Further Reading"
+  - type: "template"
+    label: "Formal Review Process"
+    detected_at_section: "Formal Review Process"
+    template_link: "/templates/formal-review-process.md"
+  - type: "template"
+    label: "Launch Readiness Checklist Template"
+    detected_at_section: "Launch Readiness Checklist Template"
+    template_link: "/templates/launch-readiness-checklist-template.md"
+  - type: "list"
+    label: "Decision Criteria"
+    detected_at_section: "Decision Criteria"
+
+# === EXTRACTED DATA ===
+title: "Article 96: Launch Readiness – The AI Deployment Checklist"
+tldr: ""
+learning_objectives:
+  - "Understand the key concepts and principles of model validation processes"
+  - "Implement regulatory requirements in real-world scenarios"
+  - "Evaluate audit procedures for organizational compliance"
+seo_keywords:
+  - "article"
+  - "launch"
+  - "AI governance"
+  - "AI ethics"
+  - "launch readiness"
+
+# === CROSS REFERENCE DATA ===
+topic_fingerprint:
+  - "machine learning"
+  - "fairness"
+  - "adversarial testing"
+  - "model card"
+  - "risk assessment"
+named_examples:
+  - "amazon"
+  - "eu ai act"
+  - "google"
+  - "microsoft"
+  - "nist"
+
+# === IMAGE GENERATION ===
+image_prompt:
+  formula: "Abstract geometric illustration, earth tones, minimalist, professional"
+  category_motif: "flowcharts"
+  master_size: "1200x750px"
+  css_filters: true
+image_placeholder: "![Article 96: Launch Readiness – The AI Deployment Checklist]({{IMAGE_PLACEHOLDER_article-96-launch-readiness-the-ai-deployment-checklist}})"

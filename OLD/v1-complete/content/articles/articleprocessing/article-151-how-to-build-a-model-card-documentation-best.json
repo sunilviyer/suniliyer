@@ -1,0 +1,749 @@
+{
+  "file_status": {
+    "suggested_slug": "article-151-how-to-build-a-model-card-documentation-best-pra",
+    "category": "AI Fundamentals",
+    "word_count_check": {
+      "target": null,
+      "actual": 993,
+      "status": "under"
+    }
+  },
+  "content_validation": {
+    "structure": {
+      "has_h1": true,
+      "has_intro": true,
+      "has_conclusion": true,
+      "header_depth_valid": true
+    },
+    "generated_elements": {
+      "tldr_was_missing": false,
+      "objectives_were_missing": false,
+      "keywords_were_missing": false
+    }
+  },
+  "component_inventory": {
+    "has_components": true,
+    "items": [
+      {
+        "type": "table",
+        "label": "Stakeholder vs Benefit Table",
+        "detected_at_section": "Why Create Model Cards?"
+      },
+      {
+        "type": "table",
+        "label": "Regulation vs Requirement Table",
+        "detected_at_section": "Regulatory Requirements"
+      },
+      {
+        "type": "table",
+        "label": "Role vs Contribution Table",
+        "detected_at_section": "Who Should Be Involved"
+      },
+      {
+        "type": "table",
+        "label": "Role vs Name/Team Table",
+        "detected_at_section": "1.2 Development Information"
+      },
+      {
+        "type": "table",
+        "label": "Version vs Date Table",
+        "detected_at_section": "1.4 Model Lineage"
+      },
+      {
+        "type": "table",
+        "label": "--------- vs ------ Table",
+        "detected_at_section": "1.4 Model Lineage"
+      },
+      {
+        "type": "table",
+        "label": "1.4 Model Lineage Table",
+        "detected_at_section": "1.4 Model Lineage"
+      },
+      {
+        "type": "table",
+        "label": "Dependency vs Version Table",
+        "detected_at_section": "1.4 Model Lineage"
+      },
+      {
+        "type": "table",
+        "label": "------------ vs --------- Table",
+        "detected_at_section": "1.4 Model Lineage"
+      },
+      {
+        "type": "table",
+        "label": "1.4 Model Lineage Table",
+        "detected_at_section": "1.4 Model Lineage"
+      },
+      {
+        "type": "table",
+        "label": "User Type vs Description Table",
+        "detected_at_section": "2.2 Intended Users"
+      },
+      {
+        "type": "table",
+        "label": "2.2 Intended Users Table",
+        "detected_at_section": "2.2 Intended Users"
+      },
+      {
+        "type": "table",
+        "label": "2.2 Intended Users Table",
+        "detected_at_section": "2.2 Intended Users"
+      },
+      {
+        "type": "table",
+        "label": "Misuse vs Why It's Problematic Table",
+        "detected_at_section": "2.4 Out-of-Scope Uses"
+      },
+      {
+        "type": "table",
+        "label": "-------- vs --------------------- Table",
+        "detected_at_section": "2.4 Out-of-Scope Uses"
+      },
+      {
+        "type": "table",
+        "label": "2.4 Out-of-Scope Uses Table",
+        "detected_at_section": "2.4 Out-of-Scope Uses"
+      },
+      {
+        "type": "table",
+        "label": "Factor vs Reason Not Evaluated Table",
+        "detected_at_section": "3.2 Factor Evaluation"
+      },
+      {
+        "type": "table",
+        "label": "-------- vs --------------------- Table",
+        "detected_at_section": "3.2 Factor Evaluation"
+      },
+      {
+        "type": "table",
+        "label": "3.2 Factor Evaluation Table",
+        "detected_at_section": "3.2 Factor Evaluation"
+      },
+      {
+        "type": "table",
+        "label": "Metric vs Definition Table",
+        "detected_at_section": "4.1 Performance Metrics"
+      },
+      {
+        "type": "table",
+        "label": "-------- vs ------------ Table",
+        "detected_at_section": "4.1 Performance Metrics"
+      },
+      {
+        "type": "table",
+        "label": "4.1 Performance Metrics Table",
+        "detected_at_section": "4.1 Performance Metrics"
+      },
+      {
+        "type": "table",
+        "label": "4.1 Performance Metrics Table",
+        "detected_at_section": "4.1 Performance Metrics"
+      },
+      {
+        "type": "table",
+        "label": "Metric vs Groups Compared Table",
+        "detected_at_section": "4.2 Fairness Metrics"
+      },
+      {
+        "type": "table",
+        "label": "-------- vs ----------------- Table",
+        "detected_at_section": "4.2 Fairness Metrics"
+      },
+      {
+        "type": "table",
+        "label": "4.2 Fairness Metrics Table",
+        "detected_at_section": "4.2 Fairness Metrics"
+      },
+      {
+        "type": "table",
+        "label": "Threshold vs Precision Table",
+        "detected_at_section": "4.3 Decision Thresholds"
+      },
+      {
+        "type": "table",
+        "label": "----------- vs ----------- Table",
+        "detected_at_section": "4.3 Decision Thresholds"
+      },
+      {
+        "type": "table",
+        "label": "4.3 Decision Thresholds Table",
+        "detected_at_section": "4.3 Decision Thresholds"
+      },
+      {
+        "type": "table",
+        "label": "4.3 Decision Thresholds Table",
+        "detected_at_section": "4.3 Decision Thresholds"
+      },
+      {
+        "type": "table",
+        "label": "Use Case vs Recommended Range Table",
+        "detected_at_section": "4.3 Decision Thresholds"
+      },
+      {
+        "type": "table",
+        "label": "---------- vs ------------------- Table",
+        "detected_at_section": "4.3 Decision Thresholds"
+      },
+      {
+        "type": "table",
+        "label": "4.3 Decision Thresholds Table",
+        "detected_at_section": "4.3 Decision Thresholds"
+      },
+      {
+        "type": "table",
+        "label": "Characteristic vs Value Table",
+        "detected_at_section": "5.1 Evaluation Datasets"
+      },
+      {
+        "type": "table",
+        "label": "Step vs Description Table",
+        "detected_at_section": "5.3 Evaluation Data Preprocessing"
+      },
+      {
+        "type": "table",
+        "label": "------ vs ------------- Table",
+        "detected_at_section": "5.3 Evaluation Data Preprocessing"
+      },
+      {
+        "type": "table",
+        "label": "5.3 Evaluation Data Preprocessing Table",
+        "detected_at_section": "5.3 Evaluation Data Preprocessing"
+      },
+      {
+        "type": "table",
+        "label": "Source vs Type Table",
+        "detected_at_section": "6.1 Training Data Sources"
+      },
+      {
+        "type": "table",
+        "label": "-------- vs ------ Table",
+        "detected_at_section": "6.1 Training Data Sources"
+      },
+      {
+        "type": "table",
+        "label": "6.1 Training Data Sources Table",
+        "detected_at_section": "6.1 Training Data Sources"
+      },
+      {
+        "type": "table",
+        "label": "6.1 Training Data Sources Table",
+        "detected_at_section": "6.1 Training Data Sources"
+      },
+      {
+        "type": "table",
+        "label": "Provider vs Data Type Table",
+        "detected_at_section": "6.1 Training Data Sources"
+      },
+      {
+        "type": "table",
+        "label": "---------- vs ----------- Table",
+        "detected_at_section": "6.1 Training Data Sources"
+      },
+      {
+        "type": "table",
+        "label": "6.1 Training Data Sources Table",
+        "detected_at_section": "6.1 Training Data Sources"
+      },
+      {
+        "type": "table",
+        "label": "Class vs Count Table",
+        "detected_at_section": "6.2 Training Data Characteristics"
+      },
+      {
+        "type": "table",
+        "label": "------- vs ------- Table",
+        "detected_at_section": "6.2 Training Data Characteristics"
+      },
+      {
+        "type": "table",
+        "label": "6.2 Training Data Characteristics Table",
+        "detected_at_section": "6.2 Training Data Characteristics"
+      },
+      {
+        "type": "table",
+        "label": "Demographic vs Distribution Table",
+        "detected_at_section": "6.2 Training Data Characteristics"
+      },
+      {
+        "type": "table",
+        "label": "------------- vs -------------- Table",
+        "detected_at_section": "6.2 Training Data Characteristics"
+      },
+      {
+        "type": "table",
+        "label": "6.2 Training Data Characteristics Table",
+        "detected_at_section": "6.2 Training Data Characteristics"
+      },
+      {
+        "type": "table",
+        "label": "Region vs Percentage Table",
+        "detected_at_section": "6.2 Training Data Characteristics"
+      },
+      {
+        "type": "table",
+        "label": "-------- vs ------------ Table",
+        "detected_at_section": "6.2 Training Data Characteristics"
+      },
+      {
+        "type": "table",
+        "label": "6.2 Training Data Characteristics Table",
+        "detected_at_section": "6.2 Training Data Characteristics"
+      },
+      {
+        "type": "table",
+        "label": "Time Period vs Percentage Table",
+        "detected_at_section": "6.2 Training Data Characteristics"
+      },
+      {
+        "type": "table",
+        "label": "------------- vs ------------ Table",
+        "detected_at_section": "6.2 Training Data Characteristics"
+      },
+      {
+        "type": "table",
+        "label": "6.2 Training Data Characteristics Table",
+        "detected_at_section": "6.2 Training Data Characteristics"
+      },
+      {
+        "type": "table",
+        "label": "Dimension vs Assessment Table",
+        "detected_at_section": "6.3 Data Quality and Limitations"
+      },
+      {
+        "type": "table",
+        "label": "Gap vs Description Table",
+        "detected_at_section": "6.3 Data Quality and Limitations"
+      },
+      {
+        "type": "table",
+        "label": "----- vs ------------- Table",
+        "detected_at_section": "6.3 Data Quality and Limitations"
+      },
+      {
+        "type": "table",
+        "label": "6.3 Data Quality and Limitations Table",
+        "detected_at_section": "6.3 Data Quality and Limitations"
+      },
+      {
+        "type": "table",
+        "label": "Metric vs Value Table",
+        "detected_at_section": "7.1 Overall Performance"
+      },
+      {
+        "type": "table",
+        "label": "-------- vs ------- Table",
+        "detected_at_section": "7.1 Overall Performance"
+      },
+      {
+        "type": "table",
+        "label": "7.1 Overall Performance Table",
+        "detected_at_section": "7.1 Overall Performance"
+      },
+      {
+        "type": "table",
+        "label": "7.1 Overall Performance Table",
+        "detected_at_section": "7.1 Overall Performance"
+      },
+      {
+        "type": "table",
+        "label": "Model/Approach vs Primary Metric Table",
+        "detected_at_section": "7.1 Overall Performance"
+      },
+      {
+        "type": "table",
+        "label": "Group vs N Table",
+        "detected_at_section": "7.2 Disaggregated Performance"
+      },
+      {
+        "type": "table",
+        "label": "------- vs --- Table",
+        "detected_at_section": "7.2 Disaggregated Performance"
+      },
+      {
+        "type": "table",
+        "label": "7.2 Disaggregated Performance Table",
+        "detected_at_section": "7.2 Disaggregated Performance"
+      },
+      {
+        "type": "table",
+        "label": "Group vs N Table",
+        "detected_at_section": "7.2 Disaggregated Performance"
+      },
+      {
+        "type": "table",
+        "label": "------- vs --- Table",
+        "detected_at_section": "7.2 Disaggregated Performance"
+      },
+      {
+        "type": "table",
+        "label": "7.2 Disaggregated Performance Table",
+        "detected_at_section": "7.2 Disaggregated Performance"
+      },
+      {
+        "type": "table",
+        "label": "Condition vs N Table",
+        "detected_at_section": "7.2 Disaggregated Performance"
+      },
+      {
+        "type": "table",
+        "label": "----------- vs --- Table",
+        "detected_at_section": "7.2 Disaggregated Performance"
+      },
+      {
+        "type": "table",
+        "label": "7.2 Disaggregated Performance Table",
+        "detected_at_section": "7.2 Disaggregated Performance"
+      },
+      {
+        "type": "table",
+        "label": "Comparison vs Gap Size Table",
+        "detected_at_section": "7.2 Disaggregated Performance"
+      },
+      {
+        "type": "table",
+        "label": "7.2 Disaggregated Performance Table",
+        "detected_at_section": "7.2 Disaggregated Performance"
+      },
+      {
+        "type": "table",
+        "label": "Group 1 vs Group 2 Table",
+        "detected_at_section": "7.3 Intersectional Analysis"
+      },
+      {
+        "type": "table",
+        "label": "--------- vs --------- Table",
+        "detected_at_section": "7.3 Intersectional Analysis"
+      },
+      {
+        "type": "table",
+        "label": "7.3 Intersectional Analysis Table",
+        "detected_at_section": "7.3 Intersectional Analysis"
+      },
+      {
+        "type": "table",
+        "label": "7.3 Intersectional Analysis Table",
+        "detected_at_section": "7.3 Intersectional Analysis"
+      },
+      {
+        "type": "table",
+        "label": "7.3 Intersectional Analysis Table",
+        "detected_at_section": "7.3 Intersectional Analysis"
+      },
+      {
+        "type": "table",
+        "label": "Group Intersection vs Performance Table",
+        "detected_at_section": "7.3 Intersectional Analysis"
+      },
+      {
+        "type": "table",
+        "label": "------------------- vs ------------- Table",
+        "detected_at_section": "7.3 Intersectional Analysis"
+      },
+      {
+        "type": "table",
+        "label": "7.3 Intersectional Analysis Table",
+        "detected_at_section": "7.3 Intersectional Analysis"
+      },
+      {
+        "type": "table",
+        "label": "Error Type vs Count Table",
+        "detected_at_section": "7.4 Error Analysis"
+      },
+      {
+        "type": "table",
+        "label": "Edge Case vs Model Behavior Table",
+        "detected_at_section": "7.4 Error Analysis"
+      },
+      {
+        "type": "table",
+        "label": "----------- vs ---------------- Table",
+        "detected_at_section": "7.4 Error Analysis"
+      },
+      {
+        "type": "table",
+        "label": "7.4 Error Analysis Table",
+        "detected_at_section": "7.4 Error Analysis"
+      },
+      {
+        "type": "table",
+        "label": "Use Case vs Sensitivity Reason Table",
+        "detected_at_section": "8.2 Sensitive Use Cases"
+      },
+      {
+        "type": "table",
+        "label": "---------- vs ------------------- Table",
+        "detected_at_section": "8.2 Sensitive Use Cases"
+      },
+      {
+        "type": "table",
+        "label": "8.2 Sensitive Use Cases Table",
+        "detected_at_section": "8.2 Sensitive Use Cases"
+      },
+      {
+        "type": "table",
+        "label": "8.2 Sensitive Use Cases Table",
+        "detected_at_section": "8.2 Sensitive Use Cases"
+      },
+      {
+        "type": "table",
+        "label": "Population vs Concern Table",
+        "detected_at_section": "8.2 Sensitive Use Cases"
+      },
+      {
+        "type": "table",
+        "label": "------------ vs --------- Table",
+        "detected_at_section": "8.2 Sensitive Use Cases"
+      },
+      {
+        "type": "table",
+        "label": "8.2 Sensitive Use Cases Table",
+        "detected_at_section": "8.2 Sensitive Use Cases"
+      },
+      {
+        "type": "table",
+        "label": "Bias Type vs Groups Tested Table",
+        "detected_at_section": "8.3 Bias Assessment"
+      },
+      {
+        "type": "table",
+        "label": "----------- vs --------------- Table",
+        "detected_at_section": "8.3 Bias Assessment"
+      },
+      {
+        "type": "table",
+        "label": "8.3 Bias Assessment Table",
+        "detected_at_section": "8.3 Bias Assessment"
+      },
+      {
+        "type": "table",
+        "label": "Trigger vs Action Required Table",
+        "detected_at_section": "8.4 Human Oversight"
+      },
+      {
+        "type": "table",
+        "label": "--------- vs ----------------- Table",
+        "detected_at_section": "8.4 Human Oversight"
+      },
+      {
+        "type": "table",
+        "label": "8.4 Human Oversight Table",
+        "detected_at_section": "8.4 Human Oversight"
+      },
+      {
+        "type": "table",
+        "label": "Condition vs Expected Performance Table",
+        "detected_at_section": "9.1 Known Limitations"
+      },
+      {
+        "type": "table",
+        "label": "Version vs Date Table",
+        "detected_at_section": "9.3 Feedback and Updates"
+      },
+      {
+        "type": "table",
+        "label": "--------- vs ------ Table",
+        "detected_at_section": "9.3 Feedback and Updates"
+      },
+      {
+        "type": "table",
+        "label": "9.3 Feedback and Updates Table",
+        "detected_at_section": "9.3 Feedback and Updates"
+      },
+      {
+        "type": "table",
+        "label": "Metric vs Value Table",
+        "detected_at_section": "Complete Model Card Template"
+      },
+      {
+        "type": "table",
+        "label": "-------- vs ------- Table",
+        "detected_at_section": "Complete Model Card Template"
+      },
+      {
+        "type": "table",
+        "label": "Complete Model Card Template Table",
+        "detected_at_section": "Complete Model Card Template"
+      },
+      {
+        "type": "table",
+        "label": "Metric vs Overall Table",
+        "detected_at_section": "Complete Model Card Template"
+      },
+      {
+        "type": "table",
+        "label": "-------- vs --------- Table",
+        "detected_at_section": "Complete Model Card Template"
+      },
+      {
+        "type": "table",
+        "label": "Metric vs Value Table",
+        "detected_at_section": "Example 1: Image Classification Model (Abbreviated)"
+      },
+      {
+        "type": "table",
+        "label": "Metric vs Overall Table",
+        "detected_at_section": "Example 1: Image Classification Model (Abbreviated)"
+      },
+      {
+        "type": "table",
+        "label": "Metric vs Value Table",
+        "detected_at_section": "Example 2: Text Classification Model (Abbreviated)"
+      },
+      {
+        "type": "table",
+        "label": "Department vs Precision Table",
+        "detected_at_section": "Example 2: Text Classification Model (Abbreviated)"
+      },
+      {
+        "type": "table",
+        "label": "Trigger vs Update Required Table",
+        "detected_at_section": "When to Update"
+      },
+      {
+        "type": "table",
+        "label": "Version vs Date Table",
+        "detected_at_section": "Version Control"
+      },
+      {
+        "type": "table",
+        "label": "--------- vs ------ Table",
+        "detected_at_section": "Version Control"
+      },
+      {
+        "type": "table",
+        "label": "Mistake vs Why It's a Problem Table",
+        "detected_at_section": "Common Mistakes to Avoid"
+      },
+      {
+        "type": "table",
+        "label": "Tool vs Description Table",
+        "detected_at_section": "Model Card Tools"
+      },
+      {
+        "type": "table",
+        "label": "Tool vs Description Table",
+        "detected_at_section": "Fairness Assessment Tools"
+      },
+      {
+        "type": "flowchart",
+        "label": "Summary Process",
+        "detected_at_section": "Summary"
+      },
+      {
+        "type": "template",
+        "label": "Information to Gather",
+        "detected_at_section": "Information to Gather",
+        "template_link": "/templates/information-to-gather.md"
+      },
+      {
+        "type": "template",
+        "label": "1.1 Basic Information",
+        "detected_at_section": "1.1 Basic Information",
+        "template_link": "/templates/11-basic-information.md"
+      },
+      {
+        "type": "template",
+        "label": "1.2 Development Information",
+        "detected_at_section": "1.2 Development Information",
+        "template_link": "/templates/12-development-information.md"
+      },
+      {
+        "type": "template",
+        "label": "Example",
+        "detected_at_section": "2.1 Primary Intended Uses",
+        "template_link": "/templates/example.md"
+      },
+      {
+        "type": "template",
+        "label": "4.1 Performance Metrics",
+        "detected_at_section": "4.1 Performance Metrics",
+        "template_link": "/templates/41-performance-metrics.md"
+      },
+      {
+        "type": "template",
+        "label": "7.1 Overall Performance",
+        "detected_at_section": "7.1 Overall Performance",
+        "template_link": "/templates/71-overall-performance.md"
+      },
+      {
+        "type": "template",
+        "label": "7.2 Disaggregated Performance",
+        "detected_at_section": "7.2 Disaggregated Performance",
+        "template_link": "/templates/72-disaggregated-performance.md"
+      },
+      {
+        "type": "template",
+        "label": "Complete Model Card Template",
+        "detected_at_section": "Complete Model Card Template",
+        "template_link": "/templates/complete-model-card-template.md"
+      },
+      {
+        "type": "template",
+        "label": "Example",
+        "detected_at_section": "Version Control",
+        "template_link": "/templates/example.md"
+      },
+      {
+        "type": "list",
+        "label": "Article 151: How to Build a Model Card — Documentation Best Practices",
+        "detected_at_section": "Article 151: How to Build a Model Card — Documentation Best Practices"
+      },
+      {
+        "type": "list",
+        "label": "Regulatory Requirements",
+        "detected_at_section": "Regulatory Requirements"
+      },
+      {
+        "type": "list",
+        "label": "Common Mistakes to Avoid",
+        "detected_at_section": "Common Mistakes to Avoid"
+      }
+    ]
+  },
+  "extracted_data": {
+    "title": "Article 151: How to Build a Model Card — Documentation Best Practices",
+    "tldr": "This article examines AI risk management strategies and mitigation approaches. It provides actionable insights for achieving regulatory compliance and organizational readiness.",
+    "learning_objectives": [
+      "Understand the key concepts and principles of regulatory requirements",
+      "Implement best practices in real-world scenarios",
+      "Evaluate risk assessment frameworks for organizational compliance"
+    ],
+    "seo_keywords": [
+      "article",
+      "build",
+      "AI risk management",
+      "model card",
+      "step guide"
+    ],
+    "references": []
+  },
+  "cross_reference_data": {
+    "topic_fingerprint": [
+      "machine learning",
+      "transformer",
+      "large language model",
+      "neural network",
+      "bert"
+    ],
+    "named_examples": [
+      "canada aida",
+      "eu ai act",
+      "google",
+      "hugging face",
+      "ibm",
+      "manufacturing",
+      "microsoft",
+      "nist",
+      "nyc local law 144"
+    ]
+  },
+  "image_generation": {
+    "prompt": {
+      "formula": "Abstract geometric illustration, earth tones, minimalist, professional",
+      "category_motif": "neural networks",
+      "master_size": "1200x750px",
+      "css_filters": true
+    },
+    "placeholder": "![Article 151: How to Build a Model Card — Documentation Best Practices]({{IMAGE_PLACEHOLDER_article-151-how-to-build-a-model-card-documentation-best-pra}})"
+  }
+}

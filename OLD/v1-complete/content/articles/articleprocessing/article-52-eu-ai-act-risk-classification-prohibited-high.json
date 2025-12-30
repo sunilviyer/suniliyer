@@ -1,0 +1,99 @@
+{
+  "file_status": {
+    "suggested_slug": "article-52-eu-ai-act-risk-classification-prohibited-high-ris",
+    "category": "AI Risks & Principles",
+    "word_count_check": {
+      "target": null,
+      "actual": 2088,
+      "status": "under"
+    }
+  },
+  "content_validation": {
+    "structure": {
+      "has_h1": true,
+      "has_intro": true,
+      "has_conclusion": true,
+      "header_depth_valid": true
+    },
+    "generated_elements": {
+      "tldr_was_missing": true,
+      "objectives_were_missing": false,
+      "keywords_were_missing": false
+    }
+  },
+  "component_inventory": {
+    "has_components": true,
+    "items": [
+      {
+        "type": "table",
+        "label": "Area vs Examples Table",
+        "detected_at_section": "What Makes AI \"High-Risk\"?"
+      },
+      {
+        "type": "table",
+        "label": "AI System vs Classification Table",
+        "detected_at_section": "Real-World Classification Examples"
+      },
+      {
+        "type": "flowchart",
+        "label": "What High-Risk Providers Must Do Process",
+        "detected_at_section": "What High-Risk Providers Must Do"
+      },
+      {
+        "type": "flowchart",
+        "label": "Sources Process",
+        "detected_at_section": "Sources"
+      },
+      {
+        "type": "list",
+        "label": "The Transparency Requirement",
+        "detected_at_section": "The Transparency Requirement"
+      }
+    ]
+  },
+  "extracted_data": {
+    "title": "Article 52: EU AI Act Risk Classification – Prohibited, High-Risk, and Beyond",
+    "tldr": "",
+    "learning_objectives": [
+      "Understand the key concepts and principles of regulatory requirements",
+      "Implement best practices in real-world scenarios",
+      "Evaluate risk assessment frameworks for organizational compliance"
+    ],
+    "seo_keywords": [
+      "article",
+      "risk",
+      "artificial intelligence",
+      "act risk classification",
+      "prohibited"
+    ],
+    "references": []
+  },
+  "cross_reference_data": {
+    "topic_fingerprint": [
+      "foundation model",
+      "transparency",
+      "risk assessment",
+      "oversight",
+      "trustworthy ai"
+    ],
+    "named_examples": [
+      "artificial intelligence act",
+      "deepfakes",
+      "digital services act",
+      "eu ai act",
+      "european commission",
+      "european parliament",
+      "gdpr",
+      "stanford"
+    ]
+  },
+  "image_generation": {
+    "prompt": {
+      "formula": "Abstract geometric illustration, earth tones, minimalist, professional",
+      "category_motif": "warning triangles",
+      "master_size": "1200x750px",
+      "css_filters": true
+    },
+    "placeholder": "![Article 52: EU AI Act Risk Classification – Prohibited, High-Risk, and Beyond]({{IMAGE_PLACEHOLDER_article-52-eu-ai-act-risk-classification-prohibited-high-ris}})"
+  }
+}

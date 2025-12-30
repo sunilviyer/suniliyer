@@ -1,0 +1,179 @@
+{
+  "file_status": {
+    "suggested_slug": "article-45-the-right-to-explanation-what-gdpr-actually-requi",
+    "category": "Legal Frameworks",
+    "word_count_check": {
+      "target": null,
+      "actual": 4049,
+      "status": "under"
+    }
+  },
+  "content_validation": {
+    "structure": {
+      "has_h1": true,
+      "has_intro": true,
+      "has_conclusion": true,
+      "header_depth_valid": true
+    },
+    "generated_elements": {
+      "tldr_was_missing": true,
+      "objectives_were_missing": false,
+      "keywords_were_missing": false
+    }
+  },
+  "component_inventory": {
+    "has_components": true,
+    "items": [
+      {
+        "type": "flowchart",
+        "label": "The Emerging Consensus Process",
+        "detected_at_section": "The Emerging Consensus"
+      },
+      {
+        "type": "flowchart",
+        "label": "What Individual Explanations Should Include Process",
+        "detected_at_section": "What Individual Explanations Should Include"
+      },
+      {
+        "type": "flowchart",
+        "label": "Sources Process",
+        "detected_at_section": "Sources"
+      },
+      {
+        "type": "template",
+        "label": "Example:",
+        "detected_at_section": "Requirement 1: Disclose the Existence of Automated Decision-Making",
+        "template_link": "/templates/example.md"
+      },
+      {
+        "type": "template",
+        "label": "Requirement 2: Provide \"Meaningful Information About the Logic Involved\"",
+        "detected_at_section": "Requirement 2: Provide \"Meaningful Information About the Logic Involved\"",
+        "template_link": "/templates/requirement-2-provide-meaningful-information-about-the-logic-involved.md"
+      },
+      {
+        "type": "template",
+        "label": "Example:",
+        "detected_at_section": "Requirement 2: Provide \"Meaningful Information About the Logic Involved\"",
+        "template_link": "/templates/example.md"
+      },
+      {
+        "type": "template",
+        "label": "Example:",
+        "detected_at_section": "Requirement 3: Explain Significance and Consequences",
+        "template_link": "/templates/example.md"
+      },
+      {
+        "type": "template",
+        "label": "Example:",
+        "detected_at_section": "Requirement 4: Enable Individuals to Contest Decisions",
+        "template_link": "/templates/example.md"
+      },
+      {
+        "type": "template",
+        "label": "Example:",
+        "detected_at_section": "Requirement 5: Provide Human Intervention on Request",
+        "template_link": "/templates/example.md"
+      },
+      {
+        "type": "template",
+        "label": "Example:",
+        "detected_at_section": "Requirement 6: Allow Individuals to Express Their Views",
+        "template_link": "/templates/example.md"
+      },
+      {
+        "type": "list",
+        "label": "Requirement 1: Disclose the Existence of Automated Decision-Making",
+        "detected_at_section": "Requirement 1: Disclose the Existence of Automated Decision-Making"
+      },
+      {
+        "type": "list",
+        "label": "Requirement 2: Provide \"Meaningful Information About the Logic Involved\"",
+        "detected_at_section": "Requirement 2: Provide \"Meaningful Information About the Logic Involved\""
+      },
+      {
+        "type": "list",
+        "label": "Requirement 3: Explain Significance and Consequences",
+        "detected_at_section": "Requirement 3: Explain Significance and Consequences"
+      },
+      {
+        "type": "list",
+        "label": "Requirement 4: Enable Individuals to Contest Decisions",
+        "detected_at_section": "Requirement 4: Enable Individuals to Contest Decisions"
+      },
+      {
+        "type": "list",
+        "label": "Requirement 5: Provide Human Intervention on Request",
+        "detected_at_section": "Requirement 5: Provide Human Intervention on Request"
+      },
+      {
+        "type": "list",
+        "label": "Requirement 6: Allow Individuals to Express Their Views",
+        "detected_at_section": "Requirement 6: Allow Individuals to Express Their Views"
+      },
+      {
+        "type": "list",
+        "label": "Sector-Specific Requirements",
+        "detected_at_section": "Sector-Specific Requirements"
+      },
+      {
+        "type": "list",
+        "label": "Step 2: Determine Explanation Requirements",
+        "detected_at_section": "Step 2: Determine Explanation Requirements"
+      },
+      {
+        "type": "list",
+        "label": "EU AI Act Requirements",
+        "detected_at_section": "EU AI Act Requirements"
+      }
+    ]
+  },
+  "extracted_data": {
+    "title": "Article 45: The Right to Explanation – What GDPR Actually Requires",
+    "tldr": "",
+    "learning_objectives": [
+      "Understand the key concepts and principles of regulatory requirements",
+      "Implement audit procedures in real-world scenarios",
+      "Evaluate transparency measures for organizational compliance"
+    ],
+    "seo_keywords": [
+      "article",
+      "right",
+      "the right",
+      "explanation",
+      "what"
+    ],
+    "references": []
+  },
+  "cross_reference_data": {
+    "topic_fingerprint": [
+      "deep learning",
+      "neural network",
+      "machine learning",
+      "transparency",
+      "fairness"
+    ],
+    "named_examples": [
+      "berkeley",
+      "eu ai act",
+      "european parliament",
+      "fair",
+      "gdpr",
+      "harvard",
+      "iec",
+      "ieee",
+      "iso",
+      "nist",
+      "nyc local law 144"
+    ]
+  },
+  "image_generation": {
+    "prompt": {
+      "formula": "Abstract geometric illustration, earth tones, minimalist, professional",
+      "category_motif": "scales",
+      "master_size": "1200x750px",
+      "css_filters": true
+    },
+    "placeholder": "![Article 45: The Right to Explanation – What GDPR Actually Requires]({{IMAGE_PLACEHOLDER_article-45-the-right-to-explanation-what-gdpr-actually-requi}})"
+  }
+}

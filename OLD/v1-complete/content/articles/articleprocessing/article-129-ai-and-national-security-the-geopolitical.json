@@ -1,0 +1,118 @@
+{
+  "file_status": {
+    "suggested_slug": "article-129-ai-and-national-security-the-geopolitical-dimens",
+    "category": "Future Concerns",
+    "word_count_check": {
+      "target": null,
+      "actual": 2251,
+      "status": "under"
+    }
+  },
+  "content_validation": {
+    "structure": {
+      "has_h1": true,
+      "has_intro": true,
+      "has_conclusion": true,
+      "header_depth_valid": true
+    },
+    "generated_elements": {
+      "tldr_was_missing": true,
+      "objectives_were_missing": false,
+      "keywords_were_missing": false
+    }
+  },
+  "component_inventory": {
+    "has_components": true,
+    "items": [
+      {
+        "type": "table",
+        "label": "Technology Era vs Strategic Considerations Table",
+        "detected_at_section": "Historical Parallels"
+      },
+      {
+        "type": "table",
+        "label": "Level vs Description Table",
+        "detected_at_section": "The \"Human in the Loop\" Debate"
+      },
+      {
+        "type": "table",
+        "label": "Country vs Approach Table",
+        "detected_at_section": "How Different Countries Approach AI"
+      },
+      {
+        "type": "table",
+        "label": "Aspect vs U.S. Approach Table",
+        "detected_at_section": "Strategic Differences"
+      },
+      {
+        "type": "flowchart",
+        "label": "Conclusion Process",
+        "detected_at_section": "Conclusion"
+      },
+      {
+        "type": "flowchart",
+        "label": "Sources and Further Reading Process",
+        "detected_at_section": "Sources and Further Reading"
+      },
+      {
+        "type": "template",
+        "label": "AI in Information Warfare",
+        "detected_at_section": "AI in Information Warfare",
+        "template_link": "/templates/ai-in-information-warfare.md"
+      }
+    ]
+  },
+  "extracted_data": {
+    "title": "Article 129: AI and National Security – The Geopolitical Dimension",
+    "tldr": "",
+    "learning_objectives": [
+      "Understand the key concepts and principles of ai governance frameworks",
+      "Implement compliance strategies in real-world scenarios",
+      "Evaluate regulatory requirements for organizational compliance"
+    ],
+    "seo_keywords": [
+      "article",
+      "national",
+      "AI governance",
+      "artificial intelligence",
+      "national security"
+    ],
+    "references": []
+  },
+  "cross_reference_data": {
+    "topic_fingerprint": [
+      "accountability",
+      "trustworthy ai",
+      "ai safety",
+      "governance framework",
+      "responsible ai"
+    ],
+    "named_examples": [
+      "alibaba",
+      "anthropic",
+      "baidu",
+      "biotechnology",
+      "bytedance",
+      "congress",
+      "deepfakes",
+      "defense",
+      "eu ai act",
+      "european parliament",
+      "google",
+      "manufacturing",
+      "meta",
+      "nvidia",
+      "openai",
+      "tencent"
+    ]
+  },
+  "image_generation": {
+    "prompt": {
+      "formula": "Abstract geometric illustration, earth tones, minimalist, professional",
+      "category_motif": "crystal ball",
+      "master_size": "1200x750px",
+      "css_filters": true
+    },
+    "placeholder": "![Article 129: AI and National Security – The Geopolitical Dimension]({{IMAGE_PLACEHOLDER_article-129-ai-and-national-security-the-geopolitical-dimens}})"
+  }
+}

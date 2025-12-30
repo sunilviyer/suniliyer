@@ -1,0 +1,154 @@
+{
+  "file_status": {
+    "suggested_slug": "article-10-the-ai-technology-stack-from-chips-to-application",
+    "category": "AI Fundamentals",
+    "word_count_check": {
+      "target": null,
+      "actual": 3018,
+      "status": "under"
+    }
+  },
+  "content_validation": {
+    "structure": {
+      "has_h1": true,
+      "has_intro": true,
+      "has_conclusion": true,
+      "header_depth_valid": true
+    },
+    "generated_elements": {
+      "tldr_was_missing": false,
+      "objectives_were_missing": false,
+      "keywords_were_missing": false
+    }
+  },
+  "component_inventory": {
+    "has_components": true,
+    "items": [
+      {
+        "type": "table",
+        "label": "Company vs Products Table",
+        "detected_at_section": "Key Players"
+      },
+      {
+        "type": "table",
+        "label": "Provider vs AI Infrastructure Offerings Table",
+        "detected_at_section": "Key Players"
+      },
+      {
+        "type": "table",
+        "label": "Approach vs Description Table",
+        "detected_at_section": "Build vs. Buy Spectrum"
+      },
+      {
+        "type": "table",
+        "label": "Characteristic vs Closed Models Table",
+        "detected_at_section": "Open vs. Closed Models"
+      },
+      {
+        "type": "table",
+        "label": "Layer vs Concentration Table",
+        "detected_at_section": "Concentration of Power"
+      },
+      {
+        "type": "table",
+        "label": "Layer vs Cost Type Table",
+        "detected_at_section": "Cost Structure"
+      },
+      {
+        "type": "table",
+        "label": "Regulation vs Primary Layer(s) Table",
+        "detected_at_section": "Regulatory Mapping"
+      },
+      {
+        "type": "table",
+        "label": "Vendor Type vs Key Questions Table",
+        "detected_at_section": "Vendor Assessment"
+      },
+      {
+        "type": "table",
+        "label": "Area vs Questions Table",
+        "detected_at_section": "Questions for Your Organization"
+      },
+      {
+        "type": "flowchart",
+        "label": "Data Flows Through the Stack Process",
+        "detected_at_section": "Data Flows Through the Stack"
+      },
+      {
+        "type": "flowchart",
+        "label": "Key Principles Process",
+        "detected_at_section": "Key Principles"
+      },
+      {
+        "type": "flowchart",
+        "label": "Summary Process",
+        "detected_at_section": "Summary"
+      },
+      {
+        "type": "template",
+        "label": "Layer 3: Platforms – The Development Environment",
+        "detected_at_section": "Layer 3: Platforms – The Development Environment",
+        "template_link": "/templates/layer-3-platforms-the-development-environment.md"
+      },
+      {
+        "type": "list",
+        "label": "Key Principles",
+        "detected_at_section": "Key Principles"
+      }
+    ]
+  },
+  "extracted_data": {
+    "title": "Article 10: The AI Technology Stack – From Chips to Applications",
+    "tldr": "This article provides a comprehensive framework for AI governance and implementation. It provides actionable insights for achieving regulatory compliance and organizational readiness.",
+    "learning_objectives": [
+      "Understand the key concepts and principles of regulatory requirements",
+      "Implement best practices in real-world scenarios",
+      "Evaluate risk assessment frameworks for organizational compliance"
+    ],
+    "seo_keywords": [
+      "article",
+      "technology",
+      "AI governance",
+      "technology stack",
+      "from chips"
+    ],
+    "references": []
+  },
+  "cross_reference_data": {
+    "topic_fingerprint": [
+      "large language model",
+      "machine learning",
+      "neural network",
+      "foundation model",
+      "multimodal"
+    ],
+    "named_examples": [
+      "alibaba",
+      "anthropic",
+      "energy",
+      "eu ai act",
+      "gdpr",
+      "github copilot",
+      "google",
+      "hugging face",
+      "manufacturing",
+      "meta",
+      "microsoft",
+      "midjourney",
+      "nvidia",
+      "openai",
+      "oracle",
+      "stability ai",
+      "stanford"
+    ]
+  },
+  "image_generation": {
+    "prompt": {
+      "formula": "Abstract geometric illustration, earth tones, minimalist, professional",
+      "category_motif": "neural networks",
+      "master_size": "1200x750px",
+      "css_filters": true
+    },
+    "placeholder": "![Article 10: The AI Technology Stack – From Chips to Applications]({{IMAGE_PLACEHOLDER_article-10-the-ai-technology-stack-from-chips-to-application}})"
+  }
+}

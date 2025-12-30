@@ -1,0 +1,143 @@
+{
+  "file_status": {
+    "suggested_slug": "article-111-ai-communications-disclosure-notification-and-co",
+    "category": "Governance Implementation",
+    "word_count_check": {
+      "target": null,
+      "actual": 1555,
+      "status": "under"
+    }
+  },
+  "content_validation": {
+    "structure": {
+      "has_h1": true,
+      "has_intro": true,
+      "has_conclusion": true,
+      "header_depth_valid": true
+    },
+    "generated_elements": {
+      "tldr_was_missing": true,
+      "objectives_were_missing": false,
+      "keywords_were_missing": false
+    }
+  },
+  "component_inventory": {
+    "has_components": true,
+    "items": [
+      {
+        "type": "table",
+        "label": "Regulation vs Disclosure Requirement Table",
+        "detected_at_section": "Disclosure Requirements by Regulation"
+      },
+      {
+        "type": "table",
+        "label": "Channel vs Best For Table",
+        "detected_at_section": "Notification Channels"
+      },
+      {
+        "type": "table",
+        "label": "Metric vs What It Measures Table",
+        "detected_at_section": "Metrics"
+      },
+      {
+        "type": "flowchart",
+        "label": "Conclusion Process",
+        "detected_at_section": "Conclusion"
+      },
+      {
+        "type": "flowchart",
+        "label": "Sources and Further Reading Process",
+        "detected_at_section": "Sources and Further Reading"
+      },
+      {
+        "type": "template",
+        "label": "Disclosure Templates",
+        "detected_at_section": "Disclosure Templates",
+        "template_link": "/templates/disclosure-templates.md"
+      },
+      {
+        "type": "template",
+        "label": "Decision notification template:",
+        "detected_at_section": "How to Notify",
+        "template_link": "/templates/decision-notification-template.md"
+      },
+      {
+        "type": "template",
+        "label": "Change notification template:",
+        "detected_at_section": "How to Notify",
+        "template_link": "/templates/change-notification-template.md"
+      },
+      {
+        "type": "template",
+        "label": "Consent prompt template:",
+        "detected_at_section": "Consent Design",
+        "template_link": "/templates/consent-prompt-template.md"
+      },
+      {
+        "type": "template",
+        "label": "Layered Information",
+        "detected_at_section": "Layered Information",
+        "template_link": "/templates/layered-information.md"
+      },
+      {
+        "type": "list",
+        "label": "Disclosure Requirements by Regulation",
+        "detected_at_section": "Disclosure Requirements by Regulation"
+      },
+      {
+        "type": "list",
+        "label": "Valid Consent Requirements",
+        "detected_at_section": "Valid Consent Requirements"
+      },
+      {
+        "type": "list",
+        "label": "Plain Language Principles",
+        "detected_at_section": "Plain Language Principles"
+      }
+    ]
+  },
+  "extracted_data": {
+    "title": "Article 111: AI Communications – Disclosure, Notification, and Consent",
+    "tldr": "",
+    "learning_objectives": [
+      "Understand the key concepts and principles of ai governance frameworks",
+      "Implement ethical ai principles in real-world scenarios",
+      "Evaluate regulatory requirements for organizational compliance"
+    ],
+    "seo_keywords": [
+      "article",
+      "communications",
+      "AI governance",
+      "disclosure",
+      "notification"
+    ],
+    "references": []
+  },
+  "cross_reference_data": {
+    "topic_fingerprint": [
+      "machine learning",
+      "neural network",
+      "transparency",
+      "oversight",
+      "automated decision-making"
+    ],
+    "named_examples": [
+      "aedt",
+      "ccpa",
+      "colorado ai act",
+      "eu ai act",
+      "gdpr",
+      "nist",
+      "nyc local law 144"
+    ]
+  },
+  "image_generation": {
+    "prompt": {
+      "formula": "Abstract geometric illustration, earth tones, minimalist, professional",
+      "category_motif": "org charts",
+      "master_size": "1200x750px",
+      "css_filters": true
+    },
+    "placeholder": "![Article 111: AI Communications – Disclosure, Notification, and Consent]({{IMAGE_PLACEHOLDER_article-111-ai-communications-disclosure-notification-and-co}})"
+  }
+}

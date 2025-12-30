@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Building Blocks – What AI Actually Is | AIDefence</title>
+  <link href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-primary: #ffffff;
+      --bg-secondary: #f8f8f8;
+      --text-primary: #000000;
+      --text-secondary: #666666;
+      --border-color: #dddddd;
+      --moss-green: #333d29;
+      --brown-tan: #936639;
+      --olive-green: #414833;
+      --card-bg: rgba(255, 255, 255, 0.95);
+    }
+
+    [data-theme="dark"] {
+      --bg-primary: #1a1a1a;
+      --bg-secondary: #2a2a2a;
+      --text-primary: #ffffff;
+      --text-secondary: #cccccc;
+      --border-color: #444444;
+      --card-bg: rgba(26, 26, 26, 0.95);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Funnel Display", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      transition: background-color 0.3s ease;
+    }
+
+    /* Header Bar */
+    .header-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 80px;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 60px;
+      z-index: 9000;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    }
+
+    [data-theme="dark"] .header-bar {
+      background: rgba(26, 26, 26, 0.95);
+    }
+
+    .header-logo-section {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .header-logo-ring {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      border: 2px solid var(--moss-green);
+      overflow: hidden;
+    }
+
+    .header-name span {
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+
+    .theme-toggle {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.95);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    [data-theme="dark"] .theme-toggle {
+      background: rgba(26,26,26,0.95);
+    }
+
+    .theme-toggle:hover {
+      transform: scale(1.1);
+    }
+
+    /* Article Container */
+    .article-container {
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 120px 40px 80px;
+    }
+
+    /* Breadcrumbs */
+    .breadcrumbs {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      font-size: 14px;
+      color: var(--text-secondary);
+      margin-bottom: 40px;
+    }
+
+    .breadcrumbs a {
+      color: var(--text-secondary);
+      text-decoration: none;
+    }
+
+    .breadcrumbs a:hover {
+      color: var(--moss-green);
+    }
+
+    .breadcrumbs .separator {
+      color: var(--border-color);
+    }
+
+    /* Article Header */
+    .article-header {
+      margin-bottom: 60px;
+    }
+
+    .article-meta {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      font-size: 14px;
+      color: var(--text-secondary);
+      margin-bottom: 24px;
+    }
+
+    .meta-date,
+    .meta-read-time {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .article-title {
+      font-size: 56px;
+      font-weight: 600;
+      line-height: 1.1;
+      margin-bottom: 32px;
+      color: var(--text-primary);
+    }
+
+    .article-tags {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 8px 20px;
+      background: var(--bg-secondary);
+      border-radius: 20px;
+      font-size: 14px;
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .tag:hover {
+      background: var(--moss-green);
+      color: white;
+    }
+
+    /* Article Thumbnail */
+    .article-thumbnail {
+      width: 100%;
+      height: 500px;
+      border-radius: 16px;
+      overflow: hidden;
+      margin-bottom: 60px;
+      background: var(--bg-secondary);
+    }
+
+    .article-thumbnail img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* Article Content */
+    .article-excerpt {
+      font-size: 24px;
+      line-height: 1.6;
+      color: var(--text-secondary);
+      margin-bottom: 60px;
+      font-weight: 400;
+    }
+
+    /* Table of Contents */
+    .table-of-contents {
+      background: var(--bg-secondary);
+      border-left: 4px solid var(--moss-green);
+      padding: 32px;
+      border-radius: 8px;
+      margin-bottom: 60px;
+    }
+
+    .toc-title {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 20px;
+      color: var(--text-primary);
+    }
+
+    .toc-nav {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .toc-nav a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 16px;
+      transition: color 0.3s ease;
+    }
+
+    .toc-nav a:hover {
+      color: var(--moss-green);
+    }
+
+    /* Article Sections */
+    .article-section {
+      margin-bottom: 60px;
+    }
+
+    .article-section h3 {
+      font-size: 32px;
+      font-weight: 600;
+      margin-bottom: 24px;
+      color: var(--text-primary);
+      scroll-margin-top: 100px;
+    }
+
+    .article-section p {
+      font-size: 18px;
+      line-height: 1.8;
+      color: var(--text-primary);
+      margin-bottom: 20px;
+    }
+
+    .article-section ul {
+      margin: 20px 0;
+      padding-left: 24px;
+    }
+
+    .article-section li {
+      font-size: 18px;
+      line-height: 1.8;
+      color: var(--text-primary);
+      margin-bottom: 12px;
+    }
+
+    .article-section blockquote {
+      border-left: 4px solid var(--brown-tan);
+      padding: 24px 32px;
+      margin: 32px 0;
+      background: var(--bg-secondary);
+      border-radius: 8px;
+      font-style: italic;
+      color: var(--text-secondary);
+    }
+
+    /* Related Concepts */
+    .related-concepts {
+      margin: 80px 0;
+      padding: 40px;
+      background: var(--bg-secondary);
+      border-radius: 16px;
+    }
+
+    .related-concepts-title {
+      font-size: 28px;
+      font-weight: 600;
+      margin-bottom: 32px;
+      color: var(--text-primary);
+    }
+
+    .related-concepts-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 24px;
+    }
+
+    .related-card {
+      background: var(--bg-primary);
+      padding: 24px;
+      border-radius: 12px;
+      text-decoration: none;
+      color: inherit;
+      transition: all 0.3s ease;
+      border: 2px solid transparent;
+    }
+
+    .related-card:hover {
+      border-color: var(--moss-green);
+      transform: translateY(-4px);
+    }
+
+    .related-card-number {
+      font-size: 12px;
+      color: var(--brown-tan);
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .related-card-title {
+      font-size: 18px;
+      font-weight: 600;
+      line-height: 1.3;
+      color: var(--text-primary);
+    }
+
+    /* Cross-Path References */
+    .cross-path-refs {
+      margin: 60px 0;
+      padding: 32px;
+      background: linear-gradient(135deg, rgba(51, 61, 41, 0.05), rgba(65, 72, 51, 0.05));
+      border-radius: 12px;
+      border: 2px solid var(--olive-green);
+    }
+
+    .cross-path-title {
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 24px;
+      color: var(--text-primary);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .cross-path-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .cross-path-item {
+      display: flex;
+      align-items: start;
+      gap: 16px;
+    }
+
+    .cross-path-badge {
+      display: inline-block;
+      padding: 6px 16px;
+      background: var(--olive-green);
+      color: white;
+      border-radius: 12px;
+      font-size: 14px;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    .cross-path-reason {
+      font-size: 16px;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    /* Author Section */
+    .article-author {
+      margin: 80px 0;
+      padding: 40px;
+      background: var(--bg-secondary);
+      border-radius: 16px;
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 32px;
+    }
+
+    .author-avatar {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      overflow: hidden;
+      background: var(--border-color);
+    }
+
+    .author-avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .author-info h4 {
+      font-size: 24px;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: var(--text-primary);
+    }
+
+    .author-position {
+      font-size: 16px;
+      color: var(--brown-tan);
+      margin-bottom: 16px;
+    }
+
+    .author-bio {
+      font-size: 16px;
+      line-height: 1.6;
+      color: var(--text-secondary);
+      margin-bottom: 20px;
+    }
+
+    .author-socials {
+      display: flex;
+      gap: 16px;
+    }
+
+    .author-socials a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 14px;
+      transition: color 0.3s ease;
+    }
+
+    .author-socials a:hover {
+      color: var(--moss-green);
+    }
+
+    /* Article Navigation */
+    .article-navigation {
+      margin: 60px 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+
+    .nav-card {
+      padding: 24px;
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      text-decoration: none;
+      color: inherit;
+      transition: all 0.3s ease;
+      border: 2px solid transparent;
+    }
+
+    .nav-card:hover {
+      border-color: var(--moss-green);
+      transform: translateX(var(--translate-x));
+    }
+
+    .nav-card.prev:hover {
+      --translate-x: -4px;
+    }
+
+    .nav-card.next:hover {
+      --translate-x: 4px;
+    }
+
+    .nav-label {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--text-secondary);
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .nav-title {
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+
+    /* Responsive */
+    @media (max-width: 767px) {
+      .article-container {
+        padding: 100px 20px 60px;
+      }
+
+      .article-title {
+        font-size: 36px;
+      }
+
+      .article-excerpt {
+        font-size: 20px;
+      }
+
+      .article-section h3 {
+        font-size: 24px;
+      }
+
+      .article-author {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .author-avatar {
+        margin: 0 auto;
+      }
+
+      .article-navigation {
+        grid-template-columns: 1fr;
+      }
+
+      .related-concepts-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header Bar -->
+  <header class="header-bar">
+    <div class="header-logo-section">
+      <div class="header-logo-ring">
+        <img src="../public/images/logo.jpg" alt="AIDefence Logo">
+      </div>
+      <div class="header-name">
+        <span>AIDefence</span>
+      </div>
+    </div>
+    <div class="theme-toggle" onclick="toggleTheme()">
+      <span id="theme-icon">☀️</span>
+    </div>
+  </header>
+
+  <!-- Article Container -->
+  <div class="article-container">
+
+    <!-- Breadcrumbs -->
+    <div class="breadcrumbs">
+      <a href="/">Home</a>
+      <span class="separator">→</span>
+      <a href="/learn">Learning Paths</a>
+      <span class="separator">→</span>
+      <a href="/learn/history">History & Context</a>
+      <span class="separator">→</span>
+      <span>The Building Blocks</span>
+    </div>
+
+    <!-- Article Header -->
+    <div class="article-header">
+      <div class="article-meta">
+        <div class="meta-date">
+          <span>📅</span>
+          <span>Updated December 2024</span>
+        </div>
+        <div class="meta-read-time">
+          <span>⏱</span>
+          <span>5 min read</span>
+        </div>
+      </div>
+
+      <h1 class="article-title">The Building Blocks – What AI Actually Is</h1>
+
+      <div class="article-tags">
+        <a href="/learn/history?tag=fundamentals" class="tag">fundamentals</a>
+        <a href="/learn/history?tag=definitions" class="tag">definitions</a>
+        <a href="/learn/history?tag=OECD" class="tag">OECD</a>
+        <a href="/learn/history?tag=ISO" class="tag">ISO</a>
+      </div>
+    </div>
+
+    <!-- Article Thumbnail -->
+    <div class="article-thumbnail">
+      <img src="../public/images/learn/history/what-ai-actually-is-hero.webp" alt="The Building Blocks – What AI Actually Is" onerror="this.style.display='none'">
+    </div>
+
+    <!-- Article Excerpt -->
+    <p class="article-excerpt">
+      AI is machine-based systems that infer from inputs to generate outputs influencing physical or virtual environments. This definition from the OECD (November 2023) provides the foundation for understanding AI governance, regulation, and responsible development.
+    </p>
+
+    <!-- Table of Contents -->
+    <div class="table-of-contents">
+      <h4 class="toc-title">📖 In This Article</h4>
+      <ul class="toc-nav">
+        <li><a href="#oecd-definition">OECD AI Definition (Nov 2023)</a></li>
+        <li><a href="#iso-terminology">ISO/IEC 22989:2022 Terminology</a></li>
+        <li><a href="#what-makes-different">What Makes AI Different from Traditional Software</a></li>
+        <li><a href="#why-definitions-matter">Why Definitions Matter for Governance</a></li>
+      </ul>
+    </div>
+
+    <!-- Article Content -->
+
+    <!-- Section 1 -->
+    <div class="article-section" id="oecd-definition">
+      <h3>OECD AI Definition (Nov 2023)</h3>
+      <p>
+        The Organisation for Economic Co-operation and Development (OECD) updated its AI definition in November 2023 to reflect the rapid evolution of AI systems. This definition is now the international standard used by governments, regulatory bodies, and industry organizations worldwide.
+      </p>
+      <blockquote>
+        "An AI system is a machine-based system that, for explicit or implicit objectives, infers, from the input it receives, how to generate outputs such as predictions, content, recommendations, or decisions that can influence physical or virtual environments."
+      </blockquote>
+      <p>
+        This definition is deliberately broad to encompass both current and future AI systems. It highlights four key characteristics:
+      </p>
+      <ul>
+        <li><strong>Machine-based:</strong> AI runs on computational infrastructure, distinguishing it from human intelligence</li>
+        <li><strong>Inference capability:</strong> AI systems learn patterns and make inferences rather than following explicit programming</li>
+        <li><strong>Output generation:</strong> AI produces various outputs including predictions, content, recommendations, and decisions</li>
+        <li><strong>Environmental influence:</strong> AI outputs can affect both physical systems (robots, autonomous vehicles) and virtual environments (recommendations, content moderation)</li>
+      </ul>
+    </div>
+
+    <!-- Section 2 -->
+    <div class="article-section" id="iso-terminology">
+      <h3>ISO/IEC 22989:2022 Terminology</h3>
+      <p>
+        The International Organization for Standardization (ISO) and the International Electrotechnical Commission (IEC) published ISO/IEC 22989:2022, establishing standardized terminology for artificial intelligence concepts and techniques.
+      </p>
+      <p>
+        This standard provides the technical vocabulary needed for AI governance, including definitions for:
+      </p>
+      <ul>
+        <li>Machine Learning (ML): Systems that improve performance through experience</li>
+        <li>Neural Networks: Computing systems inspired by biological neural networks</li>
+        <li>Deep Learning: ML using neural networks with multiple layers</li>
+        <li>Natural Language Processing (NLP): AI systems that understand and generate human language</li>
+        <li>Computer Vision: Systems that derive information from visual inputs</li>
+      </ul>
+      <p>
+        ISO/IEC 22989:2022 ensures that AI practitioners, regulators, and policymakers use consistent terminology when discussing AI systems, reducing ambiguity in governance frameworks.
+      </p>
+    </div>
+
+    <!-- Section 3 -->
+    <div class="article-section" id="what-makes-different">
+      <h3>What Makes AI Different from Traditional Software</h3>
+      <p>
+        Understanding what distinguishes AI from traditional software is crucial for effective governance. Traditional software follows explicit, deterministic rules written by programmers. AI systems, in contrast, learn patterns from data and make probabilistic inferences.
+      </p>
+      <p>
+        Key differences include:
+      </p>
+      <ul>
+        <li><strong>Development approach:</strong> Traditional software uses explicit programming; AI uses training on data</li>
+        <li><strong>Behavior predictability:</strong> Traditional software is deterministic; AI is probabilistic and can exhibit emergent behaviors</li>
+        <li><strong>Explainability:</strong> Traditional software logic is transparent; AI decision-making can be opaque (the "black box" problem)</li>
+        <li><strong>Adaptability:</strong> Traditional software requires manual updates; AI can continue learning and adapting</li>
+        <li><strong>Error patterns:</strong> Traditional software has bugs; AI has bias, hallucinations, and distributional shift issues</li>
+      </ul>
+      <p>
+        These differences mean that AI governance cannot simply adapt existing software governance frameworks. New approaches are needed to address AI-specific risks.
+      </p>
+    </div>
+
+    <!-- Section 4 -->
+    <div class="article-section" id="why-definitions-matter">
+      <h3>Why Definitions Matter for Governance</h3>
+      <p>
+        Precise definitions are the foundation of effective AI governance. When governments, companies, and international bodies discuss AI regulation, they must share a common understanding of what qualifies as an "AI system."
+      </p>
+      <p>
+        Clear definitions enable:
+      </p>
+      <ul>
+        <li><strong>Regulatory scope:</strong> Determining which systems fall under AI-specific regulations (e.g., EU AI Act)</li>
+        <li><strong>Risk assessment:</strong> Identifying which AI systems pose high risks requiring additional oversight</li>
+        <li><strong>Compliance frameworks:</strong> Creating testable requirements for AI safety and transparency</li>
+        <li><strong>International coordination:</strong> Enabling cross-border cooperation on AI governance</li>
+        <li><strong>Public accountability:</strong> Helping citizens understand when AI is being used to make decisions affecting their lives</li>
+      </ul>
+      <p>
+        The OECD and ISO definitions provide this shared foundation, enabling coherent global approaches to AI governance while allowing individual jurisdictions to tailor specific requirements to their contexts.
+      </p>
+    </div>
+
+    <!-- Related Concepts -->
+    <div class="related-concepts">
+      <h3 class="related-concepts-title">📚 Related Concepts in This Path</h3>
+      <div class="related-concepts-grid">
+        <a href="/learn/history/ai-family-tree" class="related-card">
+          <div class="related-card-number">Concept 02</div>
+          <h4 class="related-card-title">The AI Family Tree – Types of AI Systems Explained</h4>
+        </a>
+        <a href="/learn/history/strong-vs-weak-ai" class="related-card">
+          <div class="related-card-number">Concept 05</div>
+          <h4 class="related-card-title">Strong vs. Weak AI – Why the Difference Matters for Governance</h4>
+        </a>
+        <a href="/learn/terminology/machine-learning-fundamentals" class="related-card">
+          <div class="related-card-number">From Terminology Path</div>
+          <h4 class="related-card-title">Machine Learning Fundamentals</h4>
+        </a>
+      </div>
+    </div>
+
+    <!-- Cross-Path References -->
+    <div class="cross-path-refs">
+      <h4 class="cross-path-title">
+        <span>🔗</span>
+        <span>Connections to Other Learning Paths</span>
+      </h4>
+      <div class="cross-path-list">
+        <div class="cross-path-item">
+          <span class="cross-path-badge">Terminology</span>
+          <p class="cross-path-reason">
+            The OECD definition connects directly to Machine Learning fundamentals and technical terminology covered in the Terminology path. Understanding these definitions is prerequisite to understanding ML concepts.
+          </p>
+        </div>
+        <div class="cross-path-item">
+          <span class="cross-path-badge">Responsibility</span>
+          <p class="cross-path-reason">
+            Clear AI definitions inform legal frameworks and accountability mechanisms. The Responsibility path builds on these definitions to establish who is accountable when AI systems cause harm.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Author Section -->
+    <div class="article-author">
+      <div class="author-avatar">
+        <img src="../public/images/Sunil.jpg" alt="Sunil Iyer" onerror="this.style.display='none'">
+      </div>
+      <div class="author-info">
+        <h4>Sunil Iyer</h4>
+        <div class="author-position">AI Governance Expert & Founder</div>
+        <p class="author-bio">
+          With over two decades of experience in technology leadership and AI governance, Sunil helps organizations navigate the complex landscape of responsible AI development, deployment, and regulation. He has advised Fortune 500 companies, government agencies, and international bodies on AI strategy and compliance.
+        </p>
+        <div class="author-socials">
+          <a href="https://linkedin.com/in/suniliyer" target="_blank">LinkedIn →</a>
+          <a href="https://twitter.com/suniliyer" target="_blank">Twitter →</a>
+          <a href="mailto:contact@aidefence.com">Email →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Article Navigation -->
+    <div class="article-navigation">
+      <a href="/learn/history" class="nav-card prev">
+        <div class="nav-label">
+          <span>←</span>
+          <span>Back to Path</span>
+        </div>
+        <div class="nav-title">History & Context</div>
+      </a>
+      <a href="/learn/history/ai-family-tree" class="nav-card next">
+        <div class="nav-label">
+          <span>Next Article</span>
+          <span>→</span>
+        </div>
+        <div class="nav-title">The AI Family Tree</div>
+      </a>
+    </div>
+
+  </div>
+
+  <script>
+    // Theme Toggle
+    function toggleTheme() {
+      const body = document.body;
+      const themeIcon = document.getElementById('theme-icon');
+      const currentTheme = body.getAttribute('data-theme');
+
+      if (currentTheme === 'dark') {
+        body.removeAttribute('data-theme');
+        themeIcon.textContent = '☀️';
+        localStorage.setItem('theme', 'light');
+      } else {
+        body.setAttribute('data-theme', 'dark');
+        themeIcon.textContent = '🌙';
+        localStorage.setItem('theme', 'dark');
+      }
+    }
+
+    // Load saved theme
+    document.addEventListener('DOMContentLoaded', () => {
+      const savedTheme = localStorage.getItem('theme');
+      const themeIcon = document.getElementById('theme-icon');
+
+      if (savedTheme === 'dark') {
+        document.body.setAttribute('data-theme', 'dark');
+        themeIcon.textContent = '🌙';
+      } else {
+        themeIcon.textContent = '☀️';
+      }
+    });
+
+    // Smooth scroll for TOC links
+    document.querySelectorAll('.toc-nav a').forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const targetId = link.getAttribute('href').substring(1);
+        const targetSection = document.getElementById(targetId);
+        if (targetSection) {
+          targetSection.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>

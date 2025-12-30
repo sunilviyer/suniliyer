@@ -1,0 +1,205 @@
+{
+  "file_status": {
+    "suggested_slug": "article-137-ai-governance-careers-building-your-professional",
+    "category": "Governance Implementation",
+    "word_count_check": {
+      "target": null,
+      "actual": 2349,
+      "status": "under"
+    }
+  },
+  "content_validation": {
+    "structure": {
+      "has_h1": true,
+      "has_intro": true,
+      "has_conclusion": true,
+      "header_depth_valid": true
+    },
+    "generated_elements": {
+      "tldr_was_missing": true,
+      "objectives_were_missing": false,
+      "keywords_were_missing": false
+    }
+  },
+  "component_inventory": {
+    "has_components": true,
+    "items": [
+      {
+        "type": "table",
+        "label": "Metric vs Estimate Table",
+        "detected_at_section": "Market Size and Growth"
+      },
+      {
+        "type": "table",
+        "label": "Aspect vs Details Table",
+        "detected_at_section": "Strategic/Leadership Roles"
+      },
+      {
+        "type": "table",
+        "label": "Aspect vs Details Table",
+        "detected_at_section": "Strategic/Leadership Roles"
+      },
+      {
+        "type": "table",
+        "label": "Aspect vs Details Table",
+        "detected_at_section": "Management Roles"
+      },
+      {
+        "type": "table",
+        "label": "Aspect vs Details Table",
+        "detected_at_section": "Management Roles"
+      },
+      {
+        "type": "table",
+        "label": "Aspect vs Details Table",
+        "detected_at_section": "Specialist Roles"
+      },
+      {
+        "type": "table",
+        "label": "Aspect vs Details Table",
+        "detected_at_section": "Specialist Roles"
+      },
+      {
+        "type": "table",
+        "label": "Aspect vs Details Table",
+        "detected_at_section": "Specialist Roles"
+      },
+      {
+        "type": "table",
+        "label": "Aspect vs Details Table",
+        "detected_at_section": "Specialist Roles"
+      },
+      {
+        "type": "table",
+        "label": "Aspect vs Details Table",
+        "detected_at_section": "Technical-Adjacent Roles"
+      },
+      {
+        "type": "table",
+        "label": "Aspect vs Details Table",
+        "detected_at_section": "Technical-Adjacent Roles"
+      },
+      {
+        "type": "table",
+        "label": "Skill vs Required For Table",
+        "detected_at_section": "Technical Skills (Varying by Role)"
+      },
+      {
+        "type": "table",
+        "label": "Certification vs Provider Table",
+        "detected_at_section": "Key Certifications"
+      },
+      {
+        "type": "table",
+        "label": "Certification vs Provider Table",
+        "detected_at_section": "Key Certifications"
+      },
+      {
+        "type": "table",
+        "label": "Event vs Focus Table",
+        "detected_at_section": "Conferences and Events"
+      },
+      {
+        "type": "table",
+        "label": "Role Level vs Salary Range Table",
+        "detected_at_section": "Salary Benchmarks (2024-2025)"
+      },
+      {
+        "type": "flowchart",
+        "label": "Path 1: From Legal/Compliance Process",
+        "detected_at_section": "Path 1: From Legal/Compliance"
+      },
+      {
+        "type": "flowchart",
+        "label": "Path 2: From Data Science/Engineering Process",
+        "detected_at_section": "Path 2: From Data Science/Engineering"
+      },
+      {
+        "type": "flowchart",
+        "label": "Path 3: From Privacy/Data Protection Process",
+        "detected_at_section": "Path 3: From Privacy/Data Protection"
+      },
+      {
+        "type": "flowchart",
+        "label": "Path 4: From Audit (Internal or External) Process",
+        "detected_at_section": "Path 4: From Audit (Internal or External)"
+      },
+      {
+        "type": "flowchart",
+        "label": "Path 5: From Policy/Government Process",
+        "detected_at_section": "Path 5: From Policy/Government"
+      },
+      {
+        "type": "flowchart",
+        "label": "Path 6: New Graduate Process",
+        "detected_at_section": "Path 6: New Graduate"
+      },
+      {
+        "type": "flowchart",
+        "label": "Conclusion Process",
+        "detected_at_section": "Conclusion"
+      },
+      {
+        "type": "flowchart",
+        "label": "Sources and Further Reading Process",
+        "detected_at_section": "Sources and Further Reading"
+      }
+    ]
+  },
+  "extracted_data": {
+    "title": "Article 137: AI Governance Careers – Building Your Professional Path",
+    "tldr": "",
+    "learning_objectives": [
+      "Understand the key concepts and principles of ai governance frameworks",
+      "Implement risk assessment methodologies in real-world scenarios",
+      "Evaluate compliance strategies for organizational compliance"
+    ],
+    "seo_keywords": [
+      "article",
+      "governance",
+      "AI governance",
+      "AI compliance",
+      "AI ethics"
+    ],
+    "references": []
+  },
+  "cross_reference_data": {
+    "topic_fingerprint": [
+      "machine learning",
+      "deep learning",
+      "ai ethics",
+      "audit",
+      "oversight"
+    ],
+    "named_examples": [
+      "amazon",
+      "anthropic",
+      "ccpa",
+      "deepfakes",
+      "eu ai act",
+      "european parliament",
+      "fintech",
+      "gdpr",
+      "google",
+      "harvard",
+      "linkedin",
+      "manufacturing",
+      "meta",
+      "microsoft",
+      "nist",
+      "openai",
+      "stanford",
+      "telecommunications",
+      "twitter"
+    ]
+  },
+  "image_generation": {
+    "prompt": {
+      "formula": "Abstract geometric illustration, earth tones, minimalist, professional",
+      "category_motif": "org charts",
+      "master_size": "1200x750px",
+      "css_filters": true
+    },
+    "placeholder": "![Article 137: AI Governance Careers – Building Your Professional Path]({{IMAGE_PLACEHOLDER_article-137-ai-governance-careers-building-your-professional}})"
+  }
+}

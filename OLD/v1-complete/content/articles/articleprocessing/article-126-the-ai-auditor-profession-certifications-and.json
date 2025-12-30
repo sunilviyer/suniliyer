@@ -1,0 +1,216 @@
+{
+  "file_status": {
+    "suggested_slug": "article-126-the-ai-auditor-profession-certifications-and-car",
+    "category": "AI Auditing & Accountability",
+    "word_count_check": {
+      "target": null,
+      "actual": 2154,
+      "status": "under"
+    }
+  },
+  "content_validation": {
+    "structure": {
+      "has_h1": true,
+      "has_intro": true,
+      "has_conclusion": true,
+      "header_depth_valid": true
+    },
+    "generated_elements": {
+      "tldr_was_missing": true,
+      "objectives_were_missing": false,
+      "keywords_were_missing": false
+    }
+  },
+  "component_inventory": {
+    "has_components": true,
+    "items": [
+      {
+        "type": "table",
+        "label": "Regulation vs AI Audit Requirement Table",
+        "detected_at_section": "Why AI Auditing Is Becoming a Profession"
+      },
+      {
+        "type": "table",
+        "label": "Aspect vs Current State Table",
+        "detected_at_section": "The Current State: A Profession in Formation"
+      },
+      {
+        "type": "table",
+        "label": "Skill vs Why It Matters Table",
+        "detected_at_section": "The Three Pillars of AI Audit Expertise"
+      },
+      {
+        "type": "table",
+        "label": "Knowledge Area vs What to Understand Table",
+        "detected_at_section": "The Three Pillars of AI Audit Expertise"
+      },
+      {
+        "type": "table",
+        "label": "Area vs What to Know Table",
+        "detected_at_section": "The Three Pillars of AI Audit Expertise"
+      },
+      {
+        "type": "table",
+        "label": "Background vs Broad In Table",
+        "detected_at_section": "The T-Shaped Professional"
+      },
+      {
+        "type": "table",
+        "label": "Aspect vs Details Table",
+        "detected_at_section": "Primary Certifications for AI Auditors"
+      },
+      {
+        "type": "table",
+        "label": "Aspect vs Details Table",
+        "detected_at_section": "Primary Certifications for AI Auditors"
+      },
+      {
+        "type": "table",
+        "label": "Aspect vs Details Table",
+        "detected_at_section": "Primary Certifications for AI Auditors"
+      },
+      {
+        "type": "table",
+        "label": "Certification vs Provider Table",
+        "detected_at_section": "Complementary Certifications"
+      },
+      {
+        "type": "table",
+        "label": "Certification vs Provider Table",
+        "detected_at_section": "Complementary Certifications"
+      },
+      {
+        "type": "table",
+        "label": "Certification vs Provider Table",
+        "detected_at_section": "Complementary Certifications"
+      },
+      {
+        "type": "table",
+        "label": "Aspect vs Typical Details Table",
+        "detected_at_section": "Path 1: Internal AI Auditor"
+      },
+      {
+        "type": "table",
+        "label": "Aspect vs Typical Details Table",
+        "detected_at_section": "Path 1: Internal AI Auditor"
+      },
+      {
+        "type": "table",
+        "label": "Aspect vs Typical Details Table",
+        "detected_at_section": "Path 1: Internal AI Auditor"
+      },
+      {
+        "type": "table",
+        "label": "Level vs Experience Table",
+        "detected_at_section": "Path 2: External AI Audit Consultant"
+      },
+      {
+        "type": "table",
+        "label": "Step vs Action Table",
+        "detected_at_section": "For Career Changers"
+      },
+      {
+        "type": "table",
+        "label": "Step vs Action Table",
+        "detected_at_section": "For Career Changers"
+      },
+      {
+        "type": "table",
+        "label": "Step vs Action Table",
+        "detected_at_section": "For Career Changers"
+      },
+      {
+        "type": "table",
+        "label": "Learning Area vs Resources Table",
+        "detected_at_section": "Continuous Learning"
+      },
+      {
+        "type": "table",
+        "label": "Title vs Focus Table",
+        "detected_at_section": "Current Demand"
+      },
+      {
+        "type": "table",
+        "label": "Level vs General Range Table",
+        "detected_at_section": "Salary Expectations (2024-2025)"
+      },
+      {
+        "type": "flowchart",
+        "label": "Certification Strategy Recommendations Process",
+        "detected_at_section": "Certification Strategy Recommendations"
+      },
+      {
+        "type": "flowchart",
+        "label": "For New Graduates Process",
+        "detected_at_section": "For New Graduates"
+      },
+      {
+        "type": "flowchart",
+        "label": "Conclusion Process",
+        "detected_at_section": "Conclusion"
+      },
+      {
+        "type": "flowchart",
+        "label": "Sources and Further Reading Process",
+        "detected_at_section": "Sources and Further Reading"
+      },
+      {
+        "type": "template",
+        "label": "The Current State: A Profession in Formation",
+        "detected_at_section": "The Current State: A Profession in Formation",
+        "template_link": "/templates/the-current-state-a-profession-in-formation.md"
+      }
+    ]
+  },
+  "extracted_data": {
+    "title": "Article 126: The AI Auditor Profession – Certifications and Career Paths",
+    "tldr": "",
+    "learning_objectives": [
+      "Understand the key concepts and principles of ai governance frameworks",
+      "Implement risk assessment methodologies in real-world scenarios",
+      "Evaluate model validation processes for organizational compliance"
+    ],
+    "seo_keywords": [
+      "article",
+      "auditor",
+      "AI governance",
+      "artificial intelligence",
+      "AI compliance"
+    ],
+    "references": []
+  },
+  "cross_reference_data": {
+    "topic_fingerprint": [
+      "audit",
+      "fairness",
+      "risk assessment",
+      "oversight",
+      "ai ethics"
+    ],
+    "named_examples": [
+      "amazon",
+      "eu ai act",
+      "european parliament",
+      "fintech",
+      "gdpr",
+      "google",
+      "iec",
+      "ieee",
+      "international organization for standardization",
+      "iso",
+      "microsoft",
+      "national institute of standards",
+      "nist",
+      "nyc local law 144"
+    ]
+  },
+  "image_generation": {
+    "prompt": {
+      "formula": "Abstract geometric illustration, earth tones, minimalist, professional",
+      "category_motif": "magnifying glass",
+      "master_size": "1200x750px",
+      "css_filters": true
+    },
+    "placeholder": "![Article 126: The AI Auditor Profession – Certifications and Career Paths]({{IMAGE_PLACEHOLDER_article-126-the-ai-auditor-profession-certifications-and-car}})"
+  }
+}

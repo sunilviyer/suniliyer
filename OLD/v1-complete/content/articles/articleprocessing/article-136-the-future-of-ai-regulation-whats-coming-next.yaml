@@ -1,0 +1,94 @@
+# === FILE STATUS ===
+suggested_slug: "article-136-the-future-of-ai-regulation-whats-coming-next"
+category: "AI Laws"
+word_count:
+  target: null
+  actual: 1942
+  status: "no_target"
+
+# === CONTENT VALIDATION ===
+structure:
+  has_h1: true
+  has_intro: true
+  has_conclusion: true
+  header_depth_valid: true
+generated_elements:
+  tldr_was_missing: true
+  objectives_were_missing: false
+  keywords_were_missing: false
+
+# === COMPONENT INVENTORY ===
+has_components: true
+components:
+  - type: "table"
+    label: "Provision vs Effective Date Table"
+    detected_at_section: "The EU AI Act: The Global Standard-Setter"
+  - type: "table"
+    label: "State vs Key Law Table"
+    detected_at_section: "United States: Patchwork Becoming Pattern"
+  - type: "table"
+    label: "Jurisdiction vs Status Table"
+    detected_at_section: "Other Major Jurisdictions"
+  - type: "table"
+    label: "Type vs Requirement Table"
+    detected_at_section: "Trend 2: Transparency and Disclosure"
+  - type: "table"
+    label: "Mechanism vs Where Required Table"
+    detected_at_section: "Trend 4: Accountability Mechanisms"
+  - type: "table"
+    label: "Element vs Purpose Table"
+    detected_at_section: "Building Regulatory-Ready Governance"
+  - type: "flowchart"
+    label: "Conclusion Process"
+    detected_at_section: "Conclusion"
+  - type: "flowchart"
+    label: "Sources and Further Reading Process"
+    detected_at_section: "Sources and Further Reading"
+
+# === EXTRACTED DATA ===
+title: "Article 136: The Future of AI Regulation – What's Coming Next"
+tldr: ""
+learning_objectives:
+  - "Understand the key concepts and principles of ai governance frameworks"
+  - "Implement model validation processes in real-world scenarios"
+  - "Evaluate regulatory requirements for organizational compliance"
+seo_keywords:
+  - "article"
+  - "future"
+  - "AI governance"
+  - "artificial intelligence"
+  - "AI risk management"
+
+# === CROSS REFERENCE DATA ===
+topic_fingerprint:
+  - "foundation model"
+  - "generative ai"
+  - "machine learning"
+  - "transparency"
+  - "accountability"
+named_examples:
+  - "aida"
+  - "canada aida"
+  - "colorado ai act"
+  - "eu ai act"
+  - "european parliament"
+  - "executive order"
+  - "fair"
+  - "federal trade commission"
+  - "ftc"
+  - "iec"
+  - "ieee"
+  - "international organization for standardization"
+  - "iso"
+  - "national institute of standards"
+  - "nist"
+  - "nyc local law 144"
+  - "white house"
+
+# === IMAGE GENERATION ===
+image_prompt:
+  formula: "Abstract geometric illustration, earth tones, minimalist, professional"
+  category_motif: "legal documents"
+  master_size: "1200x750px"
+  css_filters: true
+image_placeholder: "![Article 136: The Future of AI Regulation – What's Coming Next]({{IMAGE_PLACEHOLDER_article-136-the-future-of-ai-regulation-whats-coming-next}})"

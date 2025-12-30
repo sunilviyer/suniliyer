@@ -1,0 +1,92 @@
+# === FILE STATUS ===
+suggested_slug: "article-66-ai-regulatory-sandboxes-testing-innovation-safely"
+category: "AI Development Lifecycle"
+word_count:
+  target: null
+  actual: 2358
+  status: "no_target"
+
+# === CONTENT VALIDATION ===
+structure:
+  has_h1: true
+  has_intro: true
+  has_conclusion: true
+  header_depth_valid: true
+generated_elements:
+  tldr_was_missing: true
+  objectives_were_missing: false
+  keywords_were_missing: false
+
+# === COMPONENT INVENTORY ===
+has_components: true
+components:
+  - type: "table"
+    label: "Regular Regulation vs Sandbox Regulation Table"
+    detected_at_section: "How Sandboxes Differ from Regular Regulation"
+  - type: "flowchart"
+    label: "For Companies Considering Sandboxes Process"
+    detected_at_section: "For Companies Considering Sandboxes"
+  - type: "flowchart"
+    label: "Sources and Further Reading Process"
+    detected_at_section: "Sources and Further Reading"
+  - type: "template"
+    label: "*Example"
+    detected_at_section: "For Companies"
+    template_link: "/templates/example.md"
+  - type: "template"
+    label: "*Example"
+    detected_at_section: "For Regulators"
+    template_link: "/templates/example.md"
+  - type: "template"
+    label: "*Example"
+    detected_at_section: "For the Public"
+    template_link: "/templates/example.md"
+  - type: "template"
+    label: "*Example"
+    detected_at_section: "Sandbox Limitations"
+    template_link: "/templates/example.md"
+  - type: "template"
+    label: "*Example"
+    detected_at_section: "Emerging Trends"
+    template_link: "/templates/example.md"
+  - type: "list"
+    label: "The EU AI Act Sandbox Requirement"
+    detected_at_section: "The EU AI Act Sandbox Requirement"
+  - type: "list"
+    label: "Best Practices for Sandbox Participation"
+    detected_at_section: "Best Practices for Sandbox Participation"
+
+# === EXTRACTED DATA ===
+title: "Article 66: AI Regulatory Sandboxes – Testing Innovation Safely"
+tldr: ""
+learning_objectives:
+  - "Understand the key concepts and principles of ai governance frameworks"
+  - "Implement ethical ai principles in real-world scenarios"
+  - "Evaluate regulatory requirements for organizational compliance"
+seo_keywords:
+  - "article"
+  - "regulatory"
+  - "AI governance"
+  - "regulatory sandboxes"
+  - "testing innovation safely"
+
+# === CROSS REFERENCE DATA ===
+topic_fingerprint:
+  - "machine learning"
+  - "generative ai"
+  - "oversight"
+  - "governance framework"
+  - "high-risk ai"
+named_examples:
+  - "eu ai act"
+  - "european commission"
+  - "fintech"
+  - "gdpr"
+
+# === IMAGE GENERATION ===
+image_prompt:
+  formula: "Abstract geometric illustration, earth tones, minimalist, professional"
+  category_motif: "flowcharts"
+  master_size: "1200x750px"
+  css_filters: true
+image_placeholder: "![Article 66: AI Regulatory Sandboxes – Testing Innovation Safely]({{IMAGE_PLACEHOLDER_article-66-ai-regulatory-sandboxes-testing-innovation-safely}})"

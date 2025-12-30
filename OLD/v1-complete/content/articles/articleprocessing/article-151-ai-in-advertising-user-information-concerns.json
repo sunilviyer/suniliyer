@@ -1,0 +1,160 @@
+{
+  "file_status": {
+    "suggested_slug": "article-151-ai-in-advertising-user-information-concerns",
+    "category": "AI Fundamentals",
+    "word_count_check": {
+      "target": null,
+      "actual": 2057,
+      "status": "under"
+    }
+  },
+  "content_validation": {
+    "structure": {
+      "has_h1": true,
+      "has_intro": true,
+      "has_conclusion": true,
+      "header_depth_valid": true
+    },
+    "generated_elements": {
+      "tldr_was_missing": true,
+      "objectives_were_missing": false,
+      "keywords_were_missing": false
+    }
+  },
+  "component_inventory": {
+    "has_components": true,
+    "items": [
+      {
+        "type": "table",
+        "label": "Category vs Examples Table",
+        "detected_at_section": "Types of Data Collected"
+      },
+      {
+        "type": "table",
+        "label": "Direct Data vs Inferred Attribute Table",
+        "detected_at_section": "Concern 3: Sensitive Inferences"
+      },
+      {
+        "type": "table",
+        "label": "Requirement vs Advertising Impact Table",
+        "detected_at_section": "GDPR (EU)"
+      },
+      {
+        "type": "table",
+        "label": "Right vs What It Means Table",
+        "detected_at_section": "CCPA/CPRA (California)"
+      },
+      {
+        "type": "table",
+        "label": "Jurisdiction vs Regulation Table",
+        "detected_at_section": "Other Regulations"
+      },
+      {
+        "type": "table",
+        "label": "Action vs What It Does Table",
+        "detected_at_section": "Practical Steps"
+      },
+      {
+        "type": "flowchart",
+        "label": "Conclusion Process",
+        "detected_at_section": "Conclusion"
+      },
+      {
+        "type": "flowchart",
+        "label": "Sources and Further Reading Process",
+        "detected_at_section": "Sources and Further Reading"
+      },
+      {
+        "type": "template",
+        "label": "Article 151: AI in Advertising – User Information Concerns",
+        "detected_at_section": "Article 151: AI in Advertising – User Information Concerns",
+        "template_link": "/templates/article-151-ai-in-advertising-user-information-concerns.md"
+      },
+      {
+        "type": "template",
+        "label": "Platforms (First-Party Data)",
+        "detected_at_section": "Platforms (First-Party Data)",
+        "template_link": "/templates/platforms-first-party-data.md"
+      },
+      {
+        "type": "template",
+        "label": "Platform Changes and Privacy Trends",
+        "detected_at_section": "Platform Changes and Privacy Trends",
+        "template_link": "/templates/platform-changes-and-privacy-trends.md"
+      },
+      {
+        "type": "template",
+        "label": "User Information Risks",
+        "detected_at_section": "User Information Risks",
+        "template_link": "/templates/user-information-risks.md"
+      },
+      {
+        "type": "template",
+        "label": "For Platforms",
+        "detected_at_section": "For Platforms",
+        "template_link": "/templates/for-platforms.md"
+      },
+      {
+        "type": "template",
+        "label": "Platform-Specific Controls",
+        "detected_at_section": "Platform-Specific Controls",
+        "template_link": "/templates/platform-specific-controls.md"
+      },
+      {
+        "type": "list",
+        "label": "Best Practices for Organizations",
+        "detected_at_section": "Best Practices for Organizations"
+      }
+    ]
+  },
+  "extracted_data": {
+    "title": "Article 151: AI in Advertising – User Information Concerns",
+    "tldr": "",
+    "learning_objectives": [
+      "Understand the key concepts and principles of ethical ai principles",
+      "Implement regulatory requirements in real-world scenarios",
+      "Evaluate risk assessment frameworks for organizational compliance"
+    ],
+    "seo_keywords": [
+      "article",
+      "advertising",
+      "AI governance",
+      "user information concerns",
+      "platforms"
+    ],
+    "references": []
+  },
+  "cross_reference_data": {
+    "topic_fingerprint": [
+      "transparency",
+      "accountability",
+      "audit",
+      "privacy-preserving",
+      "differential privacy"
+    ],
+    "named_examples": [
+      "amazon",
+      "apple",
+      "ccpa",
+      "cpra",
+      "digital services act",
+      "european parliament",
+      "facebook",
+      "federal trade commission",
+      "ftc",
+      "gdpr",
+      "google",
+      "meta",
+      "oracle"
+    ]
+  },
+  "image_generation": {
+    "prompt": {
+      "formula": "Abstract geometric illustration, earth tones, minimalist, professional",
+      "category_motif": "neural networks",
+      "master_size": "1200x750px",
+      "css_filters": true
+    },
+    "placeholder": "![Article 151: AI in Advertising – User Information Concerns]({{IMAGE_PLACEHOLDER_article-151-ai-in-advertising-user-information-concerns}})"
+  }
+}

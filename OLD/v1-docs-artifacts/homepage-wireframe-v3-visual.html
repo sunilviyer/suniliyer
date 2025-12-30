@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AIDefence Homepage Wireframe V3 - Visual Preview</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #f0f0f0;
+      padding: 40px 20px;
+    }
+
+    .wireframe-container {
+      max-width: 1440px;
+      margin: 0 auto;
+      background: white;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    }
+
+    .annotation {
+      background: #fff3cd;
+      padding: 8px 12px;
+      border-left: 4px solid #ffc107;
+      margin: 10px 0;
+      font-size: 14px;
+      color: #856404;
+    }
+
+    /* Hero Section */
+    .hero-section {
+      position: relative;
+      height: 900px;
+      background:
+        repeating-linear-gradient(45deg, #1a1a1a, #1a1a1a 10px, #2a2a2a 10px, #2a2a2a 20px);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      border: 3px solid #666;
+    }
+
+    .section-label {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      color: white;
+      font-size: 20px;
+      font-weight: bold;
+      background: rgba(0,0,0,0.5);
+      padding: 10px 20px;
+      border-radius: 5px;
+    }
+
+    .hamburger {
+      position: absolute;
+      top: 30px;
+      right: 40px;
+      width: 60px;
+      height: 60px;
+      border: 3px solid #333d29;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.9);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    .hamburger span {
+      width: 30px;
+      height: 3px;
+      background: #333d29;
+      border-radius: 2px;
+    }
+
+    .hamburger-note {
+      position: absolute;
+      top: 100px;
+      right: 40px;
+      background: #F5F5DC;
+      padding: 12px;
+      border-radius: 8px;
+      font-size: 12px;
+      max-width: 240px;
+      color: #333;
+    }
+
+    .logo {
+      font-size: 72px;
+      font-weight: bold;
+      color: #00ff00;
+      text-align: center;
+      margin-bottom: 40px;
+      text-shadow: 0 0 20px rgba(0,255,0,0.5);
+    }
+
+    .logo-note {
+      position: absolute;
+      top: 360px;
+      right: 100px;
+      background: rgba(0,255,0,0.1);
+      border: 2px solid #00ff00;
+      padding: 12px;
+      border-radius: 8px;
+      font-size: 12px;
+      max-width: 400px;
+      color: #00ff00;
+    }
+
+    .ticker-container {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .ai-text {
+      font-size: 48px;
+      font-weight: bold;
+      color: #00ff00;
+      text-shadow: 0 0 20px rgba(0,255,0,0.5);
+    }
+
+    .word-box {
+      background: #000;
+      padding: 20px 40px;
+      border-radius: 60px;
+      min-width: 240px;
+      text-align: center;
+    }
+
+    .word-text {
+      font-size: 40px;
+      color: white;
+      font-weight: 500;
+    }
+
+    .ticker-note {
+      position: absolute;
+      top: 480px;
+      right: 100px;
+      background: rgba(245,245,220,0.1);
+      border: 2px solid #F5F5DC;
+      padding: 12px;
+      border-radius: 8px;
+      font-size: 12px;
+      max-width: 400px;
+      color: #F5F5DC;
+    }
+
+    /* Page Break Cards */
+    .page-break {
+      height: 200px;
+      margin: 100px auto;
+      max-width: 640px;
+      background: linear-gradient(135deg, #936639, #414833);
+      border-radius: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+    }
+
+    .page-break-text {
+      font-size: 48px;
+      font-weight: bold;
+      color: white;
+    }
+
+    .break-note {
+      text-align: center;
+      margin-top: 10px;
+      font-size: 14px;
+      color: #936639;
+    }
+
+    /* Learning Paths Section */
+    .learning-section {
+      background: rgba(255,255,255,0.3);
+      padding: 60px 100px;
+      border: 3px solid #333d29;
+    }
+
+    .learning-item {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      margin-bottom: 40px;
+    }
+
+    .path-details {
+      background: white;
+      padding: 60px;
+      border: 3px solid #333d29;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .path-details-header {
+      font-size: 14px;
+      color: #666;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 10px;
+      border-bottom: 2px solid #ddd;
+      padding-bottom: 10px;
+    }
+
+    .path-number {
+      font-size: 16px;
+      color: #333d29;
+      margin: 20px 0 10px;
+    }
+
+    .path-title {
+      font-size: 48px;
+      font-weight: bold;
+      margin-bottom: 20px;
+      color: #000;
+    }
+
+    .path-description {
+      font-size: 18px;
+      line-height: 1.8;
+      color: #666;
+      margin-bottom: 30px;
+    }
+
+    .path-cta {
+      display: inline-block;
+      padding: 12px 30px;
+      background: #333d29;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      font-size: 18px;
+    }
+
+    .path-image {
+      background:
+        repeating-linear-gradient(45deg, #e0e0e0, #e0e0e0 10px, #d0d0d0 10px, #d0d0d0 20px);
+      border: 3px solid #666;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      min-height: 500px;
+      position: relative;
+    }
+
+    .image-label {
+      text-align: center;
+      color: #666;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    /* Portfolio Section */
+    .portfolio-section {
+      background: rgba(147,102,57,0.2);
+      padding: 80px 100px;
+      border: 3px solid #936639;
+    }
+
+    .carousel-container {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 40px;
+      margin: 60px 0;
+    }
+
+    .portfolio-card {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+      padding: 30px;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .portfolio-card.side {
+      width: 350px;
+      height: 450px;
+      opacity: 0.7;
+      filter: blur(3px);
+      transform: scale(0.9);
+      border: 3px solid #666;
+    }
+
+    .portfolio-card.center {
+      width: 500px;
+      height: 550px;
+      opacity: 1;
+      filter: blur(0);
+      transform: scale(1);
+      border: 4px solid #936639;
+      box-shadow: 0 24px 64px rgba(147,102,57,0.4);
+      z-index: 10;
+    }
+
+    .card-placeholder {
+      background: #f0f0f0;
+      height: 250px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #999;
+    }
+
+    .carousel-arrow {
+      position: absolute;
+      width: 60px;
+      height: 60px;
+      border: 3px solid #333d29;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.9);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    .carousel-arrow.left {
+      left: 40px;
+    }
+
+    .carousel-arrow.right {
+      right: 40px;
+    }
+
+    .carousel-dots {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 40px;
+    }
+
+    .dot {
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: #666;
+      opacity: 0.5;
+    }
+
+    .dot.active {
+      background: #936639;
+      opacity: 1;
+    }
+
+    .portfolio-note {
+      background: #fff3cd;
+      padding: 16px;
+      border-left: 4px solid #936639;
+      margin-top: 40px;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    /* About Section */
+    .about-section {
+      background: rgba(65,72,51,0.2);
+      padding: 80px 100px;
+      border: 3px solid #414833;
+    }
+
+    .about-content {
+      display: grid;
+      grid-template-columns: 500px 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .about-image {
+      background:
+        repeating-linear-gradient(45deg, #e0e0e0, #e0e0e0 10px, #d0d0d0 10px, #d0d0d0 20px);
+      width: 500px;
+      height: 400px;
+      border: 4px solid #936639;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .about-text h2 {
+      font-size: 48px;
+      margin-bottom: 30px;
+      color: #000;
+    }
+
+    .about-text p {
+      font-size: 18px;
+      line-height: 1.8;
+      color: #333;
+      margin-bottom: 40px;
+    }
+
+    .stats-row {
+      display: flex;
+      gap: 20px;
+    }
+
+    .stat-card {
+      background: #1a1a1a;
+      padding: 20px;
+      border-radius: 12px;
+      text-align: center;
+      width: 150px;
+      height: 100px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .stat-card:nth-child(1) {
+      border: 2px solid #333d29;
+    }
+
+    .stat-card:nth-child(2) {
+      border: 2px solid #936639;
+    }
+
+    .stat-card:nth-child(3) {
+      border: 2px solid #414833;
+    }
+
+    .stat-number {
+      font-size: 36px;
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+
+    .stat-card:nth-child(1) .stat-number {
+      color: #333d29;
+    }
+
+    .stat-card:nth-child(2) .stat-number {
+      color: #936639;
+    }
+
+    .stat-card:nth-child(3) .stat-number {
+      color: #414833;
+    }
+
+    .stat-label {
+      font-size: 14px;
+      color: #999;
+    }
+
+    /* Footer */
+    .footer-section {
+      background: #000;
+      padding: 80px 100px;
+      color: #999;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 40px;
+      margin-bottom: 60px;
+    }
+
+    .footer-column {
+      border: 1px dashed #666;
+      padding: 20px;
+    }
+
+    .footer-column h4 {
+      color: white;
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+
+    .footer-column ul {
+      list-style: none;
+    }
+
+    .footer-column li {
+      margin-bottom: 12px;
+      font-size: 16px;
+      line-height: 2;
+    }
+
+    .copyright {
+      text-align: center;
+      opacity: 0.6;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+  <div class="wireframe-container">
+
+    <!-- HERO SECTION -->
+    <section class="hero-section">
+      <div class="section-label">HERO SECTION - Video Background (background.webm)</div>
+
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <div class="hamburger-note">
+        <strong>Curved Box (60px radius)</strong><br>
+        Theme-aware:<br>
+        • Light: white + transparency<br>
+        • Dark: black + transparency
+      </div>
+
+      <div class="logo">Sunil Iyer</div>
+
+      <div class="logo-note">
+        <strong>CENTERED (H + V)</strong><br>
+        72px font, bold<br>
+        <strong>Color: Changes to match video background!</strong><br>
+        (JavaScript extracts color from video canvas)
+      </div>
+
+      <div class="ticker-container">
+        <div class="ai-text">AI</div>
+        <div class="word-box">
+          <div class="word-text">Artificial</div>
+        </div>
+      </div>
+
+      <div class="ticker-note">
+        AI: 48px, same color as "Sunil Iyer"<br><br>
+        <strong>Black Curved Box: 60px border-radius</strong><br>
+        • Padding: 20px 40px<br>
+        • Dynamic width (fits largest word)<br><br>
+        <strong>Word: 40px, white, changes every 0.5s</strong><br>
+        8 words: Artificial, Adversarial, Agentic,<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Open, Claude, Bias,<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Responsible, Safe
+      </div>
+    </section>
+
+    <div class="annotation">
+      <strong>✅ HERO SPECS:</strong> Full viewport video background, centered color-changing logo, AI + word ticker (8 words @ 0.5s each), curved black box (60px radius), hamburger menu with curved styling
+    </div>
+
+    <!-- PAGE BREAK 1 -->
+    <div class="page-break">
+      <div class="page-break-text">Learning Paths</div>
+    </div>
+    <div class="break-note">
+      PAGE BREAK CARD 1: Gradient (#936639→#414833), 30px border-radius, 48px centered white text
+    </div>
+
+    <!-- LEARNING PATHS SECTION -->
+    <section class="learning-section">
+      <div class="section-label" style="position: relative; color: #333d29; background: rgba(255,255,255,0.9);">
+        LEARNING PATHS - Rayo "Project Details" Pattern
+      </div>
+
+      <div class="learning-item" style="margin-top: 40px;">
+        <div class="path-details">
+          <div class="path-details-header">PROJECT DETAILS</div>
+          <div class="path-number">Learning Path 1</div>
+          <div class="path-title">HISTORY & CONTEXT</div>
+          <div class="path-description">
+            Understand the evolution of AI from theoretical foundations to modern
+            applications, including key milestones, breakthroughs, and the socio-technical
+            context shaping today's AI landscape.
+          </div>
+          <a href="#" class="path-cta">Explore Path →</a>
+        </div>
+
+        <div class="path-image">
+          <div class="image-label">
+            <strong>Static Image</strong><br>
+            (history-context.jpg)<br><br>
+            Every 3 seconds:<br>
+            Fade out → swap to next path → fade in<br><br>
+            <em>"Image Jump" effect</em>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="annotation">
+      <strong>✅ LEARNING PATHS SPECS:</strong> Layout: 50% left (text details), 50% right (static image). 5 paths cycle through with image animation every 3 seconds. White cards with earth-tone borders.
+    </div>
+
+    <!-- PAGE BREAK 2 -->
+    <div class="page-break">
+      <div class="page-break-text">Portfolio</div>
+    </div>
+
+    <!-- PORTFOLIO SECTION -->
+    <section class="portfolio-section">
+      <div class="section-label" style="position: relative; color: #936639; background: rgba(255,255,255,0.9);">
+        PORTFOLIO CAROUSEL - FIXED (Reduced blur 3px, all 5 items accessible)
+      </div>
+
+      <div class="carousel-container">
+        <div class="carousel-arrow left">←</div>
+
+        <div class="portfolio-card side">
+          <div class="card-placeholder">Image</div>
+          <h3>Project 5</h3>
+          <p>AI Comics</p>
+          <div style="margin-top: 20px; font-size: 14px; color: #666;">
+            BLURRED: 3px<br>
+            opacity: 0.7<br>
+            scale: 0.9
+          </div>
+        </div>
+
+        <div class="portfolio-card center">
+          <div class="card-placeholder" style="height: 300px;">Image</div>
+          <h3 style="font-size: 24px;">Project 1 (CENTERED)</h3>
+          <p style="font-size: 18px;">Seshan Intelligence</p>
+          <div style="margin-top: 20px; font-size: 14px; color: #333;">
+            <strong>FOCUSED: blur(0) ← SHARP!</strong><br>
+            opacity: 1.0<br>
+            scale: 1.0<br>
+            box-shadow: dramatic glow
+          </div>
+        </div>
+
+        <div class="portfolio-card side">
+          <div class="card-placeholder">Image</div>
+          <h3>Project 2</h3>
+          <p>Seshan App</p>
+          <div style="margin-top: 20px; font-size: 14px; color: #666;">
+            BLURRED: 3px<br>
+            opacity: 0.7<br>
+            scale: 0.9
+          </div>
+        </div>
+
+        <div class="carousel-arrow right">→</div>
+      </div>
+
+      <div class="carousel-dots">
+        <div class="dot active"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+      </div>
+
+      <div class="portfolio-note">
+        <strong>KEY FIXES:</strong><br>
+        • Blur REDUCED: 3px (was 8px) → side cards are now VISIBLE and enticing!<br>
+        • All 5 items accessible: Infinite scroll (5→1→2→3→4→5→1...)<br>
+        • Starts with 1 centered: Project 1 focused, Project 5 (left) + Project 2 (right) blurred<br>
+        • Navigation: Arrow buttons (curved boxes) + dots + swipe gestures
+      </div>
+    </section>
+
+    <!-- PAGE BREAK 3 -->
+    <div class="page-break">
+      <div class="page-break-text">About</div>
+    </div>
+
+    <!-- ABOUT SECTION -->
+    <section class="about-section">
+      <div class="section-label" style="position: relative; color: #414833; background: rgba(255,255,255,0.9); margin-bottom: 40px;">
+        ABOUT SECTION - Two Column Layout
+      </div>
+
+      <div class="about-content">
+        <div class="about-image">
+          <div style="text-align: center; color: #666;">
+            <strong>Sunil.jpg</strong><br><br>
+            600×500px<br>
+            Border: 4px earth-tone
+          </div>
+        </div>
+
+        <div class="about-text">
+          <h2>About Me</h2>
+          <p>
+            I help organizations navigate the complex landscape of artificial
+            intelligence through education, implementation guidance, and governance
+            frameworks.
+          </p>
+          <p style="color: #666; font-size: 16px; margin-bottom: 30px;">
+            [2-3 additional paragraphs of text...]
+          </p>
+
+          <div class="stats-row">
+            <div class="stat-card">
+              <div class="stat-number">20+</div>
+              <div class="stat-label">Projects</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number">10+</div>
+              <div class="stat-label">Years</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number">50+</div>
+              <div class="stat-label">Clients</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="annotation">
+      <strong>✅ ABOUT SPECS:</strong> Two-column (45% image, 55% content). Left: Sunil.jpg with earth-tone border. Right: About text + 3 stats cards with rotating earth-tone borders.
+    </div>
+
+    <!-- FOOTER -->
+    <section class="footer-section">
+      <div class="section-label" style="color: #999;">
+        FOOTER - 4 Column Grid
+      </div>
+
+      <div class="footer-grid" style="margin-top: 40px;">
+        <div class="footer-column">
+          <h4>ABOUT</h4>
+          <ul>
+            <li>• Mission</li>
+            <li>• Team</li>
+            <li>• Contact</li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4>LEARNING</h4>
+          <ul>
+            <li>• History & Context</li>
+            <li>• Foundation</li>
+            <li>• Implementation</li>
+            <li>• Risk & Ethics</li>
+            <li>• Legal & Compliance</li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4>PORTFOLIO</h4>
+          <ul>
+            <li>• Seshan Intelligence</li>
+            <li>• Seshan App</li>
+            <li>• Free Tools</li>
+            <li>• AI Comics</li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4>CONNECT</h4>
+          <ul>
+            <li>• LinkedIn</li>
+            <li>• Twitter/X</li>
+            <li>• Email</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="copyright">
+        © 2024 Sunil Iyer. All rights reserved.
+      </div>
+    </section>
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,157 @@
+{
+  "file_status": {
+    "suggested_slug": "article-99-ai-incident-response-when-things-go-wrong",
+    "category": "AI Fundamentals",
+    "word_count_check": {
+      "target": null,
+      "actual": 1490,
+      "status": "under"
+    }
+  },
+  "content_validation": {
+    "structure": {
+      "has_h1": true,
+      "has_intro": true,
+      "has_conclusion": true,
+      "header_depth_valid": true
+    },
+    "generated_elements": {
+      "tldr_was_missing": true,
+      "objectives_were_missing": false,
+      "keywords_were_missing": false
+    }
+  },
+  "component_inventory": {
+    "has_components": true,
+    "items": [
+      {
+        "type": "checklist",
+        "label": "Incident Response Checklist",
+        "detected_at_section": "Incident Response Checklist"
+      },
+      {
+        "type": "checklist",
+        "label": "Incident Response Checklist",
+        "detected_at_section": "Preparation"
+      },
+      {
+        "type": "checklist",
+        "label": "During Incident",
+        "detected_at_section": "During Incident"
+      },
+      {
+        "type": "checklist",
+        "label": "After Incident",
+        "detected_at_section": "After Incident"
+      },
+      {
+        "type": "table",
+        "label": "Type vs Example Table",
+        "detected_at_section": "Defining AI Incidents"
+      },
+      {
+        "type": "table",
+        "label": "Aspect vs Traditional Incident Table",
+        "detected_at_section": "AI Incidents vs. Traditional Incidents"
+      },
+      {
+        "type": "table",
+        "label": "Role vs Responsibility Table",
+        "detected_at_section": "AI Incident Response Team"
+      },
+      {
+        "type": "table",
+        "label": "Source vs What It Catches Table",
+        "detected_at_section": "Detecting AI Incidents"
+      },
+      {
+        "type": "table",
+        "label": "Option vs Speed Table",
+        "detected_at_section": "Stop Ongoing Harm"
+      },
+      {
+        "type": "table",
+        "label": "Category vs Examples Table",
+        "detected_at_section": "Root Cause Analysis"
+      },
+      {
+        "type": "flowchart",
+        "label": "Build Incident Response Capability Process",
+        "detected_at_section": "Build Incident Response Capability"
+      },
+      {
+        "type": "flowchart",
+        "label": "Incident Triage Process",
+        "detected_at_section": "Incident Triage"
+      },
+      {
+        "type": "flowchart",
+        "label": "Root Cause Analysis Process",
+        "detected_at_section": "Root Cause Analysis"
+      },
+      {
+        "type": "flowchart",
+        "label": "Returning to Normal Operation Process",
+        "detected_at_section": "Returning to Normal Operation"
+      },
+      {
+        "type": "flowchart",
+        "label": "Conclusion Process",
+        "detected_at_section": "Conclusion"
+      },
+      {
+        "type": "flowchart",
+        "label": "Sources and Further Reading Process",
+        "detected_at_section": "Sources and Further Reading"
+      },
+      {
+        "type": "template",
+        "label": "Post-Incident Review Template",
+        "detected_at_section": "Post-Incident Review Template",
+        "template_link": "/templates/post-incident-review-template.md"
+      }
+    ]
+  },
+  "extracted_data": {
+    "title": "Article 99: AI Incident Response – When Things Go Wrong",
+    "tldr": "",
+    "learning_objectives": [
+      "Understand the key concepts and principles of regulatory requirements",
+      "Implement best practices in real-world scenarios",
+      "Evaluate risk assessment frameworks for organizational compliance"
+    ],
+    "seo_keywords": [
+      "article",
+      "incident",
+      "AI governance",
+      "incident response",
+      "when things go wrong"
+    ],
+    "references": []
+  },
+  "cross_reference_data": {
+    "topic_fingerprint": [
+      "fairness",
+      "impact assessment",
+      "responsible ai",
+      "data drift"
+    ],
+    "named_examples": [
+      "defense",
+      "eu ai act",
+      "google",
+      "ieee",
+      "microsoft",
+      "nist"
+    ]
+  },
+  "image_generation": {
+    "prompt": {
+      "formula": "Abstract geometric illustration, earth tones, minimalist, professional",
+      "category_motif": "neural networks",
+      "master_size": "1200x750px",
+      "css_filters": true
+    },
+    "placeholder": "![Article 99: AI Incident Response – When Things Go Wrong]({{IMAGE_PLACEHOLDER_article-99-ai-incident-response-when-things-go-wrong}})"
+  }
+}

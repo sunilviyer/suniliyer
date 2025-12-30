@@ -1,0 +1,327 @@
+{
+  "examples": [
+    {
+      "id": "dartmouth-conference-1956",
+      "title": "The Dartmouth Conference (1956)",
+      "file": "dartmouth-conference-1956-example.md",
+      "concepts": ["ai-history", "ai-origins", "conference"],
+      "usedBy": ["ai-history-from-dartmouth-to-deepmind"],
+      "created": "2025-12-23"
+    },
+    {
+      "id": "deep-blue-kasparov-1997",
+      "title": "Deep Blue vs Garry Kasparov (1997)",
+      "file": "deep-blue-kasparov-1997-example.md",
+      "concepts": ["ai-milestones", "chess", "game-playing", "narrow-ai"],
+      "usedBy": ["ai-history-from-dartmouth-to-deepmind"],
+      "created": "2025-12-23"
+    },
+    {
+      "id": "alphago-move37-2016",
+      "title": "AlphaGo vs Lee Sedol - Move 37 (2016)",
+      "file": "alphago-move37-2016-example.md",
+      "concepts": ["ai-creativity", "reinforcement-learning", "go", "neural-networks"],
+      "usedBy": ["ai-history-from-dartmouth-to-deepmind"],
+      "created": "2025-12-23"
+    },
+    {
+      "id": "alexnet-imagenet-2012",
+      "title": "AlexNet and the ImageNet Challenge (2012)",
+      "file": "alexnet-imagenet-2012-example.md",
+      "concepts": ["deep-learning-breakthrough", "computer-vision", "cnns"],
+      "usedBy": ["ai-history-from-dartmouth-to-deepmind"],
+      "created": "2025-12-23"
+    },
+    {
+      "id": "chatgpt-launch-2022",
+      "title": "ChatGPT Release and Viral Adoption (2022)",
+      "file": "chatgpt-launch-2022-example.md",
+      "concepts": ["llm", "viral-adoption", "mainstream-ai", "governance-catalyst"],
+      "usedBy": ["ai-history-from-dartmouth-to-deepmind"],
+      "created": "2025-12-23"
+    },
+    {
+      "id": "narrow-ai-business-examples",
+      "title": "Narrow AI Examples (Business Applications)",
+      "file": "narrow-ai-examples.md",
+      "concepts": ["narrow-ai", "spam-filter", "resume-screening", "chatbots", "fraud-detection", "recommendations"],
+      "usedBy": ["the-ai-family-tree-understanding-ai-intelligence-levels"],
+      "created": "2025-12-23"
+    },
+    {
+      "id": "agi-asi-timeline-predictions",
+      "title": "AGI & ASI Timeline Predictions from Experts",
+      "file": "agi-asi-timeline-predictions.md",
+      "concepts": ["agi", "asi", "ai-timelines", "expert-predictions", "altman", "hinton", "musk"],
+      "usedBy": ["the-ai-family-tree-understanding-ai-intelligence-levels", "artificial-general-intelligence-hype-hope-and-governance"],
+      "reusableFor": ["agi-articles", "ai-timelines-articles", "future-articles"],
+      "created": "2025-12-23"
+    },
+    {
+      "id": "algorithmic-bias-case-studies",
+      "title": "Algorithmic Bias Case Studies",
+      "file": "algorithmic-bias-case-studies.md",
+      "concepts": ["algorithmic-bias", "discrimination", "fairness", "ai-failures", "apple-card", "amazon-hiring", "compas", "healthcare-algorithm", "uk-a-levels", "gender-shades"],
+      "usedBy": ["algorithmic-bias-how-ai-discriminates-and-why"],
+      "reusableFor": ["bias-articles", "fairness-articles", "ai-governance", "industry-specific-risk"],
+      "created": "2025-12-23"
+    },
+    {
+      "id": "ai-governance-use-cases",
+      "title": "AI Governance Use Cases and Examples",
+      "file": "ai-governance-use-cases.md",
+      "concepts": ["ai-governance", "governance-frameworks", "oecd-principles", "socio-technical-systems", "ai-classification", "netflix-personalization", "healthcare-ai", "eu-ai-act", "facial-recognition-governance"],
+      "usedBy": ["ai-governance-frameworks-building-your-organizations-approac"],
+      "reusableFor": ["governance-articles", "regulatory-compliance", "socio-technical-systems", "risk-assessment", "policy-articles"],
+      "created": "2025-12-23"
+    },
+    {
+      "id": "ai-regulatory-landscape-global-comparison",
+      "title": "AI Regulatory Landscape: Global Comparison",
+      "file": "ai-regulatory-landscape-global-comparison.md",
+      "concepts": ["ai-regulation", "eu-ai-act", "us-ai-policy", "china-ai-regulation", "global-compliance", "regulatory-fragmentation", "brussels-effect", "state-ai-laws", "sector-specific-regulation"],
+      "usedBy": ["the-future-of-ai-regulation-whats-coming-next"],
+      "reusableFor": ["regulatory-articles", "compliance-articles", "global-strategy", "legal-articles", "policy-articles"],
+      "created": "2025-12-23"
+    },
+    {
+      "id": "agi-governance-approaches",
+      "title": "AGI Governance Approaches - Real-World Examples",
+      "file": "agi-governance-approaches.md",
+      "concepts": ["agi-governance", "ai-labs", "openai", "anthropic", "deepmind", "meta-ai", "responsible-scaling", "asl-framework", "staged-deployment", "ai-safety", "government-ai-policy", "international-coordination"],
+      "usedBy": ["artificial-general-intelligence-hype-hope-and-governance"],
+      "reusableFor": ["agi-articles", "ai-labs-articles", "governance-articles", "ai-safety-articles", "policy-articles"],
+      "created": "2025-12-23"
+    },
+    {
+      "id": "ai-safety-incidents-case-studies",
+      "title": "AI Safety Incidents and Case Studies",
+      "file": "ai-safety-incidents-case-studies.md",
+      "concepts": ["ai-safety", "catastrophic-failures", "tesla-autopilot", "uber-av", "flash-crash", "knight-capital", "youtube-radicalization", "deepfakes", "specification-gaming", "gpt4-deception", "ai-incidents"],
+      "usedBy": ["ai-safety-preventing-catastrophic-failures"],
+      "reusableFor": ["ai-safety-articles", "risk-articles", "lessons-learned", "incident-response", "governance-case-studies"],
+      "created": "2025-12-23"
+    },
+    {
+      "id": "neural-network-architectures-explained",
+      "title": "Neural Network Architectures Explained",
+      "file": "neural-network-architectures-explained.md",
+      "concepts": ["neural-networks", "deep-learning", "feedforward", "cnn", "rnn", "lstm", "transformers", "architecture-comparison", "governance-by-architecture", "computer-vision", "nlp", "llm"],
+      "usedBy": ["deep-learning-decoded-neural-networks-for-non-engineers"],
+      "reusableFor": ["deep-learning-articles", "neural-network-articles", "architecture-articles", "technical-articles", "governance-articles"],
+      "created": "2025-12-23"
+    },
+    {
+      "id": "generative-ai-systems-comparison",
+      "title": "Generative AI Systems Comparison",
+      "file": "generative-ai-systems-comparison.md",
+      "concepts": ["generative-ai", "llm", "gpt-4", "claude", "gemini", "llama", "mistral", "dall-e", "midjourney", "stable-diffusion", "ai-procurement", "vendor-evaluation", "closed-vs-open-models"],
+      "usedBy": ["generative-ai-explained-how-chatgpt-dall-e-and-claude-work"],
+      "reusableFor": ["generative-ai-articles", "procurement-articles", "vendor-selection", "llm-articles", "image-generation-articles"],
+      "created": "2025-12-23"
+    },
+    {
+      "id": "responsible-ai-governance-case-studies",
+      "title": "Responsible AI Governance Case Studies",
+      "file": "responsible-ai-governance-case-studies.md",
+      "concepts": ["responsible-ai", "governance-case-studies", "microsoft-responsible-ai", "google-ai-principles", "amazon-recruiting-bias", "healthcare-algorithm-bias", "clearview-ai", "governance-failures", "governance-successes"],
+      "usedBy": ["responsibility-of-responsible-ai-for-organizations"],
+      "reusableFor": ["governance-articles", "responsible-ai-articles", "lessons-learned", "organizational-change", "case-study-articles"],
+      "created": "2025-12-23"
+    },
+    {
+      "id": "ai-hallucination-incidents-case-studies",
+      "title": "AI Hallucination Incidents - Case Studies",
+      "file": "ai-hallucination-incidents-case-studies.md",
+      "concepts": ["hallucination", "ai-failures", "mata-vs-avianca", "google-bard-error", "cnet-ai-articles", "gizmodo-errors", "healthcare-chatbot", "chevy-chatbot", "code-hallucination", "legal-risk", "reputational-damage"],
+      "usedBy": ["ai-hallucinations-when-machines-confidently-lie"],
+      "reusableFor": ["hallucination-articles", "llm-articles", "ai-risk-articles", "case-study-articles", "lessons-learned"],
+      "created": "2025-12-23"
+    },
+    {
+      "id": "ai-privacy-violations-case-studies",
+      "title": "AI Privacy Violations - Case Studies",
+      "file": "ai-privacy-violations-case-studies.md",
+      "concepts": ["privacy-violations", "clearview-ai", "cambridge-analytica", "facial-recognition", "data-collection", "re-identification", "surveillance", "gdpr-enforcement", "ring-doorbell", "tiktok", "netflix-deanonymization", "aol-search", "uber-god-view"],
+      "usedBy": ["ai-and-privacy-the-data-collection-dilemma"],
+      "reusableFor": ["privacy-articles", "regulatory-articles", "case-study-articles", "lessons-learned", "compliance-articles"],
+      "created": "2025-12-23"
+    },
+    {
+      "id": "framework-regulation-mapping-examples",
+      "title": "Framework to Regulation Mapping Examples",
+      "file": "framework-regulation-mapping-examples.md",
+      "concepts": ["compliance-crosswalk", "framework-mapping", "nist-ai-rmf", "iso-42001", "eu-ai-act", "unified-compliance", "gap-analysis", "regulatory-alignment"],
+      "usedBy": ["mapping-frameworks-to-regulations-a-compliance-crosswalk"],
+      "reusableFor": ["compliance-articles", "framework-articles", "regulatory-articles", "governance-implementation", "multi-jurisdiction"],
+      "created": "2025-12-24"
+    },
+    {
+      "id": "unified-compliance-control-examples",
+      "title": "Unified Compliance Control Examples",
+      "file": "unified-compliance-control-examples.md",
+      "concepts": ["unified-controls", "bias-assessment", "control-documentation", "evidence-trails", "multi-requirement-satisfaction"],
+      "usedBy": ["mapping-frameworks-to-regulations-a-compliance-crosswalk"],
+      "reusableFor": ["compliance-articles", "control-design", "audit-preparation", "efficiency"],
+      "created": "2025-12-24"
+    },
+    {
+      "id": "ai-risk-register-populated-entries",
+      "title": "AI Risk Register Populated Entries",
+      "file": "ai-risk-register-populated-entries.md",
+      "concepts": ["risk-register", "risk-entries", "chatbot-discrimination", "model-drift", "risk-documentation", "mitigation-planning"],
+      "usedBy": ["building-an-ai-risk-register-what-to-track-and-why"],
+      "reusableFor": ["risk-management-articles", "governance-implementation", "operational-governance", "risk-tracking"],
+      "created": "2025-12-24"
+    },
+    {
+      "id": "ai-maturity-assessment-sample",
+      "title": "AI Maturity Assessment Sample (TechServe Solutions)",
+      "file": "ai-maturity-assessment-sample.md",
+      "concepts": ["maturity-assessment", "capability-evaluation", "gap-analysis", "improvement-planning", "governance-maturity", "five-dimensions"],
+      "usedBy": ["ai-maturity-models-assessing-your-organizations-readiness"],
+      "reusableFor": ["maturity-articles", "assessment-articles", "governance-evaluation", "organizational-readiness"],
+      "created": "2025-12-24"
+    },
+    {
+      "id": "nist-rmf-function-examples",
+      "title": "NIST AI RMF Four Functions Implementation Examples",
+      "file": "nist-rmf-function-examples.md",
+      "concepts": ["govern-function", "map-function", "measure-function", "manage-function", "risk-prioritization", "stakeholder-analysis", "bias-testing", "incident-response", "nist-ai-rmf"],
+      "usedBy": ["nist-ai-rmf-core-functions-govern-map-measure-manage"],
+      "reusableFor": ["nist-articles", "risk-management-articles", "governance-implementation", "framework-application"],
+      "created": "2025-12-24"
+    },
+    {
+      "id": "iso-42001-implementation-examples",
+      "title": "ISO 42001 AI Management System Implementation Examples",
+      "file": "iso-42001-implementation-examples.md",
+      "concepts": ["management-system", "iso-certification", "ai-policy", "process-controls", "audit-requirements", "iso-42001", "clause-implementation"],
+      "usedBy": ["iso-iec-42001-ai-management-system-standard"],
+      "reusableFor": ["iso-articles", "management-systems", "certification", "governance-implementation"],
+      "created": "2025-12-24"
+    },
+    {
+      "id": "iso-31000-ai-risk-examples",
+      "title": "ISO 31000 Risk Management Applied to AI Examples",
+      "file": "iso-31000-ai-risk-examples.md",
+      "concepts": ["risk-management-principles", "context-establishment", "risk-assessment", "risk-treatment", "iso-31000", "ai-risk-categories"],
+      "usedBy": ["iso-31000-for-ai-applying-risk-management-principles"],
+      "reusableFor": ["risk-management-articles", "iso-articles", "framework-application", "risk-assessment"],
+      "created": "2025-12-24"
+    },
+    {
+      "id": "ieee-7000-ethical-design-examples",
+      "title": "IEEE 7000 Ethical Design for AI Systems Examples",
+      "file": "ieee-7000-ethical-design-examples.md",
+      "concepts": ["ethical-design", "value-elicitation", "transparency-by-design", "ethics-integration", "ieee-7000", "value-based-engineering"],
+      "usedBy": ["ieee-7000-ethical-design-for-ai-systems"],
+      "reusableFor": ["ethics-articles", "design-articles", "ieee-standards", "value-engineering"],
+      "created": "2025-12-24"
+    },
+    {
+      "id": "singapore-framework-implementation-examples",
+      "title": "Singapore Model Framework Implementation Examples",
+      "file": "singapore-framework-implementation-examples.md",
+      "concepts": ["model-framework", "practical-governance", "four-areas", "operations-management", "singapore-ai-governance", "isago"],
+      "usedBy": ["the-singapore-model-ai-governance-framework-practical-implementation"],
+      "reusableFor": ["singapore-articles", "practical-governance", "asia-pacific-governance", "implementation-examples"],
+      "created": "2025-12-24"
+    },
+    {
+      "id": "ai-risk-assessment-template-examples",
+      "title": "AI Risk Assessment Template Examples",
+      "file": "ai-risk-assessment-template-examples.md",
+      "concepts": ["risk-templates", "screening", "comprehensive-assessment", "risk-register", "bias-assessment", "incident-reporting"],
+      "usedBy": ["ai-risk-assessment-templates-tools-for-practitioners"],
+      "reusableFor": ["risk-assessment", "practical-tools", "template-examples", "screening-assessment"],
+      "created": "2025-12-24"
+    },
+    {
+      "id": "ai-transparency-hiring-platform",
+      "title": "AI Transparency: Hiring Platform Multi-Layered Disclosure",
+      "file": "ai-transparency-hiring-platform-example.md",
+      "concepts": ["transparency", "progressive-disclosure", "ai-disclosure", "hiring-ai", "multi-layered-transparency", "pre-use-disclosure", "real-time-transparency", "post-decision-explanation", "system-documentation"],
+      "usedBy": ["ai-transparency-what-users-deserve-to-know"],
+      "reusableFor": ["transparency-articles", "hiring-articles", "disclosure-implementation", "user-rights"],
+      "created": "2025-12-24"
+    },
+    {
+      "id": "ai-transparency-compliance-framework",
+      "title": "AI Transparency: European Compliance Framework for Hiring AI",
+      "file": "ai-transparency-compliance-framework-example.md",
+      "concepts": ["transparency-compliance", "gdpr-compliance", "eu-ai-act-compliance", "multi-jurisdictional", "unified-compliance", "hiring-ai", "human-review-process", "privacy-notice", "post-decision-communication"],
+      "usedBy": ["ai-transparency-what-users-deserve-to-know"],
+      "reusableFor": ["compliance-articles", "gdpr-articles", "eu-ai-act-articles", "hiring-articles", "multi-jurisdiction"],
+      "created": "2025-12-24"
+    },
+    {
+      "id": "ai-transparency-healthcare-infrastructure",
+      "title": "AI Transparency: Healthcare Diagnostic Support Infrastructure",
+      "file": "ai-transparency-healthcare-infrastructure-example.md",
+      "concepts": ["healthcare-ai", "transparency-infrastructure", "model-cards", "system-cards", "clinical-decision-support", "four-layer-transparency", "explanation-systems", "grad-cam", "physician-interface", "patient-portal"],
+      "usedBy": ["ai-transparency-what-users-deserve-to-know"],
+      "reusableFor": ["healthcare-articles", "clinical-ai", "transparency-implementation", "infrastructure-design"],
+      "created": "2025-12-24"
+    },
+    {
+      "id": "ftc-section-5-enforcement-actions",
+      "title": "FTC Section 5 Enforcement Actions: AI Consumer Protection Cases",
+      "file": "ftc-section-5-enforcement-actions-example.md",
+      "concepts": ["ftc-section-5", "consumer-protection", "unfair-practices", "deceptive-practices", "algorithmic-disgorgement", "ftc-enforcement", "rite-aid-case", "amazon-ring-case", "weight-watchers-kurbo", "cambridge-analytica", "everalbum", "biased-ai", "privacy-violations", "coppa-violations"],
+      "usedBy": ["consumer-protection-and-ai-ftc-section-5-explained"],
+      "reusableFor": ["ftc-articles", "consumer-protection-articles", "enforcement-case-studies", "compliance-articles", "regulatory-risk"],
+      "created": "2025-12-24"
+    },
+    {
+      "id": "red-teaming-attack-techniques",
+      "title": "Red Teaming Attack Techniques - Comprehensive Catalog",
+      "file": "red-teaming-attack-techniques-example.md",
+      "concepts": ["red-teaming", "adversarial-testing", "jailbreaking", "prompt-injection", "information-extraction", "adversarial-examples", "model-extraction", "model-inversion", "api-abuse", "pipeline-attacks", "integration-vulnerabilities", "attack-catalog"],
+      "usedBy": ["red-teaming-ai-adversarial-testing-for-safety"],
+      "reusableFor": ["red-teaming-articles", "security-testing-articles", "ai-security-articles", "vulnerability-assessment", "attack-surface-analysis"],
+      "created": "2025-12-24"
+    },
+    {
+      "id": "seven-pillars-implementation-examples",
+      "title": "Seven Pillars of Trustworthy AI - Implementation Examples",
+      "file": "seven-pillars-implementation-examples.md",
+      "concepts": ["trustworthy-ai", "seven-pillars", "safety-implementation", "fairness-implementation", "transparency-implementation", "privacy-implementation", "accountability-implementation", "human-oversight-implementation", "robustness-implementation", "real-world-examples"],
+      "usedBy": ["building-trustworthy-ai-the-seven-pillars"],
+      "reusableFor": ["trustworthy-ai-articles", "governance-implementation", "ai-ethics-articles", "best-practices", "implementation-examples"],
+      "created": "2025-12-24"
+    },
+    {
+      "id": "five-level-ai-harms-case-studies",
+      "title": "Five-Level AI Harms Taxonomy - Comprehensive Case Studies",
+      "file": "five-level-ai-harms-case-studies.md",
+      "concepts": ["ai-harms-taxonomy", "individual-harms", "group-harms", "societal-harms", "organizational-harms", "ecosystem-harms", "civil-rights-violations", "algorithmic-discrimination", "bias-amplification", "environmental-impact", "case-studies"],
+      "usedBy": ["when-ai-goes-wrong-a-taxonomy-of-ai-harms"],
+      "reusableFor": ["harm-taxonomy-articles", "risk-assessment-articles", "governance-case-studies", "comprehensive-risk-examples", "multi-level-impact-analysis"],
+      "created": "2025-12-24"
+    },
+    {
+      "id": "xai-techniques-implementation-examples",
+      "title": "XAI Techniques - Implementation Examples (LIME, SHAP, Attention, Counterfactuals, Interpretable Models)",
+      "file": "xai-techniques-implementation-examples.md",
+      "concepts": ["explainability", "xai", "interpretability", "lime", "shap", "attention-visualization", "counterfactual-explanations", "decision-trees", "linear-regression", "gams", "tiered-explanations", "post-hoc-explanations"],
+      "usedBy": ["the-black-box-problem-why-ai-explainability-matters"],
+      "reusableFor": ["explainability-articles", "xai-implementation", "transparency-articles", "model-selection", "post-hoc-explanation-articles"],
+      "created": "2025-12-24"
+    },
+    {
+      "id": "human-centered-ai-implementation-examples",
+      "title": "Human-Centered AI Implementation Examples (Automation Levels, Complementary Strengths, Case Studies)",
+      "file": "human-centered-ai-implementation-examples.md",
+      "concepts": ["human-centered-ai", "automation-levels", "human-ai-collaboration", "complementary-strengths", "agency-preservation", "stakeholder-mapping", "augmentation-vs-automation", "meaningful-control", "empowering-design"],
+      "usedBy": ["human-centered-ai-design-keeping-people-in-the-loop"],
+      "reusableFor": ["human-centered-design-articles", "automation-level-articles", "human-ai-interaction-articles", "collaboration-design", "agency-articles"],
+      "created": "2025-12-24"
+    }
+  ],
+  "metadata": {
+    "lastUpdated": "2025-12-24",
+    "totalExamples": 37,
+    "version": "1.9"
+  }
+}

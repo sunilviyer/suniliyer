@@ -1,0 +1,96 @@
+# === FILE STATUS ===
+suggested_slug: "article-80-the-ai-business-case-roi-risks-and-reality-checks"
+category: "AI Risks & Principles"
+word_count:
+  target: null
+  actual: 2153
+  status: "no_target"
+
+# === CONTENT VALIDATION ===
+structure:
+  has_h1: true
+  has_intro: true
+  has_conclusion: true
+  header_depth_valid: true
+generated_elements:
+  tldr_was_missing: true
+  objectives_were_missing: false
+  keywords_were_missing: false
+
+# === COMPONENT INVENTORY ===
+has_components: true
+components:
+  - type: "table"
+    label: "Benefit vs Metric Table"
+    detected_at_section: "Quantifying Benefits"
+  - type: "table"
+    label: "Assumption vs Base Case Table"
+    detected_at_section: "Sensitivity Analysis"
+  - type: "table"
+    label: "Category vs Item Table"
+    detected_at_section: "Building a Comprehensive Cost Model"
+  - type: "table"
+    label: "Category vs Item Table"
+    detected_at_section: "Building a Comprehensive Cost Model"
+  - type: "table"
+    label: "Risk vs Probability Table"
+    detected_at_section: "Quantifying Risk Exposure"
+  - type: "table"
+    label: "Alternative vs Cost Table"
+    detected_at_section: "Structured Alternatives Analysis"
+  - type: "table"
+    label: "Alternative vs Year 0 Table"
+    detected_at_section: "Making the Comparison"
+  - type: "flowchart"
+    label: "Introduction Process"
+    detected_at_section: "Introduction"
+  - type: "flowchart"
+    label: "Building the Business Case: A Framework Process"
+    detected_at_section: "Building the Business Case: A Framework"
+  - type: "flowchart"
+    label: "Full Business Case Structure Process"
+    detected_at_section: "Full Business Case Structure"
+  - type: "flowchart"
+    label: "Conclusion Process"
+    detected_at_section: "Conclusion"
+  - type: "flowchart"
+    label: "Sources and Further Reading Process"
+    detected_at_section: "Sources and Further Reading"
+  - type: "template"
+    label: "Business Case Template Summary"
+    detected_at_section: "Business Case Template Summary"
+    template_link: "/templates/business-case-template-summary.md"
+
+# === EXTRACTED DATA ===
+title: "Article 80: The AI Business Case – ROI, Risks, and Reality Checks"
+tldr: ""
+learning_objectives:
+  - "Understand the key concepts and principles of model validation processes"
+  - "Implement regulatory requirements in real-world scenarios"
+  - "Evaluate risk assessment frameworks for organizational compliance"
+seo_keywords:
+  - "article"
+  - "business"
+  - "AI governance"
+  - "AI risk management"
+  - "business case"
+
+# === CROSS REFERENCE DATA ===
+topic_fingerprint:
+  - "risk assessment"
+  - "fairness"
+  - "audit"
+  - "risk management framework"
+  - "model monitoring"
+named_examples:
+  - "harvard"
+  - "mit"
+  - "nist"
+
+# === IMAGE GENERATION ===
+image_prompt:
+  formula: "Abstract geometric illustration, earth tones, minimalist, professional"
+  category_motif: "warning triangles"
+  master_size: "1200x750px"
+  css_filters: true
+image_placeholder: "![Article 80: The AI Business Case – ROI, Risks, and Reality Checks]({{IMAGE_PLACEHOLDER_article-80-the-ai-business-case-roi-risks-and-reality-checks}})"

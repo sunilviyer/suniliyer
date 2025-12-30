@@ -1,0 +1,112 @@
+{
+  "file_status": {
+    "suggested_slug": "article-57-us-state-ai-laws-the-patchwork-approach",
+    "category": "Legal Frameworks",
+    "word_count_check": {
+      "target": null,
+      "actual": 1817,
+      "status": "under"
+    }
+  },
+  "content_validation": {
+    "structure": {
+      "has_h1": true,
+      "has_intro": true,
+      "has_conclusion": true,
+      "header_depth_valid": true
+    },
+    "generated_elements": {
+      "tldr_was_missing": true,
+      "objectives_were_missing": false,
+      "keywords_were_missing": false
+    }
+  },
+  "component_inventory": {
+    "has_components": true,
+    "items": [
+      {
+        "type": "table",
+        "label": "State vs Focus Area Table",
+        "detected_at_section": "States with Targeted AI Rules"
+      },
+      {
+        "type": "table",
+        "label": "AI System vs NYC Table",
+        "detected_at_section": "Real-World Example: National Retailer"
+      },
+      {
+        "type": "table",
+        "label": "Aspect vs United States Table",
+        "detected_at_section": "US vs. European Union"
+      },
+      {
+        "type": "flowchart",
+        "label": "Building a Compliance Program Process",
+        "detected_at_section": "Building a Compliance Program"
+      },
+      {
+        "type": "flowchart",
+        "label": "Emerging Trends Process",
+        "detected_at_section": "Emerging Trends"
+      },
+      {
+        "type": "flowchart",
+        "label": "Conclusion Process",
+        "detected_at_section": "Conclusion"
+      },
+      {
+        "type": "flowchart",
+        "label": "Sources Process",
+        "detected_at_section": "Sources"
+      }
+    ]
+  },
+  "extracted_data": {
+    "title": "Article 57: US State AI Laws – The Patchwork Approach",
+    "tldr": "",
+    "learning_objectives": [
+      "Understand the key concepts and principles of regulatory requirements",
+      "Implement best practices in real-world scenarios",
+      "Evaluate risk assessment frameworks for organizational compliance"
+    ],
+    "seo_keywords": [
+      "article",
+      "state",
+      "AI governance",
+      "artificial intelligence",
+      "AI risk management"
+    ],
+    "references": []
+  },
+  "cross_reference_data": {
+    "topic_fingerprint": [
+      "generative ai",
+      "audit",
+      "transparency",
+      "ai safety",
+      "oversight"
+    ],
+    "named_examples": [
+      "ccpa",
+      "congress",
+      "deepfakes",
+      "executive order",
+      "fair",
+      "ftc",
+      "mit",
+      "netflix",
+      "nist",
+      "sec",
+      "white house"
+    ]
+  },
+  "image_generation": {
+    "prompt": {
+      "formula": "Abstract geometric illustration, earth tones, minimalist, professional",
+      "category_motif": "scales",
+      "master_size": "1200x750px",
+      "css_filters": true
+    },
+    "placeholder": "![Article 57: US State AI Laws – The Patchwork Approach]({{IMAGE_PLACEHOLDER_article-57-us-state-ai-laws-the-patchwork-approach}})"
+  }
+}

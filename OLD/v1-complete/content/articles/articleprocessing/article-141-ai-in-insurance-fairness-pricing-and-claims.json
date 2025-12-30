@@ -1,0 +1,136 @@
+{
+  "file_status": {
+    "suggested_slug": "article-141-ai-in-insurance-fairness-pricing-and-claims",
+    "category": "Industry-Specific Insights",
+    "word_count_check": {
+      "target": null,
+      "actual": 2126,
+      "status": "under"
+    }
+  },
+  "content_validation": {
+    "structure": {
+      "has_h1": true,
+      "has_intro": true,
+      "has_conclusion": true,
+      "header_depth_valid": true
+    },
+    "generated_elements": {
+      "tldr_was_missing": true,
+      "objectives_were_missing": false,
+      "keywords_were_missing": false
+    }
+  },
+  "component_inventory": {
+    "has_components": true,
+    "items": [
+      {
+        "type": "table",
+        "label": "Line of Business vs AI Applications Table",
+        "detected_at_section": "Underwriting and Pricing"
+      },
+      {
+        "type": "table",
+        "label": "Requirement vs Description Table",
+        "detected_at_section": "NAIC Model Bulletin on AI"
+      },
+      {
+        "type": "table",
+        "label": "Variable vs Why It's a Proxy Table",
+        "detected_at_section": "Challenge 1: Proxy Discrimination"
+      },
+      {
+        "type": "table",
+        "label": "Perspective vs View Table",
+        "detected_at_section": "Challenge 2: The Accuracy vs. Fairness Trade-off"
+      },
+      {
+        "type": "table",
+        "label": "Test Type vs Description Table",
+        "detected_at_section": "Fairness Testing Framework"
+      },
+      {
+        "type": "table",
+        "label": "Activity vs Frequency Table",
+        "detected_at_section": "Fairness Testing Framework"
+      },
+      {
+        "type": "table",
+        "label": "Area vs Questions Table",
+        "detected_at_section": "Vendor Management"
+      },
+      {
+        "type": "table",
+        "label": "Document vs Contents Table",
+        "detected_at_section": "Documentation Requirements"
+      },
+      {
+        "type": "flowchart",
+        "label": "Conclusion Process",
+        "detected_at_section": "Conclusion"
+      },
+      {
+        "type": "flowchart",
+        "label": "Sources and Further Reading Process",
+        "detected_at_section": "Sources and Further Reading"
+      },
+      {
+        "type": "template",
+        "label": "Example:",
+        "detected_at_section": "Challenge 1: Proxy Discrimination",
+        "template_link": "/templates/example.md"
+      },
+      {
+        "type": "list",
+        "label": "Best Practices for Insurance AI Governance",
+        "detected_at_section": "Best Practices for Insurance AI Governance"
+      },
+      {
+        "type": "list",
+        "label": "Documentation Requirements",
+        "detected_at_section": "Documentation Requirements"
+      }
+    ]
+  },
+  "extracted_data": {
+    "title": "Article 141: AI in Insurance – Fairness, Pricing, and Claims",
+    "tldr": "",
+    "learning_objectives": [
+      "Understand the key concepts and principles of bias detection techniques",
+      "Implement regulatory requirements in real-world scenarios",
+      "Evaluate policy development for organizational compliance"
+    ],
+    "seo_keywords": [
+      "article",
+      "insurance",
+      "AI governance",
+      "artificial intelligence",
+      "fairness"
+    ],
+    "references": []
+  },
+  "cross_reference_data": {
+    "topic_fingerprint": [
+      "generative ai",
+      "fairness",
+      "risk assessment",
+      "oversight",
+      "governance framework"
+    ],
+    "named_examples": [
+      "defense",
+      "eu ai act",
+      "european parliament",
+      "fair"
+    ]
+  },
+  "image_generation": {
+    "prompt": {
+      "formula": "Abstract geometric illustration, earth tones, minimalist, professional",
+      "category_motif": "industry icons",
+      "master_size": "1200x750px",
+      "css_filters": true
+    },
+    "placeholder": "![Article 141: AI in Insurance – Fairness, Pricing, and Claims]({{IMAGE_PLACEHOLDER_article-141-ai-in-insurance-fairness-pricing-and-claims}})"
+  }
+}

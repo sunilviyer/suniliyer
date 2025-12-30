@@ -1,0 +1,10 @@
+#!/usr/bin/env node
+
+/**
+ * Article Content Processor CLI Executable
+ * 
+ * This is the main executable script for the Article Content Processor CLI.
+ * It delegates to the JavaScript CLI wrapper to avoid module resolution issues.
+ */
+
+require('../lib/article-processor/cli/cli.js');

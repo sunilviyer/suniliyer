@@ -1,0 +1,101 @@
+# === FILE STATUS ===
+suggested_slug: "article-9-large-language-models-the-technology-behind-the-hy"
+category: "AI Fundamentals"
+word_count:
+  target: null
+  actual: 2730
+  status: "no_target"
+
+# === CONTENT VALIDATION ===
+structure:
+  has_h1: true
+  has_intro: true
+  has_conclusion: true
+  header_depth_valid: true
+generated_elements:
+  tldr_was_missing: false
+  objectives_were_missing: false
+  keywords_were_missing: false
+
+# === COMPONENT INVENTORY ===
+has_components: true
+components:
+  - type: "checklist"
+    label: "Practical Checklist"
+    detected_at_section: "Practical Checklist"
+  - type: "table"
+    label: "Model vs Year Table"
+    detected_at_section: "Scale: The Secret Ingredient"
+  - type: "table"
+    label: "Capability vs Performance Table"
+    detected_at_section: "The Capability-Reliability Gap"
+  - type: "table"
+    label: "Provider vs Models Table"
+    detected_at_section: "Frontier Model Providers"
+  - type: "table"
+    label: "Benchmark vs What It Tests Table"
+    detected_at_section: "Capability Evaluation"
+  - type: "flowchart"
+    label: "What LLMs Actually Do Process"
+    detected_at_section: "What LLMs Actually Do"
+  - type: "flowchart"
+    label: "Inconsistency and Sycophancy Process"
+    detected_at_section: "Inconsistency and Sycophancy"
+  - type: "template"
+    label: "Example:"
+    detected_at_section: "What LLMs Actually Do"
+    template_link: "/templates/example.md"
+  - type: "template"
+    label: "Transformers: The Foundation"
+    detected_at_section: "Transformers: The Foundation"
+    template_link: "/templates/transformers-the-foundation.md"
+  - type: "template"
+    label: "Inconsistency example:"
+    detected_at_section: "Inconsistency and Sycophancy"
+    template_link: "/templates/inconsistency-example.md"
+  - type: "template"
+    label: "Sycophancy example:"
+    detected_at_section: "Inconsistency and Sycophancy"
+    template_link: "/templates/sycophancy-example.md"
+  - type: "template"
+    label: "Example:"
+    detected_at_section: "Prompt Injection"
+    template_link: "/templates/example.md"
+
+# === EXTRACTED DATA ===
+title: "Article 9: Large Language Models – The Technology Behind the Hype"
+tldr: "This article provides a comprehensive framework for AI governance and implementation. It provides actionable insights for achieving regulatory compliance and organizational readiness."
+learning_objectives:
+  - "Understand the key concepts and principles of ai governance frameworks"
+  - "Implement regulatory requirements in real-world scenarios"
+  - "Evaluate policy development for organizational compliance"
+seo_keywords:
+  - "article"
+  - "large"
+  - "AI governance"
+  - "artificial intelligence"
+  - "large language models"
+
+# === CROSS REFERENCE DATA ===
+topic_fingerprint:
+  - "large language model"
+  - "transformer"
+  - "attention mechanism"
+  - "reinforcement learning"
+  - "llm"
+named_examples:
+  - "anthropic"
+  - "defense"
+  - "google"
+  - "meta"
+  - "microsoft"
+  - "nist"
+  - "openai"
+
+# === IMAGE GENERATION ===
+image_prompt:
+  formula: "Abstract geometric illustration, earth tones, minimalist, professional"
+  category_motif: "neural networks"
+  master_size: "1200x750px"
+  css_filters: true
+image_placeholder: "![Article 9: Large Language Models – The Technology Behind the Hype]({{IMAGE_PLACEHOLDER_article-9-large-language-models-the-technology-behind-the-hy}})"

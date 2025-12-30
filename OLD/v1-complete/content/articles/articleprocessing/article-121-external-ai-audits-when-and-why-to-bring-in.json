@@ -1,0 +1,193 @@
+{
+  "file_status": {
+    "suggested_slug": "article-121-external-ai-audits-when-and-why-to-bring-in-expe",
+    "category": "AI Auditing & Accountability",
+    "word_count_check": {
+      "target": null,
+      "actual": 2464,
+      "status": "under"
+    }
+  },
+  "content_validation": {
+    "structure": {
+      "has_h1": true,
+      "has_intro": true,
+      "has_conclusion": true,
+      "header_depth_valid": true
+    },
+    "generated_elements": {
+      "tldr_was_missing": true,
+      "objectives_were_missing": false,
+      "keywords_were_missing": false
+    }
+  },
+  "component_inventory": {
+    "has_components": true,
+    "items": [
+      {
+        "type": "table",
+        "label": "Auditor Type vs Description Table",
+        "detected_at_section": "Types of External Auditors"
+      },
+      {
+        "type": "table",
+        "label": "Aspect vs Internal Audit Table",
+        "detected_at_section": "External vs. Internal: Key Differences"
+      },
+      {
+        "type": "table",
+        "label": "Question to Ask vs Why It Matters Table",
+        "detected_at_section": "Key Selection Criteria"
+      },
+      {
+        "type": "table",
+        "label": "Capability vs How to Assess Table",
+        "detected_at_section": "Key Selection Criteria"
+      },
+      {
+        "type": "table",
+        "label": "Question to Ask vs Red Flags Table",
+        "detected_at_section": "Key Selection Criteria"
+      },
+      {
+        "type": "table",
+        "label": "Credential Type vs Examples Table",
+        "detected_at_section": "Key Selection Criteria"
+      },
+      {
+        "type": "table",
+        "label": "Factor vs Consideration Table",
+        "detected_at_section": "Key Selection Criteria"
+      },
+      {
+        "type": "table",
+        "label": "Evaluation Criteria vs Weight (Example) Table",
+        "detected_at_section": "The Selection Process"
+      },
+      {
+        "type": "table",
+        "label": "Role vs Responsibilities Table",
+        "detected_at_section": "Pre-Audit Preparation"
+      },
+      {
+        "type": "table",
+        "label": "Communication Type vs Frequency Table",
+        "detected_at_section": "During the Audit"
+      },
+      {
+        "type": "table",
+        "label": "Engagement Type vs Typical Cost Range Table",
+        "detected_at_section": "What External AI Audits Cost"
+      },
+      {
+        "type": "table",
+        "label": "Factor vs Higher Cost Table",
+        "detected_at_section": "Factors Affecting Cost"
+      },
+      {
+        "type": "flowchart",
+        "label": "Conclusion Process",
+        "detected_at_section": "Conclusion"
+      },
+      {
+        "type": "flowchart",
+        "label": "Sources and Further Reading Process",
+        "detected_at_section": "Sources and Further Reading"
+      },
+      {
+        "type": "template",
+        "label": "Example:",
+        "detected_at_section": "Scenario 1: Legal or Regulatory Requirements",
+        "template_link": "/templates/example.md"
+      },
+      {
+        "type": "template",
+        "label": "Example:",
+        "detected_at_section": "Scenario 2: High Stakes or High Risk",
+        "template_link": "/templates/example.md"
+      },
+      {
+        "type": "template",
+        "label": "Example:",
+        "detected_at_section": "Scenario 3: Stakeholder Credibility Requirements",
+        "template_link": "/templates/example.md"
+      },
+      {
+        "type": "template",
+        "label": "Example:",
+        "detected_at_section": "Scenario 4: Lack of Internal Expertise",
+        "template_link": "/templates/example.md"
+      },
+      {
+        "type": "template",
+        "label": "Example:",
+        "detected_at_section": "Scenario 5: Independence Concerns",
+        "template_link": "/templates/example.md"
+      },
+      {
+        "type": "list",
+        "label": "Scenario 1: Legal or Regulatory Requirements",
+        "detected_at_section": "Scenario 1: Legal or Regulatory Requirements"
+      },
+      {
+        "type": "list",
+        "label": "Scenario 3: Stakeholder Credibility Requirements",
+        "detected_at_section": "Scenario 3: Stakeholder Credibility Requirements"
+      },
+      {
+        "type": "list",
+        "label": "Key Selection Criteria",
+        "detected_at_section": "Key Selection Criteria"
+      }
+    ]
+  },
+  "extracted_data": {
+    "title": "Article 121: External AI Audits – When and Why to Bring in Experts",
+    "tldr": "",
+    "learning_objectives": [
+      "Understand the key concepts and principles of risk assessment methodologies",
+      "Implement model validation processes in real-world scenarios",
+      "Evaluate regulatory requirements for organizational compliance"
+    ],
+    "seo_keywords": [
+      "article",
+      "external",
+      "AI governance",
+      "artificial intelligence",
+      "AI ethics"
+    ],
+    "references": []
+  },
+  "cross_reference_data": {
+    "topic_fingerprint": [
+      "computer vision",
+      "nlp",
+      "reinforcement learning",
+      "deep learning",
+      "audit"
+    ],
+    "named_examples": [
+      "congress",
+      "eu ai act",
+      "european parliament",
+      "fair",
+      "fdic",
+      "iec",
+      "international organization for standardization",
+      "iso",
+      "national institute of standards",
+      "nist",
+      "nyc local law 144",
+      "occ"
+    ]
+  },
+  "image_generation": {
+    "prompt": {
+      "formula": "Abstract geometric illustration, earth tones, minimalist, professional",
+      "category_motif": "magnifying glass",
+      "master_size": "1200x750px",
+      "css_filters": true
+    },
+    "placeholder": "![Article 121: External AI Audits – When and Why to Bring in Experts]({{IMAGE_PLACEHOLDER_article-121-external-ai-audits-when-and-why-to-bring-in-expe}})"
+  }
+}

@@ -1,0 +1,107 @@
+# === FILE STATUS ===
+suggested_slug: "ai-safety-preventing-catastrophic-failures"
+category: "AI Risks & Principles"
+word_count:
+  target: null
+  actual: 3428
+  status: "no_target"
+
+# === CONTENT VALIDATION ===
+structure:
+  has_h1: true
+  has_intro: true
+  has_conclusion: true
+  header_depth_valid: true
+generated_elements:
+  tldr_was_missing: true
+  objectives_were_missing: false
+  keywords_were_missing: false
+
+# === COMPONENT INVENTORY ===
+has_components: true
+components:
+  - type: "flowchart"
+    label: "Safety Culture Process"
+    detected_at_section: "Safety Culture"
+  - type: "flowchart"
+    label: "Sources Process"
+    detected_at_section: "Sources"
+  - type: "template"
+    label: "Example: The Helpful Assistant That Wasn't"
+    detected_at_section: "Near-Term vs. Long-Term Safety"
+    template_link: "/templates/example-the-helpful-assistant-that-wasnt.md"
+  - type: "template"
+    label: "Example: The Self-Driving Car That Couldn't See"
+    detected_at_section: "Adversarial Attacks"
+    template_link: "/templates/example-the-self-driving-car-that-couldnt-see.md"
+  - type: "template"
+    label: "Information Ecosystem Damage"
+    detected_at_section: "Information Ecosystem Damage"
+    template_link: "/templates/information-ecosystem-damage.md"
+  - type: "template"
+    label: "Example: The Power Grid That Optimized Itself Into a Corner"
+    detected_at_section: "Autonomy and Control Failures"
+    template_link: "/templates/example-the-power-grid-that-optimized-itself-into-a-corner.md"
+  - type: "template"
+    label: "Example: The Safety-First Deployment"
+    detected_at_section: "Safety Culture"
+    template_link: "/templates/example-the-safety-first-deployment.md"
+  - type: "template"
+    label: "Information Sharing"
+    detected_at_section: "Information Sharing"
+    template_link: "/templates/information-sharing.md"
+  - type: "list"
+    label: "Principles of AI Safety"
+    detected_at_section: "Principles of AI Safety"
+  - type: "list"
+    label: "Regulatory Requirements"
+    detected_at_section: "Regulatory Requirements"
+
+# === EXTRACTED DATA ===
+title: "AI Safety – Preventing Catastrophic Failures"
+tldr: ""
+learning_objectives:
+  - "Understand the key concepts and principles of ai governance frameworks"
+  - "Implement model validation processes in real-world scenarios"
+  - "Evaluate regulatory requirements for organizational compliance"
+seo_keywords:
+  - "safety"
+  - "preventing"
+  - "artificial intelligence"
+  - "AI risk management"
+  - "organizations"
+
+# === CROSS REFERENCE DATA ===
+topic_fingerprint:
+  - "large language model"
+  - "foundation model"
+  - "ai safety"
+  - "oversight"
+  - "interpretability"
+named_examples:
+  - "anthropic"
+  - "anthropic research"
+  - "artificial intelligence act"
+  - "automotive"
+  - "berkeley"
+  - "deepmind"
+  - "defense"
+  - "eu ai act"
+  - "european commission"
+  - "iec"
+  - "ieee"
+  - "iso"
+  - "national institute of standards"
+  - "nist"
+  - "openai"
+  - "oxford"
+  - "securities and exchange commission"
+  - "stanford"
+
+# === IMAGE GENERATION ===
+image_prompt:
+  formula: "Abstract geometric illustration, earth tones, minimalist, professional"
+  category_motif: "warning triangles"
+  master_size: "1200x750px"
+  css_filters: true
+image_placeholder: "![AI Safety – Preventing Catastrophic Failures]({{IMAGE_PLACEHOLDER_ai-safety-preventing-catastrophic-failures}})"

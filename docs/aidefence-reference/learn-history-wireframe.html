@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>History from Dartmouth to DeepMind | AIDefence</title>
+  <link href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-primary: #ffffff;
+      --bg-secondary: #f8f8f8;
+      --text-primary: #000000;
+      --text-secondary: #666666;
+      --border-color: #dddddd;
+      --moss-green: #333d29;
+      --brown-tan: #936639;
+      --olive-green: #414833;
+      --card-bg: rgba(255, 255, 255, 0.95);
+    }
+
+    [data-theme="dark"] {
+      --bg-primary: #1a1a1a;
+      --bg-secondary: #2a2a2a;
+      --text-primary: #ffffff;
+      --text-secondary: #cccccc;
+      --border-color: #444444;
+      --card-bg: rgba(26, 26, 26, 0.95);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Funnel Display", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      transition: background-color 0.3s ease;
+    }
+
+    /* Header Bar - Matching Homepage */
+    .header-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 80px;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 60px;
+      z-index: 9000;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    }
+
+    [data-theme="dark"] .header-bar {
+      background: rgba(26, 26, 26, 0.95);
+    }
+
+    .header-logo-section {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .header-logo-ring {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      border: 2px solid var(--moss-green);
+      overflow: hidden;
+    }
+
+    .header-logo-ring img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .header-name span {
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+
+    .header-controls {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .theme-toggle, .menu-toggle {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.95);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      border: 2px solid var(--border-color);
+    }
+
+    [data-theme="dark"] .theme-toggle,
+    [data-theme="dark"] .menu-toggle {
+      background: rgba(26,26,26,0.95);
+    }
+
+    .theme-toggle:hover,
+    .menu-toggle:hover {
+      transform: scale(1.1);
+      border-color: var(--moss-green);
+    }
+
+    /* Section - Inner Page Headline (Rayo Style) */
+    .inner-headline-section {
+      padding: 160px 60px 80px;
+      max-width: 1920px;
+      margin: 0 auto;
+    }
+
+    .headline-grid {
+      display: grid;
+      grid-template-columns: 2fr 10fr;
+      gap: 60px;
+    }
+
+    .headline-name {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 16px;
+      color: var(--text-secondary);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .headline-name svg {
+      width: 20px;
+      height: 20px;
+      fill: var(--moss-green);
+      flex-shrink: 0;
+      margin-top: 4px;
+    }
+
+    .paths-nav {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .path-link {
+      font-size: 15px;
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: all 0.3s ease;
+      padding: 4px 0;
+      border-left: 2px solid transparent;
+      padding-left: 12px;
+    }
+
+    .path-link:hover {
+      color: var(--moss-green);
+      border-left-color: var(--moss-green);
+      padding-left: 16px;
+    }
+
+    .path-link.active {
+      color: var(--moss-green);
+      font-weight: 600;
+      border-left-color: var(--moss-green);
+    }
+
+    .headline-content h1 {
+      font-size: 96px;
+      font-weight: 600;
+      line-height: 1.1;
+      color: var(--text-primary);
+      margin-bottom: 32px;
+    }
+
+    .headline-content p {
+      font-size: 24px;
+      line-height: 1.6;
+      color: var(--text-secondary);
+      max-width: 800px;
+    }
+
+    /* Stack Cards Section (Rayo StackCards Style) */
+    .stack-section {
+      padding: 80px 60px 200px;
+      max-width: 1920px;
+      margin: 0 auto;
+    }
+
+    .stack-wrapper {
+      position: relative;
+      min-height: 100vh;
+    }
+
+    /* Individual Stacking Card (Rayo Style) */
+    .concept-stack-card {
+      width: 100%;
+      height: 85vh;
+      min-height: 650px;
+      max-height: 900px;
+      border-radius: 24px;
+      overflow: hidden;
+      position: relative;
+      background: var(--bg-secondary);
+      margin-bottom: 40px;
+      cursor: pointer;
+      transition: all 0.5s ease;
+      border: 2px solid transparent;
+    }
+
+    .concept-stack-card:hover {
+      border-color: var(--moss-green);
+      transform: translateY(-8px);
+    }
+
+    /* Card Image Background */
+    .card-image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      opacity: 0.25;
+      transition: opacity 0.5s ease;
+    }
+
+    [data-theme="dark"] .card-image {
+      opacity: 0.15;
+    }
+
+    .concept-stack-card:hover .card-image {
+      opacity: 0.4;
+    }
+
+    [data-theme="dark"] .concept-stack-card:hover .card-image {
+      opacity: 0.3;
+    }
+
+    /* Card Content Overlay */
+    .card-content {
+      position: relative;
+      z-index: 2;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 60px;
+      background: linear-gradient(to bottom,
+        rgba(255, 255, 255, 0.6) 0%,
+        rgba(255, 255, 255, 0.85) 100%);
+      transition: background 0.3s ease;
+    }
+
+    [data-theme="dark"] .card-content {
+      background: linear-gradient(to bottom,
+        rgba(26, 26, 26, 0.6) 0%,
+        rgba(26, 26, 26, 0.9) 100%);
+    }
+
+    .concept-stack-card:hover .card-content {
+      background: linear-gradient(to bottom,
+        rgba(255, 255, 255, 0.75) 0%,
+        rgba(255, 255, 255, 0.95) 100%);
+    }
+
+    [data-theme="dark"] .concept-stack-card:hover .card-content {
+      background: linear-gradient(to bottom,
+        rgba(26, 26, 26, 0.75) 0%,
+        rgba(26, 26, 26, 0.95) 100%);
+    }
+
+    /* Card Top Section */
+    .card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: start;
+    }
+
+    .card-number {
+      font-size: 14px;
+      color: var(--brown-tan);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* Card Bottom Section */
+    .card-bottom {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    /* Card Tags (Rayo Style - Always Visible) */
+    .card-tags {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 8px 20px;
+      background: var(--card-bg);
+      backdrop-filter: blur(10px);
+      border: 1px solid var(--border-color);
+      border-radius: 20px;
+      font-size: 13px;
+      color: var(--text-primary);
+      transition: all 0.3s ease;
+    }
+
+    .concept-stack-card:hover .tag {
+      background: var(--moss-green);
+      color: white;
+      border-color: var(--moss-green);
+    }
+
+    /* Card Title (Rayo Style - Always Visible) */
+    .card-title {
+      font-size: 48px;
+      font-weight: 600;
+      line-height: 1.2;
+      color: var(--text-primary);
+      transition: color 0.3s ease;
+    }
+
+    .concept-stack-card:hover .card-title {
+      color: var(--moss-green);
+    }
+
+    /* Card Description - Always Visible */
+    .card-description {
+      font-size: 18px;
+      line-height: 1.6;
+      color: var(--text-secondary);
+      max-width: 600px;
+    }
+
+    /* Card TLDR - Hidden by default, shows on hover */
+    .card-tldr {
+      font-size: 16px;
+      line-height: 1.6;
+      color: var(--text-primary);
+      padding: 20px 24px;
+      background: var(--card-bg);
+      backdrop-filter: blur(10px);
+      border-radius: 12px;
+      border-left: 4px solid var(--moss-green);
+      max-width: 700px;
+      opacity: 0;
+      max-height: 0;
+      overflow: hidden;
+      transition: all 0.4s ease;
+      transform: translateY(10px);
+    }
+
+    .concept-stack-card:hover .card-tldr {
+      opacity: 1;
+      max-height: 300px;
+      transform: translateY(0);
+      margin-top: 16px;
+    }
+
+    /* Cross-path badges */
+    .card-meta {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .meta-label {
+      font-size: 13px;
+      color: var(--text-secondary);
+      font-weight: 600;
+    }
+
+    .cross-path-badge {
+      display: inline-block;
+      padding: 6px 16px;
+      background: var(--olive-green);
+      color: white;
+      border-radius: 12px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .headline-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      .headline-content h1 {
+        font-size: 64px;
+      }
+
+      .card-title {
+        font-size: 36px;
+      }
+
+      .card-content {
+        padding: 40px;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .header-bar {
+        padding: 0 20px;
+      }
+
+      .inner-headline-section,
+      .stack-section {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+
+      .headline-content h1 {
+        font-size: 48px;
+      }
+
+      .card-content {
+        padding: 30px 24px;
+      }
+
+      .card-title {
+        font-size: 28px;
+      }
+
+      .card-description {
+        font-size: 16px;
+      }
+
+      .concept-stack-card {
+        height: 75vh;
+        min-height: 500px;
+      }
+    }
+
+    /* Note about scroll animation */
+    .implementation-note {
+      padding: 40px 60px;
+      background: var(--bg-secondary);
+      border-left: 4px solid var(--brown-tan);
+      margin: 40px auto;
+      max-width: 1920px;
+      border-radius: 8px;
+      font-size: 14px;
+      color: var(--text-secondary);
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header Bar - Matching Homepage -->
+  <header class="header-bar">
+    <div class="header-logo-section">
+      <div class="header-logo-ring">
+        <img src="../public/images/logo.jpg" alt="Logo">
+      </div>
+      <div class="header-name">
+        <span>Sunil Iyer</span>
+      </div>
+    </div>
+    <div class="header-controls">
+      <div class="theme-toggle" onclick="toggleTheme()">
+        <span id="theme-icon">☀️</span>
+      </div>
+      <div class="menu-toggle" onclick="toggleMenu()">
+        <span>☰</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Section - Inner Page Headline (Rayo Style) -->
+  <section class="inner-headline-section">
+    <div class="headline-grid">
+      <!-- Left: Learning Paths Navigation -->
+      <div class="headline-name">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20px" height="20px" viewBox="0 0 20 20">
+          <path d="M19.6,9.6c0,0-3,0-4,0c-0.4,0-1.8-0.2-1.8-0.2c-0.6-0.1-1.1-0.2-1.6-0.6c-0.5-0.3-0.9-0.8-1.2-1.2
+            c-0.3-0.4-0.4-0.9-0.5-1.4c0,0-0.1-1.1-0.2-1.5c-0.1-1.1,0-4.4,0-4.4C10.4,0.2,10.2,0,10,0S9.6,0.2,9.6,0.4c0,0,0.1,3.3,0,4.4
+            c0,0.4-0.2,1.5-0.2,1.5C9.4,6.7,9.2,7.2,9,7.6C8.7,8.1,8.2,8.5,7.8,8.9c-0.5,0.3-1,0.5-1.6,0.6c0,0-1.2,0.1-1.7,0.2
+            c-1,0.1-4.2,0-4.2,0C0.2,9.6,0,9.8,0,10c0,0.2,0.2,0.4,0.4,0.4c0,0,3.1-0.1,4.2,0c0.4,0,1.7,0.2,1.7,0.2c0.6,0.1,1.1,0.2,1.6,0.6
+            c0.4,0.3,0.8,0.7,1.1,1.1c0.3,0.5,0.5,1,0.6,1.6c0,0,0.1,1.3,0.2,1.7c0,1,0,4.1,0,4.1c0,0.2,0.2,0.4,0.4,0.4s0.4-0.2,0.4-0.4
+            c0,0,0-3.1,0-4.1c0-0.4,0.2-1.7,0.2-1.7c0.1-0.6,0.2-1.1,0.6-1.6c0.3-0.4,0.7-0.8,1.1-1.1c0.5-0.3,1-0.5,1.6-0.6
+            c0,0,1.3-0.1,1.8-0.2c1,0,4,0,4,0c0.2,0,0.4-0.2,0.4-0.4C20,9.8,19.8,9.6,19.6,9.6L19.6,9.6z"/>
+        </svg>
+        <div class="paths-nav">
+          <a href="/learn/history" class="path-link active">History</a>
+          <a href="/learn/terminology" class="path-link">Terminology</a>
+          <a href="/learn/risk" class="path-link">Risk</a>
+          <a href="/learn/responsibility" class="path-link">Responsibility</a>
+          <a href="/learn/future" class="path-link">Future</a>
+        </div>
+      </div>
+
+      <!-- Right: Title - "History from Dartmouth to DeepMind" -->
+      <div class="headline-content">
+        <h1>History from Dartmouth to DeepMind</h1>
+        <p>Trace AI's evolution from 1950s academic conferences to today's foundation models. Understand what AI is, how it works, and why GPUs power the AI revolution.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section - Stacking Cards (Rayo StackCards Style) -->
+  <section class="stack-section">
+    <div class="stack-wrapper">
+
+      <!-- Card 1 -->
+      <div class="concept-stack-card">
+        <div class="card-image" style="background-image: url('../public/images/learn/history/what-ai-actually-is.jpg');"></div>
+        <div class="card-content">
+          <div class="card-top">
+            <div class="card-number">Concept 01</div>
+          </div>
+          <div class="card-bottom">
+            <div class="card-tags">
+              <span class="tag">fundamentals</span>
+              <span class="tag">definitions</span>
+              <span class="tag">OECD</span>
+              <span class="tag">ISO</span>
+            </div>
+            <h2 class="card-title">The Building Blocks – What AI Actually Is</h2>
+            <!-- TLDR: Hidden by default, shown on hover -->
+            <div class="card-tldr">
+              <strong>TLDR:</strong> AI is machine-based systems that infer from inputs to generate outputs influencing physical or virtual environments. OECD definition Nov 2023.
+            </div>
+            <div class="card-meta">
+              <span class="meta-label">Connects to:</span>
+              <span class="cross-path-badge">Terminology</span>
+              <span class="cross-path-badge">Responsibility</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="concept-stack-card">
+        <div class="card-image" style="background-image: url('../public/images/learn/history/ai-family-tree.jpg');"></div>
+        <div class="card-content">
+          <div class="card-top">
+            <div class="card-number">Concept 02</div>
+          </div>
+          <div class="card-bottom">
+            <div class="card-tags">
+              <span class="tag">classification</span>
+              <span class="tag">frameworks</span>
+              <span class="tag">AGI</span>
+              <span class="tag">narrow-AI</span>
+            </div>
+            <h2 class="card-title">The AI Family Tree – Types of AI Systems Explained</h2>
+            <div class="card-tldr">
+              <strong>TLDR:</strong> AI systems span narrow AI (single task), general AI (multiple tasks), and AGI (hypothetical human-level). Classification frameworks guide governance.
+            </div>
+            <div class="card-meta">
+              <span class="meta-label">Connects to:</span>
+              <span class="cross-path-badge">Terminology</span>
+              <span class="cross-path-badge">Future</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="concept-stack-card">
+        <div class="card-image" style="background-image: url('../public/images/learn/history/ai-technology-stack.jpg');"></div>
+        <div class="card-content">
+          <div class="card-top">
+            <div class="card-number">Concept 03</div>
+          </div>
+          <div class="card-bottom">
+            <div class="card-tags">
+              <span class="tag">technology</span>
+              <span class="tag">infrastructure</span>
+              <span class="tag">hardware</span>
+              <span class="tag">cloud</span>
+            </div>
+            <h2 class="card-title">The AI Technology Stack – From Chips to ChatGPT</h2>
+            <div class="card-tldr">
+              <strong>TLDR:</strong> AI stack: Hardware (GPUs), Infrastructure (data centers), Models (neural networks), Applications (ChatGPT). Each layer has governance implications.
+            </div>
+            <div class="card-meta">
+              <span class="meta-label">Connects to:</span>
+              <span class="cross-path-badge">Terminology</span>
+              <span class="cross-path-badge">Risk</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="concept-stack-card">
+        <div class="card-image" style="background-image: url('../public/images/learn/history/ai-history-timeline.jpg');"></div>
+        <div class="card-content">
+          <div class="card-top">
+            <div class="card-number">Concept 04</div>
+          </div>
+          <div class="card-bottom">
+            <div class="card-tags">
+              <span class="tag">history</span>
+              <span class="tag">timeline</span>
+              <span class="tag">Dartmouth</span>
+              <span class="tag">AI-winter</span>
+            </div>
+            <h2 class="card-title">AI History – From Dartmouth to DeepMind</h2>
+            <div class="card-tldr">
+              <strong>TLDR:</strong> AI's 70-year journey: 1956 Dartmouth Conference, 1980s/90s AI Winters, 2012 deep learning breakthrough (AlexNet), 2022 ChatGPT moment.
+            </div>
+            <div class="card-meta">
+              <span class="meta-label">Connects to:</span>
+              <span class="cross-path-badge">Terminology</span>
+              <span class="cross-path-badge">Future</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="concept-stack-card">
+        <div class="card-image" style="background-image: url('../public/images/learn/history/strong-vs-weak-ai.jpg');"></div>
+        <div class="card-content">
+          <div class="card-top">
+            <div class="card-number">Concept 05</div>
+          </div>
+          <div class="card-bottom">
+            <div class="card-tags">
+              <span class="tag">AGI</span>
+              <span class="tag">narrow-AI</span>
+              <span class="tag">strong-AI</span>
+              <span class="tag">weak-AI</span>
+            </div>
+            <h2 class="card-title">Strong vs. Weak AI – Why the Difference Matters for Governance</h2>
+            <div class="card-tldr">
+              <strong>TLDR:</strong> Weak AI (narrow, task-specific, exists today) vs. Strong AI/AGI (general intelligence, hypothetical). Governance must address current weak AI risks.
+            </div>
+            <div class="card-meta">
+              <span class="meta-label">Connects to:</span>
+              <span class="cross-path-badge">Future</span>
+              <span class="cross-path-badge">Risk</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Placeholder for remaining 15 cards (user mentioned 20 total) -->
+      <div style="padding: 80px 60px; text-align: center;">
+        <p style="color: var(--text-secondary); font-size: 18px; font-style: italic;">
+          [ Cards 6-20 would continue with same stacking structure... ]
+        </p>
+        <p style="color: var(--text-secondary); font-size: 14px; margin-top: 16px;">
+          In actual implementation: GSAP ScrollTrigger creates scroll-based animation<br>
+          where cards slide over each other as you scroll down
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Implementation Note -->
+  <div class="implementation-note">
+    <strong>📝 Wireframe Note:</strong> This wireframe demonstrates the Rayo works-simple page structure adapted for learning paths.
+    In the actual React implementation, the StackCards component uses GSAP ScrollTrigger to create smooth scroll-based stacking animations
+    where each card appears to slide over the previous one. Each card displays tags and title by default, with TLDR revealing on hover.
+  </div>
+
+  <script>
+    // Theme Toggle
+    function toggleTheme() {
+      const body = document.body;
+      const themeIcon = document.getElementById('theme-icon');
+      const currentTheme = body.getAttribute('data-theme');
+
+      if (currentTheme === 'dark') {
+        body.removeAttribute('data-theme');
+        themeIcon.textContent = '☀️';
+        localStorage.setItem('theme', 'light');
+      } else {
+        body.setAttribute('data-theme', 'dark');
+        themeIcon.textContent = '🌙';
+        localStorage.setItem('theme', 'dark');
+      }
+    }
+
+    // Menu Toggle
+    function toggleMenu() {
+      alert('Hamburger menu - would open navigation overlay');
+    }
+
+    // Load saved theme
+    document.addEventListener('DOMContentLoaded', () => {
+      const savedTheme = localStorage.getItem('theme');
+      const themeIcon = document.getElementById('theme-icon');
+
+      if (savedTheme === 'dark') {
+        document.body.setAttribute('data-theme', 'dark');
+        themeIcon.textContent = '🌙';
+      } else {
+        themeIcon.textContent = '☀️';
+      }
+    });
+
+    // NOTE: In actual implementation using Rayo StackCards.tsx:
+    // - GSAP ScrollTrigger creates scroll-based stacking animation
+    // - Cards positioned below each other initially (y: index * cardHeight)
+    // - As you scroll, cards animate to y:0 (stacking effect)
+    // - Each card pins in place as next card approaches
+    // - This wireframe shows visual structure without the animation
+  </script>
+
+</body>
+</html>

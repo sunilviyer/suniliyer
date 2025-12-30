@@ -1,0 +1,112 @@
+# === FILE STATUS ===
+suggested_slug: "article-114-ai-governance-tools-software-and-platforms"
+category: "Governance Implementation"
+word_count:
+  target: null
+  actual: 1540
+  status: "no_target"
+
+# === CONTENT VALIDATION ===
+structure:
+  has_h1: true
+  has_intro: true
+  has_conclusion: true
+  header_depth_valid: false
+generated_elements:
+  tldr_was_missing: true
+  objectives_were_missing: false
+  keywords_were_missing: false
+
+# === COMPONENT INVENTORY ===
+has_components: true
+components:
+  - type: "table"
+    label: "Challenge vs Manual Approach Table"
+    detected_at_section: "Why Tools Matter"
+  - type: "table"
+    label: "Tool vs Type Table"
+    detected_at_section: "AI Inventory and Registry Tools"
+  - type: "table"
+    label: "Tool vs Type Table"
+    detected_at_section: "Fairness and Bias Testing Tools"
+  - type: "table"
+    label: "Tool vs Type Table"
+    detected_at_section: "Explainability Tools"
+  - type: "table"
+    label: "Tool vs Type Table"
+    detected_at_section: "Monitoring and Observability Tools"
+  - type: "table"
+    label: "Tool vs Type Table"
+    detected_at_section: "Compliance and Workflow Tools"
+  - type: "table"
+    label: "Tool vs Type Table"
+    detected_at_section: "Integrated AI Governance Platforms"
+  - type: "table"
+    label: "Factor vs Lean Build Table"
+    detected_at_section: "Build vs. Buy Decision Matrix"
+  - type: "table"
+    label: "Tool vs Maintainer Table"
+    detected_at_section: "Fairness and Bias"
+  - type: "table"
+    label: "Tool vs Maintainer Table"
+    detected_at_section: "Explainability"
+  - type: "table"
+    label: "Tool vs Maintainer Table"
+    detected_at_section: "Monitoring"
+  - type: "table"
+    label: "Tool vs Maintainer Table"
+    detected_at_section: "MLOps with Governance Features"
+  - type: "flowchart"
+    label: "Conclusion Process"
+    detected_at_section: "Conclusion"
+  - type: "flowchart"
+    label: "Sources and Further Reading Process"
+    detected_at_section: "Sources and Further Reading"
+  - type: "template"
+    label: "Article 114: AI Governance Tools – Software and Platforms"
+    detected_at_section: "Article 114: AI Governance Tools – Software and Platforms"
+    template_link: "/templates/article-114-ai-governance-tools-software-and-platforms.md"
+  - type: "template"
+    label: "Example: Using Fairlearn"
+    detected_at_section: "Fairness and Bias Testing Tools"
+    template_link: "/templates/example-using-fairlearn.md"
+  - type: "template"
+    label: "Integrated AI Governance Platforms"
+    detected_at_section: "Integrated AI Governance Platforms"
+    template_link: "/templates/integrated-ai-governance-platforms.md"
+
+# === EXTRACTED DATA ===
+title: "Article 114: AI Governance Tools – Software and Platforms"
+tldr: ""
+learning_objectives:
+  - "Understand the key concepts and principles of model validation processes"
+  - "Implement regulatory requirements in real-world scenarios"
+  - "Evaluate risk assessment frameworks for organizational compliance"
+seo_keywords:
+  - "article"
+  - "governance"
+  - "AI governance"
+  - "AI risk management"
+  - "governance tools"
+
+# === CROSS REFERENCE DATA ===
+topic_fingerprint:
+  - "audit"
+  - "risk assessment"
+  - "fairness"
+  - "explainability"
+  - "adversarial testing"
+named_examples:
+  - "gdpr"
+  - "google"
+  - "ibm"
+  - "microsoft"
+  - "watson"
+
+# === IMAGE GENERATION ===
+image_prompt:
+  formula: "Abstract geometric illustration, earth tones, minimalist, professional"
+  category_motif: "org charts"
+  master_size: "1200x750px"
+  css_filters: true
+image_placeholder: "![Article 114: AI Governance Tools – Software and Platforms]({{IMAGE_PLACEHOLDER_article-114-ai-governance-tools-software-and-platforms}})"

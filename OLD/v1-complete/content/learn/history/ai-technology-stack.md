@@ -1,0 +1,591 @@
+---
+type: concept
+id: history-3
+path: history
+title: "The AI Technology Stack – From Chips to Applications"
+slug: ai-technology-stack
+tldr: "The AI stack has 5 layers: Hardware (GPUs, TPUs) → Infrastructure (cloud/data centers) → Platforms (ML tools, APIs) → Models (trained neural networks) → Applications (user-facing products). Understanding this stack is essential for governance as different risks, costs, and controls apply at each layer."
+category: AI Fundamentals
+
+learning_objectives:
+  - Understand the 5-layer AI technology stack and dependencies between layers
+  - Recognize concentration of power at hardware and infrastructure layers
+  - Identify governance considerations unique to each stack layer
+  - Map data flows and costs across the stack
+
+seo_keywords:
+  - AI technology stack
+  - AI infrastructure
+  - GPU computing
+  - ML platforms
+  - AI architecture layers
+
+# Knowledge Graph Relationships
+related_concepts:
+  - id: history-14
+    title: "AI Compute – Why GPUs Rule"
+    path: history
+  - id: history-12
+    title: "Foundation Models"
+    path: history
+  - id: history-15
+    title: "Environmental Cost of AI"
+    path: history
+
+cross_path_refs:
+  terminology: [term-3, term-10]
+  responsibility: [resp-12, resp-80]
+
+# Visual Components
+components:
+  - type: image_prompt
+    id: hero
+    prompt: "technology stack layers visualization, hardware to software progression, professional infrastructure diagram"
+  - type: table
+    id: concentration-of-power
+    section: "Cross-Stack Considerations"
+    label: "Concentration of Power by Layer"
+  - type: table
+    id: cost-structure
+    section: "Cross-Stack Considerations"
+    label: "Cost Structure Across Layers"
+  - type: table
+    id: regulatory-mapping
+    section: "Cross-Stack Considerations"
+    label: "Regulatory Mapping to Layers"
+
+word_count: 3018
+source_articles:
+  - article-10-the-ai-technology-stack-from-chips-to-application.md
+processed_date: "2025-12-19"
+---
+
+# The AI Technology Stack – From Chips to Applications
+
+## Introduction
+
+When executives say "we're adopting AI," they're actually talking about a complex stack of technologies spanning semiconductor fabrication in Taiwan to chatbot interfaces on smartphones. Understanding this stack transforms governance from abstract to concrete—you can identify where risks concentrate, where costs accumulate, and where controls should be applied.
+
+This article maps the five layers of the AI stack: Hardware, Infrastructure, Platforms, Models, and Applications. Each layer has distinct players, risks, and governance needs. Effective AI governance requires understanding how these layers interact and where power concentrates.
+
+---
+
+## Layer 1: Hardware – The Foundation
+
+### What Happens Here
+
+At the bottom of the stack is physical hardware—the semiconductors and specialized chips that perform the mathematical operations AI requires. Modern AI workloads are computationally intensive; training a large language model can require thousands of specialized processors running for months.
+
+**Key hardware components:**
+
+**GPUs (Graphics Processing Units)**
+Originally designed for rendering video game graphics, GPUs turned out to be excellent for AI because both tasks involve massive parallel mathematical operations. A GPU can perform thousands of calculations simultaneously, making it far more efficient for AI than traditional CPUs.
+
+**TPUs (Tensor Processing Units)**
+Google's custom-designed chips specifically optimized for machine learning operations. The name refers to "tensors"—the multi-dimensional arrays of numbers that neural networks manipulate.
+
+**AI Accelerators**
+Specialized chips designed specifically for AI inference (running trained models) or training. Examples include AWS Inferentia, Intel Habana, and various startup offerings.
+
+**Networking Hardware**
+Connecting thousands of GPUs for training requires specialized high-bandwidth networking. NVLink, InfiniBand, and custom interconnects enable the communication speeds AI training demands.
+
+### Key Players
+
+| Company | Products | Market Position |
+|---------|----------|-----------------|
+| NVIDIA | A100, H100 GPUs | ~80% market share for AI training |
+| AMD | MI300 series | Distant second, gaining ground |
+| Google | TPU v4, v5 | Google-exclusive, cloud access |
+| Intel | Gaudi, various accelerators | Enterprise focus |
+| Startups | Cerebras, Graphcore, SambaNova | Novel architectures, niche |
+
+**NVIDIA's dominance** is difficult to overstate. Their CUDA software ecosystem, developed over 15+ years, has become the default platform for AI development. Switching to alternatives requires significant code rewrites.
+
+### Governance Implications
+
+**Supply Chain Concentration**
+NVIDIA's dominance creates single-point-of-failure risks. Export controls, supply disruptions, or company decisions can affect the entire AI ecosystem.
+
+**Geopolitical Exposure**
+Advanced chip manufacturing is concentrated in Taiwan (TSMC) and South Korea (Samsung). Geopolitical tensions create supply chain risks that affect AI development globally.
+
+**Energy and Environmental Impact**
+AI training consumes enormous energy. A single large model training run can consume as much electricity as a hundred households use in a year. Data centers for AI are straining power grids.
+
+**Cost Barriers**
+High-end AI chips cost $25,000-$40,000 each. Training frontier models requires thousands of them. This creates barriers to entry and concentrates AI development among well-funded organizations.
+
+**Questions to ask:**
+- What hardware does our AI infrastructure depend on?
+- What are our supply chain risks?
+- What is the energy footprint of our AI systems?
+- How dependent are we on single hardware vendors?
+
+---
+
+## Layer 2: Infrastructure – The Operating Environment
+
+### What Happens Here
+
+Infrastructure provides the computing resources—servers, storage, networking—that AI systems run on. This layer transforms raw hardware into usable computing capacity, typically delivered through cloud services.
+
+**Key infrastructure components:**
+
+**Compute Clusters**
+Groups of servers (often containing multiple GPUs each) connected together to provide the computing power for training or running AI models.
+
+**Storage Systems**
+AI requires massive storage for training data and model weights. A large language model's weights alone can exceed 500GB; training datasets can reach petabyte scale.
+
+**Networking**
+High-bandwidth, low-latency connections between servers, and between data centers and users.
+
+**Orchestration Software**
+Systems like Kubernetes that manage compute resources, schedule jobs, and handle scaling.
+
+### Key Players
+
+| Provider | AI Infrastructure Offerings |
+|----------|---------------------------|
+| AWS | EC2 P5 instances, Trainium, Inferentia |
+| Microsoft Azure | ND-series VMs, Azure AI infrastructure |
+| Google Cloud | TPU pods, A3 GPU VMs |
+| Oracle Cloud | GPU clusters, bare metal |
+| CoreWeave | GPU-specialized cloud |
+| Lambda Labs | GPU cloud for ML |
+
+The "Big Three" cloud providers (AWS, Azure, Google) dominate, but specialized AI clouds are growing to serve specific needs.
+
+### Deployment Models
+
+**Public Cloud**
+Rent infrastructure from cloud providers on-demand. Pay-per-use, scales easily, but data leaves your premises.
+
+**Private Cloud**
+Build your own data center with dedicated infrastructure. Full control, but massive capital investment.
+
+**Hybrid Cloud**
+Combine public and private, running sensitive workloads on-premises while using public cloud for scale.
+
+**Edge Computing**
+Run AI models on devices closer to users—phones, IoT devices, local servers. Reduces latency and can keep data local.
+
+### Governance Implications
+
+**Data Residency**
+Where your data is physically processed matters for compliance. Cloud regions may or may not align with regulatory requirements.
+
+**Vendor Lock-in**
+Moving AI workloads between cloud providers is expensive and time-consuming. Infrastructure choices made today constrain options for years.
+
+**Security Responsibilities**
+In cloud deployments, security responsibilities are shared between provider and customer. The line isn't always clear.
+
+**Cost Transparency**
+AI compute costs can explode unexpectedly. A runaway training job can generate five-figure bills overnight.
+
+**Availability Dependencies**
+Your AI systems are only as available as your infrastructure. Cloud outages affect all dependent services.
+
+---
+
+## Layer 3: Platforms – The Development Environment
+
+### What Happens Here
+
+AI platforms provide tools, APIs, and services that make it easier to develop, deploy, and manage AI applications. They sit between raw infrastructure and finished models, abstracting complexity and providing standardized interfaces.
+
+**Platform components:**
+
+**ML Platforms**
+Tools for training, versioning, and deploying machine learning models. Examples: AWS SageMaker, Google Vertex AI, Azure Machine Learning.
+
+**Model Serving**
+Infrastructure for running trained models and exposing them via APIs. Handles scaling, load balancing, and inference optimization.
+
+**MLOps Tools**
+DevOps-style tools adapted for machine learning—experiment tracking, model versioning, pipeline automation, monitoring.
+
+**Model APIs**
+Hosted models accessible via API calls. Instead of training your own model, you send requests to a provider's model and receive results.
+
+### Key Players
+
+**Integrated Cloud Platforms:**
+- AWS SageMaker
+- Google Vertex AI
+- Azure Machine Learning
+
+**Model API Providers:**
+- OpenAI API (GPT-4, DALL-E)
+- Anthropic API (Claude)
+- Google AI (Gemini)
+- Cohere
+- AI21 Labs
+
+**MLOps Platforms:**
+- MLflow (open source)
+- Weights & Biases
+- Neptune
+- DataRobot
+
+**Specialized Platforms:**
+- Hugging Face (model hub and tools)
+- Replicate (model hosting)
+- Modal (serverless ML)
+
+### Build vs. Buy Spectrum
+
+Organizations face choices about how much to build versus buy:
+
+| Approach | Description | Control | Effort | Cost |
+|----------|-------------|---------|--------|------|
+| Use API | Call provider's model | Lowest | Minimal | Per-use |
+| Fine-tune | Customize provider's model | Low-Medium | Moderate | Medium |
+| Deploy hosted | Run open model on cloud platform | Medium | Moderate | Infrastructure |
+| Deploy on-premises | Run model on own infrastructure | Highest | High | Capital + operations |
+| Train custom | Build model from scratch | Highest | Massive | Very high |
+
+Most organizations use a mix, with API calls for general capabilities and custom approaches for competitive differentiation.
+
+### Governance Implications
+
+**API Terms and Acceptable Use**
+Model API providers have terms of service and acceptable use policies. Violations can result in service termination—potentially disrupting critical applications.
+
+**Data Handling**
+When you call a model API, your data is transmitted to the provider. Review data retention, training use, and privacy policies carefully.
+
+**Rate Limits and Availability**
+API-based services can rate-limit or deprecate access. Building critical dependencies on third-party APIs creates business continuity risks.
+
+**Model Updates**
+Providers update models regularly. An update might improve performance—or break your application's assumptions about model behavior.
+
+**Compliance Documentation**
+Demonstrating compliance often requires documentation about AI systems. API providers may or may not provide sufficient transparency.
+
+---
+
+## Layer 4: Models – The Intelligence
+
+### What Happens Here
+
+Models are the trained neural networks that provide AI capabilities. This layer represents the accumulated "knowledge" learned from training data, encoded in billions of numerical parameters (weights).
+
+**Model types:**
+
+**Foundation Models**
+Large models trained on broad data, intended for general-purpose use or as starting points for specialization. Examples: GPT-4, Claude, LLaMA, PaLM.
+
+**Fine-tuned Models**
+Foundation models adapted for specific tasks or domains through additional training on specialized data.
+
+**Task-specific Models**
+Models trained from scratch for particular applications—often smaller and more efficient for their specific use case.
+
+**Multimodal Models**
+Models that process multiple types of data—text, images, audio, video. Examples: GPT-4V, Gemini.
+
+### Key Players
+
+**Closed-source/API-only:**
+- OpenAI (GPT-4, GPT-4o)
+- Anthropic (Claude 3, Claude 3.5)
+- Google (Gemini)
+
+**Open weights:**
+- Meta (LLaMA 3)
+- Mistral AI (Mistral, Mixtral)
+- Technology Innovation Institute (Falcon)
+- Alibaba (Qwen)
+
+**Image Generation:**
+- OpenAI (DALL-E)
+- Midjourney
+- Stability AI (Stable Diffusion)
+
+**Specialized:**
+- Numerous domain-specific models for code, science, medicine, etc.
+
+### Open vs. Closed Models
+
+| Characteristic | Closed Models | Open-Weight Models |
+|----------------|---------------|-------------------|
+| Access | API only | Downloadable weights |
+| Customization | Limited fine-tuning | Full fine-tuning, modification |
+| Deployment | Provider's infrastructure | Any infrastructure |
+| Cost model | Per-token usage | Infrastructure costs |
+| Transparency | Limited | Full model inspection |
+| Control | Provider controls | Deployer controls |
+| Updates | Automatic | Manual |
+| Support | Provider support | Community + commercial |
+
+The choice between open and closed models involves tradeoffs between control, cost, capability, and responsibility.
+
+### Governance Implications
+
+**Model Provenance**
+What data was a model trained on? This affects bias, capability, and legal exposure. Closed models often provide limited transparency.
+
+**Model Behavior**
+Models have different behaviors, safety properties, and failure modes. Switching models isn't just a technical change—it can change application behavior in ways that affect compliance.
+
+**Licensing and IP**
+Open-weight models come with licenses that vary from highly permissive to restrictive. Commercial use, modification, and redistribution rights differ.
+
+**Version Management**
+Models evolve. Providers release new versions that may behave differently. Organizations need to track which model versions are deployed where.
+
+**Capability Monitoring**
+Models can exhibit unexpected capabilities. What a model could do when deployed may differ from what it did during evaluation.
+
+---
+
+## Layer 5: Applications – The User Interface
+
+### What Happens Here
+
+Applications are the user-facing products and services built on top of AI models. This is what most people think of when they think of "AI"—ChatGPT, Copilot, smart assistants, recommendation systems, content moderation tools.
+
+**Application types:**
+
+**Chat Interfaces**
+Direct conversation with AI models—ChatGPT, Claude, Gemini chat.
+
+**Copilots and Assistants**
+AI embedded in productivity tools—Microsoft Copilot, GitHub Copilot, Google Duet AI.
+
+**Embedded AI**
+AI capabilities integrated into existing applications—search engines, email clients, content management systems.
+
+**Vertical Solutions**
+Industry-specific AI applications—healthcare diagnostics, legal research, financial analysis.
+
+**Custom Enterprise Applications**
+Organizations' own AI-powered applications built for internal or customer-facing use.
+
+### Key Players
+
+**Horizontal Applications:**
+- ChatGPT (OpenAI)
+- Claude.ai (Anthropic)
+- Copilot (Microsoft)
+- Gemini (Google)
+
+**Productivity Suite Integration:**
+- Microsoft 365 Copilot
+- Google Workspace AI
+- Notion AI
+- Canva AI
+
+**Vertical Applications:**
+- Healthcare: Nuance DAX, Viz.ai
+- Legal: Harvey, CoCounsel
+- Finance: Bloomberg Terminal AI, Kensho
+- Code: GitHub Copilot, Cursor, Replit
+
+### Governance Implications
+
+**User Behavior**
+Applications shape how users interact with AI. Interface design affects what users try to do and how they interpret results.
+
+**Use Case Proliferation**
+New applications emerge constantly. Shadow AI—unauthorized AI use—is a growing concern in enterprises.
+
+**Acceptable Use Enforcement**
+Application-level controls can restrict what users can do with underlying models. This is often the most practical place to implement governance.
+
+**Data Flows**
+Applications determine what user data reaches AI models. Understanding application data flows is essential for privacy compliance.
+
+**Output Verification**
+Applications can incorporate verification steps, confidence displays, or human review requirements before AI outputs reach end users.
+
+**Incident Response**
+When AI causes problems, it usually manifests at the application layer. Incident response requires understanding the full stack.
+
+---
+
+## Cross-Stack Considerations
+
+### Concentration of Power
+
+Examine who controls each layer:
+
+| Layer | Concentration | Key Players |
+<!-- component:table:concentration-of-power -->
+|-------|---------------|-------------|
+| Hardware | Very high | NVIDIA dominates |
+| Infrastructure | High | Big Three clouds |
+| Platforms | Medium | Distributed across cloud providers and specialists |
+| Models | Medium | Few frontier model makers, many open alternatives |
+| Applications | Low | Highly fragmented market |
+
+Power concentrates at lower layers. A small number of companies control the hardware and infrastructure that all AI depends on.
+
+**Governance implications:**
+- Decisions by a few companies affect entire ecosystem
+- Regulatory pressure on lower layers has broad effects
+- Supply chain disruptions cascade upward
+- Competition concerns at infrastructure level
+
+### Data Flows Through the Stack
+
+Data moves through the stack in complex ways:
+
+**Training data** → Model parameters (Layer 4)
+**User inputs** → Application (Layer 5) → Platform (Layer 3) → Model (Layer 4)
+**Model outputs** → Platform (Layer 3) → Application (Layer 5) → User
+
+Understanding these flows is essential for:
+- Privacy compliance (where does personal data go?)
+- Security assessment (where are attack surfaces?)
+- IP protection (where could proprietary data leak?)
+- Audit trails (can we track what happened?)
+
+### Cost Structure
+
+Costs distribute differently across layers:
+
+| Layer | Cost Type | Magnitude | Who Pays |
+<!-- component:table:cost-structure -->
+|-------|-----------|-----------|----------|
+| Hardware | Capital | Very high | Infrastructure providers |
+| Infrastructure | Operations | High | Platform providers or enterprises |
+| Platforms | Development + operations | Medium | Model developers or enterprises |
+| Models | Training + operations | High (training), lower (inference) | Model providers |
+| Applications | Development + operations | Varies | End customers |
+
+For most enterprises, costs appear at Layers 3-5 (platforms, model API calls, application development), while Layers 1-2 costs are embedded in provider pricing.
+
+### Regulatory Mapping
+
+Different regulations apply at different layers:
+
+| Regulation | Primary Layer(s) | Focus |
+<!-- component:table:regulatory-mapping -->
+|------------|------------------|-------|
+| EU AI Act | Models, Applications | Risk classification, transparency |
+| GDPR | All layers | Data protection |
+| Export controls | Hardware, Infrastructure | Technology transfer |
+| Copyright law | Models, Training data | Training data, outputs |
+| Sector regulations | Applications | Use case specific |
+
+Compliance requires understanding which regulations apply where in your stack.
+
+---
+
+## Building Stack Awareness
+
+### Assessment Framework
+
+For governance purposes, document your AI stack:
+
+**Layer 1-2 (Hardware/Infrastructure):**
+- Cloud providers used
+- Data center locations
+- Contract terms and SLAs
+- Concentration risks
+- Energy and environmental footprint
+
+**Layer 3 (Platforms):**
+- Platform services in use
+- API dependencies
+- Terms of service
+- Data handling practices
+- Vendor lock-in exposure
+
+**Layer 4 (Models):**
+- Models deployed
+- Model versions
+- Training data transparency
+- Licensing terms
+- Performance characteristics
+
+**Layer 5 (Applications):**
+- AI applications inventory
+- User population
+- Data flows
+- Use case restrictions
+- Monitoring capabilities
+
+### Vendor Assessment
+
+When evaluating AI vendors, understand where they operate in the stack:
+
+| Vendor Type | Key Questions |
+|-------------|---------------|
+| Hardware | Supply chain reliability, technology roadmap |
+| Cloud/Infrastructure | Data residency, security certifications, SLAs |
+| Platform | Terms of service, data handling, support |
+| Model provider | Training data, safety testing, documentation |
+| Application | Use case fit, integration, data flows |
+
+### Risk Aggregation
+
+Risks can aggregate across layers. Consider:
+- Multiple applications using the same model (model risk multiplies)
+- Multiple models on the same platform (platform risk multiplies)
+- All platforms on the same cloud (infrastructure risk multiplies)
+- All clouds using the same chips (hardware risk multiplies)
+
+Diversification across layers reduces aggregate risk.
+
+---
+
+## Practical Takeaways
+
+### Key Principles
+
+1. **The stack is deep**. What looks like a simple AI application sits atop layers of complexity. Governance requires understanding the full stack.
+
+2. **Power concentrates at the bottom**. A handful of companies control hardware and infrastructure. Their decisions constrain everyone else.
+
+3. **Each layer has different risks**. Hardware has supply chain risks; models have bias risks; applications have misuse risks. Govern accordingly.
+
+4. **Data flows through all layers**. Privacy and security require understanding how data moves through the stack.
+
+5. **Costs are distributed**. You may not see hardware costs directly, but you pay for them embedded in higher-layer pricing.
+
+### Questions for Your Organization
+
+| Area | Questions |
+|------|-----------|
+| Inventory | What is our AI technology stack? Who provides each layer? |
+| Concentration | Where do we have single-vendor dependencies? |
+| Data flows | How does data move through our stack? Where does it rest? |
+| Compliance | Which regulations apply at which layers? |
+| Costs | What are the full costs across all layers? |
+| Risks | What happens if each layer fails? |
+
+### The Bottom Line
+
+Understanding the AI technology stack transforms you from someone who talks about "AI" in the abstract to someone who can have concrete conversations about hardware dependencies, infrastructure choices, platform trade-offs, model characteristics, and application controls.
+
+This understanding enables better governance because you can identify where controls should be applied, where risks concentrate, and where your organization has leverage. The CEO talking about "AI adoption" doesn't need to know that NVIDIA GPUs run CUDA code on AWS infrastructure accessed via Azure OpenAI Service to serve a fine-tuned GPT-4 model through a custom application. But you do.
+
+---
+
+## Related Concepts
+
+**Within this path:**
+- [AI Compute – Why GPUs Rule the AI World](/learn/history/ai-compute-gpus)
+- [Foundation Models – The New Building Blocks](/learn/history/foundation-models)
+- [Environmental Cost of AI](/learn/history/environmental-cost-ai)
+
+**Other paths:**
+- [AI Model Types and Architectures](/learn/terminology/model-types) (Terminology)
+- [AI Vendor Risk Management](/learn/responsibility/vendor-risk-management) (Responsibility)
+- [Data Governance for AI](/learn/responsibility/data-governance-policy) (Responsibility)
+
+---
+
+## Sources
+
+1. NVIDIA (2024). "AI Data Center Reference Architecture"
+2. Stanford HAI (2024). "AI Index Report" - Compute and infrastructure trends
+3. Epoch AI. "Trends in Machine Learning Hardware"
+4. Andreessen Horowitz. "The New AI Stack" (emerging market maps)
+5. OECD (2023). "AI Compute and Climate"

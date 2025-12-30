@@ -1,0 +1,87 @@
+# === FILE STATUS ===
+suggested_slug: "article-46-ai-and-hipaa-healthcare-privacy-implications"
+category: "AI Fundamentals"
+word_count:
+  target: null
+  actual: 3508
+  status: "no_target"
+
+# === CONTENT VALIDATION ===
+structure:
+  has_h1: true
+  has_intro: true
+  has_conclusion: true
+  header_depth_valid: true
+generated_elements:
+  tldr_was_missing: true
+  objectives_were_missing: false
+  keywords_were_missing: false
+
+# === COMPONENT INVENTORY ===
+has_components: true
+components:
+  - type: "checklist"
+    label: "Security Checklist for Healthcare AI"
+    detected_at_section: "Security Checklist for Healthcare AI"
+  - type: "flowchart"
+    label: "HIPAA De-Identification Standards Process"
+    detected_at_section: "HIPAA De-Identification Standards"
+  - type: "flowchart"
+    label: "Best Practices for AI De-Identification Process"
+    detected_at_section: "Best Practices for AI De-Identification"
+  - type: "flowchart"
+    label: "Breach Risk Assessment Process"
+    detected_at_section: "Breach Risk Assessment"
+  - type: "flowchart"
+    label: "Conclusion Process"
+    detected_at_section: "Conclusion"
+  - type: "flowchart"
+    label: "Sources Process"
+    detected_at_section: "Sources"
+  - type: "template"
+    label: "Example:"
+    detected_at_section: "Minimum Necessary Standard"
+    template_link: "/templates/example.md"
+  - type: "template"
+    label: "Information Blocking and AI"
+    detected_at_section: "Information Blocking and AI"
+    template_link: "/templates/information-blocking-and-ai.md"
+  - type: "list"
+    label: "Best Practices for AI De-Identification"
+    detected_at_section: "Best Practices for AI De-Identification"
+  - type: "list"
+    label: "Notification Requirements"
+    detected_at_section: "Notification Requirements"
+
+# === EXTRACTED DATA ===
+title: "Article 46: AI and HIPAA – Healthcare Privacy Implications"
+tldr: ""
+learning_objectives:
+  - "Understand the key concepts and principles of ai governance frameworks"
+  - "Implement regulatory requirements in real-world scenarios"
+  - "Evaluate audit procedures for organizational compliance"
+seo_keywords:
+  - "article"
+  - "hipaa"
+  - "artificial intelligence"
+  - "AI compliance"
+  - "when"
+
+# === CROSS REFERENCE DATA ===
+topic_fingerprint:
+  - "nlp"
+  - "machine learning"
+  - "accountability"
+  - "audit"
+  - "risk assessment"
+named_examples:
+  - "ftc"
+  - "google"
+
+# === IMAGE GENERATION ===
+image_prompt:
+  formula: "Abstract geometric illustration, earth tones, minimalist, professional"
+  category_motif: "neural networks"
+  master_size: "1200x750px"
+  css_filters: true
+image_placeholder: "![Article 46: AI and HIPAA – Healthcare Privacy Implications]({{IMAGE_PLACEHOLDER_article-46-ai-and-hipaa-healthcare-privacy-implications}})"

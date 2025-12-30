@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AIDefence V2 - Homepage Wireframe (Rayo Style)</title>
+    <style>
+        :root {
+            /* Black/White Foundation */
+            --color-black: #000000;
+            --color-white: #FFFFFF;
+
+            /* Earth-tone Accents */
+            --color-charcoal-brown: #333d29;
+            --color-moss-green: #414833;
+            --color-beige-ivory: #F5F5DC;
+            --color-earth-accent: #936639;
+
+            /* Spacing */
+            --spacing-xs: 8px;
+            --spacing-sm: 16px;
+            --spacing-md: 24px;
+            --spacing-lg: 48px;
+            --spacing-xl: 64px;
+            --spacing-2xl: 96px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: var(--color-black);
+            color: var(--color-white);
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: var(--spacing-sm) var(--spacing-md);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--color-white);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: var(--spacing-md);
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--color-white);
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 8px;
+            transition: background 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        /* Hero Section with Video Background */
+        .hero {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background: var(--color-black);
+        }
+
+        .hero-video-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.3;
+        }
+
+        .hero-video-bg video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            max-width: 900px;
+            padding: var(--spacing-md);
+        }
+
+        .hero h1 {
+            font-size: 72px;
+            font-weight: 700;
+            margin-bottom: var(--spacing-md);
+            line-height: 1.2;
+        }
+
+        /* Vertical Scrolling Text Animation (Stock Ticker Style) */
+        .rotating-text-container {
+            display: inline-flex;
+            align-items: center;
+            gap: 16px;
+            background: linear-gradient(135deg, var(--color-earth-accent) 0%, var(--color-moss-green) 100%);
+            padding: 12px 32px;
+            border-radius: 60px;
+            margin-bottom: var(--spacing-sm);
+            box-shadow: 0 8px 32px rgba(147, 102, 57, 0.3);
+        }
+
+        .rotating-word-wrapper {
+            position: relative;
+            height: 60px;
+            overflow: hidden;
+            width: 200px;
+        }
+
+        .rotating-words {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            animation: verticalScroll 14s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+        }
+
+        .rotating-words div {
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            font-weight: 700;
+            color: var(--color-beige-ivory);
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        @keyframes verticalScroll {
+            0%, 14.28% { transform: translateY(0); }
+            14.29%, 28.57% { transform: translateY(-60px); }
+            28.58%, 42.85% { transform: translateY(-120px); }
+            42.86%, 57.14% { transform: translateY(-180px); }
+            57.15%, 71.42% { transform: translateY(-240px); }
+            71.43%, 85.71% { transform: translateY(-300px); }
+            85.72%, 100% { transform: translateY(-360px); }
+        }
+
+        .static-ai {
+            font-size: 48px;
+            font-weight: 700;
+            color: var(--color-white);
+        }
+
+        .hero-subtitle {
+            font-size: 24px;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: var(--spacing-lg);
+            line-height: 1.5;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: var(--spacing-sm);
+            justify-content: center;
+        }
+
+        .btn {
+            padding: 16px 32px;
+            border-radius: 12px;
+            font-size: 18px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 2px solid transparent;
+        }
+
+        .btn-primary {
+            background: var(--color-white);
+            color: var(--color-black);
+        }
+
+        .btn-primary:hover {
+            background: var(--color-beige-ivory);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(255, 255, 255, 0.2);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--color-white);
+            border-color: var(--color-white);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
+        }
+
+        /* Section Shared Styles */
+        section {
+            padding: var(--spacing-2xl) var(--spacing-md);
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .section-header h2 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .section-header p {
+            font-size: 20px;
+            color: rgba(255, 255, 255, 0.8);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Learning Paths Section */
+        .learning-paths {
+            background: var(--color-black);
+        }
+
+        .paths-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-md);
+        }
+
+        .path-card {
+            background: var(--color-white);
+            color: var(--color-black);
+            padding: var(--spacing-lg);
+            border-radius: 20px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 2px solid transparent;
+        }
+
+        .path-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 16px 48px rgba(255, 255, 255, 0.2);
+            border-color: var(--color-earth-accent);
+        }
+
+        .path-icon {
+            width: 64px;
+            height: 64px;
+            background: var(--color-moss-green);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: var(--spacing-sm);
+            font-size: 32px;
+        }
+
+        .path-card h3 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .path-card p {
+            color: rgba(0, 0, 0, 0.7);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .path-meta {
+            display: flex;
+            gap: var(--spacing-sm);
+            color: rgba(0, 0, 0, 0.6);
+            font-size: 14px;
+        }
+
+        /* Portfolio Section with Horizontal Carousel */
+        .portfolio {
+            background: var(--color-black);
+            padding: var(--spacing-2xl) 0;
+        }
+
+        .carousel-container {
+            position: relative;
+            padding: var(--spacing-xl) 0;
+            overflow: hidden;
+        }
+
+        .carousel-track {
+            display: flex;
+            gap: var(--spacing-lg);
+            padding: 0 var(--spacing-md);
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .carousel-track::-webkit-scrollbar {
+            display: none;
+        }
+
+        .carousel-card {
+            flex: 0 0 400px;
+            background: var(--color-white);
+            color: var(--color-black);
+            border-radius: 20px;
+            padding: var(--spacing-lg);
+            scroll-snap-align: center;
+            transition: all 0.5s ease;
+            cursor: pointer;
+        }
+
+        .carousel-card:not(.focused) {
+            filter: blur(8px);
+            opacity: 0.5;
+            transform: scale(0.9);
+        }
+
+        .carousel-card.focused {
+            filter: blur(0);
+            opacity: 1;
+            transform: scale(1);
+            box-shadow: 0 24px 64px rgba(255, 255, 255, 0.3);
+        }
+
+        .carousel-card-image {
+            width: 100%;
+            height: 240px;
+            background: var(--color-charcoal-brown);
+            border-radius: 12px;
+            margin-bottom: var(--spacing-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+        }
+
+        .carousel-card h3 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .carousel-card p {
+            color: rgba(0, 0, 0, 0.7);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .carousel-card .tags {
+            display: flex;
+            gap: var(--spacing-xs);
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background: var(--color-beige-ivory);
+            color: var(--color-charcoal-brown);
+            padding: 4px 12px;
+            border-radius: 16px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .carousel-nav {
+            display: flex;
+            justify-content: center;
+            gap: var(--spacing-sm);
+            margin-top: var(--spacing-md);
+        }
+
+        .carousel-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .carousel-dot.active {
+            background: var(--color-white);
+            transform: scale(1.2);
+        }
+
+        /* About Section */
+        .about {
+            background: var(--color-black);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--spacing-xl);
+            align-items: center;
+        }
+
+        .about-image {
+            width: 100%;
+            height: 400px;
+            background: var(--color-white);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 64px;
+        }
+
+        .about-text h3 {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .about-text p {
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: var(--spacing-sm);
+            line-height: 1.8;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--spacing-md);
+            margin-top: var(--spacing-lg);
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: var(--spacing-md);
+            border-radius: 16px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .stat-number {
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--color-earth-accent);
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .stat-label {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--color-black);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding: var(--spacing-xl) var(--spacing-md);
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: var(--spacing-xl);
+        }
+
+        .footer-section h4 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: rgba(255, 255, 255, 0.6);
+            text-decoration: none;
+            display: block;
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .footer-section a:hover {
+            color: var(--color-white);
+        }
+
+        .footer-bottom {
+            max-width: 1400px;
+            margin: var(--spacing-lg) auto 0;
+            padding-top: var(--spacing-md);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 48px;
+            }
+
+            .rotating-words div,
+            .static-ai {
+                font-size: 32px;
+            }
+
+            .rotating-word-wrapper {
+                height: 40px;
+                width: 150px;
+            }
+
+            @keyframes verticalScroll {
+                0%, 14.28% { transform: translateY(0); }
+                14.29%, 28.57% { transform: translateY(-40px); }
+                28.58%, 42.85% { transform: translateY(-80px); }
+                42.86%, 57.14% { transform: translateY(-120px); }
+                57.15%, 71.42% { transform: translateY(-160px); }
+                71.43%, 85.71% { transform: translateY(-200px); }
+                85.72%, 100% { transform: translateY(-240px); }
+            }
+
+            .hero-subtitle {
+                font-size: 18px;
+            }
+
+            .section-header h2 {
+                font-size: 36px;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+
+            .carousel-card {
+                flex: 0 0 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">AIDefence</div>
+            <ul class="nav-links">
+                <li><a href="#learn">Learn</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section with Video Background -->
+    <section class="hero">
+        <div class="hero-video-bg">
+            <!-- Placeholder for video background (30-50s loop) -->
+            <video autoplay muted loop playsinline>
+                <source src="/videos/hero-bg.mp4" type="video/mp4">
+            </video>
+        </div>
+
+        <div class="hero-content">
+            <h1>
+                <div class="rotating-text-container">
+                    <div class="rotating-word-wrapper">
+                        <div class="rotating-words">
+                            <div>Artificial</div>
+                            <div>Agentic</div>
+                            <div>Adversarial</div>
+                            <div>Algorithmic</div>
+                            <div>Automated</div>
+                            <div>Augmented</div>
+                            <div>Adaptive</div>
+                        </div>
+                    </div>
+                    <span class="static-ai">AI</span>
+                </div>
+                <br>
+                Defence & Governance
+            </h1>
+
+            <p class="hero-subtitle">
+                Master AI governance through interactive learning paths, proven frameworks,<br>
+                and real-world implementation strategies
+            </p>
+
+            <div class="cta-buttons">
+                <a href="#learn" class="btn btn-primary">Start Learning</a>
+                <a href="#portfolio" class="btn btn-secondary">View Portfolio</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Learning Paths Section -->
+    <section id="learn" class="learning-paths">
+        <div class="section-header">
+            <h2>Interactive Learning Paths</h2>
+            <p>Explore curated learning journeys through 120+ concept cards, 28 real-world examples, and 10 essential resources</p>
+        </div>
+
+        <div class="paths-grid">
+            <!-- History Path -->
+            <div class="path-card">
+                <div class="path-icon">📜</div>
+                <h3>History of AI</h3>
+                <p>From symbolic AI to modern deep learning - understand how we got here to navigate where we're going</p>
+                <div class="path-meta">
+                    <span>15 cards</span>
+                    <span>•</span>
+                    <span>Beginner</span>
+                </div>
+            </div>
+
+            <!-- Terminology Path -->
+            <div class="path-card">
+                <div class="path-icon">📚</div>
+                <h3>Core Terminology</h3>
+                <p>Build a solid foundation in ML/AI concepts - from supervised learning to transformer architectures</p>
+                <div class="path-meta">
+                    <span>14 cards</span>
+                    <span>•</span>
+                    <span>Beginner-Intermediate</span>
+                </div>
+            </div>
+
+            <!-- Risk Path -->
+            <div class="path-card">
+                <div class="path-icon">⚠️</div>
+                <h3>Risk & Vulnerabilities</h3>
+                <p>Identify and mitigate AI risks - adversarial attacks, data poisoning, model extraction, and more</p>
+                <div class="path-meta">
+                    <span>20 cards</span>
+                    <span>•</span>
+                    <span>Intermediate-Advanced</span>
+                </div>
+            </div>
+
+            <!-- Responsibility Path -->
+            <div class="path-card">
+                <div class="path-icon">⚖️</div>
+                <h3>Responsible AI</h3>
+                <p>Ethical frameworks, fairness metrics, bias mitigation, and accountability mechanisms</p>
+                <div class="path-meta">
+                    <span>25 cards</span>
+                    <span>•</span>
+                    <span>All Levels</span>
+                </div>
+            </div>
+
+            <!-- Future Path -->
+            <div class="path-card">
+                <div class="path-icon">🔮</div>
+                <h3>Future & Trends</h3>
+                <p>Emerging technologies, AGI considerations, regulatory landscape, and strategic foresight</p>
+                <div class="path-meta">
+                    <span>16 cards</span>
+                    <span>•</span>
+                    <span>Advanced</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section with Horizontal Carousel (4 items: Seshan Intelligence, Seshan App, Free Tools, AI Comics) -->
+    <section id="portfolio" class="portfolio">
+        <div class="section-header">
+            <h2>Portfolio</h2>
+            <p>Real-world AI governance implementations and practical tools</p>
+        </div>
+
+        <div class="carousel-container">
+            <div class="carousel-track" id="portfolioCarousel">
+                <!-- Seshan Intelligence -->
+                <div class="carousel-card focused">
+                    <div class="carousel-card-image">🏢</div>
+                    <h3>Seshan Intelligence</h3>
+                    <p>Enterprise AI governance platform for policy management, risk assessment, and compliance tracking across complex organizations</p>
+                    <div class="tags">
+                        <span class="tag">Enterprise</span>
+                        <span class="tag">Governance</span>
+                        <span class="tag">Compliance</span>
+                    </div>
+                </div>
+
+                <!-- Seshan App -->
+                <div class="carousel-card">
+                    <div class="carousel-card-image">📱</div>
+                    <h3>Seshan App</h3>
+                    <p>Mobile AI compliance tracker for teams - real-time risk monitoring, policy checklists, and incident reporting on the go</p>
+                    <div class="tags">
+                        <span class="tag">Mobile</span>
+                        <span class="tag">Real-time</span>
+                        <span class="tag">Teams</span>
+                    </div>
+                </div>
+
+                <!-- Free Tools -->
+                <div class="carousel-card">
+                    <div class="carousel-card-image">🛠️</div>
+                    <h3>Free Tools</h3>
+                    <p>Open-source AI governance calculators and assessment frameworks - mortgage risk analyzer, bias detector, model card generator</p>
+                    <div class="tags">
+                        <span class="tag">Open Source</span>
+                        <span class="tag">Calculators</span>
+                        <span class="tag">Frameworks</span>
+                    </div>
+                </div>
+
+                <!-- AI Comics -->
+                <div class="carousel-card">
+                    <div class="carousel-card-image">📖</div>
+                    <h3>AI Governance Comics</h3>
+                    <p>Visual storytelling for complex AI ethics dilemmas - make governance concepts accessible through illustrated narratives</p>
+                    <div class="tags">
+                        <span class="tag">Education</span>
+                        <span class="tag">Visual</span>
+                        <span class="tag">Ethics</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="carousel-nav">
+                <span class="carousel-dot active"></span>
+                <span class="carousel-dot"></span>
+                <span class="carousel-dot"></span>
+                <span class="carousel-dot"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="section-header">
+            <h2>About AIDefence</h2>
+        </div>
+
+        <div class="about-content">
+            <div class="about-image">👤</div>
+
+            <div class="about-text">
+                <h3>Practical AI Governance for Real-World Implementation</h3>
+
+                <p>
+                    AIDefence transforms complex AI governance concepts into actionable frameworks.
+                    Founded by practitioners who've implemented AI compliance at scale, we bridge
+                    the gap between regulatory requirements and technical reality.
+                </p>
+
+                <p>
+                    Our approach combines rigorous technical depth with practical implementation
+                    strategies - because governance frameworks are only valuable when teams can
+                    actually use them.
+                </p>
+
+                <div class="stats">
+                    <div class="stat-card">
+                        <div class="stat-number">158</div>
+                        <div class="stat-label">Learning Resources</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">5</div>
+                        <div class="stat-label">Learning Paths</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">100%</div>
+                        <div class="stat-label">Open Source</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>AIDefence</h4>
+                <p>Practical AI governance frameworks for teams building with AI</p>
+            </div>
+
+            <div class="footer-section">
+                <h4>Learn</h4>
+                <a href="#history">History of AI</a>
+                <a href="#terminology">Core Terminology</a>
+                <a href="#risk">Risk & Vulnerabilities</a>
+                <a href="#responsibility">Responsible AI</a>
+                <a href="#future">Future & Trends</a>
+            </div>
+
+            <div class="footer-section">
+                <h4>Portfolio</h4>
+                <a href="#seshan-intelligence">Seshan Intelligence</a>
+                <a href="#seshan-app">Seshan App</a>
+                <a href="#tools">Free Tools</a>
+                <a href="#comics">AI Comics</a>
+            </div>
+
+            <div class="footer-section">
+                <h4>Connect</h4>
+                <a href="mailto:contact@aidefence.com">Email</a>
+                <a href="https://github.com/aidefence">GitHub</a>
+                <a href="https://twitter.com/aidefence">Twitter</a>
+                <a href="https://linkedin.com/company/aidefence">LinkedIn</a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2024 AIDefence. All rights reserved. | <a href="/privacy">Privacy Policy</a> | <a href="/terms">Terms of Service</a></p>
+        </div>
+    </footer>
+
+    <script>
+        // Carousel blur focus effect
+        const carousel = document.getElementById('portfolioCarousel');
+        const cards = carousel.querySelectorAll('.carousel-card');
+        const dots = document.querySelectorAll('.carousel-dot');
+
+        let currentIndex = 0;
+
+        function updateFocus(index) {
+            cards.forEach((card, i) => {
+                if (i === index) {
+                    card.classList.add('focused');
+                } else {
+                    card.classList.remove('focused');
+                }
+            });
+
+            dots.forEach((dot, i) => {
+                if (i === index) {
+                    dot.classList.add('active');
+                } else {
+                    dot.classList.remove('active');
+                }
+            });
+        }
+
+        // Scroll-based focus detection
+        carousel.addEventListener('scroll', () => {
+            const scrollLeft = carousel.scrollLeft;
+            const cardWidth = cards[0].offsetWidth + 48; // card width + gap
+            const newIndex = Math.round(scrollLeft / cardWidth);
+
+            if (newIndex !== currentIndex && newIndex >= 0 && newIndex < cards.length) {
+                currentIndex = newIndex;
+                updateFocus(currentIndex);
+            }
+        });
+
+        // Dot navigation
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                const cardWidth = cards[0].offsetWidth + 48;
+                carousel.scrollTo({
+                    left: index * cardWidth,
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Card click navigation
+        cards.forEach((card, index) => {
+            card.addEventListener('click', () => {
+                const cardWidth = cards[0].offsetWidth + 48;
+                carousel.scrollTo({
+                    left: index * cardWidth,
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Auto-rotate carousel (optional)
+        setInterval(() => {
+            currentIndex = (currentIndex + 1) % cards.length;
+            const cardWidth = cards[0].offsetWidth + 48;
+            carousel.scrollTo({
+                left: currentIndex * cardWidth,
+                behavior: 'smooth'
+            });
+        }, 5000);
+    </script>
+</body>
+</html>

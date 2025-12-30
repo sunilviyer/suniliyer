@@ -1,0 +1,58 @@
+{
+  "file_status": {
+    "suggested_slug": "invalid-article",
+    "category": "AI Fundamentals",
+    "word_count_check": {
+      "target": null,
+      "actual": 11,
+      "status": "under"
+    }
+  },
+  "content_validation": {
+    "structure": {
+      "has_h1": true,
+      "has_intro": false,
+      "has_conclusion": false,
+      "header_depth_valid": true
+    },
+    "generated_elements": {
+      "tldr_was_missing": false,
+      "objectives_were_missing": false,
+      "keywords_were_missing": false
+    }
+  },
+  "component_inventory": {
+    "has_components": false,
+    "items": []
+  },
+  "extracted_data": {
+    "title": "Invalid Article",
+    "tldr": "This article explores key aspects of AI governance and responsible AI development. It provides valuable insights for practitioners and decision-makers in the AI governance space.",
+    "learning_objectives": [
+      "Understand the key concepts and principles of ai governance principles",
+      "Implement implementation strategies in real-world scenarios",
+      "Evaluate compliance frameworks for organizational compliance"
+    ],
+    "seo_keywords": [
+      "invalid",
+      "article",
+      "invalid article this",
+      "processed",
+      "test"
+    ],
+    "references": []
+  },
+  "cross_reference_data": {
+    "topic_fingerprint": [],
+    "named_examples": []
+  },
+  "image_generation": {
+    "prompt": {
+      "formula": "Abstract geometric illustration, earth tones, minimalist, professional",
+      "category_motif": "neural networks",
+      "master_size": "1200x750px",
+      "css_filters": true
+    },
+    "placeholder": "![Invalid Article]({{IMAGE_PLACEHOLDER_invalid-article}})"
+  }
+}

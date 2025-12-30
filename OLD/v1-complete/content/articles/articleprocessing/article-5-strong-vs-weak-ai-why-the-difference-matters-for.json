@@ -1,0 +1,125 @@
+{
+  "file_status": {
+    "suggested_slug": "article-5-strong-vs-weak-ai-why-the-difference-matters-for-g",
+    "category": "Governance Implementation",
+    "word_count_check": {
+      "target": null,
+      "actual": 2275,
+      "status": "under"
+    }
+  },
+  "content_validation": {
+    "structure": {
+      "has_h1": true,
+      "has_intro": true,
+      "has_conclusion": true,
+      "header_depth_valid": true
+    },
+    "generated_elements": {
+      "tldr_was_missing": false,
+      "objectives_were_missing": false,
+      "keywords_were_missing": false
+    }
+  },
+  "component_inventory": {
+    "has_components": true,
+    "items": [
+      {
+        "type": "table",
+        "label": "System vs What It Does Well Table",
+        "detected_at_section": "What is \"Weak\" AI?"
+      },
+      {
+        "type": "table",
+        "label": "Stakeholder Says vs What They Probably Mean Table",
+        "detected_at_section": "Stakeholder Communication"
+      },
+      {
+        "type": "table",
+        "label": "Governance Element vs Approach Table",
+        "detected_at_section": "Governing Narrow Task-Specific AI"
+      },
+      {
+        "type": "table",
+        "label": "Governance Element vs Approach Table",
+        "detected_at_section": "Governing Foundation Models"
+      },
+      {
+        "type": "table",
+        "label": "Question vs Why It Matters Table",
+        "detected_at_section": "Questions to Ask About Any AI System"
+      },
+      {
+        "type": "flowchart",
+        "label": "Dimensions of AI Capability Process",
+        "detected_at_section": "Dimensions of AI Capability"
+      },
+      {
+        "type": "flowchart",
+        "label": "Key Principles Process",
+        "detected_at_section": "Key Principles"
+      },
+      {
+        "type": "template",
+        "label": "Example: Credit Scoring AI",
+        "detected_at_section": "Governing Narrow Task-Specific AI",
+        "template_link": "/templates/example-credit-scoring-ai.md"
+      },
+      {
+        "type": "template",
+        "label": "Example: Enterprise LLM Deployment",
+        "detected_at_section": "Governing Foundation Models",
+        "template_link": "/templates/example-enterprise-llm-deployment.md"
+      },
+      {
+        "type": "list",
+        "label": "Key Principles",
+        "detected_at_section": "Key Principles"
+      }
+    ]
+  },
+  "extracted_data": {
+    "title": "Article 5: Strong vs. Weak AI – Why the Difference Matters for Governance",
+    "tldr": "This article provides a comprehensive framework for AI governance and implementation. It delivers practical tools and strategies for real-world application.",
+    "learning_objectives": [
+      "Understand the key concepts and principles of ai governance frameworks",
+      "Implement ethical ai principles in real-world scenarios",
+      "Evaluate audit procedures for organizational compliance"
+    ],
+    "seo_keywords": [
+      "article",
+      "strong",
+      "AI governance",
+      "artificial intelligence",
+      "weak"
+    ],
+    "references": []
+  },
+  "cross_reference_data": {
+    "topic_fingerprint": [
+      "large language model",
+      "foundation model",
+      "llm",
+      "deep learning",
+      "neural network"
+    ],
+    "named_examples": [
+      "alphago",
+      "cruise",
+      "eu ai act",
+      "ibm",
+      "tesla",
+      "tesla autopilot",
+      "watson"
+    ]
+  },
+  "image_generation": {
+    "prompt": {
+      "formula": "Abstract geometric illustration, earth tones, minimalist, professional",
+      "category_motif": "org charts",
+      "master_size": "1200x750px",
+      "css_filters": true
+    },
+    "placeholder": "![Article 5: Strong vs. Weak AI – Why the Difference Matters for Governance]({{IMAGE_PLACEHOLDER_article-5-strong-vs-weak-ai-why-the-difference-matters-for-g}})"
+  }
+}

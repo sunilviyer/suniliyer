@@ -1,0 +1,116 @@
+{
+  "file_status": {
+    "suggested_slug": "article-132-ai-and-copyright-the-unresolved-legal-questions",
+    "category": "Legal Frameworks",
+    "word_count_check": {
+      "target": null,
+      "actual": 2257,
+      "status": "under"
+    }
+  },
+  "content_validation": {
+    "structure": {
+      "has_h1": true,
+      "has_intro": true,
+      "has_conclusion": true,
+      "header_depth_valid": true
+    },
+    "generated_elements": {
+      "tldr_was_missing": true,
+      "objectives_were_missing": false,
+      "keywords_were_missing": false
+    }
+  },
+  "component_inventory": {
+    "has_components": true,
+    "items": [
+      {
+        "type": "table",
+        "label": "Claimant vs Argument Table",
+        "detected_at_section": "Question 2: Who Owns AI-Generated Content?"
+      },
+      {
+        "type": "table",
+        "label": "Activity vs Risk Level Table",
+        "detected_at_section": "For Organizations Using AI"
+      },
+      {
+        "type": "flowchart",
+        "label": "For Organizations Using AI Process",
+        "detected_at_section": "For Organizations Using AI"
+      },
+      {
+        "type": "flowchart",
+        "label": "For Content Creators Process",
+        "detected_at_section": "For Content Creators"
+      },
+      {
+        "type": "flowchart",
+        "label": "Conclusion Process",
+        "detected_at_section": "Conclusion"
+      },
+      {
+        "type": "flowchart",
+        "label": "Sources and Further Reading Process",
+        "detected_at_section": "Sources and Further Reading"
+      },
+      {
+        "type": "template",
+        "label": "Example:",
+        "detected_at_section": "Question 2: Who Owns AI-Generated Content?",
+        "template_link": "/templates/example.md"
+      },
+      {
+        "type": "template",
+        "label": "Example:",
+        "detected_at_section": "Question 3: Does AI Output Infringe Existing Copyrights?",
+        "template_link": "/templates/example.md"
+      }
+    ]
+  },
+  "extracted_data": {
+    "title": "Article 132: AI and Copyright – The Unresolved Legal Questions",
+    "tldr": "",
+    "learning_objectives": [
+      "Understand the key concepts and principles of ai governance frameworks",
+      "Implement compliance strategies in real-world scenarios",
+      "Evaluate regulatory requirements for organizational compliance"
+    ],
+    "seo_keywords": [
+      "article",
+      "copyright",
+      "AI governance",
+      "artificial intelligence",
+      "three"
+    ],
+    "references": []
+  },
+  "cross_reference_data": {
+    "topic_fingerprint": [
+      "midjourney",
+      "chatgpt",
+      "gpt",
+      "transparency"
+    ],
+    "named_examples": [
+      "eu ai act",
+      "european parliament",
+      "fair",
+      "google",
+      "microsoft",
+      "midjourney",
+      "openai",
+      "oracle",
+      "stability ai"
+    ]
+  },
+  "image_generation": {
+    "prompt": {
+      "formula": "Abstract geometric illustration, earth tones, minimalist, professional",
+      "category_motif": "scales",
+      "master_size": "1200x750px",
+      "css_filters": true
+    },
+    "placeholder": "![Article 132: AI and Copyright – The Unresolved Legal Questions]({{IMAGE_PLACEHOLDER_article-132-ai-and-copyright-the-unresolved-legal-questions}})"
+  }
+}

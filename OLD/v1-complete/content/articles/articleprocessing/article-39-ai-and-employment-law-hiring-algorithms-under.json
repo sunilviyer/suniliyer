@@ -1,0 +1,154 @@
+{
+  "file_status": {
+    "suggested_slug": "article-39-ai-and-employment-law-hiring-algorithms-under-scr",
+    "category": "Legal Frameworks",
+    "word_count_check": {
+      "target": null,
+      "actual": 3663,
+      "status": "under"
+    }
+  },
+  "content_validation": {
+    "structure": {
+      "has_h1": true,
+      "has_intro": true,
+      "has_conclusion": true,
+      "header_depth_valid": true
+    },
+    "generated_elements": {
+      "tldr_was_missing": true,
+      "objectives_were_missing": false,
+      "keywords_were_missing": false
+    }
+  },
+  "component_inventory": {
+    "has_components": true,
+    "items": [
+      {
+        "type": "flowchart",
+        "label": "Transparency Requirements Process",
+        "detected_at_section": "Transparency Requirements"
+      },
+      {
+        "type": "flowchart",
+        "label": "Requirements Process",
+        "detected_at_section": "Requirements"
+      },
+      {
+        "type": "flowchart",
+        "label": "Conclusion Process",
+        "detected_at_section": "Conclusion"
+      },
+      {
+        "type": "flowchart",
+        "label": "Sources Process",
+        "detected_at_section": "Sources"
+      },
+      {
+        "type": "template",
+        "label": "Disparate treatment:",
+        "detected_at_section": "Title VII of the Civil Rights Act of 1964",
+        "template_link": "/templates/disparate-treatment.md"
+      },
+      {
+        "type": "template",
+        "label": "Disparate impact:",
+        "detected_at_section": "Title VII of the Civil Rights Act of 1964",
+        "template_link": "/templates/disparate-impact.md"
+      },
+      {
+        "type": "template",
+        "label": "Example:",
+        "detected_at_section": "Title VII of the Civil Rights Act of 1964",
+        "template_link": "/templates/example.md"
+      },
+      {
+        "type": "template",
+        "label": "Example:",
+        "detected_at_section": "The Age Discrimination in Employment Act (ADEA)",
+        "template_link": "/templates/example.md"
+      },
+      {
+        "type": "template",
+        "label": "Example:",
+        "detected_at_section": "The Americans with Disabilities Act (ADA)",
+        "template_link": "/templates/example.md"
+      },
+      {
+        "type": "template",
+        "label": "The Amazon Example:",
+        "detected_at_section": "Training Data Reflects Historical Bias",
+        "template_link": "/templates/the-amazon-example.md"
+      },
+      {
+        "type": "template",
+        "label": "Example:",
+        "detected_at_section": "Proxies for Protected Characteristics",
+        "template_link": "/templates/example.md"
+      },
+      {
+        "type": "template",
+        "label": "Example:",
+        "detected_at_section": "Lack of Validation",
+        "template_link": "/templates/example.md"
+      },
+      {
+        "type": "list",
+        "label": "Bias Audit Requirement",
+        "detected_at_section": "Bias Audit Requirement"
+      },
+      {
+        "type": "list",
+        "label": "Transparency Requirements",
+        "detected_at_section": "Transparency Requirements"
+      },
+      {
+        "type": "list",
+        "label": "Requirements",
+        "detected_at_section": "Requirements"
+      }
+    ]
+  },
+  "extracted_data": {
+    "title": "Article 39: AI and Employment Law – Hiring Algorithms Under Scrutiny",
+    "tldr": "",
+    "learning_objectives": [
+      "Understand the key concepts and principles of regulatory requirements",
+      "Implement audit procedures in real-world scenarios",
+      "Evaluate transparency measures for organizational compliance"
+    ],
+    "seo_keywords": [
+      "article",
+      "employment",
+      "artificial intelligence",
+      "employment law",
+      "new york city"
+    ],
+    "references": []
+  },
+  "cross_reference_data": {
+    "topic_fingerprint": [
+      "machine learning",
+      "audit",
+      "transparency",
+      "fairness",
+      "oversight"
+    ],
+    "named_examples": [
+      "aedt",
+      "amazon",
+      "congress",
+      "facebook",
+      "nyc local law 144"
+    ]
+  },
+  "image_generation": {
+    "prompt": {
+      "formula": "Abstract geometric illustration, earth tones, minimalist, professional",
+      "category_motif": "scales",
+      "master_size": "1200x750px",
+      "css_filters": true
+    },
+    "placeholder": "![Article 39: AI and Employment Law – Hiring Algorithms Under Scrutiny]({{IMAGE_PLACEHOLDER_article-39-ai-and-employment-law-hiring-algorithms-under-scr}})"
+  }
+}

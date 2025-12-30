@@ -1,0 +1,84 @@
+{
+  "file_status": {
+    "suggested_slug": "the-ai-technology-stack-explained",
+    "category": "AI Fundamentals",
+    "word_count_check": {
+      "target": null,
+      "actual": 1594,
+      "status": "under"
+    }
+  },
+  "content_validation": {
+    "structure": {
+      "has_h1": true,
+      "has_intro": false,
+      "has_conclusion": false,
+      "header_depth_valid": true
+    },
+    "generated_elements": {
+      "tldr_was_missing": false,
+      "objectives_were_missing": true,
+      "keywords_were_missing": false
+    }
+  },
+  "component_inventory": {
+    "has_components": true,
+    "items": [
+      {
+        "type": "flowchart",
+        "label": "Key Learning Objectives Process",
+        "detected_at_section": "Key Learning Objectives"
+      },
+      {
+        "type": "flowchart",
+        "label": "References Process",
+        "detected_at_section": "References"
+      }
+    ]
+  },
+  "extracted_data": {
+    "title": "The AI Technology Stack Explained",
+    "tldr": "This article outlines essential AI policy considerations and best practices. It provides actionable insights for achieving regulatory compliance and organizational readiness.",
+    "learning_objectives": [],
+    "seo_keywords": [
+      "technology",
+      "stack",
+      "AI governance",
+      "phase",
+      "fundamentals"
+    ],
+    "references": []
+  },
+  "cross_reference_data": {
+    "topic_fingerprint": [
+      "neural network",
+      "foundation model",
+      "generative ai",
+      "gpt",
+      "claude"
+    ],
+    "named_examples": [
+      "amazon",
+      "anthropic",
+      "energy",
+      "eu ai act",
+      "google",
+      "google search",
+      "ibm",
+      "meta",
+      "microsoft",
+      "mit",
+      "nvidia",
+      "openai"
+    ]
+  },
+  "image_generation": {
+    "prompt": {
+      "formula": "Abstract geometric illustration, earth tones, minimalist, professional",
+      "category_motif": "neural networks",
+      "master_size": "1200x750px",
+      "css_filters": true
+    },
+    "placeholder": "![The AI Technology Stack Explained]({{IMAGE_PLACEHOLDER_the-ai-technology-stack-explained}})"
+  }
+}

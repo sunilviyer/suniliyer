@@ -1,0 +1,167 @@
+{
+  "file_status": {
+    "suggested_slug": "article-138-becoming-an-ai-governance-leader-skills-for-the-",
+    "category": "Governance Implementation",
+    "word_count_check": {
+      "target": null,
+      "actual": 2454,
+      "status": "under"
+    }
+  },
+  "content_validation": {
+    "structure": {
+      "has_h1": true,
+      "has_intro": true,
+      "has_conclusion": true,
+      "header_depth_valid": true
+    },
+    "generated_elements": {
+      "tldr_was_missing": true,
+      "objectives_were_missing": false,
+      "keywords_were_missing": false
+    }
+  },
+  "component_inventory": {
+    "has_components": true,
+    "items": [
+      {
+        "type": "table",
+        "label": "Area vs What to Understand Table",
+        "detected_at_section": "Skill Domain 1: Technical Literacy"
+      },
+      {
+        "type": "table",
+        "label": "Method vs Time Investment Table",
+        "detected_at_section": "Skill Domain 1: Technical Literacy"
+      },
+      {
+        "type": "table",
+        "label": "Area vs What to Know Table",
+        "detected_at_section": "Skill Domain 2: Regulatory and Legal Expertise"
+      },
+      {
+        "type": "table",
+        "label": "Method vs Time Investment Table",
+        "detected_at_section": "Skill Domain 2: Regulatory and Legal Expertise"
+      },
+      {
+        "type": "table",
+        "label": "Capability vs Application Table",
+        "detected_at_section": "Skill Domain 3: Business and Strategic Acumen"
+      },
+      {
+        "type": "table",
+        "label": "Method vs Time Investment Table",
+        "detected_at_section": "Skill Domain 3: Business and Strategic Acumen"
+      },
+      {
+        "type": "table",
+        "label": "Trade-off vs Example Table",
+        "detected_at_section": "Skill Domain 4: Ethical Reasoning and Judgment"
+      },
+      {
+        "type": "table",
+        "label": "Framework vs Core Idea Table",
+        "detected_at_section": "Skill Domain 4: Ethical Reasoning and Judgment"
+      },
+      {
+        "type": "table",
+        "label": "Method vs Time Investment Table",
+        "detected_at_section": "Skill Domain 4: Ethical Reasoning and Judgment"
+      },
+      {
+        "type": "table",
+        "label": "Capability vs Why It Matters Table",
+        "detected_at_section": "Skill Domain 5: Leadership and Influence"
+      },
+      {
+        "type": "table",
+        "label": "Strategy vs Application Table",
+        "detected_at_section": "Skill Domain 5: Leadership and Influence"
+      },
+      {
+        "type": "table",
+        "label": "Method vs Time Investment Table",
+        "detected_at_section": "Skill Domain 5: Leadership and Influence"
+      },
+      {
+        "type": "table",
+        "label": "Low Benefit vs High Benefit Table",
+        "detected_at_section": "Decision-Making Frameworks"
+      },
+      {
+        "type": "table",
+        "label": "Level vs Characteristics Table",
+        "detected_at_section": "Program-Building Tools"
+      },
+      {
+        "type": "table",
+        "label": "Section vs Content Table",
+        "detected_at_section": "Executive Communication"
+      },
+      {
+        "type": "flowchart",
+        "label": "Decision-Making Frameworks Process",
+        "detected_at_section": "Decision-Making Frameworks"
+      },
+      {
+        "type": "flowchart",
+        "label": "Conclusion Process",
+        "detected_at_section": "Conclusion"
+      },
+      {
+        "type": "flowchart",
+        "label": "Sources and Further Reading Process",
+        "detected_at_section": "Sources and Further Reading"
+      }
+    ]
+  },
+  "extracted_data": {
+    "title": "Article 138: Becoming an AI Governance Leader – Skills for the Future",
+    "tldr": "",
+    "learning_objectives": [
+      "Understand the key concepts and principles of ai governance frameworks",
+      "Implement compliance strategies in real-world scenarios",
+      "Evaluate ethical ai principles for organizational compliance"
+    ],
+    "seo_keywords": [
+      "article",
+      "becoming",
+      "AI governance",
+      "artificial intelligence",
+      "AI ethics"
+    ],
+    "references": []
+  },
+  "cross_reference_data": {
+    "topic_fingerprint": [
+      "foundation model",
+      "machine learning",
+      "ai ethics",
+      "responsible ai",
+      "fairness"
+    ],
+    "named_examples": [
+      "ccpa",
+      "eu ai act",
+      "european parliament",
+      "gdpr",
+      "google",
+      "harvard",
+      "mit",
+      "national institute of standards",
+      "nist",
+      "oxford",
+      "stanford"
+    ]
+  },
+  "image_generation": {
+    "prompt": {
+      "formula": "Abstract geometric illustration, earth tones, minimalist, professional",
+      "category_motif": "org charts",
+      "master_size": "1200x750px",
+      "css_filters": true
+    },
+    "placeholder": "![Article 138: Becoming an AI Governance Leader – Skills for the Future]({{IMAGE_PLACEHOLDER_article-138-becoming-an-ai-governance-leader-skills-for-the-}})"
+  }
+}

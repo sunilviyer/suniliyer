@@ -1,0 +1,161 @@
+{
+  "file_status": {
+    "suggested_slug": "article-152-ai-in-innovation-potential-ideas-and-future-appl",
+    "category": "Future Concerns",
+    "word_count_check": {
+      "target": null,
+      "actual": 1898,
+      "status": "under"
+    }
+  },
+  "content_validation": {
+    "structure": {
+      "has_h1": true,
+      "has_intro": true,
+      "has_conclusion": true,
+      "header_depth_valid": true
+    },
+    "generated_elements": {
+      "tldr_was_missing": true,
+      "objectives_were_missing": false,
+      "keywords_were_missing": false
+    }
+  },
+  "component_inventory": {
+    "has_components": true,
+    "items": [
+      {
+        "type": "table",
+        "label": "Capability vs How It Enables Innovation Table",
+        "detected_at_section": "How AI Drives Innovation"
+      },
+      {
+        "type": "table",
+        "label": "Human Strengths vs AI Strengths Table",
+        "detected_at_section": "The Human-AI Innovation Loop"
+      },
+      {
+        "type": "table",
+        "label": "Stage vs AI Application Table",
+        "detected_at_section": "Drug Discovery"
+      },
+      {
+        "type": "table",
+        "label": "Industry vs Application Table",
+        "detected_at_section": "Generative Design"
+      },
+      {
+        "type": "table",
+        "label": "Area vs Application Table",
+        "detected_at_section": "Climate Solutions"
+      },
+      {
+        "type": "table",
+        "label": "Stage vs Governance Activity Table",
+        "detected_at_section": "Innovation Governance Framework"
+      },
+      {
+        "type": "table",
+        "label": "Domain vs Key Governance Concerns Table",
+        "detected_at_section": "Domain-Specific Considerations"
+      },
+      {
+        "type": "table",
+        "label": "Capability vs Why It Matters Table",
+        "detected_at_section": "Organizational Capabilities"
+      },
+      {
+        "type": "table",
+        "label": "Risk vs Description Table",
+        "detected_at_section": "Innovation Risks"
+      },
+      {
+        "type": "flowchart",
+        "label": "Conclusion Process",
+        "detected_at_section": "Conclusion"
+      },
+      {
+        "type": "flowchart",
+        "label": "Sources and Further Reading Process",
+        "detected_at_section": "Sources and Further Reading"
+      },
+      {
+        "type": "template",
+        "label": "Example:",
+        "detected_at_section": "Scientific Research Acceleration",
+        "template_link": "/templates/example.md"
+      },
+      {
+        "type": "template",
+        "label": "Example:",
+        "detected_at_section": "Generative Design",
+        "template_link": "/templates/example.md"
+      },
+      {
+        "type": "template",
+        "label": "Example:",
+        "detected_at_section": "Design and Architecture",
+        "template_link": "/templates/example.md"
+      },
+      {
+        "type": "template",
+        "label": "Example:",
+        "detected_at_section": "Climate Solutions",
+        "template_link": "/templates/example.md"
+      },
+      {
+        "type": "template",
+        "label": "Example:",
+        "detected_at_section": "Process Innovation",
+        "template_link": "/templates/example.md"
+      }
+    ]
+  },
+  "extracted_data": {
+    "title": "Article 152: AI in Innovation – Potential Ideas and Future Applications",
+    "tldr": "",
+    "learning_objectives": [
+      "Understand the key concepts and principles of ai governance frameworks",
+      "Implement ethical ai principles in real-world scenarios",
+      "Evaluate model validation processes for organizational compliance"
+    ],
+    "seo_keywords": [
+      "article",
+      "innovation",
+      "AI governance",
+      "AI ethics",
+      "potential ideas"
+    ],
+    "references": []
+  },
+  "cross_reference_data": {
+    "topic_fingerprint": [
+      "generative ai",
+      "transparency",
+      "risk assessment",
+      "oversight",
+      "governance framework"
+    ],
+    "named_examples": [
+      "aerospace",
+      "alphafold",
+      "automotive",
+      "biotechnology",
+      "deepmind",
+      "energy",
+      "google",
+      "manufacturing",
+      "mit",
+      "stanford"
+    ]
+  },
+  "image_generation": {
+    "prompt": {
+      "formula": "Abstract geometric illustration, earth tones, minimalist, professional",
+      "category_motif": "crystal ball",
+      "master_size": "1200x750px",
+      "css_filters": true
+    },
+    "placeholder": "![Article 152: AI in Innovation – Potential Ideas and Future Applications]({{IMAGE_PLACEHOLDER_article-152-ai-in-innovation-potential-ideas-and-future-appl}})"
+  }
+}

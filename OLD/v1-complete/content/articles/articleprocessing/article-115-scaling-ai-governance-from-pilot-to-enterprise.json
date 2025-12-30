@@ -1,0 +1,154 @@
+{
+  "file_status": {
+    "suggested_slug": "article-115-scaling-ai-governance-from-pilot-to-enterprise-w",
+    "category": "Governance Implementation",
+    "word_count_check": {
+      "target": null,
+      "actual": 1504,
+      "status": "under"
+    }
+  },
+  "content_validation": {
+    "structure": {
+      "has_h1": true,
+      "has_intro": true,
+      "has_conclusion": true,
+      "header_depth_valid": true
+    },
+    "generated_elements": {
+      "tldr_was_missing": true,
+      "objectives_were_missing": false,
+      "keywords_were_missing": false
+    }
+  },
+  "component_inventory": {
+    "has_components": true,
+    "items": [
+      {
+        "type": "checklist",
+        "label": "Scaling Checklist",
+        "detected_at_section": "Scaling Checklist"
+      },
+      {
+        "type": "table",
+        "label": "Aspect vs Pilot (5-10 systems) Table",
+        "detected_at_section": "Why Scaling Is Different"
+      },
+      {
+        "type": "table",
+        "label": "Role vs Scope Table",
+        "detected_at_section": "Roles in Scaled Model"
+      },
+      {
+        "type": "table",
+        "label": "Organization Size vs Central Team Table",
+        "detected_at_section": "Staffing the Scaled Model"
+      },
+      {
+        "type": "table",
+        "label": "Metric vs Target Table",
+        "detected_at_section": "Coverage Metrics"
+      },
+      {
+        "type": "table",
+        "label": "Metric vs Target Table",
+        "detected_at_section": "Quality Metrics"
+      },
+      {
+        "type": "table",
+        "label": "Metric vs Target Table",
+        "detected_at_section": "Efficiency Metrics"
+      },
+      {
+        "type": "table",
+        "label": "Metric vs Target Table",
+        "detected_at_section": "Outcome Metrics"
+      },
+      {
+        "type": "flowchart",
+        "label": "Conclusion Process",
+        "detected_at_section": "Conclusion"
+      },
+      {
+        "type": "flowchart",
+        "label": "Sources and Further Reading Process",
+        "detected_at_section": "Sources and Further Reading"
+      },
+      {
+        "type": "list",
+        "label": "Scaling Principles",
+        "detected_at_section": "Scaling Principles"
+      },
+      {
+        "type": "list",
+        "label": "Principle 1: Standardize Before Scaling",
+        "detected_at_section": "Principle 1: Standardize Before Scaling"
+      },
+      {
+        "type": "list",
+        "label": "Principle 2: Automate Where Possible",
+        "detected_at_section": "Principle 2: Automate Where Possible"
+      },
+      {
+        "type": "list",
+        "label": "Principle 3: Federate Responsibility",
+        "detected_at_section": "Principle 3: Federate Responsibility"
+      },
+      {
+        "type": "list",
+        "label": "Principle 4: Risk-Based Prioritization",
+        "detected_at_section": "Principle 4: Risk-Based Prioritization"
+      },
+      {
+        "type": "list",
+        "label": "Principle 5: Build Capability, Not Dependency",
+        "detected_at_section": "Principle 5: Build Capability, Not Dependency"
+      },
+      {
+        "type": "list",
+        "label": "Scaling Testing Requirements",
+        "detected_at_section": "Scaling Testing Requirements"
+      }
+    ]
+  },
+  "extracted_data": {
+    "title": "Article 115: Scaling AI Governance – From Pilot to Enterprise-Wide",
+    "tldr": "",
+    "learning_objectives": [
+      "Understand the key concepts and principles of regulatory requirements",
+      "Implement stakeholder engagement in real-world scenarios",
+      "Evaluate policy development for organizational compliance"
+    ],
+    "seo_keywords": [
+      "article",
+      "scaling",
+      "AI governance",
+      "governance",
+      "from pilot"
+    ],
+    "references": []
+  },
+  "cross_reference_data": {
+    "topic_fingerprint": [
+      "accountability",
+      "oversight",
+      "governance framework",
+      "audit",
+      "risk assessment"
+    ],
+    "named_examples": [
+      "harvard",
+      "mit",
+      "nist"
+    ]
+  },
+  "image_generation": {
+    "prompt": {
+      "formula": "Abstract geometric illustration, earth tones, minimalist, professional",
+      "category_motif": "org charts",
+      "master_size": "1200x750px",
+      "css_filters": true
+    },
+    "placeholder": "![Article 115: Scaling AI Governance – From Pilot to Enterprise-Wide]({{IMAGE_PLACEHOLDER_article-115-scaling-ai-governance-from-pilot-to-enterprise-w}})"
+  }
+}

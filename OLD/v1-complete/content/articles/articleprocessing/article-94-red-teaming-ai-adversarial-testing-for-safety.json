@@ -1,0 +1,123 @@
+{
+  "file_status": {
+    "suggested_slug": "article-94-red-teaming-ai-adversarial-testing-for-safety",
+    "category": "AI Risks & Principles",
+    "word_count_check": {
+      "target": null,
+      "actual": 1754,
+      "status": "under"
+    }
+  },
+  "content_validation": {
+    "structure": {
+      "has_h1": true,
+      "has_intro": true,
+      "has_conclusion": true,
+      "header_depth_valid": true
+    },
+    "generated_elements": {
+      "tldr_was_missing": true,
+      "objectives_were_missing": false,
+      "keywords_were_missing": false
+    }
+  },
+  "component_inventory": {
+    "has_components": true,
+    "items": [
+      {
+        "type": "table",
+        "label": "Aspect vs Standard Testing Table",
+        "detected_at_section": "Red Teaming vs. Standard Testing"
+      },
+      {
+        "type": "table",
+        "label": "Severity vs Definition Table",
+        "detected_at_section": "Step 5: Report Findings"
+      },
+      {
+        "type": "flowchart",
+        "label": "Step 6: Remediate and Verify Process",
+        "detected_at_section": "Step 6: Remediate and Verify"
+      },
+      {
+        "type": "flowchart",
+        "label": "Conclusion Process",
+        "detected_at_section": "Conclusion"
+      },
+      {
+        "type": "flowchart",
+        "label": "Sources and Further Reading Process",
+        "detected_at_section": "Sources and Further Reading"
+      },
+      {
+        "type": "template",
+        "label": "*Example",
+        "detected_at_section": "Type 1: Prompt-Based Attacks (Generative AI)",
+        "template_link": "/templates/example.md"
+      },
+      {
+        "type": "template",
+        "label": "*Example",
+        "detected_at_section": "Type 2: Input Perturbation Attacks",
+        "template_link": "/templates/example.md"
+      },
+      {
+        "type": "template",
+        "label": "Information Extraction Techniques",
+        "detected_at_section": "Information Extraction Techniques",
+        "template_link": "/templates/information-extraction-techniques.md"
+      },
+      {
+        "type": "list",
+        "label": "Regulatory Requirements",
+        "detected_at_section": "Regulatory Requirements"
+      }
+    ]
+  },
+  "extracted_data": {
+    "title": "Article 94: Red Teaming AI – Adversarial Testing for Safety",
+    "tldr": "",
+    "learning_objectives": [
+      "Understand the key concepts and principles of regulatory requirements",
+      "Implement stakeholder engagement in real-world scenarios",
+      "Evaluate risk assessment frameworks for organizational compliance"
+    ],
+    "seo_keywords": [
+      "article",
+      "teaming",
+      "AI governance",
+      "red teaming",
+      "adversarial testing"
+    ],
+    "references": []
+  },
+  "cross_reference_data": {
+    "topic_fingerprint": [
+      "generative ai",
+      "large language model",
+      "computer vision",
+      "machine learning",
+      "gpt"
+    ],
+    "named_examples": [
+      "anthropic",
+      "deepmind",
+      "eu ai act",
+      "google",
+      "microsoft",
+      "nist",
+      "openai",
+      "twitter",
+      "white house"
+    ]
+  },
+  "image_generation": {
+    "prompt": {
+      "formula": "Abstract geometric illustration, earth tones, minimalist, professional",
+      "category_motif": "warning triangles",
+      "master_size": "1200x750px",
+      "css_filters": true
+    },
+    "placeholder": "![Article 94: Red Teaming AI – Adversarial Testing for Safety]({{IMAGE_PLACEHOLDER_article-94-red-teaming-ai-adversarial-testing-for-safety}})"
+  }
+}

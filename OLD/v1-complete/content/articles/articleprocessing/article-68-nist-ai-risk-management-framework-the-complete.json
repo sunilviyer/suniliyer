@@ -1,0 +1,172 @@
+{
+  "file_status": {
+    "suggested_slug": "article-68-nist-ai-risk-management-framework-the-complete-gu",
+    "category": "Risk Frameworks & Standards",
+    "word_count_check": {
+      "target": null,
+      "actual": 2630,
+      "status": "under"
+    }
+  },
+  "content_validation": {
+    "structure": {
+      "has_h1": true,
+      "has_intro": true,
+      "has_conclusion": true,
+      "header_depth_valid": true
+    },
+    "generated_elements": {
+      "tldr_was_missing": true,
+      "objectives_were_missing": false,
+      "keywords_were_missing": false
+    }
+  },
+  "component_inventory": {
+    "has_components": true,
+    "items": [
+      {
+        "type": "flowchart",
+        "label": "Why NIST AI RMF Has Gone Global Process",
+        "detected_at_section": "Why NIST AI RMF Has Gone Global"
+      },
+      {
+        "type": "flowchart",
+        "label": "Creating Your Own Profile Process",
+        "detected_at_section": "Creating Your Own Profile"
+      },
+      {
+        "type": "flowchart",
+        "label": "Conclusion Process",
+        "detected_at_section": "Conclusion"
+      },
+      {
+        "type": "flowchart",
+        "label": "Sources and Further Reading Process",
+        "detected_at_section": "Sources and Further Reading"
+      },
+      {
+        "type": "template",
+        "label": "Part 1: Foundational Information",
+        "detected_at_section": "Part 1: Foundational Information",
+        "template_link": "/templates/part-1-foundational-information.md"
+      },
+      {
+        "type": "template",
+        "label": "*Example",
+        "detected_at_section": "1. Valid and Reliable",
+        "template_link": "/templates/example.md"
+      },
+      {
+        "type": "template",
+        "label": "*Example",
+        "detected_at_section": "2. Safe",
+        "template_link": "/templates/example.md"
+      },
+      {
+        "type": "template",
+        "label": "*Example",
+        "detected_at_section": "3. Secure and Resilient",
+        "template_link": "/templates/example.md"
+      },
+      {
+        "type": "template",
+        "label": "*Example",
+        "detected_at_section": "4. Accountable and Transparent",
+        "template_link": "/templates/example.md"
+      },
+      {
+        "type": "template",
+        "label": "*Example",
+        "detected_at_section": "5. Explainable and Interpretable",
+        "template_link": "/templates/example.md"
+      },
+      {
+        "type": "template",
+        "label": "*Example",
+        "detected_at_section": "6. Privacy-Enhanced",
+        "template_link": "/templates/example.md"
+      },
+      {
+        "type": "template",
+        "label": "*Example",
+        "detected_at_section": "7. Fair – With Harmful Bias Managed",
+        "template_link": "/templates/example.md"
+      },
+      {
+        "type": "template",
+        "label": "*Example",
+        "detected_at_section": "Function 1: GOVERN",
+        "template_link": "/templates/example.md"
+      },
+      {
+        "type": "template",
+        "label": "*Example",
+        "detected_at_section": "Function 2: MAP",
+        "template_link": "/templates/example.md"
+      },
+      {
+        "type": "template",
+        "label": "*Example",
+        "detected_at_section": "Function 3: MEASURE",
+        "template_link": "/templates/example.md"
+      },
+      {
+        "type": "template",
+        "label": "*Example",
+        "detected_at_section": "Function 4: MANAGE",
+        "template_link": "/templates/example.md"
+      },
+      {
+        "type": "list",
+        "label": "OECD AI Principles",
+        "detected_at_section": "OECD AI Principles"
+      }
+    ]
+  },
+  "extracted_data": {
+    "title": "Article 68: NIST AI Risk Management Framework – The Complete Guide",
+    "tldr": "",
+    "learning_objectives": [
+      "Understand the key concepts and principles of ai governance frameworks",
+      "Implement regulatory requirements in real-world scenarios",
+      "Evaluate policy development for organizational compliance"
+    ],
+    "seo_keywords": [
+      "article",
+      "nist",
+      "AI governance",
+      "artificial intelligence",
+      "AI ethics"
+    ],
+    "references": []
+  },
+  "cross_reference_data": {
+    "topic_fingerprint": [
+      "trustworthy ai",
+      "transparency",
+      "accountability",
+      "responsible ai",
+      "ai ethics"
+    ],
+    "named_examples": [
+      "department of commerce",
+      "eu ai act",
+      "executive order",
+      "fair",
+      "iec",
+      "iso",
+      "manufacturing",
+      "national institute of standards",
+      "nist"
+    ]
+  },
+  "image_generation": {
+    "prompt": {
+      "formula": "Abstract geometric illustration, earth tones, minimalist, professional",
+      "category_motif": "shields",
+      "master_size": "1200x750px",
+      "css_filters": true
+    },
+    "placeholder": "![Article 68: NIST AI Risk Management Framework – The Complete Guide]({{IMAGE_PLACEHOLDER_article-68-nist-ai-risk-management-framework-the-complete-gu}})"
+  }
+}

@@ -1,0 +1,154 @@
+# === FILE STATUS ===
+suggested_slug: "article-71-iso-31000-for-ai-applying-risk-management-princip"
+category: "Risk Frameworks & Standards"
+word_count:
+  target: null
+  actual: 2385
+  status: "no_target"
+
+# === CONTENT VALIDATION ===
+structure:
+  has_h1: true
+  has_intro: true
+  has_conclusion: true
+  header_depth_valid: true
+generated_elements:
+  tldr_was_missing: true
+  objectives_were_missing: false
+  keywords_were_missing: false
+
+# === COMPONENT INVENTORY ===
+has_components: true
+components:
+  - type: "table"
+    label: "Risk vs Source Table"
+    detected_at_section: "Risk Identification"
+  - type: "table"
+    label: "Risk vs Likelihood Table"
+    detected_at_section: "Risk Analysis"
+  - type: "table"
+    label: "Option vs Description Table"
+    detected_at_section: "Risk Treatment"
+  - type: "table"
+    label: "Risk vs Treatment Table"
+    detected_at_section: "Risk Treatment"
+  - type: "flowchart"
+    label: "Risk Evaluation Process"
+    detected_at_section: "Risk Evaluation"
+  - type: "flowchart"
+    label: "Risk Treatment Process"
+    detected_at_section: "Risk Treatment"
+  - type: "flowchart"
+    label: "Conclusion Process"
+    detected_at_section: "Conclusion"
+  - type: "flowchart"
+    label: "Sources and Further Reading Process"
+    detected_at_section: "Sources and Further Reading"
+  - type: "template"
+    label: "*Example"
+    detected_at_section: "1. Integrated"
+    template_link: "/templates/example.md"
+  - type: "template"
+    label: "*Example"
+    detected_at_section: "2. Structured and Comprehensive"
+    template_link: "/templates/example.md"
+  - type: "template"
+    label: "*Example"
+    detected_at_section: "3. Customized"
+    template_link: "/templates/example.md"
+  - type: "template"
+    label: "*Example"
+    detected_at_section: "4. Inclusive"
+    template_link: "/templates/example.md"
+  - type: "template"
+    label: "*Example"
+    detected_at_section: "5. Dynamic"
+    template_link: "/templates/example.md"
+  - type: "template"
+    label: "6. Best Available Information"
+    detected_at_section: "6. Best Available Information"
+    template_link: "/templates/6-best-available-information.md"
+  - type: "template"
+    label: "*Example"
+    detected_at_section: "6. Best Available Information"
+    template_link: "/templates/example.md"
+  - type: "template"
+    label: "*Example"
+    detected_at_section: "7. Human and Cultural Factors"
+    template_link: "/templates/example.md"
+  - type: "template"
+    label: "*Example"
+    detected_at_section: "8. Continual Improvement"
+    template_link: "/templates/example.md"
+  - type: "template"
+    label: "For AI Example:"
+    detected_at_section: "Communication and Consultation"
+    template_link: "/templates/for-ai-example.md"
+  - type: "template"
+    label: "For AI Example:"
+    detected_at_section: "Scope, Context, and Criteria"
+    template_link: "/templates/for-ai-example.md"
+  - type: "template"
+    label: "For AI Example:"
+    detected_at_section: "Risk Identification"
+    template_link: "/templates/for-ai-example.md"
+  - type: "template"
+    label: "For AI Example:"
+    detected_at_section: "Risk Analysis"
+    template_link: "/templates/for-ai-example.md"
+  - type: "template"
+    label: "For AI Example:"
+    detected_at_section: "Risk Evaluation"
+    template_link: "/templates/for-ai-example.md"
+  - type: "template"
+    label: "For AI Example:"
+    detected_at_section: "Monitoring and Review"
+    template_link: "/templates/for-ai-example.md"
+  - type: "list"
+    label: "Article 71: ISO 31000 for AI – Applying Risk Management Principles"
+    detected_at_section: "Article 71: ISO 31000 for AI – Applying Risk Management Principles"
+  - type: "list"
+    label: "ISO 31000 Principles"
+    detected_at_section: "ISO 31000 Principles"
+  - type: "list"
+    label: "Scope, Context, and Criteria"
+    detected_at_section: "Scope, Context, and Criteria"
+  - type: "list"
+    label: "AI-Specific Risk Criteria"
+    detected_at_section: "AI-Specific Risk Criteria"
+
+# === EXTRACTED DATA ===
+title: "Article 71: ISO 31000 for AI – Applying Risk Management Principles"
+tldr: ""
+learning_objectives:
+  - "Understand the key concepts and principles of ai governance frameworks"
+  - "Implement bias detection techniques in real-world scenarios"
+  - "Evaluate regulatory requirements for organizational compliance"
+seo_keywords:
+  - "article"
+  - "31000"
+  - "AI governance"
+  - "AI ethics"
+  - "AI risk management"
+
+# === CROSS REFERENCE DATA ===
+topic_fingerprint:
+  - "audit"
+  - "ai ethics"
+  - "risk assessment"
+  - "fairness"
+  - "transparency"
+named_examples:
+  - "eu ai act"
+  - "fair"
+  - "iec"
+  - "iso"
+  - "nist"
+
+# === IMAGE GENERATION ===
+image_prompt:
+  formula: "Abstract geometric illustration, earth tones, minimalist, professional"
+  category_motif: "shields"
+  master_size: "1200x750px"
+  css_filters: true
+image_placeholder: "![Article 71: ISO 31000 for AI – Applying Risk Management Principles]({{IMAGE_PLACEHOLDER_article-71-iso-31000-for-ai-applying-risk-management-princip}})"

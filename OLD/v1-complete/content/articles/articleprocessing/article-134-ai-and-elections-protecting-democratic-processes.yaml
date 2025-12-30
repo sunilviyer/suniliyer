@@ -1,0 +1,97 @@
+# === FILE STATUS ===
+suggested_slug: "article-134-ai-and-elections-protecting-democratic-processes"
+category: "Industry-Specific Insights"
+word_count:
+  target: null
+  actual: 2068
+  status: "no_target"
+
+# === CONTENT VALIDATION ===
+structure:
+  has_h1: true
+  has_intro: true
+  has_conclusion: true
+  header_depth_valid: true
+generated_elements:
+  tldr_was_missing: true
+  objectives_were_missing: false
+  keywords_were_missing: false
+
+# === COMPONENT INVENTORY ===
+has_components: true
+components:
+  - type: "table"
+    label: "Country vs Approach Table"
+    detected_at_section: "Other Jurisdictions"
+  - type: "flowchart"
+    label: "Conclusion Process"
+    detected_at_section: "Conclusion"
+  - type: "flowchart"
+    label: "Sources and Further Reading Process"
+    detected_at_section: "Sources and Further Reading"
+  - type: "template"
+    label: "Threat 2: Scaled Disinformation"
+    detected_at_section: "Threat 2: Scaled Disinformation"
+    template_link: "/templates/threat-2-scaled-disinformation.md"
+  - type: "template"
+    label: "Information Monitoring"
+    detected_at_section: "Information Monitoring"
+    template_link: "/templates/information-monitoring.md"
+  - type: "template"
+    label: "Platform Responses"
+    detected_at_section: "Platform Responses"
+    template_link: "/templates/platform-responses.md"
+  - type: "template"
+    label: "Major Platform Policies"
+    detected_at_section: "Major Platform Policies"
+    template_link: "/templates/major-platform-policies.md"
+  - type: "template"
+    label: "Platform Limitations"
+    detected_at_section: "Platform Limitations"
+    template_link: "/templates/platform-limitations.md"
+  - type: "template"
+    label: "Pillar 2: Platform Responsibility"
+    detected_at_section: "Pillar 2: Platform Responsibility"
+    template_link: "/templates/pillar-2-platform-responsibility.md"
+
+# === EXTRACTED DATA ===
+title: "Article 134: AI and Elections – Protecting Democratic Processes"
+tldr: ""
+learning_objectives:
+  - "Understand the key concepts and principles of regulatory requirements"
+  - "Implement incident response protocols in real-world scenarios"
+  - "Evaluate transparency measures for organizational compliance"
+seo_keywords:
+  - "article"
+  - "elections"
+  - "AI governance"
+  - "deepfakes"
+  - "synthetic"
+
+# === CROSS REFERENCE DATA ===
+topic_fingerprint:
+  - "transparency"
+  - "accountability"
+  - "audit"
+named_examples:
+  - "deepfakes"
+  - "defense"
+  - "digital services act"
+  - "eu ai act"
+  - "european parliament"
+  - "facebook"
+  - "fcc"
+  - "google"
+  - "meta"
+  - "mit"
+  - "stanford"
+  - "tiktok"
+  - "twitter"
+
+# === IMAGE GENERATION ===
+image_prompt:
+  formula: "Abstract geometric illustration, earth tones, minimalist, professional"
+  category_motif: "industry icons"
+  master_size: "1200x750px"
+  css_filters: true
+image_placeholder: "![Article 134: AI and Elections – Protecting Democratic Processes]({{IMAGE_PLACEHOLDER_article-134-ai-and-elections-protecting-democratic-processes}})"

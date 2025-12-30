@@ -1,0 +1,77 @@
+# === FILE STATUS ===
+suggested_slug: "algorithmic-bias-how-ai-discriminates-and-why"
+category: "AI Risks & Principles"
+word_count:
+  target: null
+  actual: 2833
+  status: "no_target"
+
+# === CONTENT VALIDATION ===
+structure:
+  has_h1: true
+  has_intro: true
+  has_conclusion: true
+  header_depth_valid: true
+generated_elements:
+  tldr_was_missing: true
+  objectives_were_missing: false
+  keywords_were_missing: false
+
+# === COMPONENT INVENTORY ===
+has_components: true
+components:
+  - type: "flowchart"
+    label: "Sources Process"
+    detected_at_section: "Sources"
+  - type: "template"
+    label: "Example: The Resume Screener"
+    detected_at_section: "What Is Algorithmic Bias?"
+    template_link: "/templates/example-the-resume-screener.md"
+  - type: "template"
+    label: "Example: The Criminal Risk Assessment"
+    detected_at_section: "Source 1: Biased Training Data"
+    template_link: "/templates/example-the-criminal-risk-assessment.md"
+  - type: "template"
+    label: "Example: The Grading Algorithm"
+    detected_at_section: "Source 2: Biased Design Choices"
+    template_link: "/templates/example-the-grading-algorithm.md"
+  - type: "template"
+    label: "Example: The Healthcare Algorithm"
+    detected_at_section: "Source 3: Biased Deployment"
+    template_link: "/templates/example-the-healthcare-algorithm.md"
+
+# === EXTRACTED DATA ===
+title: "Algorithmic Bias – How AI Discriminates and Why"
+tldr: ""
+learning_objectives:
+  - "Understand the key concepts and principles of bias detection techniques"
+  - "Implement audit procedures in real-world scenarios"
+  - "Evaluate risk assessment frameworks for organizational compliance"
+seo_keywords:
+  - "algorithmic"
+  - "bias"
+  - "artificial intelligence"
+  - "algorithmic bias"
+  - "discriminates"
+
+# === CROSS REFERENCE DATA ===
+topic_fingerprint:
+  - "machine learning"
+  - "algorithmic bias"
+  - "risk assessment"
+  - "fairness"
+  - "adversarial testing"
+named_examples:
+  - "aedt"
+  - "amazon"
+  - "apple"
+  - "eu ai act"
+  - "fair"
+
+# === IMAGE GENERATION ===
+image_prompt:
+  formula: "Abstract geometric illustration, earth tones, minimalist, professional"
+  category_motif: "warning triangles"
+  master_size: "1200x750px"
+  css_filters: true
+image_placeholder: "![Algorithmic Bias – How AI Discriminates and Why]({{IMAGE_PLACEHOLDER_algorithmic-bias-how-ai-discriminates-and-why}})"

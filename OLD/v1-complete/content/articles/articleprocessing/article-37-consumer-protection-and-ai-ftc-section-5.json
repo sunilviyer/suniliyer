@@ -1,0 +1,133 @@
+{
+  "file_status": {
+    "suggested_slug": "article-37-consumer-protection-and-ai-ftc-section-5-explaine",
+    "category": "AI Fundamentals",
+    "word_count_check": {
+      "target": null,
+      "actual": 3155,
+      "status": "under"
+    }
+  },
+  "content_validation": {
+    "structure": {
+      "has_h1": true,
+      "has_intro": true,
+      "has_conclusion": true,
+      "header_depth_valid": true
+    },
+    "generated_elements": {
+      "tldr_was_missing": true,
+      "objectives_were_missing": false,
+      "keywords_were_missing": false
+    }
+  },
+  "component_inventory": {
+    "has_components": true,
+    "items": [
+      {
+        "type": "flowchart",
+        "label": "Deception: The Three-Part Test Process",
+        "detected_at_section": "Deception: The Three-Part Test"
+      },
+      {
+        "type": "flowchart",
+        "label": "Unfairness: The Three-Part Test Process",
+        "detected_at_section": "Unfairness: The Three-Part Test"
+      },
+      {
+        "type": "flowchart",
+        "label": "The Algorithmic Disgorgement Remedy Process",
+        "detected_at_section": "The Algorithmic Disgorgement Remedy"
+      },
+      {
+        "type": "flowchart",
+        "label": "Sources Process",
+        "detected_at_section": "Sources"
+      },
+      {
+        "type": "template",
+        "label": "Example:",
+        "detected_at_section": "Deception: The Three-Part Test",
+        "template_link": "/templates/example.md"
+      },
+      {
+        "type": "template",
+        "label": "Example:",
+        "detected_at_section": "Unfairness: The Three-Part Test",
+        "template_link": "/templates/example.md"
+      },
+      {
+        "type": "template",
+        "label": "Example:",
+        "detected_at_section": "AI Washing: False Claims About AI Capabilities",
+        "template_link": "/templates/example.md"
+      },
+      {
+        "type": "template",
+        "label": "Example:",
+        "detected_at_section": "Discriminatory AI Outcomes",
+        "template_link": "/templates/example.md"
+      },
+      {
+        "type": "template",
+        "label": "Example:",
+        "detected_at_section": "Data Collection for AI Training",
+        "template_link": "/templates/example.md"
+      },
+      {
+        "type": "template",
+        "label": "Example:",
+        "detected_at_section": "The Algorithmic Disgorgement Remedy",
+        "template_link": "/templates/example.md"
+      }
+    ]
+  },
+  "extracted_data": {
+    "title": "Article 37: Consumer Protection and AI – FTC Section 5 Explained",
+    "tldr": "",
+    "learning_objectives": [
+      "Understand the key concepts and principles of model validation processes",
+      "Implement regulatory requirements in real-world scenarios",
+      "Evaluate policy development for organizational compliance"
+    ],
+    "seo_keywords": [
+      "article",
+      "consumer",
+      "AI governance",
+      "artificial intelligence",
+      "consumer protection"
+    ],
+    "references": []
+  },
+  "cross_reference_data": {
+    "topic_fingerprint": [
+      "machine learning",
+      "neural network",
+      "transformer",
+      "large language model",
+      "oversight"
+    ],
+    "named_examples": [
+      "amazon",
+      "cambridge",
+      "cambridge analytica",
+      "ccpa",
+      "colorado ai act",
+      "congress",
+      "deepfakes",
+      "facebook",
+      "federal trade commission",
+      "ftc",
+      "meta"
+    ]
+  },
+  "image_generation": {
+    "prompt": {
+      "formula": "Abstract geometric illustration, earth tones, minimalist, professional",
+      "category_motif": "neural networks",
+      "master_size": "1200x750px",
+      "css_filters": true
+    },
+    "placeholder": "![Article 37: Consumer Protection and AI – FTC Section 5 Explained]({{IMAGE_PLACEHOLDER_article-37-consumer-protection-and-ai-ftc-section-5-explaine}})"
+  }
+}

@@ -1,0 +1,1011 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AIDefence Homepage Wireframe V4 - Card-Based Layout</title>
+  <style>
+    :root {
+      --bg-primary: #ffffff;
+      --bg-secondary: #f8f8f8;
+      --text-primary: #000000;
+      --text-secondary: #666666;
+      --border-color: #dddddd;
+      --card-bg: rgba(255, 255, 255, 0.95);
+      --shadow-color: rgba(0, 0, 0, 0.1);
+    }
+
+    [data-theme="dark"] {
+      --bg-primary: #1a1a1a;
+      --bg-secondary: #2a2a2a;
+      --text-primary: #ffffff;
+      --text-secondary: #cccccc;
+      --border-color: #444444;
+      --card-bg: rgba(26, 26, 26, 0.95);
+      --shadow-color: rgba(255, 255, 255, 0.1);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg-primary);
+      padding: 40px 0;
+      transition: background-color 0.3s ease;
+    }
+
+    /* Theme Toggle - Fixed Above All Cards */
+    .theme-toggle {
+      position: fixed;
+      top: 40px;
+      right: 125px;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.95);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      cursor: pointer;
+      z-index: 1000;
+      transition: all 0.3s ease;
+    }
+
+    [data-theme="dark"] .theme-toggle {
+      background: rgba(26,26,26,0.95);
+    }
+
+    .theme-toggle:hover {
+      transform: scale(1.1);
+    }
+
+    /* Hamburger Menu - Fixed Above All Cards */
+    .hamburger-menu {
+      position: fixed;
+      top: 40px;
+      right: 60px;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.95);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      cursor: pointer;
+      z-index: 1000;
+      transition: all 0.3s ease;
+    }
+
+    [data-theme="dark"] .hamburger-menu {
+      background: rgba(26,26,26,0.95);
+    }
+
+    .hamburger-menu:hover {
+      transform: scale(1.1);
+    }
+
+    .hamburger-menu span {
+      width: 30px;
+      height: 3px;
+      background: #333d29;
+      border-radius: 2px;
+    }
+
+    /* Card Container - Wider to Fit 3 Carousel Items */
+    .card-container {
+      max-width: 1600px;
+      margin: 0 auto 60px;
+      padding: 0 60px;
+    }
+
+    .card {
+      background: transparent;
+      border-radius: 30px;
+      overflow: hidden;
+      width: 100%;
+      min-height: 800px;
+    }
+
+    /* Hero Card */
+    .hero-card {
+      position: relative;
+      min-height: 800px;
+      background: #1a1a1a;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 80px 60px;
+    }
+
+    .hero-video-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.3;
+      z-index: 1;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding-left: 60px;
+    }
+
+    .logo {
+      font-size: 76px;
+      font-weight: bold;
+      color: #333d29;
+      margin-bottom: 30px;
+      animation: themeColorChange 0.3s infinite;
+    }
+
+    @keyframes themeColorChange {
+      0%, 100% { color: #333d29; }
+      33% { color: #936639; }
+      66% { color: #414833; }
+    }
+
+    .ticker-container {
+      display: flex;
+      align-items: center;
+      gap: 21px;
+    }
+
+    .word-box {
+      background: #000;
+      padding: 21px 42px;
+      border-radius: 56px;
+      width: 364px;
+      text-align: center;
+      overflow: hidden;
+      position: relative;
+      height: 84px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .word-wrapper {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .word-text {
+      font-size: 40px;
+      color: white;
+      font-weight: 500;
+      position: absolute;
+      width: 100%;
+    }
+
+    .word-text.slide-out {
+      animation: slideOut 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55) forwards;
+    }
+
+    .word-text.slide-in {
+      transform: translateY(100%);
+      opacity: 0;
+    }
+
+    .word-text.active {
+      animation: slideIn 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+    }
+
+    @keyframes slideOut {
+      0% {
+        transform: translateY(0);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-120%);
+        opacity: 0;
+      }
+    }
+
+    @keyframes slideIn {
+      0% {
+        transform: translateY(120%);
+        opacity: 0;
+      }
+      60% {
+        transform: translateY(-5%);
+        opacity: 1;
+      }
+      80% {
+        transform: translateY(2%);
+      }
+      100% {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    .ai-text {
+      font-size: 50px;
+      font-weight: bold;
+      color: #333d29;
+      animation: themeColorChange 0.3s infinite;
+    }
+
+    /* Break Cards - SAME SIZE AS HERO CARD */
+    .break-card {
+      position: relative;
+      min-height: 800px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 80px 60px;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      box-shadow: 0 8px 32px var(--shadow-color);
+    }
+
+    .break-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.3);
+      z-index: 1;
+    }
+
+    .break-card.learning {
+      background-image: url('../public/images/PageBreak 1.png');
+    }
+
+    .break-card.portfolio {
+      background-image: url('../public/images/PageBreak 2.png');
+    }
+
+    .break-card.about {
+      background-image: url('../public/images/Page Break 3.png');
+    }
+
+    .break-text {
+      position: relative;
+      z-index: 2;
+      font-size: 72px;
+      font-weight: bold;
+      color: white;
+      text-align: center;
+      text-shadow: 0 4px 20px rgba(0,0,0,0.5);
+      word-wrap: break-word;
+      max-width: 100%;
+      overflow-wrap: break-word;
+    }
+
+    /* Learning Paths Card - Carousel Structure */
+    .learning-card {
+      padding: 80px 40px;
+      min-height: 800px;
+    }
+
+    .learning-path-item {
+      background: transparent;
+      border-radius: 16px;
+      overflow: hidden;
+      transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .learning-path-item.side {
+      width: 380px;
+      opacity: 0.7;
+      filter: blur(3px);
+      transform: scale(0.9);
+    }
+
+    .learning-path-item.center {
+      width: 580px;
+      opacity: 1;
+      filter: blur(0);
+      transform: scale(1);
+      z-index: 10;
+    }
+
+    .path-image {
+      width: 100%;
+      height: 350px;
+      object-fit: cover;
+    }
+
+    .path-details {
+      padding: 40px;
+    }
+
+    .path-details-header {
+      font-size: 14px;
+      color: var(--text-secondary);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 10px;
+      border-bottom: 2px solid var(--border-color);
+      padding-bottom: 10px;
+    }
+
+    .path-number {
+      font-size: 16px;
+      color: #333d29;
+      margin: 20px 0 10px;
+      font-weight: 600;
+    }
+
+    .path-title {
+      font-size: 36px;
+      font-weight: bold;
+      margin-bottom: 20px;
+      color: var(--text-primary);
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+    }
+
+    .path-description {
+      font-size: 16px;
+      line-height: 1.6;
+      color: var(--text-secondary);
+      margin-bottom: 24px;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+    }
+
+    .path-cta {
+      color: #936639;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 16px;
+      transition: all 0.3s ease;
+    }
+
+    .path-cta:hover {
+      color: #414833;
+    }
+
+    /* Portfolio Card */
+    .portfolio-card {
+      padding: 80px 40px;
+      min-height: 800px;
+    }
+
+    .carousel-container {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 30px;
+      padding: 40px 80px;
+    }
+
+    .portfolio-item {
+      background: transparent;
+      border-radius: 16px;
+      overflow: hidden;
+      transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .portfolio-item.side {
+      width: 380px;
+      opacity: 0.7;
+      filter: blur(3px);
+      transform: scale(0.9);
+    }
+
+    .portfolio-item.center {
+      width: 580px;
+      opacity: 1;
+      filter: blur(0);
+      transform: scale(1);
+      z-index: 10;
+    }
+
+    .portfolio-item-image {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+    }
+
+    .portfolio-item-content {
+      padding: 30px;
+    }
+
+    .portfolio-item h3 {
+      font-size: 24px;
+      margin-bottom: 12px;
+      color: var(--text-primary);
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+    }
+
+    .portfolio-item p {
+      font-size: 16px;
+      line-height: 1.6;
+      color: var(--text-secondary);
+      margin-bottom: 20px;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+    }
+
+    .portfolio-item a {
+      color: #936639;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 16px;
+      transition: all 0.3s ease;
+    }
+
+    .portfolio-item a:hover {
+      color: #414833;
+    }
+
+    .carousel-arrow {
+      position: absolute;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: transparent;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      z-index: 20;
+      color: var(--text-primary);
+    }
+
+    .carousel-arrow:hover {
+      transform: scale(1.1);
+    }
+
+    .carousel-arrow.left {
+      left: 20px;
+    }
+
+    .carousel-arrow.right {
+      right: 20px;
+    }
+
+    .carousel-dots {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      margin-top: 40px;
+    }
+
+    .dot {
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: #ccc;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .dot.active {
+      background: #936639;
+      transform: scale(1.3);
+    }
+
+    /* About Card */
+    .about-card {
+      padding: 80px 60px;
+      min-height: 800px;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 480px 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .about-image {
+      border-radius: 16px;
+      overflow: hidden;
+    }
+
+    .about-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .about-text h2 {
+      font-size: 48px;
+      margin-bottom: 30px;
+      color: var(--text-primary);
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+    }
+
+    .about-text p {
+      font-size: 18px;
+      line-height: 1.8;
+      color: var(--text-secondary);
+      margin-bottom: 40px;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+    }
+
+    .stats-row {
+      display: flex;
+      gap: 24px;
+    }
+
+    .stat-card {
+      background: var(--bg-secondary);
+      padding: 24px;
+      border-radius: 12px;
+      text-align: center;
+      flex: 1;
+      min-width: 140px;
+    }
+
+    .stat-number {
+      font-size: 42px;
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+
+    .stat-card:nth-child(1) .stat-number {
+      color: #333d29;
+    }
+
+    .stat-card:nth-child(2) .stat-number {
+      color: #936639;
+    }
+
+    .stat-card:nth-child(3) .stat-number {
+      color: #414833;
+    }
+
+    .stat-label {
+      font-size: 16px;
+      color: var(--text-secondary);
+      font-weight: 600;
+    }
+
+    /* Footer Card */
+    .footer-card {
+      background: #000;
+      padding: 80px 60px;
+      color: var(--text-secondary);
+      min-height: 800px;
+    }
+
+    [data-theme="dark"] .footer-card {
+      background: #0a0a0a;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 60px;
+      margin-bottom: 60px;
+    }
+
+    .footer-column h4 {
+      color: #ffffff;
+      font-size: 20px;
+      margin-bottom: 24px;
+      font-weight: 600;
+    }
+
+    .footer-column ul {
+      list-style: none;
+    }
+
+    .footer-column li {
+      margin-bottom: 14px;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    .footer-column a {
+      color: #999999;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .footer-column a:hover {
+      color: #ffffff;
+    }
+
+    .copyright {
+      text-align: center;
+      opacity: 0.6;
+      font-size: 16px;
+      padding-top: 40px;
+      border-top: 1px solid #333333;
+    }
+
+    /* Annotations */
+    .annotation {
+      background: #fff3cd;
+      padding: 16px 24px;
+      border-left: 4px solid #ffc107;
+      margin: 20px 60px;
+      font-size: 14px;
+      color: #856404;
+      border-radius: 0 8px 8px 0;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Theme Toggle - Fixed Above All Cards -->
+  <div class="theme-toggle" onclick="toggleTheme()">
+    <span id="theme-icon">☀️</span>
+  </div>
+
+  <!-- Hamburger Menu - Fixed Above All Cards -->
+  <div class="hamburger-menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <!-- HERO CARD -->
+  <div class="card-container">
+    <div class="card hero-card">
+      <video class="hero-video-bg" autoplay loop muted playsinline>
+        <source src="../public/images/background.webm" type="video/webm">
+      </video>
+
+      <div class="hero-content">
+        <div class="logo">Sunil Iyer</div>
+
+        <div class="ticker-container">
+          <div class="word-box">
+            <div class="word-wrapper">
+              <div class="word-text active">Artificial</div>
+            </div>
+          </div>
+          <div class="ai-text">AI</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="annotation">
+    <strong>✅ HERO CARD:</strong> 800px height, curved box card (30px radius), centered with padding. Video background with color-changing "Sunil Iyer" logo. Word ticker: "Artificial" (in black curved box) + "AI" - changes every 0.5s through 8 words.
+  </div>
+
+  <!-- LEARNING PATHS BREAK CARD -->
+  <div class="card-container">
+    <div class="card break-card learning">
+      <div class="break-text">Learning Paths</div>
+    </div>
+  </div>
+
+  <div class="annotation">
+    <strong>✅ BREAK CARD - LEARNING PATHS:</strong> SAME 800px height as hero card! Uses PageBreak 1.png as background image. Text will NOT overflow (word-wrap enabled). Dark overlay for text readability.
+  </div>
+
+  <!-- LEARNING PATHS CARD -->
+  <div class="card-container">
+    <div class="card learning-card">
+      <div class="carousel-container">
+        <div class="carousel-arrow left">←</div>
+
+        <div class="learning-path-item side">
+          <img src="../public/images/legal-compliance.png" alt="Legal & Compliance" class="path-image" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22380%22 height=%22350%22%3E%3Crect fill=%22%23f0f0f0%22 width=%22380%22 height=%22350%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-family=%22sans-serif%22 font-size=%2218%22 fill=%22%23666%22%3EPath 5%3C/text%3E%3C/svg%3E'">
+          <div class="path-details">
+            <div class="path-details-header">PROJECT DETAILS</div>
+            <div class="path-number">Learning Path 5</div>
+            <div class="path-title">Legal & Compliance</div>
+            <div class="path-description">
+              Navigate AI regulations, compliance frameworks, data governance, and legal obligations.
+            </div>
+            <a href="#" class="path-cta">Explore Path →</a>
+          </div>
+        </div>
+
+        <div class="learning-path-item center">
+          <img src="../public/images/history-context.png" alt="History & Context" class="path-image" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22580%22 height=%22350%22%3E%3Crect fill=%22%23f0f0f0%22 width=%22580%22 height=%22350%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-family=%22sans-serif%22 font-size=%2224%22 fill=%22%23333%22%3EHistory %26 Context%3C/text%3E%3C/svg%3E'">
+          <div class="path-details">
+            <div class="path-details-header">PROJECT DETAILS</div>
+            <div class="path-number">Learning Path 1</div>
+            <div class="path-title">History & Context</div>
+            <div class="path-description">
+              Understand the evolution of AI from theoretical foundations to modern applications, including key milestones, breakthroughs, and the socio-technical context shaping today's AI landscape.
+            </div>
+            <a href="#" class="path-cta">Explore Path →</a>
+          </div>
+        </div>
+
+        <div class="learning-path-item side">
+          <img src="../public/images/foundation.png" alt="Foundation" class="path-image" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22380%22 height=%22350%22%3E%3Crect fill=%22%23f0f0f0%22 width=%22380%22 height=%22350%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-family=%22sans-serif%22 font-size=%2218%22 fill=%22%23666%22%3EPath 2%3C/text%3E%3C/svg%3E'">
+          <div class="path-details">
+            <div class="path-details-header">PROJECT DETAILS</div>
+            <div class="path-number">Learning Path 2</div>
+            <div class="path-title">Foundation</div>
+            <div class="path-description">
+              Master the fundamental concepts of AI including machine learning, neural networks, and deep learning.
+            </div>
+            <a href="#" class="path-cta">Explore Path →</a>
+          </div>
+        </div>
+
+        <div class="carousel-arrow right">→</div>
+      </div>
+
+      <div class="carousel-dots">
+        <div class="dot active"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="annotation">
+    <strong>✅ LEARNING PATHS CARD:</strong> Carousel with 3px blur on side cards (same as portfolio). All 5 paths accessible via arrows/dots. Path 1 centered.
+  </div>
+
+  <!-- PORTFOLIO BREAK CARD -->
+  <div class="card-container">
+    <div class="card break-card portfolio">
+      <div class="break-text">Portfolio</div>
+    </div>
+  </div>
+
+  <div class="annotation">
+    <strong>✅ BREAK CARD - PORTFOLIO:</strong> SAME 800px height as hero card! Uses PageBreak 2.png as background image. Text properly contained.
+  </div>
+
+  <!-- PORTFOLIO CARD -->
+  <div class="card-container">
+    <div class="card portfolio-card">
+      <div class="carousel-container">
+        <div class="carousel-arrow left">←</div>
+
+        <div class="portfolio-item side">
+          <img src="/images/portfolio/ai-comics.png" alt="AI Comics" class="portfolio-item-image" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22320%22 height=%22300%22%3E%3Crect fill=%22%23f0f0f0%22 width=%22320%22 height=%22300%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-family=%22sans-serif%22 font-size=%2218%22 fill=%22%23666%22%3EProject 5%3C/text%3E%3C/svg%3E'">
+          <div class="portfolio-item-content">
+            <h3>AI Comics</h3>
+            <p>Generative AI storytelling platform</p>
+            <a href="#">View Project →</a>
+          </div>
+        </div>
+
+        <div class="portfolio-item center">
+          <img src="/images/portfolio/seshan-intelligence.png" alt="Seshan Intelligence" class="portfolio-item-image" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22480%22 height=%22300%22%3E%3Crect fill=%22%23f0f0f0%22 width=%22480%22 height=%22300%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-family=%22sans-serif%22 font-size=%2224%22 fill=%22%23333%22%3ESeshan Intelligence%3C/text%3E%3C/svg%3E'">
+          <div class="portfolio-item-content">
+            <h3>Seshan Intelligence</h3>
+            <p>AI-powered business intelligence platform with advanced analytics</p>
+            <a href="#">View Project →</a>
+          </div>
+        </div>
+
+        <div class="portfolio-item side">
+          <img src="/images/portfolio/seshan-app.png" alt="Seshan App" class="portfolio-item-image" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22320%22 height=%22300%22%3E%3Crect fill=%22%23f0f0f0%22 width=%22320%22 height=%22300%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-family=%22sans-serif%22 font-size=%2218%22 fill=%22%23666%22%3EProject 2%3C/text%3E%3C/svg%3E'">
+          <div class="portfolio-item-content">
+            <h3>Seshan App</h3>
+            <p>Mobile AI assistant application</p>
+            <a href="#">View Project →</a>
+          </div>
+        </div>
+
+        <div class="carousel-arrow right">→</div>
+      </div>
+
+      <div class="carousel-dots">
+        <div class="dot active"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="annotation">
+    <strong>✅ PORTFOLIO CARD:</strong> Carousel with 3px blur on side cards (visible!). All 5 items accessible via arrows/dots. Starts with project 1 centered.
+  </div>
+
+  <!-- ABOUT BREAK CARD -->
+  <div class="card-container">
+    <div class="card break-card about">
+      <div class="break-text">About</div>
+    </div>
+  </div>
+
+  <div class="annotation">
+    <strong>✅ BREAK CARD - ABOUT:</strong> SAME 800px height as hero card! Uses Page Break 3.png as background image. Text properly sized and wrapped.
+  </div>
+
+  <!-- ABOUT CARD -->
+  <div class="card-container">
+    <div class="card about-card">
+      <div class="about-grid">
+        <div class="about-image">
+          <img src="../public/images/Sunil.jpg" alt="Sunil Iyer">
+        </div>
+
+        <div class="about-text">
+          <h2>About Me</h2>
+          <p>
+            I help organizations navigate the complex landscape of artificial
+            intelligence through education, implementation guidance, and governance
+            frameworks.
+          </p>
+          <p>
+            With over two decades of experience in cybersecurity and technology
+            leadership, I specialize in AI governance, risk management, and
+            secure development practices.
+          </p>
+
+          <div class="stats-row">
+            <div class="stat-card">
+              <div class="stat-number">20+</div>
+              <div class="stat-label">Projects</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number">10+</div>
+              <div class="stat-label">Years</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number">50+</div>
+              <div class="stat-label">Clients</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="annotation">
+    <strong>✅ ABOUT CARD:</strong> Two-column grid. Left: Sunil.jpg with earth-tone border. Right: About text + 3 stats cards. All text properly wrapped.
+  </div>
+
+  <!-- FOOTER CARD -->
+  <div class="card-container">
+    <div class="card footer-card">
+      <div class="footer-grid">
+        <div class="footer-column">
+          <h4>About</h4>
+          <ul>
+            <li><a href="#">Mission</a></li>
+            <li><a href="#">Team</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4>Learning</h4>
+          <ul>
+            <li><a href="#">History & Context</a></li>
+            <li><a href="#">Foundation</a></li>
+            <li><a href="#">Implementation</a></li>
+            <li><a href="#">Risk & Ethics</a></li>
+            <li><a href="#">Legal & Compliance</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4>Portfolio</h4>
+          <ul>
+            <li><a href="#">Seshan Intelligence</a></li>
+            <li><a href="#">Seshan App</a></li>
+            <li><a href="#">Free Tools</a></li>
+            <li><a href="#">AI Comics</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="#">LinkedIn</a></li>
+            <li><a href="#">Twitter/X</a></li>
+            <li><a href="#">Email</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="copyright">
+        © 2024 Sunil Iyer. All rights reserved.
+      </div>
+    </div>
+  </div>
+
+  <div class="annotation">
+    <strong>✅ FOOTER CARD:</strong> Black background, 4-column grid, all links functional, copyright centered.
+  </div>
+
+  <div style="text-align: center; padding: 40px; color: #666;">
+    <strong>End of Wireframe - Increased Width for 3 Carousel Items, Transparent Backgrounds, Theme Toggle Added</strong>
+  </div>
+
+  <script src="words.js"></script>
+  <script>
+    // Word Ticker Slide-Up Animation
+    let currentWordIndex = 0;
+
+    function slideUpWord() {
+      const wordWrapper = document.querySelector('.word-wrapper');
+      const currentWord = wordWrapper.querySelector('.word-text.active');
+
+      if (!currentWord) return;
+
+      // Slide current word out (up)
+      currentWord.classList.remove('active');
+      currentWord.classList.add('slide-out');
+
+      // Calculate next word index
+      currentWordIndex = (currentWordIndex + 1) % tickerWords.length;
+
+      // Create new word element (starts below, slides in)
+      const newWord = document.createElement('div');
+      newWord.className = 'word-text slide-in';
+      newWord.textContent = tickerWords[currentWordIndex];
+      wordWrapper.appendChild(newWord);
+
+      // Trigger slide-in animation
+      setTimeout(() => {
+        newWord.classList.remove('slide-in');
+        newWord.classList.add('active');
+      }, 50);
+
+      // Remove old word after animation completes
+      setTimeout(() => {
+        currentWord.remove();
+      }, 600);
+    }
+
+    // Start word ticker animation (slides every 0.5 seconds)
+    setInterval(slideUpWord, 500);
+
+    // Theme Toggle Functionality
+    function toggleTheme() {
+      const body = document.body;
+      const themeIcon = document.getElementById('theme-icon');
+      const currentTheme = body.getAttribute('data-theme');
+
+      if (currentTheme === 'dark') {
+        body.removeAttribute('data-theme');
+        themeIcon.textContent = '☀️';
+        localStorage.setItem('theme', 'light');
+      } else {
+        body.setAttribute('data-theme', 'dark');
+        themeIcon.textContent = '🌙';
+        localStorage.setItem('theme', 'dark');
+      }
+    }
+
+    // Load saved theme preference on page load
+    document.addEventListener('DOMContentLoaded', () => {
+      const savedTheme = localStorage.getItem('theme');
+      const themeIcon = document.getElementById('theme-icon');
+
+      if (savedTheme === 'dark') {
+        document.body.setAttribute('data-theme', 'dark');
+        themeIcon.textContent = '🌙';
+      } else {
+        themeIcon.textContent = '☀️';
+      }
+    });
+  </script>
+
+</body>
+</html>

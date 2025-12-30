@@ -1,0 +1,90 @@
+# === FILE STATUS ===
+suggested_slug: "article-105-ai-inventory-management-knowing-what-you-have"
+category: "Governance Implementation"
+word_count:
+  target: null
+  actual: 1559
+  status: "no_target"
+
+# === CONTENT VALIDATION ===
+structure:
+  has_h1: true
+  has_intro: true
+  has_conclusion: true
+  header_depth_valid: true
+generated_elements:
+  tldr_was_missing: true
+  objectives_were_missing: false
+  keywords_were_missing: false
+
+# === COMPONENT INVENTORY ===
+has_components: true
+components:
+  - type: "table"
+    label: "Benefit vs How Inventory Helps Table"
+    detected_at_section: "Governance Benefits"
+  - type: "table"
+    label: "Option vs Pros Table"
+    detected_at_section: "Phase 3: Centralization"
+  - type: "flowchart"
+    label: "Conclusion Process"
+    detected_at_section: "Conclusion"
+  - type: "flowchart"
+    label: "Sources and Further Reading Process"
+    detected_at_section: "Sources and Further Reading"
+  - type: "template"
+    label: "Challenge 3: \"Information Is Always Outdated\""
+    detected_at_section: "Challenge 3: \"Information Is Always Outdated\""
+    template_link: "/templates/challenge-3-information-is-always-outdated.md"
+  - type: "template"
+    label: "Inventory Template"
+    detected_at_section: "Inventory Template"
+    template_link: "/templates/inventory-template.md"
+  - type: "template"
+    label: "Inventory Entry Form"
+    detected_at_section: "Inventory Entry Form"
+    template_link: "/templates/inventory-entry-form.md"
+  - type: "list"
+    label: "Regulatory Requirements"
+    detected_at_section: "Regulatory Requirements"
+  - type: "list"
+    label: "EU AI Act Requirements"
+    detected_at_section: "EU AI Act Requirements"
+  - type: "list"
+    label: "Other Regulatory Requirements"
+    detected_at_section: "Other Regulatory Requirements"
+
+# === EXTRACTED DATA ===
+title: "Article 105: AI Inventory Management – Knowing What You Have"
+tldr: ""
+learning_objectives:
+  - "Understand the key concepts and principles of ai governance frameworks"
+  - "Implement model validation processes in real-world scenarios"
+  - "Evaluate regulatory requirements for organizational compliance"
+seo_keywords:
+  - "article"
+  - "inventory"
+  - "AI governance"
+  - "inventory management"
+  - "knowing what you have"
+
+# === CROSS REFERENCE DATA ===
+topic_fingerprint:
+  - "machine learning"
+  - "deep learning"
+  - "natural language processing"
+  - "computer vision"
+  - "generative ai"
+named_examples:
+  - "eu ai act"
+  - "nist"
+  - "nyc local law 144"
+  - "occ"
+
+# === IMAGE GENERATION ===
+image_prompt:
+  formula: "Abstract geometric illustration, earth tones, minimalist, professional"
+  category_motif: "org charts"
+  master_size: "1200x750px"
+  css_filters: true
+image_placeholder: "![Article 105: AI Inventory Management – Knowing What You Have]({{IMAGE_PLACEHOLDER_article-105-ai-inventory-management-knowing-what-you-have}})"

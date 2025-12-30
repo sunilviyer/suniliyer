@@ -1,0 +1,129 @@
+{
+  "file_status": {
+    "suggested_slug": "article-73-the-singapore-model-ai-governance-framework-pract",
+    "category": "Governance Implementation",
+    "word_count_check": {
+      "target": null,
+      "actual": 2194,
+      "status": "under"
+    }
+  },
+  "content_validation": {
+    "structure": {
+      "has_h1": true,
+      "has_intro": true,
+      "has_conclusion": true,
+      "header_depth_valid": true
+    },
+    "generated_elements": {
+      "tldr_was_missing": true,
+      "objectives_were_missing": false,
+      "keywords_were_missing": false
+    }
+  },
+  "component_inventory": {
+    "has_components": true,
+    "items": [
+      {
+        "type": "table",
+        "label": "Model vs Description Table",
+        "detected_at_section": "2. Determining AI Decision-Making Model"
+      },
+      {
+        "type": "table",
+        "label": "Area vs Key Questions Table",
+        "detected_at_section": "ISAGO Assessment Areas"
+      },
+      {
+        "type": "table",
+        "label": "Aspect vs Singapore Table",
+        "detected_at_section": "Compared to EU AI Act"
+      },
+      {
+        "type": "table",
+        "label": "Aspect vs Singapore Table",
+        "detected_at_section": "Compared to NIST AI RMF"
+      },
+      {
+        "type": "flowchart",
+        "label": "Conclusion Process",
+        "detected_at_section": "Conclusion"
+      },
+      {
+        "type": "flowchart",
+        "label": "Sources and Further Reading Process",
+        "detected_at_section": "Sources and Further Reading"
+      },
+      {
+        "type": "template",
+        "label": "*Example",
+        "detected_at_section": "1. Internal Governance Structures and Measures",
+        "template_link": "/templates/example.md"
+      },
+      {
+        "type": "template",
+        "label": "*Example",
+        "detected_at_section": "2. Determining AI Decision-Making Model",
+        "template_link": "/templates/example.md"
+      },
+      {
+        "type": "template",
+        "label": "*Example",
+        "detected_at_section": "3. Operations Management",
+        "template_link": "/templates/example.md"
+      },
+      {
+        "type": "template",
+        "label": "*Example",
+        "detected_at_section": "4. Stakeholder Interaction and Communication",
+        "template_link": "/templates/example.md"
+      },
+      {
+        "type": "list",
+        "label": "The Guiding Principles",
+        "detected_at_section": "The Guiding Principles"
+      }
+    ]
+  },
+  "extracted_data": {
+    "title": "Article 73: The Singapore Model AI Governance Framework – Practical Implementation",
+    "tldr": "",
+    "learning_objectives": [
+      "Understand the key concepts and principles of ai governance frameworks",
+      "Implement model validation processes in real-world scenarios",
+      "Evaluate regulatory requirements for organizational compliance"
+    ],
+    "seo_keywords": [
+      "article",
+      "singapore",
+      "AI governance",
+      "AI ethics",
+      "the singapore model"
+    ],
+    "references": []
+  },
+  "cross_reference_data": {
+    "topic_fingerprint": [
+      "governance framework",
+      "responsible ai",
+      "oversight",
+      "fairness",
+      "interpretability"
+    ],
+    "named_examples": [
+      "eu ai act",
+      "fair",
+      "iso",
+      "nist"
+    ]
+  },
+  "image_generation": {
+    "prompt": {
+      "formula": "Abstract geometric illustration, earth tones, minimalist, professional",
+      "category_motif": "org charts",
+      "master_size": "1200x750px",
+      "css_filters": true
+    },
+    "placeholder": "![Article 73: The Singapore Model AI Governance Framework – Practical Implementation]({{IMAGE_PLACEHOLDER_article-73-the-singapore-model-ai-governance-framework-pract}})"
+  }
+}

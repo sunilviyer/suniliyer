@@ -1,0 +1,87 @@
+# === FILE STATUS ===
+suggested_slug: "article-41-ai-and-intellectual-property-copyright-patents-an"
+category: "Legal Frameworks"
+word_count:
+  target: null
+  actual: 4034
+  status: "no_target"
+
+# === CONTENT VALIDATION ===
+structure:
+  has_h1: true
+  has_intro: true
+  has_conclusion: true
+  header_depth_valid: true
+generated_elements:
+  tldr_was_missing: true
+  objectives_were_missing: false
+  keywords_were_missing: false
+
+# === COMPONENT INVENTORY ===
+has_components: true
+components:
+  - type: "flowchart"
+    label: "Sources Process"
+    detected_at_section: "Sources"
+  - type: "template"
+    label: "Example:"
+    detected_at_section: "What About Human-AI Collaboration?"
+    template_link: "/templates/example.md"
+  - type: "template"
+    label: "Example:"
+    detected_at_section: "The Arguments for Infringement"
+    template_link: "/templates/example.md"
+  - type: "template"
+    label: "Example:"
+    detected_at_section: "Direct Copying"
+    template_link: "/templates/example.md"
+  - type: "template"
+    label: "Example:"
+    detected_at_section: "Substantial Similarity"
+    template_link: "/templates/example.md"
+  - type: "list"
+    label: "The Human Authorship Requirement"
+    detected_at_section: "The Human Authorship Requirement"
+
+# === EXTRACTED DATA ===
+title: "Article 41: AI and Intellectual Property – Copyright, Patents, and Training Data"
+tldr: ""
+learning_objectives:
+  - "Understand the key concepts and principles of compliance strategies"
+  - "Implement regulatory requirements in real-world scenarios"
+  - "Evaluate policy development for organizational compliance"
+seo_keywords:
+  - "article"
+  - "intellectual"
+  - "artificial intelligence"
+  - "intellectual property"
+  - "copyright"
+
+# === CROSS REFERENCE DATA ===
+topic_fingerprint:
+  - "large language model"
+  - "generative ai"
+  - "midjourney"
+  - "gpt"
+  - "stable diffusion"
+named_examples:
+  - "congress"
+  - "eu ai act"
+  - "european parliament"
+  - "fair"
+  - "google"
+  - "manufacturing"
+  - "meta"
+  - "microsoft"
+  - "midjourney"
+  - "openai"
+  - "oracle"
+  - "stability ai"
+
+# === IMAGE GENERATION ===
+image_prompt:
+  formula: "Abstract geometric illustration, earth tones, minimalist, professional"
+  category_motif: "scales"
+  master_size: "1200x750px"
+  css_filters: true
+image_placeholder: "![Article 41: AI and Intellectual Property – Copyright, Patents, and Training Data]({{IMAGE_PLACEHOLDER_article-41-ai-and-intellectual-property-copyright-patents-an}})"

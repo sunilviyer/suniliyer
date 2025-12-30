@@ -1,0 +1,300 @@
+{
+  "templates": [
+    {
+      "id": "transformer-revolution-timeline",
+      "title": "The Transformer Revolution Timeline",
+      "file": "transformer-revolution-timeline-template.md",
+      "purpose": "Understanding the rapid evolution from Transformers (2017) to modern LLMs",
+      "concepts": ["transformers", "llm-evolution", "scaling", "governance-timeline"],
+      "usedBy": ["ai-history-from-dartmouth-to-deepmind"],
+      "reusableFor": ["llm-articles", "transformer-articles", "ai-governance-timeline"],
+      "created": "2025-12-23"
+    },
+    {
+      "id": "ai-type-evaluation-framework",
+      "title": "AI Type Evaluation Framework",
+      "file": "ai-type-evaluation-framework.md",
+      "purpose": "Quickly assess AI systems for procurement, policy, and risk assessment",
+      "concepts": ["ai-classification", "procurement", "risk-assessment", "governance-frameworks"],
+      "usedBy": ["the-ai-family-tree-understanding-ai-intelligence-levels"],
+      "reusableFor": ["procurement-articles", "governance-articles", "risk-assessment"],
+      "created": "2025-12-23"
+    },
+    {
+      "id": "bias-detection-framework",
+      "title": "Bias Detection Framework",
+      "file": "bias-detection-framework.md",
+      "purpose": "Systematic approach to detecting algorithmic bias before and after deployment",
+      "concepts": ["bias-detection", "fairness-metrics", "disaggregated-testing", "auditing", "monitoring"],
+      "usedBy": ["algorithmic-bias-how-ai-discriminates-and-why"],
+      "reusableFor": ["bias-articles", "fairness-articles", "ai-governance", "compliance", "auditing"],
+      "created": "2025-12-23"
+    },
+    {
+      "id": "bias-mitigation-framework",
+      "title": "Bias Mitigation Framework",
+      "file": "bias-mitigation-framework.md",
+      "purpose": "Systematic strategies for reducing algorithmic bias across AI lifecycle",
+      "concepts": ["bias-mitigation", "debiasing", "fairness-constraints", "pre-processing", "in-processing", "post-processing", "organizational-strategies"],
+      "usedBy": ["algorithmic-bias-how-ai-discriminates-and-why"],
+      "reusableFor": ["bias-articles", "fairness-articles", "ai-development", "technical-implementation"],
+      "created": "2025-12-23"
+    },
+    {
+      "id": "ai-system-classification-oecd-framework",
+      "title": "AI System Classification Template (OECD Framework)",
+      "file": "ai-system-classification-oecd-framework.md",
+      "purpose": "Systematic framework for classifying AI systems using OECD 5-dimension model to determine risk and governance requirements",
+      "concepts": ["oecd-framework", "ai-classification", "risk-assessment", "ai-inventory", "5-dimensions", "people-planet", "economic-context", "data-input", "ai-model", "task-output"],
+      "usedBy": ["ai-governance-frameworks-building-your-organizations-approac"],
+      "reusableFor": ["governance-articles", "risk-assessment", "regulatory-compliance", "ai-inventory", "policy-development"],
+      "created": "2025-12-23"
+    },
+    {
+      "id": "ai-governance-framework-builder",
+      "title": "AI Governance Framework Builder",
+      "file": "ai-governance-framework-builder.md",
+      "purpose": "Comprehensive step-by-step guide for organizations building AI governance from scratch",
+      "concepts": ["ai-governance", "governance-implementation", "policy-frameworks", "oversight-mechanisms", "ai-inventory", "risk-management", "incident-response", "maturity-model"],
+      "usedBy": ["ai-governance-frameworks-building-your-organizations-approac"],
+      "reusableFor": ["governance-articles", "organizational-strategy", "ai-program-management", "policy-development", "change-management"],
+      "created": "2025-12-23"
+    },
+    {
+      "id": "ai-regulatory-readiness-assessment",
+      "title": "AI Regulatory Readiness Assessment",
+      "file": "ai-regulatory-readiness-assessment.md",
+      "purpose": "Comprehensive assessment tool for evaluating organizational preparedness for AI regulations across jurisdictions",
+      "concepts": ["regulatory-compliance", "eu-ai-act-compliance", "us-state-laws", "sector-regulation", "compliance-gaps", "remediation-roadmap", "readiness-assessment"],
+      "usedBy": ["the-future-of-ai-regulation-whats-coming-next"],
+      "reusableFor": ["regulatory-articles", "compliance-articles", "risk-assessment", "organizational-readiness", "legal-articles"],
+      "created": "2025-12-23"
+    },
+    {
+      "id": "agi-readiness-assessment",
+      "title": "AGI Readiness Assessment Framework",
+      "file": "agi-readiness-assessment.md",
+      "purpose": "Evaluate organizational preparedness for increasingly capable AI systems from today's advanced models to potential AGI",
+      "concepts": ["agi-readiness", "ai-governance-maturity", "capability-scaling", "organizational-flexibility", "ai-literacy", "risk-management", "strategic-planning", "ethics-framework"],
+      "usedBy": ["artificial-general-intelligence-hype-hope-and-governance"],
+      "reusableFor": ["agi-articles", "ai-strategy-articles", "organizational-readiness", "governance-maturity", "future-planning"],
+      "created": "2025-12-23"
+    },
+    {
+      "id": "ai-safety-testing-framework",
+      "title": "AI Safety Testing Framework",
+      "file": "ai-safety-testing-framework.md",
+      "purpose": "Comprehensive framework for testing AI systems to prevent catastrophic failures before deployment",
+      "concepts": ["ai-safety-testing", "pre-deployment-testing", "adversarial-testing", "fail-safe-design", "robustness-testing", "alignment-testing", "specification-gaming", "safety-monitoring", "risk-classification"],
+      "usedBy": ["ai-safety-preventing-catastrophic-failures"],
+      "reusableFor": ["ai-safety-articles", "testing-articles", "qa-articles", "deployment-articles", "risk-management"],
+      "created": "2025-12-23"
+    },
+    {
+      "id": "neural-network-evaluation-framework",
+      "title": "Neural Network Evaluation Framework",
+      "file": "neural-network-evaluation-framework.md",
+      "purpose": "Systematic framework for evaluating neural network-based AI systems for procurement, governance, deployment, and risk assessment",
+      "concepts": ["neural-network-evaluation", "ai-procurement", "vendor-assessment", "architecture-assessment", "training-data-evaluation", "performance-testing", "fairness-testing", "explainability-assessment", "safety-mechanisms", "compliance-checking"],
+      "usedBy": ["deep-learning-decoded-neural-networks-for-non-engineers"],
+      "reusableFor": ["procurement-articles", "governance-articles", "vendor-selection", "deployment-approval", "risk-assessment", "compliance-articles"],
+      "created": "2025-12-23"
+    },
+    {
+      "id": "generative-ai-governance-framework",
+      "title": "Generative AI Governance Framework",
+      "file": "generative-ai-governance-framework.md",
+      "purpose": "Practical framework for organizations to govern generative AI deployment, use, and monitoring",
+      "concepts": ["generative-ai-governance", "llm-governance", "acceptable-use-policy", "data-handling", "human-oversight", "input-output-filtering", "monitoring", "incident-response", "governance-maturity"],
+      "usedBy": ["generative-ai-explained-how-chatgpt-dall-e-and-claude-work"],
+      "reusableFor": ["generative-ai-articles", "governance-implementation", "policy-development", "llm-deployment", "risk-management"],
+      "created": "2025-12-23"
+    },
+    {
+      "id": "responsible-ai-organizational-structure",
+      "title": "Responsible AI Organizational Structure Template",
+      "file": "responsible-ai-organizational-structure.md",
+      "purpose": "Guide organizations in establishing clear governance structures, roles, and responsibilities for responsible AI deployment",
+      "concepts": ["organizational-structure", "governance-roles", "raci-matrix", "governance-mandate", "centralized-governance", "federated-governance", "ai-governance-office", "governance-maturity", "organizational-design"],
+      "usedBy": ["responsibility-of-responsible-ai-for-organizations"],
+      "reusableFor": ["governance-articles", "organizational-design", "responsible-ai-implementation", "change-management", "role-definition"],
+      "created": "2025-12-23"
+    },
+    {
+      "id": "hallucination-detection-mitigation-framework",
+      "title": "Hallucination Detection and Mitigation Framework",
+      "purpose": "Systematic approach to preventing, detecting, and mitigating AI hallucinations across the deployment lifecycle",
+      "concepts": ["hallucination-detection", "hallucination-mitigation", "rag", "fact-checking", "human-in-loop", "pre-deployment-testing", "runtime-monitoring", "incident-response", "verification-workflows", "grounding"],
+      "usedBy": ["ai-hallucinations-when-machines-confidently-lie"],
+      "reusableFor": ["hallucination-articles", "llm-deployment", "ai-quality-assurance", "risk-management", "llm-governance"],
+      "created": "2025-12-23"
+    },
+    {
+      "id": "ai-privacy-impact-assessment-framework",
+      "title": "AI Privacy Impact Assessment (PIA) Framework",
+      "purpose": "Systematic methodology for identifying and mitigating privacy risks before deploying AI systems (required under GDPR, recommended under CCPA)",
+      "concepts": ["privacy-impact-assessment", "pia", "dpia", "gdpr-compliance", "data-mapping", "privacy-risk-analysis", "data-minimization", "privacy-by-design", "individual-rights", "consent-management"],
+      "usedBy": ["ai-and-privacy-the-data-collection-dilemma"],
+      "reusableFor": ["privacy-articles", "gdpr-compliance", "regulatory-articles", "risk-assessment", "privacy-governance"],
+      "created": "2025-12-23"
+    },
+    {
+      "id": "compliance-crosswalk-template",
+      "title": "Compliance Crosswalk Template",
+      "purpose": "Systematic mapping of AI frameworks to regulations for unified compliance programs",
+      "concepts": ["compliance-crosswalk", "framework-mapping", "gap-analysis", "unified-compliance", "regulatory-alignment", "requirement-mapping"],
+      "usedBy": ["mapping-frameworks-to-regulations-a-compliance-crosswalk"],
+      "reusableFor": ["compliance-articles", "multi-jurisdiction", "framework-implementation", "audit-preparation", "regulatory-strategy"],
+      "created": "2025-12-24"
+    },
+    {
+      "id": "ai-risk-register-template",
+      "title": "AI Risk Register Template (Essential & Enhanced Fields)",
+      "purpose": "Comprehensive template for tracking AI risks with essential fields for basic programs and enhanced fields for mature programs",
+      "concepts": ["risk-register", "risk-tracking", "risk-fields", "risk-taxonomy", "risk-scales", "governance-tools"],
+      "usedBy": ["building-an-ai-risk-register-what-to-track-and-why"],
+      "reusableFor": ["risk-management-articles", "governance-implementation", "operational-governance", "risk-documentation"],
+      "created": "2025-12-24"
+    },
+    {
+      "id": "ai-governance-maturity-assessment",
+      "title": "AI Governance Maturity Assessment (5-Dimension Framework)",
+      "purpose": "Evaluate organizational AI governance capability across five dimensions using five-level maturity scale",
+      "concepts": ["maturity-assessment", "capability-evaluation", "five-dimensions", "governance-maturity", "gap-analysis", "improvement-planning"],
+      "usedBy": ["ai-maturity-models-assessing-your-organizations-readiness"],
+      "reusableFor": ["maturity-articles", "governance-evaluation", "organizational-readiness", "strategic-planning", "benchmarking"],
+      "created": "2025-12-24"
+    },
+    {
+      "id": "nist-rmf-implementation-templates",
+      "title": "NIST AI RMF Implementation Templates (Four Functions)",
+      "purpose": "Complete template set for implementing NIST AI RMF across all four functions (GOVERN, MAP, MEASURE, MANAGE)",
+      "concepts": ["nist-ai-rmf", "govern-function", "map-function", "measure-function", "manage-function", "risk-management-process", "framework-implementation"],
+      "usedBy": ["nist-ai-rmf-core-functions-govern-map-measure-manage"],
+      "reusableFor": ["nist-articles", "risk-management-articles", "governance-implementation", "framework-deployment"],
+      "created": "2025-12-24"
+    },
+    {
+      "id": "iso-42001-management-system-template",
+      "title": "ISO 42001 AI Management System Template",
+      "purpose": "Complete management system documentation for ISO 42001 compliance and certification",
+      "concepts": ["iso-42001", "management-system", "iso-certification", "ai-policy", "process-controls", "audit-requirements", "clause-implementation"],
+      "usedBy": ["iso-iec-42001-ai-management-system-standard"],
+      "reusableFor": ["iso-articles", "management-systems", "certification-preparation", "audit-readiness"],
+      "created": "2025-12-24"
+    },
+    {
+      "id": "iso-31000-ai-risk-framework",
+      "title": "ISO 31000 Risk Management Framework for AI",
+      "purpose": "Adapt ISO 31000 risk management principles specifically for AI systems across five risk categories",
+      "concepts": ["iso-31000", "risk-management-principles", "ai-risk-categories", "risk-assessment", "risk-treatment", "data-risks", "model-risks", "system-risks"],
+      "usedBy": ["iso-31000-for-ai-applying-risk-management-principles"],
+      "reusableFor": ["risk-management-articles", "iso-articles", "framework-adaptation", "enterprise-risk-management"],
+      "created": "2025-12-24"
+    },
+    {
+      "id": "ieee-7000-ethical-design-template",
+      "title": "IEEE 7000 Ethical Design Template",
+      "purpose": "Systematic approach to embedding ethical considerations in AI system design following IEEE 7000 process",
+      "concepts": ["ieee-7000", "ethical-design", "value-elicitation", "transparency-by-design", "ethics-integration", "value-based-engineering"],
+      "usedBy": ["ieee-7000-ethical-design-for-ai-systems"],
+      "reusableFor": ["ethics-articles", "design-articles", "ieee-standards", "value-engineering", "responsible-design"],
+      "created": "2025-12-24"
+    },
+    {
+      "id": "singapore-framework-implementation-template",
+      "title": "Singapore Model AI Governance Framework Implementation Template",
+      "purpose": "Practical templates for implementing Singapore's four-area governance framework with ISAGO self-assessment",
+      "concepts": ["singapore-ai-governance", "model-framework", "isago", "four-areas", "practical-governance", "self-assessment"],
+      "usedBy": ["the-singapore-model-ai-governance-framework-practical-implementation"],
+      "reusableFor": ["singapore-articles", "practical-governance", "asia-pacific-governance", "getting-started"],
+      "created": "2025-12-24"
+    },
+    {
+      "id": "ai-risk-assessment-templates-comprehensive",
+      "title": "Comprehensive AI Risk Assessment Templates",
+      "purpose": "Complete set of risk assessment templates including initial screening, comprehensive assessment, and specialized risk evaluations",
+      "concepts": ["risk-assessment", "screening-template", "comprehensive-assessment", "bias-assessment", "privacy-assessment", "safety-assessment", "risk-documentation"],
+      "usedBy": ["ai-risk-assessment-templates-tools-for-practitioners"],
+      "reusableFor": ["risk-assessment", "practical-tools", "governance-implementation", "pre-deployment-assessment"],
+      "created": "2025-12-24"
+    },
+    {
+      "id": "multi-layered-transparency-disclosure",
+      "title": "Multi-Layered Transparency Disclosure Template",
+      "purpose": "Comprehensive template for implementing transparency at all stages of AI interaction - pre-use, real-time, post-decision, and system-level documentation",
+      "concepts": ["transparency", "progressive-disclosure", "four-layer-transparency", "pre-use-disclosure", "real-time-transparency", "post-decision-explanation", "system-documentation", "gdpr-compliance", "eu-ai-act-compliance", "user-rights"],
+      "usedBy": ["ai-transparency-what-users-deserve-to-know"],
+      "reusableFor": ["transparency-articles", "disclosure-implementation", "compliance-articles", "user-facing-ai", "regulatory-compliance"],
+      "created": "2025-12-24"
+    },
+    {
+      "id": "ftc-section-5-compliance-framework",
+      "title": "FTC Section 5 Compliance Framework for AI Systems",
+      "purpose": "Systematic approach to ensuring AI compliance with FTC Section 5 prohibition on unfair/deceptive practices across three phases: before deployment, during operation, and FTC investigation preparedness",
+      "concepts": ["ftc-section-5", "consumer-protection-compliance", "claims-substantiation", "discrimination-testing", "data-collection-review", "algorithmic-disgorgement-prevention", "ftc-investigation-response"],
+      "usedBy": ["consumer-protection-and-ai-ftc-section-5-explained"],
+      "reusableFor": ["ftc-compliance-articles", "consumer-protection-articles", "compliance-frameworks", "ai-deployment-checklists", "regulatory-compliance"],
+      "created": "2025-12-24"
+    },
+    {
+      "id": "algorithmic-disgorgement-risk-assessment",
+      "title": "Algorithmic Disgorgement Risk Assessment Template",
+      "purpose": "Comprehensive framework for assessing risk that FTC could require deletion of AI models due to improper training data collection, with remediation strategies",
+      "concepts": ["algorithmic-disgorgement", "training-data-legitimacy", "consent-assessment", "coppa-compliance", "purpose-limitation", "third-party-data-risk", "data-provenance", "ftc-remedy-risk"],
+      "usedBy": ["consumer-protection-and-ai-ftc-section-5-explained"],
+      "reusableFor": ["algorithmic-disgorgement-articles", "data-legitimacy-articles", "ftc-risk-assessment", "ai-development-planning", "compliance-due-diligence"],
+      "created": "2025-12-24"
+    },
+    {
+      "id": "red-team-exercise-planning",
+      "title": "Red Team Exercise Planning Template",
+      "purpose": "Comprehensive framework for planning, executing, and documenting AI red team exercises from initial scoping through remediation and continuous program establishment",
+      "concepts": ["red-teaming", "exercise-planning", "rules-of-engagement", "finding-reporting", "severity-classification", "remediation-tracking", "continuous-testing", "security-testing", "vulnerability-discovery"],
+      "usedBy": ["red-teaming-ai-adversarial-testing-for-safety"],
+      "reusableFor": ["red-teaming-articles", "security-testing-articles", "testing-programs", "security-operations", "continuous-assurance"],
+      "created": "2025-12-24"
+    },
+    {
+      "id": "trustworthy-ai-seven-pillars-framework",
+      "title": "Trustworthy AI - Seven Pillars Implementation Framework",
+      "purpose": "Comprehensive template for assessing, implementing, and integrating all seven pillars of trustworthy AI with risk-based prioritization, tradeoff navigation, and continuous improvement",
+      "concepts": ["trustworthy-ai", "seven-pillars-framework", "implementation-framework", "safety", "fairness", "transparency", "privacy", "accountability", "human-oversight", "robustness", "risk-assessment", "tradeoff-navigation", "maturity-model"],
+      "usedBy": ["building-trustworthy-ai-the-seven-pillars"],
+      "reusableFor": ["trustworthy-ai-articles", "governance-implementation", "comprehensive-frameworks", "ai-ethics-programs", "organizational-readiness"],
+      "created": "2025-12-24"
+    },
+    {
+      "id": "ai-harm-assessment-framework",
+      "title": "AI Harm Assessment Framework - Five Levels",
+      "purpose": "Systematic framework for evaluating AI harms across five levels (Individual, Group, Societal, Organizational, Ecosystem) before deployment with risk scoring, mitigation planning, and governance integration",
+      "concepts": ["harm-assessment", "five-level-taxonomy", "individual-harms", "group-harms", "societal-harms", "organizational-harms", "ecosystem-harms", "risk-scoring", "mitigation-planning", "comprehensive-evaluation"],
+      "usedBy": ["when-ai-goes-wrong-a-taxonomy-of-ai-harms"],
+      "reusableFor": ["harm-assessment-articles", "comprehensive-risk-assessment", "pre-deployment-evaluation", "governance-frameworks", "multi-stakeholder-analysis"],
+      "created": "2025-12-24"
+    },
+    {
+      "id": "ai-explainability-framework",
+      "title": "AI Explainability Assessment and Implementation Framework",
+      "purpose": "Comprehensive framework for evaluating explainability requirements, making model selection decisions (accuracy-interpretability tradeoff), implementing XAI techniques (LIME, SHAP, attention, counterfactuals), and building tiered explanation infrastructure for different stakeholders",
+      "concepts": ["explainability-assessment", "xai-implementation", "model-selection", "accuracy-interpretability-tradeoff", "lime", "shap", "counterfactuals", "tiered-explanations", "explanation-infrastructure", "stakeholder-communication", "regulatory-compliance"],
+      "usedBy": ["the-black-box-problem-why-ai-explainability-matters"],
+      "reusableFor": ["explainability-articles", "xai-planning", "transparency-implementation", "model-selection-decisions", "regulatory-compliance-articles"],
+      "created": "2025-12-24"
+    },
+    {
+      "id": "human-centered-ai-design-framework",
+      "title": "Human-Centered AI Design Framework",
+      "purpose": "Systematic framework for designing AI systems that enhance human capabilities, maintain meaningful control, consider all stakeholders, and preserve agency through automation level selection, human-AI collaboration design, stakeholder mapping, and human-centered implementation process",
+      "concepts": ["human-centered-design", "automation-level-selection", "human-ai-collaboration", "agency-preservation", "stakeholder-mapping", "augmentation-design", "meaningful-control", "usability-design", "dignity-preservation", "iterative-design"],
+      "usedBy": ["human-centered-ai-design-keeping-people-in-the-loop"],
+      "reusableFor": ["human-centered-ai-articles", "automation-design", "collaboration-planning", "stakeholder-analysis", "ai-usability"],
+      "created": "2025-12-24"
+    }
+  ],
+  "metadata": {
+    "lastUpdated": "2025-12-24",
+    "totalTemplates": 32,
+    "version": "1.9"
+  }
+}

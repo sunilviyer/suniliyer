@@ -1,0 +1,73 @@
+# === FILE STATUS ===
+suggested_slug: "autonomous-weapons-the-ai-arms-race"
+category: "Future Concerns"
+word_count:
+  target: null
+  actual: 3448
+  status: "no_target"
+
+# === CONTENT VALIDATION ===
+structure:
+  has_h1: true
+  has_intro: true
+  has_conclusion: true
+  header_depth_valid: true
+generated_elements:
+  tldr_was_missing: true
+  objectives_were_missing: false
+  keywords_were_missing: false
+
+# === COMPONENT INVENTORY ===
+has_components: true
+components:
+  - type: "flowchart"
+    label: "Sources Process"
+    detected_at_section: "Sources"
+  - type: "template"
+    label: "Example: Three Levels of Drone Warfare"
+    detected_at_section: "The Autonomy Spectrum"
+    template_link: "/templates/example-three-levels-of-drone-warfare.md"
+  - type: "template"
+    label: "Example: The Drone That Anyone Can Build"
+    detected_at_section: "The Commercialization Problem"
+    template_link: "/templates/example-the-drone-that-anyone-can-build.md"
+  - type: "template"
+    label: "Example: The Wedding Party"
+    detected_at_section: "Accountability Gap"
+    template_link: "/templates/example-the-wedding-party.md"
+  - type: "template"
+    label: "Example: The Assassination Drone"
+    detected_at_section: "Proliferation to Non-State Actors"
+    template_link: "/templates/example-the-assassination-drone.md"
+
+# === EXTRACTED DATA ===
+title: "Autonomous Weapons – The AI Arms Race"
+tldr: ""
+learning_objectives:
+  - "Understand the key concepts and principles of ai governance frameworks"
+  - "Implement ethical ai principles in real-world scenarios"
+  - "Evaluate regulatory requirements for organizational compliance"
+seo_keywords:
+  - "autonomous"
+  - "weapons"
+  - "AI governance"
+  - "artificial intelligence"
+  - "autonomous weapons"
+
+# === CROSS REFERENCE DATA ===
+topic_fingerprint:
+  - "computer vision"
+  - "accountability"
+  - "transparency"
+  - "oversight"
+named_examples:
+  - "defense"
+  - "google"
+
+# === IMAGE GENERATION ===
+image_prompt:
+  formula: "Abstract geometric illustration, earth tones, minimalist, professional"
+  category_motif: "crystal ball"
+  master_size: "1200x750px"
+  css_filters: true
+image_placeholder: "![Autonomous Weapons – The AI Arms Race]({{IMAGE_PLACEHOLDER_autonomous-weapons-the-ai-arms-race}})"

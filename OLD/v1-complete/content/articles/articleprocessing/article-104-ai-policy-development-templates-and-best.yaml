@@ -1,0 +1,111 @@
+# === FILE STATUS ===
+suggested_slug: "article-104-ai-policy-development-templates-and-best-practic"
+category: "Governance Implementation"
+word_count:
+  target: null
+  actual: 1167
+  status: "no_target"
+
+# === CONTENT VALIDATION ===
+structure:
+  has_h1: true
+  has_intro: true
+  has_conclusion: true
+  header_depth_valid: true
+generated_elements:
+  tldr_was_missing: true
+  objectives_were_missing: false
+  keywords_were_missing: false
+
+# === COMPONENT INVENTORY ===
+has_components: true
+components:
+  - type: "table"
+    label: "Document Type vs Purpose Table"
+    detected_at_section: "Policy vs. Other Documents"
+  - type: "flowchart"
+    label: "Conclusion Process"
+    detected_at_section: "Conclusion"
+  - type: "flowchart"
+    label: "Sources and Further Reading Process"
+    detected_at_section: "Sources and Further Reading"
+  - type: "template"
+    label: "Article 104: AI Policy Development – Templates and Best Practices"
+    detected_at_section: "Article 104: AI Policy Development – Templates and Best Practices"
+    template_link: "/templates/article-104-ai-policy-development-templates-and-best-practices.md"
+  - type: "template"
+    label: "Example:"
+    detected_at_section: "Mistake 1: Too Vague"
+    template_link: "/templates/example.md"
+  - type: "template"
+    label: "Example:"
+    detected_at_section: "Mistake 2: Too Detailed"
+    template_link: "/templates/example.md"
+  - type: "template"
+    label: "Example:"
+    detected_at_section: "Mistake 3: Copy-Paste"
+    template_link: "/templates/example.md"
+  - type: "template"
+    label: "Example:"
+    detected_at_section: "Mistake 4: No Enforcement"
+    template_link: "/templates/example.md"
+  - type: "template"
+    label: "Example:"
+    detected_at_section: "Mistake 5: Set and Forget"
+    template_link: "/templates/example.md"
+  - type: "template"
+    label: "Policy Templates"
+    detected_at_section: "Policy Templates"
+    template_link: "/templates/policy-templates.md"
+  - type: "template"
+    label: "Template: AI Ethics Policy Statement"
+    detected_at_section: "Template: AI Ethics Policy Statement"
+    template_link: "/templates/template-ai-ethics-policy-statement.md"
+  - type: "template"
+    label: "Template: Quick Reference Card"
+    detected_at_section: "Template: Quick Reference Card"
+    template_link: "/templates/template-quick-reference-card.md"
+  - type: "list"
+    label: "Article 104: AI Policy Development – Templates and Best Practices"
+    detected_at_section: "Article 104: AI Policy Development – Templates and Best Practices"
+  - type: "list"
+    label: "Policy Writing Best Practices"
+    detected_at_section: "Policy Writing Best Practices"
+
+# === EXTRACTED DATA ===
+title: "Article 104: AI Policy Development – Templates and Best Practices"
+tldr: ""
+learning_objectives:
+  - "Understand the key concepts and principles of ai governance frameworks"
+  - "Implement regulatory requirements in real-world scenarios"
+  - "Evaluate policy development for organizational compliance"
+seo_keywords:
+  - "article"
+  - "policy"
+  - "AI governance"
+  - "AI ethics"
+  - "AI risk management"
+
+# === CROSS REFERENCE DATA ===
+topic_fingerprint:
+  - "ai ethics"
+  - "fairness"
+  - "oversight"
+  - "explainability"
+  - "model card"
+named_examples:
+  - "eu ai act"
+  - "fair"
+  - "google"
+  - "iec"
+  - "iso"
+  - "microsoft"
+  - "nist"
+
+# === IMAGE GENERATION ===
+image_prompt:
+  formula: "Abstract geometric illustration, earth tones, minimalist, professional"
+  category_motif: "org charts"
+  master_size: "1200x750px"
+  css_filters: true
+image_placeholder: "![Article 104: AI Policy Development – Templates and Best Practices]({{IMAGE_PLACEHOLDER_article-104-ai-policy-development-templates-and-best-practic}})"

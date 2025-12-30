@@ -1,0 +1,119 @@
+{
+  "file_status": {
+    "suggested_slug": "article-54-foundation-model-obligations-what-the-eu-ai-act-r",
+    "category": "AI Fundamentals",
+    "word_count_check": {
+      "target": null,
+      "actual": 2021,
+      "status": "under"
+    }
+  },
+  "content_validation": {
+    "structure": {
+      "has_h1": true,
+      "has_intro": true,
+      "has_conclusion": true,
+      "header_depth_valid": true
+    },
+    "generated_elements": {
+      "tldr_was_missing": true,
+      "objectives_were_missing": false,
+      "keywords_were_missing": false
+    }
+  },
+  "component_inventory": {
+    "has_components": true,
+    "items": [
+      {
+        "type": "table",
+        "label": "Date vs What Happens Table",
+        "detected_at_section": "Timeline for GPAI Obligations"
+      },
+      {
+        "type": "flowchart",
+        "label": "If You're a Foundation Model Provider Process",
+        "detected_at_section": "If You're a Foundation Model Provider"
+      },
+      {
+        "type": "flowchart",
+        "label": "If You Build on Foundation Models Process",
+        "detected_at_section": "If You Build on Foundation Models"
+      },
+      {
+        "type": "flowchart",
+        "label": "If You're a Business Leader Process",
+        "detected_at_section": "If You're a Business Leader"
+      },
+      {
+        "type": "flowchart",
+        "label": "Sources Process",
+        "detected_at_section": "Sources"
+      },
+      {
+        "type": "template",
+        "label": "2. Information to Downstream Providers",
+        "detected_at_section": "2. Information to Downstream Providers",
+        "template_link": "/templates/2-information-to-downstream-providers.md"
+      },
+      {
+        "type": "template",
+        "label": "Information Flow",
+        "detected_at_section": "Information Flow",
+        "template_link": "/templates/information-flow.md"
+      },
+      {
+        "type": "list",
+        "label": "Additional Requirements for Systemic Risk Models",
+        "detected_at_section": "Additional Requirements for Systemic Risk Models"
+      }
+    ]
+  },
+  "extracted_data": {
+    "title": "Article 54: Foundation Model Obligations – What the EU AI Act Requires",
+    "tldr": "",
+    "learning_objectives": [
+      "Understand the key concepts and principles of policy development",
+      "Implement audit procedures in real-world scenarios",
+      "Evaluate transparency measures for organizational compliance"
+    ],
+    "seo_keywords": [
+      "article",
+      "foundation",
+      "artificial intelligence",
+      "foundation model obligations",
+      "what"
+    ],
+    "references": []
+  },
+  "cross_reference_data": {
+    "topic_fingerprint": [
+      "foundation model",
+      "transformer",
+      "multimodal",
+      "gpt",
+      "claude"
+    ],
+    "named_examples": [
+      "anthropic",
+      "deepmind",
+      "energy",
+      "eu ai act",
+      "european commission",
+      "european parliament",
+      "google",
+      "manufacturing",
+      "openai",
+      "stanford",
+      "telecommunications"
+    ]
+  },
+  "image_generation": {
+    "prompt": {
+      "formula": "Abstract geometric illustration, earth tones, minimalist, professional",
+      "category_motif": "neural networks",
+      "master_size": "1200x750px",
+      "css_filters": true
+    },
+    "placeholder": "![Article 54: Foundation Model Obligations – What the EU AI Act Requires]({{IMAGE_PLACEHOLDER_article-54-foundation-model-obligations-what-the-eu-ai-act-r}})"
+  }
+}

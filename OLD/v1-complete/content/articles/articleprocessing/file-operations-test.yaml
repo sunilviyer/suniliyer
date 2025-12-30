@@ -1,0 +1,48 @@
+# === FILE STATUS ===
+suggested_slug: "file-operations-test"
+category: "Governance Implementation"
+word_count:
+  target: null
+  actual: 36
+  status: "no_target"
+
+# === CONTENT VALIDATION ===
+structure:
+  has_h1: true
+  has_intro: true
+  has_conclusion: true
+  header_depth_valid: true
+generated_elements:
+  tldr_was_missing: false
+  objectives_were_missing: false
+  keywords_were_missing: false
+
+# === COMPONENT INVENTORY ===
+has_components: false
+components: []
+
+# === EXTRACTED DATA ===
+title: "File Operations Test"
+tldr: "This article explores key aspects of AI governance and responsible AI development. It provides valuable insights for practitioners and decision-makers in the AI governance space."
+learning_objectives:
+  - "Understand the key concepts and principles of ai governance principles"
+  - "Implement implementation strategies in real-world scenarios"
+  - "Evaluate compliance frameworks for organizational compliance"
+seo_keywords:
+  - "file"
+  - "operations"
+  - "content testing"
+  - "writing"
+  - "moving"
+
+# === CROSS REFERENCE DATA ===
+topic_fingerprint: []
+named_examples: []
+
+# === IMAGE GENERATION ===
+image_prompt:
+  formula: "Abstract geometric illustration, earth tones, minimalist, professional"
+  category_motif: "org charts"
+  master_size: "1200x750px"
+  css_filters: true
+image_placeholder: "![File Operations Test]({{IMAGE_PLACEHOLDER_file-operations-test}})"

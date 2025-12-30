@@ -1,0 +1,145 @@
+{
+  "file_status": {
+    "suggested_slug": "article-97-deployment-strategies-canary-releases-ab-testing-",
+    "category": "AI Development Lifecycle",
+    "word_count_check": {
+      "target": null,
+      "actual": 1641,
+      "status": "under"
+    }
+  },
+  "content_validation": {
+    "structure": {
+      "has_h1": true,
+      "has_intro": true,
+      "has_conclusion": true,
+      "header_depth_valid": false
+    },
+    "generated_elements": {
+      "tldr_was_missing": true,
+      "objectives_were_missing": false,
+      "keywords_were_missing": false
+    }
+  },
+  "component_inventory": {
+    "has_components": true,
+    "items": [
+      {
+        "type": "table",
+        "label": "Strategy vs How It Works Table",
+        "detected_at_section": "Deployment Strategy Overview"
+      },
+      {
+        "type": "table",
+        "label": "Metric Category vs Specific Metrics Table",
+        "detected_at_section": "Canary Metrics"
+      },
+      {
+        "type": "table",
+        "label": "Pitfall vs Problem Table",
+        "detected_at_section": "A/B Test Pitfalls"
+      },
+      {
+        "type": "table",
+        "label": "Metric vs Rollback Threshold Table",
+        "detected_at_section": "Rollback Triggers"
+      },
+      {
+        "type": "table",
+        "label": "Scenario vs Recommended Strategy Table",
+        "detected_at_section": "Strategy by Scenario"
+      },
+      {
+        "type": "table",
+        "label": "Stage vs Error Rate Table",
+        "detected_at_section": "Deployment Record"
+      },
+      {
+        "type": "flowchart",
+        "label": "Strategy by Scenario Process",
+        "detected_at_section": "Strategy by Scenario"
+      },
+      {
+        "type": "flowchart",
+        "label": "Combining Strategies Process",
+        "detected_at_section": "Combining Strategies"
+      },
+      {
+        "type": "flowchart",
+        "label": "Conclusion Process",
+        "detected_at_section": "Conclusion"
+      },
+      {
+        "type": "flowchart",
+        "label": "Sources and Further Reading Process",
+        "detected_at_section": "Sources and Further Reading"
+      },
+      {
+        "type": "template",
+        "label": "Example: High-risk model deployment",
+        "detected_at_section": "Combining Strategies",
+        "template_link": "/templates/example-high-risk-model-deployment.md"
+      },
+      {
+        "type": "list",
+        "label": "Canary Decision Criteria",
+        "detected_at_section": "Canary Decision Criteria"
+      },
+      {
+        "type": "list",
+        "label": "A/B Test Requirements",
+        "detected_at_section": "A/B Test Requirements"
+      },
+      {
+        "type": "list",
+        "label": "Feature Flag Criteria",
+        "detected_at_section": "Feature Flag Criteria"
+      },
+      {
+        "type": "list",
+        "label": "Rollback Principles",
+        "detected_at_section": "Rollback Principles"
+      }
+    ]
+  },
+  "extracted_data": {
+    "title": "Article 97: Deployment Strategies – Canary Releases, A/B Testing, and Rollbacks",
+    "tldr": "",
+    "learning_objectives": [
+      "Understand the key concepts and principles of ai governance principles",
+      "Implement implementation strategies in real-world scenarios",
+      "Evaluate compliance frameworks for organizational compliance"
+    ],
+    "seo_keywords": [
+      "article",
+      "deployment",
+      "AI governance",
+      "deployment strategies",
+      "canary releases"
+    ],
+    "references": []
+  },
+  "cross_reference_data": {
+    "topic_fingerprint": [
+      "audit",
+      "ab testing",
+      "mlops"
+    ],
+    "named_examples": [
+      "amazon",
+      "google",
+      "microsoft",
+      "netflix",
+      "spotify"
+    ]
+  },
+  "image_generation": {
+    "prompt": {
+      "formula": "Abstract geometric illustration, earth tones, minimalist, professional",
+      "category_motif": "flowcharts",
+      "master_size": "1200x750px",
+      "css_filters": true
+    },
+    "placeholder": "![Article 97: Deployment Strategies – Canary Releases, A/B Testing, and Rollbacks]({{IMAGE_PLACEHOLDER_article-97-deployment-strategies-canary-releases-ab-testing-}})"
+  }
+}

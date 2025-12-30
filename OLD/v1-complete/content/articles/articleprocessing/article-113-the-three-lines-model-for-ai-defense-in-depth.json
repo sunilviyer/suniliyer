@@ -1,0 +1,103 @@
+{
+  "file_status": {
+    "suggested_slug": "article-113-the-three-lines-model-for-ai-defense-in-depth",
+    "category": "Governance Implementation",
+    "word_count_check": {
+      "target": null,
+      "actual": 1526,
+      "status": "under"
+    }
+  },
+  "content_validation": {
+    "structure": {
+      "has_h1": true,
+      "has_intro": true,
+      "has_conclusion": true,
+      "header_depth_valid": true
+    },
+    "generated_elements": {
+      "tldr_was_missing": true,
+      "objectives_were_missing": false,
+      "keywords_were_missing": false
+    }
+  },
+  "component_inventory": {
+    "has_components": true,
+    "items": [
+      {
+        "type": "table",
+        "label": "Activity vs First Line Role Table",
+        "detected_at_section": "Coordination Between First and Second Line"
+      },
+      {
+        "type": "table",
+        "label": "Gap vs Problem Table",
+        "detected_at_section": "Avoiding Gaps and Overlaps"
+      },
+      {
+        "type": "table",
+        "label": "Overlap vs Problem Table",
+        "detected_at_section": "Avoiding Gaps and Overlaps"
+      },
+      {
+        "type": "table",
+        "label": "Line vs Capability Needed Table",
+        "detected_at_section": "Step 3: Build Capability"
+      },
+      {
+        "type": "table",
+        "label": "Metric vs What It Measures Table",
+        "detected_at_section": "Step 5: Monitor and Improve"
+      },
+      {
+        "type": "flowchart",
+        "label": "Conclusion Process",
+        "detected_at_section": "Conclusion"
+      },
+      {
+        "type": "flowchart",
+        "label": "Sources and Further Reading Process",
+        "detected_at_section": "Sources and Further Reading"
+      }
+    ]
+  },
+  "extracted_data": {
+    "title": "Article 113: The Three Lines Model for AI – Defense in Depth",
+    "tldr": "",
+    "learning_objectives": [
+      "Understand the key concepts and principles of policy development",
+      "Implement best practices in real-world scenarios",
+      "Evaluate risk assessment frameworks for organizational compliance"
+    ],
+    "seo_keywords": [
+      "article",
+      "three",
+      "AI governance",
+      "the three lines model",
+      "defense"
+    ],
+    "references": []
+  },
+  "cross_reference_data": {
+    "topic_fingerprint": [
+      "governance framework",
+      "oversight",
+      "audit",
+      "accountability",
+      "model card"
+    ],
+    "named_examples": [
+      "defense",
+      "nist"
+    ]
+  },
+  "image_generation": {
+    "prompt": {
+      "formula": "Abstract geometric illustration, earth tones, minimalist, professional",
+      "category_motif": "org charts",
+      "master_size": "1200x750px",
+      "css_filters": true
+    },
+    "placeholder": "![Article 113: The Three Lines Model for AI – Defense in Depth]({{IMAGE_PLACEHOLDER_article-113-the-three-lines-model-for-ai-defense-in-depth}})"
+  }
+}
