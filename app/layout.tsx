@@ -1,22 +1,16 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Funnel_Display } from "next/font/google";
 import "./globals.css";
-import { Header } from "@/components/layout/Header";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const funnelDisplay = Funnel_Display({
+  weight: ['300', '400', '500', '600', '700'],
   subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+  variable: "--font-funnel",
 });
 
 export const metadata: Metadata = {
-  title: "AIDefence | Master AI Governance & Responsible AI",
-  description: "Navigate AI compliance, ethics, and responsible deployment through 5 expert-curated learning paths. Master AI governance with comprehensive, interactive content.",
-  keywords: ["AI governance", "responsible AI", "AI ethics", "AI compliance", "AI regulation", "machine learning governance"],
+  title: "Sunil Iyer | AI Governance & Responsible AI",
+  description: "Helping organizations navigate AI through education, implementation guidance, and governance frameworks.",
 };
 
 export default function RootLayout({
@@ -27,10 +21,9 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${funnelDisplay.variable}`}
         suppressHydrationWarning
       >
-        <Header />
         {children}
       </body>
     </html>
