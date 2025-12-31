@@ -25,12 +25,11 @@ export function WireframeHeader() {
 
   return (
     <>
-      {/* Header Bar */}
+      {/* Header Bar - Floating (not sticky) */}
       <header
-        className="fixed top-0 left-0 w-full h-20 z-[9000] flex items-center px-15 shadow-sm"
+        className="w-full h-20 flex items-center justify-between px-15"
         style={{
           background: theme === 'dark' ? 'rgba(26, 26, 26, 0.95)' : 'rgba(255, 255, 255, 0.95)',
-          backdropFilter: 'blur(10px)',
         }}
       >
         <div className="flex items-center gap-5">
@@ -66,30 +65,32 @@ export function WireframeHeader() {
             </span>
           </div>
         </div>
+
+        {/* Theme Toggle - stays in header */}
+        <button
+          onClick={toggleTheme}
+          className="w-12 h-12 rounded-full flex items-center justify-center text-2xl cursor-pointer transition-transform hover:scale-110"
+          style={{
+            background: theme === 'dark' ? 'rgba(26, 26, 26, 0.95)' : 'rgba(255, 255, 255, 0.95)',
+            border: '1px solid var(--border-color)',
+          }}
+          aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
+        >
+          <span>{theme === 'dark' ? '🌙' : '☀️'}</span>
+        </button>
       </header>
 
-      {/* Theme Toggle */}
-      <button
-        onClick={toggleTheme}
-        className="fixed top-4 right-32 w-12 h-12 rounded-full flex items-center justify-center text-2xl cursor-pointer z-[9500] transition-transform hover:scale-110"
-        style={{
-          background: theme === 'dark' ? 'rgba(26, 26, 26, 0.95)' : 'rgba(255, 255, 255, 0.95)',
-        }}
-        aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
-      >
-        <span>{theme === 'dark' ? '🌙' : '☀️'}</span>
-      </button>
-
-      {/* Hamburger Menu */}
+      {/* Hamburger Menu - Fixed floating on right */}
       <div
-        className="fixed top-4 right-15 w-12 h-12 rounded-full flex flex-col items-center justify-center gap-1 cursor-pointer z-[9500] transition-transform hover:scale-110"
+        className="fixed top-6 right-6 w-14 h-14 rounded-full flex flex-col items-center justify-center gap-1.5 cursor-pointer z-[9500] transition-all hover:scale-110 shadow-lg"
         style={{
           background: theme === 'dark' ? 'rgba(26, 26, 26, 0.95)' : 'rgba(255, 255, 255, 0.95)',
+          backdropFilter: 'blur(10px)',
         }}
       >
-        <span className="w-6 h-0.5 bg-[#333d29] rounded"></span>
-        <span className="w-6 h-0.5 bg-[#333d29] rounded"></span>
-        <span className="w-6 h-0.5 bg-[#333d29] rounded"></span>
+        <span className="w-7 h-0.5 bg-[#333d29] rounded"></span>
+        <span className="w-7 h-0.5 bg-[#333d29] rounded"></span>
+        <span className="w-7 h-0.5 bg-[#333d29] rounded"></span>
       </div>
     </>
   );

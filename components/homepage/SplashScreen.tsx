@@ -8,7 +8,7 @@ export function SplashScreen() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsHidden(true);
-    }, 10000); // 10 seconds for 10 blinks
+    }, 5000); // 5 seconds for 10 blinks
 
     return () => clearTimeout(timer);
   }, []);

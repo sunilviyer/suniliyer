@@ -30,7 +30,7 @@ export function WireframeHero() {
           muted
           playsInline
         >
-          <source src="/images/background.webm" type="video/webm" />
+          <source src="/images/HeroCard.webm" type="video/webm" />
         </video>
 
         {/* Hero Content */}
@@ -83,21 +83,22 @@ export function WireframeHero() {
 
       <style jsx>{`
         .card-container {
-          max-width: 1920px;
-          margin: 0 auto 300px;
-          padding: 0 60px;
+          max-width: 1400px;
+          margin: 0 auto 200px;
+          padding: 0 40px;
         }
 
         .card-container.first {
-          margin-top: 80px;
+          margin-top: 40px;
         }
 
         .card {
           background: transparent;
-          border-radius: 30px;
+          border-radius: 24px;
           overflow: hidden;
           width: 100%;
-          min-height: 960px;
+          min-height: 800px;
+          box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
         }
 
         .hero-card {
