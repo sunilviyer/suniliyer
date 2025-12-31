@@ -10,8 +10,8 @@ export function AboutCard() {
           <div className="about-grid">
             <div className="about-image">
               <Image
-                src="/images/Sunil.jpg"
-                alt="Sunil Iyer"
+                src="/images/heroes/about-me-page-break.webp"
+                alt="About Me"
                 fill
                 sizes="(max-width: 768px) 100vw, 500px"
                 style={{ objectFit: 'cover' }}
