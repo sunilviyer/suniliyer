@@ -1,11 +1,17 @@
 import type { Metadata } from "next";
-import { Funnel_Display } from "next/font/google";
+import { Funnel_Display, Funnel_Sans } from "next/font/google";
 import "./globals.css";
 
 const funnelDisplay = Funnel_Display({
-  weight: ['300', '400', '500', '600', '700'],
+  weight: ['300', '400', '500', '600', '700', '800'],
   subsets: ["latin"],
-  variable: "--font-funnel",
+  variable: "--font-funnel-display",
+});
+
+const funnelSans = Funnel_Sans({
+  weight: ['300', '400', '500', '600', '700', '800'],
+  subsets: ["latin"],
+  variable: "--font-funnel-sans",
 });
 
 export const metadata: Metadata = {
@@ -21,7 +27,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${funnelDisplay.variable}`}
+        className={`${funnelDisplay.variable} ${funnelSans.variable}`}
         suppressHydrationWarning
       >
         {children}

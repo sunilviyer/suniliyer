@@ -23,7 +23,7 @@ export function SplashScreen() {
       <div
         className="text-[#f5f5f0] font-light animate-blink"
         style={{
-          fontFamily: 'var(--font-funnel)',
+          fontFamily: 'var(--font-funnel-display)',
           fontSize: '120px',
         }}
       >
@@ -37,7 +37,7 @@ export function SplashScreen() {
           100% { opacity: 1; }
         }
         .animate-blink {
-          animation: blink 1s ease-in-out 10;
+          animation: blink 0.5s ease-in-out 10;
         }
       `}</style>
     </div>
