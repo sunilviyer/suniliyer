@@ -22,16 +22,15 @@ export function WireframeHero() {
   return (
     <div className="card-container first">
       <div className="card hero-card">
-        {/* Video Background */}
-        <video
-          className="absolute top-0 left-0 w-full h-full object-cover opacity-30 z-[1]"
-          autoPlay
-          loop
-          muted
-          playsInline
-        >
-          <source src="/images/HeroCard.webm" type="video/webm" />
-        </video>
+        {/* Background Image */}
+        <div
+          className="absolute top-0 left-0 w-full h-full opacity-30 z-[1]"
+          style={{
+            backgroundImage: 'url(/images/hero-background.jpg)',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+          }}
+        />
 
         {/* Hero Content */}
         <div className="relative z-[2] text-center w-full max-w-6xl">
@@ -113,7 +112,7 @@ export function WireframeHero() {
           transition: background-color 0.3s ease;
         }
 
-        [data-theme="dark"] video {
+        [data-theme="dark"] .hero-card > div:first-child {
           opacity: 0.2;
         }
 

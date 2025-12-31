@@ -110,9 +110,9 @@ export function FooterCard() {
       <style jsx>{`
         .card-container {
           width: 100%;
-          max-width: 1920px;
+          max-width: 1400px;
           margin: 0 auto;
-          padding: 0;
+          padding: 0 40px;
         }
 
         .footer-container {
@@ -122,13 +122,14 @@ export function FooterCard() {
         .card {
           width: 100%;
           background: var(--card-bg);
-          border-radius: 0;
-          box-shadow: 0 4px 12px var(--shadow-color);
+          border-radius: 24px;
+          box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
         }
 
         .footer-card {
           background: var(--bg-secondary);
           padding: 80px 60px 40px 60px;
+          min-height: 960px;
         }
 
         .footer-grid {
@@ -237,7 +238,12 @@ export function FooterCard() {
           font-size: 14px;
         }
 
-        @media (max-width: 1024px) {
+        @media (max-width: 1024px) and (min-width: 768px) {
+          .card-container {
+            max-width: 90%;
+            padding: 0 40px;
+          }
+
           .footer-card {
             padding: 60px 40px 30px 40px;
           }
@@ -253,7 +259,12 @@ export function FooterCard() {
           }
         }
 
-        @media (max-width: 768px) {
+        @media (max-width: 767px) {
+          .card-container {
+            max-width: 100%;
+            padding: 0 20px;
+          }
+
           .footer-card {
             padding: 40px 20px 20px 20px;
           }

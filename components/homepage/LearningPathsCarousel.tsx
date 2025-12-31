@@ -158,22 +158,21 @@ export function LearningPathsCarousel() {
       <style jsx>{`
         .card-container {
           width: 100%;
-          max-width: 1920px;
-          margin: 0 auto;
-          padding: 0;
-          margin-bottom: 300px;
+          max-width: 1400px;
+          margin: 0 auto 200px;
+          padding: 0 40px;
         }
 
         .card {
           width: 100%;
           background: var(--card-bg);
-          border-radius: 0;
-          box-shadow: 0 4px 12px var(--shadow-color);
+          border-radius: 24px;
+          box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
         }
 
         .carousel-card {
           padding: 80px 40px;
-          min-height: 800px;
+          min-height: 960px;
           display: flex;
           flex-direction: column;
           align-items: center;
@@ -331,9 +330,11 @@ export function LearningPathsCarousel() {
           transform: scale(1.3);
         }
 
-        @media (max-width: 1024px) {
+        @media (max-width: 1024px) and (min-width: 768px) {
           .card-container {
+            max-width: 90%;
             margin-bottom: 200px;
+            padding: 0 40px;
           }
 
           .carousel-card {
@@ -370,9 +371,11 @@ export function LearningPathsCarousel() {
           }
         }
 
-        @media (max-width: 768px) {
+        @media (max-width: 767px) {
           .card-container {
+            max-width: 100%;
             margin-bottom: 100px;
+            padding: 0 20px;
           }
 
           .carousel-card {
