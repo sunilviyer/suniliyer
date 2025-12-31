@@ -28,21 +28,11 @@ export function AboutCard() {
                 revenue growth, operational efficiency, and long-term client retention.
               </p>
               <p>
-                My expertise lies in aligning AI strategies with business objectives, influencing C-suite
-                stakeholders, and developing comprehensive AI governance frameworks. I&apos;m passionate about
-                leveraging AI and automation to transform customer engagement, mitigate risk, and drive
-                measurable business impact.
-              </p>
-              <p>
                 Currently serving as Senior Manager at Shift Technology, I&apos;ve fostered long-term
                 enterprise relationships while implementing data-driven engagement models that maintain
                 100% client retention and drive significant growth. Previously at Ernst & Young, I oversaw
                 $30M+ in client engagements focused on strategy implementation, process improvement, and
                 technology transformation.
-              </p>
-              <p>
-                I hold an MBA from the University of Toronto, am a Certified Cloud Digital Leader (Google Cloud),
-                and bring deep expertise in AI ethics & governance, program management, and enterprise transformation.
               </p>
             </div>
           </div>
