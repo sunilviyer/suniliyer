@@ -8,17 +8,21 @@ export function SplashScreen() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsHidden(true);
-    }, 5000); // 5 seconds for 10 blinks
+    }, 3500); // 3.5 seconds for 10 blinks (30% faster)
 
     return () => clearTimeout(timer);
   }, []);
 
   return (
     <div
-      className={`fixed top-0 left-0 w-full h-screen bg-black flex items-center justify-center z-[10000] transition-transform duration-500 ease-in-out ${
+      className={`fixed top-0 left-0 w-full h-screen bg-black flex items-center justify-center z-[10000] transition-all duration-500 ease-in-out ${
         isHidden ? '-translate-y-full' : 'translate-y-0'
       }`}
-      style={{ transitionTimingFunction: 'cubic-bezier(0.76, 0, 0.24, 1)' }}
+      style={{
+        transitionTimingFunction: 'cubic-bezier(0.76, 0, 0.24, 1)',
+        borderBottomLeftRadius: isHidden ? '50%' : '0',
+        borderBottomRightRadius: isHidden ? '50%' : '0',
+      }}
     >
       <div
         className="text-[#f5f5f0] font-light animate-blink"
@@ -37,7 +41,7 @@ export function SplashScreen() {
           100% { opacity: 1; }
         }
         .animate-blink {
-          animation: blink 0.5s ease-in-out 10;
+          animation: blink 0.35s ease-in-out 10;
         }
       `}</style>
     </div>

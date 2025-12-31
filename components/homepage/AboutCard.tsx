@@ -71,15 +71,15 @@ export function AboutCard() {
 
         .about-grid {
           display: grid;
-          grid-template-columns: 500px 1fr;
-          gap: 80px;
+          grid-template-columns: 400px 1fr;
+          gap: 60px;
           align-items: start;
         }
 
         .about-image {
           position: relative;
           width: 100%;
-          height: 600px;
+          height: 500px;
           border-radius: 12px;
           overflow: hidden;
           box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
@@ -88,20 +88,20 @@ export function AboutCard() {
         .about-content {
           display: flex;
           flex-direction: column;
-          gap: 24px;
+          gap: 20px;
         }
 
         .about-content h2 {
           font-family: var(--font-funnel);
-          font-size: 56px;
+          font-size: 48px;
           font-weight: 700;
           color: var(--text-primary);
-          margin: 0 0 15px 0;
+          margin: 0 0 10px 0;
         }
 
         .about-content p {
-          font-size: 18px;
-          line-height: 1.8;
+          font-size: 16px;
+          line-height: 1.7;
           color: var(--text-secondary);
           margin: 0;
         }

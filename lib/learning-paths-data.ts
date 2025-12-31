@@ -13,7 +13,7 @@ export const learningPathsData: LearningPathData[] = [
     number: "Learning Path 1",
     title: "History & Context",
     description: "Understand the evolution of AI from theoretical foundations to modern applications, including key milestones, breakthroughs, and the socio-technical context shaping today's AI landscape.",
-    image: "/images/paths/history-context.png",
+    image: "/images/heroes/history-hero.webp",
     slug: "history",
   },
   {
@@ -21,7 +21,7 @@ export const learningPathsData: LearningPathData[] = [
     number: "Learning Path 2",
     title: "Foundation",
     description: "Master the fundamental concepts of AI including machine learning, neural networks, and deep learning.",
-    image: "/images/paths/foundation.png",
+    image: "/images/heroes/terminology-hero.webp",
     slug: "terminology",
   },
   {
@@ -29,7 +29,7 @@ export const learningPathsData: LearningPathData[] = [
     number: "Learning Path 3",
     title: "Implementation",
     description: "Learn practical AI implementation strategies, deployment patterns, and production best practices.",
-    image: "/images/paths/implementation.png",
+    image: "/images/heroes/danger-hero.webp",
     slug: "implementation",
   },
   {
@@ -37,7 +37,7 @@ export const learningPathsData: LearningPathData[] = [
     number: "Learning Path 4",
     title: "Risk & Ethics",
     description: "Navigate the ethical challenges and risk management strategies for responsible AI deployment.",
-    image: "/images/paths/risk-ethics.png",
+    image: "/images/heroes/risk-hero.webp",
     slug: "risk",
   },
   {
@@ -45,7 +45,7 @@ export const learningPathsData: LearningPathData[] = [
     number: "Learning Path 5",
     title: "Legal & Compliance",
     description: "Navigate AI regulations, compliance frameworks, data governance, and legal obligations.",
-    image: "/images/paths/legal-compliance.png",
+    image: "/images/heroes/responsibility-hero.webp",
     slug: "responsibility",
   },
 ];
