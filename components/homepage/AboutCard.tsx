@@ -2,26 +2,6 @@
 
 import Image from 'next/image';
 
-interface StatData {
-  number: string;
-  label: string;
-}
-
-const stats: StatData[] = [
-  {
-    number: '15+',
-    label: 'Years in AI & Tech',
-  },
-  {
-    number: '100+',
-    label: 'AI Projects Delivered',
-  },
-  {
-    number: '50+',
-    label: 'Organizations Guided',
-  },
-];
-
 export function AboutCard() {
   return (
     <>
@@ -33,7 +13,7 @@ export function AboutCard() {
                 src="/images/Sunil.jpg"
                 alt="Sunil Iyer"
                 fill
-                sizes="(max-width: 768px) 100vw, 400px"
+                sizes="(max-width: 768px) 100vw, 500px"
                 style={{ objectFit: 'cover' }}
                 priority
               />
@@ -42,32 +22,28 @@ export function AboutCard() {
             <div className="about-content">
               <h2>A little about me</h2>
               <p>
-                I&apos;m Sunil Iyer, an AI strategist and technologist passionate about making
-                artificial intelligence responsible, trustworthy, and accessible. With over
-                15 years of experience in technology leadership, I help organizations navigate
-                the complex landscape of AI implementation while ensuring ethical practices
-                and regulatory compliance.
+                I&apos;m a results-driven leader specializing in AI adoption, customer success, and
+                enterprise digital transformation. With a proven track record implementing AI-driven
+                engagement models, optimizing data analytics, and leading cross-functional teams, I drive
+                revenue growth, operational efficiency, and long-term client retention.
               </p>
               <p>
-                My work focuses on bridging the gap between cutting-edge AI innovation and
-                practical business applications. From governance frameworks to technical
-                implementation, I guide teams through every step of their AI journey with
-                a focus on transparency, accountability, and real-world impact.
+                My expertise lies in aligning AI strategies with business objectives, influencing C-suite
+                stakeholders, and developing comprehensive AI governance frameworks. I&apos;m passionate about
+                leveraging AI and automation to transform customer engagement, mitigate risk, and drive
+                measurable business impact.
               </p>
               <p>
-                Beyond consulting, I&apos;m dedicated to education and knowledge sharing. Through
-                workshops, writing, and speaking engagements, I empower professionals to
-                understand and leverage AI responsibly in their organizations.
+                Currently serving as Senior Manager at Shift Technology, I&apos;ve fostered long-term
+                enterprise relationships while implementing data-driven engagement models that maintain
+                100% client retention and drive significant growth. Previously at Ernst & Young, I oversaw
+                $30M+ in client engagements focused on strategy implementation, process improvement, and
+                technology transformation.
               </p>
-            </div>
-
-            <div className="about-stats">
-              {stats.map((stat, index) => (
-                <div key={index} className="stat-card">
-                  <div className="stat-number">{stat.number}</div>
-                  <div className="stat-label">{stat.label}</div>
-                </div>
-              ))}
+              <p>
+                I hold an MBA from the University of Toronto, am a Certified Cloud Digital Leader (Google Cloud),
+                and bring deep expertise in AI ethics & governance, program management, and enterprise transformation.
+              </p>
             </div>
           </div>
         </div>
@@ -96,15 +72,15 @@ export function AboutCard() {
 
         .about-grid {
           display: grid;
-          grid-template-columns: 400px 1fr 350px;
-          gap: 60px;
+          grid-template-columns: 500px 1fr;
+          gap: 80px;
           align-items: start;
         }
 
         .about-image {
           position: relative;
           width: 100%;
-          height: 500px;
+          height: 600px;
           border-radius: 12px;
           overflow: hidden;
           box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
@@ -113,15 +89,15 @@ export function AboutCard() {
         .about-content {
           display: flex;
           flex-direction: column;
-          gap: 20px;
+          gap: 24px;
         }
 
         .about-content h2 {
           font-family: var(--font-funnel);
-          font-size: 48px;
+          font-size: 56px;
           font-weight: 700;
           color: var(--text-primary);
-          margin: 0 0 10px 0;
+          margin: 0 0 15px 0;
         }
 
         .about-content p {
@@ -129,41 +105,6 @@ export function AboutCard() {
           line-height: 1.8;
           color: var(--text-secondary);
           margin: 0;
-        }
-
-        .about-stats {
-          display: flex;
-          flex-direction: column;
-          gap: 30px;
-        }
-
-        .stat-card {
-          background: linear-gradient(135deg, #333d29 0%, #4a5739 100%);
-          padding: 30px;
-          border-radius: 12px;
-          text-align: center;
-          box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-          transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .stat-card:hover {
-          transform: translateY(-5px);
-          box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
-        }
-
-        .stat-number {
-          font-family: var(--font-funnel);
-          font-size: 56px;
-          font-weight: 700;
-          color: #ffffff;
-          margin-bottom: 8px;
-        }
-
-        .stat-label {
-          font-size: 16px;
-          font-weight: 500;
-          color: rgba(255, 255, 255, 0.9);
-          line-height: 1.4;
         }
 
         @media (max-width: 1024px) {
@@ -182,30 +123,13 @@ export function AboutCard() {
           }
 
           .about-image {
-            height: 400px;
-            max-width: 500px;
+            height: 450px;
+            max-width: 600px;
             margin: 0 auto;
           }
 
           .about-content h2 {
-            font-size: 40px;
-          }
-
-          .about-stats {
-            flex-direction: row;
-            gap: 20px;
-          }
-
-          .stat-card {
-            flex: 1;
-          }
-
-          .stat-number {
-            font-size: 48px;
-          }
-
-          .stat-label {
-            font-size: 14px;
+            font-size: 44px;
           }
         }
 
@@ -223,28 +147,15 @@ export function AboutCard() {
           }
 
           .about-image {
-            height: 350px;
+            height: 400px;
           }
 
           .about-content h2 {
-            font-size: 32px;
+            font-size: 36px;
           }
 
           .about-content p {
             font-size: 16px;
-          }
-
-          .about-stats {
-            flex-direction: column;
-            gap: 20px;
-          }
-
-          .stat-number {
-            font-size: 40px;
-          }
-
-          .stat-label {
-            font-size: 14px;
           }
         }
       `}</style>

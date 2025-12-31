@@ -13,8 +13,8 @@ export function WireframeHero() {
       setTimeout(() => {
         setCurrentWordIndex((prev) => (prev + 1) % tickerWords.length);
         setIsAnimating(false);
-      }, 500);
-    }, 3000);
+      }, 300);
+    }, 1500);
 
     return () => clearInterval(interval);
   }, []);
@@ -53,7 +53,7 @@ export function WireframeHero() {
                 >
                   <span className="relative w-full h-full flex items-center justify-center bg-[#333d29] rounded-[30px]">
                     <span
-                      className={`absolute w-full text-white font-medium text-[32px] transition-all duration-500 ${
+                      className={`absolute w-full text-white font-medium text-[32px] transition-all duration-300 ${
                         isAnimating
                           ? '-translate-y-full opacity-0'
                           : 'translate-y-0 opacity-100'
