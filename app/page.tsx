@@ -47,7 +47,7 @@ export default function HomePage() {
 
         <div className="loading__item">
           <BreakCard
-            image="/images/extra/toolate-hero.webp"
+            image="/images/heroes/about-me-page-break.webp"
             text="About Me"
           />
         </div>
