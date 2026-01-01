@@ -25,7 +25,7 @@ export default function HomePage() {
         </div>
 
         <div className="loading__item">
-          <StackCards stackName="learning-paths-stack">
+          <StackCards stackName="learning-paths-stack" pin={false}>
             <BreakCard
               image="/images/heroes/future-hero.webp"
               text="Learning Paths"
@@ -35,7 +35,7 @@ export default function HomePage() {
         </div>
 
         <div className="loading__item">
-          <StackCards stackName="portfolio-stack">
+          <StackCards stackName="portfolio-stack" pin={false}>
             <BreakCard
               image="/images/extra/growth-hero.webp"
               text="Portfolio"
@@ -45,7 +45,7 @@ export default function HomePage() {
         </div>
 
         <div className="loading__item">
-          <StackCards stackName="about-stack">
+          <StackCards stackName="about-stack" pin={false}>
             <BreakCard
               image="/images/heroes/about-me-page-break.webp"
               text="About Me"
