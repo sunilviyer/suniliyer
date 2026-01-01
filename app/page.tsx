@@ -9,7 +9,6 @@ import { PortfolioCarousel } from '@/components/homepage/PortfolioCarousel';
 import { AboutCard } from '@/components/homepage/AboutCard';
 import { FooterCard } from '@/components/homepage/FooterCard';
 import { useGsapScrollScaleAnimations } from '@/lib/hooks/useGsapScrollScaleAnimations';
-import StackCards from '@/components/animation/StackCards';
 
 export default function HomePage() {
   useGsapScrollScaleAnimations();
@@ -25,33 +24,36 @@ export default function HomePage() {
         </div>
 
         <div className="loading__item">
-          <StackCards stackName="learning-paths-stack" pin={false}>
-            <BreakCard
-              image="/images/heroes/future-hero.webp"
-              text="Learning Paths"
-            />
-            <LearningPathsCarousel />
-          </StackCards>
+          <BreakCard
+            image="/images/heroes/future-hero.webp"
+            text="Learning Paths"
+          />
         </div>
 
         <div className="loading__item">
-          <StackCards stackName="portfolio-stack" pin={false}>
-            <BreakCard
-              image="/images/extra/growth-hero.webp"
-              text="Portfolio"
-            />
-            <PortfolioCarousel />
-          </StackCards>
+          <LearningPathsCarousel />
         </div>
 
         <div className="loading__item">
-          <StackCards stackName="about-stack" pin={false}>
-            <BreakCard
-              image="/images/heroes/about-me-page-break.webp"
-              text="About Me"
-            />
-            <AboutCard />
-          </StackCards>
+          <BreakCard
+            image="/images/extra/growth-hero.webp"
+            text="Portfolio"
+          />
+        </div>
+
+        <div className="loading__item">
+          <PortfolioCarousel />
+        </div>
+
+        <div className="loading__item">
+          <BreakCard
+            image="/images/heroes/about-me-page-break.webp"
+            text="About Me"
+          />
+        </div>
+
+        <div className="loading__item">
+          <AboutCard />
         </div>
 
         <div className="loading__item">
