@@ -9,6 +9,7 @@ import { PortfolioCarousel } from '@/components/homepage/PortfolioCarousel';
 import { AboutCard } from '@/components/homepage/AboutCard';
 import { FooterCard } from '@/components/homepage/FooterCard';
 import { useGsapScrollScaleAnimations } from '@/lib/hooks/useGsapScrollScaleAnimations';
+import StackCards from '@/components/animation/StackCards';
 
 export default function HomePage() {
   useGsapScrollScaleAnimations();
@@ -19,46 +20,32 @@ export default function HomePage() {
       <WireframeHeader />
 
       <main className="loading-wrap">
-        <div className="loading__item">
+        <StackCards stackName="homepage-stack" pin={true} scrub={true}>
           <WireframeHero />
-        </div>
 
-        <div className="loading__item">
           <BreakCard
             image="/images/heroes/future-hero.webp"
             text="Learning Paths"
           />
-        </div>
 
-        <div className="loading__item">
           <LearningPathsCarousel />
-        </div>
 
-        <div className="loading__item">
           <BreakCard
             image="/images/extra/growth-hero.webp"
             text="Portfolio"
           />
-        </div>
 
-        <div className="loading__item">
           <PortfolioCarousel />
-        </div>
 
-        <div className="loading__item">
           <BreakCard
             image="/images/heroes/about-me-page-break.webp"
             text="About Me"
           />
-        </div>
 
-        <div className="loading__item">
           <AboutCard />
-        </div>
 
-        <div className="loading__item">
           <FooterCard />
-        </div>
+        </StackCards>
       </main>
     </>
   );
