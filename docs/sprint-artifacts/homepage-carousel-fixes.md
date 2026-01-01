@@ -145,6 +145,23 @@ Fix learning paths carousel data to match the knowledge graph, add curved border
 - Build successful
 - Committed: "FIX: Implement Rayo pattern for StackCards scroll animations" (095f0f6)
 - Pushed to remote: main
+- **USER FEEDBACK:** "Nope, now it scrolls but it blinks and goes back up"
+
+**2024-12-31 - Scroll Pinning Conflict Fix**
+- Issue: Page scrolls but blinks/jumps back up during scroll
+- Root cause analysis:
+  - Rayo uses StackCards ONCE per page (ServicesStack only)
+  - We use StackCards THREE times (Learning Paths, Portfolio, About)
+  - Each StackCards has `pin={true}` by default
+  - Multiple pinned ScrollTriggers conflict, causing scroll position jumps
+- Solution: Added `pin={false}` to all 3 StackCards instances
+  - Keeps animation effects (card transitions)
+  - Prevents scroll pinning behavior
+  - Allows smooth natural scrolling
+  - Eliminates scroll jumping/blinking
+- Build successful
+- Committed: "FIX: Disable scroll pinning in StackCards to prevent jump/blink" (de3cb15)
+- Pushed to remote: main
 
 ### Build Output
 ```
@@ -160,7 +177,9 @@ Route (app)                                 Size  First Load JS
 2. e415724 - Update About Me image to use about-me-page-break hero (REVERTED)
 3. a9fa92f - Fix About Me break card image to use about-me-page-break
 4. efb52d7 - Fix critical scrolling animation - add StackCards wrapper (SCROLL PINNING ISSUE)
-5. 095f0f6 - FIX: Implement Rayo pattern for StackCards scroll animations (FINAL)
+5. 095f0f6 - FIX: Implement Rayo pattern for StackCards scroll animations (BLINK/JUMP ISSUE)
+6. 8fd7b09 - Update story file with complete animation fix timeline (DOCUMENTATION)
+7. de3cb15 - FIX: Disable scroll pinning in StackCards to prevent jump/blink (FINAL)
 
 ## Definition of Done
 - [x] All acceptance criteria met
