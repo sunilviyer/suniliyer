@@ -90,8 +90,9 @@ Fix learning paths carousel data to match the knowledge graph, add curved border
 2. `components/homepage/LearningPathsCarousel.tsx` - Changed .item-link border-radius to 24px
 3. `components/homepage/PortfolioCarousel.tsx` - Changed .item-link border-radius to 24px
 4. `components/homepage/AboutCard.tsx` - Reverted to Sunil.jpg
-5. `app/page.tsx` - Changed About Me BreakCard image to about-me-page-break.webp, ADDED StackCards wrapper for scroll animations
-6. `components/animation/StackCards.tsx` - Imported and used (existing component, no changes)
+5. `app/page.tsx` - Final: Removed StackCards import, each component in own .loading__item wrapper
+6. `components/animation/StackCards.tsx` - Not used (removed from page structure)
+7. `docs/sprint-artifacts/homepage-carousel-fixes.md` - Story file tracking all changes
 
 ### Change Log
 
@@ -147,7 +148,7 @@ Fix learning paths carousel data to match the knowledge graph, add curved border
 - Pushed to remote: main
 - **USER FEEDBACK:** "Nope, now it scrolls but it blinks and goes back up"
 
-**2024-12-31 - Scroll Pinning Conflict Fix**
+**2024-12-31 - Scroll Pinning Conflict Fix (Partial)**
 - Issue: Page scrolls but blinks/jumps back up during scroll
 - Root cause analysis:
   - Rayo uses StackCards ONCE per page (ServicesStack only)
@@ -161,6 +162,29 @@ Fix learning paths carousel data to match the knowledge graph, add curved border
   - Eliminates scroll jumping/blinking
 - Build successful
 - Committed: "FIX: Disable scroll pinning in StackCards to prevent jump/blink" (de3cb15)
+- Pushed to remote: main
+- **USER FEEDBACK:** "It does, but not all cards scroll the same plus there is a massive blank space created between each card specifically the page break cards"
+
+**2024-12-31 - Complete StackCards Removal (Final Fix)**
+- Issues:
+  - Cards scroll inconsistently (different behaviors)
+  - Massive blank spaces between cards, especially BreakCards
+  - StackCards creates scroll distance calculations even with pin={false}
+- Root understanding:
+  - User said: "they do not have to stack over one another, that is for a different page"
+  - Rayo uses StackCards ONLY for one specialized section (ServicesStack)
+  - Most Rayo page sections DON'T use StackCards at all
+  - StackCards is for stacking visual effects, not standard page layout
+- Solution: Removed StackCards entirely
+  - Each component in its own `.loading__item` wrapper
+  - GSAP load animations via useGsapScrollScaleAnimations (fade in, slide up)
+  - Standard document flow - no scroll manipulation
+  - No blank space injection
+- Final structure:
+  - Hero → Learning Paths Break → Learning Paths Carousel → Portfolio Break → Portfolio Carousel → About Break → About Card → Footer
+  - Each in separate `.loading__item` for staggered load animations
+- Build successful
+- Committed: "FIX: Remove StackCards to eliminate blank spaces and scroll inconsistencies" (4a62bd3)
 - Pushed to remote: main
 
 ### Build Output
@@ -179,7 +203,9 @@ Route (app)                                 Size  First Load JS
 4. efb52d7 - Fix critical scrolling animation - add StackCards wrapper (SCROLL PINNING ISSUE)
 5. 095f0f6 - FIX: Implement Rayo pattern for StackCards scroll animations (BLINK/JUMP ISSUE)
 6. 8fd7b09 - Update story file with complete animation fix timeline (DOCUMENTATION)
-7. de3cb15 - FIX: Disable scroll pinning in StackCards to prevent jump/blink (FINAL)
+7. de3cb15 - FIX: Disable scroll pinning in StackCards to prevent jump/blink (BLANK SPACE ISSUE)
+8. 703711c - Document scroll pinning fix in story timeline (DOCUMENTATION)
+9. 4a62bd3 - FIX: Remove StackCards to eliminate blank spaces and scroll inconsistencies (FINAL)
 
 ## Definition of Done
 - [x] All acceptance criteria met
