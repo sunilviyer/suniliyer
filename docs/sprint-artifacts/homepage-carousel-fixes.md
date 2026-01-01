@@ -3,7 +3,7 @@
 **Story ID:** homepage-carousel-fixes
 **Epic:** Homepage v2 Rebuild
 **Priority:** High
-**Status:** in-progress
+**Status:** in-progress (critical fix complete, review items pending)
 **Assigned:** Dev Agent
 **Created:** 2024-12-31
 **Updated:** 2024-12-31
@@ -143,5 +143,5 @@ Route (app)                                 Size  First Load JS
 - [x] All acceptance criteria met
 - [x] Code builds successfully
 - [x] Changes pushed to repository
-- [ ] Code review completed
-- [ ] No outstanding issues from review
+- [x] Code review completed
+- [ ] Outstanding review items addressed (9 remaining: 1 CRITICAL, 1 HIGH, 4 MEDIUM, 3 LOW)

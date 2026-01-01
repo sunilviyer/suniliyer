@@ -20,32 +20,43 @@ export default function HomePage() {
       <WireframeHeader />
 
       <main className="loading-wrap">
-        <StackCards stackName="homepage-stack" pin={true} scrub={true}>
+        <div className="loading__item">
           <WireframeHero />
+        </div>
 
-          <BreakCard
-            image="/images/heroes/future-hero.webp"
-            text="Learning Paths"
-          />
+        <div className="loading__item">
+          <StackCards stackName="learning-paths-stack">
+            <BreakCard
+              image="/images/heroes/future-hero.webp"
+              text="Learning Paths"
+            />
+            <LearningPathsCarousel />
+          </StackCards>
+        </div>
 
-          <LearningPathsCarousel />
+        <div className="loading__item">
+          <StackCards stackName="portfolio-stack">
+            <BreakCard
+              image="/images/extra/growth-hero.webp"
+              text="Portfolio"
+            />
+            <PortfolioCarousel />
+          </StackCards>
+        </div>
 
-          <BreakCard
-            image="/images/extra/growth-hero.webp"
-            text="Portfolio"
-          />
+        <div className="loading__item">
+          <StackCards stackName="about-stack">
+            <BreakCard
+              image="/images/heroes/about-me-page-break.webp"
+              text="About Me"
+            />
+            <AboutCard />
+          </StackCards>
+        </div>
 
-          <PortfolioCarousel />
-
-          <BreakCard
-            image="/images/heroes/about-me-page-break.webp"
-            text="About Me"
-          />
-
-          <AboutCard />
-
+        <div className="loading__item">
           <FooterCard />
-        </StackCards>
+        </div>
       </main>
     </>
   );
