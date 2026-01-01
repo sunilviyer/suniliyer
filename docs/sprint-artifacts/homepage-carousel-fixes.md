@@ -116,14 +116,35 @@ Fix learning paths carousel data to match the knowledge graph, add curved border
 - Build successful
 - Committed: "Fix About Me break card image to use about-me-page-break" (a9fa92f)
 
-**2024-12-31 - Code Review & Critical Animation Fix**
+**2024-12-31 - Code Review & Critical Animation Fix (Attempt 1)**
 - Created retroactive story file for tracking
 - Ran adversarial code review - found 10 issues (3 HIGH, 4 MEDIUM, 3 LOW)
 - **CRITICAL FIX:** Discovered scrolling animation completely broken - StackCards component not being used
 - Added StackCards wrapper to page.tsx to enable card stacking scroll animations
 - Removed individual .loading__item divs, wrapped all cards in StackCards component
 - Build successful
-- Pending commit
+- Committed: "Fix critical scrolling animation - add StackCards wrapper" (efb52d7)
+- **USER FEEDBACK:** Scroll pinning issue - page stuck, requires 10-15 scrolls to move
+
+**2024-12-31 - Animation Fix Attempt 2 (Interrupted)**
+- User reported scroll stuck: "the first 10-15 scrolls the page does not scroll down"
+- Root cause: Single StackCards wrapper with pin=true creates 7680px scroll distance (8 cards × 960px)
+- Attempted fix: Multiple StackCards sections with pin={false}
+- **USER CORRECTION:** "they do not have to stack over one another, that is for a different page"
+- User directed to Rayo template reference
+
+**2024-12-31 - Final Animation Fix (Rayo Pattern)**
+- Studied Rayo template architecture (/docs/rayo.../components/homes/home-1/)
+- Discovered correct pattern: StackCards used for CONTENT SECTIONS, not page layout
+- Implemented Rayo pattern:
+  - Hero standalone in .loading__item (no stacking)
+  - Learning Paths section: .loading__item → StackCards (BreakCard + Carousel)
+  - Portfolio section: .loading__item → StackCards (BreakCard + Carousel)
+  - About section: .loading__item → StackCards (BreakCard + AboutCard)
+  - Footer standalone in .loading__item
+- Build successful
+- Committed: "FIX: Implement Rayo pattern for StackCards scroll animations" (095f0f6)
+- Pushed to remote: main
 
 ### Build Output
 ```
@@ -137,7 +158,9 @@ Route (app)                                 Size  First Load JS
 ### Git Commits
 1. f4dd16a - Update learning paths data and add curved carousel cards
 2. e415724 - Update About Me image to use about-me-page-break hero (REVERTED)
-3. a9fa92f - Fix About Me break card image to use about-me-page-break (FINAL)
+3. a9fa92f - Fix About Me break card image to use about-me-page-break
+4. efb52d7 - Fix critical scrolling animation - add StackCards wrapper (SCROLL PINNING ISSUE)
+5. 095f0f6 - FIX: Implement Rayo pattern for StackCards scroll animations (FINAL)
 
 ## Definition of Done
 - [x] All acceptance criteria met
