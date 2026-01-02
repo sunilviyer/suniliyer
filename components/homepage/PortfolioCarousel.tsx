@@ -121,10 +121,10 @@ export function PortfolioCarousel() {
                           style={{ objectFit: 'cover' }}
                           priority={index === 0}
                         />
-                      </div>
-                      <div className="item-content">
-                        <h3 className="item-title">{item.title}</h3>
-                        <p className="item-description">{item.description}</p>
+                        <div className="item-content-overlay">
+                          <h3 className="item-title">{item.title}</h3>
+                          <p className="item-description">{item.description}</p>
+                        </div>
                       </div>
                     </Link>
                   </div>
@@ -254,29 +254,42 @@ export function PortfolioCarousel() {
         .item-image-wrapper {
           position: relative;
           width: 100%;
-          height: 400px;
+          height: 100%;
           background: #f0f0f0;
-          border-radius: 24px 24px 0 0;
+          border-radius: 24px;
           overflow: hidden;
         }
 
-        .item-content {
-          padding: 30px;
+        .item-content-overlay {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          padding: 40px 30px;
+          background: linear-gradient(
+            to top,
+            rgba(0, 0, 0, 0.9) 0%,
+            rgba(0, 0, 0, 0.7) 50%,
+            rgba(0, 0, 0, 0) 100%
+          );
+          z-index: 2;
         }
 
         .item-title {
           font-family: var(--font-funnel);
           font-size: 32px;
           font-weight: 700;
-          color: var(--text-primary);
-          margin: 0 0 15px 0;
+          color: #ffffff;
+          margin: 0 0 12px 0;
+          text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
         }
 
         .item-description {
-          font-size: 16px;
-          line-height: 1.6;
-          color: var(--text-secondary);
+          font-size: 15px;
+          line-height: 1.5;
+          color: rgba(255, 255, 255, 0.95);
           margin: 0;
+          text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
         }
 
         .carousel-arrow {
@@ -419,12 +432,8 @@ export function PortfolioCarousel() {
             display: none;
           }
 
-          .item-image-wrapper {
-            height: 280px;
-          }
-
-          .item-content {
-            padding: 20px;
+          .item-content-overlay {
+            padding: 30px 20px;
           }
 
           .item-title {
