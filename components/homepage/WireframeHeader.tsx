@@ -46,10 +46,10 @@ export function WireframeHeader() {
           {/* Theme Toggle - next to logo */}
           <button
           onClick={toggleTheme}
-          className="w-12 h-12 rounded-full flex items-center justify-center cursor-pointer transition-all hover:scale-110"
+          className="w-12 h-12 rounded-full flex items-center justify-center cursor-pointer transition-all hover:scale-110 relative z-10"
           style={{
-            background: theme === 'dark' ? 'rgba(26, 26, 26, 0.95)' : 'rgba(255, 255, 255, 0.95)',
-            border: '1px solid var(--border-color)',
+            background: 'transparent',
+            border: '2px solid var(--border-color)',
           }}
           aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
         >
@@ -88,7 +88,7 @@ export function WireframeHeader() {
 
       {/* Hamburger Menu - Fixed floating on right */}
       <div
-        className="fixed top-6 right-6 w-14 h-14 rounded-full flex flex-col items-center justify-center gap-1.5 cursor-pointer z-[9500] transition-all hover:scale-110 shadow-lg"
+        className="fixed top-3 right-6 w-14 h-14 rounded-full flex flex-col items-center justify-center gap-1.5 cursor-pointer z-[9500] transition-all hover:scale-110 shadow-lg"
         style={{
           background: theme === 'dark' ? 'rgba(26, 26, 26, 0.95)' : 'rgba(255, 255, 255, 0.95)',
           backdropFilter: 'blur(10px)',
