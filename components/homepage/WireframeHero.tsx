@@ -28,7 +28,7 @@ export function WireframeHero() {
           loop
           muted
           playsInline
-          className="absolute top-0 left-0 w-full h-full opacity-70 z-[1] object-cover"
+          className="absolute top-0 left-0 w-full h-full z-[1] object-cover hero-video"
         >
           <source src="/images/HeroCard.webm" type="video/webm" />
         </video>
@@ -111,6 +111,14 @@ export function WireframeHero() {
           justify-content: center;
           padding: 120px 60px 80px;
           transition: background-color 0.3s ease;
+        }
+
+        .hero-video {
+          opacity: 0.5;
+        }
+
+        [data-theme="dark"] .hero-video {
+          opacity: 0.7;
         }
 
         /* Responsive - Tablet */
