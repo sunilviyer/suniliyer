@@ -52,6 +52,10 @@ export function WireframeHeader() {
             border: 'none',
             outline: 'none',
             WebkitTapHighlightColor: 'transparent',
+            padding: 0,
+            margin: 0,
+            boxShadow: 'none',
+            textDecoration: 'none',
           }}
           aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
         >
@@ -104,10 +108,21 @@ export function WireframeHeader() {
       </div>
 
       <style jsx global>{`
+        header button,
+        header button *,
+        header div {
+          list-style: none !important;
+          list-style-type: none !important;
+        }
         header button::before,
-        header button::after {
+        header button::after,
+        header button::marker {
           display: none !important;
           content: none !important;
+        }
+        header * {
+          -webkit-appearance: none !important;
+          appearance: none !important;
         }
       `}</style>
     </>
