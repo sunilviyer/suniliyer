@@ -222,13 +222,33 @@ export function PortfolioCarousel() {
           background: var(--bg-primary);
           border-radius: 24px;
           overflow: hidden;
-          box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
-          transition: transform 0.3s ease, box-shadow 0.3s ease;
+          border: 3px solid #333d29;
+          box-shadow:
+            0 8px 24px rgba(0, 0, 0, 0.15),
+            0 4px 12px rgba(51, 61, 41, 0.2),
+            inset 0 -2px 8px rgba(0, 0, 0, 0.05);
+          transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+        }
+
+        .carousel-item.active .item-link {
+          border-color: #333d29;
+          box-shadow:
+            0 12px 40px rgba(0, 0, 0, 0.25),
+            0 8px 20px rgba(51, 61, 41, 0.3),
+            inset 0 -3px 12px rgba(0, 0, 0, 0.08);
+          transform: translateZ(20px);
         }
 
         .carousel-item.active .item-link:hover {
-          transform: translateY(-8px);
-          box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
+          transform: translateY(-8px) translateZ(20px);
+          box-shadow:
+            0 16px 48px rgba(0, 0, 0, 0.3),
+            0 10px 24px rgba(51, 61, 41, 0.35),
+            inset 0 -3px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .carousel-item:not(.active) .item-link {
+          border-color: rgba(51, 61, 41, 0.5);
         }
 
         .item-image-wrapper {

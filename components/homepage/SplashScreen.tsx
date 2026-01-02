@@ -8,7 +8,7 @@ export function SplashScreen() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsHidden(true);
-    }, 3500); // 3.5 seconds for 10 blinks (30% faster)
+    }, 1750); // 1.75 seconds (50% reduction from 3.5s)
 
     return () => clearTimeout(timer);
   }, []);
