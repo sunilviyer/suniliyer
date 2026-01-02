@@ -1,5 +1,6 @@
 'use client';
 
+import { useEffect } from 'react';
 import { SplashScreen } from '@/components/homepage/SplashScreen';
 import { WireframeHeader } from '@/components/homepage/WireframeHeader';
 import { WireframeHero } from '@/components/homepage/WireframeHero';
@@ -12,6 +13,24 @@ import { useGsapScrollScaleAnimations } from '@/lib/hooks/useGsapScrollScaleAnim
 
 export default function HomePage() {
   useGsapScrollScaleAnimations();
+
+  // Force scroll to top on page load/refresh
+  useEffect(() => {
+    // Disable browser scroll restoration
+    if ('scrollRestoration' in window.history) {
+      window.history.scrollRestoration = 'manual';
+    }
+
+    // Immediately scroll to top
+    window.scrollTo(0, 0);
+
+    // Also ensure scroll to top after a brief delay (for any late-loading content)
+    const timeout = setTimeout(() => {
+      window.scrollTo(0, 0);
+    }, 100);
+
+    return () => clearTimeout(timeout);
+  }, []);
 
   return (
     <>
