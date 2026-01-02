@@ -20,17 +20,17 @@ export function WireframeHero() {
     return () => clearInterval(interval);
   }, []);
 
-  // Smooth video loop with fade effect
+  // Smooth video loop with subtle fade effect
   const handleVideoTimeUpdate = (e: React.SyntheticEvent<HTMLVideoElement>) => {
     const video = e.currentTarget;
     const duration = video.duration;
     const currentTime = video.currentTime;
 
-    // Fade out in last 0.3 seconds, fade in during first 0.3 seconds
-    if (duration - currentTime < 0.3) {
-      setVideoOpacity(currentTime / duration);
-    } else if (currentTime < 0.3) {
-      setVideoOpacity(currentTime / 0.3);
+    // Very subtle fade in last 0.1 seconds, fade in during first 0.1 seconds
+    if (duration - currentTime < 0.1) {
+      setVideoOpacity(0.95 + (currentTime / duration) * 0.05);
+    } else if (currentTime < 0.1) {
+      setVideoOpacity(0.95 + (currentTime / 0.1) * 0.05);
     } else {
       setVideoOpacity(1);
     }
