@@ -27,23 +27,24 @@ export function WireframeHeader() {
     <>
       {/* Header Bar - Floating (not sticky) */}
       <header
-        className="w-full h-20 flex items-center justify-between px-15"
+        className="w-full h-20 flex items-center px-15"
         style={{
           background: theme === 'dark' ? 'rgba(26, 26, 26, 0.95)' : 'rgba(255, 255, 255, 0.95)',
         }}
       >
-        {/* Logo Ring */}
-        <div className="w-12 h-12 rounded-full border-2 border-[#333d29] overflow-hidden flex-shrink-0 relative">
-          <Image
-            src="/images/logo.jpg"
-            alt="Sunil Iyer Logo"
-            fill
-            className="object-contain object-center"
-          />
-        </div>
+        <div className="flex items-center gap-5">
+          {/* Logo Ring */}
+          <div className="w-12 h-12 rounded-full border-2 border-[#333d29] overflow-hidden flex-shrink-0 relative">
+            <Image
+              src="/images/logo.jpg"
+              alt="Sunil Iyer Logo"
+              fill
+              className="object-contain object-center"
+            />
+          </div>
 
-        {/* Theme Toggle - stays in header */}
-        <button
+          {/* Theme Toggle - next to logo */}
+          <button
           onClick={toggleTheme}
           className="w-12 h-12 rounded-full flex items-center justify-center cursor-pointer transition-all hover:scale-110"
           style={{
@@ -81,7 +82,8 @@ export function WireframeHeader() {
               />
             </svg>
           )}
-        </button>
+          </button>
+        </div>
       </header>
 
       {/* Hamburger Menu - Fixed floating on right */}
