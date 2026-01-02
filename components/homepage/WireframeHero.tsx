@@ -114,7 +114,7 @@ export function WireframeHero() {
         }
 
         [data-theme="dark"] .hero-card > video {
-          opacity: 0.5;
+          opacity: 0.7;
         }
 
         /* Responsive - Tablet */
