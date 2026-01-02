@@ -44,7 +44,7 @@ export default function HomePage() {
 
         <div className="loading__item">
           <BreakCard
-            image="/images/heroes/future-hero.webp"
+            image="/images/breaks/learning-path-page-break.png"
             text="Learning Paths"
           />
         </div>
@@ -55,7 +55,7 @@ export default function HomePage() {
 
         <div className="loading__item">
           <BreakCard
-            image="/images/extra/growth-hero.webp"
+            image="/images/breaks/portfolio-page-break.png"
             text="Portfolio"
           />
         </div>
@@ -66,7 +66,7 @@ export default function HomePage() {
 
         <div className="loading__item">
           <BreakCard
-            image="/images/heroes/about-me-page-break.webp"
+            image="/images/breaks/about-me-page-break.webp"
             text="About Me"
           />
         </div>

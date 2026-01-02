@@ -236,6 +236,8 @@ export function PortfolioCarousel() {
           width: 100%;
           height: 400px;
           background: #f0f0f0;
+          border-radius: 24px 24px 0 0;
+          overflow: hidden;
         }
 
         .item-content {
