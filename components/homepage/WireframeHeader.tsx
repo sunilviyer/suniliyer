@@ -27,27 +27,45 @@ export function WireframeHeader() {
     <>
       {/* Header Bar - Floating (not sticky) */}
       <header
-        className="w-full h-20 flex items-center px-15"
+        className="w-full h-20"
         style={{
           background: theme === 'dark' ? 'rgba(26, 26, 26, 0.95)' : 'rgba(255, 255, 255, 0.95)',
+          display: 'flex',
+          alignItems: 'center',
+          paddingLeft: '60px',
+          paddingRight: '60px',
         }}
       >
-        <div className="flex items-center gap-5">
-          {/* Logo Ring */}
-          <div className="w-12 h-12 rounded-full border-2 border-[#333d29] overflow-hidden flex-shrink-0 relative">
-            <Image
-              src="/images/logo.jpg"
-              alt="Sunil Iyer Logo"
-              fill
-              className="object-contain object-center"
-            />
-          </div>
-
-          {/* Theme Toggle - next to logo */}
-          <button
-          onClick={toggleTheme}
-          className="w-12 h-12 rounded-full flex items-center justify-center cursor-pointer transition-all hover:scale-110 relative z-10"
+        {/* Logo Ring */}
+        <div
+          className="rounded-full overflow-hidden flex-shrink-0"
           style={{
+            width: '48px',
+            height: '48px',
+            border: '2px solid #333d29',
+            position: 'relative',
+            marginRight: '20px',
+          }}
+        >
+          <Image
+            src="/images/logo.jpg"
+            alt="Sunil Iyer Logo"
+            fill
+            className="object-contain object-center"
+          />
+        </div>
+
+        {/* Theme Toggle - next to logo */}
+        <button
+          onClick={toggleTheme}
+          className="cursor-pointer"
+          style={{
+            width: '48px',
+            height: '48px',
+            borderRadius: '50%',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
             background: 'transparent',
             border: 'none',
             outline: 'none',
@@ -56,7 +74,12 @@ export function WireframeHeader() {
             margin: 0,
             boxShadow: 'none',
             textDecoration: 'none',
+            transition: 'transform 0.2s ease',
+            position: 'relative',
+            zIndex: 10,
           }}
+          onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.1)'}
+          onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
           aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
         >
           {theme === 'dark' ? (
@@ -90,8 +113,7 @@ export function WireframeHeader() {
               />
             </svg>
           )}
-          </button>
-        </div>
+        </button>
       </header>
 
       {/* Hamburger Menu - Fixed floating on right */}
