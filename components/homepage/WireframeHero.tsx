@@ -6,7 +6,7 @@ import { tickerWords } from '@/lib/ticker-words';
 export function WireframeHero() {
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
-  const [videoOpacity, setVideoOpacity] = useState(1);
+  const [playbackRate, setPlaybackRate] = useState(1);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -20,34 +20,36 @@ export function WireframeHero() {
     return () => clearInterval(interval);
   }, []);
 
-  // Smooth video loop with subtle fade effect
-  const handleVideoTimeUpdate = (e: React.SyntheticEvent<HTMLVideoElement>) => {
+  // Seamless video loop by alternating forward and reverse playback
+  const handleVideoEnded = (e: React.SyntheticEvent<HTMLVideoElement>) => {
     const video = e.currentTarget;
-    const duration = video.duration;
-    const currentTime = video.currentTime;
 
-    // Very subtle fade in last 0.1 seconds, fade in during first 0.1 seconds
-    if (duration - currentTime < 0.1) {
-      setVideoOpacity(0.95 + (currentTime / duration) * 0.05);
-    } else if (currentTime < 0.1) {
-      setVideoOpacity(0.95 + (currentTime / 0.1) * 0.05);
+    // Toggle playback direction
+    if (playbackRate === 1) {
+      // Switch to reverse
+      setPlaybackRate(-1);
+      video.playbackRate = -1;
+      video.currentTime = video.duration;
+      video.play();
     } else {
-      setVideoOpacity(1);
+      // Switch to forward
+      setPlaybackRate(1);
+      video.playbackRate = 1;
+      video.currentTime = 0;
+      video.play();
     }
   };
 
   return (
     <div className="card-container first">
       <div className="card hero-card">
-        {/* Background Video with smooth loop */}
+        {/* Background Video with forward/reverse seamless loop */}
         <video
           autoPlay
-          loop
           muted
           playsInline
-          onTimeUpdate={handleVideoTimeUpdate}
-          className="absolute top-0 left-0 w-full h-full z-[1] object-cover transition-opacity duration-200"
-          style={{ opacity: videoOpacity * 0.7 }}
+          onEnded={handleVideoEnded}
+          className="absolute top-0 left-0 w-full h-full opacity-70 z-[1] object-cover"
         >
           <source src="/images/HeroCard.webm" type="video/webm" />
         </video>

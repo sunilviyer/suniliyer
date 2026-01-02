@@ -46,10 +46,10 @@ export function WireframeHeader() {
           {/* Theme Toggle - next to logo */}
           <button
           onClick={toggleTheme}
-          className="w-12 h-12 rounded-full flex items-center justify-center cursor-pointer transition-all hover:scale-110 relative z-10 border-2"
+          className="w-12 h-12 rounded-full flex items-center justify-center cursor-pointer transition-all hover:scale-110 relative z-10"
           style={{
             background: 'transparent',
-            borderColor: 'var(--border-color)',
+            border: 'none',
             outline: 'none',
             WebkitTapHighlightColor: 'transparent',
           }}
@@ -102,6 +102,14 @@ export function WireframeHeader() {
         <span className="w-7 h-0.5 bg-[#333d29] rounded"></span>
         <span className="w-7 h-0.5 bg-[#333d29] rounded"></span>
       </div>
+
+      <style jsx global>{`
+        header button::before,
+        header button::after {
+          display: none !important;
+          content: none !important;
+        }
+      `}</style>
     </>
   );
 }
