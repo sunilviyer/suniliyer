@@ -41,8 +41,8 @@ export function WireframeHero() {
           >
             {/* Line 1: Vibe, [word ticker] AI */}
             <span className="flex items-center justify-center gap-7 flex-wrap mb-5">
-              <span style={{ color: '#333d29' }}>Vibe</span>
-              <span style={{ color: '#333d29' }}>,</span>
+              <span style={{ color: 'var(--hero-text)' }}>Vibe</span>
+              <span style={{ color: 'var(--hero-text)' }}>,</span>
 
               {/* Inline Ticker */}
               <span className="inline-flex items-center gap-4">
@@ -66,14 +66,14 @@ export function WireframeHero() {
                 </span>
 
                 {/* AI Text */}
-                <span style={{ color: '#333d29' }}>AI</span>
+                <span style={{ color: 'var(--hero-text)' }}>AI</span>
               </span>
             </span>
 
             {/* Line 2: + a little me */}
             <span
               className="block text-[100px] font-normal opacity-90"
-              style={{ color: '#333d29' }}
+              style={{ color: 'var(--hero-text)' }}
             >
               + a little me
             </span>

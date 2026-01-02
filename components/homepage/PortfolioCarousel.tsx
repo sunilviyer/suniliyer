@@ -52,33 +52,33 @@ export function PortfolioCarousel() {
     }
 
     if (normalizedDiff === 0) {
-      // Center item
+      // Center item - forward in 3D space
       return {
-        transform: 'scale(1) translateX(0)',
+        transform: 'scale(1) translateX(0) translateZ(100px) rotateY(0deg)',
         opacity: 1,
-        filter: 'blur(0px)',
+        filter: 'blur(0px) brightness(1)',
         zIndex: 3,
       };
     } else if (normalizedDiff === -1) {
-      // Left item
+      // Left item - visible but receded
       return {
-        transform: 'scale(0.9) translateX(-100px)',
-        opacity: 0.6,
-        filter: 'blur(5px)',
+        transform: 'scale(0.85) translateX(-280px) translateZ(-50px) rotateY(8deg)',
+        opacity: 0.75,
+        filter: 'blur(1px) brightness(0.85)',
         zIndex: 2,
       };
     } else if (normalizedDiff === 1) {
-      // Right item
+      // Right item - visible but receded
       return {
-        transform: 'scale(0.9) translateX(100px)',
-        opacity: 0.6,
-        filter: 'blur(5px)',
+        transform: 'scale(0.85) translateX(280px) translateZ(-50px) rotateY(-8deg)',
+        opacity: 0.75,
+        filter: 'blur(1px) brightness(0.85)',
         zIndex: 2,
       };
     } else {
       // Hidden items
       return {
-        transform: 'scale(0.8) translateX(0)',
+        transform: 'scale(0.7) translateX(0) translateZ(-150px)',
         opacity: 0,
         filter: 'blur(10px)',
         zIndex: 1,
@@ -186,6 +186,7 @@ export function PortfolioCarousel() {
           display: flex;
           align-items: center;
           justify-content: center;
+          perspective: 2000px;
         }
 
         .carousel-items {
@@ -195,6 +196,7 @@ export function PortfolioCarousel() {
           display: flex;
           align-items: center;
           justify-content: center;
+          transform-style: preserve-3d;
         }
 
         .carousel-item {
@@ -232,19 +234,21 @@ export function PortfolioCarousel() {
 
         .carousel-item.active .item-link {
           border-color: #333d29;
+          border-width: 4px;
           box-shadow:
-            0 12px 40px rgba(0, 0, 0, 0.25),
-            0 8px 20px rgba(51, 61, 41, 0.3),
-            inset 0 -3px 12px rgba(0, 0, 0, 0.08);
-          transform: translateZ(20px);
+            0 20px 60px rgba(0, 0, 0, 0.4),
+            0 15px 35px rgba(51, 61, 41, 0.5),
+            inset 0 -4px 15px rgba(0, 0, 0, 0.1),
+            0 0 0 1px rgba(51, 61, 41, 0.1);
         }
 
         .carousel-item.active .item-link:hover {
-          transform: translateY(-8px) translateZ(20px);
+          transform: translateY(-12px);
           box-shadow:
-            0 16px 48px rgba(0, 0, 0, 0.3),
-            0 10px 24px rgba(51, 61, 41, 0.35),
-            inset 0 -3px 12px rgba(0, 0, 0, 0.08);
+            0 28px 80px rgba(0, 0, 0, 0.5),
+            0 20px 45px rgba(51, 61, 41, 0.6),
+            inset 0 -4px 15px rgba(0, 0, 0, 0.1),
+            0 0 0 1px rgba(51, 61, 41, 0.1);
         }
 
         .carousel-item:not(.active) .item-link {
