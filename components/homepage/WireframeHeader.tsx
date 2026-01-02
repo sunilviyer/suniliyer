@@ -46,10 +46,12 @@ export function WireframeHeader() {
           {/* Theme Toggle - next to logo */}
           <button
           onClick={toggleTheme}
-          className="w-12 h-12 rounded-full flex items-center justify-center cursor-pointer transition-all hover:scale-110 relative z-10"
+          className="w-12 h-12 rounded-full flex items-center justify-center cursor-pointer transition-all hover:scale-110 relative z-10 border-2"
           style={{
             background: 'transparent',
-            border: '2px solid var(--border-color)',
+            borderColor: 'var(--border-color)',
+            outline: 'none',
+            WebkitTapHighlightColor: 'transparent',
           }}
           aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
         >

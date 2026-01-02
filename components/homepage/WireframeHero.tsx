@@ -6,6 +6,7 @@ import { tickerWords } from '@/lib/ticker-words';
 export function WireframeHero() {
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
+  const [videoOpacity, setVideoOpacity] = useState(1);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -19,16 +20,34 @@ export function WireframeHero() {
     return () => clearInterval(interval);
   }, []);
 
+  // Smooth video loop with fade effect
+  const handleVideoTimeUpdate = (e: React.SyntheticEvent<HTMLVideoElement>) => {
+    const video = e.currentTarget;
+    const duration = video.duration;
+    const currentTime = video.currentTime;
+
+    // Fade out in last 0.3 seconds, fade in during first 0.3 seconds
+    if (duration - currentTime < 0.3) {
+      setVideoOpacity(currentTime / duration);
+    } else if (currentTime < 0.3) {
+      setVideoOpacity(currentTime / 0.3);
+    } else {
+      setVideoOpacity(1);
+    }
+  };
+
   return (
     <div className="card-container first">
       <div className="card hero-card">
-        {/* Background Video */}
+        {/* Background Video with smooth loop */}
         <video
           autoPlay
           loop
           muted
           playsInline
-          className="absolute top-0 left-0 w-full h-full opacity-70 z-[1] object-cover"
+          onTimeUpdate={handleVideoTimeUpdate}
+          className="absolute top-0 left-0 w-full h-full z-[1] object-cover transition-opacity duration-200"
+          style={{ opacity: videoOpacity * 0.7 }}
         >
           <source src="/images/HeroCard.webm" type="video/webm" />
         </video>
@@ -111,10 +130,6 @@ export function WireframeHero() {
           justify-content: center;
           padding: 120px 60px 80px;
           transition: background-color 0.3s ease;
-        }
-
-        [data-theme="dark"] .hero-card > video {
-          opacity: 0.7;
         }
 
         /* Responsive - Tablet */
