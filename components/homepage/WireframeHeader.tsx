@@ -130,19 +130,26 @@ export function WireframeHeader() {
       </div>
 
       <style jsx global>{`
-        header button,
-        header button *,
-        header div {
-          list-style: none !important;
-          list-style-type: none !important;
-        }
-        header button::before,
-        header button::after,
-        header button::marker {
+        header *::before,
+        header *::after,
+        header *::marker,
+        button::before,
+        button::after,
+        button::marker,
+        svg::before,
+        svg::after,
+        path::before,
+        path::after {
           display: none !important;
           content: none !important;
+          visibility: hidden !important;
+          opacity: 0 !important;
         }
-        header * {
+
+        header *,
+        header button {
+          list-style: none !important;
+          list-style-type: none !important;
           -webkit-appearance: none !important;
           appearance: none !important;
         }
