@@ -42,17 +42,17 @@ export function HistoryStackCards({ cards }: HistoryStackCardsProps) {
       const first = items[0];
       const cardHeight = first.getBoundingClientRect().height || first.offsetHeight;
 
-      // Create timeline
+      // Create timeline with sequential card reveals
       tl = gsap.timeline({ defaults: { ease: 'none' } });
 
       items.forEach((card, index) => {
         if (index > 0) {
-          // Position each card below the previous one
-          gsap.set(card, { y: index * cardHeight, willChange: 'transform' });
+          // Position each card below the viewport
+          gsap.set(card, { y: cardHeight, willChange: 'transform' });
           // Mark as initialized so CSS shows it
           card.classList.add('gsap-initialized');
-          // Animate to y:0 - later cards take longer (creates stacking effect)
-          tl!.to(card, { y: 0, duration: index * 0.5 }, 0);
+          // Each card slides up into place sequentially
+          tl!.to(card, { y: 0, duration: 1 }, index - 1);
         }
       });
 
@@ -64,7 +64,7 @@ export function HistoryStackCards({ cards }: HistoryStackCardsProps) {
         pinSpacing: true,
         anticipatePin: 1,
         end: () => `+=${items.length * cardHeight}`,
-        scrub: 1,
+        scrub: 0.5,
         animation: tl!,
         invalidateOnRefresh: true,
         // markers: true, // Uncomment for debugging

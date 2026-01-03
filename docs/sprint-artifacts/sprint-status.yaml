@@ -67,10 +67,11 @@ development_status:
   1-6-deploy-to-vercel-with-cicd: done
   epic-1-retrospective: optional
 
-  # Epic 2: History Path Implementation (8 stories)
-  epic-2: backlog
-  2-1-create-history-path-layout-and-routing: ready-for-dev
-  2-2-implement-stackcards-animation-with-gsap: ready-for-dev
+  # Epic 2: History Path Implementation (8 stories) 🔄 IN PROGRESS
+  # Implementing first learning path with GSAP stacking cards and article detail pages
+  epic-2: in-progress
+  2-1-create-history-path-layout-and-routing: done
+  2-2-implement-stackcards-animation-with-gsap: done
   2-3-create-concept-card-component-with-flip-animation: ready-for-dev
   2-4-add-related-articles-section: ready-for-dev
   2-5-implement-keyboard-navigation: ready-for-dev
