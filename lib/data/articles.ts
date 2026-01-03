@@ -23,17 +23,36 @@ export interface Article {
   image: string;
 }
 
+interface ConceptCard {
+  id: string;
+  title: string;
+  slug: string;
+  path: string;
+  source_file: string;
+  tldr: string;
+  content_sections?: string[];
+  related_concepts?: string[];
+  cross_path_refs?: {
+    terminology?: string[];
+    risk?: string[];
+    responsibility?: string[];
+    future?: string[];
+  };
+  example_refs?: string[];
+  tags?: string[];
+}
+
 interface KnowledgeGraph {
   learning_paths: Array<{
     id: string;
     title: string;
     slug: string;
   }>;
-  concept_cards_history: any[];
-  concept_cards_terminology?: any[];
-  concept_cards_risk?: any[];
-  concept_cards_responsibility?: any[];
-  concept_cards_future?: any[];
+  concept_cards_history: ConceptCard[];
+  concept_cards_terminology?: ConceptCard[];
+  concept_cards_risk?: ConceptCard[];
+  concept_cards_responsibility?: ConceptCard[];
+  concept_cards_future?: ConceptCard[];
 }
 
 function loadKnowledgeGraph(): KnowledgeGraph {
@@ -135,7 +154,7 @@ export async function getRelatedArticles(
   const articles: Article[] = [];
 
   // Map path to the correct concept cards array
-  let conceptCards: any[] = [];
+  let conceptCards: ConceptCard[] = [];
   switch (path) {
     case 'history':
       conceptCards = kg.concept_cards_history || [];
@@ -185,7 +204,7 @@ export async function getNextPrevArticles(
   const kg = loadKnowledgeGraph();
 
   // Map path to the correct concept cards array
-  let conceptCards: any[] = [];
+  let conceptCards: ConceptCard[] = [];
   switch (path) {
     case 'history':
       conceptCards = kg.concept_cards_history || [];
@@ -214,7 +233,7 @@ export async function getNextPrevArticles(
   const nextCard =
     currentIndex < conceptCards.length - 1 ? conceptCards[currentIndex + 1] : null;
 
-  const mapToArticle = (card: any): Article | null => {
+  const mapToArticle = (card: ConceptCard | null): Article | null => {
     if (!card) return null;
     return {
       id: card.id,

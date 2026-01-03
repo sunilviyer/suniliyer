@@ -1,22 +1,12 @@
 'use client';
 
-import { useEffect, useState } from 'react';
-
 interface ArticleContentProps {
   slug: string;
 }
 
 export function ArticleContent({ slug }: ArticleContentProps) {
-  const [content, setContent] = useState<string>('');
-
-  useEffect(() => {
-    // For now, we'll load from markdown files
-    // In the future, this will be replaced with MDX rendering
-    fetch(`/api/articles/${slug}`)
-      .then((res) => res.json())
-      .then((data) => setContent(data.content))
-      .catch(() => setContent('Content loading...'));
-  }, [slug]);
+  // Placeholder content - will be replaced with MDX rendering
+  console.log('Article slug:', slug);
 
   return (
     <div className="article-content">
@@ -30,9 +20,9 @@ export function ArticleContent({ slug }: ArticleContentProps) {
           worldwide.
         </p>
         <blockquote>
-          "An AI system is a machine-based system that, for explicit or implicit objectives, infers,
+          &ldquo;An AI system is a machine-based system that, for explicit or implicit objectives, infers,
           from the input it receives, how to generate outputs such as predictions, content,
-          recommendations, or decisions that can influence physical or virtual environments."
+          recommendations, or decisions that can influence physical or virtual environments.&rdquo;
         </blockquote>
       </div>
 

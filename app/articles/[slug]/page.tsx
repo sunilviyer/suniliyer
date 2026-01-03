@@ -4,7 +4,6 @@ import { ArticleContainer } from '@/components/articles/ArticleContainer';
 import { ArticleBreadcrumbs } from '@/components/articles/ArticleBreadcrumbs';
 import { ArticleHeader } from '@/components/articles/ArticleHeader';
 import { ArticleThumbnail } from '@/components/articles/ArticleThumbnail';
-import { ArticleExcerpt } from '@/components/articles/ArticleExcerpt';
 import { TableOfContents } from '@/components/articles/TableOfContents';
 import { ArticleContent } from '@/components/articles/ArticleContent';
 import { RelatedConcepts } from '@/components/articles/RelatedConcepts';
