@@ -9,7 +9,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "type-check": "tsc --noEmit"
+    "type-check": "tsc --noEmit",
+    "generate-article-mapping": "node scripts/generate-article-mapping.js"
   },
   "dependencies": {
     "framer-motion": "^11.15.0",
