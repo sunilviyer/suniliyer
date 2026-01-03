@@ -83,32 +83,32 @@ export function WireframeHeader() {
           aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
         >
           {theme === 'dark' ? (
-            // Simple sun icon for dark mode (Phosphor style)
+            // Filled sun icon for dark mode - switch to light mode
             <svg
-              width="24"
-              height="24"
+              width="28"
+              height="28"
               viewBox="0 0 256 256"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
               style={{ position: 'relative', zIndex: 20 }}
             >
               <path
-                d="M120,40V16a8,8,0,0,1,16,0V40a8,8,0,0,1-16,0Zm72,88a64,64,0,1,1-64-64A64.07,64.07,0,0,1,192,128Zm-16,0a48,48,0,1,0-48,48A48.05,48.05,0,0,0,176,128ZM58.34,69.66A8,8,0,0,0,69.66,58.34l-16-16A8,8,0,0,0,42.34,53.66Zm0,116.68-16,16a8,8,0,0,0,11.32,11.32l16-16a8,8,0,0,0-11.32-11.32ZM192,72a8,8,0,0,0,5.66-2.34l16-16a8,8,0,0,0-11.32-11.32l-16,16A8,8,0,0,0,192,72Zm5.66,114.34a8,8,0,0,0-11.32,11.32l16,16a8,8,0,0,0,11.32-11.32ZM48,128a8,8,0,0,0-8-8H16a8,8,0,0,0,0,16H40A8,8,0,0,0,48,128Zm80,80a8,8,0,0,0-8,8v24a8,8,0,0,0,16,0V216A8,8,0,0,0,128,208Zm112-88H216a8,8,0,0,0,0,16h24a8,8,0,0,0,0-16Z"
+                d="M128,60a68,68,0,1,0,68,68A68.07,68.07,0,0,0,128,60Zm0,120a52,52,0,1,1,52-52A52.06,52.06,0,0,1,128,180ZM128,48a8,8,0,0,0,8-8V16a8,8,0,0,0-16,0V40A8,8,0,0,0,128,48Zm0,160a8,8,0,0,0-8,8v24a8,8,0,0,0,16,0V216A8,8,0,0,0,128,208ZM208,128a8,8,0,0,0,8,8h24a8,8,0,0,0,0-16H216A8,8,0,0,0,208,128ZM48,128a8,8,0,0,0-8-8H16a8,8,0,0,0,0,16H40A8,8,0,0,0,48,128ZM198.14,71.15l16.97-16.97a8,8,0,0,0-11.31-11.31L186.82,59.84a8,8,0,0,0,11.32,11.31ZM69.18,186.82,52.21,203.79a8,8,0,0,0,11.31,11.31L80.49,198.13a8,8,0,0,0-11.31-11.31ZM186.82,196.16l16.97,16.97a8,8,0,0,0,11.31-11.31L198.14,184.85a8,8,0,0,0-11.32,11.31ZM69.18,69.18,52.21,52.21A8,8,0,0,0,40.9,63.52L57.87,80.49a8,8,0,0,0,11.31-11.31Z"
                 fill="var(--text-primary)"
               />
             </svg>
           ) : (
-            // Simple moon icon for light mode (Phosphor style)
+            // Filled moon icon for light mode - switch to dark mode
             <svg
-              width="24"
-              height="24"
+              width="28"
+              height="28"
               viewBox="0 0 256 256"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
               style={{ position: 'relative', zIndex: 20 }}
             >
               <path
-                d="M233.54,142.23a8,8,0,0,0-8-2,88.08,88.08,0,0,1-109.8-109.8,8,8,0,0,0-10-10,104.84,104.84,0,0,0-52.91,37A104,104,0,0,0,136,224a103.09,103.09,0,0,0,62.52-20.88,104.84,104.84,0,0,0,37-52.91A8,8,0,0,0,233.54,142.23ZM188.9,190.34A88,88,0,0,1,65.66,67.11a89,89,0,0,0,31.4,26A106,106,0,0,0,162.94,159a89,89,0,0,0,26-31.4A88.05,88.05,0,0,1,188.9,190.34Z"
+                d="M235.54,150.21a104.84,104.84,0,0,1-37,52.91A104,104,0,0,1,32,120,103.09,103.09,0,0,1,52.88,57.48a104.84,104.84,0,0,1,52.91-37,8,8,0,0,1,10,10,88.08,88.08,0,0,0,109.8,109.8,8,8,0,0,1,10,10Z"
                 fill="var(--text-primary)"
               />
             </svg>
@@ -118,15 +118,17 @@ export function WireframeHeader() {
 
       {/* Hamburger Menu - Fixed floating on right */}
       <div
-        className="fixed top-3 right-6 w-14 h-14 rounded-full flex flex-col items-center justify-center gap-1.5 cursor-pointer z-[9500] transition-all hover:scale-110 shadow-lg"
+        className="fixed top-4 right-6 rounded-full flex flex-col items-center justify-center gap-1.5 cursor-pointer z-[9500] transition-all hover:scale-110 shadow-lg"
         style={{
+          width: '48px',
+          height: '48px',
           background: theme === 'dark' ? 'rgba(26, 26, 26, 0.95)' : 'rgba(255, 255, 255, 0.95)',
           backdropFilter: 'blur(10px)',
         }}
       >
-        <span className="w-7 h-0.5 bg-[#333d29] rounded"></span>
-        <span className="w-7 h-0.5 bg-[#333d29] rounded"></span>
-        <span className="w-7 h-0.5 bg-[#333d29] rounded"></span>
+        <span className="w-6 h-0.5 bg-[#333d29] rounded"></span>
+        <span className="w-6 h-0.5 bg-[#333d29] rounded"></span>
+        <span className="w-6 h-0.5 bg-[#333d29] rounded"></span>
       </div>
 
       <style jsx global>{`

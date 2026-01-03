@@ -111,7 +111,7 @@ export function LearningPathsCarousel() {
                     className={`carousel-item ${isCenter ? 'active' : ''}`}
                     style={style}
                   >
-                    <Link href={`/learning-paths/${item.slug}`} className="item-link">
+                    <Link href={`/${item.slug}`} className="item-link">
                       <div className="item-image-wrapper">
                         <Image
                           src={item.image}

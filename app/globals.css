@@ -41,6 +41,59 @@ h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-funnel-display), var(--font-funnel-sans), sans-serif;
 }
 
+/* Force arrow button styles to override Tailwind reset */
+a.card-arrow-btn {
+  width: 56px !important;
+  height: 56px !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background-color: #1a1a1a !important;
+  background: #1a1a1a !important;
+  color: white !important;
+  text-decoration: none !important;
+  transition: all 0.3s ease !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
+}
+
+a.card-arrow-btn:hover {
+  transform: scale(1.1) !important;
+  box-shadow: 0 0 20px rgba(147, 102, 57, 0.6), 0 0 40px rgba(147, 102, 57, 0.4), 0 0 60px rgba(147, 102, 57, 0.2) !important;
+}
+
+/* Force learning path navigation styles */
+.path-link {
+  font-size: 36px !important;
+  line-height: 1.2 !important;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.path-link:hover {
+  transform: translateX(4px) !important;
+  text-shadow: 0 0 12px rgba(51, 61, 41, 0.4), 0 0 24px rgba(51, 61, 41, 0.2) !important;
+}
+
+[data-theme='dark'] .path-link:hover {
+  text-shadow: 0 0 12px rgba(255, 255, 255, 0.4), 0 0 24px rgba(255, 255, 255, 0.2) !important;
+}
+
+@media (max-width: 1024px) {
+  .path-link {
+    font-size: 27px !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .path-link {
+    font-size: 24px !important;
+  }
+
+  .path-link:hover {
+    transform: translateX(2px) !important;
+  }
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
