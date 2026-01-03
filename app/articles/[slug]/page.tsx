@@ -78,7 +78,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
 
         <TableOfContents sections={article.contentSections} />
 
-        <ArticleContent slug={article.slug} />
+        <ArticleContent content={article.content || 'Content not available.'} />
 
         {relatedArticles.length > 0 && (
           <RelatedConcepts relatedArticles={relatedArticles} />

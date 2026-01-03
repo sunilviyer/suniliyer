@@ -1,65 +1,113 @@
 'use client';
 
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
+import rehypeRaw from 'rehype-raw';
+
 interface ArticleContentProps {
-  slug: string;
+  content: string;
 }
 
-export function ArticleContent({ slug }: ArticleContentProps) {
-  // Placeholder content - will be replaced with MDX rendering
-  console.log('Article slug:', slug);
-
+export function ArticleContent({ content }: ArticleContentProps) {
   return (
     <div className="article-content">
-      {/* Placeholder content sections */}
-      <div className="article-section" id="oecd-definition">
-        <h3>OECD AI Definition (Nov 2023)</h3>
-        <p>
-          The Organisation for Economic Co-operation and Development (OECD) updated its AI definition
-          in November 2023 to reflect the rapid evolution of AI systems. This definition is now the
-          international standard used by governments, regulatory bodies, and industry organizations
-          worldwide.
-        </p>
-        <blockquote>
-          &ldquo;An AI system is a machine-based system that, for explicit or implicit objectives, infers,
-          from the input it receives, how to generate outputs such as predictions, content,
-          recommendations, or decisions that can influence physical or virtual environments.&rdquo;
-        </blockquote>
-      </div>
+      <ReactMarkdown
+        remarkPlugins={[remarkGfm]}
+        rehypePlugins={[rehypeRaw]}
+        components={{
+          h2: ({ children }) => (
+            <h2 className="article-h2">{children}</h2>
+          ),
+          h3: ({ children }) => (
+            <h3 className="article-h3">{children}</h3>
+          ),
+          h4: ({ children }) => (
+            <h4 className="article-h4">{children}</h4>
+          ),
+          p: ({ children }) => (
+            <p className="article-p">{children}</p>
+          ),
+          ul: ({ children }) => (
+            <ul className="article-ul">{children}</ul>
+          ),
+          ol: ({ children }) => (
+            <ol className="article-ol">{children}</ol>
+          ),
+          li: ({ children }) => (
+            <li className="article-li">{children}</li>
+          ),
+          blockquote: ({ children }) => (
+            <blockquote className="article-blockquote">{children}</blockquote>
+          ),
+          table: ({ children }) => (
+            <div className="article-table-wrapper">
+              <table className="article-table">{children}</table>
+            </div>
+          ),
+          code: ({ className, children }) => {
+            const isInline = !className;
+            return isInline ? (
+              <code className="article-code-inline">{children}</code>
+            ) : (
+              <code className={`article-code-block ${className || ''}`}>{children}</code>
+            );
+          },
+        }}
+      >
+        {content}
+      </ReactMarkdown>
 
-      <div className="article-section" id="iso-terminology">
-        <h3>ISO/IEC 22989:2022 Terminology</h3>
-        <p>
-          The International Organization for Standardization (ISO) and the International
-          Electrotechnical Commission (IEC) published ISO/IEC 22989:2022, establishing standardized
-          terminology for artificial intelligence concepts and techniques.
-        </p>
-      </div>
-
-      <style jsx>{`
+      <style jsx global>{`
         .article-content {
           margin-bottom: 80px;
         }
 
-        .article-section {
-          margin-bottom: 60px;
+        .article-h2 {
+          font-size: 40px;
+          font-weight: 600;
+          margin: 60px 0 24px;
+          color: var(--text-primary);
+          scroll-margin-top: 100px;
+          border-bottom: 2px solid var(--border-color);
+          padding-bottom: 12px;
         }
 
-        .article-section :global(h3) {
+        .article-h3 {
           font-size: 32px;
           font-weight: 600;
-          margin-bottom: 24px;
+          margin: 48px 0 20px;
           color: var(--text-primary);
           scroll-margin-top: 100px;
         }
 
-        .article-section :global(p) {
+        .article-h4 {
+          font-size: 24px;
+          font-weight: 600;
+          margin: 36px 0 16px;
+          color: var(--text-primary);
+        }
+
+        .article-p {
           font-size: 18px;
           line-height: 1.8;
           color: var(--text-primary);
           margin-bottom: 20px;
         }
 
-        .article-section :global(blockquote) {
+        .article-ul,
+        .article-ol {
+          margin: 20px 0;
+          padding-left: 32px;
+        }
+
+        .article-li {
+          font-size: 18px;
+          line-height: 1.8;
+          color: var(--text-primary);
+          margin-bottom: 12px;
+        }
+
+        .article-blockquote {
           border-left: 4px solid #936639;
           padding: 24px 32px;
           margin: 32px 0;
@@ -69,17 +117,81 @@ export function ArticleContent({ slug }: ArticleContentProps) {
           color: var(--text-secondary);
         }
 
+        .article-table-wrapper {
+          overflow-x: auto;
+          margin: 32px 0;
+        }
+
+        .article-table {
+          width: 100%;
+          border-collapse: collapse;
+          font-size: 16px;
+        }
+
+        .article-table th {
+          background: var(--bg-secondary);
+          padding: 12px 16px;
+          text-align: left;
+          border: 1px solid var(--border-color);
+          font-weight: 600;
+          color: var(--text-primary);
+        }
+
+        .article-table td {
+          padding: 12px 16px;
+          border: 1px solid var(--border-color);
+          color: var(--text-primary);
+        }
+
+        .article-table tr:nth-child(even) {
+          background: var(--bg-secondary);
+        }
+
+        .article-code-inline {
+          background: var(--bg-secondary);
+          padding: 2px 8px;
+          border-radius: 4px;
+          font-family: 'Monaco', 'Courier New', monospace;
+          font-size: 15px;
+          color: #936639;
+        }
+
+        .article-code-block {
+          display: block;
+          background: var(--bg-secondary);
+          padding: 20px;
+          border-radius: 8px;
+          overflow-x: auto;
+          font-family: 'Monaco', 'Courier New', monospace;
+          font-size: 14px;
+          line-height: 1.6;
+          margin: 24px 0;
+        }
+
         @media (max-width: 767px) {
-          .article-section :global(h3) {
+          .article-h2 {
+            font-size: 32px;
+          }
+
+          .article-h3 {
             font-size: 24px;
           }
 
-          .article-section :global(p) {
+          .article-h4 {
+            font-size: 20px;
+          }
+
+          .article-p,
+          .article-li {
             font-size: 16px;
           }
 
-          .article-section :global(blockquote) {
+          .article-blockquote {
             padding: 20px 24px;
+          }
+
+          .article-table {
+            font-size: 14px;
           }
         }
       `}</style>

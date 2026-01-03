@@ -1,6 +1,7 @@
 import { readFileSync } from 'fs';
 import { join } from 'path';
 import * as yaml from 'js-yaml';
+import matter from 'gray-matter';
 
 export interface Article {
   id: string;
@@ -21,6 +22,7 @@ export interface Article {
   exampleRefs?: string[];
   tags: string[];
   image: string;
+  content?: string;
 }
 
 interface ConceptCard {
@@ -129,6 +131,18 @@ export async function getArticleBySlug(slug: string): Promise<Article | null> {
     return null;
   }
 
+  // Read and parse the markdown file
+  let content = '';
+  try {
+    const filePath = join(process.cwd(), card.source_file);
+    const fileContent = readFileSync(filePath, 'utf-8');
+    const { content: markdownContent } = matter(fileContent);
+    content = markdownContent;
+  } catch (error) {
+    console.error(`Error reading file ${card.source_file}:`, error);
+    content = 'Content not available.';
+  }
+
   return {
     id: card.id,
     title: card.title,
@@ -143,6 +157,7 @@ export async function getArticleBySlug(slug: string): Promise<Article | null> {
     exampleRefs: card.example_refs,
     tags: card.tags || [],
     image: `/images/${card.path}/${slugToImageMap[card.slug] || 'default.webp'}`,
+    content,
   };
 }
 
