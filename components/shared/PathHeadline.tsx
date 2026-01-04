@@ -83,7 +83,6 @@ export function PathHeadline({ pathSlug, title, description, heroImage }: PathHe
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px"
               style={{ objectFit: 'cover' }}
               priority
-              unoptimized
             />
             <div className="headline-overlay">
               <h1>{title}</h1>
