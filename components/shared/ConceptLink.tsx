@@ -39,7 +39,7 @@ export function ConceptLink({ slug, title, pathSlug, showIcon = true }: ConceptL
           display: inline-flex;
           align-items: center;
           gap: 6px;
-          color: ${colors?.primary || 'var(--text-primary)'};
+          color: ${colors?.lightModeText || 'var(--text-primary)'};
           text-decoration: none;
           font-weight: 500;
           transition: all 0.3s ease;
@@ -48,8 +48,8 @@ export function ConceptLink({ slug, title, pathSlug, showIcon = true }: ConceptL
         }
 
         .concept-link:hover {
-          color: ${colors?.hover || 'var(--text-primary)'};
-          border-bottom-color: ${colors?.hover || 'var(--text-primary)'};
+          color: ${colors?.lightModeText || 'var(--text-primary)'};
+          border-bottom-color: ${colors?.lightModeText || 'var(--text-primary)'};
           transform: translateX(4px);
         }
 
@@ -68,11 +68,12 @@ export function ConceptLink({ slug, title, pathSlug, showIcon = true }: ConceptL
         }
 
         [data-theme='dark'] .concept-link {
-          color: ${colors?.primary || 'var(--text-primary)'};
+          color: ${colors?.darkModeText || 'var(--text-primary)'};
         }
 
         [data-theme='dark'] .concept-link:hover {
-          color: ${colors?.primary || 'var(--text-primary)'};
+          color: ${colors?.darkModeText || 'var(--text-primary)'};
+          border-bottom-color: ${colors?.darkModeText || 'var(--text-primary)'};
         }
       `}</style>
     </>

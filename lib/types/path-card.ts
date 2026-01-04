@@ -21,35 +21,41 @@ export interface PathCard {
 export type PathSlug = 'history' | 'terminology' | 'risk' | 'responsibility' | 'future';
 
 export interface PathColors {
-  primary: string;
-  hover: string;
-  light: string;
+  lightMode: string;
+  darkMode: string;
+  lightModeText: string;
+  darkModeText: string;
 }
 
 export const pathColorMap: Record<PathSlug, PathColors> = {
   history: {
-    primary: '#936639',
-    hover: '#333d29',
-    light: '#414833',
+    lightMode: '#FFF8F0', // Cream
+    darkMode: '#D4A574', // Toffee Light
+    lightModeText: '#000000', // Black on light background
+    darkModeText: '#D4A574', // Toffee Light on dark background
   },
   terminology: {
-    primary: '#4A90E2',
-    hover: '#2E5C8A',
-    light: '#3A6FA8',
+    lightMode: '#FAFAF5', // Off White
+    darkMode: '#C4CEB0', // Soft Sage
+    lightModeText: '#000000', // Black on light background
+    darkModeText: '#C4CEB0', // Soft Sage on dark background
   },
   risk: {
-    primary: '#E63946',
-    hover: '#A02834',
-    light: '#C42F3C',
+    lightMode: '#FFFFFF', // White
+    darkMode: '#FFB347', // Warning Amber
+    lightModeText: '#000000', // Black on white background
+    darkModeText: '#FFB347', // Warning Amber on dark background
   },
   responsibility: {
-    primary: '#06A77D',
-    hover: '#047857',
-    light: '#059669',
+    lightMode: '#FFFFF0', // Ivory
+    darkMode: '#D4EDDA', // Mint Cream
+    lightModeText: '#000000', // Black on light background
+    darkModeText: '#D4EDDA', // Mint Cream on dark background
   },
   future: {
-    primary: '#9333EA',
-    hover: '#6B21A8',
-    light: '#7C3AED',
+    lightMode: '#1A1A2E', // Deep Charcoal
+    darkMode: '#FFFFFF', // White
+    lightModeText: '#FFFFFF', // White on dark background
+    darkModeText: '#FFFFFF', // White on dark background
   },
 };

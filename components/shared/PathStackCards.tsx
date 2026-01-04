@@ -253,8 +253,12 @@ export function PathStackCards({ cards, pathSlug }: PathStackCardsProps) {
         }
 
         .concept-stack-card:hover {
-          border-color: ${colors.hover};
+          border-color: ${colors.lightMode};
           transform: scale(1.01);
+        }
+
+        [data-theme='dark'] .concept-stack-card:hover {
+          border-color: ${colors.darkMode};
         }
 
         .card-image {
@@ -311,7 +315,7 @@ export function PathStackCards({ cards, pathSlug }: PathStackCardsProps) {
 
         .card-number {
           font-size: 14px;
-          color: ${colors.primary};
+          color: ${colors.lightModeText};
           font-weight: 600;
           text-transform: uppercase;
           letter-spacing: 1px;
@@ -322,6 +326,7 @@ export function PathStackCards({ cards, pathSlug }: PathStackCardsProps) {
         }
 
         [data-theme='dark'] .card-number {
+          color: ${colors.darkModeText};
           background: rgba(26, 26, 26, 0.9);
         }
 
@@ -352,11 +357,11 @@ export function PathStackCards({ cards, pathSlug }: PathStackCardsProps) {
           background: #1a1a1a !important;
           color: white !important;
           transform: scale(1.1) !important;
-          box-shadow: 0 0 20px ${colors.primary}99, 0 0 40px ${colors.primary}66, 0 0 60px ${colors.primary}33 !important;
+          box-shadow: 0 0 20px ${colors.lightMode}99, 0 0 40px ${colors.lightMode}66, 0 0 60px ${colors.lightMode}33 !important;
         }
 
         [data-theme='dark'] .card-arrow-btn:hover {
-          box-shadow: 0 0 20px ${colors.primary}99, 0 0 40px ${colors.primary}66, 0 0 60px ${colors.primary}33 !important;
+          box-shadow: 0 0 20px ${colors.darkMode}99, 0 0 40px ${colors.darkMode}66, 0 0 60px ${colors.darkMode}33 !important;
         }
 
         .card-bottom {
@@ -384,9 +389,15 @@ export function PathStackCards({ cards, pathSlug }: PathStackCardsProps) {
         }
 
         .concept-stack-card:hover .tag {
-          background: ${colors.hover};
-          color: white;
-          border-color: ${colors.hover};
+          background: ${colors.lightMode};
+          color: ${colors.lightModeText};
+          border-color: ${colors.lightMode};
+        }
+
+        [data-theme='dark'] .concept-stack-card:hover .tag {
+          background: ${colors.darkMode};
+          color: ${colors.darkModeText};
+          border-color: ${colors.darkMode};
         }
 
         .card-title {
@@ -399,7 +410,11 @@ export function PathStackCards({ cards, pathSlug }: PathStackCardsProps) {
         }
 
         .concept-stack-card:hover .card-title {
-          color: ${colors.hover};
+          color: ${colors.lightModeText};
+        }
+
+        [data-theme='dark'] .concept-stack-card:hover .card-title {
+          color: ${colors.darkModeText};
         }
 
         .card-tldr {
@@ -410,9 +425,13 @@ export function PathStackCards({ cards, pathSlug }: PathStackCardsProps) {
           background: var(--card-bg);
           backdrop-filter: blur(10px);
           border-radius: 12px;
-          border-left: 4px solid ${colors.hover};
+          border-left: 4px solid ${colors.lightMode};
           max-width: 700px;
           margin-top: 16px;
+        }
+
+        [data-theme='dark'] .card-tldr {
+          border-left-color: ${colors.darkMode};
         }
 
         .card-meta {
@@ -431,11 +450,16 @@ export function PathStackCards({ cards, pathSlug }: PathStackCardsProps) {
         .cross-path-badge {
           display: inline-block;
           padding: 6px 16px;
-          background: ${colors.light};
-          color: white;
+          background: ${colors.lightMode};
+          color: ${colors.lightModeText};
           border-radius: 12px;
           font-size: 12px;
           font-weight: 600;
+        }
+
+        [data-theme='dark'] .cross-path-badge {
+          background: ${colors.darkMode};
+          color: ${colors.darkModeText};
         }
 
         @media (max-width: 1024px) {

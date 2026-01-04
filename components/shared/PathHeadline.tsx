@@ -117,26 +117,26 @@ export function PathHeadline({ pathSlug, title, description, heroImage }: PathHe
           align-items: flex-start;
           gap: 24px;
           font-size: 48px;
-          color: ${colors.hover};
+          color: ${colors.lightModeText};
           text-transform: uppercase;
           letter-spacing: 4px;
           font-weight: 700;
         }
 
         [data-theme='dark'] .headline-name {
-          color: var(--text-primary);
+          color: ${colors.darkModeText};
         }
 
         .headline-name svg {
           width: 60px;
           height: 60px;
-          fill: ${colors.hover};
+          fill: ${colors.lightModeText};
           flex-shrink: 0;
           margin-top: 12px;
         }
 
         [data-theme='dark'] .headline-name svg {
-          fill: var(--text-primary);
+          fill: ${colors.darkModeText};
         }
 
         .paths-nav {
@@ -148,7 +148,7 @@ export function PathHeadline({ pathSlug, title, description, heroImage }: PathHe
 
         .path-link {
           font-size: 36px !important;
-          color: ${colors.hover} !important;
+          color: ${colors.lightModeText} !important;
           text-decoration: none !important;
           transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
           padding: 12px 0 !important;
@@ -160,33 +160,33 @@ export function PathHeadline({ pathSlug, title, description, heroImage }: PathHe
         }
 
         [data-theme='dark'] .path-link {
-          color: var(--text-primary) !important;
+          color: ${colors.darkModeText} !important;
         }
 
         .path-link:hover {
-          color: ${colors.hover} !important;
-          border-left-color: ${colors.hover} !important;
+          color: ${colors.lightModeText} !important;
+          border-left-color: ${colors.lightModeText} !important;
           padding-left: 40px !important;
           font-weight: 600 !important;
           transform: translateX(4px) !important;
-          text-shadow: 0 0 12px ${colors.hover}66, 0 0 24px ${colors.hover}33 !important;
+          text-shadow: 0 0 12px ${colors.lightModeText}66, 0 0 24px ${colors.lightModeText}33 !important;
         }
 
         [data-theme='dark'] .path-link:hover {
-          color: var(--text-primary) !important;
-          border-left-color: var(--text-primary) !important;
-          text-shadow: 0 0 12px rgba(255, 255, 255, 0.4), 0 0 24px rgba(255, 255, 255, 0.2) !important;
+          color: ${colors.darkModeText} !important;
+          border-left-color: ${colors.darkModeText} !important;
+          text-shadow: 0 0 12px ${colors.darkModeText}66, 0 0 24px ${colors.darkModeText}33 !important;
         }
 
         .path-link.active {
-          color: ${colors.hover} !important;
+          color: ${colors.lightModeText} !important;
           font-weight: 700 !important;
-          border-left-color: ${colors.hover} !important;
+          border-left-color: ${colors.lightModeText} !important;
         }
 
         [data-theme='dark'] .path-link.active {
-          color: var(--text-primary) !important;
-          border-left-color: var(--text-primary) !important;
+          color: ${colors.darkModeText} !important;
+          border-left-color: ${colors.darkModeText} !important;
         }
 
         .headline-image-card {

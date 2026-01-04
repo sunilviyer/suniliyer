@@ -39,8 +39,8 @@ export function CrossPathLink({
           .cross-path-badge {
             display: inline-block;
             padding: 6px 16px;
-            background: ${colors.light};
-            color: white;
+            background: ${colors.lightMode};
+            color: ${colors.lightModeText};
             border-radius: 12px;
             font-size: 12px;
             font-weight: 600;
@@ -49,10 +49,20 @@ export function CrossPathLink({
             white-space: nowrap;
           }
 
+          [data-theme='dark'] .cross-path-badge {
+            background: ${colors.darkMode};
+            color: ${colors.darkModeText};
+          }
+
           .cross-path-badge:hover {
-            background: ${colors.hover};
+            background: ${colors.lightMode};
             transform: translateY(-2px);
-            box-shadow: 0 4px 12px ${colors.primary}33;
+            box-shadow: 0 4px 12px ${colors.lightMode}33;
+          }
+
+          [data-theme='dark'] .cross-path-badge:hover {
+            background: ${colors.darkMode};
+            box-shadow: 0 4px 12px ${colors.darkMode}33;
           }
         `}</style>
       </>
@@ -71,21 +81,33 @@ export function CrossPathLink({
           display: inline-flex;
           align-items: center;
           gap: 8px;
-          color: ${colors.primary};
+          color: ${colors.lightModeText};
           text-decoration: none;
           font-weight: 500;
           transition: all 0.3s ease;
           padding: 8px 16px;
-          border-left: 3px solid ${colors.primary};
+          border-left: 3px solid ${colors.lightModeText};
           background: var(--bg-secondary);
           border-radius: 8px;
         }
 
+        [data-theme='dark'] .cross-path-link {
+          color: ${colors.darkModeText};
+          border-left-color: ${colors.darkModeText};
+          background: rgba(255, 255, 255, 0.05);
+        }
+
         .cross-path-link:hover {
-          background: ${colors.light};
-          color: white;
+          background: ${colors.lightMode};
+          color: ${colors.lightModeText};
           transform: translateX(8px);
-          box-shadow: 0 4px 12px ${colors.primary}33;
+          box-shadow: 0 4px 12px ${colors.lightMode}33;
+        }
+
+        [data-theme='dark'] .cross-path-link:hover {
+          background: ${colors.darkMode};
+          color: ${colors.darkModeText};
+          box-shadow: 0 4px 12px ${colors.darkMode}33;
         }
 
         .link-icon {
@@ -99,10 +121,6 @@ export function CrossPathLink({
 
         .link-text {
           font-size: 14px;
-        }
-
-        [data-theme='dark'] .cross-path-link {
-          background: rgba(255, 255, 255, 0.05);
         }
       `}</style>
     </>
