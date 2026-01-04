@@ -1,26 +1,9 @@
 import { readFileSync } from 'fs';
 import { join } from 'path';
 import * as yaml from 'js-yaml';
+import { PathCard } from '@/lib/types/path-card';
 
-export interface HistoryCard {
-  id: string;
-  title: string;
-  slug: string;
-  path: string;
-  sourceFile: string;
-  tldr: string;
-  contentSections: string[];
-  relatedConcepts: string[];
-  crossPathRefs?: {
-    terminology?: string[];
-    risk?: string[];
-    responsibility?: string[];
-    future?: string[];
-  };
-  exampleRefs?: string[];
-  tags: string[];
-  image: string;
-}
+export interface HistoryCard extends PathCard {}
 
 export interface KnowledgeGraph {
   metadata: {

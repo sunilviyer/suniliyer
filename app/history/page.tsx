@@ -1,5 +1,5 @@
 import { HistoryHeadline } from '@/components/history/HistoryHeadline';
-import { HistoryStackCards } from '@/components/history/HistoryStackCards';
+import { PathStackCards } from '@/components/shared/PathStackCards';
 import { getHistoryCards, getHistoryPath } from '@/lib/data/history';
 import { WireframeHeader } from '@/components/homepage/WireframeHeader';
 
@@ -25,7 +25,7 @@ export default async function HistoryPage() {
           title={`${pathInfo.title} from Dartmouth to DeepMind`}
           description={pathInfo.description}
         />
-        <HistoryStackCards cards={cards} />
+        <PathStackCards cards={cards} pathSlug="history" />
       </main>
     </>
   );
