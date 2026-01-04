@@ -137,3 +137,122 @@ export function getPathHeadline(pathSlug: PathSlug, pathTitle: string): string {
 
   return headlines[pathSlug] || pathTitle;
 }
+
+// Get card by slug across all paths
+export async function getCardBySlug(slug: string): Promise<PathCard | null> {
+  const kg = loadKnowledgeGraph();
+
+  const allCards = [
+    ...(kg.concept_cards_history || []),
+    ...(kg.concept_cards_terminology || []),
+    ...(kg.concept_cards_risk || []),
+    ...(kg.concept_cards_responsibility || []),
+    ...(kg.concept_cards_future || []),
+  ];
+
+  const card = allCards.find((c) => c.slug === slug);
+  if (!card) return null;
+
+  return {
+    id: card.id,
+    title: card.title,
+    slug: card.slug,
+    path: card.path,
+    sourceFile: card.source_file,
+    tldr: card.tldr,
+    contentSections: card.content_sections || [],
+    relatedConcepts: card.related_concepts || [],
+    crossPathRefs: card.cross_path_refs,
+    exampleRefs: card.example_refs,
+    tags: card.tags || [],
+    image: slugToImageMap[card.slug] || 'default.webp',
+  };
+}
+
+// Get related cards by IDs
+export async function getRelatedCards(cardIds: string[]): Promise<PathCard[]> {
+  const kg = loadKnowledgeGraph();
+
+  const allCards = [
+    ...(kg.concept_cards_history || []),
+    ...(kg.concept_cards_terminology || []),
+    ...(kg.concept_cards_risk || []),
+    ...(kg.concept_cards_responsibility || []),
+    ...(kg.concept_cards_future || []),
+  ];
+
+  return cardIds
+    .map((id) => {
+      const card = allCards.find((c) => c.id === id);
+      if (!card) return null;
+
+      return {
+        id: card.id,
+        title: card.title,
+        slug: card.slug,
+        path: card.path,
+        sourceFile: card.source_file,
+        tldr: card.tldr,
+        contentSections: card.content_sections || [],
+        relatedConcepts: card.related_concepts || [],
+        crossPathRefs: card.cross_path_refs,
+        exampleRefs: card.example_refs,
+        tags: card.tags || [],
+        image: slugToImageMap[card.slug] || 'default.webp',
+      };
+    })
+    .filter((card): card is PathCard => card !== null);
+}
+
+// Get all cards across all paths
+export async function getAllCards(): Promise<PathCard[]> {
+  const kg = loadKnowledgeGraph();
+
+  const allCards = [
+    ...(kg.concept_cards_history || []),
+    ...(kg.concept_cards_terminology || []),
+    ...(kg.concept_cards_risk || []),
+    ...(kg.concept_cards_responsibility || []),
+    ...(kg.concept_cards_future || []),
+  ];
+
+  return allCards.map((card) => ({
+    id: card.id,
+    title: card.title,
+    slug: card.slug,
+    path: card.path,
+    sourceFile: card.source_file,
+    tldr: card.tldr,
+    contentSections: card.content_sections || [],
+    relatedConcepts: card.related_concepts || [],
+    crossPathRefs: card.cross_path_refs,
+    exampleRefs: card.example_refs,
+    tags: card.tags || [],
+    image: slugToImageMap[card.slug] || 'default.webp',
+  }));
+}
+
+// Get total card count
+export async function getTotalCardCount(): Promise<number> {
+  const kg = loadKnowledgeGraph();
+  return kg.metadata.total_concept_cards;
+}
+
+// Get all learning paths info
+export async function getAllPaths(): Promise<LearningPath[]> {
+  const kg = loadKnowledgeGraph();
+
+  return kg.learning_paths.map((path) => ({
+    id: path.id,
+    title: path.title,
+    slug: path.slug,
+    tagline: path.tagline,
+    description: path.description,
+    cardCount: path.card_count,
+    estimatedReadingTime: path.estimated_reading_time,
+    primaryKeywords: path.primary_keywords,
+    conceptCards: path.concept_cards,
+    exampleCards: path.example_cards,
+    resourceCards: path.resource_cards,
+  }));
+}
