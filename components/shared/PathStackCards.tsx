@@ -116,6 +116,7 @@ export function PathStackCards({ cards, pathSlug }: PathStackCardsProps) {
                     sizes="100vw"
                     style={{ objectFit: 'cover' }}
                     priority={index < 3}
+                    unoptimized
                   />
                 </div>
 
