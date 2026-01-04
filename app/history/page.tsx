@@ -1,4 +1,4 @@
-import { HistoryHeadline } from '@/components/history/HistoryHeadline';
+import { PathHeadline } from '@/components/shared/PathHeadline';
 import { PathStackCards } from '@/components/shared/PathStackCards';
 import { getHistoryCards, getHistoryPath } from '@/lib/data/history';
 import { WireframeHeader } from '@/components/homepage/WireframeHeader';
@@ -21,9 +21,11 @@ export default async function HistoryPage() {
     <>
       <WireframeHeader />
       <main className="min-h-screen">
-        <HistoryHeadline
+        <PathHeadline
+          pathSlug="history"
           title={`${pathInfo.title} from Dartmouth to DeepMind`}
           description={pathInfo.description}
+          heroImage="/images/history/ai-history-timeline-f.webp"
         />
         <PathStackCards cards={cards} pathSlug="history" />
       </main>
