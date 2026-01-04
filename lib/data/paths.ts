@@ -20,26 +20,22 @@ export interface LearningPath {
   resourceCards: string[];
 }
 
-// Map slug to image filename for each path
+// Map slug to image filename for special cases
 const slugToImageMap: Record<string, string> = {
-  // History images
-  'what-ai-actually-is': 'what-ai-actually-is.webp',
-  'ai-family-tree': 'ai-family-tree.webp',
-  'ai-technology-stack': 'ai-technology-stack.webp',
+  // History images (special mappings only)
   'ai-history-timeline': 'ai-history-timeline-f.webp',
-  'strong-vs-weak-ai': 'strong-vs-weak-ai.webp',
-  'machine-learning-explained': 'machine-learning-explained.webp',
-  'deep-learning-explained': 'deep-learning-explained.webp',
-  'generative-ai-explained': 'generative-ai-explained.webp',
-  'large-language-models': 'large-language-models.webp',
-  'ai-vs-automation': 'ai-vs-automation.webp',
-  'data-behind-ai': 'data-behind-ai.webp',
-  'foundation-models': 'foundation-models.webp',
-  'multimodal-ai': 'multimodal-ai.webp',
-  'ai-compute-gpus': 'ai-compute-gpus.webp',
-  'environmental-cost-ai': 'environmental-cost-ai.webp',
-  // Add more images for other paths as needed
 };
+
+// Helper function to get image filename from slug
+function getImageFilename(slug: string): string {
+  // Check if there's a special mapping
+  if (slugToImageMap[slug]) {
+    return slugToImageMap[slug];
+  }
+
+  // Default: use slug as filename with .webp extension
+  return `${slug}.webp`;
+}
 
 // Get all cards for a specific path
 export async function getCardsByPath(pathSlug: PathSlug): Promise<PathCard[]> {
@@ -57,7 +53,7 @@ export async function getCardsByPath(pathSlug: PathSlug): Promise<PathCard[]> {
     crossPathRefs: card.cross_path_refs,
     exampleRefs: card.example_refs,
     tags: card.tags || [],
-    image: slugToImageMap[card.slug] || 'default.webp',
+    image: getImageFilename(card.slug),
   }));
 }
 
@@ -119,7 +115,7 @@ export async function getCardBySlug(slug: string): Promise<PathCard | null> {
     crossPathRefs: card.cross_path_refs,
     exampleRefs: card.example_refs,
     tags: card.tags || [],
-    image: slugToImageMap[card.slug] || 'default.webp',
+    image: getImageFilename(card.slug),
   };
 }
 
@@ -143,7 +139,7 @@ export async function getRelatedCards(cardIds: string[]): Promise<PathCard[]> {
         crossPathRefs: card.cross_path_refs,
         exampleRefs: card.example_refs,
         tags: card.tags || [],
-        image: slugToImageMap[card.slug] || 'default.webp',
+        image: getImageFilename(card.slug),
       });
     }
   }
@@ -167,7 +163,7 @@ export async function getAllCards(): Promise<PathCard[]> {
     crossPathRefs: card.cross_path_refs,
     exampleRefs: card.example_refs,
     tags: card.tags || [],
-    image: slugToImageMap[card.slug] || 'default.webp',
+    image: getImageFilename(card.slug),
   }));
 }
 

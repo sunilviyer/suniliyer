@@ -63,24 +63,21 @@ function loadKnowledgeGraph(): KnowledgeGraph {
   return yaml.load(fileContent) as KnowledgeGraph;
 }
 
-// Map slug to image filename
+// Map slug to image filename for special cases
 const slugToImageMap: Record<string, string> = {
-  'what-ai-actually-is': 'what-ai-actually-is.webp',
-  'ai-family-tree': 'ai-family-tree.webp',
-  'ai-technology-stack': 'ai-technology-stack.webp',
   'ai-history-timeline': 'ai-history-timeline-f.webp',
-  'strong-vs-weak-ai': 'strong-vs-weak-ai.webp',
-  'machine-learning-explained': 'machine-learning-explained.webp',
-  'deep-learning-explained': 'deep-learning-explained.webp',
-  'generative-ai-explained': 'generative-ai-explained.webp',
-  'large-language-models': 'large-language-models.webp',
-  'ai-vs-automation': 'ai-vs-automation.webp',
-  'data-behind-ai': 'data-behind-ai.webp',
-  'foundation-models': 'foundation-models.webp',
-  'multimodal-ai': 'multimodal-ai.webp',
-  'ai-compute-gpus': 'ai-compute-gpus.webp',
-  'environmental-cost-ai': 'environmental-cost-ai.webp',
 };
+
+// Helper function to get image filename from slug
+function getImageFilename(slug: string): string {
+  // Check if there's a special mapping
+  if (slugToImageMap[slug]) {
+    return slugToImageMap[slug];
+  }
+
+  // Default: use slug as filename with .webp extension
+  return `${slug}.webp`;
+}
 
 // Map path IDs to titles
 const pathTitles: Record<string, string> = {
@@ -156,7 +153,7 @@ export async function getArticleBySlug(slug: string): Promise<Article | null> {
     crossPathRefs: card.cross_path_refs,
     exampleRefs: card.example_refs,
     tags: card.tags || [],
-    image: `/images/${card.path}/${slugToImageMap[card.slug] || 'default.webp'}`,
+    image: `/images/${card.path}/${getImageFilename(card.slug)}`,
     content,
   };
 }
@@ -204,7 +201,7 @@ export async function getRelatedArticles(
         crossPathRefs: card.cross_path_refs,
         exampleRefs: card.example_refs,
         tags: card.tags || [],
-        image: `/images/${card.path}/${slugToImageMap[card.slug] || 'default.webp'}`,
+        image: `/images/${card.path}/${getImageFilename(card.slug)}`,
       });
     }
   });
@@ -263,7 +260,7 @@ export async function getNextPrevArticles(
       crossPathRefs: card.cross_path_refs,
       exampleRefs: card.example_refs,
       tags: card.tags || [],
-      image: `/images/${card.path}/${slugToImageMap[card.slug] || 'default.webp'}`,
+      image: `/images/${card.path}/${getImageFilename(card.slug)}`,
     };
   };
 
