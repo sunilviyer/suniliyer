@@ -105,6 +105,7 @@ export function PathStackCards({ cards, pathSlug }: PathStackCardsProps) {
                 itemRefs.current[index] = el;
               }}
               className="stack-item"
+              style={{ zIndex: cards.length - index }}
             >
               <div className="concept-stack-card">
                 {/* Background Image */}
