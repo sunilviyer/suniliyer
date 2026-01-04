@@ -126,13 +126,12 @@ export async function getCardBySlug(slug: string): Promise<PathCard | null> {
 // Get related cards by IDs
 export async function getRelatedCards(cardIds: string[]): Promise<PathCard[]> {
   const allCards = getAllConceptCards();
+  const results: PathCard[] = [];
 
-  return cardIds
-    .map((id) => {
-      const card = allCards.find((c) => c.id === id);
-      if (!card) return null;
-
-      return {
+  for (const id of cardIds) {
+    const card = allCards.find((c) => c.id === id);
+    if (card) {
+      results.push({
         id: card.id,
         title: card.title,
         slug: card.slug,
@@ -145,9 +144,11 @@ export async function getRelatedCards(cardIds: string[]): Promise<PathCard[]> {
         exampleRefs: card.example_refs,
         tags: card.tags || [],
         image: slugToImageMap[card.slug] || 'default.webp',
-      };
-    })
-    .filter((card): card is PathCard => card !== null);
+      });
+    }
+  }
+
+  return results;
 }
 
 // Get all cards across all paths

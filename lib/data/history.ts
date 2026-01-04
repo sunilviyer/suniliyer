@@ -3,7 +3,7 @@ import { join } from 'path';
 import * as yaml from 'js-yaml';
 import { PathCard } from '@/lib/types/path-card';
 
-export interface HistoryCard extends PathCard {}
+export type HistoryCard = PathCard;
 
 export interface KnowledgeGraph {
   metadata: {
