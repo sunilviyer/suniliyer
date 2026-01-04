@@ -1,7 +1,10 @@
-import { readFileSync } from 'fs';
-import { join } from 'path';
-import * as yaml from 'js-yaml';
 import { PathCard, PathSlug } from '@/lib/types/path-card';
+import {
+  loadKnowledgeGraph,
+  getAllConceptCards,
+  getConceptCardsByPath,
+  findConceptCardBySlug,
+} from '@/lib/knowledge-graph';
 
 export interface LearningPath {
   id: string;
@@ -15,41 +18,6 @@ export interface LearningPath {
   conceptCards: string[];
   exampleCards: string[];
   resourceCards: string[];
-}
-
-interface KnowledgeGraph {
-  metadata: {
-    total_articles: number;
-    total_concept_cards: number;
-    total_example_cards: number;
-    total_resource_cards: number;
-    learning_paths: number;
-    generated_date: string;
-  };
-  learning_paths: Array<{
-    id: string;
-    title: string;
-    slug: string;
-    tagline: string;
-    description: string;
-    card_count: number;
-    estimated_reading_time: string;
-    primary_keywords: string[];
-    concept_cards: string[];
-    example_cards: string[];
-    resource_cards: string[];
-  }>;
-  concept_cards_history?: Array<any>;
-  concept_cards_terminology?: Array<any>;
-  concept_cards_risk?: Array<any>;
-  concept_cards_responsibility?: Array<any>;
-  concept_cards_future?: Array<any>;
-}
-
-function loadKnowledgeGraph(): KnowledgeGraph {
-  const filePath = join(process.cwd(), 'content/knowledge-graph.yaml');
-  const fileContent = readFileSync(filePath, 'utf-8');
-  return yaml.load(fileContent) as KnowledgeGraph;
 }
 
 // Map slug to image filename for each path
@@ -75,11 +43,7 @@ const slugToImageMap: Record<string, string> = {
 
 // Get all cards for a specific path
 export async function getCardsByPath(pathSlug: PathSlug): Promise<PathCard[]> {
-  const kg = loadKnowledgeGraph();
-
-  // Map path slug to knowledge graph property
-  const pathKey = `concept_cards_${pathSlug}` as keyof KnowledgeGraph;
-  const cards = kg[pathKey] as Array<any> || [];
+  const cards = getConceptCardsByPath(pathSlug);
 
   return cards.map((card) => ({
     id: card.id,
@@ -140,17 +104,7 @@ export function getPathHeadline(pathSlug: PathSlug, pathTitle: string): string {
 
 // Get card by slug across all paths
 export async function getCardBySlug(slug: string): Promise<PathCard | null> {
-  const kg = loadKnowledgeGraph();
-
-  const allCards = [
-    ...(kg.concept_cards_history || []),
-    ...(kg.concept_cards_terminology || []),
-    ...(kg.concept_cards_risk || []),
-    ...(kg.concept_cards_responsibility || []),
-    ...(kg.concept_cards_future || []),
-  ];
-
-  const card = allCards.find((c) => c.slug === slug);
+  const card = findConceptCardBySlug(slug);
   if (!card) return null;
 
   return {
@@ -171,15 +125,7 @@ export async function getCardBySlug(slug: string): Promise<PathCard | null> {
 
 // Get related cards by IDs
 export async function getRelatedCards(cardIds: string[]): Promise<PathCard[]> {
-  const kg = loadKnowledgeGraph();
-
-  const allCards = [
-    ...(kg.concept_cards_history || []),
-    ...(kg.concept_cards_terminology || []),
-    ...(kg.concept_cards_risk || []),
-    ...(kg.concept_cards_responsibility || []),
-    ...(kg.concept_cards_future || []),
-  ];
+  const allCards = getAllConceptCards();
 
   return cardIds
     .map((id) => {
@@ -206,15 +152,7 @@ export async function getRelatedCards(cardIds: string[]): Promise<PathCard[]> {
 
 // Get all cards across all paths
 export async function getAllCards(): Promise<PathCard[]> {
-  const kg = loadKnowledgeGraph();
-
-  const allCards = [
-    ...(kg.concept_cards_history || []),
-    ...(kg.concept_cards_terminology || []),
-    ...(kg.concept_cards_risk || []),
-    ...(kg.concept_cards_responsibility || []),
-    ...(kg.concept_cards_future || []),
-  ];
+  const allCards = getAllConceptCards();
 
   return allCards.map((card) => ({
     id: card.id,
