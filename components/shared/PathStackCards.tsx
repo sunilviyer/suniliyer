@@ -18,15 +18,23 @@ interface PathStackCardsProps {
 
 export function PathStackCards({ cards, pathSlug }: PathStackCardsProps) {
   const wrapperRef = useRef<HTMLDivElement>(null);
-  const itemRefs = useRef<HTMLDivElement[]>([]);
+  const itemRefs = useRef<(HTMLDivElement | null)[]>([]);
   const colors = pathColorMap[pathSlug];
 
   useLayoutEffect(() => {
     if (typeof window === 'undefined') return;
     const wrapper = wrapperRef.current;
-    const items = itemRefs.current.filter(Boolean);
+
+    // Filter out nulls and ensure we have all items
+    const items = itemRefs.current.filter((item): item is HTMLDivElement => item !== null);
 
     if (!wrapper || items.length === 0) return;
+
+    // Ensure we have all cards before initializing
+    if (items.length !== cards.length) {
+      console.warn(`Expected ${cards.length} cards but got ${items.length} refs`);
+      return;
+    }
 
     let tl: gsap.core.Timeline | null = null;
     let st: ScrollTrigger | null = null;
@@ -94,7 +102,7 @@ export function PathStackCards({ cards, pathSlug }: PathStackCardsProps) {
             <div
               key={card.id}
               ref={(el) => {
-                if (el) itemRefs.current[index] = el;
+                itemRefs.current[index] = el;
               }}
               className="stack-item"
             >
