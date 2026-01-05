@@ -7,6 +7,7 @@ import { tickerWords } from '@/lib/ticker-words';
 import { learningPathsData } from '@/lib/learning-paths-data';
 import { portfolioData } from '@/lib/portfolio-data';
 import { useGsapScrollScaleAnimations } from '@/lib/hooks/useGsapScrollScaleAnimations';
+import { SplashScreen } from '@/components/homepage/SplashScreen';
 
 export default function HomePage() {
   useGsapScrollScaleAnimations();
@@ -123,9 +124,11 @@ export default function HomePage() {
   };
 
   return (
-    <div className="page-wrapper">
-      {/* Theme Toggle Button */}
-      <button
+    <>
+      <SplashScreen />
+      <div className="page-wrapper">
+        {/* Theme Toggle Button */}
+        <button
         className="theme-toggle"
         onClick={toggleTheme}
         aria-label="Toggle theme"
@@ -1767,6 +1770,7 @@ export default function HomePage() {
           }
         }
       `}</style>
-    </div>
+      </div>
+    </>
   );
 }
