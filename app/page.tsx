@@ -253,10 +253,10 @@ export default function HomePage() {
                             className="path-image"
                           />
                         </div>
-                      </div>
-                      <div className="path-content">
-                        <h3 className="path-title">{path.title}</h3>
-                        <p className="path-description">{path.description}</p>
+                        <div className="path-content">
+                          <h3 className="path-title">{path.title}</h3>
+                          <p className="path-description">{path.description}</p>
+                        </div>
                       </div>
                     </Link>
                   </div>
@@ -357,10 +357,10 @@ export default function HomePage() {
                             className="portfolio-image"
                           />
                         </div>
-                      </div>
-                      <div className="portfolio-content">
-                        <h3 className="portfolio-title">{item.title}</h3>
-                        <p className="portfolio-description">{item.description}</p>
+                        <div className="portfolio-content">
+                          <h3 className="portfolio-title">{item.title}</h3>
+                          <p className="portfolio-description">{item.description}</p>
+                        </div>
                       </div>
                     </Link>
                   </div>
@@ -1196,7 +1196,6 @@ export default function HomePage() {
           position: relative;
           width: 100%;
           padding-bottom: 125%;
-          margin-bottom: 24px;
           border-radius: 12px;
           overflow: hidden;
           background: var(--card-bg);
@@ -1234,9 +1233,32 @@ export default function HomePage() {
           transform: scale(1.05);
         }
 
+        /* Text overlay on images */
         .path-content,
         .portfolio-content {
-          padding: 0 4px;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          padding: 32px 24px 24px;
+          background: linear-gradient(
+            to bottom,
+            transparent 0%,
+            rgba(0, 0, 0, 0.7) 40%,
+            rgba(0, 0, 0, 0.85) 100%
+          );
+          z-index: 2;
+          transition: all 0.3s ease;
+        }
+
+        .carousel-item.center .path-link:hover .path-content,
+        .carousel-item.center .portfolio-link:hover .portfolio-content {
+          background: linear-gradient(
+            to bottom,
+            transparent 0%,
+            rgba(0, 0, 0, 0.8) 40%,
+            rgba(0, 0, 0, 0.95) 100%
+          );
         }
 
         .path-title,
@@ -1244,16 +1266,20 @@ export default function HomePage() {
           font-family: var(--font-funnel);
           font-size: 28px;
           font-weight: 700;
-          margin: 0 0 12px 0;
-          color: var(--text-primary);
+          margin: 0 0 8px 0;
+          color: #ffffff;
         }
 
         .path-description,
         .portfolio-description {
-          font-size: 16px;
-          line-height: 1.6;
-          color: var(--text-secondary);
+          font-size: 15px;
+          line-height: 1.5;
+          color: rgba(255, 255, 255, 0.9);
           margin: 0;
+          display: -webkit-box;
+          -webkit-line-clamp: 3;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
         }
 
         /* Carousel Dots */

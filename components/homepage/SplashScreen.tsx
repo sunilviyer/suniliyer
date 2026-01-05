@@ -31,7 +31,7 @@ export function SplashScreen() {
           fontSize: '120px',
         }}
       >
-        Hello
+        Hello!
       </div>
 
       <style jsx>{`
