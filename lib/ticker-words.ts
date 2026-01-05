@@ -1,5 +1,5 @@
 export const tickerWords = [
-  "Artificial",
+  "General",
   "Responsible",
   "Trustworthy",
   "Ethical",
@@ -9,4 +9,5 @@ export const tickerWords = [
   "Compliant",
   "Secure",
   "Fair",
+  "Super",
 ];
