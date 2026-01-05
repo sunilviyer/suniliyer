@@ -61,6 +61,35 @@ export const useGsapScrollScaleAnimations = () => {
         start: 'top 85%',
       });
 
+      // Curved card slide-up animation with bounce and focus effect
+      const scrollCards = document.querySelectorAll('.scroll-card-animate');
+      scrollCards.forEach((card) => {
+        gsap.fromTo(
+          card,
+          {
+            opacity: 0,
+            y: 100,
+            scale: 0.95,
+            filter: 'blur(8px)',
+          },
+          {
+            opacity: 1,
+            y: 0,
+            scale: 1,
+            filter: 'blur(0px)',
+            duration: 1.0,
+            ease: 'back.out(1.2)', // Bounce effect
+            scrollTrigger: {
+              trigger: card,
+              start: 'top 85%',
+              end: 'top 30%',
+              toggleActions: 'play none none reverse',
+              markers: false, // Set to true for debugging
+            },
+          }
+        );
+      });
+
       // Zoom effect on scroll
       const zoomElements = document.querySelectorAll('.zoom-on-scroll');
       zoomElements.forEach((element) => {
