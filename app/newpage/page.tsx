@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { tickerWords } from '@/lib/ticker-words';
@@ -50,13 +50,41 @@ export default function NewHomePage() {
     return () => clearInterval(interval);
   }, []);
 
+  const handlePathNext = useCallback(() => {
+    if (isPathTransitioning) return;
+    setIsPathTransitioning(true);
+    setCurrentPathIndex((prev) => (prev + 1) % learningPathsData.length);
+    setTimeout(() => setIsPathTransitioning(false), 600);
+  }, [isPathTransitioning]);
+
+  const handlePathPrev = useCallback(() => {
+    if (isPathTransitioning) return;
+    setIsPathTransitioning(true);
+    setCurrentPathIndex((prev) => (prev - 1 + learningPathsData.length) % learningPathsData.length);
+    setTimeout(() => setIsPathTransitioning(false), 600);
+  }, [isPathTransitioning]);
+
+  const handlePortfolioNext = useCallback(() => {
+    if (isPortfolioTransitioning) return;
+    setIsPortfolioTransitioning(true);
+    setCurrentPortfolioIndex((prev) => (prev + 1) % portfolioData.length);
+    setTimeout(() => setIsPortfolioTransitioning(false), 600);
+  }, [isPortfolioTransitioning]);
+
+  const handlePortfolioPrev = useCallback(() => {
+    if (isPortfolioTransitioning) return;
+    setIsPortfolioTransitioning(true);
+    setCurrentPortfolioIndex((prev) => (prev - 1 + portfolioData.length) % portfolioData.length);
+    setTimeout(() => setIsPortfolioTransitioning(false), 600);
+  }, [isPortfolioTransitioning]);
+
   // Auto-rotate learning paths
   useEffect(() => {
     const timer = setInterval(() => {
       handlePathNext();
     }, 5000);
     return () => clearInterval(timer);
-  }, [currentPathIndex]);
+  }, [handlePathNext]);
 
   // Auto-rotate portfolio
   useEffect(() => {
@@ -64,35 +92,7 @@ export default function NewHomePage() {
       handlePortfolioNext();
     }, 5000);
     return () => clearInterval(timer);
-  }, [currentPortfolioIndex]);
-
-  const handlePathNext = () => {
-    if (isPathTransitioning) return;
-    setIsPathTransitioning(true);
-    setCurrentPathIndex((prev) => (prev + 1) % learningPathsData.length);
-    setTimeout(() => setIsPathTransitioning(false), 600);
-  };
-
-  const handlePathPrev = () => {
-    if (isPathTransitioning) return;
-    setIsPathTransitioning(true);
-    setCurrentPathIndex((prev) => (prev - 1 + learningPathsData.length) % learningPathsData.length);
-    setTimeout(() => setIsPathTransitioning(false), 600);
-  };
-
-  const handlePortfolioNext = () => {
-    if (isPortfolioTransitioning) return;
-    setIsPortfolioTransitioning(true);
-    setCurrentPortfolioIndex((prev) => (prev + 1) % portfolioData.length);
-    setTimeout(() => setIsPortfolioTransitioning(false), 600);
-  };
-
-  const handlePortfolioPrev = () => {
-    if (isPortfolioTransitioning) return;
-    setIsPortfolioTransitioning(true);
-    setCurrentPortfolioIndex((prev) => (prev - 1 + portfolioData.length) % portfolioData.length);
-    setTimeout(() => setIsPortfolioTransitioning(false), 600);
-  };
+  }, [handlePortfolioNext]);
 
   const getPathPosition = (index: number) => {
     const diff = index - currentPathIndex;
@@ -440,13 +440,13 @@ export default function NewHomePage() {
             <div className="about-text-col">
               <h3 className="about-heading">A little about me</h3>
               <p className="about-paragraph">
-                I'm a results-driven leader specializing in AI adoption, customer success, and
+                I&apos;m a results-driven leader specializing in AI adoption, customer success, and
                 enterprise digital transformation. With a proven track record implementing AI-driven
                 engagement models, optimizing data analytics, and leading cross-functional teams, I drive
                 revenue growth, operational efficiency, and long-term client retention.
               </p>
               <p className="about-paragraph">
-                Currently serving as Senior Manager at Shift Technology, I've fostered long-term
+                Currently serving as Senior Manager at Shift Technology, I&apos;ve fostered long-term
                 enterprise relationships while implementing data-driven engagement models that maintain
                 100% client retention and drive significant growth. Previously at Ernst & Young, I oversaw
                 $30M+ in client engagements focused on strategy implementation, process improvement, and
@@ -502,9 +502,9 @@ export default function NewHomePage() {
 
           <div className="contact-grid loading__item">
             <div className="contact-info">
-              <h3 className="contact-heading">Let's Connect</h3>
+              <h3 className="contact-heading">Let&apos;s Connect</h3>
               <p className="contact-paragraph">
-                I'm always interested in hearing about new projects, collaborations,
+                I&apos;m always interested in hearing about new projects, collaborations,
                 or just connecting with fellow AI enthusiasts and technology leaders.
               </p>
 
