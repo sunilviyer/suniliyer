@@ -20,30 +20,29 @@ interface CompactCardProps {
     data: Record<string, unknown>;
   };
   index: number;
-  path: string;
 }
 
-export function CompactCard({ card, index, path }: CompactCardProps) {
+export function CompactCard({ card, index }: CompactCardProps) {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const renderExpandedContent = () => {
     switch (card.type) {
       case 'example':
-        return <ExampleCard example={card.data} index={0} isActive={true} onClick={() => {}} path={path} />;
+        return <ExampleCard example={card.data as any} index={0} isActive={true} onClick={() => {}} />;
       case 'milestone':
-        return <MilestoneCard milestone={card.data} index={0} path={path} />;
+        return <MilestoneCard milestone={card.data as any} index={0} />;
       case 'framework':
-        return <FrameworkCard framework={card.data} index={0} path={path} />;
+        return <FrameworkCard framework={card.data as any} index={0} />;
       case 'scenario':
-        return <ScenarioCard scenario={card.data} index={0} path={path} />;
+        return <ScenarioCard scenario={card.data as any} index={0} />;
       case 'resource':
-        return <ResourceCard resource={card.data} index={0} path={path} />;
+        return <ResourceCard resource={card.data as any} index={0} />;
       case 'insight':
-        return <MarketInsightCard insight={card.data} index={0} path={path} />;
+        return <MarketInsightCard insight={card.data as any} index={0} />;
       case 'concept':
-        return <TechnicalConceptCard concept={card.data} index={0} path={path} />;
+        return <TechnicalConceptCard concept={card.data as any} index={0} />;
       case 'pattern':
-        return <OperationalPatternCard pattern={card.data} index={0} path={path} />;
+        return <OperationalPatternCard pattern={card.data as any} index={0} />;
       default:
         return null;
     }

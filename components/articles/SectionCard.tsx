@@ -21,12 +21,11 @@ interface SectionCardProps {
     summary: string;
     data: Record<string, unknown>;
   }>;
-  path: string;
   backgroundImage: string;
   textColor: string;
 }
 
-export function SectionCard({ sectionType, sectionLabel, cards, path, backgroundImage, textColor }: SectionCardProps) {
+export function SectionCard({ sectionType, sectionLabel, cards, backgroundImage, textColor }: SectionCardProps) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [expandedCards, setExpandedCards] = useState<Record<string, boolean>>({});
 
@@ -40,21 +39,21 @@ export function SectionCard({ sectionType, sectionLabel, cards, path, background
   const renderCardContent = (card: { id: string; title: string; type: string; image: string; summary: string; data: Record<string, unknown> }) => {
     switch (sectionType) {
       case 'example':
-        return <ExampleCard example={card.data} index={0} isActive={true} onClick={() => {}} />;
+        return <ExampleCard example={card.data as any} index={0} isActive={true} onClick={() => {}} />;
       case 'milestone':
-        return <MilestoneCard milestone={card.data} index={0} />;
+        return <MilestoneCard milestone={card.data as any} index={0} />;
       case 'framework':
-        return <FrameworkCard framework={card.data} index={0} />;
+        return <FrameworkCard framework={card.data as any} index={0} />;
       case 'scenario':
-        return <ScenarioCard scenario={card.data} index={0} />;
+        return <ScenarioCard scenario={card.data as any} index={0} />;
       case 'resource':
-        return <ResourceCard resource={card.data} index={0} />;
+        return <ResourceCard resource={card.data as any} index={0} />;
       case 'insight':
-        return <MarketInsightCard insight={card.data} index={0} />;
+        return <MarketInsightCard insight={card.data as any} index={0} />;
       case 'concept':
-        return <TechnicalConceptCard concept={card.data} index={0} />;
+        return <TechnicalConceptCard concept={card.data as any} index={0} />;
       case 'pattern':
-        return <OperationalPatternCard pattern={card.data} index={0} />;
+        return <OperationalPatternCard pattern={card.data as any} index={0} />;
       default:
         return null;
     }

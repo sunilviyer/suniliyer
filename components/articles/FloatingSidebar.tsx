@@ -123,7 +123,6 @@ export function FloatingSidebar({ cards, path }: FloatingSidebarProps) {
                 sectionType={type as 'example' | 'milestone' | 'framework' | 'scenario' | 'resource' | 'insight' | 'concept' | 'pattern'}
                 sectionLabel={config.label}
                 cards={typeCards}
-                path={path}
                 backgroundImage={config.image}
                 textColor={config.textColor}
               />
