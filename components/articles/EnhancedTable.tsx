@@ -8,7 +8,7 @@ interface TableColumn {
 
 interface EnhancedTableProps {
   columns: TableColumn[];
-  data: Record<string, any>[];
+  data: Record<string, string | number>[];
   caption?: string;
   variant?: 'default' | 'striped' | 'bordered';
 }

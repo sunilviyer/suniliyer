@@ -19,7 +19,7 @@ interface SectionCardProps {
     type: string;
     image: string;
     summary: string;
-    data: any;
+    data: Record<string, unknown>;
   }>;
   path: string;
   backgroundImage: string;
@@ -37,7 +37,7 @@ export function SectionCard({ sectionType, sectionLabel, cards, path, background
     }));
   };
 
-  const renderCardContent = (card: any) => {
+  const renderCardContent = (card: { id: string; title: string; type: string; image: string; summary: string; data: Record<string, unknown> }) => {
     switch (sectionType) {
       case 'example':
         return <ExampleCard example={card.data} index={0} isActive={true} onClick={() => {}} path={path} />;

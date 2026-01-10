@@ -15,7 +15,7 @@ interface CardModalProps {
   onClose: () => void;
   card: {
     type: 'example' | 'milestone' | 'framework' | 'scenario' | 'resource' | 'insight' | 'concept' | 'pattern';
-    data: any;
+    data: Record<string, unknown>;
   };
   path: string;
 }

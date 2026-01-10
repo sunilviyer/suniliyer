@@ -10,7 +10,7 @@ export function PullQuote({ quote, attribution, variant = 'default' }: PullQuote
   return (
     <>
       <blockquote className={`pull-quote ${variant}`}>
-        <div className="quote-mark">"</div>
+        <div className="quote-mark">&ldquo;</div>
         <p className="quote-text">{quote}</p>
         {attribution && (
           <cite className="quote-attribution">— {attribution}</cite>

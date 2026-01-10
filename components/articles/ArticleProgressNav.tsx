@@ -57,7 +57,7 @@ export function ArticleProgressNav({
           {/* Progress Indicator */}
           <div className="progress-indicator">
             <span className="progress-text">
-              {currentIndex} of {totalArticles} articles in "{pathTitle}"
+              {currentIndex} of {totalArticles} articles in &ldquo;{pathTitle}&rdquo;
             </span>
             <div className="progress-dots">
               {Array.from({ length: totalArticles }).map((_, i) => (

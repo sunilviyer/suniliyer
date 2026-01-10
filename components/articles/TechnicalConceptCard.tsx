@@ -11,7 +11,7 @@ interface TechnicalConceptCardProps {
     linksToArticle?: string;
   };
   index: number;
-  path: string;
+  _path: string;
 }
 
 const categoryConfig = {
@@ -23,7 +23,7 @@ const categoryConfig = {
   security: { badge: '🔒 SECURITY', color: '#718096' }
 };
 
-export function TechnicalConceptCard({ concept, index, path }: TechnicalConceptCardProps) {
+export function TechnicalConceptCard({ concept, index,  _path }: TechnicalConceptCardProps) {
   const config = categoryConfig[concept.category];
 
   return (
@@ -49,7 +49,7 @@ export function TechnicalConceptCard({ concept, index, path }: TechnicalConceptC
           <div className="bulb-icon">💡</div>
           <div>
             <strong>Plain English:</strong>
-            <p>"{concept.plainEnglish}"</p>
+            <p>&ldquo;{concept.plainEnglish}&rdquo;</p>
           </div>
         </div>
 

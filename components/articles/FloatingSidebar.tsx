@@ -10,7 +10,7 @@ interface FloatingSidebarProps {
     type: 'example' | 'milestone' | 'framework' | 'scenario' | 'resource' | 'insight' | 'concept' | 'pattern';
     image: string;
     summary: string;
-    data: any;
+    data: Record<string, unknown>;
   }>;
   path: string;
 }
@@ -120,7 +120,7 @@ export function FloatingSidebar({ cards, path }: FloatingSidebarProps) {
             return (
               <SectionCard
                 key={type}
-                sectionType={type as any}
+                sectionType={type as 'example' | 'milestone' | 'framework' | 'scenario' | 'resource' | 'insight' | 'concept' | 'pattern'}
                 sectionLabel={config.label}
                 cards={typeCards}
                 path={path}

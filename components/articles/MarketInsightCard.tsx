@@ -13,10 +13,10 @@ interface MarketInsightCardProps {
     comparison?: Array<{ label: string; value: string }>;
   };
   index: number;
-  path: string;
+  _path: string;
 }
 
-export function MarketInsightCard({ insight, index, path }: MarketInsightCardProps) {
+export function MarketInsightCard({ insight, index,  _path }: MarketInsightCardProps) {
   const getTrendIcon = () => {
     switch (insight.trend) {
       case 'increasing': return '📈';

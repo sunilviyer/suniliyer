@@ -39,10 +39,8 @@
 - **Color**: EU Blue #003399, Yellow #FFCC00
 - **Visual**: EU flag, AI Act text, compliance checkmarks
 
-### 7. openai-anthropic-comparison.png
-- **Context**: Foundation model comparison (GPT vs Claude)
-- **Color**: OpenAI Green #10A37F, Anthropic Orange #D97757
-- **Visual**: Both company logos, foundation models side-by-side
+
+
 
 ---
 

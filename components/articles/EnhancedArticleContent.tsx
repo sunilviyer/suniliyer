@@ -3,10 +3,6 @@
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import rehypeRaw from 'rehype-raw';
-import { PullQuote } from './PullQuote';
-import { ArticleChecklist } from './ArticleChecklist';
-import { SourceCitation } from './SourceCitation';
-import { EnhancedTable } from './EnhancedTable';
 import { Accordion } from './Accordion';
 
 interface EnhancedArticleContentProps {
@@ -60,7 +56,7 @@ export function EnhancedArticleContent({ content, sources = [] }: EnhancedArticl
             ),
             blockquote: ({ children }) => (
               <div className="content-blockquote">
-                <div className="blockquote-mark">"</div>
+                <div className="blockquote-mark">&ldquo;</div>
                 {children}
               </div>
             ),

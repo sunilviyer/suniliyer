@@ -17,7 +17,7 @@ interface CompactCardProps {
     type: 'example' | 'milestone' | 'framework' | 'scenario' | 'resource' | 'insight' | 'concept' | 'pattern';
     image: string;
     summary: string;
-    data: any;
+    data: Record<string, unknown>;
   };
   index: number;
   path: string;

@@ -13,7 +13,7 @@ interface ResourceCardProps {
     formats?: string[];
   };
   index: number;
-  path: string;
+  _path: string;
 }
 
 const typeConfig = {
@@ -26,7 +26,7 @@ const typeConfig = {
   guide: { badge: '📖 GUIDE', color: '#744210' }
 };
 
-export function ResourceCard({ resource, index, path }: ResourceCardProps) {
+export function ResourceCard({ resource, index,  _path }: ResourceCardProps) {
   const config = typeConfig[resource.type];
 
   return (

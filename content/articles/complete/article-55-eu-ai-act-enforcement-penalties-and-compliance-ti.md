@@ -2,14 +2,8 @@
 title: Article 55: EU AI Act Enforcement – Penalties and Compliance Timelines
 slug: article-55-eu-ai-act-enforcement-penalties-and-compliance-ti
 path: responsibility
-tldr: The EU AI Act establishes three tiers of administrative fines based on the severity of the violation:
+tldr: The EU AI Act establishes three tiers of administrative fines based on the severity of the violation.
 
-
-
-
-*For the most serious violations*
-
-This t...
 contentSections:
   - The Penalty Structure: Three Tiers of Fines
   - Comparing to Other Regulations
@@ -36,12 +30,6 @@ readingTime: 11
 seoTitle: Article 55: EU AI Act Enforcement – Penalties and Compliance
 seoDescription: The EU AI Act establishes three tiers of administrative fines based on the severity of the violation:
 
-
-
-
-*For the most serious violations*
-
-This t...
 ---
 
 

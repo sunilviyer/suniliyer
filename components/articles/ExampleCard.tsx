@@ -15,10 +15,10 @@ interface ExampleCardProps {
   index: number;
   isActive: boolean;
   onClick: () => void;
-  path: string;
+  _path: string;
 }
 
-export function ExampleCard({ example, index, isActive, onClick, path }: ExampleCardProps) {
+export function ExampleCard({ example, index, isActive, onClick,  _path }: ExampleCardProps) {
   const [isHovered, setIsHovered] = useState(false);
 
   return (

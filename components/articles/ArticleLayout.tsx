@@ -24,7 +24,7 @@ interface ArticleLayoutProps {
     type: 'example' | 'milestone' | 'framework' | 'scenario' | 'resource' | 'insight' | 'concept' | 'pattern';
     image: string;
     summary: string;
-    data: any;
+    data: Record<string, unknown>;
   }>;
 }
 
