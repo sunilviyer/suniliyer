@@ -13,10 +13,9 @@ interface ScenarioCardProps {
     discussionQuestions?: string[];
   };
   index: number;
-  _path: string;
 }
 
-export function ScenarioCard({ scenario, index,  _path }: ScenarioCardProps) {
+export function ScenarioCard({ scenario, index }: ScenarioCardProps) {
   const [isExpanded, setIsExpanded] = useState(false);
   const [selectedOption, setSelectedOption] = useState<number | null>(null);
 

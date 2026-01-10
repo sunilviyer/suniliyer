@@ -15,7 +15,6 @@ interface FrameworkCardProps {
     officialUrl?: string;
   };
   index: number;
-  _path: string;
 }
 
 const typeConfig = {
@@ -26,7 +25,7 @@ const typeConfig = {
   executive_order: { badge: '🖊️ EXECUTIVE ORDER', color: '#E53E3E' }
 };
 
-export function FrameworkCard({ framework, index,  _path }: FrameworkCardProps) {
+export function FrameworkCard({ framework, index }: FrameworkCardProps) {
   const [isExpanded, setIsExpanded] = useState(false);
   const config = typeConfig[framework.type];
 

@@ -14,10 +14,9 @@ interface OperationalPatternCardProps {
     usedBy?: string[];
   };
   index: number;
-  _path: string;
 }
 
-export function OperationalPatternCard({ pattern, index,  _path }: OperationalPatternCardProps) {
+export function OperationalPatternCard({ pattern, index }: OperationalPatternCardProps) {
   const [isExpanded, setIsExpanded] = useState(false);
 
   return (

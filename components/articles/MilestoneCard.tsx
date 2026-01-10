@@ -13,10 +13,9 @@ interface MilestoneCardProps {
     location?: string;
   };
   index: number;
-  _path: string;
 }
 
-export function MilestoneCard({ milestone, index,  _path }: MilestoneCardProps) {
+export function MilestoneCard({ milestone, index }: MilestoneCardProps) {
   const [isExpanded, setIsExpanded] = useState(false);
 
   return (

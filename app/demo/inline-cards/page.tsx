@@ -134,7 +134,7 @@ export default function InlineCardsPrototypePage() {
       <div className="content-p">
         Before deploying a high-risk AI system in the EU market, providers must complete a{' '}
         <InlineContextCard trigger="conformity assessment" card={cardData.conformity} />{' '}
-        process. This involves documenting the system's intended purpose, training data, risk mitigation measures, and performance metrics.
+        process. This involves documenting the system&apos;s intended purpose, training data, risk mitigation measures, and performance metrics.
       </div>
 
       <div className="content-p">

@@ -15,10 +15,9 @@ interface ExampleCardProps {
   index: number;
   isActive: boolean;
   onClick: () => void;
-  _path: string;
 }
 
-export function ExampleCard({ example, index, isActive, onClick,  _path }: ExampleCardProps) {
+export function ExampleCard({ example, index, isActive, onClick }: ExampleCardProps) {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
