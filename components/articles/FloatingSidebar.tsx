@@ -12,7 +12,6 @@ interface FloatingSidebarProps {
     summary: string;
     data: Record<string, unknown>;
   }>;
-  path: string;
 }
 
 const cardTypeConfig = {
@@ -58,7 +57,7 @@ const cardTypeConfig = {
   },
 };
 
-export function FloatingSidebar({ cards, path }: FloatingSidebarProps) {
+export function FloatingSidebar({ cards }: FloatingSidebarProps) {
   const [isSticky, setIsSticky] = useState(false);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
 

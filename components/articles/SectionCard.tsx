@@ -37,23 +37,25 @@ export function SectionCard({ sectionType, sectionLabel, cards, backgroundImage,
   };
 
   const renderCardContent = (card: { id: string; title: string; type: string; image: string; summary: string; data: Record<string, unknown> }) => {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const data = card.data as any;
     switch (sectionType) {
       case 'example':
-        return <ExampleCard example={card.data as any} index={0} isActive={true} onClick={() => {}} />;
+        return <ExampleCard example={data} index={0} isActive={true} onClick={() => {}} />;
       case 'milestone':
-        return <MilestoneCard milestone={card.data as any} index={0} />;
+        return <MilestoneCard milestone={data} index={0} />;
       case 'framework':
-        return <FrameworkCard framework={card.data as any} index={0} />;
+        return <FrameworkCard framework={data} index={0} />;
       case 'scenario':
-        return <ScenarioCard scenario={card.data as any} index={0} />;
+        return <ScenarioCard scenario={data} index={0} />;
       case 'resource':
-        return <ResourceCard resource={card.data as any} index={0} />;
+        return <ResourceCard resource={data} index={0} />;
       case 'insight':
-        return <MarketInsightCard insight={card.data as any} index={0} />;
+        return <MarketInsightCard insight={data} index={0} />;
       case 'concept':
-        return <TechnicalConceptCard concept={card.data as any} index={0} />;
+        return <TechnicalConceptCard concept={data} index={0} />;
       case 'pattern':
-        return <OperationalPatternCard pattern={card.data as any} index={0} />;
+        return <OperationalPatternCard pattern={data} index={0} />;
       default:
         return null;
     }

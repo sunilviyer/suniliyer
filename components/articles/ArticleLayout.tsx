@@ -134,7 +134,7 @@ export function ArticleLayout({
 
           {/* Floating Sidebar */}
           {sidebarCards && (
-            <FloatingSidebar cards={sidebarCards} path={path} />
+            <FloatingSidebar cards={sidebarCards} />
           )}
         </div>
       </div>
