@@ -13,7 +13,7 @@ const cardData = {
   netflixPersonalization: {
     id: 'insight-netflix-personalization-savings',
     title: 'Netflix Personalization Savings',
-    type: 'insight' as const,
+    type: 'example' as const,
     summary: 'Netflix saves an estimated $1 billion annually through its personalization algorithm. By predicting viewer preferences with high accuracy, the company reduces churn and increases engagement. This Narrow AI system analyzes viewing patterns, ratings, and behavioral data to recommend content, demonstrating how specialized AI creates massive business value within a bounded domain.',
     tags: ['Business Value', 'Personalization', 'ROI']
   },
@@ -29,7 +29,7 @@ const cardData = {
   agi: {
     id: 'concept-agi',
     title: 'Artificial General Intelligence (AGI)',
-    type: 'concept' as const,
+    type: 'terminology' as const,
     summary: 'AGI refers to a hypothetical AI system with human-level intelligence across all cognitive domains. Unlike today&apos;s Narrow AI, which excels at single tasks, AGI could learn any intellectual task a human can, transfer knowledge between domains, and adapt to novel situations without retraining. While no AGI exists today, leading researchers like Sam Altman and Geoffrey Hinton suggest it could emerge within the next 10-20 years.',
     tags: ['AGI', 'Future AI', 'General Intelligence']
   },
