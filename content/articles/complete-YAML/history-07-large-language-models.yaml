@@ -1,0 +1,59 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2867
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 article_id: "history-07"\
+title: "Large Language Models"\
+slug: "large-language-models"\
+path: "history"\
+header_image: "/images/history/large-language-models.png"\
+navigation:\
+  prev:\
+    slug: "/history/generative-ai-explained"\
+    title: "Generative AI Explained"\
+  next:\
+    slug: "/history/ai-history"\
+    title: "AI History: Dartmouth to DeepMind"\
+key_learnings:\
+  - "Large Language Models (LLMs) are specialized AI trained on trillions of words to predict the next 'token' in a sequence."\
+  - "The Transformer architecture, specifically the attention mechanism, allows LLMs to understand long-range context."\
+  - "Training involves three critical phases: pre-training, supervised fine-tuning, and reinforcement learning from human feedback (RLHF)."\
+  - "Hallucination is an inherent feature of probabilistic prediction, meaning outputs must always be verified for factual accuracy."\
+  - "Techniques like RAG help ground LLMs in verified facts, making them more reliable for high-stakes business use."\
+read_time: "7 min read"\
+updated_date: "January 2025"\
+tags:\
+  - Large Language Models\
+  - Transformers\
+  - RAG\
+seo:\
+  description: "Understand the technology behind Large Language Models, how they predict language using the Transformer architecture, and why governance is critical for managing hallucinations."\
+  keywords:\
+    - Large Language Models\
+    - LLM\
+    - Transformer architecture\
+    - RAG\
+    - AI hallucination\
+    - RLHF\
+content: |\
+  <h2>The Probability of Prose</h2>\
+  <p>Think about the last time you used autocomplete on your phone to finish a text message. Behind the scenes of sophisticated tools like ChatGPT lies a similar mechanism, scaled up to an incredible degree. These are Large Language Models (LLMs), and while they might seem like they are thinking, they are actually doing something much simpler: predicting the next word in a sequence.</p>\
+  <p>Here is the key insight: to predict that next word accurately across trillions of examples, the model must capture patterns of grammar, logic, and even a bit of common sense. It does not "know" facts like a person does, but its statistical map of human language is so vast that it can produce coherent essays, debug complex code, or even write poetry.</p>\
+  \
+  <h2>The Engine: The Transformer</h2>\
+  <p>To understand how we got here, we have to look back at the 2017 Transformer revolution. Before this breakthrough, AI processed text one word at a time, often losing the thread of a long sentence. Think of it like reading through a straw\'97it was slow and limited.</p>\
+  <p>Transformers introduced an "attention mechanism" that allows the system to look at every word in a document simultaneously to understand context. When a model reads the word "it," the attention mechanism allows it to instantly look back and see if "it" refers to a "cat" or a "corporation," regardless of how far apart they are.</p>\
+\
+  <h2>How Models Are "Schooled"</h2>\
+  <p>Modern LLMs do not just emerge from the box ready to help. They go through three distinct levels of training. First is pre-training, where the model reads the entire public internet to learn how language works. This is followed by supervised fine-tuning, where human instructors provide high-quality examples of good answers.</p>\
+  <p>Finally, we use Reinforcement Learning from Human Feedback (RLHF). This is where humans rank different AI responses to teach the model our preferences and values. This process makes the model feel helpful and safe, but it does not change the fact that the underlying engine is still a probability machine.</p>\
+\
+  <h2>The Reality Check: Hallucination and RAG</h2>\
+  <p>Because the model is focused on what word is likely to come next rather than what is true, it can experience a <card type="concept" id="concept-hallucination">hallucination</card>. It might confidently state a historical date that never happened or cite a legal case that does not exist. Think of it like a very well-read assistant who occasionally makes things up just to be helpful.</p>\
+  <p>For effective governance, we can never treat LLM outputs as a final source of truth. To solve this, we often use <card type="concept" id="concept-rag">Retrieval-Augmented Generation (RAG)</card>. RAG forces the AI to look up information in a verified knowledge base before generating an answer, providing the factual grounding that raw models lack.</p>\
+\
+  <h2>The Path Ahead</h2>\
+  <p>As we explore the history of AI in our next article, keep this in mind: LLMs are powerful pattern-matchers, not reasoning engines. Understanding this limit is your most important shield against the hype.</p>}

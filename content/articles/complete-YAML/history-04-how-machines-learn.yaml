@@ -1,0 +1,61 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2867
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 article_id: "history-04"\
+title: "How Machines Learn"\
+slug: "how-machines-learn"\
+path: "history"\
+header_image: "/images/history/how-machines-learn.png"\
+navigation:\
+  prev:\
+    slug: "/history/types-of-ai-intelligence"\
+    title: "Types of AI Intelligence"\
+  next:\
+    slug: "/history/deep-learning-decoded"\
+    title: "Deep Learning Decoded"\
+key_learnings:\
+  - "Machine learning creates software by finding patterns in data instead of following human-written 'if-then' rules."\
+  - "Supervised learning requires a pre-labeled 'answer key' to teach models how to associate inputs with correct outputs."\
+  - "Unsupervised learning discovers hidden structures and groupings in data without human guidance or pre-existing labels."\
+  - "Reinforcement learning optimizes behavior through a system of rewards and penalties, similar to how an athlete learns through practice."\
+  - "The quality and representativeness of training data determine a model's behavior, making data governance foundational to AI safety."\
+read_time: "8 min read"\
+updated_date: "January 2025"\
+tags:\
+  - Machine Learning\
+  - AI Fundamentals\
+  - Training Methods\
+seo:\
+  description: "Learn the fundamental ways that machine learning systems develop capabilities, including supervised, unsupervised, and reinforcement learning."\
+  keywords:\
+    - machine learning fundamentals\
+    - supervised learning\
+    - unsupervised learning\
+    - reinforcement learning\
+    - how AI works\
+content: |\
+  <h2>Learning from Examples, Not Instructions</h2>\
+  <p>Think about how you learned to recognize a 'good' job candidate or a 'suspicious' credit card transaction. No one gave you a 500-page manual covering every possible scenario. Instead, you observed thousands of examples, gradually building an intuition for what patterns matter. Here is the key insight: Machine learning works in a very similar way. Instead of a human programmer writing explicit 'if-then' rules, we provide data and let the computer discover the patterns itself.</p>\
+  <p>To understand the roots of this approach, consider the <card type="milestone" id="ms-samuel-checkers">1959 checkers program</card> created by Arthur Samuel. It was a breakthrough because the computer didn't just play by a set of instructions; it played against itself and learned which moves led to victory. Today, we use this same basic logic to power everything from your email's spam filter to medical diagnosis tools.</p>\
+\
+  <h2>The Three Primary Ways Machines Learn</h2>\
+  <p>Think of it this way: training an AI is like onboarding a new employee. Depending on the task and the resources you have, you might choose one of three different teaching methods.</p>\
+\
+  <h3>1. Supervised Learning: The Answer Key</h3>\
+  <p>Imagine showing a new HR coordinator 10,000 past hiring decisions: 'This candidate was hired. This one wasn't'. That is supervised learning. We provide the AI with a 'labeled' dataset where the correct answer is already known. Through thousands of repetitions, the model learns to associate specific features\'97like years of experience or technical skills\'97with the desired outcome.</p>\
+\
+  <h3>2. Unsupervised Learning: Finding Hidden Patterns</h3>\
+  <p>What if you gave an analyst your entire customer database and said, 'Find me the patterns,' without giving them any categories to look for?. In unsupervised learning, the AI identifies clusters and relationships on its own. This is how companies discover new customer segments or find unusual transaction patterns that might indicate a new type of fraud.</p>\
+\
+  <h3>3. Reinforcement Learning: Trial and Error</h3>\
+  <p>Think of how an athlete improves through practice. They try different movements, receive feedback (success or failure), and optimize their behavior to win. This is reinforcement learning. The AI takes an action, receives a 'reward' for success or a 'penalty' for failure, and learns to maximize its long-term score. A famous example of this is the <card type="example" id="ex-deepmind-alphago">AlphaGo victory</card>, where the system taught itself to play the game of Go at a superhuman level by playing millions of matches against its own previous versions.</p>\
+\
+  <h2>The Role of Data and Governance</h2>\
+  <p>You might wonder why we spend so much time talking about data if the 'learning' happens in the algorithm. Here is the key insight: The model is a compressed representation of its training data. If the training data reflects historical biases\'97like past hiring decisions that favored one demographic\'97the AI will learn those biases as if they were valid rules for success.</p>\
+  <p>This is where <card type="concept" id="concept-feature-engineering">feature engineering</card> becomes critical. It is the process of deciding which characteristics we feed into the model. As a governance leader, you don't need to know how to write the code, but you must ask: 'What data did we use? How was it labeled? And what are we rewarding the system for achieving?'. Understanding these fundamentals is your first step toward building AI systems that are not just powerful, but also fair and reliable.</p>\
+\
+  <p>With these learning methods in mind, we can now look 'under the hood' to see the specific structures, called neural networks, that make this complex pattern recognition possible.</p>}

@@ -1,0 +1,64 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2867
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\froman\fcharset0 Times-Roman;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;}
+{\*\expandedcolortbl;;\cssrgb\c0\c0\c0;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\deftab720
+\pard\pardeftab720\partightenfactor0
+
+\f0\fs24 \cf0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 article_id: "history-06"\
+title: "Generative AI Explained"\
+slug: "generative-ai-explained"\
+path: "history"\
+header_image: "/images/history/generative-ai-explained.png"\
+navigation:\
+  prev:\
+    slug: "/history/deep-learning-decoded"\
+    title: "Deep Learning Decoded"\
+  next:\
+    slug: "/history/large-language-models"\
+    title: "Large Language Models"\
+key_learnings:\
+  - "Generative AI creates novel content by synthesizing patterns learned during training rather than just classifying data."\
+  - "The core mechanism of modern text generators is 'next token prediction'\'97calculating the statistical probability of the next word."\
+  - "Transformer architecture revolutionized AI by allowing models to consider relationships between all words in a sequence simultaneously."\
+  - "Refining models through Reinforcement Learning from Human Feedback (RLHF) is what makes them feel like helpful assistants."\
+  - "Hallucination\'97generating confident but false information\'97is an inherent trait of pattern-matching systems, not a temporary bug."\
+read_time: "8 min read"\
+updated_date: "January 2025"\
+tags:\
+  - Generative AI\
+  - Transformers\
+  - RLHF\
+  - AI Safety\
+seo:\
+  description: "Understand how Generative AI works, moving from deep learning foundations to the mechanics of next-token prediction and transformer architecture."\
+  keywords:\
+    - Generative AI\
+    - how ChatGPT works\
+    - RLHF\
+    - transformer architecture\
+    - AI hallucinations\
+content: |\
+  <h2>The Shift from Classifier to Creator</h2>\
+  <p>In our previous discussions, we looked at how neural networks act like a screening committee\'97sorting emails into spam or identifying a face in a photo. We call this discriminative AI because its job is to classify or predict based on existing data. But in late 2022, the world was introduced to something that felt fundamentally different with the <card type="example" id="ex-openai-chatgpt-release">release of ChatGPT</card>.</p>\
+  <p>Here is the key insight: Generative AI doesn't just analyze; it creates. It produces new text, images, or code that never existed before by synthesizing patterns it learned during training. Think of it this way: if discriminative AI is a critic who can tell you if a painting is a masterpiece, generative AI is the artist who can actually paint a new one in the same style.</p>\
+\
+  <h2>How It Works: The Ultimate Autocomplete</h2>\
+  <p>Despite how magical it feels to have a conversation with a machine, these systems are actually performing a very focused task: next token prediction. A "token" is just a word or a fragment of a word. When you give the AI a prompt, it calculates the statistical probability of every possible next word in its vocabulary and picks the most likely one. It then adds that word to your prompt and repeats the process.</p>\
+  <p>To understand how simple prediction leads to complex essays or working code, think of it this way: to predict that "Paris" follows the phrase "The capital of France is," the model must implicitly "know" a fact about geography. When you scale this math across trillions of words from the internet, the model develops broad capabilities in reasoning, coding, and creativity\'97not because it "understands" the world, but because it has mastered the patterns of human knowledge.</p>\
+\
+  <h2>The Engine: Transformer Architecture</h2>\
+  <p>The breakthrough that made this possible is called the Transformer. Before 2017, AI processed text like reading through a straw\'97one word at a time, often "forgetting" the beginning of a sentence by the time it reached the end.</p>\
+  <p>Transformers changed this by using an "attention mechanism". This allows the model to look at every word in a document simultaneously to understand the context. If the model is processing the word "it" at the end of a long paragraph, the attention mechanism helps it instantly link that word back to the specific noun it refers to at the beginning. This parallel processing is why modern AI feels so much more coherent than the chatbots of a decade ago.</p>\
+\
+  <h2>Aligning the Machine with Humans</h2>\
+  <p>Raw AI models are often unhelpful or erratic. To make them useful assistants, they go through a process called Reinforcement Learning from Human Feedback (RLHF). Human trainers rate the model's responses, essentially telling the system, "This answer was helpful and safe; that one was confusing or biased". Through this feedback, the model learns to align its outputs with human preferences and values.</p>\
+\
+  <h2>The Inherent Risk: Hallucination</h2>\
+  <p>One of the most important concepts for any leader to grasp is that <card type="concept" id="concept-hallucination">hallucination</card> is not a bug\'97it is a fundamental feature of how these systems work. Because the AI is always predicting the most probable next word, it will occasionally generate confident, plausible-sounding information that is factually incorrect.</p>\
+  <p>To understand the danger, consider the Air Canada incident where a chatbot fabricated a refund policy that didn't exist, leading to legal liability for the company. Because these systems have no "ground truth" database and are only pattern-matching, you must treat every output as a draft that requires human verification, especially in high-stakes domains like law or medicine.</p>\
+\
+  <h2>Looking Ahead</h2>\
+  <p>Now that we have explored how these creators work and why they sometimes "lie" with confidence, we are ready to look at the massive scale behind them. In our next article, we will examine the Large Language Models that power this revolution and the specific governance challenges that arise when models grow to trillions of parameters.</p>}

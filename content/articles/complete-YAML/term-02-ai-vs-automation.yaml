@@ -1,0 +1,59 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2867
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 article_id: "term-02"\
+title: "AI vs Automation"\
+slug: "ai-vs-automation"\
+path: "terminology"\
+header_image: "/images/terminology/ai-vs-automation.png"\
+navigation:\
+  prev:\
+    slug: "/terminology/ai-technology-stack"\
+    title: "The AI Technology Stack"\
+  next:\
+    slug: "/terminology/data-behind-ai"\
+    title: "The Data Behind AI"\
+key_learnings:\
+  - "Automation follows human-written 'if-then' rules, while AI learns to recognize patterns from data."\
+  - "Automated systems are deterministic, meaning they produce the same result every time for the same input."\
+  - "AI systems are probabilistic, providing predictions with a level of confidence rather than absolute certainty."\
+  - "Traditional Robotic Process Automation (RPA) is actually automation, not AI, unless it includes a machine learning component."\
+  - "Governance for automation focuses on logic verification, while AI governance requires monitoring for bias and model drift."\
+read_time: "8 min read"\
+updated_date: "January 2025"\
+tags:\
+  - AI Fundamentals\
+  - Automation\
+  - RPA\
+  - Governance Basics\
+seo:\
+  description: "Understand the fundamental differences between AI and automation to better manage organizational risk and compliance requirements."\
+  keywords:\
+    - AI vs Automation\
+    - Robotic Process Automation\
+    - deterministic vs probabilistic\
+    - AI governance\
+    - machine learning logic\
+content: |\
+  <h2>The Tale of Two Systems</h2>\
+  <p>Think about the last time you set an out-of-office reply on your email. You told the computer: IF an email arrives while I am away, THEN send this specific response. This is a perfect example of automation. It is reliable, predictable, and does exactly what you told it to do\'97nothing more and nothing less.</p>\
+  <p>Now, think about your email's spam filter. No human wrote a rule for every possible spam message. Instead, the system looked at millions of examples to learn what "spammy" patterns look like. This is <card type="article-link" id="article-link-what-ai-actually-is">artificial intelligence</card>. Here is the key insight: Automation follows rules we write, but AI discovers patterns we might not even see.</p>\
+\
+  <h2>Rules vs. Learning</h2>\
+  <p>To understand why this distinction matters for leadership, consider how these systems are built. Automation is deterministic. If you give it the same input a thousand times, you will get the exact same output a thousand times. This makes it very easy to audit. You just read the "if-then" code to see if the logic is correct.</p>\
+  <p>AI is probabilistic. It does not provide "the" answer; it provides its best guess with a certain level of confidence. Because AI behavior emerges from data rather than explicit instructions, it can handle novel situations that a rule-book might miss. However, this also means it can fail in ways that are much harder to predict.</p>\
+  <p>This difference is why we use a <card type="resource" id="res-ai-vs-automation-decision-tree">classification decision tree</card> to determine how to govern a new tool. You do not need a complex bias audit for a simple rule-engine, but you definitely need one for a system that "learns" from historical data.</p>\
+\
+  <h2>The "Robotic" Confusion</h2>\
+  <p>You might wonder why <card type="concept" id="concept-rpa-vs-ai">Robotic Process Automation (RPA)</card> is often discussed alongside AI. Despite the name, traditional RPA is pure automation. It is essentially a software script that mimics human clicks to move data between spreadsheets and forms.</p>\
+  <p>Think of it this way: RPA takes the "robot" out of the human by handling the dreary, repetitive tasks. It only becomes "intelligent automation" when we add an AI component\'97like using machine learning to read a handwritten form before the RPA bot copies the data. For governance, it is vital to identify which parts of your process are following fixed rules and which parts are making inferences.</p>\
+\
+  <h2>Why This Matters for Your Strategy</h2>\
+  <p>Mislabeling automation as AI can lead to "AI washing," where capabilities are exaggerated to stakeholders. More importantly, it creates a governance gap. Automation risks usually stem from simple logic errors or "brittleness" when a system it depends on changes. AI risks are different; they involve <card type="concept" id="concept-model-drift">model drift</card> and hidden biases.</p>\
+  <p>When you evaluate a new initiative, ask your team: "Does this system learn from data, or does it follow a set of instructions we provided?" By getting the label right, you can match your oversight to the actual risk. Now that we understand the difference between rules and learning, we are ready to look at the most important part of any AI system: the data it uses to learn those patterns.</p>\
+\
+  <p><i>Analogy: Automation is like a train following a fixed track; it is fast and efficient, but it can only go where the rails are laid. AI is more like a driver in a car; it can navigate new roads and handle obstacles, but it requires much more constant monitoring to ensure it stays on the right path.</i></p>}
