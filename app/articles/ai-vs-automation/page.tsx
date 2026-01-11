@@ -77,7 +77,7 @@ export default function AIvsAutomationArticle() {
         tags={['AI Fundamentals', 'Automation', 'RPA', 'Governance Basics']}
         readTime="8 min read"
         updatedDate="January 2025"
-        headerImage="/images/terminology/ai-vs-automation.png"
+        headerImage="/images/history/ai-vs-automation.webp"
         theme={theme}
         sidebarCards={[]}
       >

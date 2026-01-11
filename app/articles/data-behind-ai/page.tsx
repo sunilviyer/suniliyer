@@ -1,9 +1,14 @@
 'use client';
 
+import { useState } from 'react';
 import { ArticleLayout } from '@/components/articles/ArticleLayout';
 import { InlineContextCard } from '@/components/articles/InlineContextCard';
+import { ArticleProgressNav } from '@/components/articles/ArticleProgressNav';
+import { FloatingPathsNav } from '@/components/articles/FloatingPathsNav';
 
 export default function DataBehindAIArticle() {
+  const [theme, setTheme] = useState<'light' | 'dark'>('light');
+
   const cardData = {
     howMachinesLearn: {
       id: 'article-link-how-machines-learn',
@@ -36,87 +41,200 @@ export default function DataBehindAIArticle() {
     }
   };
 
-  const metadata = {
-    title: 'The Data Behind AI',
-    slug: 'data-behind-ai',
-    path: 'terminology',
-    headerImage: '/images/terminology/data-behind-ai.png',
-    navigation: {
-      prev: {
-        slug: '/terminology/ai-vs-automation',
-        title: 'AI vs Automation'
-      },
-      next: {
-        slug: '/terminology/foundation-models',
-        title: 'Foundation Models'
-      }
-    },
-    keyLearnings: [
-      'Data is the foundation of AI; model behavior is a direct reflection of the patterns found in its training data.',
-      'The "Garbage In, Garbage Out" rule is amplified in AI, where data errors are learned and applied at scale.',
-      'Data quality is multi-dimensional, requiring focus on accuracy, completeness, representativeness, and timeliness.',
-      'Algorithmic bias often stems from historical or representation gaps in the data used during the training phase.',
-      'Robust data governance requires documentation tools like Datasheets for Datasets and clear lineage tracking.'
-    ],
-    readTime: '8 min read',
-    updatedDate: 'January 2025',
-    tags: ['Training Data', 'Data Quality', 'Bias Mitigation'],
-    seo: {
-      description: 'Learn why training data determines AI behavior and how to implement a robust data strategy focusing on quality, fairness, and provenance.',
-      keywords: ['training data', 'AI data quality', 'data provenance', 'algorithmic bias', 'datasheets for datasets']
-    }
-  };
-
   return (
-    <ArticleLayout metadata={metadata}>
-      <h2>The Foundation of the AI House</h2>
-      <p>
-        Think about how you learned to recognize a 'good' employee or a 'fair' deal. You didn't just read a manual; you observed thousands of interactions over many years. Here is the key insight: AI systems learn in much the same way. While traditional software follows rules we write, AI behavior is determined by the data it 'observes' during training.
-      </p>
-      <p>
-        Think of it this way: the AI model is essentially a compressed representation of its{' '}
-        <InlineContextCard trigger="training data" card={cardData.howMachinesLearn} />. If you build a house on a shaky foundation, the whole structure is unstable. In the world of AI, that foundation is your data. If the data is flawed, the AI doesn't just fail; it learns those flaws and applies them to every decision it makes at scale.
-      </p>
+    <>
+      <button
+        onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
+        className="theme-toggle-btn"
+        style={{
+          position: 'fixed',
+          top: '20px',
+          right: '30px',
+          zIndex: 10000,
+          background: theme === 'light' ? '#1a1a1a' : '#ffffff',
+          color: theme === 'light' ? '#ffffff' : '#1a1a1a',
+          border: 'none',
+          borderRadius: '50%',
+          width: '50px',
+          height: '50px',
+          cursor: 'pointer',
+          fontSize: '24px',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          boxShadow: '0 4px 12px rgba(0, 0, 0, 0.15)',
+          transition: 'all 0.3s ease'
+        }}
+      >
+        <i className={theme === 'light' ? 'ph-bold ph-moon-stars' : 'ph-bold ph-sun-horizon'} />
+      </button>
 
-      <h2>Data In, Behavior Out</h2>
-      <p>
-        You may have heard the phrase 'Garbage In, Garbage Out.' In AI, we use a stronger version: 'Data In, Behavior Out'. Because AI detects statistical patterns rather than following fixed logic, every error or bias in your dataset becomes a potential pattern in the model's behavior.
-      </p>
-      <p>
-        To understand this, consider the{' '}
-        <InlineContextCard trigger="Amazon hiring bias incident" card={cardData.amazonHiring} />. The engineers didn't program the system to be sexist; the model simply learned from a decade of historical data where men were disproportionately hired. The AI wasn't broken—it was doing exactly what it was trained to do: replicate the patterns of the past.
-      </p>
+      <ArticleLayout
+        path="terminology"
+        pathTitle="Terminology"
+        articleTitle="The Data Behind AI"
+        tldr="Data is the foundation of AI; model behavior is a direct reflection of the patterns found in its training data. Understanding data quality, bias, and provenance is essential for responsible AI deployment."
+        tags={['Training Data', 'Data Quality', 'Bias Mitigation']}
+        readTime="8 min read"
+        updatedDate="January 2025"
+        headerImage="/images/history/data-behind-ai.webp"
+        theme={theme}
+        sidebarCards={[]}
+      >
+        <h2 className="content-h2">
+          <span className="heading-decoration" />
+          The Foundation of the AI House
+        </h2>
 
-      <h2>The Dimensions of Quality</h2>
-      <p>
-        When we talk about 'good' data, we aren't just talking about it being 'clean.' High-quality data for AI must be assessed across several dimensions. Accuracy is the baseline—are the values correct?. But Completeness and Representativeness are equally vital.
-      </p>
-      <p>
-        If your data is accurate but only represents a narrow slice of the population, your AI will have 'blind spots'. For instance, a facial recognition system trained primarily on lighter skin tones will systematically fail on darker skin tones, not because the math is wrong, but because the{' '}
-        <InlineContextCard trigger="representation bias" card={cardData.representationBias} />{' '}
-        in the data prevented it from learning the necessary patterns.
-      </p>
+        <div className="content-p">
+          Think about how you learned to recognize a 'good' employee or a 'fair' deal. You didn't just read a manual; you observed thousands of interactions over many years. Here is the key insight: AI systems learn in much the same way. While traditional software follows rules we write, AI behavior is determined by the data it 'observes' during training.
+        </div>
 
-      <h2>Provenance: Knowing Your Ingredients</h2>
-      <p>
-        Would you eat a meal if you had no idea where the ingredients came from? Probably not. Similarly, you shouldn't deploy an AI if you don't know the 'provenance' of its data. Data provenance is the documented history of where your data originated, how it was cleaned, and who handled it.
-      </p>
-      <p>
-        Standardized tools like{' '}
-        <InlineContextCard trigger="Datasheets for Datasets" card={cardData.datasheetsForDatasets} />{' '}
-        help bridge this transparency gap by recording the motivation, composition, and collection process of a dataset. This documentation is essential for accountability; you cannot explain an AI's decision if you cannot explain the information it used to learn.
-      </p>
+        <div className="content-p">
+          Think of it this way: the AI model is essentially a compressed representation of its{' '}
+          <InlineContextCard trigger="training data" card={cardData.howMachinesLearn} />. If you build a house on a shaky foundation, the whole structure is unstable. In the world of AI, that foundation is your data. If the data is flawed, the AI doesn't just fail; it learns those flaws and applies them to every decision it makes at scale.
+        </div>
 
-      <h2>The Practical Takeaway</h2>
-      <p>As you lead AI initiatives, remember that most AI failures are actually data failures in disguise. Before investing in more powerful algorithms, you should ask your teams these three questions:</p>
-      <ul>
-        <li>Where did this data come from? (Legal basis and provenance).</li>
-        <li>Does it represent the people we serve today? (Representativeness).</li>
-        <li>What patterns of the past are we accidentally teaching it? (Historical bias).</li>
-      </ul>
-      <p>
-        By focusing on the data first, you ensure that your AI is built on a foundation of quality and fairness. In our next article, we will look at Foundation Models to see how these massive datasets are used to create the 'all-purpose' AI tools we use today.
-      </p>
-    </ArticleLayout>
+        <h2 className="content-h2">
+          <span className="heading-decoration" />
+          Data In, Behavior Out
+        </h2>
+
+        <div className="content-p">
+          You may have heard the phrase 'Garbage In, Garbage Out.' In AI, we use a stronger version: 'Data In, Behavior Out'. Because AI detects statistical patterns rather than following fixed logic, every error or bias in your dataset becomes a potential pattern in the model's behavior.
+        </div>
+
+        <div className="content-p">
+          To understand this, consider the{' '}
+          <InlineContextCard trigger="Amazon hiring bias incident" card={cardData.amazonHiring} />. The engineers didn't program the system to be sexist; the model simply learned from a decade of historical data where men were disproportionately hired. The AI wasn't broken—it was doing exactly what it was trained to do: replicate the patterns of the past.
+        </div>
+
+        <h2 className="content-h2">
+          <span className="heading-decoration" />
+          The Dimensions of Quality
+        </h2>
+
+        <div className="content-p">
+          When we talk about 'good' data, we aren't just talking about it being 'clean.' High-quality data for AI must be assessed across several dimensions. Accuracy is the baseline—are the values correct?. But Completeness and Representativeness are equally vital.
+        </div>
+
+        <div className="content-p">
+          If your data is accurate but only represents a narrow slice of the population, your AI will have 'blind spots'. For instance, a facial recognition system trained primarily on lighter skin tones will systematically fail on darker skin tones, not because the math is wrong, but because the{' '}
+          <InlineContextCard trigger="representation bias" card={cardData.representationBias} />{' '}
+          in the data prevented it from learning the necessary patterns.
+        </div>
+
+        <h2 className="content-h2">
+          <span className="heading-decoration" />
+          Provenance: Knowing Your Ingredients
+        </h2>
+
+        <div className="content-p">
+          Would you eat a meal if you had no idea where the ingredients came from? Probably not. Similarly, you shouldn't deploy an AI if you don't know the 'provenance' of its data. Data provenance is the documented history of where your data originated, how it was cleaned, and who handled it.
+        </div>
+
+        <div className="content-p">
+          Standardized tools like{' '}
+          <InlineContextCard trigger="Datasheets for Datasets" card={cardData.datasheetsForDatasets} />{' '}
+          help bridge this transparency gap by recording the motivation, composition, and collection process of a dataset. This documentation is essential for accountability; you cannot explain an AI's decision if you cannot explain the information it used to learn.
+        </div>
+
+        <h2 className="content-h2">
+          <span className="heading-decoration" />
+          The Practical Takeaway
+        </h2>
+
+        <div className="content-p">
+          As you lead AI initiatives, remember that most AI failures are actually data failures in disguise. Before investing in more powerful algorithms, you should ask your teams these three questions:
+        </div>
+
+        <ul className="content-ul">
+          <li>Where did this data come from? (Legal basis and provenance).</li>
+          <li>Does it represent the people we serve today? (Representativeness).</li>
+          <li>What patterns of the past are we accidentally teaching it? (Historical bias).</li>
+        </ul>
+
+        <div className="content-p">
+          By focusing on the data first, you ensure that your AI is built on a foundation of quality and fairness. In our next article, we will look at Foundation Models to see how these massive datasets are used to create the 'all-purpose' AI tools we use today.
+        </div>
+
+        <style jsx>{`
+          .content-h2 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 32px;
+            font-weight: 700;
+            color: ${theme === 'light' ? '#1a1a1a' : '#ffffff'};
+            margin: 60px 0 24px 0;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+          }
+
+          .heading-decoration {
+            width: 40px;
+            height: 3px;
+            background: linear-gradient(90deg, #a68a64 0%, transparent 100%);
+            border-radius: 2px;
+          }
+
+          .content-p {
+            font-family: 'Crimson Pro', Georgia, serif;
+            font-size: 20px;
+            line-height: 1.8;
+            color: ${theme === 'light' ? '#1a1a1a' : '#e0e0e0'};
+            margin-bottom: 24px;
+          }
+
+          .content-ul {
+            font-family: 'Crimson Pro', Georgia, serif;
+            font-size: 20px;
+            line-height: 1.8;
+            color: ${theme === 'light' ? '#1a1a1a' : '#e0e0e0'};
+            margin: 24px 0 24px 32px;
+          }
+
+          .content-ul li {
+            margin-bottom: 12px;
+          }
+
+          @media (max-width: 768px) {
+            .content-h2 {
+              font-size: 28px;
+              margin: 40px 0 20px 0;
+            }
+
+            .content-p {
+              font-size: 18px;
+            }
+
+            .content-ul {
+              font-size: 18px;
+              margin-left: 24px;
+            }
+          }
+        `}</style>
+      </ArticleLayout>
+
+      {/* Navigation Components */}
+      <ArticleProgressNav
+        currentIndex={3}
+        totalArticles={8}
+        pathTitle="Terminology"
+        prevArticle={{
+          slug: '/terminology/ai-vs-automation',
+          title: 'AI vs Automation'
+        }}
+        nextArticle={{
+          slug: '/terminology/foundation-models',
+          title: 'Foundation Models'
+        }}
+        theme={theme}
+      />
+
+      <FloatingPathsNav
+        currentPath="/terminology"
+        theme={theme}
+      />
+    </>
   );
 }
