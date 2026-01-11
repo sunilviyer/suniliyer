@@ -9,6 +9,15 @@ import { useGsapScrollScaleAnimations } from '@/lib/hooks/useGsapScrollScaleAnim
 const riskCards = [
   {
     id: '1',
+    title: 'When AI Goes Wrong',
+    slug: 'when-ai-goes-wrong',
+    tldr: 'Real-world AI failures and their consequences: From hiring bias to autonomous vehicle crashes',
+    image: 'ai-safety-failures.webp',
+    era: 'Overview',
+    tags: ['Failures', 'Case Studies']
+  },
+  {
+    id: '2',
     title: 'Algorithmic Bias',
     slug: 'algorithmic-bias',
     tldr: 'Unfair AI: how biased training data and design choices lead to discriminatory outcomes',
@@ -17,67 +26,58 @@ const riskCards = [
     tags: ['Bias', 'Ethics']
   },
   {
-    id: '2',
-    title: 'AI Privacy Dilemma',
-    slug: 'ai-privacy-dilemma',
-    tldr: 'Protecting personal information: privacy risks in AI training and inference',
+    id: '3',
+    title: 'AI Hallucinations',
+    slug: 'ai-hallucinations',
+    tldr: 'When AI confidently generates false information: Understanding model confabulation',
     image: 'ai-privacy-dilemma.webp',
+    era: 'Reliability Risk',
+    tags: ['Hallucinations', 'Accuracy']
+  },
+  {
+    id: '4',
+    title: 'AI and Privacy',
+    slug: 'ai-and-privacy',
+    tldr: 'Protecting personal information: privacy risks in AI training and inference',
+    image: 'deepfakes-trust-crisis.webp',
     era: 'Privacy Risk',
     tags: ['Privacy', 'Data']
   },
   {
-    id: '3',
-    title: 'AI Safety Failures',
-    slug: 'ai-safety-failures',
-    tldr: 'Preventing harmful outputs: understanding when AI systems fail catastrophically',
-    image: 'ai-safety-failures.webp',
-    era: 'Safety Risk',
-    tags: ['Safety', 'Failures']
-  },
-  {
-    id: '4',
-    title: 'Deepfakes & Trust Crisis',
-    slug: 'deepfakes-trust-crisis',
+    id: '5',
+    title: 'Deepfakes & Synthetic Media',
+    slug: 'deepfakes-synthetic-media',
     tldr: 'Synthetic media threats: AI-generated content that erodes truth and trust',
-    image: 'deepfakes-trust-crisis.webp',
+    image: 'job-displacement.webp',
     era: 'Misuse Risk',
     tags: ['Deepfakes', 'Misinformation']
   },
   {
-    id: '5',
+    id: '6',
+    title: 'AI Misinformation',
+    slug: 'ai-misinformation',
+    tldr: 'Threats to democratic processes: AI-powered disinformation campaigns',
+    image: 'ai-misinformation-democracy.webp',
+    era: 'Societal Risk',
+    tags: ['Disinformation', 'Trust']
+  },
+  {
+    id: '7',
     title: 'Job Displacement',
     slug: 'job-displacement',
     tldr: 'Automation impact: how AI affects employment and the future of work',
-    image: 'job-displacement.webp',
+    image: 'autonomous-weapons.webp',
     era: 'Economic Risk',
     tags: ['Employment', 'Economy']
   },
   {
-    id: '6',
-    title: 'AI Misinformation & Democracy',
-    slug: 'ai-misinformation-democracy',
-    tldr: 'Threats to democratic processes: AI-powered disinformation campaigns',
-    image: 'ai-misinformation-democracy.webp',
-    era: 'Societal Risk',
-    tags: ['Democracy', 'Disinformation']
-  },
-  {
-    id: '7',
+    id: '8',
     title: 'Autonomous Weapons',
     slug: 'autonomous-weapons',
     tldr: 'Military AI: the risks of delegating life-and-death decisions to machines',
-    image: 'autonomous-weapons.webp',
+    image: 'ai-accountability.webp',
     era: 'Existential Risk',
     tags: ['Weapons', 'Military']
-  },
-  {
-    id: '8',
-    title: 'AI Accountability',
-    slug: 'ai-accountability',
-    tldr: 'Who is responsible? Establishing accountability when AI causes harm',
-    image: 'ai-accountability.webp',
-    era: 'Governance Risk',
-    tags: ['Accountability', 'Liability']
   }
 ];
 

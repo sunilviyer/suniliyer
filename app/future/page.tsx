@@ -9,8 +9,8 @@ import { useGsapScrollScaleAnimations } from '@/lib/hooks/useGsapScrollScaleAnim
 const futureCards = [
   {
     id: '1',
-    title: 'Artificial General Intelligence',
-    slug: 'artificial-general-intelligence',
+    title: 'AGI: Hype, Hope, and Governance',
+    slug: 'agi-governance',
     tldr: 'The quest for human-level AI: systems that can learn and reason across any domain',
     image: 'artificial-general-intelligence-hype-hope-and-governance.webp',
     era: 'Horizon',
@@ -18,66 +18,66 @@ const futureCards = [
   },
   {
     id: '2',
-    title: 'Multimodal AI',
-    slug: 'multimodal-ai',
-    tldr: 'Unified models that understand and generate text, images, audio, and video together',
+    title: 'AI Existential Risk',
+    slug: 'ai-existential-risk',
+    tldr: 'Long-term threats from advanced AI: Understanding catastrophic risk scenarios',
     image: 'multimodal-ai-systems-beyond-text-and-image.webp',
-    era: 'Emerging',
-    tags: ['Multimodal', 'Integration']
+    era: 'Risk',
+    tags: ['X-Risk', 'Safety']
   },
   {
     id: '3',
-    title: 'Quantum AI',
-    slug: 'quantum-ai',
-    tldr: 'Harnessing quantum computing to revolutionize machine learning capabilities',
+    title: 'AI and National Security',
+    slug: 'ai-national-security',
+    tldr: 'AI in defense and intelligence: Geopolitical implications and strategic concerns',
     image: 'quantum-machine-learning-early-developments.webp',
-    era: 'Frontier',
-    tags: ['Quantum', 'Computing']
+    era: 'Security',
+    tags: ['Defense', 'Geopolitics']
   },
   {
     id: '4',
-    title: 'Edge AI',
-    slug: 'edge-ai',
-    tldr: 'Bringing AI processing to devices: faster, more private, and offline-capable',
-    image: 'edge-ai-and-distributed-intelligence-decentralized.webp',
-    era: 'Trend',
-    tags: ['Edge', 'Devices']
+    title: 'AI Safety',
+    slug: 'ai-safety',
+    tldr: 'Alignment, robustness, and control: Building AI systems that remain beneficial',
+    image: 'ai-alignment-technical-and-governance-challenges.webp',
+    era: 'Safety',
+    tags: ['Alignment', 'Control']
   },
   {
     id: '5',
-    title: 'AI-Powered Science',
-    slug: 'ai-powered-science',
-    tldr: 'Accelerating scientific discovery: from drug development to climate modeling',
-    image: 'ai-alignment-technical-and-governance-challenges.webp',
-    era: 'Application',
-    tags: ['Research', 'Discovery']
+    title: 'Future of AI Ethics',
+    slug: 'future-ai-ethics',
+    tldr: 'Evolving ethical frameworks for increasingly powerful AI systems',
+    image: 'ai-human-collaboration-interfaces-co-intelligence.webp',
+    era: 'Ethics',
+    tags: ['Ethics', 'Values']
   },
   {
     id: '6',
-    title: 'Human-AI Collaboration',
-    slug: 'human-ai-collaboration',
-    tldr: 'Augmented intelligence: AI systems that enhance rather than replace human capabilities',
-    image: 'ai-human-collaboration-interfaces-co-intelligence.webp',
-    era: 'Philosophy',
-    tags: ['Collaboration', 'Augmentation']
-  },
-  {
-    id: '7',
-    title: 'Neuromorphic Computing',
-    slug: 'neuromorphic-computing',
-    tldr: 'Brain-inspired hardware: efficient computing architectures modeled on neurons',
-    image: 'neuromorphic-computing-brain-inspired-architectures.webp',
-    era: 'Technology',
-    tags: ['Hardware', 'Efficiency']
-  },
-  {
-    id: '8',
-    title: 'AI Governance Evolution',
-    slug: 'ai-governance-evolution',
+    title: 'Future of AI Regulation',
+    slug: 'future-ai-regulation',
     tldr: 'Shaping the future: emerging frameworks for global AI oversight and cooperation',
     image: 'the-future-of-ai-regulation-whats-coming-next.webp',
     era: 'Policy',
-    tags: ['Governance', 'Cooperation']
+    tags: ['Regulation', 'Governance']
+  },
+  {
+    id: '7',
+    title: 'AI Governance Careers',
+    slug: 'ai-governance-careers',
+    tldr: 'Building a career in AI policy, ethics, and governance: Skills and pathways',
+    image: 'neuromorphic-computing-brain-inspired-architectures.webp',
+    era: 'Careers',
+    tags: ['Careers', 'Skills']
+  },
+  {
+    id: '8',
+    title: 'Trustworthy AI: Seven Pillars',
+    slug: 'trustworthy-ai',
+    tldr: 'The foundational principles for building AI systems society can trust',
+    image: 'edge-ai-and-distributed-intelligence-decentralized.webp',
+    era: 'Principles',
+    tags: ['Trust', 'Framework']
   }
 ];
 

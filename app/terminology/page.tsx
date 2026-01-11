@@ -9,75 +9,75 @@ import { useGsapScrollScaleAnimations } from '@/lib/hooks/useGsapScrollScaleAnim
 const terminologyCards = [
   {
     id: '1',
-    title: 'Machine Learning Terminology',
-    slug: 'machine-learning-terminology',
-    tldr: 'The foundation of modern AI: algorithms that learn patterns from data without explicit programming',
+    title: 'The AI Technology Stack',
+    slug: 'ai-technology-stack',
+    tldr: 'The infrastructure powering AI: From chips to clouds to models',
     image: 'machine-learning-terminology.webp',
-    era: 'Core Concept',
-    tags: ['ML', 'Algorithms']
+    era: 'Infrastructure',
+    tags: ['Infrastructure', 'Stack']
   },
   {
     id: '2',
-    title: 'Neural Networks Basics',
-    slug: 'neural-networks-basics',
-    tldr: 'Brain-inspired computing: interconnected nodes that process information in layers',
+    title: 'AI vs Automation',
+    slug: 'ai-vs-automation',
+    tldr: 'Understanding the critical difference between rule-based automation and adaptive intelligence',
     image: 'neural-networks-basics.webp',
-    era: 'Architecture',
-    tags: ['Networks', 'Deep Learning']
+    era: 'Fundamentals',
+    tags: ['Distinction', 'Concepts']
   },
   {
     id: '3',
-    title: 'Supervised vs Unsupervised Learning',
-    slug: 'supervised-unsupervised',
-    tldr: 'Learning from labeled examples vs finding hidden patterns in unlabeled data',
+    title: 'The Data Behind AI',
+    slug: 'data-behind-ai',
+    tldr: 'How data quality, quantity, and provenance determine AI system behavior',
     image: 'supervised-unsupervised.webp',
-    era: 'Learning Types',
-    tags: ['Training', 'Classification']
+    era: 'Fundamentals',
+    tags: ['Data', 'Training']
   },
   {
     id: '4',
-    title: 'Transformers Architecture',
-    slug: 'transformers-architecture',
-    tldr: 'The breakthrough architecture powering modern large language models',
+    title: 'Foundation Models',
+    slug: 'foundation-models',
+    tldr: 'Massive pre-trained models that power modern AI applications',
     image: 'transformers-architecture.webp',
-    era: 'Architecture',
-    tags: ['Transformers', 'Attention']
+    era: 'Modern AI',
+    tags: ['Foundation', 'Scale']
   },
   {
     id: '5',
-    title: 'CNNs for Image Recognition',
-    slug: 'cnns-image-recognition',
-    tldr: 'Convolutional neural networks: enabling machines to see and understand images',
+    title: 'Multimodal AI',
+    slug: 'multimodal-ai',
+    tldr: 'AI systems that understand and generate across text, images, audio, and video',
     image: 'cnns-image-recognition.webp',
-    era: 'Domain',
-    tags: ['Vision', 'Images']
+    era: 'Emerging',
+    tags: ['Multimodal', 'Integration']
   },
   {
     id: '6',
-    title: 'RNNs for Sequence Data',
-    slug: 'rnns-sequence-data',
-    tldr: 'Recurrent neural networks: processing sequential data like text and time series',
+    title: 'AI Compute Requirements',
+    slug: 'ai-compute',
+    tldr: 'The massive computational resources required to train and run modern AI systems',
     image: 'rnns-sequence-data.webp',
-    era: 'Architecture',
-    tags: ['Sequences', 'Time Series']
+    era: 'Resources',
+    tags: ['Compute', 'Cost']
   },
   {
     id: '7',
-    title: 'Embeddings & Vectors',
-    slug: 'embeddings-vectors',
-    tldr: 'Representing words and concepts as dense vectors in high-dimensional space',
+    title: 'Environmental Cost of AI',
+    slug: 'environmental-cost-ai',
+    tldr: 'Understanding the energy consumption and carbon footprint of AI development',
     image: 'embeddings-vectors.webp',
-    era: 'Technique',
-    tags: ['Embeddings', 'Vectors']
+    era: 'Sustainability',
+    tags: ['Environment', 'Energy']
   },
   {
     id: '8',
-    title: 'Pre-training & Fine-tuning',
-    slug: 'pre-training-fine-tuning',
-    tldr: 'Training large models on broad data, then adapting them to specific tasks',
+    title: 'The Black Box Problem',
+    slug: 'black-box-problem',
+    tldr: 'Why AI explainability matters: Understanding opaque decision-making systems',
     image: 'pre-training-fine-tuning.webp',
-    era: 'Technique',
-    tags: ['Training', 'Adaptation']
+    era: 'Challenges',
+    tags: ['Explainability', 'XAI']
   }
 ];
 

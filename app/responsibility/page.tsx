@@ -9,8 +9,8 @@ import { useGsapScrollScaleAnimations } from '@/lib/hooks/useGsapScrollScaleAnim
 const responsibilityCards = [
   {
     id: '1',
-    title: 'The EU AI Act',
-    slug: 'eu-ai-act',
+    title: 'The EU AI Act Explained',
+    slug: 'eu-ai-act-explained',
     tldr: 'Europe\'s landmark regulation: understanding risk-based AI governance',
     image: 'the-eu-ai-act-europes-landmark-regulation-explained.webp',
     era: 'Regulation',
@@ -18,15 +18,24 @@ const responsibilityCards = [
   },
   {
     id: '2',
-    title: 'AI Accountability',
-    slug: 'ai-accountability',
-    tldr: 'Who is responsible when AI causes harm? Establishing oversight frameworks',
-    image: 'ai-accountability-who-is-responsible-when-ai-causes-harm.webp',
-    era: 'Practice',
-    tags: ['Accountability', 'Liability']
+    title: 'NIST AI RMF Complete Guide',
+    slug: 'nist-ai-rmf',
+    tldr: 'The US standard for AI risk management: Building responsible AI programs',
+    image: 'ai-governance-frameworks-building-your-organizations-approach.webp',
+    era: 'Framework',
+    tags: ['NIST', 'Risk Management']
   },
   {
     id: '3',
+    title: 'ISO/IEC 42001 AI Management',
+    slug: 'iso-42001',
+    tldr: 'International standard for AI management systems and organizational governance',
+    image: 'the-right-to-explanation-what-gdpr-actually-requires.webp',
+    era: 'Standard',
+    tags: ['ISO', 'Management']
+  },
+  {
+    id: '4',
     title: 'AI Transparency',
     slug: 'ai-transparency',
     tldr: 'What users deserve to know: making AI decision-making understandable',
@@ -35,31 +44,22 @@ const responsibilityCards = [
     tags: ['XAI', 'Transparency']
   },
   {
-    id: '4',
-    title: 'AI Governance Frameworks',
-    slug: 'ai-governance-frameworks',
-    tldr: 'Building your organization\'s approach to responsible AI',
-    image: 'ai-governance-frameworks-building-your-organizations-approach.webp',
-    era: 'Governance',
-    tags: ['Frameworks', 'Strategy']
+    id: '5',
+    title: 'AI Accountability',
+    slug: 'ai-accountability',
+    tldr: 'Who is responsible when AI causes harm? Establishing oversight frameworks',
+    image: 'ai-accountability-who-is-responsible-when-ai-causes-harm.webp',
+    era: 'Practice',
+    tags: ['Accountability', 'Liability']
   },
   {
-    id: '5',
-    title: 'Human-Centered AI Design',
-    slug: 'human-centered-ai-design',
+    id: '6',
+    title: 'Human-Centered AI',
+    slug: 'human-centered-ai',
     tldr: 'Keeping people in the loop: prioritizing human needs and wellbeing',
     image: 'human-centered-ai-design-keeping-people-in-the-loop.webp',
     era: 'Approach',
     tags: ['Design', 'Human-First']
-  },
-  {
-    id: '6',
-    title: 'The Right to Explanation',
-    slug: 'right-to-explanation',
-    tldr: 'What GDPR actually requires: understanding AI explainability obligations',
-    image: 'the-right-to-explanation-what-gdpr-actually-requires.webp',
-    era: 'Legal',
-    tags: ['GDPR', 'Rights']
   },
   {
     id: '7',
