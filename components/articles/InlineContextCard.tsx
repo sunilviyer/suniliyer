@@ -8,10 +8,11 @@ interface InlineContextCardProps {
   card: {
     id: string;
     title: string;
-    type: 'terminology' | 'framework' | 'scenario' | 'example' | 'resource' | 'milestone' | 'insight' | 'concept' | 'pattern' | 'trend' | 'quote';
+    type: 'terminology' | 'framework' | 'scenario' | 'example' | 'resource' | 'milestone' | 'insight' | 'concept' | 'pattern' | 'trend' | 'quote' | 'article-link';
     icon?: string;
     summary: string;
     tags?: string[];
+    articleSlug?: string; // For article-link type
   };
 }
 
@@ -82,6 +83,12 @@ const cardTypeStyles = {
     label: 'EXPERT QUOTE',
     backgroundImage: '/images/cards/expert-quote.png'
   },
+  'article-link': {
+    color: '#6366F1',
+    badgeColor: '#818CF8',
+    label: 'RELATED ARTICLE',
+    backgroundImage: '/images/cards/example-cards.png'
+  },
 };
 
 export function InlineContextCard({ trigger, card }: InlineContextCardProps) {
@@ -91,6 +98,11 @@ export function InlineContextCard({ trigger, card }: InlineContextCardProps) {
   const style = cardTypeStyles[card.type];
 
   const handleClick = () => {
+    // If article-link type, navigate to article instead of expanding
+    if (card.type === 'article-link' && card.articleSlug) {
+      window.location.href = `/articles/${card.articleSlug}`;
+      return;
+    }
     setIsExpanded(!isExpanded);
   };
 

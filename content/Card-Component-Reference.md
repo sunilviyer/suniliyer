@@ -17,7 +17,8 @@
 | Workforce Trends | `trend-` | 8 | Job impact statistics |
 | Technical Concepts | `concept-` | 22 | Definitions linking to Terminology |
 | Operational Patterns | `pattern-` | 13 | Implementation patterns |
-| **Total** | | **~173** | |
+| Article Links | `article-link-` | Variable | Links to related articles |
+| **Total** | | **~173+** | |
 
 ---
 
@@ -722,7 +723,72 @@ used_in_articles:
 
 ---
 
-## 10. Operational Patterns (`pattern-`)
+## 10. Article Links (`article-link`)
+
+### Purpose
+Inline links to related articles within the platform. These cards have the same animation as other cards but navigate to the article instead of expanding.
+
+### Data Schema
+```yaml
+id: article-link-algorithmic-bias
+title: "Algorithmic Bias"
+type: article-link
+articleSlug: "algorithmic-bias"
+summary: "Understanding how AI systems can perpetuate and amplify societal biases through training data."
+tags:
+  - bias
+  - fairness
+  - ethics
+```
+
+### UI Wireframe
+```
+┌─────────────────────────────────────────────────────────┐
+│ 🔗 RELATED ARTICLE                                      │
+│                                                         │
+│ Algorithmic Bias                                        │
+│                                                         │
+│ Understanding how AI systems can perpetuate and         │
+│ amplify societal biases through training data.         │
+│                                                         │
+│ 🏷️ bias • fairness • ethics                            │
+│                                                         │
+│ [Click to read article →]                               │
+└─────────────────────────────────────────────────────────┘
+```
+
+### Behavior
+- **Trigger**: Same animated text as other cards
+- **Click**: Navigates to `/articles/{articleSlug}` instead of expanding
+- **No Image**: Does not display background image like other cards
+- **Same Animation**: Retains the smooth letter-by-letter animation on hover
+
+### Usage Example
+```jsx
+<InlineContextCard
+  trigger="algorithmic bias"
+  card={{
+    id: 'article-link-algorithmic-bias',
+    title: 'Algorithmic Bias',
+    type: 'article-link',
+    articleSlug: 'algorithmic-bias',
+    summary: 'Understanding how AI systems can perpetuate and amplify societal biases through training data.',
+    tags: ['bias', 'fairness', 'ethics']
+  }}
+/>
+```
+
+### Sample IDs
+- `article-link-algorithmic-bias`
+- `article-link-ai-hallucinations`
+- `article-link-deepfakes`
+- `article-link-eu-ai-act`
+- `article-link-model-governance`
+- `article-link-explainability`
+
+---
+
+## 11. Operational Patterns (`pattern-`)
 
 ### Purpose
 Implementation patterns, organizational structures, and governance practices.
@@ -857,12 +923,13 @@ used_in_articles:
 | Trend | Pink `#D53F8C` | Pink-50 |
 | Concept | Gray `#718096` | Gray-50 |
 | Pattern | Indigo `#5A67D8` | Indigo-50 |
+| Article Link | Indigo `#6366F1` | Indigo-100 |
 
 ---
 
 ## Summary
 
-**Total Card Components: ~173**
+**Total Card Components: ~173+**
 
 | Type | Count | Primary Use |
 |------|-------|-------------|
@@ -876,6 +943,7 @@ used_in_articles:
 | Workforce Trends | 8 | Show human impact |
 | Technical Concepts | 22 | Link to detailed explanations |
 | Operational Patterns | 13 | Provide implementation guidance |
+| Article Links | Variable | Navigate to related articles |
 
 ---
 
