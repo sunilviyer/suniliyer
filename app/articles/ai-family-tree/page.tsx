@@ -83,7 +83,7 @@ export default function AIFamilyTreePage() {
         </h2>
 
         <div className="content-p">
-          Imagine you are building a team for a new project. You could hire a specialist who is the world's leading expert in tax law, or a generalist who can learn law, marketing, and accounting as the need arises. In the world of technology, we are currently living in the era of the specialist. As we discussed in What AI Actually Is, these systems are software tools that make inferences based on patterns.
+          Imagine you are building a team for a new project. You could hire a specialist who is the world&apos;s leading expert in tax law, or a generalist who can learn law, marketing, and accounting as the need arises. In the world of technology, we are currently living in the era of the specialist. As we discussed in What AI Actually Is, these systems are software tools that make inferences based on patterns.
         </div>
 
         <div className="content-p">
@@ -102,7 +102,7 @@ export default function AIFamilyTreePage() {
         </div>
 
         <div className="content-p">
-          Here is the key insight: because Narrow AI is bounded, its risks are also bounded. When we evaluate a hiring algorithm, we aren't worried about it &quot;waking up&quot; and taking over the company; we are worried about it learning to discriminate based on biased historical data. This is why most current regulations, like the{' '}
+          Here is the key insight: because Narrow AI is bounded, its risks are also bounded. When we evaluate a hiring algorithm, we aren&apos;t worried about it &quot;waking up&quot; and taking over the company; we are worried about it learning to discriminate based on biased historical data. This is why most current regulations, like the{' '}
           <InlineContextCard trigger="EU AI Act" card={cardData.euAiAct} />, focus on these specific, real-world harms.
         </div>
 
@@ -125,7 +125,7 @@ export default function AIFamilyTreePage() {
         </h2>
 
         <div className="content-p">
-          The growth of the AI tree hasn't always been steady. In the 1970s, the field entered its first &quot;AI Winter.&quot; This period of disappointment followed a devastating assessment known as the Lighthill Report, which concluded that researchers had failed to deliver on their grand promises. Funding plummeted, and laboratories closed.
+          The growth of the AI tree hasn&apos;t always been steady. In the 1970s, the field entered its first &quot;AI Winter.&quot; This period of disappointment followed a devastating assessment known as the Lighthill Report, which concluded that researchers had failed to deliver on their grand promises. Funding plummeted, and laboratories closed.
         </div>
 
         <div className="content-p">
@@ -142,7 +142,7 @@ export default function AIFamilyTreePage() {
         </div>
 
         <div className="content-p">
-          By categorizing AI this way, you can match your oversight to the actual risk. You don't need a &quot;containment protocol&quot; for a spam filter, but you do need robust bias testing for a high-stakes hiring tool. Now that we've mapped the tree, our next step is to explore the different ways these &quot;intelligence levels&quot; manifest in business operations.
+          By categorizing AI this way, you can match your oversight to the actual risk. You don&apos;t need a &quot;containment protocol&quot; for a spam filter, but you do need robust bias testing for a high-stakes hiring tool. Now that we&apos;ve mapped the tree, our next step is to explore the different ways these &quot;intelligence levels&quot; manifest in business operations.
         </div>
 
         {/* Key Learnings */}

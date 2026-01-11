@@ -50,10 +50,8 @@ const paths: PathItem[] = [
 
 export function FloatingPathsNav({ currentPath, theme = 'light' }: FloatingPathsNavProps) {
   const [isExpanded, setIsExpanded] = useState(false);
-  const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
-    setIsMounted(true);
     // On desktop, expand by default. On mobile, keep collapsed.
     if (window.innerWidth > 768) {
       setIsExpanded(true);
