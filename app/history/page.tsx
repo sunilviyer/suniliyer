@@ -18,7 +18,7 @@ const historyCards = [
   },
   {
     id: '2',
-    title: 'AI Family Tree',
+    title: 'The AI Family Tree',
     slug: 'ai-family-tree',
     tldr: 'From symbolic AI to neural networks: Tracing the branches of artificial intelligence evolution',
     image: 'ai-family-tree.webp',
@@ -27,42 +27,33 @@ const historyCards = [
   },
   {
     id: '3',
-    title: 'Machine Learning Demystified',
-    slug: 'machine-learning-demystified',
-    tldr: 'How machines learn from data without explicit programming',
+    title: 'Types of AI Intelligence',
+    slug: 'types-of-ai-intelligence',
+    tldr: 'Narrow AI is an exceptional specialist, brilliant at one defined task but incapable of performing others without retraining',
     image: 'machine-learning-explained.webp',
-    era: '1980s-1990s',
-    tags: ['ML', 'Core Concepts']
+    era: '1980s-Present',
+    tags: ['AI Intelligence', 'AGI']
   },
   {
     id: '4',
-    title: 'Deep Learning Explained',
-    slug: 'deep-learning-explained',
-    tldr: 'Neural networks that mirror the human brain: The breakthrough that changed everything',
+    title: 'How Machines Learn',
+    slug: 'how-machines-learn',
+    tldr: 'Machine learning creates software by finding patterns in data instead of following human-written rules',
     image: 'deep-learning-explained.webp',
+    era: '1980s-1990s',
+    tags: ['Machine Learning', 'Training']
+  },
+  {
+    id: '5',
+    title: 'Deep Learning Decoded',
+    slug: 'deep-learning-decoded',
+    tldr: 'Neural networks that mirror the human brain: The breakthrough that changed everything',
+    image: 'foundation-models.webp',
     era: '2010s',
     tags: ['Deep Learning', 'Breakthrough']
   },
   {
-    id: '5',
-    title: 'Foundation Models',
-    slug: 'foundation-models',
-    tldr: 'Massive pre-trained models that power modern AI applications',
-    image: 'foundation-models.webp',
-    era: '2018-Present',
-    tags: ['Modern AI', 'Scale']
-  },
-  {
     id: '6',
-    title: 'Large Language Models',
-    slug: 'large-language-models',
-    tldr: 'GPT, BERT, and the models revolutionizing human-computer interaction',
-    image: 'large-language-models.webp',
-    era: '2020s',
-    tags: ['LLMs', 'NLP']
-  },
-  {
-    id: '7',
     title: 'Generative AI Explained',
     slug: 'generative-ai-explained',
     tldr: 'Creating new content: How AI generates text, images, code, and more',
@@ -71,13 +62,22 @@ const historyCards = [
     tags: ['GenAI', 'Creative AI']
   },
   {
+    id: '7',
+    title: 'Large Language Models',
+    slug: 'large-language-models',
+    tldr: 'GPT, BERT, and the models revolutionizing human-computer interaction',
+    image: 'large-language-models.webp',
+    era: '2020s',
+    tags: ['LLMs', 'NLP']
+  },
+  {
     id: '8',
-    title: 'AI Technology Stack',
-    slug: 'ai-technology-stack',
-    tldr: 'The infrastructure powering AI: From chips to clouds to models',
+    title: 'AI History: Dartmouth to DeepMind',
+    slug: 'ai-history',
+    tldr: 'From the 1956 Dartmouth Conference to modern breakthroughs: The complete journey of artificial intelligence',
     image: 'ai-technology-stack.webp',
-    era: 'Present',
-    tags: ['Infrastructure', 'Stack']
+    era: '1956-Present',
+    tags: ['History', 'Milestones']
   }
 ];
 
