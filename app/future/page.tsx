@@ -21,7 +21,7 @@ const futureCards = [
     title: 'AI Existential Risk',
     slug: 'ai-existential-risk',
     tldr: 'Long-term threats from advanced AI: Understanding catastrophic risk scenarios',
-    image: 'multimodal-ai-systems-beyond-text-and-image.webp',
+    image: 'ai-agents-and-autonomous-systems-the-next-frontier.webp',
     era: 'Risk',
     tags: ['X-Risk', 'Safety']
   },
@@ -30,7 +30,7 @@ const futureCards = [
     title: 'AI and National Security',
     slug: 'ai-national-security',
     tldr: 'AI in defense and intelligence: Geopolitical implications and strategic concerns',
-    image: 'quantum-machine-learning-early-developments.webp',
+    image: 'digital-sovereignty-national-vs-global-standards.webp',
     era: 'Security',
     tags: ['Defense', 'Geopolitics']
   },
@@ -48,7 +48,7 @@ const futureCards = [
     title: 'Future of AI Ethics',
     slug: 'future-ai-ethics',
     tldr: 'Evolving ethical frameworks for increasingly powerful AI systems',
-    image: 'ai-human-collaboration-interfaces-co-intelligence.webp',
+    image: 'global-ai-governance-institutions-international-bodies.webp',
     era: 'Ethics',
     tags: ['Ethics', 'Values']
   },
@@ -66,7 +66,7 @@ const futureCards = [
     title: 'AI Governance Careers',
     slug: 'ai-governance-careers',
     tldr: 'Building a career in AI policy, ethics, and governance: Skills and pathways',
-    image: 'neuromorphic-computing-brain-inspired-architectures.webp',
+    image: 'ai-governance-career-path-aigp-and-beyond.webp',
     era: 'Careers',
     tags: ['Careers', 'Skills']
   },
@@ -75,7 +75,7 @@ const futureCards = [
     title: 'Trustworthy AI: Seven Pillars',
     slug: 'trustworthy-ai',
     tldr: 'The foundational principles for building AI systems society can trust',
-    image: 'edge-ai-and-distributed-intelligence-decentralized.webp',
+    image: 'ai-standards-development-iso-ieee-frameworks.webp',
     era: 'Principles',
     tags: ['Trust', 'Framework']
   }

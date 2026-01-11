@@ -30,7 +30,7 @@ const riskCards = [
     title: 'AI Hallucinations',
     slug: 'ai-hallucinations',
     tldr: 'When AI confidently generates false information: Understanding model confabulation',
-    image: 'ai-privacy-dilemma.webp',
+    image: 'ai-hallucinations.webp',
     era: 'Reliability Risk',
     tags: ['Hallucinations', 'Accuracy']
   },
@@ -39,7 +39,7 @@ const riskCards = [
     title: 'AI and Privacy',
     slug: 'ai-and-privacy',
     tldr: 'Protecting personal information: privacy risks in AI training and inference',
-    image: 'deepfakes-trust-crisis.webp',
+    image: 'ai-privacy-dilemma.webp',
     era: 'Privacy Risk',
     tags: ['Privacy', 'Data']
   },
@@ -48,7 +48,7 @@ const riskCards = [
     title: 'Deepfakes & Synthetic Media',
     slug: 'deepfakes-synthetic-media',
     tldr: 'Synthetic media threats: AI-generated content that erodes truth and trust',
-    image: 'job-displacement.webp',
+    image: 'deepfakes-trust-crisis.webp',
     era: 'Misuse Risk',
     tags: ['Deepfakes', 'Misinformation']
   },
@@ -66,7 +66,7 @@ const riskCards = [
     title: 'Job Displacement',
     slug: 'job-displacement',
     tldr: 'Automation impact: how AI affects employment and the future of work',
-    image: 'autonomous-weapons.webp',
+    image: 'job-displacement.webp',
     era: 'Economic Risk',
     tags: ['Employment', 'Economy']
   },
@@ -75,7 +75,7 @@ const riskCards = [
     title: 'Autonomous Weapons',
     slug: 'autonomous-weapons',
     tldr: 'Military AI: the risks of delegating life-and-death decisions to machines',
-    image: 'ai-accountability.webp',
+    image: 'autonomous-weapons.webp',
     era: 'Existential Risk',
     tags: ['Weapons', 'Military']
   }

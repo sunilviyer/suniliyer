@@ -30,7 +30,7 @@ const responsibilityCards = [
     title: 'ISO/IEC 42001 AI Management',
     slug: 'iso-42001',
     tldr: 'International standard for AI management systems and organizational governance',
-    image: 'the-right-to-explanation-what-gdpr-actually-requires.webp',
+    image: 'ai-and-intellectual-property-copyright-patents-and-trade-secrets.webp',
     era: 'Standard',
     tags: ['ISO', 'Management']
   },

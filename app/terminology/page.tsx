@@ -12,7 +12,7 @@ const terminologyCards = [
     title: 'The AI Technology Stack',
     slug: 'ai-technology-stack',
     tldr: 'The infrastructure powering AI: From chips to clouds to models',
-    image: 'machine-learning-terminology.webp',
+    image: 'model-size-scale.webp',
     era: 'Infrastructure',
     tags: ['Infrastructure', 'Stack']
   },
@@ -21,7 +21,7 @@ const terminologyCards = [
     title: 'AI vs Automation',
     slug: 'ai-vs-automation',
     tldr: 'Understanding the critical difference between rule-based automation and adaptive intelligence',
-    image: 'neural-networks-basics.webp',
+    image: 'machine-learning-terminology.webp',
     era: 'Fundamentals',
     tags: ['Distinction', 'Concepts']
   },
@@ -30,7 +30,7 @@ const terminologyCards = [
     title: 'The Data Behind AI',
     slug: 'data-behind-ai',
     tldr: 'How data quality, quantity, and provenance determine AI system behavior',
-    image: 'supervised-unsupervised.webp',
+    image: 'training-validation-test.webp',
     era: 'Fundamentals',
     tags: ['Data', 'Training']
   },
@@ -48,7 +48,7 @@ const terminologyCards = [
     title: 'Multimodal AI',
     slug: 'multimodal-ai',
     tldr: 'AI systems that understand and generate across text, images, audio, and video',
-    image: 'cnns-image-recognition.webp',
+    image: 'embeddings-vectors.webp',
     era: 'Emerging',
     tags: ['Multimodal', 'Integration']
   },
@@ -57,7 +57,7 @@ const terminologyCards = [
     title: 'AI Compute Requirements',
     slug: 'ai-compute',
     tldr: 'The massive computational resources required to train and run modern AI systems',
-    image: 'rnns-sequence-data.webp',
+    image: 'inference-vs-training.webp',
     era: 'Resources',
     tags: ['Compute', 'Cost']
   },
@@ -66,7 +66,7 @@ const terminologyCards = [
     title: 'Environmental Cost of AI',
     slug: 'environmental-cost-ai',
     tldr: 'Understanding the energy consumption and carbon footprint of AI development',
-    image: 'embeddings-vectors.webp',
+    image: 'hyperparameters-vs-parameters.webp',
     era: 'Sustainability',
     tags: ['Environment', 'Energy']
   },
@@ -75,7 +75,7 @@ const terminologyCards = [
     title: 'The Black Box Problem',
     slug: 'black-box-problem',
     tldr: 'Why AI explainability matters: Understanding opaque decision-making systems',
-    image: 'pre-training-fine-tuning.webp',
+    image: 'neural-networks-basics.webp',
     era: 'Challenges',
     tags: ['Explainability', 'XAI']
   }
