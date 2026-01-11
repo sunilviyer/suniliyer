@@ -3,6 +3,8 @@
 import { useState } from 'react';
 import { ArticleLayout } from '@/components/articles/ArticleLayout';
 import { InlineContextCard } from '@/components/articles/InlineContextCard';
+import { ArticleProgressNav } from '@/components/articles/ArticleProgressNav';
+import { FloatingPathsNav } from '@/components/articles/FloatingPathsNav';
 
 export default function AIvsAutomationArticle() {
   const [theme, setTheme] = useState<'light' | 'dark'>('light');
@@ -187,6 +189,27 @@ export default function AIvsAutomationArticle() {
           }
         `}</style>
       </ArticleLayout>
+
+      {/* Navigation Components */}
+      <ArticleProgressNav
+        currentIndex={2}
+        totalArticles={8}
+        pathTitle="Terminology"
+        prevArticle={{
+          slug: '/terminology/ai-technology-stack',
+          title: 'The AI Technology Stack'
+        }}
+        nextArticle={{
+          slug: '/terminology/data-behind-ai',
+          title: 'The Data Behind AI'
+        }}
+        theme={theme}
+      />
+
+      <FloatingPathsNav
+        currentPath="/terminology"
+        theme={theme}
+      />
     </>
   );
 }
