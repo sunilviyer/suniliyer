@@ -13,7 +13,7 @@ const cardData = {
   samuelCheckers: {
     id: 'ms-samuel-checkers',
     title: '1959 Checkers Program',
-    type: 'example' as const,
+    type: 'milestone' as const,
     summary: 'Arthur Samuel&apos;s checkers program was a breakthrough in machine learning. Instead of programming explicit rules for every possible game state, Samuel created a system that played against itself and learned which moves led to victory. By 1962, the program could beat championship-level players. This demonstrated that machines could improve their performance through experience, laying the foundation for modern machine learning.',
     tags: ['Machine Learning History', 'Game Playing', 'Self-Learning']
   },
@@ -29,7 +29,7 @@ const cardData = {
   featureEngineering: {
     id: 'concept-feature-engineering',
     title: 'Feature Engineering',
-    type: 'terminology' as const,
+    type: 'concept' as const,
     summary: 'Feature engineering is the process of selecting and transforming raw data into meaningful inputs that a machine learning model can use. For example, instead of feeding raw transaction data to a fraud detection model, engineers might create features like "time since last purchase" or "average transaction size." Good feature engineering requires domain expertise and directly impacts model performance and fairness.',
     tags: ['Data Science', 'Model Building', 'Best Practices']
   }

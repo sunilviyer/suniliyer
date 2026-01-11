@@ -8,7 +8,7 @@ interface InlineContextCardProps {
   card: {
     id: string;
     title: string;
-    type: 'terminology' | 'framework' | 'scenario' | 'example' | 'resource';
+    type: 'terminology' | 'framework' | 'scenario' | 'example' | 'resource' | 'milestone' | 'insight' | 'concept' | 'pattern' | 'trend' | 'quote';
     icon?: string;
     summary: string;
     tags?: string[];
@@ -45,6 +45,42 @@ const cardTypeStyles = {
     badgeColor: '#9EB5B5',
     label: 'RESOURCE',
     backgroundImage: '/images/cards/resource-cards.png'
+  },
+  milestone: {
+    color: '#D69E2E',
+    badgeColor: '#ECC94B',
+    label: 'MILESTONE',
+    backgroundImage: '/images/cards/milestone-cards.png'
+  },
+  insight: {
+    color: '#38A169',
+    badgeColor: '#48BB78',
+    label: 'MARKET INSIGHT',
+    backgroundImage: '/images/cards/market-insights.png'
+  },
+  concept: {
+    color: '#718096',
+    badgeColor: '#A0AEC0',
+    label: 'TECHNICAL CONCEPT',
+    backgroundImage: '/images/cards/technical-concepts.png'
+  },
+  pattern: {
+    color: '#5A67D8',
+    badgeColor: '#667EEA',
+    label: 'OPERATIONAL PATTERN',
+    backgroundImage: '/images/cards/operational-pattern.png'
+  },
+  trend: {
+    color: '#D53F8C',
+    badgeColor: '#ED64A6',
+    label: 'WORKFORCE TREND',
+    backgroundImage: '/images/cards/workforce-trend.png'
+  },
+  quote: {
+    color: '#319795',
+    badgeColor: '#4FD1C5',
+    label: 'EXPERT QUOTE',
+    backgroundImage: '/images/cards/expert-quote.png'
   },
 };
 
