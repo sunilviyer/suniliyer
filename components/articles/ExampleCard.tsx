@@ -194,6 +194,25 @@ export function ExampleCard({ example, index, isActive, onClick }: ExampleCardPr
         .example-link:hover {
           gap: 8px;
         }
+
+        @media (max-width: 768px) {
+          .example-card {
+            padding: 16px;
+          }
+
+          .example-title {
+            font-size: 16px;
+          }
+
+          .example-description {
+            font-size: 14px;
+          }
+
+          .category-badge {
+            font-size: 10px;
+            padding: 3px 8px;
+          }
+        }
       `}</style>
     </>
   );

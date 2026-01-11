@@ -341,14 +341,19 @@ export function ArticleLayout({
             padding: 0 20px;
           }
 
+          .header-with-overlay {
+            margin: 0 0 32px 0;
+          }
+
           .header-image-container {
-            min-height: 400px;
+            min-height: 300px;
+            border-radius: 8px;
           }
 
           .header-overlay-content {
-            bottom: 24px;
-            left: 24px;
-            right: 24px;
+            bottom: 20px;
+            left: 20px;
+            right: 20px;
           }
 
           .article-title {
@@ -356,8 +361,8 @@ export function ArticleLayout({
           }
 
           .header-overlay-content .article-title {
-            font-size: 32px;
-            margin-bottom: 20px;
+            font-size: 28px;
+            margin-bottom: 16px;
           }
 
           .article-body {
