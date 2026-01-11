@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 interface PathItem {
   slug: string;
@@ -49,7 +49,16 @@ const paths: PathItem[] = [
 ];
 
 export function FloatingPathsNav({ currentPath, theme = 'light' }: FloatingPathsNavProps) {
-  const [isExpanded, setIsExpanded] = useState(true);
+  const [isExpanded, setIsExpanded] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+    // On desktop, expand by default. On mobile, keep collapsed.
+    if (window.innerWidth > 768) {
+      setIsExpanded(true);
+    }
+  }, []);
 
   return (
     <>
