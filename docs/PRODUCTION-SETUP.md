@@ -12,7 +12,9 @@ Add this to your Vercel project settings:
 2. Navigate to **Settings** → **Environment Variables**
 3. Add a new environment variable:
    - **Name:** `DATABASE_URL`
-   - **Value:** `postgresql://neondb_owner:[REMOVED-SECRET]@[REMOVED-DB-HOST]/neondb?sslmode=require&channel_binding=require`
+   - **Value:** `postgresql://[USERNAME]:[PASSWORD]@[HOST]/[DATABASE]?sslmode=require`
+     - Get the actual connection string from your Neon dashboard
+     - Never commit the real DATABASE_URL to git
    - **Environments:** Check all (Production, Preview, Development)
 
 4. Click **Save**
