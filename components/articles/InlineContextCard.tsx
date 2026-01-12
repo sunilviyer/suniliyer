@@ -3,17 +3,22 @@
 import { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
+interface CardData {
+  id: string;
+  title: string;
+  type: 'terminology' | 'framework' | 'scenario' | 'example' | 'resource' | 'milestone' | 'insight' | 'concept' | 'pattern' | 'trend' | 'quote' | 'article-link';
+  icon?: string;
+  summary: string;
+  tags?: string[];
+  articleSlug?: string; // For article-link type
+}
+
 interface InlineContextCardProps {
   trigger: string;
-  card: {
-    id: string;
-    title: string;
-    type: 'terminology' | 'framework' | 'scenario' | 'example' | 'resource' | 'milestone' | 'insight' | 'concept' | 'pattern' | 'trend' | 'quote' | 'article-link';
-    icon?: string;
-    summary: string;
-    tags?: string[];
-    articleSlug?: string; // For article-link type
-  };
+  // Old pattern - pass card object directly (for backward compatibility)
+  card?: CardData;
+  // New pattern - pass cardId to fetch from database/context
+  cardId?: string;
 }
 
 const cardTypeStyles = {
@@ -91,16 +96,41 @@ const cardTypeStyles = {
   },
 };
 
-export function InlineContextCard({ trigger, card }: InlineContextCardProps) {
+export function InlineContextCard({ trigger, card, cardId }: InlineContextCardProps) {
   const [isExpanded, setIsExpanded] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
   const cardRef = useRef<HTMLDivElement>(null);
-  const style = cardTypeStyles[card.type];
+
+  // Get card data from either prop or context lookup
+  const cardData = card || (cardId ? getCardFromContext(cardId) : null);
+
+  if (!cardData) {
+    console.error(`Card not found: ${cardId}`);
+    return <span style={{ color: 'red', fontWeight: 'bold' }}>{trigger}</span>;
+  }
+
+  const style = cardTypeStyles[cardData.type];
+
+  // Helper function to get card from parent context
+  function getCardFromContext(id: string): CardData | null {
+    if (typeof document === 'undefined') return null;
+
+    const lookupDiv = document.querySelector('[data-card-lookup]');
+    if (!lookupDiv) return null;
+
+    try {
+      const lookup = JSON.parse(lookupDiv.getAttribute('data-card-lookup') || '{}');
+      return lookup[id] || null;
+    } catch (e) {
+      console.error('Failed to parse card lookup:', e);
+      return null;
+    }
+  }
 
   const handleClick = () => {
     // If article-link type, navigate to article instead of expanding
-    if (card.type === 'article-link' && card.articleSlug) {
-      window.location.href = `/articles/${card.articleSlug}`;
+    if (cardData.type === 'article-link' && cardData.articleSlug) {
+      window.location.href = `/articles/${cardData.articleSlug}`;
       return;
     }
     setIsExpanded(!isExpanded);
@@ -276,7 +306,7 @@ export function InlineContextCard({ trigger, card }: InlineContextCardProps) {
                   transition={{ duration: 0.3, delay: 0.2 }}
                   style={{ color: '#ffffff' }}
                 >
-                  {card.title}
+                  {cardData.title}
                 </motion.div>
 
                 {/* Card Summary */}
@@ -287,18 +317,18 @@ export function InlineContextCard({ trigger, card }: InlineContextCardProps) {
                   transition={{ duration: 0.3, delay: 0.25 }}
                   style={{ color: '#ffffff' }}
                 >
-                  {card.summary}
+                  {cardData.summary}
                 </motion.div>
 
                 {/* Card Tags */}
-                {card.tags && card.tags.length > 0 && (
+                {cardData.tags && cardData.tags.length > 0 && (
                   <motion.div
                     className="card-tags"
                     initial={{ opacity: 0, y: 5 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.3, delay: 0.3 }}
                   >
-                    {card.tags.map((tag, index) => (
+                    {cardData.tags.map((tag, index) => (
                       <span key={index} className="card-tag" style={{ color: '#ffffff' }}>
                         {tag}
                       </span>
