@@ -2,6 +2,7 @@
 
 import { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useCard, CardData as ContextCardData } from './CardContext';
 
 interface CardData {
   id: string;
@@ -101,8 +102,9 @@ export function InlineContextCard({ trigger, card, cardId }: InlineContextCardPr
   const [isHovered, setIsHovered] = useState(false);
   const cardRef = useRef<HTMLDivElement>(null);
 
-  // Get card data from either prop or context lookup
-  const cardData = card || (cardId ? getCardFromContext(cardId) : null);
+  // Get card data from either prop (old pattern) or context hook (new pattern)
+  const contextCard = useCard(cardId || '');
+  const cardData = card || contextCard;
 
   if (!cardData) {
     console.error(`Card not found: ${cardId}`);
@@ -110,22 +112,6 @@ export function InlineContextCard({ trigger, card, cardId }: InlineContextCardPr
   }
 
   const style = cardTypeStyles[cardData.type];
-
-  // Helper function to get card from parent context
-  function getCardFromContext(id: string): CardData | null {
-    if (typeof document === 'undefined') return null;
-
-    const lookupDiv = document.querySelector('[data-card-lookup]');
-    if (!lookupDiv) return null;
-
-    try {
-      const lookup = JSON.parse(lookupDiv.getAttribute('data-card-lookup') || '{}');
-      return lookup[id] || null;
-    } catch (e) {
-      console.error('Failed to parse card lookup:', e);
-      return null;
-    }
-  }
 
   const handleClick = () => {
     // If article-link type, navigate to article instead of expanding

@@ -1,19 +1,11 @@
 'use client';
 
 import { useState, ReactNode } from 'react';
-import { Card, CardType } from '@/lib/db';
+import { Card } from '@/lib/db';
 import { ArticleLayout } from './ArticleLayout';
 import { ArticleProgressNav } from './ArticleProgressNav';
 import { FloatingPathsNav } from './FloatingPathsNav';
-
-interface CardLookupItem {
-  id: string;
-  title: string;
-  type: CardType;
-  summary: string;
-  tags: string[];
-  articleSlug?: string;
-}
+import { CardProvider, CardData } from './CardContext';
 
 interface ArticlePageWrapperProps {
   // Article metadata
@@ -67,7 +59,7 @@ export function ArticlePageWrapper({
 }: ArticlePageWrapperProps) {
   const [theme, setTheme] = useState<'light' | 'dark'>('light');
 
-  // Convert cards array to lookup object for easy access
+  // Convert cards array to lookup object for CardProvider
   const cardLookup = cards.reduce((acc, card) => {
     acc[card.card_id] = {
       id: card.card_id,
@@ -78,7 +70,7 @@ export function ArticlePageWrapper({
       articleSlug: card.articleSlug
     };
     return acc;
-  }, {} as Record<string, CardLookupItem>);
+  }, {} as Record<string, CardData>);
 
   return (
     <>
@@ -109,23 +101,23 @@ export function ArticlePageWrapper({
         <i className={theme === 'light' ? 'ph-bold ph-moon-stars' : 'ph-bold ph-sun-horizon'} />
       </button>
 
-      {/* Article Layout */}
-      <ArticleLayout
-        path={path}
-        pathTitle={pathTitle}
-        articleTitle={articleTitle}
-        tldr={tldr}
-        tags={tags}
-        readTime={readTime}
-        updatedDate={updatedDate}
-        headerImage={headerImage}
-        theme={theme}
-        sidebarCards={[]}
-      >
-        {/* Inject card data into context for InlineContextCard components */}
-        <div data-card-lookup={JSON.stringify(cardLookup)} style={{ display: 'none' }} />
-        {children}
-      </ArticleLayout>
+      {/* Article Layout with Card Context */}
+      <CardProvider cards={cardLookup}>
+        <ArticleLayout
+          path={path}
+          pathTitle={pathTitle}
+          articleTitle={articleTitle}
+          tldr={tldr}
+          tags={tags}
+          readTime={readTime}
+          updatedDate={updatedDate}
+          headerImage={headerImage}
+          theme={theme}
+          sidebarCards={[]}
+        >
+          {children}
+        </ArticleLayout>
+      </CardProvider>
 
       {/* Navigation Components */}
       <ArticleProgressNav
