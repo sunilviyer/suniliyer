@@ -103,14 +103,32 @@ export function InlineContextCard({ trigger, card, cardId }: InlineContextCardPr
   const [isMounted, setIsMounted] = useState(false);
   const cardRef = useRef<HTMLDivElement>(null);
 
+  // Get card data from either prop (old pattern) or context hook (new pattern)
+  // MUST call hooks unconditionally before any early returns
+  const contextCard = useCard(cardId || '');
+  const cardData = card || contextCard;
+
   // Track client-side mount to avoid SSR issues
   useEffect(() => {
     setIsMounted(true);
   }, []);
 
-  // Get card data from either prop (old pattern) or context hook (new pattern)
-  const contextCard = useCard(cardId || '');
-  const cardData = card || contextCard;
+  // Close when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (cardRef.current && !cardRef.current.contains(event.target as Node)) {
+        setIsExpanded(false);
+      }
+    };
+
+    if (isExpanded) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [isExpanded]);
 
   // During SSR or before mount, show loading state
   if (!isMounted && !card) {
@@ -140,23 +158,6 @@ export function InlineContextCard({ trigger, card, cardId }: InlineContextCardPr
         {ch.trim() === "" ? "\u00A0" : ch}
       </span>
     ));
-
-  // Close when clicking outside
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (cardRef.current && !cardRef.current.contains(event.target as Node)) {
-        setIsExpanded(false);
-      }
-    };
-
-    if (isExpanded) {
-      document.addEventListener('mousedown', handleClickOutside);
-    }
-
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
-  }, [isExpanded]);
 
   return (
     <>
