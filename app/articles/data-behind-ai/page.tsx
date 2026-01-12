@@ -22,7 +22,7 @@ export default function DataBehindAIArticle() {
       id: 'ex-amazon-hiring',
       title: 'Amazon Hiring Bias',
       type: 'example' as const,
-      summary: 'In 2018, Amazon scrapped an AI recruiting tool that showed bias against women. The system was trained on 10 years of historical resumes, predominantly from men, and learned to penalize resumes containing words like &quot;women\'s.&quot; The model replicated historical patterns rather than identifying true talent.',
+      summary: 'In 2018, Amazon scrapped an AI recruiting tool that showed bias against women. The system was trained on 10 years of historical resumes, predominantly from men, and learned to penalize resumes containing words like "women\'s." The model replicated historical patterns rather than identifying true talent.',
       tags: ['Bias', 'Hiring', 'Case Study']
     },
     representationBias: {
@@ -221,11 +221,11 @@ export default function DataBehindAIArticle() {
         totalArticles={8}
         pathTitle="Terminology"
         prevArticle={{
-          slug: '/terminology/ai-vs-automation',
+          slug: '/articles/ai-vs-automation',
           title: 'AI vs Automation'
         }}
         nextArticle={{
-          slug: '/terminology/foundation-models',
+          slug: '/articles/foundation-models',
           title: 'Foundation Models'
         }}
         theme={theme}

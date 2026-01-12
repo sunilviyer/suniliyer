@@ -177,11 +177,11 @@ export default function FoundationModelsArticle() {
         totalArticles={8}
         pathTitle="Terminology"
         prevArticle={{
-          slug: '/terminology/data-behind-ai',
+          slug: '/articles/data-behind-ai',
           title: 'The Data Behind AI'
         }}
         nextArticle={{
-          slug: '/terminology/multimodal-ai',
+          slug: '/articles/multimodal-ai',
           title: 'Multimodal AI'
         }}
         theme={theme}

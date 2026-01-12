@@ -29,7 +29,7 @@ export default function AIvsAutomationArticle() {
       id: 'concept-rpa-vs-ai',
       title: 'RPA vs AI',
       type: 'concept' as const,
-      summary: 'Robotic Process Automation (RPA) is pure automation—software that mimics human clicks and keystrokes following fixed rules. It only becomes &quot;intelligent automation&quot; when combined with AI components like OCR or machine learning for data extraction.',
+      summary: 'Robotic Process Automation (RPA) is pure automation—software that mimics human clicks and keystrokes following fixed rules. It only becomes "intelligent automation" when combined with AI components like OCR or machine learning for data extraction.',
       tags: ['RPA', 'Automation', 'Distinction']
     },
     modelDrift: {
@@ -196,11 +196,11 @@ export default function AIvsAutomationArticle() {
         totalArticles={8}
         pathTitle="Terminology"
         prevArticle={{
-          slug: '/terminology/ai-technology-stack',
+          slug: '/articles/ai-technology-stack',
           title: 'The AI Technology Stack'
         }}
         nextArticle={{
-          slug: '/terminology/data-behind-ai',
+          slug: '/articles/data-behind-ai',
           title: 'The Data Behind AI'
         }}
         theme={theme}

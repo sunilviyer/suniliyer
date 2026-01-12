@@ -83,7 +83,7 @@ export default function AIHistoryArticle() {
         tags={['AI History', 'Milestones', 'AI Winter']}
         readTime="8 min read"
         updatedDate="January 2025"
-        headerImage="/images/history/ai-history-timeline-f.webp"
+        headerImage="/images/articles/ai-history-timeline-f.webp"
         theme={theme}
         sidebarCards={[]}
       >
@@ -194,7 +194,7 @@ export default function AIHistoryArticle() {
         totalArticles={8}
         pathTitle="History"
         prevArticle={{
-          slug: '/history/large-language-models',
+          slug: '/articles/large-language-models',
           title: 'Large Language Models'
         }}
         theme={theme}

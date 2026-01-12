@@ -189,7 +189,7 @@ export default function AITechnologyStackArticle() {
         totalArticles={8}
         pathTitle="Terminology"
         nextArticle={{
-          slug: '/terminology/ai-vs-automation',
+          slug: '/articles/ai-vs-automation',
           title: 'AI vs Automation'
         }}
         theme={theme}

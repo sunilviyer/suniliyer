@@ -272,7 +272,7 @@ export default function AIFamilyTreePage() {
           title: 'What AI Actually Is'
         }}
         nextArticle={{
-          slug: '/history/types-of-ai-intelligence',
+          slug: '/articles/types-of-ai-intelligence',
           title: 'Types of AI Intelligence'
         }}
         theme={theme}

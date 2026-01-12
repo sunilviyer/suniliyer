@@ -308,7 +308,7 @@ export default function WhatAIActuallyIsPage() {
         totalArticles={8}
         pathTitle="History"
         nextArticle={{
-          slug: '/history/ai-family-tree',
+          slug: '/articles/ai-family-tree',
           title: 'The AI Family Tree'
         }}
         theme={theme}
