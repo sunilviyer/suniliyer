@@ -12,7 +12,7 @@ const cardData = {
   highRisk: {
     id: 'high-risk-ai',
     title: 'High-Risk AI Systems',
-    type: 'terminology' as const,
+    type: 'concept' as const,
     summary: 'AI systems that pose significant risks to health, safety, or fundamental rights. Includes employment decisions, critical infrastructure, law enforcement, and biometric identification.',
     tags: ['EU AI Act', 'Regulation', 'Classification']
   },
@@ -33,7 +33,7 @@ const cardData = {
   conformity: {
     id: 'conformity-assessment',
     title: 'Conformity Assessment',
-    type: 'terminology' as const,
+    type: 'concept' as const,
     summary: 'The process of demonstrating that an AI system meets all requirements of the EU AI Act. Can be self-assessment or third-party validation depending on risk level.',
     tags: ['Compliance', 'Certification', 'Process']
   },
