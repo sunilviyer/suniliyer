@@ -13,6 +13,7 @@
     "generate-article-mapping": "node scripts/generate-article-mapping.js"
   },
   "dependencies": {
+    "@neondatabase/serverless": "^1.0.2",
     "framer-motion": "^11.15.0",
     "gray-matter": "^4.0.3",
     "gsap": "^3.12.5",
@@ -36,6 +37,7 @@
     "postcss": "^8.4.49",
     "sharp": "^0.34.5",
     "tailwindcss": "^3.4.17",
+    "tsx": "^4.21.0",
     "typescript": "^5.7.2"
   }
 }
