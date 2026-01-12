@@ -21,7 +21,7 @@ export interface Card {
   trigger_text?: string;
   summary?: string;
   color?: string;
-  full_content?: Record<string, any>;
+  full_content?: Record<string, unknown>;
   used_in_articles?: string[];
   usage_count?: number;
   status?: string;

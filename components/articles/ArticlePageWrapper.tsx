@@ -1,10 +1,19 @@
 'use client';
 
 import { useState, ReactNode } from 'react';
-import { Card } from '@/lib/db';
+import { Card, CardType } from '@/lib/db';
 import { ArticleLayout } from './ArticleLayout';
 import { ArticleProgressNav } from './ArticleProgressNav';
 import { FloatingPathsNav } from './FloatingPathsNav';
+
+interface CardLookupItem {
+  id: string;
+  title: string;
+  type: CardType;
+  summary: string;
+  tags: string[];
+  articleSlug?: string;
+}
 
 interface ArticlePageWrapperProps {
   // Article metadata
@@ -63,13 +72,13 @@ export function ArticlePageWrapper({
     acc[card.card_id] = {
       id: card.card_id,
       title: card.title,
-      type: card.card_type as any,
+      type: card.card_type,
       summary: card.summary || '',
       tags: card.tags || [],
       articleSlug: card.articleSlug
     };
     return acc;
-  }, {} as Record<string, any>);
+  }, {} as Record<string, CardLookupItem>);
 
   return (
     <>
