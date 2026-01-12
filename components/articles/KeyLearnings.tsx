@@ -1,11 +1,15 @@
 'use client';
 
+import { useTheme } from './ThemeContext';
+
 interface KeyLearningsProps {
   learnings: string[];
-  theme?: 'light' | 'dark';
+  theme?: 'light' | 'dark'; // Optional for backward compatibility
 }
 
-export function KeyLearnings({ learnings, theme = 'light' }: KeyLearningsProps) {
+export function KeyLearnings({ learnings, theme: themeProp }: KeyLearningsProps) {
+  const contextTheme = useTheme();
+  const theme = themeProp || contextTheme;
   return (
     <>
       <div className="key-learnings-card">

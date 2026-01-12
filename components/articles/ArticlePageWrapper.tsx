@@ -6,6 +6,7 @@ import { ArticleLayout } from './ArticleLayout';
 import { ArticleProgressNav } from './ArticleProgressNav';
 import { FloatingPathsNav } from './FloatingPathsNav';
 import { CardProvider, CardData } from './CardContext';
+import { ThemeProvider } from './ThemeContext';
 
 interface ArticlePageWrapperProps {
   // Article metadata
@@ -101,23 +102,25 @@ export function ArticlePageWrapper({
         <i className={theme === 'light' ? 'ph-bold ph-moon-stars' : 'ph-bold ph-sun-horizon'} />
       </button>
 
-      {/* Article Layout with Card Context */}
-      <CardProvider cards={cardLookup}>
-        <ArticleLayout
-          path={path}
-          pathTitle={pathTitle}
-          articleTitle={articleTitle}
-          tldr={tldr}
-          tags={tags}
-          readTime={readTime}
-          updatedDate={updatedDate}
-          headerImage={headerImage}
-          theme={theme}
-          sidebarCards={[]}
-        >
-          {children}
-        </ArticleLayout>
-      </CardProvider>
+      {/* Article Layout with Card and Theme Context */}
+      <ThemeProvider theme={theme}>
+        <CardProvider cards={cardLookup}>
+          <ArticleLayout
+            path={path}
+            pathTitle={pathTitle}
+            articleTitle={articleTitle}
+            tldr={tldr}
+            tags={tags}
+            readTime={readTime}
+            updatedDate={updatedDate}
+            headerImage={headerImage}
+            theme={theme}
+            sidebarCards={[]}
+          >
+            {children}
+          </ArticleLayout>
+        </CardProvider>
+      </ThemeProvider>
 
       {/* Navigation Components */}
       <ArticleProgressNav
