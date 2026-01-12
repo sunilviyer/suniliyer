@@ -100,11 +100,22 @@ const cardTypeStyles = {
 export function InlineContextCard({ trigger, card, cardId }: InlineContextCardProps) {
   const [isExpanded, setIsExpanded] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
   const cardRef = useRef<HTMLDivElement>(null);
+
+  // Track client-side mount to avoid SSR issues
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   // Get card data from either prop (old pattern) or context hook (new pattern)
   const contextCard = useCard(cardId || '');
   const cardData = card || contextCard;
+
+  // During SSR or before mount, show loading state
+  if (!isMounted && !card) {
+    return <span style={{ color: '#A0847C', fontWeight: 600 }}>{trigger}</span>;
+  }
 
   if (!cardData) {
     console.error(`Card not found: ${cardId}`);
