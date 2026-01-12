@@ -61,9 +61,19 @@ export async function getCardsByIds(cardIds: string[]): Promise<Card[]> {
     `;
 
     return result.map(row => ({
-      ...row,
-      tags: row.full_content?.tags || [],
-      articleSlug: row.full_content?.articleSlug
+      id: row.id as string,
+      card_id: row.card_id as string,
+      card_type: row.card_type as CardType,
+      title: row.title as string,
+      trigger_text: row.trigger_text as string | undefined,
+      summary: row.summary as string | undefined,
+      color: row.color as string | undefined,
+      full_content: row.full_content as Record<string, unknown> | undefined,
+      used_in_articles: row.used_in_articles as string[] | undefined,
+      usage_count: row.usage_count as number | undefined,
+      status: row.status as string | undefined,
+      tags: (row.full_content as Record<string, unknown>)?.tags as string[] || [],
+      articleSlug: (row.full_content as Record<string, unknown>)?.articleSlug as string | undefined
     }));
   } catch (error) {
     console.error('Error fetching cards:', error);
@@ -96,9 +106,19 @@ export async function getCardsByArticle(articleSlug: string): Promise<Card[]> {
     `;
 
     return result.map(row => ({
-      ...row,
-      tags: row.full_content?.tags || [],
-      articleSlug: row.full_content?.articleSlug
+      id: row.id as string,
+      card_id: row.card_id as string,
+      card_type: row.card_type as CardType,
+      title: row.title as string,
+      trigger_text: row.trigger_text as string | undefined,
+      summary: row.summary as string | undefined,
+      color: row.color as string | undefined,
+      full_content: row.full_content as Record<string, unknown> | undefined,
+      used_in_articles: row.used_in_articles as string[] | undefined,
+      usage_count: row.usage_count as number | undefined,
+      status: row.status as string | undefined,
+      tags: (row.full_content as Record<string, unknown>)?.tags as string[] || [],
+      articleSlug: (row.full_content as Record<string, unknown>)?.articleSlug as string | undefined
     }));
   } catch (error) {
     console.error('Error fetching cards by article:', error);
@@ -136,9 +156,19 @@ export async function getCardById(cardId: string): Promise<Card | null> {
 
     const row = result[0];
     return {
-      ...row,
-      tags: row.full_content?.tags || [],
-      articleSlug: row.full_content?.articleSlug
+      id: row.id as string,
+      card_id: row.card_id as string,
+      card_type: row.card_type as CardType,
+      title: row.title as string,
+      trigger_text: row.trigger_text as string | undefined,
+      summary: row.summary as string | undefined,
+      color: row.color as string | undefined,
+      full_content: row.full_content as Record<string, unknown> | undefined,
+      used_in_articles: row.used_in_articles as string[] | undefined,
+      usage_count: row.usage_count as number | undefined,
+      status: row.status as string | undefined,
+      tags: (row.full_content as Record<string, unknown>)?.tags as string[] || [],
+      articleSlug: (row.full_content as Record<string, unknown>)?.articleSlug as string | undefined
     };
   } catch (error) {
     console.error('Error fetching card by id:', error);
