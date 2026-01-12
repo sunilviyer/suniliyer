@@ -352,6 +352,18 @@ export function ArticleLayout({
           margin-bottom: 24px;
         }
 
+        .article-body :global(.content-ul) {
+          font-family: 'Crimson Pro', Georgia, serif;
+          font-size: 20px;
+          line-height: 1.8;
+          color: ${theme === 'light' ? '#1a1a1a' : '#e0e0e0'};
+          margin: 24px 0 24px 32px;
+        }
+
+        .article-body :global(.content-ul li) {
+          margin-bottom: 12px;
+        }
+
         @media (max-width: 1200px) {
           .article-container {
             grid-template-columns: 1fr;
@@ -403,6 +415,11 @@ export function ArticleLayout({
 
           .article-body :global(.content-p) {
             font-size: 18px;
+          }
+
+          .article-body :global(.content-ul) {
+            font-size: 18px;
+            margin-left: 24px;
           }
         }
       `}</style>
