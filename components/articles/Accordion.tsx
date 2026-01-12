@@ -1,16 +1,19 @@
 'use client';
 
 import { useState, ReactNode } from 'react';
+import { useTheme } from './ThemeContext';
 
 interface AccordionProps {
   title: string;
   children: ReactNode;
   defaultOpen?: boolean;
   onToggle?: () => void;
-  theme?: 'light' | 'dark';
+  theme?: 'light' | 'dark'; // Optional for backward compatibility
 }
 
-export function Accordion({ title, children, defaultOpen = false, onToggle, theme = 'light' }: AccordionProps) {
+export function Accordion({ title, children, defaultOpen = false, onToggle, theme: themeProp }: AccordionProps) {
+  const contextTheme = useTheme();
+  const theme = themeProp || contextTheme;
   const [isOpen, setIsOpen] = useState(defaultOpen);
 
   // Use controlled state if onToggle is provided

@@ -1,6 +1,8 @@
 import { getCardsByArticle } from '@/lib/db';
 import { ArticlePageWrapper } from '@/components/articles/ArticlePageWrapper';
 import { InlineContextCard } from '@/components/articles/InlineContextCard';
+import { KeyLearnings } from '@/components/articles/KeyLearnings';
+import { Accordion } from '@/components/articles/Accordion';
 
 export default async function AIFamilyTreePage() {
   // Fetch cards from database
@@ -103,6 +105,52 @@ function AIFamilyTreeContent() {
 
       <div className="content-p">
         By categorizing AI this way, you can match your oversight to the actual risk. You don&apos;t need a &quot;containment protocol&quot; for a spam filter, but you do need robust bias testing for a high-stakes hiring tool. Now that we&apos;ve mapped the tree, our next step is to explore the different ways these &quot;intelligence levels&quot; manifest in business operations.
+      </div>
+
+      <AIFamilyTreeFooter />
+    </>
+  );
+}
+
+function AIFamilyTreeFooter() {
+  return (
+    <>
+      {/* Key Learnings */}
+      <KeyLearnings
+        learnings={[
+          'Narrow AI acts as a highly specialized tool that cannot transfer its skills to unrelated tasks.',
+          'Artificial General Intelligence (AGI) is a theoretical system capable of human-level reasoning across all cognitive domains.',
+          'The history of AI is marked by "AI Winters," periods where overhyped expectations led to significant funding cuts.',
+          'Symbolic AI relies on human-coded logic rules, while modern Machine Learning discovers its own rules from data.',
+          'Effective governance requires distinguishing between existing Narrow AI risks and hypothetical AGI safety concerns.'
+        ]}
+      />
+
+      {/* Accordions */}
+      <div style={{ marginTop: '60px' }}>
+        <div style={{ marginTop: '20px' }}>
+          <Accordion title="Additional Resources">
+            <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
+              <li style={{ fontFamily: 'Crimson Pro, Georgia, serif', fontSize: '17px', lineHeight: '1.7', padding: '12px 0', borderBottom: '1px solid rgba(26, 26, 26, 0.06)' }}>Nick Bostrom - Superintelligence: Paths, Dangers, Strategies</li>
+              <li style={{ fontFamily: 'Crimson Pro, Georgia, serif', fontSize: '17px', lineHeight: '1.7', padding: '12px 0', borderBottom: '1px solid rgba(26, 26, 26, 0.06)' }}>Stuart Russell - Human Compatible: AI and the Problem of Control</li>
+              <li style={{ fontFamily: 'Crimson Pro, Georgia, serif', fontSize: '17px', lineHeight: '1.7', padding: '12px 0', borderBottom: '1px solid rgba(26, 26, 26, 0.06)' }}>The Lighthill Report (1973) - SERC AI Research Review</li>
+              <li style={{ fontFamily: 'Crimson Pro, Georgia, serif', fontSize: '17px', lineHeight: '1.7', padding: '12px 0', borderBottom: '1px solid rgba(26, 26, 26, 0.06)' }}>OECD AI Classification Framework - Risk-Based Categorization</li>
+              <li style={{ fontFamily: 'Crimson Pro, Georgia, serif', fontSize: '17px', lineHeight: '1.7', padding: '12px 0' }}>Jensen Huang & Sam Altman - Timelines for AGI Development</li>
+            </ul>
+          </Accordion>
+        </div>
+
+        <div style={{ marginTop: '20px' }}>
+          <Accordion title="Sources & References">
+            <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
+              <li style={{ fontFamily: 'Crimson Pro, Georgia, serif', fontSize: '17px', lineHeight: '1.7', padding: '12px 0', borderBottom: '1px solid rgba(26, 26, 26, 0.06)' }}>Lighthill, J. (1973). Artificial Intelligence: A General Survey - Science Research Council Report</li>
+              <li style={{ fontFamily: 'Crimson Pro, Georgia, serif', fontSize: '17px', lineHeight: '1.7', padding: '12px 0', borderBottom: '1px solid rgba(26, 26, 26, 0.06)' }}>Bostrom, N. (2014). Superintelligence: Paths, Dangers, Strategies - Oxford University Press</li>
+              <li style={{ fontFamily: 'Crimson Pro, Georgia, serif', fontSize: '17px', lineHeight: '1.7', padding: '12px 0', borderBottom: '1px solid rgba(26, 26, 26, 0.06)' }}>Russell, S., Norvig, P. (2020). Artificial Intelligence: A Modern Approach (4th Edition)</li>
+              <li style={{ fontFamily: 'Crimson Pro, Georgia, serif', fontSize: '17px', lineHeight: '1.7', padding: '12px 0', borderBottom: '1px solid rgba(26, 26, 26, 0.06)' }}>IBM (1997). Deep Blue vs. Garry Kasparov - Match Documentation</li>
+              <li style={{ fontFamily: 'Crimson Pro, Georgia, serif', fontSize: '17px', lineHeight: '1.7', padding: '12px 0' }}>European Commission (2024). Regulation (EU) 2024/1689 - EU AI Act</li>
+            </ul>
+          </Accordion>
+        </div>
       </div>
     </>
   );
