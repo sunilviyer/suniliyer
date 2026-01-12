@@ -79,11 +79,11 @@ export default function AITechnologyStackArticle() {
         </h2>
 
         <div className="content-p">
-          When you use an AI tool like a chatbot, it can feel a bit like magic. But here is the key insight: that simple interface sits on top of a massive "Jenga tower" of hardware and software dependencies. If any of those lower layers wobble—due to a chip shortage, a cloud outage, or a change in a vendor's policy—your entire AI strategy can feel the impact.
+          When you use an AI tool like a chatbot, it can feel a bit like magic. But here is the key insight: that simple interface sits on top of a massive &quot;Jenga tower&quot; of hardware and software dependencies. If any of those lower layers wobble—due to a chip shortage, a cloud outage, or a change in a vendor&apos;s policy—your entire AI strategy can feel the impact.
         </div>
 
         <div className="content-p">
-          To lead an organization through the AI transformation, you do not need to be a hardware engineer, but you do need to understand how these layers fit together. Think of it this way: understanding the AI stack is like checking the foundation of a building before you decide to add three new floors. Let's walk through the five layers that make modern AI possible.
+          To lead an organization through the AI transformation, you do not need to be a hardware engineer, but you do need to understand how these layers fit together. Think of it this way: understanding the AI stack is like checking the foundation of a building before you decide to add three new floors. Let&apos;s walk through the five layers that make modern AI possible.
         </div>
 
         <h2 className="content-h2">
@@ -92,11 +92,11 @@ export default function AITechnologyStackArticle() {
         </h2>
 
         <div className="content-p">
-          At the very bottom are the physical chips that do the heavy lifting. Unlike your laptop's brain (the CPU), which is good at doing one complex thing at a time, AI needs chips that can do thousands of tiny, simple math problems simultaneously. This is why GPUs (Graphics Processing Units) are the gold standard for AI today.
+          At the very bottom are the physical chips that do the heavy lifting. Unlike your laptop&apos;s brain (the CPU), which is good at doing one complex thing at a time, AI needs chips that can do thousands of tiny, simple math problems simultaneously. This is why GPUs (Graphics Processing Units) are the gold standard for AI today.
         </div>
 
         <div className="content-p">
-          Currently, NVIDIA dominates this layer, controlling nearly 80-90% of the market. This creates a "concentration risk"—nearly every AI system your company uses probably depends on this one supplier. To understand the scale of investment here, consider the{' '}
+          Currently, NVIDIA dominates this layer, controlling nearly 80-90% of the market. This creates a &quot;concentration risk&quot;—nearly every AI system your company uses probably depends on this one supplier. To understand the scale of investment here, consider the{' '}
           <InlineContextCard trigger="cost of a single high-end H100 GPU" card={cardData.h100GpuCost} />, which can range from $25,000 to $40,000.
         </div>
 
@@ -110,7 +110,7 @@ export default function AITechnologyStackArticle() {
         </div>
 
         <div className="content-p">
-          The Platform layer provides the tools and APIs that let developers build AI apps without managing the hardware themselves. This is where you might face "vendor lock-in." Here is what matters: if you build your entire workflow on one specific provider's platform, moving to a competitor later can be expensive and time-consuming.
+          The Platform layer provides the tools and APIs that let developers build AI apps without managing the hardware themselves. This is where you might face &quot;vendor lock-in.&quot; Here is what matters: if you build your entire workflow on one specific provider&apos;s platform, moving to a competitor later can be expensive and time-consuming.
         </div>
 
         <h2 className="content-h2">
@@ -119,13 +119,13 @@ export default function AITechnologyStackArticle() {
         </h2>
 
         <div className="content-p">
-          Layer 4 is the "intelligence" of the system—the models. Most of the world now uses "foundation models," which are massive systems trained on broad data that can be adapted for many tasks. While some organizations use{' '}
+          Layer 4 is the &quot;intelligence&quot; of the system—the models. Most of the world now uses &quot;foundation models,&quot; which are massive systems trained on broad data that can be adapted for many tasks. While some organizations use{' '}
           <InlineContextCard trigger="open-weight models" card={cardData.openSourceCompliance} />{' '}
           that they host themselves, many rely on closed APIs from companies like OpenAI or Anthropic.
         </div>
 
         <div className="content-p">
-          Finally, at the top is the Application layer. This is the chatbot, the resume screener, or the analytics dashboard your employees see. Many of these applications are actually "thin wrappers"—simple interfaces sitting on top of someone else's model and hardware. If the model provider below them changes their rules, your application could change overnight.
+          Finally, at the top is the Application layer. This is the chatbot, the resume screener, or the analytics dashboard your employees see. Many of these applications are actually &quot;thin wrappers&quot;—simple interfaces sitting on top of someone else&apos;s model and hardware. If the model provider below them changes their rules, your application could change overnight.
         </div>
 
         <h2 className="content-h2">
@@ -140,7 +140,7 @@ export default function AITechnologyStackArticle() {
         <div className="content-p">
           Because the AI stack is so interconnected, we recommend using a structured{' '}
           <InlineContextCard trigger="stack assessment framework" card={cardData.stackAssessment} />{' '}
-          to map out where your data flows and who your critical vendors are. By understanding these dependencies, you can move from just "using AI" to governing it with the clarity your organization needs.
+          to map out where your data flows and who your critical vendors are. By understanding these dependencies, you can move from just &quot;using AI&quot; to governing it with the clarity your organization needs.
         </div>
 
         <style jsx>{`

@@ -14,7 +14,7 @@ export default function AIHistoryArticle() {
       id: 'ms-dartmouth-workshop',
       title: 'Dartmouth Workshop (1956)',
       type: 'milestone' as const,
-      summary: 'The foundational conference where the term "Artificial Intelligence" was coined by John McCarthy, Marvin Minsky, and others who believed they could solve intelligence in just eight weeks.',
+      summary: 'The foundational conference where the term &quot;Artificial Intelligence&quot; was coined by John McCarthy, Marvin Minsky, and others who believed they could solve intelligence in just eight weeks.',
       tags: ['Origins', 'History', '1956']
     },
     lighthillReport: {
@@ -99,7 +99,7 @@ export default function AIHistoryArticle() {
         </div>
 
         <div className="content-p">
-          Think of it this way: AI wasn't born from a slow, steady climb. It was born from a burst of wild optimism. Early pioneers like Arthur Samuel built a checkers program that could beat its creator, and optimism ran so high that some predicted machines would do any work a man could do within twenty years.
+          Think of it this way: AI wasn&apos;t born from a slow, steady climb. It was born from a burst of wild optimism. Early pioneers like Arthur Samuel built a checkers program that could beat its creator, and optimism ran so high that some predicted machines would do any work a man could do within twenty years.
         </div>
 
         <h2 className="content-h2">
@@ -109,11 +109,11 @@ export default function AIHistoryArticle() {
 
         <div className="content-p">
           When technology fails to meet grand promises, reality often bites back. By the early 1970s, the British government released the{' '}
-          <InlineContextCard trigger="Lighthill Report" card={cardData.lighthillReport} />, which concluded that AI research had fundamentally failed to deliver. Funding plummeted, and the first "AI Winter" began. A second winter followed in the late 1980s when "expert systems"—tools that tried to hard-code human expertise—proved too brittle and expensive to maintain.
+          <InlineContextCard trigger="Lighthill Report" card={cardData.lighthillReport} />, which concluded that AI research had fundamentally failed to deliver. Funding plummeted, and the first &quot;AI Winter&quot; began. A second winter followed in the late 1980s when &quot;expert systems&quot;—tools that tried to hard-code human expertise—proved too brittle and expensive to maintain.
         </div>
 
         <div className="content-p">
-          Here is the key insight: For a governance professional, these winters are a cautionary tale. History shows us that overpromising leads to underfunding. When we manage AI today, we must distinguish between real capabilities and the "marketing release" hype to ensure we don't trigger another cycle of disappointment.
+          Here is the key insight: For a governance professional, these winters are a cautionary tale. History shows us that overpromising leads to underfunding. When we manage AI today, we must distinguish between real capabilities and the &quot;marketing release&quot; hype to ensure we don&apos;t trigger another cycle of disappointment.
         </div>
 
         <h2 className="content-h2">
@@ -122,7 +122,7 @@ export default function AIHistoryArticle() {
         </h2>
 
         <div className="content-p">
-          The thaw of the modern era began with benchmarks that the whole world could see. In 1997, IBM's Deep Blue defeated a world chess champion, but it did so through sheer "brute force" calculation rather than learning. The real shift toward the intelligence we see today happened in 2012. A neural network called{' '}
+          The thaw of the modern era began with benchmarks that the whole world could see. In 1997, IBM&apos;s Deep Blue defeated a world chess champion, but it did so through sheer &quot;brute force&quot; calculation rather than learning. The real shift toward the intelligence we see today happened in 2012. A neural network called{' '}
           <InlineContextCard trigger="AlexNet" card={cardData.alexnetImagenet} />{' '}
           won a major image recognition challenge by a staggering margin, proving that deep learning could finally work if you had enough data and powerful hardware.
         </div>
@@ -130,7 +130,7 @@ export default function AIHistoryArticle() {
         <div className="content-p">
           Perhaps the most profound moment for modern intuition was the{' '}
           <InlineContextCard trigger="AlphaGo victory" card={cardData.deepmindAlphago} />{' '}
-          in 2016. Unlike previous systems, AlphaGo didn't just follow rules; it taught itself by playing millions of games against itself. It made moves so unconventional that human experts initially thought the machine had made a mistake. It was a clear sign that AI had moved from "calculating" to "learning patterns" at a level we could no longer easily predict.
+          in 2016. Unlike previous systems, AlphaGo didn&apos;t just follow rules; it taught itself by playing millions of games against itself. It made moves so unconventional that human experts initially thought the machine had made a mistake. It was a clear sign that AI had moved from &quot;calculating&quot; to &quot;learning patterns&quot; at a level we could no longer easily predict.
         </div>
 
         <h2 className="content-h2">
@@ -139,7 +139,7 @@ export default function AIHistoryArticle() {
         </h2>
 
         <div className="content-p">
-          As we conclude our look at the foundations of AI, you might wonder why this history matters for your current strategy. It matters because we are currently living through the most significant boom in the field's history, triggered by the{' '}
+          As we conclude our look at the foundations of AI, you might wonder why this history matters for your current strategy. It matters because we are currently living through the most significant boom in the field&apos;s history, triggered by the{' '}
           <InlineContextCard trigger="release of ChatGPT" card={cardData.chatgptRelease} />{' '}
           in 2022. This explosion of interest has brought back the same level of excitement we saw in 1956.
         </div>

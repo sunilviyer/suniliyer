@@ -22,7 +22,7 @@ export default function FoundationModelsArticle() {
       id: 'fw-eu-ai-act',
       title: 'EU AI Act',
       type: 'framework' as const,
-      summary: 'The European Union\'s comprehensive AI regulation, categorizing AI systems by risk level. Foundation models are regulated as "General-Purpose AI" (GPAI), with additional requirements for those posing systemic risk (e.g., models trained on >10^25 FLOPs).',
+      summary: 'The European Union\'s comprehensive AI regulation, categorizing AI systems by risk level. Foundation models are regulated as &quot;General-Purpose AI&quot; (GPAI), with additional requirements for those posing systemic risk (e.g., models trained on >10^25 FLOPs).',
       tags: ['Regulation', 'EU', 'GPAI']
     },
     rag: {
@@ -97,7 +97,7 @@ export default function FoundationModelsArticle() {
         </div>
 
         <div className="content-p">
-          We call these emergent capabilities. For example, a model trained primarily to predict the next word in a sentence might suddenly "emerge" with the ability to write computer code or solve logic puzzles. Because these models, such as a{' '}
+          We call these emergent capabilities. For example, a model trained primarily to predict the next word in a sentence might suddenly &quot;emerge&quot; with the ability to write computer code or solve logic puzzles. Because these models, such as a{' '}
           <InlineContextCard trigger="Large Language Model (LLM)" card={cardData.largeLanguageModels} />, serve as the base for many different products, they have become the essential infrastructure of the modern AI ecosystem.
         </div>
 
@@ -113,7 +113,7 @@ export default function FoundationModelsArticle() {
         <div className="content-p">
           This is why the{' '}
           <InlineContextCard trigger="EU AI Act" card={cardData.euAIAct} />{' '}
-          created a special category for these systems called General-Purpose AI (GPAI). Regulators recognize that because these models are "general," their risks are also general. Providers must now document their training data and comply with copyright laws to ensure the foundation they provide to the rest of us is reliable.
+          created a special category for these systems called General-Purpose AI (GPAI). Regulators recognize that because these models are &quot;general,&quot; their risks are also general. Providers must now document their training data and comply with copyright laws to ensure the foundation they provide to the rest of us is reliable.
         </div>
 
         <h2 className="content-h2">
@@ -122,13 +122,13 @@ export default function FoundationModelsArticle() {
         </h2>
 
         <div className="content-p">
-          Most organizations don't need to build their own foundation model from scratch—which can cost over $100 million in compute power alone. Instead, we adapt existing models to our needs. You might use fine-tuning to teach a model your company's specific legal terminology, or use{' '}
+          Most organizations don&apos;t need to build their own foundation model from scratch—which can cost over $100 million in compute power alone. Instead, we adapt existing models to our needs. You might use fine-tuning to teach a model your company&apos;s specific legal terminology, or use{' '}
           <InlineContextCard trigger="Retrieval-Augmented Generation (RAG)" card={cardData.rag} />{' '}
           to ensure the model only answers questions using your private internal documents.
         </div>
 
         <div className="content-p">
-          By using these general building blocks, we can achieve high performance on specialized tasks without the "skyscrapers" cost. As a leader, your role is to ensure that the foundation model you select is well-documented, tested for your specific use cases, and monitored for the unexpected capabilities that may emerge as the technology continues to advance.
+          By using these general building blocks, we can achieve high performance on specialized tasks without the &quot;skyscrapers&quot; cost. As a leader, your role is to ensure that the foundation model you select is well-documented, tested for your specific use cases, and monitored for the unexpected capabilities that may emerge as the technology continues to advance.
         </div>
 
         <style jsx>{`
