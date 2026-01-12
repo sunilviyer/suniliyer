@@ -2,12 +2,13 @@
 
 import { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { useCard, CardData as ContextCardData } from './CardContext';
+import { useCard } from './CardContext';
+import { CardType } from '@/lib/db';
 
 interface CardData {
   id: string;
   title: string;
-  type: 'terminology' | 'framework' | 'scenario' | 'example' | 'resource' | 'milestone' | 'insight' | 'concept' | 'pattern' | 'trend' | 'quote' | 'article-link';
+  type: CardType;
   icon?: string;
   summary: string;
   tags?: string[];
@@ -22,24 +23,17 @@ interface InlineContextCardProps {
   cardId?: string;
 }
 
-const cardTypeStyles = {
-  terminology: {
-    color: '#8B9B83',
-    badgeColor: '#A8B5A0',
-    label: 'TECHNICAL TERM',
+const cardTypeStyles: Record<CardType, {
+  color: string;
+  badgeColor: string;
+  label: string;
+  backgroundImage: string;
+}> = {
+  concept: {
+    color: '#718096',
+    badgeColor: '#A0AEC0',
+    label: 'CONCEPT',
     backgroundImage: '/images/cards/technical-concepts.png'
-  },
-  framework: {
-    color: '#A0887C',
-    badgeColor: '#B5A89E',
-    label: 'FRAMEWORK',
-    backgroundImage: '/images/cards/framework-cards.png'
-  },
-  scenario: {
-    color: '#7A8A9E',
-    badgeColor: '#9EA8B5',
-    label: 'SCENARIO',
-    backgroundImage: '/images/cards/scenario-cards.png'
   },
   example: {
     color: '#A0847C',
@@ -47,47 +41,53 @@ const cardTypeStyles = {
     label: 'EXAMPLE',
     backgroundImage: '/images/cards/example-cards.png'
   },
-  resource: {
-    color: '#7A9E9E',
-    badgeColor: '#9EB5B5',
-    label: 'RESOURCE',
-    backgroundImage: '/images/cards/resource-cards.png'
-  },
   milestone: {
     color: '#D69E2E',
     badgeColor: '#ECC94B',
     label: 'MILESTONE',
     backgroundImage: '/images/cards/milestone-cards.png'
   },
+  framework: {
+    color: '#A0887C',
+    badgeColor: '#B5A89E',
+    label: 'FRAMEWORK',
+    backgroundImage: '/images/cards/framework-cards.png'
+  },
+  resource: {
+    color: '#7A9E9E',
+    badgeColor: '#9EB5B5',
+    label: 'RESOURCE',
+    backgroundImage: '/images/cards/resource-cards.png'
+  },
   insight: {
     color: '#38A169',
     badgeColor: '#48BB78',
-    label: 'MARKET INSIGHT',
+    label: 'INSIGHT',
     backgroundImage: '/images/cards/market-insights.png'
   },
-  concept: {
-    color: '#718096',
-    badgeColor: '#A0AEC0',
-    label: 'TECHNICAL CONCEPT',
-    backgroundImage: '/images/cards/technical-concepts.png'
+  scenario: {
+    color: '#7A8A9E',
+    badgeColor: '#9EA8B5',
+    label: 'SCENARIO',
+    backgroundImage: '/images/cards/scenario-cards.png'
   },
-  pattern: {
+  'operational-pattern': {
     color: '#5A67D8',
     badgeColor: '#667EEA',
     label: 'OPERATIONAL PATTERN',
     backgroundImage: '/images/cards/operational-pattern.png'
   },
-  trend: {
-    color: '#D53F8C',
-    badgeColor: '#ED64A6',
-    label: 'WORKFORCE TREND',
-    backgroundImage: '/images/cards/workforce-trend.png'
+  'market-insight': {
+    color: '#38A169',
+    badgeColor: '#48BB78',
+    label: 'MARKET INSIGHT',
+    backgroundImage: '/images/cards/market-insights.png'
   },
-  quote: {
-    color: '#319795',
-    badgeColor: '#4FD1C5',
-    label: 'EXPERT QUOTE',
-    backgroundImage: '/images/cards/expert-quote.png'
+  'technical-concept': {
+    color: '#718096',
+    badgeColor: '#A0AEC0',
+    label: 'TECHNICAL CONCEPT',
+    backgroundImage: '/images/cards/technical-concepts.png'
   },
   'article-link': {
     color: '#6366F1',
