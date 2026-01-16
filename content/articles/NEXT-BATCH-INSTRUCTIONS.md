@@ -163,7 +163,7 @@ export default async function ArticleNamePage() {
 <InlineContextCard cardId="concept-fairness" trigger="AI Fairness" />
 ```
 
-Note: We'll update InlineContextCard component to accept `cardId` prop.
+Note: InlineContextCard now accepts `cardId` prop to fetch cards from the database.
 
 ### 8. After Creating Articles
 
