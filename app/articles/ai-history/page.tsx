@@ -22,11 +22,11 @@ export default async function AIHistoryArticle() {
       path="history"
       pathTitle="History"
       articleTitle="AI History: Dartmouth to DeepMind"
-      tldr={content.tldr}
-      tags={content.tags}
-      readTime={content.readTime}
-      updatedDate={content.updatedDate}
-      headerImage={content.headerImage}
+      tldr={content.tldr || ''}
+      tags={content.tags || []}
+      readTime={content.readTime || ''}
+      updatedDate={content.updatedDate || ''}
+      headerImage={content.headerImage || ''}
       currentIndex={8}
       totalArticles={8}
       prevArticle={{

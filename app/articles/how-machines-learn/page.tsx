@@ -22,11 +22,11 @@ export default async function HowMachinesLearnArticle() {
       path="history"
       pathTitle="History"
       articleTitle="How Machines Learn"
-      tldr={content.tldr}
-      tags={content.tags}
-      readTime={content.readTime}
-      updatedDate={content.updatedDate}
-      headerImage={content.headerImage}
+      tldr={content.tldr || ''}
+      tags={content.tags || []}
+      readTime={content.readTime || ''}
+      updatedDate={content.updatedDate || ''}
+      headerImage={content.headerImage || ''}
       currentIndex={4}
       totalArticles={8}
       prevArticle={{

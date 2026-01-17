@@ -100,18 +100,12 @@ const cardTypeStyles: Record<CardType, {
 export function InlineContextCard({ trigger, card, cardId }: InlineContextCardProps) {
   const [isExpanded, setIsExpanded] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
-  const [isMounted, setIsMounted] = useState(false);
   const cardRef = useRef<HTMLDivElement>(null);
 
   // Get card data from either prop (old pattern) or context hook (new pattern)
   // MUST call hooks unconditionally before any early returns
   const contextCard = useCard(cardId || '');
   const cardData = card || contextCard;
-
-  // Track client-side mount to avoid SSR issues
-  useEffect(() => {
-    setIsMounted(true);
-  }, []);
 
   // Close when clicking outside
   useEffect(() => {

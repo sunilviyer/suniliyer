@@ -22,11 +22,11 @@ export default async function LargeLanguageModelsArticle() {
       path="history"
       pathTitle="History"
       articleTitle="Large Language Models"
-      tldr={content.tldr}
-      tags={content.tags}
-      readTime={content.readTime}
-      updatedDate={content.updatedDate}
-      headerImage={content.headerImage}
+      tldr={content.tldr || ''}
+      tags={content.tags || []}
+      readTime={content.readTime || ''}
+      updatedDate={content.updatedDate || ''}
+      headerImage={content.headerImage || ''}
       currentIndex={7}
       totalArticles={8}
       prevArticle={{
