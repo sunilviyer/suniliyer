@@ -1,0 +1,14 @@
+# Environment files - never read these
+.env
+.env.local
+.env.development
+.env.production
+.env.test
+.env*.local
+
+# Other sensitive files
+*.pem
+*.key
+*.cert
+.npmrc
+.yarnrc
