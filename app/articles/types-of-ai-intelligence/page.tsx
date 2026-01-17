@@ -22,11 +22,11 @@ export default async function TypesOfAIIntelligenceArticle() {
       path="history"
       pathTitle="History"
       articleTitle="Types of AI Intelligence"
-      tldr={content.tldr}
-      tags={content.tags}
-      readTime={content.readTime}
-      updatedDate={content.updatedDate}
-      headerImage={content.headerImage}
+      tldr={content.tldr || ''}
+      tags={content.tags || []}
+      readTime={content.readTime || ''}
+      updatedDate={content.updatedDate || ''}
+      headerImage={content.headerImage || ''}
       currentIndex={3}
       totalArticles={8}
       prevArticle={{

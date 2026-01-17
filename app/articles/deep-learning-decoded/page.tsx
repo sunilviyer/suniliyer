@@ -22,11 +22,11 @@ export default async function DeepLearningDecodedArticle() {
       path="history"
       pathTitle="History"
       articleTitle="Deep Learning Decoded"
-      tldr={content.tldr}
-      tags={content.tags}
-      readTime={content.readTime}
-      updatedDate={content.updatedDate}
-      headerImage={content.headerImage}
+      tldr={content.tldr || ''}
+      tags={content.tags || []}
+      readTime={content.readTime || ''}
+      updatedDate={content.updatedDate || ''}
+      headerImage={content.headerImage || ''}
       currentIndex={5}
       totalArticles={8}
       prevArticle={{

@@ -22,11 +22,11 @@ export default async function AIFamilyTreePage() {
       path="history"
       pathTitle="History"
       articleTitle="The AI Family Tree"
-      tldr={content.tldr}
-      tags={content.tags}
-      readTime={content.readTime}
-      updatedDate={content.updatedDate}
-      headerImage={content.headerImage}
+      tldr={content.tldr || ''}
+      tags={content.tags || []}
+      readTime={content.readTime || ''}
+      updatedDate={content.updatedDate || ''}
+      headerImage={content.headerImage || ''}
       currentIndex={2}
       totalArticles={8}
       prevArticle={{

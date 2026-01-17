@@ -81,7 +81,7 @@ function processNode(node: ChildNode, keyPrefix: string = ''): React.ReactNode[]
     });
 
     // Get attributes
-    const props: Record<string, any> = {
+    const props: Record<string, string | React.CSSProperties> = {
       key: `${keyPrefix}-${tagName}-${keyCounter++}`,
     };
 

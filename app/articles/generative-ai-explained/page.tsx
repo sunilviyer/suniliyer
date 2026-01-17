@@ -22,11 +22,11 @@ export default async function GenerativeAIExplainedArticle() {
       path="history"
       pathTitle="History"
       articleTitle="Generative AI Explained"
-      tldr={content.tldr}
-      tags={content.tags}
-      readTime={content.readTime}
-      updatedDate={content.updatedDate}
-      headerImage={content.headerImage}
+      tldr={content.tldr || ''}
+      tags={content.tags || []}
+      readTime={content.readTime || ''}
+      updatedDate={content.updatedDate || ''}
+      headerImage={content.headerImage || ''}
       currentIndex={6}
       totalArticles={8}
       prevArticle={{
