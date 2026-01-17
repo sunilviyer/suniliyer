@@ -1,0 +1,58 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2867
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 article_id: "term-07"\
+title: "Environmental Cost of AI"\
+slug: "environmental-cost-ai"\
+path: "terminology"\
+header_image: "/images/terminology/environmental-cost-ai.png"\
+navigation:\
+  prev:\
+    slug: "/articles/ai-compute"\
+    title: "AI Compute Requirements"\
+  next:\
+    slug: "/articles/black-box-problem"\
+    title: "The Black Box Problem"\
+key_learnings:\
+  - "Training a single frontier model can generate thousands of tonnes of CO2, equivalent to the annual emissions of hundreds of homes."\
+  - "Inference\'97the actual use of the model by employees and customers\'97often accounts for the majority of an AI system's total energy consumption."\
+  - "AI hardware requires significant amounts of water for data center cooling, with some systems using 500ml of water for every 20 to 50 queries."\
+  - "The 'greenness' of an AI tool depends heavily on the carbon intensity of the local power grid where the compute is located."\
+  - "Effective governance involves implementing a sustainable reporting framework to track energy (kWh), carbon (kg CO2e), and water usage."\
+read_time: "8 min read"\
+updated_date: "January 2025"\
+tags:\
+  - Sustainability\
+  - AI Compute\
+  - Governance Basics\
+  - Environmental Impact\
+seo:\
+  description: "Understand the environmental impact of artificial intelligence, including energy consumption, carbon footprints, and water usage, and how to govern these costs."\
+  keywords:\
+    - environmental cost of AI\
+    - AI carbon footprint\
+    - data center energy usage\
+    - AI water consumption\
+    - sustainable AI governance\
+content: |\
+  <h2>The Invisible Footprint</h2>\
+  <p>Think about the last time you asked an AI to draft an email or analyze a spreadsheet. Behind that simple interaction, thousands of miles away, a specialized chip was working at incredible speeds, generating heat and consuming electricity. Here is the key insight: AI does not exist in a digital vacuum; it has a physical footprint on our planet that is growing faster than almost any other technology in history.</p>\
+  <p>To lead an organization today, you do not need to be an environmental scientist, but we must understand the environmental price of the &quot;intelligence&quot; we are buying. Think of it this way: training a single model like GPT-3 generated an estimated 552 tons of CO2&mdash;that is the same as driving a car around the Earth 120 times. For the even larger models we see today, that number is significantly higher.</p>\
+\
+  <h2>Training vs. Inference: Where the Energy Goes</h2>\
+  <p>You might wonder why training gets all the headlines. It is true that training is an explosive one-time event that requires massive amounts of power. However, <card type="insight" id="insight-meta-inference-energy">Meta reports that 70&percnt; of their AI infrastructure energy actually goes to inference</card>&mdash;the day-to-day use of the AI&mdash;not the initial training. Every time you or your customers send a prompt, the energy cost compounds.</p>\
+  <p>This means that as you scale AI across your organization, your environmental impact will shift from a one-time &quot;setup cost&quot; to an ongoing &quot;operational cost.&quot; To manage this, leaders should use an <card type="resource" id="res-ai-compute-governance-checklist">Organizational AI Compute Governance Checklist</card> to track the energy consumption and carbon footprint of their compute clusters over time.</p>\
+\
+  <h2>Thirsty Machines: The Water Cost</h2>\
+  <p>Energy is only half the story. High-performance AI chips generate intense heat, and data centers often use water to keep them cool. It is estimated that a simple conversation with a chatbot (around 20 to 50 queries) can &quot;drink&quot; about half a liter of water. In regions where water is scarce, this creates a significant conflict between technological growth and local community needs. When we assess the &quot;People &amp; Planet&quot; dimension of an AI system, we must look beyond just the electricity bill and consider the local water stress where our data is being processed.</p>\
+\
+  <h2>Building a Sustainable Governance Path</h2>\
+  <p>I hope you can see that the environmental cost of AI is a material risk that belongs on your governance radar. If we wait until our data centers are straining the public power grid to act, it will be too late. Instead, we can implement a <card type="resource" id="res-sustainable-ai-reporting-framework">Sustainable AI Reporting Framework</card> to track energy (kWh), carbon (kg CO2e), and water usage as part of our standard vendor due diligence.</p>\
+  <p>Here is what matters: the &quot;greenness&quot; of your AI depends largely on where your compute is located. A data center running on a coal-powered grid in one region will have ten times the emissions of the exact same data center running on renewable energy in another. As a leader, choosing where your data is processed is one of the most effective ways you can reduce your organization&apos;s footprint.</p>\
+\
+  <h2>Summary and Next Steps</h2>\
+  <p>Sustainable AI is not about stopping innovation; it is about ensuring that the benefits of intelligence do not come at the expense of our climate. By tracking these hidden costs now, you build an organization that is not only smart but also responsible. Now that we have seen the physical costs of these models, we are ready to look at another &quot;hidden&quot; challenge: the Black Box Problem, where we explore why it is so difficult to explain how these complex systems reach their conclusions.</p>}

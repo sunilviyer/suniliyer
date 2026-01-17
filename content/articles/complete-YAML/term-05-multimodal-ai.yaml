@@ -1,0 +1,60 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2867
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 article_id: "term-05"\
+title: "Multimodal AI"\
+slug: "multimodal-ai"\
+path: "terminology"\
+header_image: "/images/terminology/multimodal-ai.png"\
+navigation:\
+  prev:\
+    slug: "/articles/foundation-models"\
+    title: "Foundation Models"\
+  next:\
+    slug: "/articles/ai-compute"\
+    title: "AI Compute Requirements"\
+key_learnings:\
+  - "Multimodal AI integrates text, images, audio, and video to mimic human-like sensory processing."\
+  - "Encoders translate different data types into a unified mathematical language called embeddings."\
+  - "Multimodality enables more natural interactions but introduces specific risks like visual prompt injection."\
+  - "Provenance standards like C2PA are critical for verifying the authenticity of AI-generated media."\
+  - "Governance must address unique privacy concerns related to biometric and location data in images."\
+read_time: "8 min read"\
+updated_date: "January 2025"\
+tags:\
+  - Multimodal AI\
+  - Computer Vision\
+  - AI Safety\
+  - Technical Foundations\
+seo:\
+  description: "Learn how Multimodal AI systems see, hear, and speak by integrating different data types like text, images, and audio."\
+  keywords:\
+    - Multimodal AI\
+    - Computer Vision\
+    - Next-token prediction\
+    - C2PA standard\
+    - AI risk management\
+content: |\
+  <h2>Opening the Machine&apos;s Eyes</h2>\
+  <p>Think of it this way: for decades, AI systems were like sensory-deprived specialists. One system could read text, while another could recognize shapes, but they were effectively blind to each other&apos;s worlds. A model could write eloquently about a sunset without ever having seen one.</p>\
+  <p>Today, we are building <card type="concept" id="term-multimodal">multimodal AI</card> systems that can process, understand, and generate multiple types of data simultaneously. Here is the key insight: because the human experience is naturally multimodal&mdash;combining sight, sound, and language&mdash;giving AI these same senses allows it to solve much more complex real-world problems.</p>\
+\
+  <h2>How Machines &quot;Sense&quot; Different Data</h2>\
+  <p>You might wonder how a computer can compare a written word to a digital photograph. To a machine, these look completely different: text is a sequence of tokens, while an image is a grid of millions of pixel values. The secret lies in a component called an &quot;encoder&quot;.</p>\
+  <p>Specialized encoders translate different modalities into a common mathematical language known as embeddings. For example, a vision transformer (ViT) might break an image into tiny patches and treat them like words in a sentence. Once everything is translated into this shared language, the model can &quot;fuse&quot; the information to understand that the word &quot;dog&quot; in a caption refers to the furry shape in the corner of a photo.</p>\
+\
+  <h2>The Crisis of Authenticity</h2>\
+  <p>While multimodality creates powerful tools, it also brings a significant trust crisis. We have already seen how easy it is for AI to generate photorealistic fabrications, such as the <card type="example" id="ex-pope-francis-puffer-jacket">viral image of Pope Francis in a puffer jacket</card>. This technology can create deepfakes that impersonate leaders or fabricate evidence in legal cases.</p>\
+  <p>To understand this challenge, consider the &quot;liar&apos;s dividend&quot;. This occurs when the mere existence of fakes makes it possible for people to dismiss real, authentic evidence as being AI-generated. To combat this, we are seeing the rise of the <card type="framework" id="fw-c2pa-standard">C2PA standard</card>, which embeds a digital &quot;nutrition label&quot; into media to prove its origin and history.</p>\
+\
+  <h2>New Risks for Governance</h2>\
+  <p>Leading an organization into the multimodal era requires managing risks that text-only models never faced. Visual data often contains &quot;hidden&quot; personal information, such as location data in a background or confidential documents sitting on a desk in an uploaded photo. Furthermore, attackers can now use &quot;visual prompt injection,&quot; hiding malicious commands within images that the human eye cannot see but the AI will follow.</p>\
+  <p>Here is what matters: your oversight must evolve with these senses. A robust <card type="resource" id="res-multimodal-ai-governance-framework">multimodal governance framework</card> should include specific rules for how long you retain visual and audio data and require clear disclosure whenever synthetic media is used.</p>\
+\
+  <h2>Summary and Next Steps</h2>\
+  <p>Multimodal AI is transforming machines from sensory-deprived calculators into integrated partners that see, hear, and speak. However, this power requires us to be more vigilant than ever about authenticity and privacy.</p>\
+  <p>Now that we understand how these systems process the world, we must look at the physical resources required to run them. In our next article, AI Compute Requirements, we will explore why the global race for GPUs is defining the future of AI development.</p>}
