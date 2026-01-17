@@ -75,7 +75,7 @@ const historyCards = [
     title: 'AI History: Dartmouth to DeepMind',
     slug: 'ai-history',
     tldr: 'From the 1956 Dartmouth Conference to modern breakthroughs: The complete journey of artificial intelligence',
-    image: 'ai-technology-stack.webp',
+    image: 'ai-history.webp',
     era: '1956-Present',
     tags: ['History', 'Milestones']
   }
