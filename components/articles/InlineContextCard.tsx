@@ -130,14 +130,12 @@ export function InlineContextCard({ trigger, card, cardId }: InlineContextCardPr
     };
   }, [isExpanded]);
 
-  // During SSR or before mount, show loading state
-  if (!isMounted && !card) {
-    return <span style={{ color: '#A0847C', fontWeight: 600 }}>{trigger}</span>;
-  }
-
+  // If no card data, show plain trigger text
   if (!cardData) {
-    console.error(`Card not found: ${cardId}`);
-    return <span style={{ color: 'red', fontWeight: 'bold' }}>{trigger}</span>;
+    if (cardId) {
+      console.error(`Card not found: ${cardId}`);
+    }
+    return <span style={{ color: '#A0847C', fontWeight: 600, display: 'inline' }}>{trigger}</span>;
   }
 
   const style = cardTypeStyles[cardData.type];
@@ -161,7 +159,7 @@ export function InlineContextCard({ trigger, card, cardId }: InlineContextCardPr
 
   return (
     <>
-      <span className="inline-card-container" ref={cardRef}>
+      <span className="inline-card-container" ref={cardRef} suppressHydrationWarning>
         <span
           className={`inline-card-trigger ${isHovered ? 'hovered' : ''}`}
           onClick={handleClick}

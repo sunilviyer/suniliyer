@@ -29,6 +29,33 @@ export interface Card {
   tags?: string[];
 }
 
+export interface ArticleContent {
+  tldr?: string;
+  tags?: string[];
+  readTime?: string;
+  updatedDate?: string;
+  headerImage?: string;
+  content: string;
+  keyLearnings?: string[];
+  additionalResources?: string[];
+  sources?: string[];
+}
+
+export interface Article {
+  id: string;
+  article_id: string;
+  title: string;
+  slug: string;
+  path: string;
+  position: number;
+  prev_article_slug?: string;
+  prev_article_title?: string;
+  next_article_slug?: string;
+  next_article_title?: string;
+  status: string;
+  content?: ArticleContent;
+}
+
 // Create a connection to the database
 const sql = neon(process.env.DATABASE_URL!);
 
@@ -189,5 +216,65 @@ export async function incrementCardUsage(cardId: string): Promise<void> {
   } catch (error) {
     console.error('Error incrementing card usage:', error);
     // Don't throw - this is a tracking feature, not critical
+  }
+}
+
+/**
+ * Fetch a single article by slug
+ */
+export async function getArticleBySlug(slug: string): Promise<Article | null> {
+  try {
+    const result = await sql`
+      SELECT
+        id,
+        article_id,
+        title,
+        slug,
+        path,
+        position,
+        prev_article_slug,
+        prev_article_title,
+        next_article_slug,
+        next_article_title,
+        status,
+        yaml_content
+      FROM articles
+      WHERE slug = ${slug}
+      LIMIT 1
+    `;
+
+    if (result.length === 0) {
+      return null;
+    }
+
+    const row = result[0];
+
+    // Parse yaml_content as JSON
+    let content: ArticleContent | undefined;
+    if (row.yaml_content) {
+      try {
+        content = JSON.parse(row.yaml_content as string);
+      } catch (error) {
+        console.error('Error parsing article content:', error);
+      }
+    }
+
+    return {
+      id: row.id as string,
+      article_id: row.article_id as string,
+      title: row.title as string,
+      slug: row.slug as string,
+      path: row.path as string,
+      position: row.position as number,
+      prev_article_slug: row.prev_article_slug as string | undefined,
+      prev_article_title: row.prev_article_title as string | undefined,
+      next_article_slug: row.next_article_slug as string | undefined,
+      next_article_title: row.next_article_title as string | undefined,
+      status: row.status as string,
+      content,
+    };
+  } catch (error) {
+    console.error('Error fetching article by slug:', error);
+    throw error;
   }
 }

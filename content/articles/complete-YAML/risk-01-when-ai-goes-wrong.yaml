@@ -1,0 +1,66 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2867
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 article_id: "risk-01"\
+title: "When AI Goes Wrong"\
+slug: "when-ai-goes-wrong"\
+path: "risk"\
+header_image: "/images/risk/when-ai-goes-wrong.png"\
+navigation:\
+  prev:\
+    slug: null\
+    title: null\
+  next:\
+    slug: "/articles/algorithmic-bias"\
+    title: "Algorithmic Bias"\
+key_learnings:\
+  - "AI harm is not just about technical 'bugs'; it includes systemic failures that impact civil rights and safety."\
+  - "The taxonomy of AI harms organizes risks into five levels: individuals, groups, society, organizations, and ecosystems."\
+  - "Unlike traditional software, AI often fails silently, producing confident but incorrect outputs that can go undetected for months."\
+  - "Organizational harm can include legal liability and the erosion of internal culture and employee trust."\
+  - "Effective governance requires moving from a reactive mindset to a proactive strategy of impact assessments and continuous monitoring."\
+read_time: "9 min read"\
+updated_date: "January 2025"\
+tags:\
+  - AI Risks\
+  - Governance\
+  - Case Studies\
+  - AI Safety\
+seo:\
+  description: "Explore the different ways AI systems can cause harm and learn a structured taxonomy to identify and mitigate risks in your organization."\
+  keywords:\
+    - AI harm taxonomy\
+    - AI safety failures\
+    - algorithmic discrimination\
+    - organizational AI risk\
+    - AI governance\
+content: |\
+  <h2>The Spectrum of Failure</h2>\
+  <p>Think about the last time your laptop crashed or a spreadsheet formula gave you an error. The failure was obvious, and you likely knew how to fix it. Here is the key insight: AI systems rarely fail this way. Instead of crashing, an AI might silently begin making biased decisions or providing false information with total confidence. To lead an organization today, you must recognize that AI failure isn&apos;t just a technical glitch&mdash;it is a spectrum of real-world harms.</p>\
+  <p>To understand the stakes, consider the <card type="example" id="ex-uber-arizona-fatality">2018 Uber self-driving car fatality</card>. This wasn&apos;t just a software bug; it was a tragic reminder that when AI systems operate in the physical world, the consequences can be fatal. However, for most organizations, the risks are more subtle but equally damaging to human lives and corporate reputations.</p>\
+\
+  <h2>A Taxonomy of AI Harms</h2>\
+  <p>To manage risk effectively, we need a shared map. Think of it this way: you can&apos;t protect against what you haven&apos;t named. We can use a <card type="resource" id="res-taxonomy-ai-harms">Taxonomy of AI Harms</card> to categorize these risks into five distinct levels:</p>\
+\
+  <h3>1. Harms to Individuals</h3>\
+  <p>These are direct impacts on a person&apos;s life. This includes physical safety, like the Uber incident, but also the denial of economic opportunities. A famous example is the <card type="example" id="ex-amazon-hiring">Amazon hiring bias case</card>, where a model taught itself to penalize resumes containing the word &quot;women&apos;s,&quot; effectively barring qualified candidates from opportunity before a human ever saw their name.</p>\
+\
+  <h3>2. Harms to Groups</h3>\
+  <p>While an individual harm affects one person, group harms target entire communities. This often manifests as algorithmic discrimination. When facial recognition performs 30% worse on people with darker skin tones, that group bears a disproportionate burden of false rejections or even wrongful accusations.</p>\
+\
+  <h3>3. Harms to Society</h3>\
+  <p>Some risks threaten the very foundations of how we live together. AI can supercharge misinformation, making it difficult for citizens to distinguish fact from fiction. This creates the &quot;liar&apos;s dividend,&quot; where even authentic evidence is dismissed as being a deepfake, untethering public discourse from reality.</p>\
+\
+  <h3>4. Harms to Organizations</h3>\
+  <p>Deploying AI creates unique risks for your company. Beyond the obvious legal liability, there is the threat of reputational damage. Consider the <card type="example" id="ex-air-canada-chatbot">Air Canada chatbot incident</card>, where the airline was held legally responsible for its AI&apos;s incorrect advice. Unreliable AI doesn&apos;t just cost money; it erodes the trust your customers have in your brand.</p>\
+\
+  <h3>5. Harms to the Ecosystem</h3>\
+  <p>Finally, we must consider the broader world. Training massive models consumes enormous amounts of electricity, and data centers often strain local water supplies for cooling. Managing AI means being a steward of the environment as much as a steward of the data.</p>\
+\
+  <h2>From Reactive to Proactive</h2>\
+  <p>You might wonder why we spend so much time on what goes wrong. It is because the foundations of governance are built on these failure stories. Organizations that succeed with AI are the ones that treat impact assessments as an essential part of the design phase, not a last-minute hurdle.</p>\
+  <p>As you move forward, ask your team: &quot;Who could be harmed by this system, and how would we know if it failed?&quot;. By applying this structured thinking, you move from just using technology to governing it with the care your stakeholders deserve. In our next article, we will look closer at one of the most persistent risks in this taxonomy: Algorithmic Bias.</p>}
