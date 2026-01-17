@@ -6,7 +6,7 @@ import { notFound } from 'next/navigation';
 export default async function AIHistoryArticle() {
   // Fetch article and cards from database
   const [article, cards] = await Promise.all([
-    getArticleBySlug('what-ai-actually-is'),
+    getArticleBySlug('ai-history'),
     getCardsByArticle('ai-history'),
   ]);
 
