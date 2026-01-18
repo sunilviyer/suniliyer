@@ -143,9 +143,12 @@ export function DatabaseArticleRenderer({
   sources,
 }: DatabaseArticleRendererProps) {
   const [isMounted, setIsMounted] = useState(false);
+  const [isContentReady, setIsContentReady] = useState(false);
 
   useEffect(() => {
     setIsMounted(true);
+    // Small delay to ensure smooth transition
+    setTimeout(() => setIsContentReady(true), 50);
   }, []);
 
   // Parse content only on client after mount
@@ -158,8 +161,16 @@ export function DatabaseArticleRenderer({
     <>
       {/* Main Content */}
       <div className="database-article-content" suppressHydrationWarning>
-        {!isMounted ? (
-          <div dangerouslySetInnerHTML={{ __html: content }} />
+        {!isContentReady ? (
+          <div className="article-loading-skeleton">
+            <div className="skeleton-line skeleton-title"></div>
+            <div className="skeleton-line"></div>
+            <div className="skeleton-line"></div>
+            <div className="skeleton-line skeleton-short"></div>
+            <div className="skeleton-line"></div>
+            <div className="skeleton-line"></div>
+            <div className="skeleton-line skeleton-short"></div>
+          </div>
         ) : (
           parsedContent
         )}
@@ -224,6 +235,63 @@ export function DatabaseArticleRenderer({
       <style jsx global>{`
         .inline-card-placeholder {
           display: inline !important;
+        }
+
+        .article-loading-skeleton {
+          padding: 40px 0;
+          animation: fadeIn 0.3s ease-in;
+        }
+
+        @keyframes fadeIn {
+          from {
+            opacity: 0;
+          }
+          to {
+            opacity: 1;
+          }
+        }
+
+        .skeleton-line {
+          height: 20px;
+          background: linear-gradient(
+            90deg,
+            rgba(147, 102, 57, 0.06) 0%,
+            rgba(147, 102, 57, 0.12) 50%,
+            rgba(147, 102, 57, 0.06) 100%
+          );
+          background-size: 200% 100%;
+          animation: shimmer 1.5s infinite;
+          border-radius: 4px;
+          margin-bottom: 16px;
+        }
+
+        .skeleton-line.skeleton-title {
+          height: 32px;
+          width: 60%;
+          margin-bottom: 32px;
+        }
+
+        .skeleton-line.skeleton-short {
+          width: 80%;
+        }
+
+        @keyframes shimmer {
+          0% {
+            background-position: 200% 0;
+          }
+          100% {
+            background-position: -200% 0;
+          }
+        }
+
+        [data-theme='dark'] .skeleton-line {
+          background: linear-gradient(
+            90deg,
+            rgba(147, 102, 57, 0.1) 0%,
+            rgba(147, 102, 57, 0.15) 50%,
+            rgba(147, 102, 57, 0.1) 100%
+          );
+          background-size: 200% 100%;
         }
       `}</style>
     </>
