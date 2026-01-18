@@ -82,8 +82,8 @@ export function FloatingPathsNav({ currentPath, theme = 'light' }: FloatingPaths
                 <Image
                   src={path.heroImage}
                   alt={path.title}
-                  width={200}
-                  height={120}
+                  width={160}
+                  height={96}
                   className="path-img"
                   unoptimized
                   priority
@@ -180,8 +180,8 @@ export function FloatingPathsNav({ currentPath, theme = 'light' }: FloatingPaths
 
         .path-card {
           position: relative;
-          width: 202px;
-          border-radius: 20px;
+          width: 162px;
+          border-radius: 16px;
           box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
           transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
           text-decoration: none;
@@ -199,9 +199,9 @@ export function FloatingPathsNav({ currentPath, theme = 'light' }: FloatingPaths
         .path-card-image {
           position: relative;
           width: 100%;
-          height: 132px;
+          height: 106px;
           overflow: hidden;
-          border-radius: 18px;
+          border-radius: 14px;
         }
 
         .path-card-image :global(.path-img) {
@@ -224,14 +224,14 @@ export function FloatingPathsNav({ currentPath, theme = 'light' }: FloatingPaths
           background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.4) 100%);
           display: flex;
           align-items: flex-end;
-          padding: 14px;
+          padding: 11px;
           z-index: 1;
         }
 
         .path-card-title {
           flex: 1;
           font-family: 'DM Sans', -apple-system, sans-serif;
-          font-size: 16px;
+          font-size: 13px;
           font-weight: 700;
           color: #ffffff;
           text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
@@ -241,10 +241,10 @@ export function FloatingPathsNav({ currentPath, theme = 'light' }: FloatingPaths
 
         .path-arrow-circle {
           position: absolute;
-          top: 10px;
-          right: 10px;
-          width: 36px;
-          height: 36px;
+          top: 8px;
+          right: 8px;
+          width: 29px;
+          height: 29px;
           border-radius: 50%;
           background: rgba(0, 0, 0, 0.7);
           border: 2px solid rgba(255, 255, 255, 0.3);
@@ -252,7 +252,7 @@ export function FloatingPathsNav({ currentPath, theme = 'light' }: FloatingPaths
           display: flex;
           align-items: center;
           justify-content: center;
-          font-size: 16px;
+          font-size: 13px;
           color: #ffffff;
           opacity: 0.6;
           transform: scale(0.9);
@@ -278,19 +278,19 @@ export function FloatingPathsNav({ currentPath, theme = 'light' }: FloatingPaths
           }
 
           .path-card {
-            width: 180px;
+            width: 144px;
           }
 
           .path-card-image {
-            height: 110px;
+            height: 88px;
           }
 
           .path-card-title {
-            font-size: 15px;
+            font-size: 12px;
           }
 
           .path-card-overlay {
-            padding: 12px;
+            padding: 10px;
           }
         }
 
@@ -311,25 +311,25 @@ export function FloatingPathsNav({ currentPath, theme = 'light' }: FloatingPaths
           }
 
           .path-card {
-            width: 160px;
+            width: 128px;
           }
 
           .path-card-image {
-            height: 100px;
+            height: 80px;
           }
 
           .path-card-title {
-            font-size: 14px;
+            font-size: 11px;
           }
 
           .path-card-overlay {
-            padding: 10px;
+            padding: 8px;
           }
 
           .path-arrow-circle {
-            width: 32px;
-            height: 32px;
-            font-size: 14px;
+            width: 26px;
+            height: 26px;
+            font-size: 11px;
           }
         }
       `}</style>
