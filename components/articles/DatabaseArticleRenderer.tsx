@@ -5,11 +5,138 @@ import { InlineContextCard } from './InlineContextCard';
 import { KeyLearnings } from './KeyLearnings';
 import { Accordion } from './Accordion';
 
+// Enhanced resource type supporting both strings and rich objects
+type ResourceItem = string | {
+  title: string;
+  url?: string;
+  type?: 'article' | 'video' | 'pdf' | 'excel' | 'document' | 'website' | 'tool';
+  description?: string;
+  author?: string;
+  year?: number;
+};
+
 interface DatabaseArticleRendererProps {
   content: string;
   keyLearnings?: string[];
-  additionalResources?: string[];
-  sources?: string[];
+  additionalResources?: ResourceItem[];
+  sources?: ResourceItem[];
+}
+
+/**
+ * Get icon for resource type
+ */
+function getResourceTypeIcon(type?: string): string {
+  switch (type) {
+    case 'pdf':
+      return '📄';
+    case 'excel':
+      return '📊';
+    case 'video':
+      return '🎥';
+    case 'article':
+      return '📰';
+    case 'website':
+      return '🌐';
+    case 'tool':
+      return '🔧';
+    case 'document':
+      return '📝';
+    default:
+      return '🔗';
+  }
+}
+
+/**
+ * Render a resource item (string or object)
+ */
+function renderResourceItem(item: ResourceItem, index: number, isSource: boolean = false): React.ReactNode {
+  // Handle simple string format (backward compatible)
+  if (typeof item === 'string') {
+    return (
+      <li
+        key={index}
+        style={{
+          fontFamily: 'Crimson Pro, Georgia, serif',
+          fontSize: '17px',
+          lineHeight: '1.7',
+          padding: '12px 0',
+          borderBottom: '1px solid rgba(26, 26, 26, 0.06)',
+        }}
+      >
+        {item}
+      </li>
+    );
+  }
+
+  // Handle rich object format
+  const { title, url, type, description, author, year } = item;
+
+  // Format citation for sources
+  let displayTitle = title;
+  if (isSource && author && year) {
+    displayTitle = `${author} (${year}). ${title}`;
+  } else if (isSource && author) {
+    displayTitle = `${author}. ${title}`;
+  }
+
+  return (
+    <li
+      key={index}
+      style={{
+        fontFamily: 'Crimson Pro, Georgia, serif',
+        fontSize: '17px',
+        lineHeight: '1.7',
+        padding: '12px 0',
+        borderBottom: '1px solid rgba(26, 26, 26, 0.06)',
+      }}
+    >
+      {/* Type icon */}
+      {type && (
+        <span style={{ marginRight: '8px', fontSize: '16px' }}>
+          {getResourceTypeIcon(type)}
+        </span>
+      )}
+
+      {/* Title/Link */}
+      {url ? (
+        <a
+          href={url}
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{
+            color: '#936639',
+            textDecoration: 'none',
+            borderBottom: '1px solid rgba(147, 102, 57, 0.3)',
+            transition: 'border-color 0.2s ease',
+          }}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.borderBottomColor = '#936639';
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.borderBottomColor = 'rgba(147, 102, 57, 0.3)';
+          }}
+        >
+          {displayTitle}
+        </a>
+      ) : (
+        <span>{displayTitle}</span>
+      )}
+
+      {/* Description */}
+      {description && (
+        <div
+          style={{
+            fontSize: '15px',
+            color: 'rgba(26, 26, 26, 0.65)',
+            marginTop: '6px',
+            fontStyle: 'italic',
+          }}
+        >
+          {description}
+        </div>
+      )}
+    </li>
+  );
 }
 
 /**
@@ -188,20 +315,7 @@ export function DatabaseArticleRenderer({
             <div style={{ marginTop: '20px' }}>
               <Accordion title="Additional Resources">
                 <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
-                  {additionalResources.map((resource, index) => (
-                    <li
-                      key={index}
-                      style={{
-                        fontFamily: 'Crimson Pro, Georgia, serif',
-                        fontSize: '17px',
-                        lineHeight: '1.7',
-                        padding: '12px 0',
-                        borderBottom: index === additionalResources.length - 1 ? 'none' : '1px solid rgba(26, 26, 26, 0.06)',
-                      }}
-                    >
-                      {resource}
-                    </li>
-                  ))}
+                  {additionalResources.map((resource, index) => renderResourceItem(resource, index, false))}
                 </ul>
               </Accordion>
             </div>
@@ -211,20 +325,7 @@ export function DatabaseArticleRenderer({
             <div style={{ marginTop: '20px' }}>
               <Accordion title="Sources & References">
                 <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
-                  {sources.map((source, index) => (
-                    <li
-                      key={index}
-                      style={{
-                        fontFamily: 'Crimson Pro, Georgia, serif',
-                        fontSize: '17px',
-                        lineHeight: '1.7',
-                        padding: '12px 0',
-                        borderBottom: index === sources.length - 1 ? 'none' : '1px solid rgba(26, 26, 26, 0.06)',
-                      }}
-                    >
-                      {source}
-                    </li>
-                  ))}
+                  {sources.map((source, index) => renderResourceItem(source, index, true))}
                 </ul>
               </Accordion>
             </div>

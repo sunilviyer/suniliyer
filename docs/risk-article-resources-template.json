@@ -1,0 +1,229 @@
+{
+  "when-ai-goes-wrong": {
+    "additionalResources": [
+      {
+        "title": "AI Incident Database",
+        "url": "https://incidentdatabase.ai/",
+        "type": "website",
+        "description": "Comprehensive database documenting real-world AI failures and incidents"
+      },
+      {
+        "title": "NIST AI Risk Management Framework",
+        "url": "/downloads/nist-ai-rmf-2023.pdf",
+        "type": "pdf",
+        "description": "Official framework for managing AI risks in organizations"
+      },
+      {
+        "title": "AI Safety Failures - Case Studies",
+        "url": "https://example.com/safety-failures",
+        "type": "article",
+        "description": "Analysis of major AI safety incidents and lessons learned"
+      },
+      {
+        "title": "AI Risk Assessment Toolkit",
+        "url": "/downloads/risk-assessment-toolkit.xlsx",
+        "type": "excel",
+        "description": "Template for assessing AI deployment risks in your organization"
+      }
+    ],
+    "sources": [
+      {
+        "title": "Concrete Problems in AI Safety",
+        "author": "Amodei, D., et al.",
+        "year": 2016,
+        "url": "https://arxiv.org/abs/1606.06565",
+        "type": "article",
+        "description": "Foundational paper on AI safety research"
+      },
+      {
+        "title": "Report of Fatal Collision Between Vehicle Under Test and Pedestrian",
+        "author": "National Transportation Safety Board",
+        "year": 2018,
+        "url": "https://www.ntsb.gov/investigations/AccidentReports/Reports/HWY18MH010-prelim.pdf",
+        "type": "pdf"
+      },
+      "IEEE (2019). Ethically Aligned Design: A Vision for Prioritizing Human Well-being with Autonomous and Intelligent Systems"
+    ]
+  },
+
+  "algorithmic-bias": {
+    "additionalResources": [
+      {
+        "title": "Gender Shades Project",
+        "url": "http://gendershades.org/",
+        "type": "website",
+        "description": "Research on bias in facial recognition systems"
+      },
+      {
+        "title": "Fairness in Machine Learning",
+        "url": "https://www.youtube.com/watch?v=jIXIuYdnyyk",
+        "type": "video",
+        "description": "Tutorial on fairness metrics and bias mitigation"
+      },
+      {
+        "title": "Algorithmic Bias Audit Checklist",
+        "url": "/downloads/bias-audit-checklist.pdf",
+        "type": "pdf",
+        "description": "Step-by-step guide to auditing algorithms for bias"
+      },
+      {
+        "title": "Fairness Metrics Dataset",
+        "url": "/downloads/fairness-metrics.xlsx",
+        "type": "excel",
+        "description": "Comparative analysis of different fairness metrics"
+      }
+    ],
+    "sources": [
+      {
+        "title": "Discrimination in the Age of Algorithms",
+        "author": "Kleinberg, J., et al.",
+        "year": 2018,
+        "url": "https://arxiv.org/abs/1902.03731",
+        "type": "article"
+      },
+      {
+        "title": "Gender Shades: Intersectional Accuracy Disparities in Commercial Gender Classification",
+        "author": "Buolamwini, J., & Gebru, T.",
+        "year": 2018,
+        "url": "http://proceedings.mlr.press/v81/buolamwini18a.html",
+        "type": "article"
+      },
+      {
+        "title": "Amazon scraps secret AI recruiting tool that showed bias against women",
+        "author": "Dastin, J.",
+        "year": 2018,
+        "url": "https://www.reuters.com/article/us-amazon-com-jobs-automation-insight-idUSKCN1MK08G",
+        "type": "article"
+      }
+    ]
+  },
+
+  "ai-hallucinations": {
+    "additionalResources": [
+      {
+        "title": "Survey of Hallucination in Natural Language Generation",
+        "url": "https://arxiv.org/abs/2202.03629",
+        "type": "article",
+        "description": "Comprehensive review of hallucination types and detection methods"
+      },
+      {
+        "title": "Understanding and Detecting Hallucinations",
+        "url": "https://www.youtube.com/watch?v=example",
+        "type": "video",
+        "description": "DeepMind research presentation on hallucination mitigation"
+      },
+      {
+        "title": "Hallucination Detection Tool",
+        "url": "https://example.com/hallucination-detector",
+        "type": "tool",
+        "description": "Open-source tool for detecting factual errors in LLM outputs"
+      }
+    ],
+    "sources": [
+      {
+        "title": "On the Dangers of Stochastic Parrots: Can Language Models Be Too Big?",
+        "author": "Bender, E.M., et al.",
+        "year": 2021,
+        "url": "https://dl.acm.org/doi/10.1145/3442188.3445922",
+        "type": "article"
+      },
+      {
+        "title": "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks",
+        "author": "Lewis, P., et al.",
+        "year": 2020,
+        "url": "https://arxiv.org/abs/2005.11401",
+        "type": "article"
+      }
+    ]
+  },
+
+  "ai-privacy": {
+    "additionalResources": [
+      {
+        "title": "Differential Privacy: A Primer for a Non-Technical Audience",
+        "url": "https://privacytools.seas.harvard.edu/differential-privacy-primer",
+        "type": "article",
+        "description": "Introduction to privacy-preserving machine learning"
+      },
+      {
+        "title": "GDPR Compliance for AI Systems",
+        "url": "/downloads/gdpr-ai-compliance-guide.pdf",
+        "type": "pdf",
+        "description": "Practical guide to GDPR compliance in AI deployments"
+      },
+      {
+        "title": "Federated Learning Tutorial",
+        "url": "https://www.youtube.com/watch?v=example",
+        "type": "video",
+        "description": "Introduction to privacy-preserving distributed learning"
+      },
+      {
+        "title": "Privacy Impact Assessment Template",
+        "url": "/downloads/privacy-assessment-template.xlsx",
+        "type": "excel",
+        "description": "Template for assessing privacy risks in AI projects"
+      }
+    ],
+    "sources": [
+      {
+        "title": "The Algorithmic Foundations of Differential Privacy",
+        "author": "Dwork, C., & Roth, A.",
+        "year": 2014,
+        "url": "https://www.cis.upenn.edu/~aaroth/Papers/privacybook.pdf",
+        "type": "pdf"
+      },
+      {
+        "title": "Model Inversion Attacks that Exploit Confidence Information",
+        "author": "Fredrikson, M., et al.",
+        "year": 2015,
+        "url": "https://dl.acm.org/doi/10.1145/2810103.2813677",
+        "type": "article"
+      }
+    ]
+  },
+
+  "deepfakes-synthetic-media": {
+    "additionalResources": [
+      {
+        "title": "Deepfake Detection Challenge Dataset",
+        "url": "https://ai.facebook.com/datasets/dfdc/",
+        "type": "website",
+        "description": "Large-scale dataset for training deepfake detection models"
+      },
+      {
+        "title": "The State of Deepfakes 2024",
+        "url": "/downloads/deepfakes-report-2024.pdf",
+        "type": "pdf",
+        "description": "Annual report on deepfake technology trends and threats"
+      },
+      {
+        "title": "How Deepfakes Are Made",
+        "url": "https://www.youtube.com/watch?v=example",
+        "type": "video",
+        "description": "Technical explanation of deepfake generation techniques"
+      },
+      {
+        "title": "Content Authenticity Verification Tool",
+        "url": "https://contentcredentials.org/verify",
+        "type": "tool",
+        "description": "C2PA-compliant tool for verifying content authenticity"
+      }
+    ],
+    "sources": [
+      {
+        "title": "The Deepfake Detection Challenge Dataset",
+        "author": "Dolhansky, B., et al.",
+        "year": 2020,
+        "url": "https://arxiv.org/abs/2006.07397",
+        "type": "article"
+      },
+      {
+        "title": "Deep Fakes: A Looming Challenge for Privacy, Democracy, and National Security",
+        "author": "Chesney, R., & Citron, D.",
+        "year": 2019,
+        "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3213954",
+        "type": "article"
+      }
+    ]
+  }
+}
