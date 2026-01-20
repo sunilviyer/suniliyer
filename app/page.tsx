@@ -8,6 +8,7 @@ import { learningPathsData } from '@/lib/learning-paths-data';
 import { portfolioData } from '@/lib/portfolio-data';
 import { useGsapScrollScaleAnimations } from '@/lib/hooks/useGsapScrollScaleAnimations';
 import { SplashScreen } from '@/components/homepage/SplashScreen';
+import { InitialsPhotoReveal } from '@/components/homepage/InitialsPhotoReveal';
 
 export default function HomePage() {
   useGsapScrollScaleAnimations();
@@ -429,13 +430,10 @@ export default function HomePage() {
           <div className="about-grid loading__item">
             <div className="about-image-col">
               <div className="about-image-wrapper">
-                <Image
-                  src="/images/Sunil.jpg"
-                  alt="Sunil Iyer"
-                  fill
-                  sizes="600px"
-                  style={{ objectFit: 'cover' }}
-                  className="about-image"
+                <InitialsPhotoReveal
+                  photoSrc="/images/Sunil.jpg"
+                  initials="SVI"
+                  name="Sunil Iyer"
                 />
               </div>
             </div>
@@ -1515,23 +1513,6 @@ export default function HomePage() {
           position: relative;
           width: 100%;
           height: 600px;
-          border-radius: 12px;
-          overflow: hidden;
-          background: var(--card-bg);
-          box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
-          transition: all 0.3s ease;
-        }
-
-        .about-image-wrapper:hover {
-          box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
-        }
-
-        .about-image {
-          transition: transform 0.6s ease;
-        }
-
-        .about-image-wrapper:hover .about-image {
-          transform: scale(1.02);
         }
 
         .about-heading {
