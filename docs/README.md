@@ -12,16 +12,26 @@ Complete documentation for managing content in the AIDefence database-driven art
    - Cheat sheet for common operations
    - Fast lookup for syntax and commands
    - Perfect for daily reference
+   - **HTML Templates** - Quick copy-paste snippets
 
-2. **[ARTICLES-TABLE-GUIDE.md](./ARTICLES-TABLE-GUIDE.md)** - Complete Guide
+2. **[FORMATTING-GUIDE.md](./FORMATTING-GUIDE.md)** - 🎨 HTML, JSON & YAML Formatting ⭐
+   - **Complete HTML formatting rules** with examples
+   - **JSON content structure** specification
+   - **YAML to JSON migration** scripts and guide
+   - Card marker syntax and placement
+   - Resource formatting (PDFs, Excel, videos)
+   - Common formatting mistakes to avoid
+   - Validation checklists
+
+3. **[ARTICLES-TABLE-GUIDE.md](./ARTICLES-TABLE-GUIDE.md)** - Complete Guide
    - Database schema documentation
-   - Content structure specification
-   - HTML formatting rules
-   - Card marker system
+   - Content structure and interfaces
+   - Adding new articles (step-by-step)
+   - Card system integration
    - Full examples and best practices
    - ~500 lines of detailed documentation
 
-3. **[RESOURCE-STRUCTURE-GUIDE.md](./RESOURCE-STRUCTURE-GUIDE.md)** - Resources
+4. **[RESOURCE-STRUCTURE-GUIDE.md](./RESOURCE-STRUCTURE-GUIDE.md)** - Resources
    - Rich media resource system (PDFs, Excel, videos)
    - Type icons and formatting
    - Academic citation support
@@ -67,6 +77,7 @@ Use `scripts/templates/batch-add-articles-template.ts` for adding multiple artic
 docs/
 ├── README.md                          # This file - Overview
 ├── QUICK-REFERENCE.md                 # Cheat sheet
+├── FORMATTING-GUIDE.md                # ⭐ HTML, JSON, YAML formatting
 ├── ARTICLES-TABLE-GUIDE.md            # Complete guide
 ├── RESOURCE-STRUCTURE-GUIDE.md        # Resources guide
 ├── resource-structure-proposal.md     # Technical spec
@@ -171,13 +182,15 @@ Supports both simple strings and rich objects:
 
 | What You Need | Where to Look |
 |---------------|---------------|
+| **HTML formatting rules** | ⭐ [FORMATTING-GUIDE.md](./FORMATTING-GUIDE.md) - HTML Formatting Rules |
+| **JSON content structure** | ⭐ [FORMATTING-GUIDE.md](./FORMATTING-GUIDE.md) - Content Format |
+| **YAML to JSON migration** | ⭐ [FORMATTING-GUIDE.md](./FORMATTING-GUIDE.md) - Migration Guide |
+| **Card marker syntax** | ⭐ [FORMATTING-GUIDE.md](./FORMATTING-GUIDE.md) - Card Markers |
 | Quick syntax lookup | [QUICK-REFERENCE.md](./QUICK-REFERENCE.md) |
 | Database schema | [ARTICLES-TABLE-GUIDE.md](./ARTICLES-TABLE-GUIDE.md) - Database Schema |
-| HTML formatting | [ARTICLES-TABLE-GUIDE.md](./ARTICLES-TABLE-GUIDE.md) - HTML Formatting Rules |
-| Card markers | [ARTICLES-TABLE-GUIDE.md](./ARTICLES-TABLE-GUIDE.md) - Card Markers |
-| Resource types | [RESOURCE-STRUCTURE-GUIDE.md](./RESOURCE-STRUCTURE-GUIDE.md) |
+| Resource formatting | [RESOURCE-STRUCTURE-GUIDE.md](./RESOURCE-STRUCTURE-GUIDE.md) |
 | Complete examples | [ARTICLES-TABLE-GUIDE.md](./ARTICLES-TABLE-GUIDE.md) - Examples |
-| Templates | `scripts/templates/` |
+| Code templates | `scripts/templates/` |
 | Resource examples | `docs/risk-article-resources-template.json` |
 
 ---
