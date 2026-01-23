@@ -324,36 +324,45 @@ export function InlineContextCard({ trigger, card, cardId }: InlineContextCardPr
                   {cardData.summary}
                 </motion.div>
 
-                {/* Action Buttons */}
-                {(cardData.learn_more || cardData.download_url) && (
-                  <motion.div
-                    className="card-actions"
-                    initial={{ opacity: 0, y: 5 }}
-                    animate={{ opacity: 1, y: 0 }}
+                {/* Action Buttons - positioned at bottom-left of card */}
+                {cardData.learn_more && (
+                  <motion.a
+                    href={cardData.learn_more.startsWith('/') ? cardData.learn_more : `/articles/${cardData.learn_more}`}
+                    className="card-action-button learn-more-button"
+                    onClick={(e) => e.stopPropagation()}
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.3, delay: 0.28 }}
+                    style={{
+                      position: 'absolute',
+                      bottom: '20px',
+                      left: '20px',
+                      zIndex: 20
+                    }}
                   >
-                    {cardData.learn_more && (
-                      <a
-                        href={cardData.learn_more.startsWith('/') ? cardData.learn_more : `/articles/${cardData.learn_more}`}
-                        className="card-action-button learn-more-button"
-                        onClick={(e) => e.stopPropagation()}
-                      >
-                        <i className="ph-bold ph-book-open" />
-                        <span>Learn More</span>
-                      </a>
-                    )}
-                    {cardData.download_url && (
-                      <a
-                        href={cardData.download_url}
-                        download
-                        className="card-action-button download-button"
-                        onClick={(e) => e.stopPropagation()}
-                      >
-                        <i className="ph-bold ph-download-simple" />
-                        <span>Download</span>
-                      </a>
-                    )}
-                  </motion.div>
+                    <i className="ph-bold ph-book-open" />
+                    <span>Learn More</span>
+                  </motion.a>
+                )}
+                {cardData.download_url && (
+                  <motion.a
+                    href={cardData.download_url}
+                    download
+                    className="card-action-button download-button"
+                    onClick={(e) => e.stopPropagation()}
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.3, delay: 0.35 }}
+                    style={{
+                      position: 'absolute',
+                      bottom: '20px',
+                      left: cardData.learn_more ? '180px' : '20px',
+                      zIndex: 20
+                    }}
+                  >
+                    <i className="ph-bold ph-download-simple" />
+                    <span>Download</span>
+                  </motion.a>
                 )}
 
                 {/* Card Tags */}
@@ -553,14 +562,6 @@ export function InlineContextCard({ trigger, card, cardId }: InlineContextCardPr
           flex-grow: 1;
           text-shadow: 0 2px 6px rgba(0, 0, 0, 0.7), 0 0 3px rgba(255, 255, 255, 0.7);
           font-weight: 400;
-          position: relative;
-          z-index: 10;
-        }
-
-        .card-actions {
-          display: flex;
-          gap: 12px;
-          margin: 16px 0 12px 0;
           position: relative;
           z-index: 10;
         }
