@@ -11,7 +11,9 @@ export type CardType =
   | 'operational-pattern'
   | 'market-insight'
   | 'technical-concept'
-  | 'article-link';
+  | 'article-link'
+  | 'trend'
+  | 'quote';
 
 export interface Card {
   id: string;

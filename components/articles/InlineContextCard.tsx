@@ -97,6 +97,18 @@ const cardTypeStyles: Record<CardType, {
     label: 'RELATED ARTICLE',
     backgroundImage: '/images/cards/example-cards.png'
   },
+  trend: {
+    color: '#9F7AEA',
+    badgeColor: '#B794F4',
+    label: 'TREND',
+    backgroundImage: '/images/cards/market-insights.png'
+  },
+  quote: {
+    color: '#ED8936',
+    badgeColor: '#F6AD55',
+    label: 'QUOTE',
+    backgroundImage: '/images/cards/example-cards.png'
+  },
 };
 
 export function InlineContextCard({ trigger, card, cardId }: InlineContextCardProps) {
@@ -322,7 +334,7 @@ export function InlineContextCard({ trigger, card, cardId }: InlineContextCardPr
                   >
                     {cardData.learn_more && (
                       <a
-                        href={`/articles/${cardData.learn_more}`}
+                        href={cardData.learn_more.startsWith('/') ? cardData.learn_more : `/articles/${cardData.learn_more}`}
                         className="card-action-button learn-more-button"
                         onClick={(e) => e.stopPropagation()}
                       >
