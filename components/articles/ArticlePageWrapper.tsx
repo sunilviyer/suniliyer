@@ -68,7 +68,9 @@ export function ArticlePageWrapper({
       type: card.card_type,
       summary: card.summary || '',
       tags: card.tags || [],
-      articleSlug: card.articleSlug
+      articleSlug: card.articleSlug,
+      download_url: card.download_url,
+      learn_more: card.learn_more
     };
     return acc;
   }, {} as Record<string, CardData>);
