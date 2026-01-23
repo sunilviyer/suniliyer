@@ -27,6 +27,8 @@ export interface Card {
   status?: string;
   articleSlug?: string; // For article-link type
   tags?: string[];
+  download_url?: string; // For downloadable resources
+  learn_more?: string; // Article slug for "Learn More" link
 }
 
 export interface ArticleContent {
@@ -80,7 +82,9 @@ export async function getCardsByIds(cardIds: string[]): Promise<Card[]> {
         full_content,
         used_in_articles,
         usage_count,
-        status
+        status,
+        download_url,
+        learn_more
       FROM cards
       WHERE card_id = ANY(${cardIds})
       AND status = 'published'
@@ -100,7 +104,9 @@ export async function getCardsByIds(cardIds: string[]): Promise<Card[]> {
       usage_count: row.usage_count as number | undefined,
       status: row.status as string | undefined,
       tags: (row.full_content as Record<string, unknown>)?.tags as string[] || [],
-      articleSlug: (row.full_content as Record<string, unknown>)?.articleSlug as string | undefined
+      articleSlug: (row.full_content as Record<string, unknown>)?.articleSlug as string | undefined,
+      download_url: row.download_url as string | undefined,
+      learn_more: row.learn_more as string | undefined
     }));
   } catch (error) {
     console.error('Error fetching cards:', error);
@@ -125,7 +131,9 @@ export async function getCardsByArticle(articleSlug: string): Promise<Card[]> {
         full_content,
         used_in_articles,
         usage_count,
-        status
+        status,
+        download_url,
+        learn_more
       FROM cards
       WHERE ${articleSlug} = ANY(used_in_articles)
       AND status = 'published'
@@ -145,7 +153,9 @@ export async function getCardsByArticle(articleSlug: string): Promise<Card[]> {
       usage_count: row.usage_count as number | undefined,
       status: row.status as string | undefined,
       tags: (row.full_content as Record<string, unknown>)?.tags as string[] || [],
-      articleSlug: (row.full_content as Record<string, unknown>)?.articleSlug as string | undefined
+      articleSlug: (row.full_content as Record<string, unknown>)?.articleSlug as string | undefined,
+      download_url: row.download_url as string | undefined,
+      learn_more: row.learn_more as string | undefined
     }));
   } catch (error) {
     console.error('Error fetching cards by article:', error);
@@ -170,7 +180,9 @@ export async function getCardById(cardId: string): Promise<Card | null> {
         full_content,
         used_in_articles,
         usage_count,
-        status
+        status,
+        download_url,
+        learn_more
       FROM cards
       WHERE card_id = ${cardId}
       AND status = 'published'
@@ -195,7 +207,9 @@ export async function getCardById(cardId: string): Promise<Card | null> {
       usage_count: row.usage_count as number | undefined,
       status: row.status as string | undefined,
       tags: (row.full_content as Record<string, unknown>)?.tags as string[] || [],
-      articleSlug: (row.full_content as Record<string, unknown>)?.articleSlug as string | undefined
+      articleSlug: (row.full_content as Record<string, unknown>)?.articleSlug as string | undefined,
+      download_url: row.download_url as string | undefined,
+      learn_more: row.learn_more as string | undefined
     };
   } catch (error) {
     console.error('Error fetching card by id:', error);

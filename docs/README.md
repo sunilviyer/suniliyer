@@ -8,13 +8,21 @@ Complete documentation for managing content in the AIDefence database-driven art
 
 ### Getting Started
 
-1. **[QUICK-REFERENCE.md](./QUICK-REFERENCE.md)** - Start here!
+1. **[ARTICLE-PAGE-TEMPLATE.md](./ARTICLE-PAGE-TEMPLATE.md)** - 📋 Ready-to-Use Templates ⭐
+   - **Complete single article template** with full code
+   - **Batch article template** for multiple articles
+   - **Comprehensive HTML examples** for all content types
+   - **Resource examples** (PDFs, videos, Excel, etc.)
+   - **Card marker patterns** and best practices
+   - **Copy-paste ready** - Start building immediately!
+
+2. **[QUICK-REFERENCE.md](./QUICK-REFERENCE.md)** - Start here!
    - Cheat sheet for common operations
    - Fast lookup for syntax and commands
    - Perfect for daily reference
    - **HTML Templates** - Quick copy-paste snippets
 
-2. **[FORMATTING-GUIDE.md](./FORMATTING-GUIDE.md)** - 🎨 HTML, JSON & YAML Formatting ⭐
+3. **[FORMATTING-GUIDE.md](./FORMATTING-GUIDE.md)** - 🎨 HTML, JSON & YAML Formatting
    - **Complete HTML formatting rules** with examples
    - **JSON content structure** specification
    - **YAML to JSON migration** scripts and guide
@@ -23,7 +31,7 @@ Complete documentation for managing content in the AIDefence database-driven art
    - Common formatting mistakes to avoid
    - Validation checklists
 
-3. **[ARTICLES-TABLE-GUIDE.md](./ARTICLES-TABLE-GUIDE.md)** - Complete Guide
+4. **[ARTICLES-TABLE-GUIDE.md](./ARTICLES-TABLE-GUIDE.md)** - Complete Guide
    - Database schema documentation
    - Content structure and interfaces
    - Adding new articles (step-by-step)
@@ -31,7 +39,7 @@ Complete documentation for managing content in the AIDefence database-driven art
    - Full examples and best practices
    - ~500 lines of detailed documentation
 
-4. **[RESOURCE-STRUCTURE-GUIDE.md](./RESOURCE-STRUCTURE-GUIDE.md)** - Resources
+5. **[RESOURCE-STRUCTURE-GUIDE.md](./RESOURCE-STRUCTURE-GUIDE.md)** - Resources
    - Rich media resource system (PDFs, Excel, videos)
    - Type icons and formatting
    - Academic citation support
@@ -76,8 +84,9 @@ Use `scripts/templates/batch-add-articles-template.ts` for adding multiple artic
 ```
 docs/
 ├── README.md                          # This file - Overview
+├── ARTICLE-PAGE-TEMPLATE.md           # ⭐ Complete ready-to-use templates
 ├── QUICK-REFERENCE.md                 # Cheat sheet
-├── FORMATTING-GUIDE.md                # ⭐ HTML, JSON, YAML formatting
+├── FORMATTING-GUIDE.md                # HTML, JSON, YAML formatting
 ├── ARTICLES-TABLE-GUIDE.md            # Complete guide
 ├── RESOURCE-STRUCTURE-GUIDE.md        # Resources guide
 ├── resource-structure-proposal.md     # Technical spec
@@ -94,9 +103,9 @@ scripts/templates/
 
 ### Task: Add a New Article
 
-1. Read: [ARTICLES-TABLE-GUIDE.md](./ARTICLES-TABLE-GUIDE.md) - Database Schema section
-2. Use: `scripts/templates/add-single-article-template.ts`
-3. Reference: [QUICK-REFERENCE.md](./QUICK-REFERENCE.md) - HTML Templates
+1. **Quick Start**: [ARTICLE-PAGE-TEMPLATE.md](./ARTICLE-PAGE-TEMPLATE.md) - Copy-paste ready templates
+2. Reference: [QUICK-REFERENCE.md](./QUICK-REFERENCE.md) - HTML Templates
+3. Deep dive: [ARTICLES-TABLE-GUIDE.md](./ARTICLES-TABLE-GUIDE.md) - Database Schema
 
 ### Task: Add Resources to Existing Article
 
@@ -182,15 +191,18 @@ Supports both simple strings and rich objects:
 
 | What You Need | Where to Look |
 |---------------|---------------|
-| **HTML formatting rules** | ⭐ [FORMATTING-GUIDE.md](./FORMATTING-GUIDE.md) - HTML Formatting Rules |
-| **JSON content structure** | ⭐ [FORMATTING-GUIDE.md](./FORMATTING-GUIDE.md) - Content Format |
-| **YAML to JSON migration** | ⭐ [FORMATTING-GUIDE.md](./FORMATTING-GUIDE.md) - Migration Guide |
-| **Card marker syntax** | ⭐ [FORMATTING-GUIDE.md](./FORMATTING-GUIDE.md) - Card Markers |
+| **Ready-to-use article templates** | ⭐ [ARTICLE-PAGE-TEMPLATE.md](./ARTICLE-PAGE-TEMPLATE.md) - Complete Templates |
+| **HTML content examples** | ⭐ [ARTICLE-PAGE-TEMPLATE.md](./ARTICLE-PAGE-TEMPLATE.md) - HTML Examples |
+| **Resource examples** | ⭐ [ARTICLE-PAGE-TEMPLATE.md](./ARTICLE-PAGE-TEMPLATE.md) - Resource Examples |
+| **HTML formatting rules** | [FORMATTING-GUIDE.md](./FORMATTING-GUIDE.md) - HTML Formatting Rules |
+| **JSON content structure** | [FORMATTING-GUIDE.md](./FORMATTING-GUIDE.md) - Content Format |
+| **YAML to JSON migration** | [FORMATTING-GUIDE.md](./FORMATTING-GUIDE.md) - Migration Guide |
+| **Card marker syntax** | [FORMATTING-GUIDE.md](./FORMATTING-GUIDE.md) - Card Markers |
 | Quick syntax lookup | [QUICK-REFERENCE.md](./QUICK-REFERENCE.md) |
 | Database schema | [ARTICLES-TABLE-GUIDE.md](./ARTICLES-TABLE-GUIDE.md) - Database Schema |
 | Resource formatting | [RESOURCE-STRUCTURE-GUIDE.md](./RESOURCE-STRUCTURE-GUIDE.md) |
 | Complete examples | [ARTICLES-TABLE-GUIDE.md](./ARTICLES-TABLE-GUIDE.md) - Examples |
-| Code templates | `scripts/templates/` |
+| Code templates | `scripts/templates/` or [ARTICLE-PAGE-TEMPLATE.md](./ARTICLE-PAGE-TEMPLATE.md) |
 | Resource examples | `docs/risk-article-resources-template.json` |
 
 ---
@@ -238,14 +250,14 @@ Supports both simple strings and rich objects:
 ## 🎓 Learning Path
 
 ### Beginner
-1. Read [QUICK-REFERENCE.md](./QUICK-REFERENCE.md)
-2. Review existing articles in database
-3. Try adding a simple article using template
+1. Start with [ARTICLE-PAGE-TEMPLATE.md](./ARTICLE-PAGE-TEMPLATE.md) - Copy a template
+2. Read [QUICK-REFERENCE.md](./QUICK-REFERENCE.md) - Quick syntax guide
+3. Try adding a simple article using the template
 
 ### Intermediate
 1. Read [ARTICLES-TABLE-GUIDE.md](./ARTICLES-TABLE-GUIDE.md) completely
-2. Add articles with cards
-3. Include rich resources
+2. Use [ARTICLE-PAGE-TEMPLATE.md](./ARTICLE-PAGE-TEMPLATE.md) HTML examples
+3. Add articles with cards and rich resources
 
 ### Advanced
 1. Read [RESOURCE-STRUCTURE-GUIDE.md](./RESOURCE-STRUCTURE-GUIDE.md)

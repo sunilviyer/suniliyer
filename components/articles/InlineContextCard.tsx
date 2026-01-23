@@ -13,6 +13,8 @@ interface CardData {
   summary: string;
   tags?: string[];
   articleSlug?: string; // For article-link type
+  download_url?: string; // For downloadable resources
+  learn_more?: string; // Article slug for "Learn More" link
 }
 
 interface InlineContextCardProps {
@@ -310,6 +312,38 @@ export function InlineContextCard({ trigger, card, cardId }: InlineContextCardPr
                   {cardData.summary}
                 </motion.div>
 
+                {/* Action Buttons */}
+                {(cardData.learn_more || cardData.download_url) && (
+                  <motion.div
+                    className="card-actions"
+                    initial={{ opacity: 0, y: 5 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.3, delay: 0.28 }}
+                  >
+                    {cardData.learn_more && (
+                      <a
+                        href={`/articles/${cardData.learn_more}`}
+                        className="card-action-button learn-more-button"
+                        onClick={(e) => e.stopPropagation()}
+                      >
+                        <i className="ph-bold ph-book-open" />
+                        <span>Learn More</span>
+                      </a>
+                    )}
+                    {cardData.download_url && (
+                      <a
+                        href={cardData.download_url}
+                        download
+                        className="card-action-button download-button"
+                        onClick={(e) => e.stopPropagation()}
+                      >
+                        <i className="ph-bold ph-download-simple" />
+                        <span>Download</span>
+                      </a>
+                    )}
+                  </motion.div>
+                )}
+
                 {/* Card Tags */}
                 {cardData.tags && cardData.tags.length > 0 && (
                   <motion.div
@@ -508,6 +542,55 @@ export function InlineContextCard({ trigger, card, cardId }: InlineContextCardPr
           font-weight: 400;
           position: relative;
           z-index: 10;
+        }
+
+        .card-actions {
+          display: flex;
+          gap: 12px;
+          margin: 16px 0 12px 0;
+          position: relative;
+          z-index: 10;
+        }
+
+        .card-action-button {
+          display: inline-flex;
+          align-items: center;
+          gap: 8px;
+          padding: 10px 18px;
+          border-radius: 20px;
+          font-family: 'DM Sans', -apple-system, sans-serif;
+          font-size: 14px;
+          font-weight: 600;
+          text-decoration: none;
+          cursor: pointer;
+          transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+          border: 2px solid rgba(255, 255, 255, 0.4);
+          background: rgba(255, 255, 255, 0.15);
+          backdrop-filter: blur(10px);
+          color: #ffffff !important;
+          text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .card-action-button:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+          background: rgba(255, 255, 255, 0.25);
+          border-color: rgba(255, 255, 255, 0.6);
+        }
+
+        .card-action-button i {
+          font-size: 18px;
+        }
+
+        .learn-more-button:hover {
+          background: rgba(99, 102, 241, 0.3);
+          border-color: rgba(99, 102, 241, 0.6);
+        }
+
+        .download-button:hover {
+          background: rgba(56, 161, 105, 0.3);
+          border-color: rgba(56, 161, 105, 0.6);
         }
 
         .card-tags {
