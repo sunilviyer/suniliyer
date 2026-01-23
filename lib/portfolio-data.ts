@@ -39,7 +39,7 @@ export const portfolioData: PortfolioItemData[] = [
     id: 5,
     title: "Governance Learning Path",
     description: "Interactive AI governance training and certification platform",
-    image: "/images/portfolio/governance-learning-path.png",
+    image: "/images/portfolio/governance-learning-path.webp",
     link: "/coming-soon",
   },
 ];
