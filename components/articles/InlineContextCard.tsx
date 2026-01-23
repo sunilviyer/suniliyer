@@ -340,8 +340,7 @@ export function InlineContextCard({ trigger, card, cardId }: InlineContextCardPr
                       zIndex: 20
                     }}
                   >
-                    <i className="ph-bold ph-book-open" />
-                    <span>Learn More</span>
+                    Learn More
                   </motion.a>
                 )}
                 {cardData.download_url && (
@@ -356,12 +355,11 @@ export function InlineContextCard({ trigger, card, cardId }: InlineContextCardPr
                     style={{
                       position: 'absolute',
                       bottom: '20px',
-                      left: cardData.learn_more ? '180px' : '20px',
+                      left: cardData.learn_more ? '160px' : '20px',
                       zIndex: 20
                     }}
                   >
-                    <i className="ph-bold ph-download-simple" />
-                    <span>Download</span>
+                    Download
                   </motion.a>
                 )}
 
@@ -569,42 +567,49 @@ export function InlineContextCard({ trigger, card, cardId }: InlineContextCardPr
         .card-action-button {
           display: inline-flex;
           align-items: center;
-          gap: 8px;
-          padding: 10px 18px;
-          border-radius: 20px;
-          font-family: 'DM Sans', -apple-system, sans-serif;
+          justify-content: center;
+          padding: 12px 24px;
+          border-radius: 25px;
+          font-family: var(--font-funnel-sans), -apple-system, sans-serif;
           font-size: 14px;
           font-weight: 600;
           text-decoration: none;
           cursor: pointer;
-          transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-          border: 2px solid rgba(255, 255, 255, 0.4);
-          background: rgba(255, 255, 255, 0.15);
-          backdrop-filter: blur(10px);
+          transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+          border: none;
           color: #ffffff !important;
-          text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
-          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+          text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
         }
 
         .card-action-button:hover {
-          transform: translateY(-2px);
-          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-          background: rgba(255, 255, 255, 0.25);
-          border-color: rgba(255, 255, 255, 0.6);
+          animation: pulse 0.6s ease-in-out;
+          box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
         }
 
-        .card-action-button i {
-          font-size: 18px;
+        @keyframes pulse {
+          0%, 100% {
+            transform: scale(1);
+          }
+          50% {
+            transform: scale(1.05);
+          }
+        }
+
+        .learn-more-button {
+          background: #90a955;
         }
 
         .learn-more-button:hover {
-          background: rgba(99, 102, 241, 0.3);
-          border-color: rgba(99, 102, 241, 0.6);
+          background: #a3bd6b;
+        }
+
+        .download-button {
+          background: #da627d;
         }
 
         .download-button:hover {
-          background: rgba(56, 161, 105, 0.3);
-          border-color: rgba(56, 161, 105, 0.6);
+          background: #e37890;
         }
 
         .card-tags {
