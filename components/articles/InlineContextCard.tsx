@@ -194,192 +194,147 @@ export function InlineContextCard({ trigger, card, cardId }: InlineContextCardPr
 
         <AnimatePresence>
           {isExpanded && (
-            <motion.div
-              className="inline-card-expanded"
-              initial={{
-                height: 0,
-                width: 0,
-                opacity: 0,
-                scale: 0.9
-              }}
-              animate={{
-                height: 'auto',
-                width: 1050,
-                opacity: 1,
-                scale: 1
-              }}
-              exit={{
-                height: 0,
-                width: 0,
-                opacity: 0,
-                scale: 0.9
-              }}
-              transition={{
-                duration: 0.35,
-                ease: [0.4, 0, 0.2, 1]
-              }}
-              style={{
-                borderRadius: '32px',
-                overflow: 'hidden'
-              }}
-            >
-              {/* Shadow Layer */}
+            <>
+              {/* Backdrop Blur Overlay */}
               <motion.div
-                className="card-shadow-layer"
-                initial={{ x: 0, y: 0 }}
-                animate={{ x: 4, y: 4 }}
-                transition={{ duration: 0.3, delay: 0.1 }}
-                style={{
-                  boxShadow: `0 0 30px ${style.color}80, 0 0 60px ${style.color}40`,
-                  borderRadius: '32px'
-                }}
+                className="card-backdrop"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.25 }}
+                onClick={handleClick}
               />
 
-              {/* Main Card with Background Image */}
+              {/* Modal Card Container */}
               <motion.div
-                className="card-main-layer"
-                style={{
-                  boxShadow: `0 0 0 3px ${style.color}, 0 0 30px ${style.color}60, 0 8px 24px rgba(0, 0, 0, 0.3)`,
-                  borderRadius: '32px',
-                  padding: '48px',
-                  position: 'relative',
-                  overflow: 'hidden',
-                  isolation: 'isolate'
+                className="card-modal-container"
+                initial={{ opacity: 0, scale: 0.9, y: 20 }}
+                animate={{ opacity: 1, scale: 1, y: 0 }}
+                exit={{ opacity: 0, scale: 0.95, y: 10 }}
+                transition={{
+                  duration: 0.35,
+                  ease: [0.4, 0, 0.2, 1]
                 }}
               >
-                {/* Blurred Background Image Layer */}
-                <div
-                  className="card-background-blur"
+                {/* Main Card */}
+                <motion.div
+                  className="card-main-layer"
                   style={{
-                    backgroundImage: `url(${style.backgroundImage})`,
+                    borderRadius: '24px',
+                    padding: '0',
+                    position: 'relative',
+                    overflow: 'hidden',
+                    isolation: 'isolate',
+                    background: '#1a1a1a'
                   }}
-                />
-                {/* Close Button - positioned at top-right of card */}
-                <div
-                  onClick={handleClick}
-                  style={{
-                    color: '#ffffff',
-                    position: 'absolute',
-                    top: '20px',
-                    right: '20px',
-                    background: 'rgba(0, 0, 0, 0.8)',
-                    border: '2px solid rgba(255, 255, 255, 0.3)',
-                    borderRadius: '50%',
-                    width: '40px',
-                    height: '40px',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    cursor: 'pointer',
-                    fontSize: '20px',
-                    fontWeight: '700',
-                    backdropFilter: 'blur(10px)',
-                    zIndex: 20,
-                    margin: 0,
-                    padding: 0
-                  }}
-                  onMouseEnter={(e) => e.currentTarget.style.background = 'rgba(0, 0, 0, 0.9)'}
-                  onMouseLeave={(e) => e.currentTarget.style.background = 'rgba(0, 0, 0, 0.8)'}
                 >
-                  ✕
-                </div>
-
-                {/* Card Header */}
-                <motion.div
-                  className="card-header"
-                  initial={{ opacity: 0, y: -10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.3, delay: 0.15 }}
-                >
-                  <span
-                    className="card-type-label"
+                  {/* Blurred Background Image Layer */}
+                  <div
+                    className="card-background-blur"
                     style={{
-                      backgroundColor: style.badgeColor,
-                      color: '#ffffff'
+                      backgroundImage: `url(${style.backgroundImage})`,
                     }}
-                  >
-                    {style.label}
-                  </span>
-                </motion.div>
+                  />
 
-                {/* Card Title */}
-                <motion.div
-                  className="card-title"
-                  initial={{ opacity: 0, y: -5 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.3, delay: 0.2 }}
-                  style={{ color: '#ffffff' }}
-                >
-                  {cardData.title}
-                </motion.div>
+                  {/* Card Content Area */}
+                  <div className="card-content-area">
+                    {/* Close Button - positioned at top-right */}
+                    <div
+                      onClick={handleClick}
+                      className="card-close-button"
+                    >
+                      ✕
+                    </div>
 
-                {/* Card Summary */}
-                <motion.div
-                  className="card-summary"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ duration: 0.3, delay: 0.25 }}
-                  style={{ color: '#ffffff' }}
-                >
-                  {cardData.summary}
-                </motion.div>
-
-                {/* Action Buttons - positioned at bottom-left of card */}
-                {cardData.learn_more && (
-                  <motion.a
-                    href={cardData.learn_more.startsWith('/') ? cardData.learn_more : `/articles/${cardData.learn_more}`}
-                    className="card-action-button learn-more-button"
-                    onClick={(e) => e.stopPropagation()}
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.3, delay: 0.28 }}
-                    style={{
-                      position: 'absolute',
-                      bottom: '20px',
-                      left: '20px',
-                      zIndex: 20
-                    }}
-                  >
-                    Learn More
-                  </motion.a>
-                )}
-                {cardData.download_url && (
-                  <motion.a
-                    href={cardData.download_url}
-                    download
-                    className="card-action-button download-button"
-                    onClick={(e) => e.stopPropagation()}
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.3, delay: 0.35 }}
-                    style={{
-                      position: 'absolute',
-                      bottom: '20px',
-                      left: cardData.learn_more ? '160px' : '20px',
-                      zIndex: 20
-                    }}
-                  >
-                    Download
-                  </motion.a>
-                )}
-
-                {/* Card Tags */}
-                {cardData.tags && cardData.tags.length > 0 && (
-                  <motion.div
-                    className="card-tags"
-                    initial={{ opacity: 0, y: 5 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.3, delay: 0.3 }}
-                  >
-                    {cardData.tags.map((tag, index) => (
-                      <span key={index} className="card-tag" style={{ color: '#ffffff' }}>
-                        {tag}
+                    {/* Card Header */}
+                    <motion.div
+                      className="card-header"
+                      initial={{ opacity: 0, y: -10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.3, delay: 0.15 }}
+                    >
+                      <span
+                        className="card-type-label"
+                        style={{
+                          backgroundColor: style.badgeColor,
+                          color: '#ffffff'
+                        }}
+                      >
+                        {style.label}
                       </span>
-                    ))}
-                  </motion.div>
-                )}
+                    </motion.div>
+
+                    {/* Card Title */}
+                    <motion.div
+                      className="card-title"
+                      initial={{ opacity: 0, y: -5 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.3, delay: 0.2 }}
+                      style={{ color: '#ffffff' }}
+                    >
+                      {cardData.title}
+                    </motion.div>
+
+                    {/* Card Summary */}
+                    <motion.div
+                      className="card-summary"
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      transition={{ duration: 0.3, delay: 0.25 }}
+                      style={{ color: '#ffffff' }}
+                    >
+                      {cardData.summary}
+                    </motion.div>
+
+                    {/* Card Tags */}
+                    {cardData.tags && cardData.tags.length > 0 && (
+                      <motion.div
+                        className="card-tags"
+                        initial={{ opacity: 0, y: 5 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.3, delay: 0.3 }}
+                      >
+                        {cardData.tags.map((tag, index) => (
+                          <span key={index} className="card-tag" style={{ color: '#ffffff' }}>
+                            {tag}
+                          </span>
+                        ))}
+                      </motion.div>
+                    )}
+
+                    {/* Action Buttons - Flexbox Container */}
+                    {(cardData.learn_more || cardData.download_url) && (
+                      <motion.div
+                        className="card-actions-container"
+                        initial={{ opacity: 0, y: 10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.3, delay: 0.35 }}
+                      >
+                        {cardData.learn_more && (
+                          <a
+                            href={cardData.learn_more.startsWith('/') ? cardData.learn_more : `/articles/${cardData.learn_more}`}
+                            className="card-action-button learn-more-button"
+                            onClick={(e) => e.stopPropagation()}
+                          >
+                            Learn More
+                          </a>
+                        )}
+                        {cardData.download_url && (
+                          <a
+                            href={cardData.download_url}
+                            download
+                            className="card-action-button download-button"
+                            onClick={(e) => e.stopPropagation()}
+                          >
+                            Download
+                          </a>
+                        )}
+                      </motion.div>
+                    )}
+                  </div>
+                </motion.div>
               </motion.div>
-            </motion.div>
+            </>
           )}
         </AnimatePresence>
       </span>
@@ -398,6 +353,32 @@ export function InlineContextCard({ trigger, card, cardId }: InlineContextCardPr
           display: inline-flex;
           align-items: center;
           gap: 4px;
+        }
+
+        /* Modal Backdrop with Blur */
+        .card-backdrop {
+          position: fixed;
+          inset: 0;
+          background: rgba(0, 0, 0, 0.75);
+          backdrop-filter: blur(12px);
+          -webkit-backdrop-filter: blur(12px);
+          z-index: 9998;
+        }
+
+        /* Modal Container - Centers the Card */
+        .card-modal-container {
+          position: fixed;
+          inset: 0;
+          z-index: 9999;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 20px;
+          pointer-events: none;
+        }
+
+        .card-modal-container > div {
+          pointer-events: auto;
         }
 
         .trigger-text {
@@ -463,30 +444,26 @@ export function InlineContextCard({ trigger, card, cardId }: InlineContextCardPr
         .trigger-text-block :global(.trigger-letter:nth-child(19)) { transition-delay: 540ms; }
         .trigger-text-block :global(.trigger-letter:nth-child(20)) { transition-delay: 570ms; }
 
-        .inline-card-expanded {
-          position: absolute;
-          left: 0;
-          top: calc(100% + 8px);
-          z-index: 1000;
-          border-radius: 32px;
-          overflow: hidden;
-        }
-
-        .card-shadow-layer {
-          position: absolute;
-          inset: 0;
-          background: transparent;
-          border-radius: 32px;
-          filter: blur(8px);
-        }
-
+        /* Main Card Layer */
         .card-main-layer {
           position: relative;
-          border-radius: 32px;
+          border-radius: 24px;
+          width: 100%;
+          max-width: 700px;
+          max-height: 85vh;
+          overflow: hidden;
+          box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4),
+                      0 0 0 1px rgba(255, 255, 255, 0.1);
+        }
+
+        /* Card Content Area with Padding */
+        .card-content-area {
+          position: relative;
           padding: 40px;
-          min-height: 200px;
+          z-index: 10;
           display: flex;
           flex-direction: column;
+          gap: 16px;
         }
 
         .card-background-blur {
@@ -509,21 +486,41 @@ export function InlineContextCard({ trigger, card, cardId }: InlineContextCardPr
           left: 20px;
           right: 20px;
           bottom: 20px;
-          background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
+          background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
           z-index: inherit;
+        }
+
+        /* Close Button */
+        .card-close-button {
+          position: absolute;
+          top: 16px;
+          right: 16px;
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          background: rgba(255, 255, 255, 0.15);
+          border: 1px solid rgba(255, 255, 255, 0.2);
+          backdrop-filter: blur(10px);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+          font-size: 20px;
+          font-weight: 600;
+          color: #ffffff;
+          transition: all 0.2s ease;
+          z-index: 20;
+        }
+
+        .card-close-button:hover {
+          background: rgba(255, 255, 255, 0.25);
+          transform: scale(1.05);
         }
 
         .card-header {
           display: flex;
           align-items: center;
-          margin-bottom: 10px;
-          position: relative;
-          z-index: 10;
-        }
-
-        .card-header > * {
-          position: relative;
-          z-index: 10;
+          margin: 0;
         }
 
         .card-type-label {
@@ -541,37 +538,40 @@ export function InlineContextCard({ trigger, card, cardId }: InlineContextCardPr
 
         .card-title {
           font-family: 'Playfair Display', Georgia, serif;
-          font-size: 24px;
+          font-size: 26px;
           font-weight: 700;
           color: #ffffff !important;
-          margin: 0 0 14px 0;
+          margin: 0;
           line-height: 1.3;
-          text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8), 0 0 4px rgba(255, 255, 255, 0.8);
-          position: relative;
-          z-index: 10;
+          text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
         }
 
         .card-summary {
-          font-family: 'DM Sans', -apple-system, sans-serif;
+          font-family: var(--font-funnel-sans), -apple-system, sans-serif;
           font-size: 16px;
-          line-height: 1.65;
-          color: #ffffff !important;
-          margin: 0 0 14px 0;
-          flex-grow: 1;
-          text-shadow: 0 2px 6px rgba(0, 0, 0, 0.7), 0 0 3px rgba(255, 255, 255, 0.7);
+          line-height: 1.7;
+          color: rgba(255, 255, 255, 0.95) !important;
+          margin: 0;
+          text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
           font-weight: 400;
-          position: relative;
-          z-index: 10;
+        }
+
+        /* Action Buttons Container - Flexbox */
+        .card-actions-container {
+          display: flex;
+          gap: 12px;
+          margin-top: 8px;
+          flex-wrap: wrap;
         }
 
         .card-action-button {
           display: inline-flex;
           align-items: center;
           justify-content: center;
-          padding: 12px 24px;
-          border-radius: 25px;
+          padding: 14px 28px;
+          border-radius: 28px;
           font-family: var(--font-funnel-sans), -apple-system, sans-serif;
-          font-size: 14px;
+          font-size: 15px;
           font-weight: 600;
           text-decoration: none;
           cursor: pointer;
@@ -579,39 +579,34 @@ export function InlineContextCard({ trigger, card, cardId }: InlineContextCardPr
           border: none;
           color: #ffffff !important;
           text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-          position: absolute;
-          z-index: 20 !important;
+          box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+          flex: 1;
+          min-width: 140px;
         }
 
         .card-action-button:hover {
-          animation: pulse 0.6s ease-in-out;
-          box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+          transform: scale(1.05);
+          box-shadow: 0 6px 24px rgba(0, 0, 0, 0.3);
         }
 
-        @keyframes pulse {
-          0%, 100% {
-            transform: scale(1);
-          }
-          50% {
-            transform: scale(1.05);
-          }
+        .card-action-button:active {
+          transform: scale(0.98);
         }
 
         .learn-more-button {
-          background: #90a955;
+          background: linear-gradient(135deg, #90a955 0%, #a3bd6b 100%);
         }
 
         .learn-more-button:hover {
-          background: #a3bd6b;
+          background: linear-gradient(135deg, #a3bd6b 0%, #b5ce80 100%);
         }
 
         .download-button {
-          background: #da627d;
+          background: linear-gradient(135deg, #da627d 0%, #e37890 100%);
         }
 
         .download-button:hover {
-          background: #e37890;
+          background: linear-gradient(135deg, #e37890 0%, #ec8ea3 100%);
         }
 
         .card-tags {
@@ -639,15 +634,71 @@ export function InlineContextCard({ trigger, card, cardId }: InlineContextCardPr
           z-index: 10;
         }
 
+        /* Mobile Responsive Styles */
         @media (max-width: 768px) {
-          .inline-card-expanded {
-            position: fixed;
-            left: 20px;
-            right: 20px;
-            top: 50%;
-            transform: translateY(-50%);
-            max-width: calc(100vw - 40px);
-            z-index: 10000;
+          .card-modal-container {
+            padding: 16px;
+            align-items: flex-start;
+            padding-top: 60px;
+          }
+
+          .card-main-layer {
+            max-width: 100%;
+            max-height: calc(100vh - 80px);
+          }
+
+          .card-content-area {
+            padding: 32px 24px;
+            gap: 14px;
+          }
+
+          .card-title {
+            font-size: 22px;
+          }
+
+          .card-summary {
+            font-size: 15px;
+            line-height: 1.6;
+          }
+
+          .card-actions-container {
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 12px;
+          }
+
+          .card-action-button {
+            width: 100%;
+            min-height: 48px;
+            padding: 16px 24px;
+            font-size: 16px;
+            min-width: unset;
+          }
+
+          .card-tags {
+            gap: 10px;
+          }
+
+          .card-tag {
+            font-size: 10px;
+            padding: 5px 11px;
+          }
+        }
+
+        /* Small Mobile */
+        @media (max-width: 480px) {
+          .card-content-area {
+            padding: 24px 20px;
+          }
+
+          .card-title {
+            font-size: 20px;
+          }
+
+          .card-close-button {
+            width: 36px;
+            height: 36px;
+            font-size: 18px;
           }
         }
       `}</style>
