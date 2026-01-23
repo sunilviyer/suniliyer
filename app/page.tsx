@@ -433,7 +433,6 @@ export default function HomePage() {
                 <InitialsPhotoReveal
                   photoSrc="/images/Sunil.jpg"
                   initials="SVI"
-                  name="Sunil Iyer"
                 />
               </div>
             </div>
