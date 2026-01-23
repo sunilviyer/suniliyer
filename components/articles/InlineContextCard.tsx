@@ -503,6 +503,7 @@ export function InlineContextCard({ trigger, card, cardId }: InlineContextCardPr
           right: 20px;
           bottom: 20px;
           background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
+          z-index: inherit;
         }
 
         .card-header {
