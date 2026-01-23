@@ -5,10 +5,9 @@ import { useState } from 'react';
 interface InitialsPhotoRevealProps {
   photoSrc: string;
   initials: string;
-  name: string;
 }
 
-export function InitialsPhotoReveal({ photoSrc, initials, name }: InitialsPhotoRevealProps) {
+export function InitialsPhotoReveal({ photoSrc, initials }: InitialsPhotoRevealProps) {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
