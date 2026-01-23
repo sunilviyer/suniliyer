@@ -9,7 +9,9 @@ export interface CardData {
   type: CardType;
   summary: string;
   tags: string[];
-  articleSlug?: string;
+  articleSlug?: string; // For article-link type
+  download_url?: string; // For downloadable resources
+  learn_more?: string; // Article slug for "Learn More" link
 }
 
 interface CardContextValue {
