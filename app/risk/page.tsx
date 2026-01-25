@@ -12,7 +12,7 @@ const riskCards = [
     title: 'When AI Goes Wrong',
     slug: 'when-ai-goes-wrong',
     tldr: 'Real-world AI failures and their consequences: From hiring bias to autonomous vehicle crashes',
-    image: 'ai-safety-failures.webp',
+    image: 'when-ai-goes-wrong.webp',
     era: 'Overview',
     tags: ['Failures', 'Case Studies']
   },
@@ -48,7 +48,7 @@ const riskCards = [
     title: 'Deepfakes & Synthetic Media',
     slug: 'deepfakes-synthetic-media',
     tldr: 'Synthetic media threats: AI-generated content that erodes truth and trust',
-    image: 'deepfakes-trust-crisis.webp',
+    image: 'deepfakes-synthetic-media.webp',
     era: 'Misuse Risk',
     tags: ['Deepfakes', 'Misinformation']
   },
@@ -57,7 +57,7 @@ const riskCards = [
     title: 'AI Misinformation',
     slug: 'ai-misinformation',
     tldr: 'Threats to democratic processes: AI-powered disinformation campaigns',
-    image: 'ai-misinformation-democracy.webp',
+    image: 'ai-misinformation.webp',
     era: 'Societal Risk',
     tags: ['Disinformation', 'Trust']
   },
@@ -236,13 +236,12 @@ export default function NewRiskPage() {
           <div className="headline-content">
             <div className="headline-image-card">
               <Image
-                src="/images/headercards/risk-header.png"
+                src="/images/headercards/risk-header.webp"
                 alt="AI Risks: Security, Bias & Safety"
                 fill
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px"
                 style={{ objectFit: 'cover' }}
                 priority
-                unoptimized
               />
               <div className="headline-overlay">
                 <h1>AI Risks: Security, Bias & Safety</h1>

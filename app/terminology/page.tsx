@@ -12,7 +12,7 @@ const terminologyCards = [
     title: 'The AI Technology Stack',
     slug: 'ai-technology-stack',
     tldr: 'The infrastructure powering AI: From chips to clouds to models',
-    image: 'model-size-scale.webp',
+    image: 'ai-technology-stack.webp',
     era: 'Infrastructure',
     tags: ['Infrastructure', 'Stack']
   },
@@ -21,7 +21,7 @@ const terminologyCards = [
     title: 'AI vs Automation',
     slug: 'ai-vs-automation',
     tldr: 'Understanding the critical difference between rule-based automation and adaptive intelligence',
-    image: 'machine-learning-terminology.webp',
+    image: 'ai-vs-automation.webp',
     era: 'Fundamentals',
     tags: ['Distinction', 'Concepts']
   },
@@ -30,7 +30,7 @@ const terminologyCards = [
     title: 'The Data Behind AI',
     slug: 'data-behind-ai',
     tldr: 'How data quality, quantity, and provenance determine AI system behavior',
-    image: 'training-validation-test.webp',
+    image: 'data-behind-ai.webp',
     era: 'Fundamentals',
     tags: ['Data', 'Training']
   },
@@ -39,7 +39,7 @@ const terminologyCards = [
     title: 'Foundation Models',
     slug: 'foundation-models',
     tldr: 'Massive pre-trained models that power modern AI applications',
-    image: 'transformers-architecture.webp',
+    image: 'foundation-models.webp',
     era: 'Modern AI',
     tags: ['Foundation', 'Scale']
   },
@@ -48,7 +48,7 @@ const terminologyCards = [
     title: 'Multimodal AI',
     slug: 'multimodal-ai',
     tldr: 'AI systems that understand and generate across text, images, audio, and video',
-    image: 'embeddings-vectors.webp',
+    image: 'multimodal-ai.webp',
     era: 'Emerging',
     tags: ['Multimodal', 'Integration']
   },
@@ -57,7 +57,7 @@ const terminologyCards = [
     title: 'AI Compute Requirements',
     slug: 'ai-compute',
     tldr: 'The massive computational resources required to train and run modern AI systems',
-    image: 'inference-vs-training.webp',
+    image: 'ai-compute.webp',
     era: 'Resources',
     tags: ['Compute', 'Cost']
   },
@@ -66,7 +66,7 @@ const terminologyCards = [
     title: 'Environmental Cost of AI',
     slug: 'environmental-cost-ai',
     tldr: 'Understanding the energy consumption and carbon footprint of AI development',
-    image: 'hyperparameters-vs-parameters.webp',
+    image: 'environmental-cost-ai.webp',
     era: 'Sustainability',
     tags: ['Environment', 'Energy']
   },
@@ -75,7 +75,7 @@ const terminologyCards = [
     title: 'The Black Box Problem',
     slug: 'black-box-problem',
     tldr: 'Why AI explainability matters: Understanding opaque decision-making systems',
-    image: 'neural-networks-basics.webp',
+    image: 'black-box-problem.webp',
     era: 'Challenges',
     tags: ['Explainability', 'XAI']
   }
@@ -236,13 +236,12 @@ export default function NewTerminologyPage() {
           <div className="headline-content">
             <div className="headline-image-card">
               <Image
-                src="/images/headercards/terminology-header.png"
+                src="/images/headercards/terminology-header.webp"
                 alt="AI Terminology: Essential Concepts"
                 fill
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px"
                 style={{ objectFit: 'cover' }}
                 priority
-                unoptimized
               />
               <div className="headline-overlay">
                 <h1>AI Terminology: Essential Concepts</h1>

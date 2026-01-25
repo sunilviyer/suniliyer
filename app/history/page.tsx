@@ -30,7 +30,7 @@ const historyCards = [
     title: 'Types of AI Intelligence',
     slug: 'types-of-ai-intelligence',
     tldr: 'Narrow AI is an exceptional specialist, brilliant at one defined task but incapable of performing others without retraining',
-    image: 'machine-learning-explained.webp',
+    image: 'types-of-ai-intelligence.webp',
     era: '1980s-Present',
     tags: ['AI Intelligence', 'AGI']
   },
@@ -39,7 +39,7 @@ const historyCards = [
     title: 'How Machines Learn',
     slug: 'how-machines-learn',
     tldr: 'Machine learning creates software by finding patterns in data instead of following human-written rules',
-    image: 'deep-learning-explained.webp',
+    image: 'how-machines-learn.webp',
     era: '1980s-1990s',
     tags: ['Machine Learning', 'Training']
   },
@@ -48,7 +48,7 @@ const historyCards = [
     title: 'Deep Learning Decoded',
     slug: 'deep-learning-decoded',
     tldr: 'Neural networks that mirror the human brain: The breakthrough that changed everything',
-    image: 'foundation-models.webp',
+    image: 'deep-learning-decoded.webp',
     era: '2010s',
     tags: ['Deep Learning', 'Breakthrough']
   },
@@ -236,13 +236,12 @@ export default function NewHistoryPage() {
           <div className="headline-content">
             <div className="headline-image-card">
               <Image
-                src="/images/headercards/history-header.png"
+                src="/images/headercards/history-header.webp"
                 alt="History from Dartmouth to DeepMind"
                 fill
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px"
                 style={{ objectFit: 'cover' }}
                 priority
-                unoptimized
               />
               <div className="headline-overlay">
                 <h1>History from Dartmouth to DeepMind</h1>

@@ -12,7 +12,7 @@ const responsibilityCards = [
     title: 'The EU AI Act Explained',
     slug: 'eu-ai-act-explained',
     tldr: 'Europe\'s landmark regulation: understanding risk-based AI governance',
-    image: 'the-eu-ai-act-europes-landmark-regulation-explained.webp',
+    image: 'eu-ai-act-explained.webp',
     era: 'Regulation',
     tags: ['EU', 'Governance']
   },
@@ -21,7 +21,7 @@ const responsibilityCards = [
     title: 'NIST AI RMF Complete Guide',
     slug: 'nist-ai-rmf',
     tldr: 'The US standard for AI risk management: Building responsible AI programs',
-    image: 'ai-governance-frameworks-building-your-organizations-approach.webp',
+    image: 'nist-ai-rmf.webp',
     era: 'Framework',
     tags: ['NIST', 'Risk Management']
   },
@@ -30,7 +30,7 @@ const responsibilityCards = [
     title: 'ISO/IEC 42001 AI Management',
     slug: 'iso-42001',
     tldr: 'International standard for AI management systems and organizational governance',
-    image: 'ai-and-intellectual-property-copyright-patents-and-trade-secrets.webp',
+    image: 'iso-42001.webp',
     era: 'Standard',
     tags: ['ISO', 'Management']
   },
@@ -39,7 +39,7 @@ const responsibilityCards = [
     title: 'AI Transparency',
     slug: 'ai-transparency',
     tldr: 'What users deserve to know: making AI decision-making understandable',
-    image: 'ai-transparency-what-users-deserve-to-know.webp',
+    image: 'ai-transparency.webp',
     era: 'Practice',
     tags: ['XAI', 'Transparency']
   },
@@ -48,7 +48,7 @@ const responsibilityCards = [
     title: 'AI Accountability',
     slug: 'ai-accountability',
     tldr: 'Who is responsible when AI causes harm? Establishing oversight frameworks',
-    image: 'ai-accountability-who-is-responsible-when-ai-causes-harm.webp',
+    image: 'ai-accountability.webp',
     era: 'Practice',
     tags: ['Accountability', 'Liability']
   },
@@ -57,7 +57,7 @@ const responsibilityCards = [
     title: 'Human-Centered AI',
     slug: 'human-centered-ai',
     tldr: 'Keeping people in the loop: prioritizing human needs and wellbeing',
-    image: 'human-centered-ai-design-keeping-people-in-the-loop.webp',
+    image: 'human-centered-ai.webp',
     era: 'Approach',
     tags: ['Design', 'Human-First']
   },
@@ -66,7 +66,7 @@ const responsibilityCards = [
     title: 'Global AI Law Tracker',
     slug: 'global-ai-law-tracker',
     tldr: 'Who\'s regulating what: navigating international AI regulations',
-    image: 'global-ai-law-tracker-whos-regulating-what.webp',
+    image: 'global-ai-law-tracker.webp',
     era: 'Policy',
     tags: ['Global', 'Compliance']
   },
@@ -75,7 +75,7 @@ const responsibilityCards = [
     title: 'Cross-Border AI Compliance',
     slug: 'cross-border-compliance',
     tldr: 'Navigating multiple jurisdictions: international AI compliance strategies',
-    image: 'cross-border-ai-compliance-navigating-multiple-jurisdictions.webp',
+    image: 'cross-border-compliance.webp',
     era: 'Compliance',
     tags: ['International', 'Legal']
   }
@@ -236,13 +236,12 @@ export default function NewResponsibilityPage() {
           <div className="headline-content">
             <div className="headline-image-card">
               <Image
-                src="/images/headercards/responsibility-header.png"
+                src="/images/headercards/responsibility-header.webp"
                 alt="AI Responsibility: Ethics & Accountability"
                 fill
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px"
                 style={{ objectFit: 'cover' }}
                 priority
-                unoptimized
               />
               <div className="headline-overlay">
                 <h1>AI Responsibility: Ethics & Accountability</h1>
