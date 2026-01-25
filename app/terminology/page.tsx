@@ -277,7 +277,7 @@ export default function NewTerminologyPage() {
                   index % 2 === 0 ? 'card-left' : 'card-right'
                 }`}
               >
-                <Link href={`/articles/${card.slug}`} className="card-link">
+                <Link href={`/terminology/${card.slug}`} className="card-link">
                   <div className="card-media">
                     <div className="card-image-wrapper">
                       <Image
