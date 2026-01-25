@@ -3,3 +3,6 @@ node_modules
 .vercel
 .env*.local
 *.log
+/Volumes/External/AIDefence/OLD
+/Volumes/External/AIDefence/scripts
+/Volumes/External/AIDefence/docs

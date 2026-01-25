@@ -12,7 +12,7 @@ const futureCards = [
     title: 'AGI: Hype, Hope, and Governance',
     slug: 'agi-governance',
     tldr: 'The quest for human-level AI: systems that can learn and reason across any domain',
-    image: 'artificial-general-intelligence-hype-hope-and-governance.webp',
+    image: 'agi-governance.webp',
     era: 'Horizon',
     tags: ['AGI', 'Future']
   },
@@ -21,7 +21,7 @@ const futureCards = [
     title: 'AI Existential Risk',
     slug: 'ai-existential-risk',
     tldr: 'Long-term threats from advanced AI: Understanding catastrophic risk scenarios',
-    image: 'ai-agents-and-autonomous-systems-the-next-frontier.webp',
+    image: 'ai-existential-risk.webp',
     era: 'Risk',
     tags: ['X-Risk', 'Safety']
   },
@@ -30,7 +30,7 @@ const futureCards = [
     title: 'AI and National Security',
     slug: 'ai-national-security',
     tldr: 'AI in defense and intelligence: Geopolitical implications and strategic concerns',
-    image: 'digital-sovereignty-national-vs-global-standards.webp',
+    image: 'ai-national-security.webp',
     era: 'Security',
     tags: ['Defense', 'Geopolitics']
   },
@@ -39,7 +39,7 @@ const futureCards = [
     title: 'AI Safety',
     slug: 'ai-safety',
     tldr: 'Alignment, robustness, and control: Building AI systems that remain beneficial',
-    image: 'ai-alignment-technical-and-governance-challenges.webp',
+    image: 'ai-safety.webp',
     era: 'Safety',
     tags: ['Alignment', 'Control']
   },
@@ -48,7 +48,7 @@ const futureCards = [
     title: 'Future of AI Ethics',
     slug: 'future-ai-ethics',
     tldr: 'Evolving ethical frameworks for increasingly powerful AI systems',
-    image: 'global-ai-governance-institutions-international-bodies.webp',
+    image: 'future-ai-ethics.webp',
     era: 'Ethics',
     tags: ['Ethics', 'Values']
   },
@@ -57,7 +57,7 @@ const futureCards = [
     title: 'Future of AI Regulation',
     slug: 'future-ai-regulation',
     tldr: 'Shaping the future: emerging frameworks for global AI oversight and cooperation',
-    image: 'the-future-of-ai-regulation-whats-coming-next.webp',
+    image: 'future-ai-regulation.webp',
     era: 'Policy',
     tags: ['Regulation', 'Governance']
   },
@@ -66,7 +66,7 @@ const futureCards = [
     title: 'AI Governance Careers',
     slug: 'ai-governance-careers',
     tldr: 'Building a career in AI policy, ethics, and governance: Skills and pathways',
-    image: 'ai-governance-career-path-aigp-and-beyond.webp',
+    image: 'ai-governance-careers.webp',
     era: 'Careers',
     tags: ['Careers', 'Skills']
   },
@@ -75,7 +75,7 @@ const futureCards = [
     title: 'Trustworthy AI: Seven Pillars',
     slug: 'trustworthy-ai',
     tldr: 'The foundational principles for building AI systems society can trust',
-    image: 'ai-standards-development-iso-ieee-frameworks.webp',
+    image: 'trustworthy-ai.webp',
     era: 'Principles',
     tags: ['Trust', 'Framework']
   }
@@ -236,13 +236,12 @@ export default function NewFuturePage() {
           <div className="headline-content">
             <div className="headline-image-card">
               <Image
-                src="/images/headercards/future-header.png"
+                src="/images/headercards/future-header.webp"
                 alt="The Future of AI: Trends & Possibilities"
                 fill
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px"
                 style={{ objectFit: 'cover' }}
                 priority
-                unoptimized
               />
               <div className="headline-overlay">
                 <h1>The Future of AI: Trends & Possibilities</h1>
