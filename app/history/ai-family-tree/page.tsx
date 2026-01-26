@@ -30,11 +30,11 @@ export default async function AIFamilyTreePage() {
       currentIndex={2}
       totalArticles={8}
       prevArticle={{
-        slug: '/articles/what-ai-actually-is',
+        slug: '/history/what-ai-actually-is',
         title: 'What AI Actually Is'
       }}
       nextArticle={{
-        slug: '/articles/types-of-ai-intelligence',
+        slug: '/history/types-of-ai-intelligence',
         title: 'Types of AI Intelligence'
       }}
       cards={cards}

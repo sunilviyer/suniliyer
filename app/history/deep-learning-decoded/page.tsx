@@ -30,11 +30,11 @@ export default async function DeepLearningDecodedArticle() {
       currentIndex={5}
       totalArticles={8}
       prevArticle={{
-        slug: '/articles/how-machines-learn',
+        slug: '/history/how-machines-learn',
         title: 'How Machines Learn'
       }}
       nextArticle={{
-        slug: '/articles/generative-ai-explained',
+        slug: '/history/generative-ai-explained',
         title: 'Generative AI Explained'
       }}
       cards={cards}

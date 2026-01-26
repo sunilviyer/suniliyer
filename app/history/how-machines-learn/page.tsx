@@ -30,11 +30,11 @@ export default async function HowMachinesLearnArticle() {
       currentIndex={4}
       totalArticles={8}
       prevArticle={{
-        slug: '/articles/types-of-ai-intelligence',
+        slug: '/history/types-of-ai-intelligence',
         title: 'Types of AI Intelligence'
       }}
       nextArticle={{
-        slug: '/articles/deep-learning-decoded',
+        slug: '/history/deep-learning-decoded',
         title: 'Deep Learning Decoded'
       }}
       cards={cards}

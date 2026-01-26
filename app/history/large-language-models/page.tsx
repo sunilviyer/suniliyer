@@ -30,11 +30,11 @@ export default async function LargeLanguageModelsArticle() {
       currentIndex={7}
       totalArticles={8}
       prevArticle={{
-        slug: '/articles/generative-ai-explained',
+        slug: '/history/generative-ai-explained',
         title: 'Generative AI Explained'
       }}
       nextArticle={{
-        slug: '/articles/foundation-models',
+        slug: '/history/foundation-models',
         title: 'Foundation Models'
       }}
       cards={cards}
