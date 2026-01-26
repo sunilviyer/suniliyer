@@ -13,7 +13,7 @@ export function decodeHTMLEntities(text: string): string {
     '&apos;': "'",
     '&#39;': "'",
     '&#x27;': "'",
-    '&#x2019;': ''',
+    '&#x2019;': String.fromCharCode(0x2019), // Right single quotation mark
     '&nbsp;': ' ',
     '&mdash;': '—',
     '&ndash;': '–',
