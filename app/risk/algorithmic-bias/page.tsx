@@ -30,11 +30,11 @@ export default async function AlgorithmicBiasArticle() {
       currentIndex={2}
       totalArticles={8}
       prevArticle={{
-        slug: '/articles/when-ai-goes-wrong',
+        slug: '/risk/when-ai-goes-wrong',
         title: 'When AI Goes Wrong'
       }}
       nextArticle={{
-        slug: '/articles/ai-hallucinations',
+        slug: '/risk/ai-hallucinations',
         title: 'AI Hallucinations'
       }}
       cards={cards}

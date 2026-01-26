@@ -30,11 +30,11 @@ export default async function AIHallucinationsArticle() {
       currentIndex={3}
       totalArticles={8}
       prevArticle={{
-        slug: '/articles/algorithmic-bias',
+        slug: '/risk/algorithmic-bias',
         title: 'Algorithmic Bias'
       }}
       nextArticle={{
-        slug: '/articles/ai-privacy',
+        slug: '/risk/ai-privacy',
         title: 'AI and Privacy'
       }}
       cards={cards}

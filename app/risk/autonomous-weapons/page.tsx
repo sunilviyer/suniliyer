@@ -29,6 +29,10 @@ export default async function AutonomousWeaponsArticle() {
       headerImage={content.headerImage || ''}
       currentIndex={8}
       totalArticles={8}
+      prevArticle={{
+        slug: '/risk/job-displacement',
+        title: 'Job Displacement'
+      }}
       cards={cards}
     >
       <DatabaseArticleRenderer

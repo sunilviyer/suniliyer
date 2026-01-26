@@ -29,6 +29,14 @@ export default async function AiMisinformationArticle() {
       headerImage={content.headerImage || ''}
       currentIndex={6}
       totalArticles={8}
+      prevArticle={{
+        slug: '/risk/deepfakes-synthetic-media',
+        title: 'Deepfakes & Synthetic Media'
+      }}
+      nextArticle={{
+        slug: '/risk/job-displacement',
+        title: 'Job Displacement'
+      }}
       cards={cards}
     >
       <DatabaseArticleRenderer

@@ -30,7 +30,7 @@ export default async function WhenAIGoesWrongArticle() {
       currentIndex={1}
       totalArticles={8}
       nextArticle={{
-        slug: '/articles/algorithmic-bias',
+        slug: '/risk/algorithmic-bias',
         title: 'Algorithmic Bias'
       }}
       cards={cards}
