@@ -29,6 +29,14 @@ export default async function FutureAiRegulationArticle() {
       headerImage={content.headerImage || ''}
       currentIndex={6}
       totalArticles={8}
+      prevArticle={{
+        slug: '/future/future-ai-ethics',
+        title: 'Future of AI Ethics'
+      }}
+      nextArticle={{
+        slug: '/future/ai-governance-careers',
+        title: 'AI Governance Careers'
+      }}
       cards={cards}
     >
       <DatabaseArticleRenderer

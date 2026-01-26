@@ -29,6 +29,10 @@ export default async function AgiGovernanceArticle() {
       headerImage={content.headerImage || ''}
       currentIndex={1}
       totalArticles={8}
+      nextArticle={{
+        slug: '/future/ai-existential-risk',
+        title: 'AI Existential Risk'
+      }}
       cards={cards}
     >
       <DatabaseArticleRenderer

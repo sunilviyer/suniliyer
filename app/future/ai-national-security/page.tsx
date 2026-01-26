@@ -29,6 +29,14 @@ export default async function AiNationalSecurityArticle() {
       headerImage={content.headerImage || ''}
       currentIndex={3}
       totalArticles={8}
+      prevArticle={{
+        slug: '/future/ai-existential-risk',
+        title: 'AI Existential Risk'
+      }}
+      nextArticle={{
+        slug: '/future/ai-safety',
+        title: 'AI Safety'
+      }}
       cards={cards}
     >
       <DatabaseArticleRenderer

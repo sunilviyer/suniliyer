@@ -29,6 +29,10 @@ export default async function TrustworthyAiArticle() {
       headerImage={content.headerImage || ''}
       currentIndex={8}
       totalArticles={8}
+      prevArticle={{
+        slug: '/future/ai-governance-careers',
+        title: 'AI Governance Careers'
+      }}
       cards={cards}
     >
       <DatabaseArticleRenderer
