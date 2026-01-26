@@ -1,6 +1,7 @@
 'use client';
 
 import { useTheme } from './ThemeContext';
+import { decodeHTMLEntities } from '@/lib/htmlDecode';
 
 interface KeyLearningsProps {
   learnings: string[];
@@ -24,7 +25,7 @@ export function KeyLearnings({ learnings, theme: themeProp }: KeyLearningsProps)
           {learnings.map((learning, index) => (
             <li key={index} className="key-learning-item">
               <span className="check-icon">✓</span>
-              <span>{learning}</span>
+              <span>{decodeHTMLEntities(learning)}</span>
             </li>
           ))}
         </ul>

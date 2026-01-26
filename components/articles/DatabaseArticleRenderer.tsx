@@ -4,6 +4,7 @@ import React, { useMemo, useState, useEffect } from 'react';
 import { InlineContextCard } from './InlineContextCard';
 import { KeyLearnings } from './KeyLearnings';
 import { Accordion } from './Accordion';
+import { decodeHTMLEntities } from '@/lib/htmlDecode';
 
 // Enhanced resource type supporting both strings and rich objects
 type ResourceItem = string | {
@@ -63,7 +64,7 @@ function renderResourceItem(item: ResourceItem, index: number, isSource: boolean
           borderBottom: '1px solid rgba(26, 26, 26, 0.06)',
         }}
       >
-        {item}
+        {decodeHTMLEntities(item)}
       </li>
     );
   }
@@ -71,12 +72,12 @@ function renderResourceItem(item: ResourceItem, index: number, isSource: boolean
   // Handle rich object format
   const { title, url, type, description, author, year } = item;
 
-  // Format citation for sources
-  let displayTitle = title;
+  // Format citation for sources (decode HTML entities)
+  let displayTitle = decodeHTMLEntities(title);
   if (isSource && author && year) {
-    displayTitle = `${author} (${year}). ${title}`;
+    displayTitle = `${decodeHTMLEntities(author)} (${year}). ${displayTitle}`;
   } else if (isSource && author) {
-    displayTitle = `${author}. ${title}`;
+    displayTitle = `${decodeHTMLEntities(author)}. ${displayTitle}`;
   }
 
   return (
@@ -132,7 +133,7 @@ function renderResourceItem(item: ResourceItem, index: number, isSource: boolean
             fontStyle: 'italic',
           }}
         >
-          {description}
+          {decodeHTMLEntities(description)}
         </div>
       )}
     </li>
@@ -244,6 +245,7 @@ function processNode(node: ChildNode, keyPrefix: string = ''): React.ReactNode[]
 
 /**
  * Parse HTML content and replace {{CARD|cardId|trigger}} markers with React components
+ * Note: DOMParser automatically decodes HTML entities like &apos; to '
  */
 function parseContentWithCards(htmlContent: string): React.ReactNode[] {
   const parser = new DOMParser();
