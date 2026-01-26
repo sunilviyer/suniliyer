@@ -1,5 +1,7 @@
 'use client';
 
+import { decodeHTMLEntities } from '@/lib/htmlDecode';
+
 interface ArticleTLDRProps {
   tldr: string;
   theme?: 'light' | 'dark';
@@ -17,7 +19,7 @@ export function ArticleTLDR({ tldr, theme = 'light' }: ArticleTLDRProps) {
           </svg>
           <span className="tldr-label">TL;DR</span>
         </div>
-        <p className="tldr-text">{tldr}</p>
+        <p className="tldr-text">{decodeHTMLEntities(tldr)}</p>
       </div>
 
       <style jsx>{`
