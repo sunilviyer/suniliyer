@@ -29,6 +29,14 @@ export default async function AiTransparencyArticle() {
       headerImage={content.headerImage || ''}
       currentIndex={4}
       totalArticles={8}
+      prevArticle={{
+        slug: '/responsibility/iso-42001',
+        title: 'ISO/IEC 42001 AI Management'
+      }}
+      nextArticle={{
+        slug: '/responsibility/ai-accountability',
+        title: 'AI Accountability'
+      }}
       cards={cards}
     >
       <DatabaseArticleRenderer
