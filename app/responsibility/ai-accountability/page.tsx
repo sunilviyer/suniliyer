@@ -29,6 +29,14 @@ export default async function AiAccountabilityArticle() {
       headerImage={content.headerImage || ''}
       currentIndex={5}
       totalArticles={8}
+      prevArticle={{
+        slug: '/responsibility/ai-transparency',
+        title: 'AI Transparency'
+      }}
+      nextArticle={{
+        slug: '/responsibility/human-centered-ai',
+        title: 'Human-Centered AI'
+      }}
       cards={cards}
     >
       <DatabaseArticleRenderer

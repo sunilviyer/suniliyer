@@ -29,6 +29,14 @@ export default async function Iso42001Article() {
       headerImage={content.headerImage || ''}
       currentIndex={3}
       totalArticles={8}
+      prevArticle={{
+        slug: '/responsibility/nist-ai-rmf',
+        title: 'NIST AI RMF Complete Guide'
+      }}
+      nextArticle={{
+        slug: '/responsibility/ai-transparency',
+        title: 'AI Transparency'
+      }}
       cards={cards}
     >
       <DatabaseArticleRenderer

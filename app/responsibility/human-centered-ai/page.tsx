@@ -29,6 +29,14 @@ export default async function HumanCenteredAiArticle() {
       headerImage={content.headerImage || ''}
       currentIndex={6}
       totalArticles={8}
+      prevArticle={{
+        slug: '/responsibility/ai-accountability',
+        title: 'AI Accountability'
+      }}
+      nextArticle={{
+        slug: '/responsibility/global-ai-law-tracker',
+        title: 'Global AI Law Tracker'
+      }}
       cards={cards}
     >
       <DatabaseArticleRenderer

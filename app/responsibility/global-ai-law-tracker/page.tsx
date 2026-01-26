@@ -29,6 +29,14 @@ export default async function GlobalAiLawTrackerArticle() {
       headerImage={content.headerImage || ''}
       currentIndex={7}
       totalArticles={8}
+      prevArticle={{
+        slug: '/responsibility/human-centered-ai',
+        title: 'Human-Centered AI'
+      }}
+      nextArticle={{
+        slug: '/responsibility/cross-border-compliance',
+        title: 'Cross-Border AI Compliance'
+      }}
       cards={cards}
     >
       <DatabaseArticleRenderer

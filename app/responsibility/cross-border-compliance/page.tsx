@@ -29,6 +29,10 @@ export default async function CrossBorderComplianceArticle() {
       headerImage={content.headerImage || ''}
       currentIndex={8}
       totalArticles={8}
+      prevArticle={{
+        slug: '/responsibility/global-ai-law-tracker',
+        title: 'Global AI Law Tracker'
+      }}
       cards={cards}
     >
       <DatabaseArticleRenderer

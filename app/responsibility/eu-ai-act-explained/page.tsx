@@ -29,6 +29,10 @@ export default async function EuAiActExplainedArticle() {
       headerImage={content.headerImage || ''}
       currentIndex={1}
       totalArticles={8}
+      nextArticle={{
+        slug: '/responsibility/nist-ai-rmf',
+        title: 'NIST AI RMF Complete Guide'
+      }}
       cards={cards}
     >
       <DatabaseArticleRenderer

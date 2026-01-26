@@ -29,6 +29,14 @@ export default async function NistAiRmfArticle() {
       headerImage={content.headerImage || ''}
       currentIndex={2}
       totalArticles={8}
+      prevArticle={{
+        slug: '/responsibility/eu-ai-act-explained',
+        title: 'The EU AI Act Explained'
+      }}
+      nextArticle={{
+        slug: '/responsibility/iso-42001',
+        title: 'ISO/IEC 42001 AI Management'
+      }}
       cards={cards}
     >
       <DatabaseArticleRenderer
