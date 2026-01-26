@@ -29,6 +29,14 @@ export default async function AiExistentialRiskArticle() {
       headerImage={content.headerImage || ''}
       currentIndex={2}
       totalArticles={8}
+      prevArticle={{
+        slug: '/future/agi-governance',
+        title: 'AGI: Hype, Hope, and Governance'
+      }}
+      nextArticle={{
+        slug: '/future/ai-national-security',
+        title: 'AI and National Security'
+      }}
       cards={cards}
     >
       <DatabaseArticleRenderer

@@ -29,6 +29,14 @@ export default async function AiGovernanceCareersArticle() {
       headerImage={content.headerImage || ''}
       currentIndex={7}
       totalArticles={8}
+      prevArticle={{
+        slug: '/future/future-ai-regulation',
+        title: 'Future of AI Regulation'
+      }}
+      nextArticle={{
+        slug: '/future/trustworthy-ai',
+        title: 'Trustworthy AI: Seven Pillars'
+      }}
       cards={cards}
     >
       <DatabaseArticleRenderer
