@@ -30,8 +30,12 @@ export default async function DeepfakesSyntheticMediaArticle() {
       currentIndex={5}
       totalArticles={8}
       prevArticle={{
-        slug: '/articles/ai-privacy',
+        slug: '/risk/ai-privacy',
         title: 'AI and Privacy'
+      }}
+      nextArticle={{
+        slug: '/risk/ai-misinformation',
+        title: 'AI Misinformation'
       }}
       cards={cards}
     >

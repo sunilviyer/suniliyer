@@ -29,6 +29,14 @@ export default async function JobDisplacementArticle() {
       headerImage={content.headerImage || ''}
       currentIndex={7}
       totalArticles={8}
+      prevArticle={{
+        slug: '/risk/ai-misinformation',
+        title: 'AI Misinformation'
+      }}
+      nextArticle={{
+        slug: '/risk/autonomous-weapons',
+        title: 'Autonomous Weapons'
+      }}
       cards={cards}
     >
       <DatabaseArticleRenderer

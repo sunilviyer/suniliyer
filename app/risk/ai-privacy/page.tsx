@@ -30,11 +30,11 @@ export default async function AIPrivacyArticle() {
       currentIndex={4}
       totalArticles={8}
       prevArticle={{
-        slug: '/articles/ai-hallucinations',
+        slug: '/risk/ai-hallucinations',
         title: 'AI Hallucinations'
       }}
       nextArticle={{
-        slug: '/articles/deepfakes-synthetic-media',
+        slug: '/risk/deepfakes-synthetic-media',
         title: 'Deepfakes & Synthetic Media'
       }}
       cards={cards}
