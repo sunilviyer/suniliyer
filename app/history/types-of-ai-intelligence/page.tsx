@@ -30,11 +30,11 @@ export default async function TypesOfAIIntelligenceArticle() {
       currentIndex={3}
       totalArticles={8}
       prevArticle={{
-        slug: '/articles/ai-family-tree',
+        slug: '/history/ai-family-tree',
         title: 'The AI Family Tree'
       }}
       nextArticle={{
-        slug: '/articles/how-machines-learn',
+        slug: '/history/how-machines-learn',
         title: 'How Machines Learn'
       }}
       cards={cards}

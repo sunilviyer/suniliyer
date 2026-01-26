@@ -30,11 +30,11 @@ export default async function GenerativeAIExplainedArticle() {
       currentIndex={6}
       totalArticles={8}
       prevArticle={{
-        slug: '/articles/deep-learning-decoded',
+        slug: '/history/deep-learning-decoded',
         title: 'Deep Learning Decoded'
       }}
       nextArticle={{
-        slug: '/articles/large-language-models',
+        slug: '/history/large-language-models',
         title: 'Large Language Models'
       }}
       cards={cards}

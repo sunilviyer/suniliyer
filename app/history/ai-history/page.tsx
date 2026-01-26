@@ -30,7 +30,7 @@ export default async function AIHistoryArticle() {
       currentIndex={8}
       totalArticles={8}
       prevArticle={{
-        slug: '/articles/large-language-models',
+        slug: '/history/large-language-models',
         title: 'Large Language Models'
       }}
       cards={cards}
