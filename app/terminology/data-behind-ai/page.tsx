@@ -21,11 +21,11 @@ export default async function DataBehindAIArticle() {
       currentIndex={3}
       totalArticles={8}
       prevArticle={{
-        slug: '/articles/ai-vs-automation',
+        slug: '/terminology/ai-vs-automation',
         title: 'AI vs Automation'
       }}
       nextArticle={{
-        slug: '/articles/foundation-models',
+        slug: '/terminology/foundation-models',
         title: 'Foundation Models'
       }}
       cards={cards}

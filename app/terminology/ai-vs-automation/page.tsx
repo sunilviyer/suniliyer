@@ -21,11 +21,11 @@ export default async function AIvsAutomationArticle() {
       currentIndex={2}
       totalArticles={8}
       prevArticle={{
-        slug: '/articles/ai-technology-stack',
+        slug: '/terminology/ai-technology-stack',
         title: 'The AI Technology Stack'
       }}
       nextArticle={{
-        slug: '/articles/data-behind-ai',
+        slug: '/terminology/data-behind-ai',
         title: 'The Data Behind AI'
       }}
       cards={cards}

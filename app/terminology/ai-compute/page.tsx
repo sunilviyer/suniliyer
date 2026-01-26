@@ -29,6 +29,14 @@ export default async function AiComputeArticle() {
       headerImage={content.headerImage || ''}
       currentIndex={6}
       totalArticles={8}
+      prevArticle={{
+        slug: '/terminology/multimodal-ai',
+        title: 'Multimodal AI'
+      }}
+      nextArticle={{
+        slug: '/terminology/environmental-cost-ai',
+        title: 'Environmental Cost of AI'
+      }}
       cards={cards}
     >
       <DatabaseArticleRenderer

@@ -21,11 +21,11 @@ export default async function FoundationModelsArticle() {
       currentIndex={4}
       totalArticles={8}
       prevArticle={{
-        slug: '/articles/data-behind-ai',
+        slug: '/terminology/data-behind-ai',
         title: 'The Data Behind AI'
       }}
       nextArticle={{
-        slug: '/articles/multimodal-ai',
+        slug: '/terminology/multimodal-ai',
         title: 'Multimodal AI'
       }}
       cards={cards}

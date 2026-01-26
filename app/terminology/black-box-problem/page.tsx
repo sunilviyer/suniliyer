@@ -29,6 +29,10 @@ export default async function BlackBoxProblemArticle() {
       headerImage={content.headerImage || ''}
       currentIndex={8}
       totalArticles={8}
+      prevArticle={{
+        slug: '/terminology/environmental-cost-ai',
+        title: 'Environmental Cost of AI'
+      }}
       cards={cards}
     >
       <DatabaseArticleRenderer
