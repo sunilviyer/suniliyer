@@ -19,7 +19,7 @@ const paths: PathItem[] = [
   {
     slug: '/',
     title: 'Home',
-    heroImage: '/images/headercards/history-header.png' // Using history as placeholder for home
+    heroImage: '/images/breaks/vibe-background.png'
   },
   {
     slug: '/history',
