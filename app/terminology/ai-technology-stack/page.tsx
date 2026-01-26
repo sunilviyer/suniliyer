@@ -21,7 +21,7 @@ export default async function AITechnologyStackArticle() {
       currentIndex={1}
       totalArticles={8}
       nextArticle={{
-        slug: '/articles/ai-vs-automation',
+        slug: '/terminology/ai-vs-automation',
         title: 'AI vs Automation'
       }}
       cards={cards}

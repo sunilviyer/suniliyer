@@ -29,6 +29,14 @@ export default async function MultimodalAiArticle() {
       headerImage={content.headerImage || ''}
       currentIndex={5}
       totalArticles={8}
+      prevArticle={{
+        slug: '/terminology/foundation-models',
+        title: 'Foundation Models'
+      }}
+      nextArticle={{
+        slug: '/terminology/ai-compute',
+        title: 'AI Compute Requirements'
+      }}
       cards={cards}
     >
       <DatabaseArticleRenderer

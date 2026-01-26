@@ -29,6 +29,14 @@ export default async function EnvironmentalCostAiArticle() {
       headerImage={content.headerImage || ''}
       currentIndex={7}
       totalArticles={8}
+      prevArticle={{
+        slug: '/terminology/ai-compute',
+        title: 'AI Compute Requirements'
+      }}
+      nextArticle={{
+        slug: '/terminology/black-box-problem',
+        title: 'The Black Box Problem'
+      }}
       cards={cards}
     >
       <DatabaseArticleRenderer
