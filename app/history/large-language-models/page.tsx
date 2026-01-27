@@ -34,8 +34,8 @@ export default async function LargeLanguageModelsArticle() {
         title: 'Generative AI Explained'
       }}
       nextArticle={{
-        slug: '/history/foundation-models',
-        title: 'Foundation Models'
+        slug: '/history/ai-history',
+        title: 'AI History: Dartmouth to DeepMind'
       }}
       cards={cards}
     >
