@@ -3,7 +3,10 @@
  * Converts &apos; → ', &quot; → ", &amp; → &, etc.
  * Safe implementation without using innerHTML
  */
-export function decodeHTMLEntities(text: string): string {
+export function decodeHTMLEntities(text: string | undefined): string {
+  // Handle undefined or empty input
+  if (!text) return '';
+
   // Map of common HTML entities
   const entities: Record<string, string> = {
     '&amp;': '&',
