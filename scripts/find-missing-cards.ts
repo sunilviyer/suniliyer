@@ -3,64 +3,72 @@ import { neon } from '@neondatabase/serverless';
 const sql = neon(process.env.DATABASE_URL!);
 
 async function findMissingCards() {
-  console.log('\n╔══════════════════════════════════════════════════════════════╗');
-  console.log('║              FIND MISSING CARD REFERENCES                    ║');
-  console.log('╚══════════════════════════════════════════════════════════════╝\n');
+  const missingCardIds = [
+    'quote-vladimir-putin-leadership',
+    'insight-nvidia-market-share',
+    'fw-us-export-controls',
+    'ex-google-project-maven',
+    'fw-white-house-eo',
+    'fw-china-ai-governance'
+  ];
 
-  // Get all articles from responsibility and future paths
-  const articles = await sql`
-    SELECT slug, path, yaml_content
-    FROM articles
-    WHERE path IN ('responsibility', 'future', 'terminology', 'risk')
-    ORDER BY path, position;
-  `;
+  console.log('═══════════════════════════════════════════════════════════════');
+  console.log('              MISSING CARDS ERROR INVESTIGATION                 ');
+  console.log('═══════════════════════════════════════════════════════════════\n');
 
-  const cardReferencesMap: Record<string, string[]> = {};
-  const allCardIds = new Set<string>();
+  console.log('Checking if these cards exist in database:\n');
 
-  for (const article of articles) {
-    const content = (JSON.parse(article.yaml_content as string).content || '') as string;
-    const cardPattern = /\{\{CARD\|([^|]+)\|/g;
-    let match;
-    const cardIds: string[] = [];
+  for (const cardId of missingCardIds) {
+    const cards = await sql`
+      SELECT card_id, title, card_type, status
+      FROM cards
+      WHERE card_id = ${cardId}
+    `;
 
-    while ((match = cardPattern.exec(content)) !== null) {
-      const cardId = match[1];
-      cardIds.push(cardId);
-      allCardIds.add(cardId);
+    if (cards.length === 0) {
+      console.log(`❌ ${cardId} - NOT FOUND IN DATABASE`);
+    } else {
+      const card = cards[0];
+      const statusIcon = card.status === 'draft' ? '⚠️  DRAFT' : '✅ PUBLISHED';
+      console.log(`${statusIcon}: ${cardId}`);
+      console.log(`   Title: ${card.title}`);
+      console.log(`   Type: ${card.card_type}`);
+      console.log(`   Status: ${card.status}`);
     }
-
-    if (cardIds.length > 0) {
-      cardReferencesMap[article.slug as string] = cardIds;
-    }
+    console.log('');
   }
 
-  console.log(`Found ${allCardIds.size} unique card IDs referenced across articles\n`);
+  // Also check for any articles that might have inline card references
+  console.log('\n═══════════════════════════════════════════════════════════════');
+  console.log('Searching for articles with these missing card references...\n');
 
-  // Check which cards exist in the database
-  const existingCards = await sql`
-    SELECT card_id FROM cards WHERE card_id = ANY(${Array.from(allCardIds)})
+  const allArticles = await sql`
+    SELECT article_id, slug, title, yaml_content
+    FROM articles
+    WHERE
+      yaml_content::text LIKE '%quote-vladimir-putin%'
+      OR yaml_content::text LIKE '%insight-nvidia%'
+      OR yaml_content::text LIKE '%fw-us-export%'
+      OR yaml_content::text LIKE '%ex-google-project-maven%'
+      OR yaml_content::text LIKE '%fw-white-house-eo%'
+      OR yaml_content::text LIKE '%fw-china-ai-governance%'
   `;
 
-  const existingCardIds = new Set(existingCards.map(c => c.card_id as string));
-  const missingCardIds = Array.from(allCardIds).filter(id => !existingCardIds.has(id));
+  if (allArticles.length > 0) {
+    console.log(`Found ${allArticles.length} articles with missing card references:\n`);
+    allArticles.forEach((article: any) => {
+      console.log(`📄 ${article.slug}`);
+      console.log(`   Title: ${article.title}`);
 
-  console.log(`${existingCardIds.size} cards exist in database`);
-  console.log(`${missingCardIds.length} cards are MISSING\n`);
-
-  if (missingCardIds.length > 0) {
-    console.log('MISSING CARDS:');
-    console.log('═══════════════════════════════════════════════════════════════');
-    missingCardIds.sort().forEach(cardId => {
-      const usedIn = Object.entries(cardReferencesMap)
-        .filter(([_, ids]) => ids.includes(cardId))
-        .map(([slug]) => slug);
-      console.log(`  ${cardId}`);
-      console.log(`    Used in: ${usedIn.join(', ')}`);
+      // Count how many missing cards are in this article
+      const content = article.yaml_content?.content || '';
+      missingCardIds.forEach(cardId => {
+        if (content.includes(cardId)) {
+          console.log(`   - References: ${cardId}`);
+        }
+      });
+      console.log('');
     });
-    console.log('═══════════════════════════════════════════════════════════════\n');
-  } else {
-    console.log('✅ All card references exist in the database!\n');
   }
 }
 
