@@ -21,11 +21,11 @@ export default async function FoundationModelsArticle() {
     <ArticlePageWrapper
       path="terminology"
       pathTitle="Terminology"
-      articleTitle={content.articleTitle || 'Foundation Models'}
+      articleTitle="Foundation Models"
       tldr={content.tldr || ''}
       tags={content.tags || ['Foundation Models', 'GPAI', 'AI Infrastructure']}
-      readTime={content.readTime || '8 min read'}
-      updatedDate={content.updatedDate || 'January 2025'}
+      readTime="8 min read"
+      updatedDate="January 2025"
       headerImage={content.headerImage || '/images/terminology/foundation-models.webp'}
       currentIndex={4}
       totalArticles={8}
