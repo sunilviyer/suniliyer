@@ -71,15 +71,27 @@ export function ResourceCard({ resource, index }: ResourceCardProps) {
 
         {(resource.downloadUrl || resource.previewUrl || resource.formats) && (
           <div className="resource-actions">
-            {resource.formats && resource.formats.map((format, idx) => (
-              <button key={idx} className="download-btn" style={{ borderColor: config.color, color: config.color }}>
+            {resource.downloadUrl && resource.formats && resource.formats.map((format, idx) => (
+              <a
+                key={idx}
+                href={resource.downloadUrl}
+                download
+                className="download-btn"
+                style={{ borderColor: config.color, color: config.color, textDecoration: 'none', display: 'inline-block' }}
+              >
                 📥 {format.toUpperCase()}
-              </button>
+              </a>
             ))}
             {resource.previewUrl && (
-              <button className="preview-btn">
+              <a
+                href={resource.previewUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="preview-btn"
+                style={{ textDecoration: 'none', display: 'inline-block' }}
+              >
                 👁️ Preview
-              </button>
+              </a>
             )}
           </div>
         )}
