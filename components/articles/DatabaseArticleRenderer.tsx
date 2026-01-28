@@ -8,9 +8,10 @@ import { decodeHTMLEntities } from '@/lib/htmlDecode';
 
 // Enhanced resource type supporting both strings and rich objects
 type ResourceItem = string | {
-  title: string;
+  title?: string;
+  citation?: string; // For sources
   url?: string;
-  type?: 'article' | 'video' | 'pdf' | 'excel' | 'document' | 'website' | 'tool';
+  type?: 'article' | 'video' | 'pdf' | 'excel' | 'document' | 'website' | 'tool' | 'research' | 'paper' | 'framework' | 'report' | 'guide' | 'course' | 'certification' | 'standard';
   description?: string;
   author?: string;
   year?: number;
@@ -70,13 +71,16 @@ function renderResourceItem(item: ResourceItem, index: number, isSource: boolean
   }
 
   // Handle rich object format
-  const { title, url, type, description, author, year } = item;
+  const { title, citation, url, type, description, author, year } = item;
+
+  // Use citation for sources, title for resources
+  const baseText = title || citation || '';
 
   // Format citation for sources (decode HTML entities)
-  let displayTitle = decodeHTMLEntities(title);
-  if (isSource && author && year) {
+  let displayTitle = decodeHTMLEntities(baseText);
+  if (isSource && author && year && !citation) {
     displayTitle = `${decodeHTMLEntities(author)} (${year}). ${displayTitle}`;
-  } else if (isSource && author) {
+  } else if (isSource && author && !citation) {
     displayTitle = `${decodeHTMLEntities(author)}. ${displayTitle}`;
   }
 
