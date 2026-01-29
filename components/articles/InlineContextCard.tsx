@@ -421,18 +421,13 @@ export function InlineContextCard({ trigger, card, cardId }: InlineContextCardPr
                       <a
                         href={cardData.download_url}
                         download
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="card-action-button download-button"
                         onClick={(e) => {
+                          // Only stop propagation to prevent modal from closing
+                          // Let the browser handle the download naturally
                           e.stopPropagation();
-                          e.preventDefault();
-                          // Manually trigger download
-                          if (!cardData.download_url) return;
-                          const link = document.createElement('a');
-                          link.href = cardData.download_url;
-                          link.download = cardData.download_url.split('/').pop() || 'download';
-                          document.body.appendChild(link);
-                          link.click();
-                          document.body.removeChild(link);
                         }}
                         style={{
                           display: 'inline-flex',
