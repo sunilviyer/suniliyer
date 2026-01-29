@@ -6,7 +6,7 @@ export default function CompleteAnalysisCalculator() {
   // Current Home / Selling
   const [currentMortgage, setCurrentMortgage] = useState(672000);
   const [salePrice, setSalePrice] = useState(1025000);
-  const [commissionRate, setCommissionRate] = useState(5.0);
+  const [commissionRate] = useState(5.0);
 
   // New Home / Buying
   const [purchasePrice, setPurchasePrice] = useState(1550000);
@@ -14,13 +14,13 @@ export default function CompleteAnalysisCalculator() {
   // Mortgage Options
   const [interestRate, setInterestRate] = useState(3.76);
   const [amortization, setAmortization] = useState(25);
-  const [extraDownPayment, setExtraDownPayment] = useState(0);
+  const [extraDownPayment] = useState(0);
 
   // Annual Carrying Costs
   const [propertyTaxRate, setPropertyTaxRate] = useState(1.25);
-  const [homeInsurance, setHomeInsurance] = useState(2400);
+  const [homeInsurance] = useState(2400);
   const [maintenanceRate, setMaintenanceRate] = useState(1.0);
-  const [utilities, setUtilities] = useState(400);
+  const [utilities] = useState(400);
 
   const calculations = useMemo(() => {
     // SELLING
@@ -319,7 +319,7 @@ export default function CompleteAnalysisCalculator() {
         </div>
 
         <div className="cost-insight">
-          That's {formatCurrency(calculations.trueCostOfHome - calculations.purchasePrice)} more than the sticker price!
+          That&apos;s {formatCurrency(calculations.trueCostOfHome - calculations.purchasePrice)} more than the sticker price!
         </div>
       </div>
 
