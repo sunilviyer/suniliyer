@@ -4,33 +4,33 @@ import { useState, useMemo } from 'react';
 
 export default function AffordabilityCalculator() {
   // Current Home / Selling
-  const [currentMortgage, setCurrentMortgage] = useState(672000);
+  const [currentMortgage] = useState(672000);
   const [salePrice, setSalePrice] = useState(1025000);
-  const [commissionRate, setCommissionRate] = useState(5.0);
-  const [stagingCost, setStagingCost] = useState(3500);
-  const [sellingLegalFees, setSellingLegalFees] = useState(1500);
-  const [mortgageBreakPenalty, setMortgageBreakPenalty] = useState(0);
+  const [commissionRate] = useState(5.0);
+  const [stagingCost] = useState(3500);
+  const [sellingLegalFees] = useState(1500);
+  const [mortgageBreakPenalty] = useState(0);
 
   // Target Budget Constraints
   const [targetMortgagePayment, setTargetMortgagePayment] = useState(4900);
   const [targetPropertyTax, setTargetPropertyTax] = useState(6500); // Annual
 
   // Buying Costs
-  const [buyingLegalFees, setBuyingLegalFees] = useState(2000);
-  const [homeInspection, setHomeInspection] = useState(500);
-  const [titleInsurance, setTitleInsurance] = useState(400);
-  const [movingCosts, setMovingCosts] = useState(2500);
-  const [immediateRepairs, setImmediateRepairs] = useState(5000);
+  const [buyingLegalFees] = useState(2000);
+  const [homeInspection] = useState(500);
+  const [titleInsurance] = useState(400);
+  const [movingCosts] = useState(2500);
+  const [immediateRepairs] = useState(5000);
 
   // Mortgage Options
-  const [interestRate, setInterestRate] = useState(3.76);
-  const [amortization, setAmortization] = useState(30);
-  const [extraDownPayment, setExtraDownPayment] = useState(0);
-
-  // Price scenarios to compare
-  const priceScenarios = [1250000, 1350000, 1450000, 1550000];
+  const [interestRate] = useState(3.76);
+  const [amortization] = useState(30);
+  const [extraDownPayment] = useState(0);
 
   const calculations = useMemo(() => {
+    // Price scenarios to compare
+    const priceScenarios = [1250000, 1350000, 1450000, 1550000];
+
     // ===== SELLING CALCULATIONS =====
     const commission = salePrice * (commissionRate / 100);
     const totalSellingCosts = commission + stagingCost + sellingLegalFees + mortgageBreakPenalty;
@@ -153,7 +153,7 @@ export default function AffordabilityCalculator() {
     };
   }, [currentMortgage, salePrice, commissionRate, stagingCost, sellingLegalFees, mortgageBreakPenalty,
       buyingLegalFees, homeInspection, titleInsurance, movingCosts, immediateRepairs,
-      interestRate, amortization, extraDownPayment, targetMortgagePayment, targetPropertyTax, priceScenarios]);
+      interestRate, amortization, extraDownPayment, targetMortgagePayment, targetPropertyTax]);
 
   const formatCurrency = (num: number) => {
     return new Intl.NumberFormat('en-CA', {
@@ -171,8 +171,6 @@ export default function AffordabilityCalculator() {
       maximumFractionDigits: 2
     }).format(num);
   };
-
-  const formatPercent = (num: number) => num.toFixed(1) + '%';
 
   return (
     <div className="affordability-calculator">
