@@ -6,7 +6,14 @@ export default function CompleteAnalysisCalculator() {
   // Current Home / Selling
   const [currentMortgage, setCurrentMortgage] = useState(500000);
   const [salePrice, setSalePrice] = useState(1025000);
-  const [commissionRate] = useState(5.0);
+
+  // Selling Closing Costs
+  const [staging, setStaging] = useState(3500);
+  const [realtorCommission, setRealtorCommission] = useState(4.5);
+  const [closingRepairs, setClosingRepairs] = useState(0);
+  const [preInspection, setPreInspection] = useState(0);
+  const [storageFacility, setStorageFacility] = useState(0);
+  const [lawyerFees, setLawyerFees] = useState(1000);
 
   // New Home / Buying
   const [purchasePrice, setPurchasePrice] = useState(1550000);
@@ -24,8 +31,8 @@ export default function CompleteAnalysisCalculator() {
 
   const calculations = useMemo(() => {
     // SELLING
-    const commission = salePrice * (commissionRate / 100);
-    const totalSellingCosts = commission + 5000; // Simplified
+    const commission = salePrice * (realtorCommission / 100);
+    const totalSellingCosts = commission + staging + closingRepairs + preInspection + storageFacility + lawyerFees;
     const netFromSale = salePrice - currentMortgage - totalSellingCosts;
 
     // BUYING
@@ -85,6 +92,8 @@ export default function CompleteAnalysisCalculator() {
     return {
       salePrice,
       currentMortgage,
+      commission,
+      totalSellingCosts,
       netFromSale,
       purchasePrice,
       landTransferTax,
@@ -105,7 +114,8 @@ export default function CompleteAnalysisCalculator() {
       trueCostOfHome,
       totalCarryingCostsOverLife
     };
-  }, [salePrice, currentMortgage, commissionRate, purchasePrice, interestRate, amortization,
+  }, [salePrice, currentMortgage, realtorCommission, staging, closingRepairs, preInspection,
+      storageFacility, lawyerFees, purchasePrice, interestRate, amortization,
       extraDownPayment, propertyTaxRate, homeInsurance, maintenanceRate, utilities]);
 
   const formatCurrency = (num: number) => {
@@ -147,18 +157,17 @@ export default function CompleteAnalysisCalculator() {
         </div>
       </div>
 
-      {/* Input Sections */}
-      <div className="calculator-grid slide-in-delayed">
-        {/* Selling Section */}
-        <div className="calc-section">
-          <h3 className="section-title">🏷️ Selling Your Current Home</h3>
+      {/* Selling Section - Full Width */}
+      <div className="full-section slide-in-delayed">
+        <h3 className="section-title">🏷️ Selling Your Current Home</h3>
 
+        <div className="inputs-grid">
           <div className="input-group">
             <label>Sale Price: {formatCurrency(salePrice)}</label>
             <input
               type="range"
-              min="800000"
-              max="1200000"
+              min="1"
+              max="3000000"
               step="5000"
               value={salePrice}
               onChange={(e) => setSalePrice(Number(e.target.value))}
@@ -170,57 +179,154 @@ export default function CompleteAnalysisCalculator() {
             <label>Current Mortgage: {formatCurrency(currentMortgage)}</label>
             <input
               type="range"
-              min="500000"
-              max="800000"
-              step="1000"
+              min="1"
+              max="3000000"
+              step="5000"
               value={currentMortgage}
               onChange={(e) => setCurrentMortgage(Number(e.target.value))}
               className="slider"
             />
           </div>
 
-          <div className="summary-box">
-            <div className="summary-row">
-              <span>Net Proceeds</span>
-              <span className="value positive">{formatCurrency(calculations.netFromSale)}</span>
-            </div>
+          <div className="input-group">
+            <label>Staging: {formatCurrency(staging)}</label>
+            <input
+              type="range"
+              min="0"
+              max="15000"
+              step="100"
+              value={staging}
+              onChange={(e) => setStaging(Number(e.target.value))}
+              className="slider"
+            />
+          </div>
+
+          <div className="input-group">
+            <label>Realtor Commission: {realtorCommission}%</label>
+            <input
+              type="range"
+              min="0"
+              max="5"
+              step="0.1"
+              value={realtorCommission}
+              onChange={(e) => setRealtorCommission(Number(e.target.value))}
+              className="slider"
+            />
+            <div className="input-hint">{formatCurrency(calculations.commission)}</div>
+          </div>
+
+          <div className="input-group">
+            <label>Closing Repairs: {formatCurrency(closingRepairs)}</label>
+            <input
+              type="range"
+              min="0"
+              max="50000"
+              step="500"
+              value={closingRepairs}
+              onChange={(e) => setClosingRepairs(Number(e.target.value))}
+              className="slider"
+            />
+          </div>
+
+          <div className="input-group">
+            <label>Pre-Inspection: {formatCurrency(preInspection)}</label>
+            <input
+              type="range"
+              min="0"
+              max="1000"
+              step="50"
+              value={preInspection}
+              onChange={(e) => setPreInspection(Number(e.target.value))}
+              className="slider"
+            />
+          </div>
+
+          <div className="input-group">
+            <label>Storage Facility: {formatCurrency(storageFacility)}</label>
+            <input
+              type="range"
+              min="0"
+              max="2000"
+              step="50"
+              value={storageFacility}
+              onChange={(e) => setStorageFacility(Number(e.target.value))}
+              className="slider"
+            />
+          </div>
+
+          <div className="input-group">
+            <label>Lawyer Fees: {formatCurrency(lawyerFees)}</label>
+            <input
+              type="range"
+              min="0"
+              max="2500"
+              step="50"
+              value={lawyerFees}
+              onChange={(e) => setLawyerFees(Number(e.target.value))}
+              className="slider"
+            />
           </div>
         </div>
 
-        {/* Buying Section */}
-        <div className="calc-section">
-          <h3 className="section-title">🏡 Buying New Home</h3>
+        <div className="summary-box">
+          <div className="summary-row">
+            <span>Sale Price</span>
+            <span className="value positive">{formatCurrency(calculations.salePrice)}</span>
+          </div>
+          <div className="summary-row">
+            <span>- Current Mortgage</span>
+            <span className="value negative">{formatCurrency(calculations.currentMortgage)}</span>
+          </div>
+          <div className="summary-row">
+            <span>- Total Selling Costs</span>
+            <span className="value negative">{formatCurrency(calculations.totalSellingCosts)}</span>
+          </div>
+          <div className="summary-row total">
+            <span>= Net Proceeds</span>
+            <span className="value highlight">{formatCurrency(calculations.netFromSale)}</span>
+          </div>
+        </div>
+      </div>
 
+      {/* Buying Section - Full Width */}
+      <div className="full-section slide-in-delayed">
+        <h3 className="section-title">🏡 Buying New Home</h3>
+
+        <div className="inputs-grid">
           <div className="input-group">
             <label>Purchase Price: {formatCurrency(purchasePrice)}</label>
             <input
               type="range"
-              min="1200000"
-              max="2000000"
+              min="1"
+              max="3000000"
               step="10000"
               value={purchasePrice}
               onChange={(e) => setPurchasePrice(Number(e.target.value))}
               className="slider"
             />
           </div>
-
-          <div className="summary-box">
-            <div className="summary-row">
-              <span>Land Transfer Tax</span>
-              <span className="value">{formatCurrency(calculations.landTransferTax)}</span>
-            </div>
-            <div className="summary-row">
-              <span>Down Payment</span>
-              <span className="value">{calculations.downPaymentPercent.toFixed(1)}%</span>
-            </div>
-            {calculations.cmhcInsurance > 0 && (
-              <div className="summary-row warning">
-                <span>CMHC Insurance</span>
-                <span className="value">{formatCurrency(calculations.cmhcInsurance)}</span>
-              </div>
-            )}
-          </div>
         </div>
+
+        <div className="summary-box">
+          <div className="summary-row">
+            <span>Land Transfer Tax</span>
+            <span className="value">{formatCurrency(calculations.landTransferTax)}</span>
+          </div>
+          <div className="summary-row">
+            <span>Down Payment</span>
+            <span className="value">{calculations.downPaymentPercent.toFixed(1)}%</span>
+          </div>
+          {calculations.cmhcInsurance > 0 && (
+            <div className="summary-row warning">
+              <span>CMHC Insurance</span>
+              <span className="value">{formatCurrency(calculations.cmhcInsurance)}</span>
+            </div>
+          )}
+        </div>
+      </div>
+
+      {/* Other Options Grid */}
+      <div className="calculator-grid slide-in-delayed">
 
         {/* Mortgage Options */}
         <div className="calc-section">
@@ -379,6 +485,23 @@ export default function CompleteAnalysisCalculator() {
           color: var(--text-primary);
         }
 
+        /* Full Width Sections */
+        .full-section {
+          background: var(--card-bg);
+          border: 2px solid var(--border-color);
+          border-radius: 24px;
+          padding: 48px;
+          margin-bottom: 32px;
+          box-shadow: var(--shadow-lg);
+        }
+
+        .inputs-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+          gap: 24px;
+          margin-bottom: 32px;
+        }
+
         /* Calculator Grid */
         .calculator-grid {
           display: grid;
@@ -480,6 +603,23 @@ export default function CompleteAnalysisCalculator() {
 
         .summary-row .value.positive {
           color: var(--color-positive);
+        }
+
+        .summary-row .value.negative {
+          color: var(--color-negative);
+        }
+
+        .summary-row .value.highlight {
+          color: var(--color-positive);
+          font-size: 24px;
+        }
+
+        .summary-row.total {
+          margin-top: 16px;
+          padding-top: 16px;
+          border-top: 2px solid var(--accent-primary);
+          font-size: 18px;
+          font-weight: 800;
         }
 
         .summary-row.warning .value {
@@ -617,6 +757,14 @@ export default function CompleteAnalysisCalculator() {
 
         /* Responsive */
         @media (max-width: 768px) {
+          .full-section {
+            padding: 32px 24px;
+          }
+
+          .inputs-grid {
+            grid-template-columns: 1fr;
+          }
+
           .calculator-grid {
             grid-template-columns: 1fr;
           }
@@ -633,6 +781,10 @@ export default function CompleteAnalysisCalculator() {
 
           .card-value {
             font-size: 24px;
+          }
+
+          .summary-row .value.highlight {
+            font-size: 20px;
           }
         }
       `}</style>
