@@ -3,6 +3,9 @@
 import { useState, useMemo } from 'react';
 
 export default function CompleteAnalysisCalculator() {
+  // UI State
+  const [showCostsBreakdown, setShowCostsBreakdown] = useState(false);
+
   // Current Home / Selling
   const [currentMortgage, setCurrentMortgage] = useState(500000);
   const [salePrice, setSalePrice] = useState(1025000);
@@ -277,13 +280,51 @@ export default function CompleteAnalysisCalculator() {
             <span>- Current Mortgage</span>
             <span className="value negative">{formatCurrency(calculations.currentMortgage)}</span>
           </div>
-          <div className="summary-row">
-            <span>- Total Selling Costs</span>
+          <div
+            className="summary-row clickable"
+            onClick={() => setShowCostsBreakdown(!showCostsBreakdown)}
+          >
+            <span className="with-icon">
+              <span className="expand-icon">{showCostsBreakdown ? '−' : '+'}</span>
+              - Total Selling Costs
+            </span>
             <span className="value negative">{formatCurrency(calculations.totalSellingCosts)}</span>
           </div>
+
+          {showCostsBreakdown && (
+            <div className="costs-breakdown">
+              <div className="breakdown-row">
+                <span>Realtor Commission ({realtorCommission}%)</span>
+                <span className="breakdown-value">{formatCurrency(calculations.commission)}</span>
+              </div>
+              <div className="breakdown-row">
+                <span>Staging</span>
+                <span className="breakdown-value">{formatCurrency(staging)}</span>
+              </div>
+              <div className="breakdown-row">
+                <span>Closing Repairs</span>
+                <span className="breakdown-value">{formatCurrency(closingRepairs)}</span>
+              </div>
+              <div className="breakdown-row">
+                <span>Pre-Inspection</span>
+                <span className="breakdown-value">{formatCurrency(preInspection)}</span>
+              </div>
+              <div className="breakdown-row">
+                <span>Storage Facility</span>
+                <span className="breakdown-value">{formatCurrency(storageFacility)}</span>
+              </div>
+              <div className="breakdown-row">
+                <span>Lawyer Fees</span>
+                <span className="breakdown-value">{formatCurrency(lawyerFees)}</span>
+              </div>
+            </div>
+          )}
+
           <div className="summary-row total">
             <span>= Net Proceeds</span>
-            <span className="value highlight">{formatCurrency(calculations.netFromSale)}</span>
+            <span className={`value ${calculations.netFromSale >= 0 ? 'highlight' : 'highlight-negative'}`}>
+              {formatCurrency(calculations.netFromSale)}
+            </span>
           </div>
         </div>
       </div>
@@ -614,6 +655,71 @@ export default function CompleteAnalysisCalculator() {
           font-size: 24px;
         }
 
+        .summary-row .value.highlight-negative {
+          color: var(--color-negative);
+          font-size: 24px;
+        }
+
+        .summary-row.clickable {
+          cursor: pointer;
+          transition: background-color 0.2s ease;
+        }
+
+        .summary-row.clickable:hover {
+          background-color: rgba(0, 0, 0, 0.02);
+          border-radius: 8px;
+        }
+
+        [data-theme='dark'] .summary-row.clickable:hover {
+          background-color: rgba(255, 255, 255, 0.05);
+        }
+
+        .with-icon {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+        }
+
+        .expand-icon {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          width: 20px;
+          height: 20px;
+          background: var(--accent-primary);
+          color: white;
+          border-radius: 4px;
+          font-size: 18px;
+          font-weight: 700;
+          line-height: 1;
+        }
+
+        .costs-breakdown {
+          margin: 12px 0 12px 32px;
+          padding: 16px;
+          background: var(--card-bg);
+          border-radius: 8px;
+          border-left: 3px solid var(--accent-secondary);
+        }
+
+        .breakdown-row {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 8px 0;
+          font-size: 13px;
+          color: var(--text-secondary);
+        }
+
+        .breakdown-row:not(:last-child) {
+          border-bottom: 1px dotted var(--border-color);
+        }
+
+        .breakdown-value {
+          font-weight: 600;
+          color: var(--text-primary);
+        }
+
         .summary-row.total {
           margin-top: 16px;
           padding-top: 16px;
@@ -783,8 +889,13 @@ export default function CompleteAnalysisCalculator() {
             font-size: 24px;
           }
 
-          .summary-row .value.highlight {
+          .summary-row .value.highlight,
+          .summary-row .value.highlight-negative {
             font-size: 20px;
+          }
+
+          .costs-breakdown {
+            margin-left: 0;
           }
         }
       `}</style>
