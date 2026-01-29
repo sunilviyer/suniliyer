@@ -422,7 +422,17 @@ export function InlineContextCard({ trigger, card, cardId }: InlineContextCardPr
                         href={cardData.download_url}
                         download
                         className="card-action-button download-button"
-                        onClick={(e) => e.stopPropagation()}
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          e.preventDefault();
+                          // Manually trigger download
+                          const link = document.createElement('a');
+                          link.href = cardData.download_url;
+                          link.download = cardData.download_url.split('/').pop() || 'download';
+                          document.body.appendChild(link);
+                          link.click();
+                          document.body.removeChild(link);
+                        }}
                         style={{
                           display: 'inline-flex',
                           alignItems: 'center',
