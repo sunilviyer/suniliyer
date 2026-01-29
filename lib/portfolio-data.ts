@@ -12,14 +12,14 @@ export const portfolioData: PortfolioItemData[] = [
     title: "Seshan Intelligence",
     description: "AI-powered business intelligence platform with advanced analytics",
     image: "/images/portfolio/seshan-intelligence.webp",
-    link: "/coming-soon",
+    link: "https://www.suniliyer.ca/seshan/demo/",
   },
   {
     id: 2,
     title: "Seshan Financial Dashboard",
     description: "Comprehensive financial analytics and reporting platform",
     image: "/images/portfolio/seshan-financial-dashboard.webp",
-    link: "/coming-soon",
+    link: "https://seshan-navy.vercel.app/",
   },
   {
     id: 3,
