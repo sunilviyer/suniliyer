@@ -1,0 +1,138 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+ 
+@layer base {
+  :root {
+    /* --- User's Custom Palette --- */
+    /* Blacks */
+    --bg-black-0: #000000;
+    --bg-black: #000000;
+    --bg-black-20: #000000;
+
+    /* Darks */
+    --bg-neutral-800: #252525;
+    --bg-neutral-700: #3F3F3F;
+    --bg-zinc-700: #464646;
+
+    /* Mid-Grays */
+    --bg-zinc-600: #5E5E5E;
+    --bg-neutral-500: #727272;
+    --bg-neutral-400: #A2A2A2;
+    --bg-zinc-400: #B3B3B3;
+    --bg-stone-300: #C3C3C3;
+
+    /* Reds */
+    --bg-red-500: #E06348;
+    --bg-red-300: #E8A79B;
+    --bg-red-200: #FACEBA;
+
+    /* Light Grays / Off-Whites */
+    --bg-neutral-200: #E4E4E4;
+    --bg-gray-200: #E9E9E9;
+    --bg-zinc-100: #EEEEEE;
+    --bg-neutral-100: #F6F6F6;
+    --bg-neutral-100-95: #F7F7F7;
+    --bg-stone-50: #F8F8F8;
+
+    /* White */
+    --bg-white: #FFFFFF;
+
+    /* Amber Shades */
+    --bg-amber-500: #F5A623;
+    --bg-amber-300: #FACC7F;
+    --bg-amber-100: #FEF3E2;
+
+    /* Blue/Slate Shades */
+    --bg-slate-500: #94A3B8;
+    --bg-slate-300: #CBD5E1;
+    --bg-slate-50: #F1F5F9;
+
+    /* Green Shades */
+    --bg-green-500: #406348;
+    --bg-green-300: #6B9179;
+    --bg-green-200: #A8C4AF;
+
+    /* Golden Amber Shades */
+    --bg-gold-500: #F5B027;
+    --bg-gold-300: #F8C866;
+    --bg-gold-200: #FBE4AF;
+
+    /* --- Semantic Theme Mapping (Light Mode) --- */
+    --background: var(--bg-neutral-100);
+    --foreground: var(--bg-black);
+ 
+    --card: var(--bg-white);
+    --card-foreground: var(--bg-black);
+ 
+    --popover: var(--bg-white);
+    --popover-foreground: var(--bg-black);
+ 
+    --primary: var(--bg-neutral-800);
+    --primary-foreground: var(--bg-white);
+ 
+    --secondary: var(--bg-neutral-200);
+    --secondary-foreground: var(--bg-neutral-800);
+ 
+    --muted: var(--bg-neutral-200);
+    --muted-foreground: var(--bg-neutral-500);
+ 
+    --accent: var(--bg-neutral-200);
+    --accent-foreground: var(--bg-neutral-800);
+ 
+    --destructive: var(--bg-red-500);
+    --destructive-foreground: var(--bg-white);
+ 
+    --border: var(--bg-stone-300);
+    --input: var(--bg-stone-300);
+    --ring: var(--bg-neutral-800);
+ 
+    --radius: 0.5rem;
+
+    --money-positive: var(--bg-green-500);
+    --money-negative: var(--bg-red-500);
+  }
+ 
+  .dark {
+    /* --- Semantic Theme Mapping (Dark Mode) --- */
+    --background: var(--bg-neutral-800); /* #252525 */
+    --foreground: var(--bg-white);
+ 
+    --card: var(--bg-neutral-700); /* #3F3F3F */
+    --card-foreground: var(--bg-white);
+ 
+    --popover: var(--bg-neutral-700);
+    --popover-foreground: var(--bg-white);
+ 
+    --primary: var(--bg-white);
+    --primary-foreground: var(--bg-neutral-800);
+ 
+    --secondary: var(--bg-zinc-600);
+    --secondary-foreground: var(--bg-white);
+ 
+    --muted: var(--bg-zinc-600);
+    --muted-foreground: var(--bg-neutral-400);
+ 
+    --accent: var(--bg-zinc-600);
+    --accent-foreground: var(--bg-white);
+ 
+    --destructive: var(--bg-red-500);
+    --destructive-foreground: var(--bg-white);
+ 
+    --border: var(--bg-zinc-600);
+    --input: var(--bg-zinc-600);
+    --ring: var(--bg-neutral-400);
+
+    --money-positive: var(--bg-green-300); /* Lighter green for dark mode readability? keeping generic for now but using palette */
+    --money-negative: var(--bg-red-300);   /* Lighter red for dark mode */
+  }
+}
+ 
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
