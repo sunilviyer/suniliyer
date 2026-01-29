@@ -5,6 +5,7 @@ import { useState, useMemo } from 'react';
 export default function CompleteAnalysisCalculator() {
   // UI State
   const [showCostsBreakdown, setShowCostsBreakdown] = useState(false);
+  const [showBuyingCostsBreakdown, setShowBuyingCostsBreakdown] = useState(false);
 
   // Current Home / Selling
   const [currentMortgage, setCurrentMortgage] = useState(500000);
@@ -20,6 +21,15 @@ export default function CompleteAnalysisCalculator() {
 
   // New Home / Buying
   const [purchasePrice, setPurchasePrice] = useState(1550000);
+
+  // Buying Closing Costs
+  const [movingCost, setMovingCost] = useState(10000);
+  const [buyingLawyerFees, setBuyingLawyerFees] = useState(1500);
+  const [inspection, setInspection] = useState(500);
+  const [renovation, setRenovation] = useState(0);
+  const [titleInsurance, setTitleInsurance] = useState(400);
+  const [utilitiesDeposit, setUtilitiesDeposit] = useState(350);
+  const [propertySurvey, setPropertySurvey] = useState(1000);
 
   // Mortgage Options
   const [interestRate, setInterestRate] = useState(3.76);
@@ -50,7 +60,8 @@ export default function CompleteAnalysisCalculator() {
     };
 
     const landTransferTax = calculateLTT(purchasePrice);
-    const totalBuyingCosts = landTransferTax + 10400; // Simplified
+    const totalBuyingCosts = landTransferTax + movingCost + buyingLawyerFees + inspection +
+                             renovation + titleInsurance + utilitiesDeposit + propertySurvey;
 
     // DOWN PAYMENT & MORTGAGE
     const availableForDownPayment = netFromSale - totalBuyingCosts + extraDownPayment;
@@ -100,6 +111,7 @@ export default function CompleteAnalysisCalculator() {
       netFromSale,
       purchasePrice,
       landTransferTax,
+      totalBuyingCosts,
       availableForDownPayment,
       downPaymentPercent,
       totalMortgage,
@@ -118,7 +130,8 @@ export default function CompleteAnalysisCalculator() {
       totalCarryingCostsOverLife
     };
   }, [salePrice, currentMortgage, realtorCommission, staging, closingRepairs, preInspection,
-      storageFacility, lawyerFees, purchasePrice, interestRate, amortization,
+      storageFacility, lawyerFees, purchasePrice, movingCost, buyingLawyerFees, inspection,
+      renovation, titleInsurance, utilitiesDeposit, propertySurvey, interestRate, amortization,
       extraDownPayment, propertyTaxRate, homeInsurance, maintenanceRate, utilities]);
 
   const formatCurrency = (num: number) => {
@@ -346,15 +359,158 @@ export default function CompleteAnalysisCalculator() {
               className="slider"
             />
           </div>
+
+          <div className="input-group">
+            <label>Moving Cost: {formatCurrency(movingCost)}</label>
+            <input
+              type="range"
+              min="0"
+              max="20000"
+              step="500"
+              value={movingCost}
+              onChange={(e) => setMovingCost(Number(e.target.value))}
+              className="slider"
+            />
+          </div>
+
+          <div className="input-group">
+            <label>Lawyer Fees: {formatCurrency(buyingLawyerFees)}</label>
+            <input
+              type="range"
+              min="0"
+              max="2000"
+              step="50"
+              value={buyingLawyerFees}
+              onChange={(e) => setBuyingLawyerFees(Number(e.target.value))}
+              className="slider"
+            />
+          </div>
+
+          <div className="input-group">
+            <label>Inspection: {formatCurrency(inspection)}</label>
+            <input
+              type="range"
+              min="0"
+              max="1000"
+              step="50"
+              value={inspection}
+              onChange={(e) => setInspection(Number(e.target.value))}
+              className="slider"
+            />
+          </div>
+
+          <div className="input-group">
+            <label>Renovation: {formatCurrency(renovation)}</label>
+            <input
+              type="range"
+              min="0"
+              max="50000"
+              step="500"
+              value={renovation}
+              onChange={(e) => setRenovation(Number(e.target.value))}
+              className="slider"
+            />
+          </div>
+
+          <div className="input-group">
+            <label>Title Insurance: {formatCurrency(titleInsurance)}</label>
+            <input
+              type="range"
+              min="0"
+              max="1000"
+              step="50"
+              value={titleInsurance}
+              onChange={(e) => setTitleInsurance(Number(e.target.value))}
+              className="slider"
+            />
+          </div>
+
+          <div className="input-group">
+            <label>Utilities Deposit: {formatCurrency(utilitiesDeposit)}</label>
+            <input
+              type="range"
+              min="0"
+              max="700"
+              step="25"
+              value={utilitiesDeposit}
+              onChange={(e) => setUtilitiesDeposit(Number(e.target.value))}
+              className="slider"
+            />
+          </div>
+
+          <div className="input-group">
+            <label>Property Survey: {formatCurrency(propertySurvey)}</label>
+            <input
+              type="range"
+              min="0"
+              max="2000"
+              step="50"
+              value={propertySurvey}
+              onChange={(e) => setPropertySurvey(Number(e.target.value))}
+              className="slider"
+            />
+          </div>
         </div>
 
         <div className="summary-box">
           <div className="summary-row">
-            <span>Land Transfer Tax</span>
-            <span className="value">{formatCurrency(calculations.landTransferTax)}</span>
+            <span>Purchase Price</span>
+            <span className="value positive">{formatCurrency(calculations.purchasePrice)}</span>
+          </div>
+          <div
+            className="summary-row clickable"
+            onClick={() => setShowBuyingCostsBreakdown(!showBuyingCostsBreakdown)}
+          >
+            <span className="with-icon">
+              <span className="expand-icon">{showBuyingCostsBreakdown ? '−' : '+'}</span>
+              + Total Buying Costs
+            </span>
+            <span className="value negative">{formatCurrency(calculations.totalBuyingCosts)}</span>
+          </div>
+
+          {showBuyingCostsBreakdown && (
+            <div className="costs-breakdown">
+              <div className="breakdown-row">
+                <span>Land Transfer Tax</span>
+                <span className="breakdown-value">{formatCurrency(calculations.landTransferTax)}</span>
+              </div>
+              <div className="breakdown-row">
+                <span>Moving Cost</span>
+                <span className="breakdown-value">{formatCurrency(movingCost)}</span>
+              </div>
+              <div className="breakdown-row">
+                <span>Lawyer Fees</span>
+                <span className="breakdown-value">{formatCurrency(buyingLawyerFees)}</span>
+              </div>
+              <div className="breakdown-row">
+                <span>Inspection</span>
+                <span className="breakdown-value">{formatCurrency(inspection)}</span>
+              </div>
+              <div className="breakdown-row">
+                <span>Renovation</span>
+                <span className="breakdown-value">{formatCurrency(renovation)}</span>
+              </div>
+              <div className="breakdown-row">
+                <span>Title Insurance</span>
+                <span className="breakdown-value">{formatCurrency(titleInsurance)}</span>
+              </div>
+              <div className="breakdown-row">
+                <span>Utilities Deposit</span>
+                <span className="breakdown-value">{formatCurrency(utilitiesDeposit)}</span>
+              </div>
+              <div className="breakdown-row">
+                <span>Property Survey</span>
+                <span className="breakdown-value">{formatCurrency(propertySurvey)}</span>
+              </div>
+            </div>
+          )}
+
+          <div className="summary-row">
+            <span>Down Payment Available</span>
+            <span className="value">{formatCurrency(calculations.availableForDownPayment)}</span>
           </div>
           <div className="summary-row">
-            <span>Down Payment</span>
+            <span>Down Payment %</span>
             <span className="value">{calculations.downPaymentPercent.toFixed(1)}%</span>
           </div>
           {calculations.cmhcInsurance > 0 && (
