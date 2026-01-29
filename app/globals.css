@@ -22,6 +22,42 @@
   --card-bg: rgba(26, 26, 26, 0.95);
   --shadow-color: rgba(255, 255, 255, 0.1);
   --hero-text: #333d29;
+
+  /* Mortgage Calculator Earthy Dark Theme */
+  --accent-primary: #c75146;
+  --accent-secondary: #ea8c55;
+  --color-positive: #10b981;
+  --color-negative: #ef4444;
+  --color-warning: #ea8c55;
+  --color-info: #c75146;
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.15);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.2);
+  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.25);
+  --border-hover: #ad2e24;
+}
+
+/* Light theme overrides for mortgage calculator */
+[data-theme="light"] {
+  --bg-primary: #fef7f4;
+  --bg-secondary: #f9ece8;
+  --text-primary: #2d1410;
+  --text-secondary: #764622;
+  --text-tertiary: #a65946;
+  --border-color: rgba(173, 46, 36, 0.15);
+  --card-bg: #ffffff;
+  --shadow-color: rgba(84, 8, 4, 0.1);
+
+  /* Mortgage Calculator Earthy Light Theme */
+  --accent-primary: #ad2e24;
+  --accent-secondary: #c75146;
+  --color-positive: #059669;
+  --color-negative: #dc2626;
+  --color-warning: #d97532;
+  --color-info: #ad2e24;
+  --shadow-sm: 0 2px 8px rgba(84, 8, 4, 0.08);
+  --shadow-md: 0 4px 16px rgba(84, 8, 4, 0.12);
+  --shadow-lg: 0 8px 32px rgba(84, 8, 4, 0.16);
+  --border-hover: rgba(173, 46, 36, 0.4);
 }
 
 * {
