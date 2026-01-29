@@ -5,7 +5,7 @@ import AffordabilityCalculator from './components/AffordabilityCalculator';
 import CompleteAnalysisCalculator from './components/CompleteAnalysisCalculator';
 
 export default function MortgageCalculatorPage() {
-  const [activeTab, setActiveTab] = useState<'affordability' | 'complete'>('affordability');
+  const [activeTab, setActiveTab] = useState<'affordability' | 'cost'>('cost');
   const [theme, setTheme] = useState<'light' | 'dark'>('light');
   const [mounted, setMounted] = useState(false);
 
@@ -72,20 +72,18 @@ export default function MortgageCalculatorPage() {
         <div className="container">
           <div className="tab-buttons">
             <button
+              className={`tab-button ${activeTab === 'cost' ? 'active' : ''}`}
+              onClick={() => setActiveTab('cost')}
+              aria-label="Cost Calculator"
+            >
+              <span className="tab-text">Cost Calculator</span>
+            </button>
+            <button
               className={`tab-button ${activeTab === 'affordability' ? 'active' : ''}`}
               onClick={() => setActiveTab('affordability')}
               aria-label="Affordability Calculator"
             >
-              <span className="tab-icon">🎯</span>
               <span className="tab-text">Affordability Calculator</span>
-            </button>
-            <button
-              className={`tab-button ${activeTab === 'complete' ? 'active' : ''}`}
-              onClick={() => setActiveTab('complete')}
-              aria-label="Complete Analysis"
-            >
-              <span className="tab-icon">📊</span>
-              <span className="tab-text">Complete Analysis</span>
             </button>
           </div>
         </div>
@@ -94,10 +92,10 @@ export default function MortgageCalculatorPage() {
       {/* Calculator Content */}
       <main className="calc-content">
         <div className="container">
-          {activeTab === 'affordability' ? (
-            <AffordabilityCalculator />
-          ) : (
+          {activeTab === 'cost' ? (
             <CompleteAnalysisCalculator />
+          ) : (
+            <AffordabilityCalculator />
           )}
         </div>
       </main>
@@ -198,7 +196,7 @@ export default function MortgageCalculatorPage() {
         .tab-button {
           display: flex;
           align-items: center;
-          gap: 12px;
+          justify-content: center;
           padding: 16px 32px;
           background: transparent;
           color: var(--text-secondary);
@@ -237,10 +235,6 @@ export default function MortgageCalculatorPage() {
           color: var(--text-primary);
           background: var(--bg-secondary);
           border-color: var(--border-color);
-        }
-
-        .tab-icon {
-          font-size: 24px;
         }
 
         .tab-text {
@@ -319,10 +313,6 @@ export default function MortgageCalculatorPage() {
             height: 44px;
             top: 16px;
             right: 16px;
-          }
-
-          .tab-icon {
-            font-size: 20px;
           }
 
           .tab-text {

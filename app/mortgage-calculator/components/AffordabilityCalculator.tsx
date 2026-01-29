@@ -4,7 +4,7 @@ import { useState, useMemo } from 'react';
 
 export default function AffordabilityCalculator() {
   // Current Home / Selling
-  const [currentMortgage] = useState(672000);
+  const [currentMortgage, setCurrentMortgage] = useState(672000);
   const [salePrice, setSalePrice] = useState(1025000);
   const [commissionRate] = useState(5.0);
   const [stagingCost] = useState(3500);
@@ -238,7 +238,7 @@ export default function AffordabilityCalculator() {
         {/* Selling Section */}
         <div className="input-section">
           <h3 className="input-section-title">🏷️ Your Current Home Sale</h3>
-          {/* Selling inputs will go here - shortened for token limit */}
+
           <div className="input-group">
             <label>Sale Price: {formatCurrency(salePrice)}</label>
             <input
@@ -252,10 +252,35 @@ export default function AffordabilityCalculator() {
             />
           </div>
 
+          <div className="input-group">
+            <label>Current Home Mortgage: {formatCurrency(currentMortgage)}</label>
+            <input
+              type="range"
+              min="0"
+              max="1000000"
+              step="5000"
+              value={currentMortgage}
+              onChange={(e) => setCurrentMortgage(Number(e.target.value))}
+              className="slider"
+            />
+          </div>
+
           <div className="equity-summary">
             <div className="summary-row">
-              <span>Your Equity</span>
-              <span className="equity-value">{formatCurrency(calculations.netFromSale)}</span>
+              <span>Sale Price</span>
+              <span className="equity-value positive">{formatCurrency(salePrice)}</span>
+            </div>
+            <div className="summary-row">
+              <span>- Mortgage</span>
+              <span className="equity-value negative">{formatCurrency(currentMortgage)}</span>
+            </div>
+            <div className="summary-row">
+              <span>- Selling Costs</span>
+              <span className="equity-value negative">{formatCurrency(calculations.totalSellingCosts)}</span>
+            </div>
+            <div className="summary-row total">
+              <span>= Your Equity</span>
+              <span className="equity-value final">{formatCurrency(calculations.netFromSale)}</span>
             </div>
           </div>
         </div>
@@ -487,14 +512,36 @@ export default function AffordabilityCalculator() {
           display: flex;
           justify-content: space-between;
           align-items: center;
-          font-size: 18px;
+          font-size: 16px;
           font-weight: 600;
+          margin-bottom: 12px;
+          color: var(--text-secondary);
+        }
+
+        .summary-row.total {
+          margin-top: 16px;
+          padding-top: 16px;
+          border-top: 2px solid var(--border-color);
+          font-size: 20px;
+          color: var(--text-primary);
         }
 
         .equity-value {
-          color: var(--color-positive);
-          font-size: 24px;
+          font-size: 18px;
           font-weight: 800;
+        }
+
+        .equity-value.positive {
+          color: var(--color-positive);
+        }
+
+        .equity-value.negative {
+          color: var(--color-negative);
+        }
+
+        .equity-value.final {
+          color: var(--color-positive);
+          font-size: 28px;
         }
 
         /* Animations */
