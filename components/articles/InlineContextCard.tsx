@@ -115,6 +115,7 @@ export function InlineContextCard({ trigger, card, cardId }: InlineContextCardPr
   const [isHovered, setIsHovered] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
   const cardRef = useRef<HTMLDivElement>(null);
+  const modalRef = useRef<HTMLDivElement>(null);
 
   const contextCard = useCard(cardId || '');
   const cardData = card || contextCard;
@@ -125,7 +126,11 @@ export function InlineContextCard({ trigger, card, cardId }: InlineContextCardPr
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (cardRef.current && !cardRef.current.contains(event.target as Node)) {
+      const target = event.target as Node;
+      const clickedInTrigger = cardRef.current && cardRef.current.contains(target);
+      const clickedInModal = modalRef.current && modalRef.current.contains(target);
+
+      if (!clickedInTrigger && !clickedInModal) {
         setIsExpanded(false);
       }
     };
@@ -205,6 +210,7 @@ export function InlineContextCard({ trigger, card, cardId }: InlineContextCardPr
             }}
           >
             <motion.div
+              ref={modalRef}
               className="card-main-portal-layer"
               style={{
                 borderRadius: '24px',
