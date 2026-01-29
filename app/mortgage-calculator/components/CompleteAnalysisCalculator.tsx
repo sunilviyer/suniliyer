@@ -4,7 +4,7 @@ import { useState, useMemo } from 'react';
 
 export default function CompleteAnalysisCalculator() {
   // Current Home / Selling
-  const [currentMortgage, setCurrentMortgage] = useState(672000);
+  const [currentMortgage, setCurrentMortgage] = useState(500000);
   const [salePrice, setSalePrice] = useState(1025000);
   const [commissionRate] = useState(5.0);
 
