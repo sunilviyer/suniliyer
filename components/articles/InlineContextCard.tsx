@@ -426,6 +426,7 @@ export function InlineContextCard({ trigger, card, cardId }: InlineContextCardPr
                           e.stopPropagation();
                           e.preventDefault();
                           // Manually trigger download
+                          if (!cardData.download_url) return;
                           const link = document.createElement('a');
                           link.href = cardData.download_url;
                           link.download = cardData.download_url.split('/').pop() || 'download';
