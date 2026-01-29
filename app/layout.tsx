@@ -18,9 +18,6 @@ const funnelSans = Funnel_Sans({
 export const metadata: Metadata = {
   title: "Sunil Iyer | AI Governance & Responsible AI",
   description: "Helping organizations navigate AI through education, implementation guidance, and governance frameworks.",
-  icons: {
-    icon: '/favicon.ico',
-  },
 };
 
 export default function RootLayout({
