@@ -179,108 +179,196 @@ export default function CompleteAnalysisCalculator() {
 
         <div className="inputs-grid">
           <div className="input-group">
-            <label>Sale Price: {formatCurrency(salePrice)}</label>
-            <input
-              type="range"
-              min="1"
-              max="3000000"
-              step="5000"
-              value={salePrice}
-              onChange={(e) => setSalePrice(Number(e.target.value))}
-              className="slider"
-            />
+            <label>Sale Price</label>
+            <div className="slider-input-row">
+              <input
+                type="range"
+                min="1"
+                max="3000000"
+                step="5000"
+                value={salePrice}
+                onChange={(e) => setSalePrice(Number(e.target.value))}
+                className="slider"
+              />
+              <input
+                type="number"
+                min="1"
+                max="3000000"
+                step="5000"
+                value={salePrice}
+                onChange={(e) => setSalePrice(Number(e.target.value) || 0)}
+                className="number-input"
+              />
+            </div>
           </div>
 
           <div className="input-group">
-            <label>Current Mortgage: {formatCurrency(currentMortgage)}</label>
-            <input
-              type="range"
-              min="1"
-              max="3000000"
-              step="5000"
-              value={currentMortgage}
-              onChange={(e) => setCurrentMortgage(Number(e.target.value))}
-              className="slider"
-            />
+            <label>Current Mortgage</label>
+            <div className="slider-input-row">
+              <input
+                type="range"
+                min="1"
+                max="3000000"
+                step="5000"
+                value={currentMortgage}
+                onChange={(e) => setCurrentMortgage(Number(e.target.value))}
+                className="slider"
+              />
+              <input
+                type="number"
+                min="1"
+                max="3000000"
+                step="5000"
+                value={currentMortgage}
+                onChange={(e) => setCurrentMortgage(Number(e.target.value) || 0)}
+                className="number-input"
+              />
+            </div>
           </div>
 
           <div className="input-group">
-            <label>Staging: {formatCurrency(staging)}</label>
-            <input
-              type="range"
-              min="0"
-              max="15000"
-              step="100"
-              value={staging}
-              onChange={(e) => setStaging(Number(e.target.value))}
-              className="slider"
-            />
+            <label>Staging</label>
+            <div className="slider-input-row">
+              <input
+                type="range"
+                min="0"
+                max="15000"
+                step="100"
+                value={staging}
+                onChange={(e) => setStaging(Number(e.target.value))}
+                className="slider"
+              />
+              <input
+                type="number"
+                min="0"
+                max="15000"
+                step="100"
+                value={staging}
+                onChange={(e) => setStaging(Number(e.target.value) || 0)}
+                className="number-input"
+              />
+            </div>
           </div>
 
           <div className="input-group">
-            <label>Realtor Commission: {realtorCommission}%</label>
-            <input
-              type="range"
-              min="0"
-              max="5"
-              step="0.1"
-              value={realtorCommission}
-              onChange={(e) => setRealtorCommission(Number(e.target.value))}
-              className="slider"
-            />
+            <label>Realtor Commission (%)</label>
+            <div className="slider-input-row">
+              <input
+                type="range"
+                min="0"
+                max="5"
+                step="0.1"
+                value={realtorCommission}
+                onChange={(e) => setRealtorCommission(Number(e.target.value))}
+                className="slider"
+              />
+              <input
+                type="number"
+                min="0"
+                max="5"
+                step="0.1"
+                value={realtorCommission}
+                onChange={(e) => setRealtorCommission(Number(e.target.value) || 0)}
+                className="number-input percent"
+              />
+            </div>
             <div className="input-hint">{formatCurrency(calculations.commission)}</div>
           </div>
 
           <div className="input-group">
-            <label>Closing Repairs: {formatCurrency(closingRepairs)}</label>
-            <input
-              type="range"
-              min="0"
-              max="50000"
-              step="500"
-              value={closingRepairs}
-              onChange={(e) => setClosingRepairs(Number(e.target.value))}
-              className="slider"
-            />
+            <label>Closing Repairs</label>
+            <div className="slider-input-row">
+              <input
+                type="range"
+                min="0"
+                max="50000"
+                step="500"
+                value={closingRepairs}
+                onChange={(e) => setClosingRepairs(Number(e.target.value))}
+                className="slider"
+              />
+              <input
+                type="number"
+                min="0"
+                max="50000"
+                step="500"
+                value={closingRepairs}
+                onChange={(e) => setClosingRepairs(Number(e.target.value) || 0)}
+                className="number-input"
+              />
+            </div>
           </div>
 
           <div className="input-group">
-            <label>Pre-Inspection: {formatCurrency(preInspection)}</label>
-            <input
-              type="range"
-              min="0"
-              max="1000"
-              step="50"
-              value={preInspection}
-              onChange={(e) => setPreInspection(Number(e.target.value))}
-              className="slider"
-            />
+            <label>Pre-Inspection</label>
+            <div className="slider-input-row">
+              <input
+                type="range"
+                min="0"
+                max="1000"
+                step="50"
+                value={preInspection}
+                onChange={(e) => setPreInspection(Number(e.target.value))}
+                className="slider"
+              />
+              <input
+                type="number"
+                min="0"
+                max="1000"
+                step="50"
+                value={preInspection}
+                onChange={(e) => setPreInspection(Number(e.target.value) || 0)}
+                className="number-input"
+              />
+            </div>
           </div>
 
           <div className="input-group">
-            <label>Storage Facility: {formatCurrency(storageFacility)}</label>
-            <input
-              type="range"
-              min="0"
-              max="2000"
-              step="50"
-              value={storageFacility}
-              onChange={(e) => setStorageFacility(Number(e.target.value))}
-              className="slider"
-            />
+            <label>Storage Facility</label>
+            <div className="slider-input-row">
+              <input
+                type="range"
+                min="0"
+                max="2000"
+                step="50"
+                value={storageFacility}
+                onChange={(e) => setStorageFacility(Number(e.target.value))}
+                className="slider"
+              />
+              <input
+                type="number"
+                min="0"
+                max="2000"
+                step="50"
+                value={storageFacility}
+                onChange={(e) => setStorageFacility(Number(e.target.value) || 0)}
+                className="number-input"
+              />
+            </div>
           </div>
 
           <div className="input-group">
-            <label>Lawyer Fees: {formatCurrency(lawyerFees)}</label>
-            <input
-              type="range"
-              min="0"
-              max="2500"
-              step="50"
-              value={lawyerFees}
-              onChange={(e) => setLawyerFees(Number(e.target.value))}
-              className="slider"
-            />
+            <label>Lawyer Fees</label>
+            <div className="slider-input-row">
+              <input
+                type="range"
+                min="0"
+                max="2500"
+                step="50"
+                value={lawyerFees}
+                onChange={(e) => setLawyerFees(Number(e.target.value))}
+                className="slider"
+              />
+              <input
+                type="number"
+                min="0"
+                max="2500"
+                step="50"
+                value={lawyerFees}
+                onChange={(e) => setLawyerFees(Number(e.target.value) || 0)}
+                className="number-input"
+              />
+            </div>
           </div>
         </div>
 
@@ -348,107 +436,195 @@ export default function CompleteAnalysisCalculator() {
 
         <div className="inputs-grid">
           <div className="input-group">
-            <label>Purchase Price: {formatCurrency(purchasePrice)}</label>
-            <input
-              type="range"
-              min="1"
-              max="3000000"
-              step="10000"
-              value={purchasePrice}
-              onChange={(e) => setPurchasePrice(Number(e.target.value))}
-              className="slider"
-            />
+            <label>Purchase Price</label>
+            <div className="slider-input-row">
+              <input
+                type="range"
+                min="1"
+                max="3000000"
+                step="10000"
+                value={purchasePrice}
+                onChange={(e) => setPurchasePrice(Number(e.target.value))}
+                className="slider"
+              />
+              <input
+                type="number"
+                min="1"
+                max="3000000"
+                step="10000"
+                value={purchasePrice}
+                onChange={(e) => setPurchasePrice(Number(e.target.value) || 0)}
+                className="number-input"
+              />
+            </div>
           </div>
 
           <div className="input-group">
-            <label>Moving Cost: {formatCurrency(movingCost)}</label>
-            <input
-              type="range"
-              min="0"
-              max="20000"
-              step="500"
-              value={movingCost}
-              onChange={(e) => setMovingCost(Number(e.target.value))}
-              className="slider"
-            />
+            <label>Moving Cost</label>
+            <div className="slider-input-row">
+              <input
+                type="range"
+                min="0"
+                max="20000"
+                step="500"
+                value={movingCost}
+                onChange={(e) => setMovingCost(Number(e.target.value))}
+                className="slider"
+              />
+              <input
+                type="number"
+                min="0"
+                max="20000"
+                step="500"
+                value={movingCost}
+                onChange={(e) => setMovingCost(Number(e.target.value) || 0)}
+                className="number-input"
+              />
+            </div>
           </div>
 
           <div className="input-group">
-            <label>Lawyer Fees: {formatCurrency(buyingLawyerFees)}</label>
-            <input
-              type="range"
-              min="0"
-              max="2000"
-              step="50"
-              value={buyingLawyerFees}
-              onChange={(e) => setBuyingLawyerFees(Number(e.target.value))}
-              className="slider"
-            />
+            <label>Lawyer Fees</label>
+            <div className="slider-input-row">
+              <input
+                type="range"
+                min="0"
+                max="2000"
+                step="50"
+                value={buyingLawyerFees}
+                onChange={(e) => setBuyingLawyerFees(Number(e.target.value))}
+                className="slider"
+              />
+              <input
+                type="number"
+                min="0"
+                max="2000"
+                step="50"
+                value={buyingLawyerFees}
+                onChange={(e) => setBuyingLawyerFees(Number(e.target.value) || 0)}
+                className="number-input"
+              />
+            </div>
           </div>
 
           <div className="input-group">
-            <label>Inspection: {formatCurrency(inspection)}</label>
-            <input
-              type="range"
-              min="0"
-              max="1000"
-              step="50"
-              value={inspection}
-              onChange={(e) => setInspection(Number(e.target.value))}
-              className="slider"
-            />
+            <label>Inspection</label>
+            <div className="slider-input-row">
+              <input
+                type="range"
+                min="0"
+                max="1000"
+                step="50"
+                value={inspection}
+                onChange={(e) => setInspection(Number(e.target.value))}
+                className="slider"
+              />
+              <input
+                type="number"
+                min="0"
+                max="1000"
+                step="50"
+                value={inspection}
+                onChange={(e) => setInspection(Number(e.target.value) || 0)}
+                className="number-input"
+              />
+            </div>
           </div>
 
           <div className="input-group">
-            <label>Renovation: {formatCurrency(renovation)}</label>
-            <input
-              type="range"
-              min="0"
-              max="50000"
-              step="500"
-              value={renovation}
-              onChange={(e) => setRenovation(Number(e.target.value))}
-              className="slider"
-            />
+            <label>Renovation</label>
+            <div className="slider-input-row">
+              <input
+                type="range"
+                min="0"
+                max="50000"
+                step="500"
+                value={renovation}
+                onChange={(e) => setRenovation(Number(e.target.value))}
+                className="slider"
+              />
+              <input
+                type="number"
+                min="0"
+                max="50000"
+                step="500"
+                value={renovation}
+                onChange={(e) => setRenovation(Number(e.target.value) || 0)}
+                className="number-input"
+              />
+            </div>
           </div>
 
           <div className="input-group">
-            <label>Title Insurance: {formatCurrency(titleInsurance)}</label>
-            <input
-              type="range"
-              min="0"
-              max="1000"
-              step="50"
-              value={titleInsurance}
-              onChange={(e) => setTitleInsurance(Number(e.target.value))}
-              className="slider"
-            />
+            <label>Title Insurance</label>
+            <div className="slider-input-row">
+              <input
+                type="range"
+                min="0"
+                max="1000"
+                step="50"
+                value={titleInsurance}
+                onChange={(e) => setTitleInsurance(Number(e.target.value))}
+                className="slider"
+              />
+              <input
+                type="number"
+                min="0"
+                max="1000"
+                step="50"
+                value={titleInsurance}
+                onChange={(e) => setTitleInsurance(Number(e.target.value) || 0)}
+                className="number-input"
+              />
+            </div>
           </div>
 
           <div className="input-group">
-            <label>Utilities Deposit: {formatCurrency(utilitiesDeposit)}</label>
-            <input
-              type="range"
-              min="0"
-              max="700"
-              step="25"
-              value={utilitiesDeposit}
-              onChange={(e) => setUtilitiesDeposit(Number(e.target.value))}
-              className="slider"
-            />
+            <label>Utilities Deposit</label>
+            <div className="slider-input-row">
+              <input
+                type="range"
+                min="0"
+                max="700"
+                step="25"
+                value={utilitiesDeposit}
+                onChange={(e) => setUtilitiesDeposit(Number(e.target.value))}
+                className="slider"
+              />
+              <input
+                type="number"
+                min="0"
+                max="700"
+                step="25"
+                value={utilitiesDeposit}
+                onChange={(e) => setUtilitiesDeposit(Number(e.target.value) || 0)}
+                className="number-input"
+              />
+            </div>
           </div>
 
           <div className="input-group">
-            <label>Property Survey: {formatCurrency(propertySurvey)}</label>
-            <input
-              type="range"
-              min="0"
-              max="2000"
-              step="50"
-              value={propertySurvey}
-              onChange={(e) => setPropertySurvey(Number(e.target.value))}
-              className="slider"
-            />
+            <label>Property Survey</label>
+            <div className="slider-input-row">
+              <input
+                type="range"
+                min="0"
+                max="2000"
+                step="50"
+                value={propertySurvey}
+                onChange={(e) => setPropertySurvey(Number(e.target.value))}
+                className="slider"
+              />
+              <input
+                type="number"
+                min="0"
+                max="2000"
+                step="50"
+                value={propertySurvey}
+                onChange={(e) => setPropertySurvey(Number(e.target.value) || 0)}
+                className="number-input"
+              />
+            </div>
           </div>
         </div>
 
@@ -734,8 +910,14 @@ export default function CompleteAnalysisCalculator() {
           margin-bottom: 12px;
         }
 
+        .slider-input-row {
+          display: flex;
+          align-items: center;
+          gap: 12px;
+        }
+
         .slider {
-          width: 100%;
+          flex: 1;
           height: 8px;
           border-radius: 4px;
           background: var(--border-color);
@@ -743,6 +925,33 @@ export default function CompleteAnalysisCalculator() {
           -webkit-appearance: none;
           accent-color: var(--accent-primary);
           cursor: pointer;
+        }
+
+        .number-input {
+          width: 120px;
+          padding: 10px 12px;
+          background: var(--card-bg);
+          border: 2px solid var(--border-color);
+          border-radius: 8px;
+          font-size: 14px;
+          font-weight: 600;
+          color: var(--text-primary);
+          text-align: right;
+          transition: all 0.2s ease;
+        }
+
+        .number-input:focus {
+          outline: none;
+          border-color: var(--accent-primary);
+          box-shadow: 0 0 0 3px rgba(199, 81, 70, 0.1);
+        }
+
+        .number-input:hover {
+          border-color: var(--accent-secondary);
+        }
+
+        .number-input.percent {
+          width: 80px;
         }
 
         .slider::-webkit-slider-thumb {
@@ -1029,6 +1238,20 @@ export default function CompleteAnalysisCalculator() {
 
           .calculator-grid {
             grid-template-columns: 1fr;
+          }
+
+          .slider-input-row {
+            flex-direction: column;
+            align-items: stretch;
+            gap: 8px;
+          }
+
+          .number-input {
+            width: 100%;
+          }
+
+          .number-input.percent {
+            width: 100%;
           }
 
           .true-cost-section {
