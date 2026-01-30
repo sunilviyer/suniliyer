@@ -403,9 +403,21 @@ export default function AffordabilityCalculator() {
 
         .budget-grid {
           display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-          gap: 24px;
+          grid-template-columns: repeat(5, 1fr);
+          gap: 20px;
           margin-bottom: 40px;
+        }
+
+        @media (max-width: 1400px) {
+          .budget-grid {
+            grid-template-columns: repeat(3, 1fr);
+          }
+        }
+
+        @media (max-width: 900px) {
+          .budget-grid {
+            grid-template-columns: repeat(2, 1fr);
+          }
         }
 
         .budget-input-card {
