@@ -33,7 +33,7 @@ export const portfolioData: PortfolioItemData[] = [
     title: "Mortgage Calculator",
     description: "Intelligent mortgage calculation and planning tool",
     image: "/images/portfolio/mortgage-calculator.webp",
-    link: "/coming-soon",
+    link: "/mortgage-calculator",
   },
   {
     id: 5,
