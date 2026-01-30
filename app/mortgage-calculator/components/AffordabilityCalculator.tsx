@@ -3,9 +3,13 @@
 import { useState, useMemo } from 'react';
 
 export default function AffordabilityCalculator() {
+  // Income-Based Calculations
+  const [annualIncome, setAnnualIncome] = useState(150000);
+  const [maxDebtPercent, setMaxDebtPercent] = useState(44);
+
   // Current Home / Selling
-  const [currentMortgage, setCurrentMortgage] = useState(672000);
-  const [salePrice, setSalePrice] = useState(1025000);
+  const [currentMortgage, setCurrentMortgage] = useState(500000);
+  const [salePrice, setSalePrice] = useState(1000000);
   const [commissionRate] = useState(5.0);
   const [stagingCost] = useState(3500);
   const [sellingLegalFees] = useState(1500);
@@ -30,6 +34,11 @@ export default function AffordabilityCalculator() {
   const calculations = useMemo(() => {
     // Price scenarios to compare
     const priceScenarios = [1250000, 1350000, 1450000, 1550000];
+
+    // ===== INCOME-BASED CALCULATIONS =====
+    const monthlyIncome = annualIncome / 12;
+    const maxMonthlyDebt = (annualIncome * (maxDebtPercent / 100)) / 12;
+    const suggestedMortgagePayment = (annualIncome * 0.30) / 12;
 
     // ===== SELLING CALCULATIONS =====
     const commission = salePrice * (commissionRate / 100);
@@ -137,6 +146,10 @@ export default function AffordabilityCalculator() {
     });
 
     return {
+      annualIncome,
+      monthlyIncome,
+      maxMonthlyDebt,
+      suggestedMortgagePayment,
       salePrice,
       commission,
       totalSellingCosts,
@@ -149,9 +162,11 @@ export default function AffordabilityCalculator() {
       scenarios,
       targetMortgagePayment,
       targetPropertyTax,
-      targetTotalMonthly: targetMortgagePayment + (targetPropertyTax / 12)
+      targetTotalMonthly: targetMortgagePayment + (targetPropertyTax / 12),
+      monthlyRate,
+      totalPayments
     };
-  }, [currentMortgage, salePrice, commissionRate, stagingCost, sellingLegalFees, mortgageBreakPenalty,
+  }, [annualIncome, maxDebtPercent, currentMortgage, salePrice, commissionRate, stagingCost, sellingLegalFees, mortgageBreakPenalty,
       buyingLegalFees, homeInspection, titleInsurance, movingCosts, immediateRepairs,
       interestRate, amortization, extraDownPayment, targetMortgagePayment, targetPropertyTax]);
 
@@ -179,6 +194,37 @@ export default function AffordabilityCalculator() {
         <h2 className="section-heading">💰 Your Target Monthly Budget</h2>
 
         <div className="budget-grid">
+          <div className="budget-input-card">
+            <label className="input-label">Annual Income</label>
+            <div className="currency-input-group">
+              <span className="currency-symbol">$</span>
+              <input
+                type="number"
+                value={annualIncome}
+                onChange={(e) => setAnnualIncome(Number(e.target.value))}
+                className="currency-input large"
+              />
+              <span className="currency-suffix">/yr</span>
+            </div>
+            <div className="input-hint">= {formatCurrency(calculations.monthlyIncome)}/month</div>
+          </div>
+
+          <div className="budget-input-card">
+            <label className="input-label">Max Debt Ratio (Ontario Regulation)</label>
+            <div className="currency-input-group">
+              <input
+                type="number"
+                value={maxDebtPercent}
+                onChange={(e) => setMaxDebtPercent(Number(e.target.value))}
+                className="currency-input large"
+                min="0"
+                max="100"
+              />
+              <span className="currency-suffix">%</span>
+            </div>
+            <div className="input-hint regulation-note">44% is max debt allowed in Ontario per mortgage regulation</div>
+          </div>
+
           <div className="budget-input-card">
             <label className="input-label">Target Mortgage Payment</label>
             <div className="currency-input-group">
@@ -215,6 +261,46 @@ export default function AffordabilityCalculator() {
           </div>
         </div>
 
+        {/* Income-Based Debt Analysis */}
+        <div className="debt-analysis-section">
+          <div className="debt-analysis-grid">
+            <div className="debt-card">
+              <div className="debt-label">Max Monthly Debt Permitted</div>
+              <div className="debt-value permitted">{formatCurrency(calculations.maxMonthlyDebt)}</div>
+              <div className="debt-hint">Based on {maxDebtPercent}% of annual income</div>
+            </div>
+            <div className="debt-card">
+              <div className="debt-label">Suggested Mortgage Payment</div>
+              <div className="debt-value suggested">{formatCurrency(calculations.suggestedMortgagePayment)}</div>
+              <div className="debt-hint">30% of annual income (conservative guideline)</div>
+            </div>
+          </div>
+        </div>
+
+        {/* Max Mortgage Calculation Breakdown */}
+        <div className="calculation-breakdown">
+          <h3 className="breakdown-title">📊 Max Mortgage Calculation</h3>
+          <div className="breakdown-formula">
+            <div className="formula-row">
+              <span className="formula-label">Monthly Payment Target:</span>
+              <span className="formula-value">{formatCurrency(targetMortgagePayment)}</span>
+            </div>
+            <div className="formula-row">
+              <span className="formula-label">Interest Rate:</span>
+              <span className="formula-value">{interestRate}%</span>
+            </div>
+            <div className="formula-row">
+              <span className="formula-label">Amortization Period:</span>
+              <span className="formula-value">{amortization} years</span>
+            </div>
+            <div className="formula-row result-row">
+              <span className="formula-label">= Maximum Mortgage:</span>
+              <span className="formula-value highlight">{formatCurrency(calculations.maxMortgageFromPayment)}</span>
+            </div>
+          </div>
+        </div>
+
+        {/* Down Payment & Purchase Price Breakdown */}
         <div className="budget-calculation-display">
           <div className="calc-step">
             <div className="calc-value primary">{formatCurrency(calculations.maxMortgageFromPayment)}</div>
@@ -223,13 +309,19 @@ export default function AffordabilityCalculator() {
           <div className="calc-operator">+</div>
           <div className="calc-step">
             <div className="calc-value secondary">{formatCurrency(calculations.maxPurchaseDownPayment)}</div>
-            <div className="calc-label">Down Payment</div>
+            <div className="calc-label">Down Payment Available</div>
+            <div className="calc-note">From home sale equity</div>
           </div>
           <div className="calc-operator">=</div>
           <div className="calc-step">
             <div className="calc-value result">{formatCurrency(calculations.maxPurchasePrice)}</div>
-            <div className="calc-label">Max Purchase</div>
+            <div className="calc-label">Max Purchase Price</div>
           </div>
+        </div>
+
+        <div className="important-note">
+          ⚠️ <strong>Important:</strong> The down payment shown above is after deducting estimated closing costs from your home sale equity.
+          Make sure you have additional funds available to cover buying costs (legal fees, inspection, moving, etc.).
         </div>
       </div>
 
@@ -243,8 +335,8 @@ export default function AffordabilityCalculator() {
             <label>Sale Price: {formatCurrency(salePrice)}</label>
             <input
               type="range"
-              min="900000"
-              max="1150000"
+              min="100000"
+              max="3000000"
               step="5000"
               value={salePrice}
               onChange={(e) => setSalePrice(Number(e.target.value))}
@@ -257,7 +349,7 @@ export default function AffordabilityCalculator() {
             <input
               type="range"
               min="0"
-              max="1000000"
+              max="2000000"
               step="5000"
               value={currentMortgage}
               onChange={(e) => setCurrentMortgage(Number(e.target.value))}
@@ -372,6 +464,11 @@ export default function AffordabilityCalculator() {
           text-align: center;
         }
 
+        .regulation-note {
+          font-weight: 600;
+          color: var(--accent-primary);
+        }
+
         .budget-summary-card {
           background: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-secondary) 100%);
           padding: 24px;
@@ -437,10 +534,137 @@ export default function AffordabilityCalculator() {
           text-transform: uppercase;
         }
 
+        .calc-note {
+          font-size: 11px;
+          color: var(--text-tertiary);
+          margin-top: 4px;
+          font-style: italic;
+        }
+
         .calc-operator {
           font-size: 32px;
           color: var(--text-secondary);
           font-weight: 300;
+        }
+
+        /* Debt Analysis Section */
+        .debt-analysis-section {
+          margin-top: 32px;
+        }
+
+        .debt-analysis-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+          gap: 20px;
+        }
+
+        .debt-card {
+          background: linear-gradient(135deg, rgba(199, 81, 70, 0.05) 0%, rgba(199, 81, 70, 0.02) 100%);
+          border: 2px solid var(--border-color);
+          border-radius: 12px;
+          padding: 20px;
+          text-align: center;
+        }
+
+        .debt-label {
+          font-size: 13px;
+          font-weight: 600;
+          color: var(--text-secondary);
+          text-transform: uppercase;
+          letter-spacing: 0.5px;
+          margin-bottom: 12px;
+        }
+
+        .debt-value {
+          font-size: 28px;
+          font-weight: 800;
+          margin: 8px 0;
+        }
+
+        .debt-value.permitted {
+          color: var(--accent-primary);
+        }
+
+        .debt-value.suggested {
+          color: var(--color-positive);
+        }
+
+        .debt-hint {
+          font-size: 11px;
+          color: var(--text-tertiary);
+          margin-top: 8px;
+        }
+
+        /* Calculation Breakdown */
+        .calculation-breakdown {
+          margin: 32px 0;
+          background: var(--bg-secondary);
+          border-radius: 16px;
+          padding: 24px;
+          border: 1px solid var(--border-color);
+        }
+
+        .breakdown-title {
+          font-size: 18px;
+          font-weight: 700;
+          color: var(--text-primary);
+          margin: 0 0 16px 0;
+        }
+
+        .breakdown-formula {
+          display: flex;
+          flex-direction: column;
+          gap: 12px;
+        }
+
+        .formula-row {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 12px 16px;
+          background: var(--card-bg);
+          border-radius: 8px;
+          border: 1px solid var(--border-color);
+        }
+
+        .formula-row.result-row {
+          background: linear-gradient(135deg, rgba(199, 81, 70, 0.1) 0%, rgba(199, 81, 70, 0.05) 100%);
+          border: 2px solid var(--accent-primary);
+          margin-top: 8px;
+          padding: 16px;
+        }
+
+        .formula-label {
+          font-size: 14px;
+          font-weight: 600;
+          color: var(--text-secondary);
+        }
+
+        .formula-value {
+          font-size: 16px;
+          font-weight: 700;
+          color: var(--text-primary);
+        }
+
+        .formula-value.highlight {
+          font-size: 20px;
+          color: var(--accent-primary);
+        }
+
+        /* Important Note */
+        .important-note {
+          margin-top: 24px;
+          padding: 16px 20px;
+          background: linear-gradient(135deg, rgba(255, 193, 7, 0.1) 0%, rgba(255, 193, 7, 0.05) 100%);
+          border: 2px solid #ffc107;
+          border-radius: 12px;
+          font-size: 13px;
+          line-height: 1.6;
+          color: var(--text-primary);
+        }
+
+        .important-note strong {
+          color: #ffc107;
         }
 
         .inputs-grid {
