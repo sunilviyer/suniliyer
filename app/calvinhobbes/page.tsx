@@ -45,9 +45,9 @@ export default function CalvinHobbesPage() {
       <main className="comic-main">
         <div className="comic-display-container">
           <Swiper
-            modules={[Navigation, Pagination, EffectFade]}
-            effect="fade"
-            speed={800}
+            modules={[Navigation]}
+            effect="slide"
+            speed={1200}
             navigation={{
               prevEl: '.nav-arrow-left',
               nextEl: '.nav-arrow-right',
@@ -55,7 +55,7 @@ export default function CalvinHobbesPage() {
             onSwiper={setSwiperInstance}
             onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
             className="comic-swiper"
-            fadeEffect={{ crossFade: true }}
+            spaceBetween={50}
           >
             {comics.map((comic) => (
               <SwiperSlide key={comic.id}>
@@ -198,6 +198,7 @@ export default function CalvinHobbesPage() {
         .comic-swiper {
           width: 100%;
           min-height: 300px;
+          overflow: visible;
         }
 
         .comic-image-wrapper {
@@ -205,6 +206,7 @@ export default function CalvinHobbesPage() {
           display: flex;
           justify-content: center;
           align-items: center;
+          padding: 20px 0;
         }
 
         .comic-image {
@@ -212,16 +214,24 @@ export default function CalvinHobbesPage() {
           height: auto;
           border-radius: 8px;
           box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+          transition: all 0.4s ease;
         }
 
-        /* Swiper fade effect override */
+        /* Swiper slide animation enhancement */
         .comic-swiper .swiper-slide {
-          opacity: 0 !important;
-          transition: opacity 800ms ease-in-out;
+          opacity: 0.3;
+          transform: scale(0.92);
+          transition: all 1.2s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .comic-swiper .swiper-slide-active {
-          opacity: 1 !important;
+          opacity: 1;
+          transform: scale(1);
+        }
+
+        .comic-swiper .swiper-slide-next,
+        .comic-swiper .swiper-slide-prev {
+          opacity: 0.5;
         }
 
         /* Navigation Arrows */
