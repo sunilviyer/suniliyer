@@ -6,11 +6,16 @@ import Image from 'next/image';
 const comics = [
   {
     id: 1,
-    src: '/images/calvinhobbes/comic-1.webp',
-    alt: 'cAlvIn and Hobbes Comic Strip 1',
-    title: 'Episode 1'
+    src: '/images/calvinhobbes/ch-monalisa.webp',
+    alt: 'cAlvIn and Hobbes - Monalisa',
+    title: 'Monalisa'
   },
-  // Add more comics as they're created
+  {
+    id: 2,
+    src: '/images/calvinhobbes/ch-iyer.webp',
+    alt: 'cAlvIn and Hobbes - Iyer',
+    title: 'Iyer'
+  },
 ];
 
 export default function CalvinHobbesPage() {
