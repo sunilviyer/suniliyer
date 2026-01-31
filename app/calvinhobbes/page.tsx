@@ -20,17 +20,46 @@ const comics = [
 
 export default function CalvinHobbesPage() {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isTransitioning, setIsTransitioning] = useState(false);
+  const [direction, setDirection] = useState<'left' | 'right' | 'none'>('none');
 
   const goToPrevious = () => {
-    setCurrentIndex((prev) => (prev === 0 ? comics.length - 1 : prev - 1));
+    if (isTransitioning) return;
+    setIsTransitioning(true);
+    setDirection('right');
+    setTimeout(() => {
+      setCurrentIndex((prev) => (prev === 0 ? comics.length - 1 : prev - 1));
+      setTimeout(() => {
+        setIsTransitioning(false);
+        setDirection('none');
+      }, 50);
+    }, 400);
   };
 
   const goToNext = () => {
-    setCurrentIndex((prev) => (prev === comics.length - 1 ? 0 : prev + 1));
+    if (isTransitioning) return;
+    setIsTransitioning(true);
+    setDirection('left');
+    setTimeout(() => {
+      setCurrentIndex((prev) => (prev === comics.length - 1 ? 0 : prev + 1));
+      setTimeout(() => {
+        setIsTransitioning(false);
+        setDirection('none');
+      }, 50);
+    }, 400);
   };
 
   const goToIndex = (index: number) => {
-    setCurrentIndex(index);
+    if (isTransitioning || index === currentIndex) return;
+    setIsTransitioning(true);
+    setDirection(index > currentIndex ? 'left' : 'right');
+    setTimeout(() => {
+      setCurrentIndex(index);
+      setTimeout(() => {
+        setIsTransitioning(false);
+        setDirection('none');
+      }, 50);
+    }, 400);
   };
 
   return (
@@ -59,7 +88,7 @@ export default function CalvinHobbesPage() {
           </button>
 
           {/* Comic Image */}
-          <div className="comic-image-wrapper">
+          <div className={`comic-image-wrapper ${isTransitioning ? `transitioning-${direction}` : ''}`}>
             <Image
               src={comics[currentIndex].src}
               alt={comics[currentIndex].alt}
@@ -190,6 +219,19 @@ export default function CalvinHobbesPage() {
           justify-content: center;
           align-items: center;
           min-height: 300px;
+          transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+          opacity: 1;
+          transform: translateX(0) scale(1);
+        }
+
+        .comic-image-wrapper.transitioning-left {
+          opacity: 0;
+          transform: translateX(-60px) scale(0.95);
+        }
+
+        .comic-image-wrapper.transitioning-right {
+          opacity: 0;
+          transform: translateX(60px) scale(0.95);
         }
 
         .comic-image {
@@ -197,6 +239,7 @@ export default function CalvinHobbesPage() {
           height: auto;
           border-radius: 8px;
           box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+          transition: all 0.4s ease;
         }
 
         /* Navigation Arrows */
