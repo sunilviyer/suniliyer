@@ -214,14 +214,15 @@ export default function CalvinHobbesPage() {
           height: auto;
           border-radius: 8px;
           box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-          transition: all 0.4s ease;
+          transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+          filter: blur(8px);
         }
 
         /* Swiper slide animation enhancement */
         .comic-swiper .swiper-slide {
-          opacity: 0.3;
-          transform: scale(0.92);
-          transition: all 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+          opacity: 0.4;
+          transform: scale(0.9);
+          transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .comic-swiper .swiper-slide-active {
@@ -229,9 +230,14 @@ export default function CalvinHobbesPage() {
           transform: scale(1);
         }
 
+        .comic-swiper .swiper-slide-active .comic-image {
+          filter: blur(0px);
+          box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+        }
+
         .comic-swiper .swiper-slide-next,
         .comic-swiper .swiper-slide-prev {
-          opacity: 0.5;
+          opacity: 0.3;
         }
 
         /* Navigation Arrows */
