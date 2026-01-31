@@ -24,9 +24,9 @@ export const portfolioData: PortfolioItemData[] = [
   {
     id: 3,
     title: "cAlvIn and Hobbes",
-    description: "AI-powered creative content generation platform",
+    description: "AI parody comic strips - Original artwork by Bill Watterson",
     image: "/images/portfolio/calvin-and-hobbes.webp",
-    link: "/coming-soon",
+    link: "/calvinhobbes",
   },
   {
     id: 4,
