@@ -2,6 +2,15 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination, EffectFade, Autoplay } from 'swiper/modules';
+import type { Swiper as SwiperType } from 'swiper';
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/effect-fade';
 
 const comics = [
   {
@@ -19,48 +28,8 @@ const comics = [
 ];
 
 export default function CalvinHobbesPage() {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [isTransitioning, setIsTransitioning] = useState(false);
-  const [direction, setDirection] = useState<'left' | 'right' | 'none'>('none');
-
-  const goToPrevious = () => {
-    if (isTransitioning) return;
-    setIsTransitioning(true);
-    setDirection('right');
-    setTimeout(() => {
-      setCurrentIndex((prev) => (prev === 0 ? comics.length - 1 : prev - 1));
-      setTimeout(() => {
-        setIsTransitioning(false);
-        setDirection('none');
-      }, 50);
-    }, 400);
-  };
-
-  const goToNext = () => {
-    if (isTransitioning) return;
-    setIsTransitioning(true);
-    setDirection('left');
-    setTimeout(() => {
-      setCurrentIndex((prev) => (prev === comics.length - 1 ? 0 : prev + 1));
-      setTimeout(() => {
-        setIsTransitioning(false);
-        setDirection('none');
-      }, 50);
-    }, 400);
-  };
-
-  const goToIndex = (index: number) => {
-    if (isTransitioning || index === currentIndex) return;
-    setIsTransitioning(true);
-    setDirection(index > currentIndex ? 'left' : 'right');
-    setTimeout(() => {
-      setCurrentIndex(index);
-      setTimeout(() => {
-        setIsTransitioning(false);
-        setDirection('none');
-      }, 50);
-    }, 400);
-  };
+  const [swiperInstance, setSwiperInstance] = useState<SwiperType | null>(null);
+  const [activeIndex, setActiveIndex] = useState(0);
 
   return (
     <div className="calvin-hobbes-viewer">
@@ -75,35 +44,48 @@ export default function CalvinHobbesPage() {
       {/* Main Comic Display */}
       <main className="comic-main">
         <div className="comic-display-container">
+          <Swiper
+            modules={[Navigation, Pagination, EffectFade]}
+            effect="fade"
+            speed={800}
+            navigation={{
+              prevEl: '.nav-arrow-left',
+              nextEl: '.nav-arrow-right',
+            }}
+            onSwiper={setSwiperInstance}
+            onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
+            className="comic-swiper"
+            fadeEffect={{ crossFade: true }}
+          >
+            {comics.map((comic) => (
+              <SwiperSlide key={comic.id}>
+                <div className="comic-image-wrapper">
+                  <Image
+                    src={comic.src}
+                    alt={comic.alt}
+                    width={2816}
+                    height={1532}
+                    priority
+                    className="comic-image"
+                  />
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+
           {/* Navigation Arrows */}
           <button
-            onClick={goToPrevious}
             className="nav-arrow nav-arrow-left"
             aria-label="Previous comic"
-            disabled={comics.length <= 1}
           >
             <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
               <polyline points="15 18 9 12 15 6"></polyline>
             </svg>
           </button>
 
-          {/* Comic Image */}
-          <div className={`comic-image-wrapper ${isTransitioning ? `transitioning-${direction}` : ''}`}>
-            <Image
-              src={comics[currentIndex].src}
-              alt={comics[currentIndex].alt}
-              width={1400}
-              height={467}
-              priority
-              className="comic-image"
-            />
-          </div>
-
           <button
-            onClick={goToNext}
             className="nav-arrow nav-arrow-right"
             aria-label="Next comic"
-            disabled={comics.length <= 1}
           >
             <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
               <polyline points="9 18 15 12 9 6"></polyline>
@@ -113,7 +95,7 @@ export default function CalvinHobbesPage() {
 
         {/* Comic Counter */}
         <div className="comic-counter">
-          <span className="counter-current">{currentIndex + 1}</span>
+          <span className="counter-current">{activeIndex + 1}</span>
           <span className="counter-separator">/</span>
           <span className="counter-total">{comics.length}</span>
         </div>
@@ -125,8 +107,8 @@ export default function CalvinHobbesPage() {
               {comics.map((comic, index) => (
                 <button
                   key={comic.id}
-                  onClick={() => goToIndex(index)}
-                  className={`thumbnail ${index === currentIndex ? 'thumbnail-active' : ''}`}
+                  onClick={() => swiperInstance?.slideTo(index)}
+                  className={`thumbnail ${index === activeIndex ? 'thumbnail-active' : ''}`}
                   aria-label={`Go to ${comic.title}`}
                 >
                   <Image
@@ -136,7 +118,7 @@ export default function CalvinHobbesPage() {
                     height={67}
                     className="thumbnail-image"
                   />
-                  {index === currentIndex && <div className="thumbnail-indicator"></div>}
+                  {index === activeIndex && <div className="thumbnail-indicator"></div>}
                 </button>
               ))}
             </div>
@@ -151,7 +133,7 @@ export default function CalvinHobbesPage() {
         </p>
       </footer>
 
-      <style jsx>{`
+      <style jsx global>{`
         .calvin-hobbes-viewer {
           min-height: 100vh;
           background: linear-gradient(135deg, #f5f1e8 0%, #e8e4db 100%);
@@ -213,25 +195,16 @@ export default function CalvinHobbesPage() {
           animation: fadeInUp 0.8s ease 0.2s both;
         }
 
+        .comic-swiper {
+          width: 100%;
+          min-height: 300px;
+        }
+
         .comic-image-wrapper {
           width: 100%;
           display: flex;
           justify-content: center;
           align-items: center;
-          min-height: 300px;
-          transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-          opacity: 1;
-          transform: translateX(0) scale(1);
-        }
-
-        .comic-image-wrapper.transitioning-left {
-          opacity: 0;
-          transform: translateX(-60px) scale(0.95);
-        }
-
-        .comic-image-wrapper.transitioning-right {
-          opacity: 0;
-          transform: translateX(60px) scale(0.95);
         }
 
         .comic-image {
@@ -239,7 +212,16 @@ export default function CalvinHobbesPage() {
           height: auto;
           border-radius: 8px;
           box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-          transition: all 0.4s ease;
+        }
+
+        /* Swiper fade effect override */
+        .comic-swiper .swiper-slide {
+          opacity: 0 !important;
+          transition: opacity 800ms ease-in-out;
+        }
+
+        .comic-swiper .swiper-slide-active {
+          opacity: 1 !important;
         }
 
         /* Navigation Arrows */
@@ -262,20 +244,15 @@ export default function CalvinHobbesPage() {
           box-shadow: 0 4px 12px rgba(199, 81, 70, 0.15);
         }
 
-        .nav-arrow:hover:not(:disabled) {
+        .nav-arrow:hover {
           background: #c75146;
           color: white;
           transform: translateY(-50%) scale(1.1);
           box-shadow: 0 6px 20px rgba(199, 81, 70, 0.3);
         }
 
-        .nav-arrow:active:not(:disabled) {
+        .nav-arrow:active {
           transform: translateY(-50%) scale(0.95);
-        }
-
-        .nav-arrow:disabled {
-          opacity: 0.3;
-          cursor: not-allowed;
         }
 
         .nav-arrow-left {
@@ -300,6 +277,7 @@ export default function CalvinHobbesPage() {
         .counter-current {
           color: #c75146;
           font-size: 32px;
+          transition: all 0.3s ease;
         }
 
         .counter-separator {
@@ -333,7 +311,7 @@ export default function CalvinHobbesPage() {
           border-radius: 12px;
           padding: 8px;
           cursor: pointer;
-          transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+          transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
           flex-shrink: 0;
           box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
         }
@@ -347,6 +325,7 @@ export default function CalvinHobbesPage() {
         .thumbnail-active {
           border-color: #c75146;
           box-shadow: 0 6px 20px rgba(199, 81, 70, 0.3);
+          transform: translateY(-2px);
         }
 
         .thumbnail-image {
@@ -354,6 +333,7 @@ export default function CalvinHobbesPage() {
           height: auto;
           border-radius: 6px;
           display: block;
+          transition: all 0.3s ease;
         }
 
         .thumbnail-indicator {
@@ -365,6 +345,16 @@ export default function CalvinHobbesPage() {
           height: 4px;
           background: #c75146;
           border-radius: 2px;
+          animation: indicatorSlide 0.3s ease;
+        }
+
+        @keyframes indicatorSlide {
+          from {
+            width: 0;
+          }
+          to {
+            width: 40px;
+          }
         }
 
         /* Footer/Disclaimer */
