@@ -1622,12 +1622,12 @@ export default function HomePage() {
         }
 
         :global(.journey-arrow-link:hover) {
-          background: var(--accent-color);
-          color: #ffffff;
+          background: var(--text-primary);
+          color: var(--bg-primary);
           transform: scale(1.1);
           animation: none;
           box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
-          border-color: var(--accent-color);
+          border-color: var(--text-primary);
         }
 
         :global(.journey-arrow-link svg) {
