@@ -429,16 +429,27 @@ export default function HomePage() {
 
           <div className="about-grid loading__item">
             <div className="about-image-col">
-              <div className="about-image-wrapper">
-                <InitialsPhotoReveal
-                  photoSrc="/images/Sunil.jpg"
-                  initials="SVI"
-                />
-              </div>
+              <Link href="/journey" className="about-image-link">
+                <div className="about-image-wrapper">
+                  <InitialsPhotoReveal
+                    photoSrc="/images/Sunil.jpg"
+                    initials="SVI"
+                  />
+                </div>
+              </Link>
             </div>
 
             <div className="about-text-col">
-              <h3 className="about-heading">A little about me</h3>
+              <div className="about-heading-wrapper">
+                <h3 className="about-heading">A little about me</h3>
+                {/* Journey Link - Top Right */}
+                <Link href="/journey" className="journey-arrow-link">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <line x1="7" y1="17" x2="17" y2="7" />
+                    <polyline points="7 7 17 7 17 17" />
+                  </svg>
+                </Link>
+              </div>
               <p className="about-paragraph">
                 I&apos;m a results-driven leader specializing in AI adoption, customer success, and
                 enterprise digital transformation. With a proven track record implementing AI-driven
@@ -1501,6 +1512,10 @@ export default function HomePage() {
         }
 
         /* About Section */
+        .about-section .container {
+          position: relative;
+        }
+
         .about-grid {
           display: grid;
           grid-template-columns: 500px 1fr;
@@ -1514,11 +1529,19 @@ export default function HomePage() {
           height: 600px;
         }
 
+        .about-heading-wrapper {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          margin-bottom: 30px;
+          position: relative;
+        }
+
         .about-heading {
           font-family: var(--font-funnel);
           font-size: 48px;
           font-weight: 700;
-          margin: 0 0 30px 0;
+          margin: 0;
           color: var(--text-primary);
         }
 
@@ -1565,6 +1588,91 @@ export default function HomePage() {
           color: var(--text-secondary);
           text-transform: uppercase;
           letter-spacing: 1px;
+        }
+
+        /* Journey Arrow Link - Next to Heading */
+        :global(.journey-arrow-link) {
+          width: 80px;
+          height: 80px;
+          min-width: 80px;
+          min-height: 80px;
+          background: var(--card-bg);
+          border-width: 3px;
+          border-style: solid;
+          border-color: var(--text-primary);
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: var(--text-primary);
+          transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+          flex-shrink: 0;
+          box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1), 0 0 0 0 rgba(0, 0, 0, 0.3);
+          animation: pulse-border-glow 2s ease-in-out infinite;
+          text-decoration: none;
+        }
+
+        @keyframes :global(pulse-border-glow) {
+          0%, 100% {
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1), 0 0 0 0 rgba(0, 0, 0, 0.3);
+          }
+          50% {
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15), 0 0 0 20px rgba(0, 0, 0, 0);
+          }
+        }
+
+        :global(.journey-arrow-link:hover) {
+          background: var(--accent-color);
+          color: #ffffff;
+          transform: scale(1.1);
+          animation: none;
+          box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+          border-color: var(--accent-color);
+        }
+
+        :global(.journey-arrow-link svg) {
+          transition: transform 0.3s ease;
+          width: 28px;
+          height: 28px;
+        }
+
+        :global(.journey-arrow-link:hover svg) {
+          transform: translate(3px, -3px);
+        }
+
+        /* Clickable About Image */
+        .about-image-link {
+          display: block;
+          position: relative;
+          cursor: pointer;
+          transition: all 0.3s ease;
+        }
+
+        .about-image-link::after {
+          content: 'Click for journey';
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          background: rgba(51, 61, 41, 0.95);
+          color: #ffffff;
+          padding: 16px 32px;
+          border-radius: 8px;
+          font-size: 18px;
+          font-weight: 600;
+          opacity: 0;
+          transition: opacity 0.3s ease;
+          pointer-events: none;
+          z-index: 10;
+        }
+
+        .about-image-link:hover::after {
+          opacity: 1;
+        }
+
+        .about-image-link:hover .about-image-wrapper {
+          transform: scale(1.02);
+          filter: brightness(0.7);
         }
 
         /* Responsive */
