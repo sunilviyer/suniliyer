@@ -10,7 +10,7 @@ export const roles: Role[] = [
     endDate: 'Present',
     timelineYear: '2024',
     isCurrent: true,
-    logoUrl: '/images/journey/Shift.webp',
+    logoUrl: '/images/journey/shift.webp',
     skills: [
       'AI Adoption Strategy',
       'Customer Success',
@@ -218,7 +218,7 @@ export const roles: Role[] = [
     endDate: 'June 2012',
     timelineYear: '2006',
     isCurrent: false,
-    logoUrl: '/images/journey/Infosys.webp',
+    logoUrl: '/images/journey/infosys.webp',
     skills: [
       'Client Liaison',
       'Subject Matter Expert',
