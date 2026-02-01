@@ -1,0 +1,55 @@
+import { Certification } from '@/types/journey';
+
+export const certifications: Certification[] = [
+  {
+    id: 'cert-google-cloud',
+    name: 'Certified Cloud Digital Leader',
+    issuer: 'Google',
+    date: '2024-05-03',
+    year: '2024',
+    logoUrl: '/images/journey/Google.webp',
+    description: 'Google Cloud Digital Leader Certification',
+    skills: [
+      'GCP',
+      'Cloud Architecture',
+      'Security & Shared Services',
+      'Cloud Strategy',
+      'Digital Transformation',
+      'Data Governance',
+    ],
+  },
+  {
+    id: 'cert-upenn-ai',
+    name: 'AI for Business',
+    issuer: 'University of Pennsylvania',
+    date: '2024-04',
+    year: '2024',
+    logoUrl: '/images/journey/Penn.webp',
+    description: 'AI for Business - Online Course',
+    skills: [
+      'AI/ML Business Strategy',
+      'AI-Driven Marketing',
+      'AI Ethics',
+      'Enterprise AI Change Management',
+      'Algorithmic Decision-Making',
+      'Big Data Analytics',
+    ],
+  },
+  {
+    id: 'cert-cornell-python',
+    name: 'Python for Data Science',
+    issuer: 'Cornell University',
+    date: '2022',
+    year: '2021-2022',
+    logoUrl: '/images/journey/Cornell.webp',
+    description: 'Certificate Course in Python for Data Science',
+    skills: [
+      'Python (NumPy, Pandas, scikit-learn)',
+      'Data Analysis & Visualization',
+      'Predictive Modeling',
+      'Jupyter Notebooks',
+      'Data Wrangling',
+      'Statistical Pattern Recognition',
+    ],
+  },
+];

@@ -34,6 +34,18 @@
   --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.2);
   --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.25);
   --border-hover: #ad2e24;
+
+  /* Journey Page Dark Theme */
+  --journey-bg-primary: #0A0A0A;
+  --journey-bg-secondary: #141414;
+  --journey-text-primary: #FAFAFA;
+  --journey-text-secondary: rgba(250, 250, 250, 0.6);
+  --journey-text-tertiary: rgba(250, 250, 250, 0.4);
+  --journey-accent-primary: #D4A574;
+  --journey-border-primary: rgba(250, 250, 250, 0.05);
+  --journey-border-secondary: rgba(250, 250, 250, 0.1);
+  --journey-border-accent: rgba(212, 165, 116, 0.2);
+  --journey-hover-bg: rgba(250, 250, 250, 0.05);
 }
 
 /* Light theme overrides for mortgage calculator */
@@ -58,6 +70,18 @@
   --shadow-md: 0 4px 16px rgba(84, 8, 4, 0.12);
   --shadow-lg: 0 8px 32px rgba(84, 8, 4, 0.16);
   --border-hover: rgba(173, 46, 36, 0.4);
+
+  /* Journey Page Light Theme */
+  --journey-bg-primary: #FAFAFA;
+  --journey-bg-secondary: #F5F5F5;
+  --journey-text-primary: #1A1A1A;
+  --journey-text-secondary: rgba(26, 26, 26, 0.7);
+  --journey-text-tertiary: rgba(26, 26, 26, 0.5);
+  --journey-accent-primary: #B8935A;
+  --journey-border-primary: rgba(26, 26, 26, 0.1);
+  --journey-border-secondary: rgba(26, 26, 26, 0.15);
+  --journey-border-accent: rgba(184, 147, 90, 0.3);
+  --journey-hover-bg: rgba(26, 26, 26, 0.05);
 }
 
 * {
@@ -133,5 +157,35 @@ a.card-arrow-btn:hover {
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+
+  /* 3D Card Flip Utilities */
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+
+  .backface-hidden {
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+  }
+
+  .preserve-3d {
+    transform-style: preserve-3d;
+  }
+
+  /* Timeline dot pulse glow animation */
+  @keyframes pulse-glow {
+    0%, 100% {
+      box-shadow: 0 0 0 0 var(--journey-accent-primary);
+      transform: translate(-50%, 0) scale(1);
+    }
+    50% {
+      box-shadow: 0 0 20px 8px rgba(212, 165, 116, 0.6);
+      transform: translate(-50%, 0) scale(1.1);
+    }
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
   }
 }
