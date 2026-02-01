@@ -1651,13 +1651,14 @@ export default function HomePage() {
         .about-image-link::after {
           content: 'Click for journey';
           position: absolute;
-          top: 50%;
+          bottom: 20px;
           left: 50%;
-          transform: translate(-50%, -50%);
-          background: rgba(51, 61, 41, 0.95);
-          color: #ffffff;
+          transform: translateX(-50%);
+          background: var(--card-bg);
+          color: var(--text-primary);
           padding: 16px 32px;
           border-radius: 8px;
+          border: 2px solid var(--text-primary);
           font-size: 18px;
           font-weight: 600;
           opacity: 0;
