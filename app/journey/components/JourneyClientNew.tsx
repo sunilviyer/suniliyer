@@ -53,7 +53,7 @@ export default function JourneyClientNew() {
           {/* Contact & Resume Section */}
           <div className="mt-24 flex justify-center gap-6">
             <a
-              href="https://www.linkedin.com/in/suniliyer/"
+              href="https://www.linkedin.com/in/sunilviyer/"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-3 px-6 py-3 bg-accent-primary text-white rounded-lg hover:bg-accent-primary/90 transition-all duration-200 shadow-lg hover:shadow-xl"
