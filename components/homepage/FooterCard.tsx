@@ -75,7 +75,7 @@ export function FooterCard() {
               <h3>Connect</h3>
               <ul>
                 <li>
-                  <a href="https://linkedin.com/in/suniliyer" target="_blank" rel="noopener noreferrer">
+                  <a href="https://linkedin.com/in/sunilviyer" target="_blank" rel="noopener noreferrer">
                     LinkedIn
                   </a>
                 </li>
