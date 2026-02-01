@@ -23,7 +23,7 @@ export function ArticleAuthor() {
           responsible AI development, deployment, and regulation.
         </p>
         <div className="author-socials">
-          <a href="https://linkedin.com/in/suniliyer" target="_blank" rel="noopener">
+          <a href="https://linkedin.com/in/sunilviyer" target="_blank" rel="noopener">
             LinkedIn →
           </a>
           <a href="https://twitter.com/suniliyer" target="_blank" rel="noopener">
