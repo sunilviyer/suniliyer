@@ -47,6 +47,17 @@ const config: Config = {
         walnut: '#582f0e',
         ivory: '#F5F5DC',
         cream: '#c2c5aa',
+        // Journey Page Theme Colors
+        'background-primary': 'var(--journey-bg-primary)',
+        'background-secondary': 'var(--journey-bg-secondary)',
+        'text-primary': 'var(--journey-text-primary)',
+        'text-secondary': 'var(--journey-text-secondary)',
+        'text-tertiary': 'var(--journey-text-tertiary)',
+        'accent-primary': 'var(--journey-accent-primary)',
+        'border-primary': 'var(--journey-border-primary)',
+        'border-secondary': 'var(--journey-border-secondary)',
+        'border-accent': 'var(--journey-border-accent)',
+        'hover-bg': 'var(--journey-hover-bg)',
       },
       fontFamily: {
         sans: ['var(--font-geist-sans)', 'system-ui', 'sans-serif'],
