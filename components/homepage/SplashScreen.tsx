@@ -4,14 +4,33 @@ import { useEffect, useState } from 'react';
 
 export function SplashScreen() {
   const [isHidden, setIsHidden] = useState(false);
+  const [shouldShow, setShouldShow] = useState(true);
 
   useEffect(() => {
+    // Check if splash screen has already been shown this session
+    const hasShownSplash = sessionStorage.getItem('splashScreenShown');
+
+    if (hasShownSplash === 'true') {
+      // If already shown, hide immediately
+      setShouldShow(false);
+      setIsHidden(true);
+      return;
+    }
+
+    // Mark as shown for this session
+    sessionStorage.setItem('splashScreenShown', 'true');
+
     const timer = setTimeout(() => {
       setIsHidden(true);
     }, 1750); // 1.75 seconds (50% reduction from 3.5s)
 
     return () => clearTimeout(timer);
   }, []);
+
+  // Don't render at all if it shouldn't show
+  if (!shouldShow) {
+    return null;
+  }
 
   return (
     <div

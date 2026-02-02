@@ -1,13 +1,18 @@
 'use client';
 
+import { useRef } from 'react';
 import { ThemeProvider } from '@/contexts/ThemeContext';
 import { timeline } from '@/data/journey/timeline';
 import JourneyHeader from './JourneyHeader';
 import JourneyFooter from './JourneyFooter';
 import TimelineCard from './TimelineCard';
 import { Linkedin, Download } from 'lucide-react';
+import { ContactWidget, ContactWidgetHandle } from '@/components/contact/ContactWidget';
 
 export default function JourneyClientNew() {
+  const footerRef = useRef<HTMLElement>(null);
+  const contactWidgetRef = useRef<ContactWidgetHandle>(null);
+
   return (
     <ThemeProvider>
       <main className="min-h-screen bg-background-primary transition-colors duration-300">
@@ -51,16 +56,14 @@ export default function JourneyClientNew() {
           </div>
 
           {/* Contact & Resume Section */}
-          <div className="mt-24 flex justify-center gap-6">
-            <a
-              href="https://www.linkedin.com/in/sunilviyer/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 px-6 py-3 bg-accent-primary text-white rounded-lg hover:bg-accent-primary/90 transition-all duration-200 shadow-lg hover:shadow-xl"
+          <div ref={footerRef} className="mt-24 flex justify-center gap-6">
+            <button
+              onClick={() => contactWidgetRef.current?.open()}
+              className="inline-flex items-center gap-3 px-6 py-3 bg-accent-primary text-white rounded-lg hover:bg-accent-primary/90 transition-all duration-200 shadow-lg hover:shadow-xl cursor-pointer border-none"
             >
               <Linkedin className="w-5 h-5" />
               <span className="font-medium">Contact Me</span>
-            </a>
+            </button>
             <a
               href="/downloads/Sunil_Iyer_Resume.pdf"
               download
@@ -74,6 +77,9 @@ export default function JourneyClientNew() {
 
         {/* Footer */}
         <JourneyFooter />
+
+        {/* Contact Widget - Floating button */}
+        <ContactWidget ref={contactWidgetRef} footerRef={footerRef} />
       </main>
     </ThemeProvider>
   );
