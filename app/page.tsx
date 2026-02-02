@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState, useCallback } from 'react';
+import { useEffect, useState, useCallback, useRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { tickerWords } from '@/lib/ticker-words';
@@ -9,6 +9,7 @@ import { portfolioData } from '@/lib/portfolio-data';
 import { useGsapScrollScaleAnimations } from '@/lib/hooks/useGsapScrollScaleAnimations';
 import { SplashScreen } from '@/components/homepage/SplashScreen';
 import { InitialsPhotoReveal } from '@/components/homepage/InitialsPhotoReveal';
+import { ContactWidget, ContactWidgetHandle } from '@/components/contact/ContactWidget';
 
 export default function HomePage() {
   useGsapScrollScaleAnimations();
@@ -19,6 +20,8 @@ export default function HomePage() {
   const [isPathTransitioning, setIsPathTransitioning] = useState(false);
   const [isPortfolioTransitioning, setIsPortfolioTransitioning] = useState(false);
   const [theme, setTheme] = useState<'light' | 'dark'>('light');
+  const contactSectionRef = useRef<HTMLElement>(null);
+  const contactWidgetRef = useRef<ContactWidgetHandle>(null);
 
   // Toggle theme
   const toggleTheme = () => {
@@ -500,7 +503,7 @@ export default function HomePage() {
       </section>
 
       {/* Contact & Credits Section */}
-      <section className="section contact-section" style={{position: 'relative'}}>
+      <section ref={contactSectionRef} className="section contact-section" style={{position: 'relative'}}>
         <div className="container">
           <div className="section-header">
             <div className="section-label loading__item">
@@ -520,11 +523,9 @@ export default function HomePage() {
               </p>
 
               <div className="contact-links">
-                <a
-                  href="https://www.linkedin.com/in/sunilviyer"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="contact-link"
+                <button
+                  onClick={() => contactWidgetRef.current?.open()}
+                  className="contact-link contact-link-button"
                 >
                   <div className="link-icon-wrapper">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -534,14 +535,14 @@ export default function HomePage() {
                   </div>
                   <div className="link-content">
                     <span className="link-label">Email</span>
-                    <span className="link-text">Connect via LinkedIn</span>
+                    <span className="link-text">Send me a message</span>
                   </div>
                   <div className="link-arrow">
                     <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
                       <path d="M5 15L15 5M15 5H5M15 5V15" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                     </svg>
                   </div>
-                </a>
+                </button>
 
                 <a
                   href="https://www.linkedin.com/in/sunilviyer"
@@ -1363,6 +1364,14 @@ export default function HomePage() {
           overflow: hidden;
         }
 
+        .contact-link-button {
+          cursor: pointer;
+          width: 100%;
+          text-align: left;
+          font-family: inherit;
+          font-size: inherit;
+        }
+
         .contact-link::before {
           content: '';
           position: absolute;
@@ -1885,6 +1894,9 @@ export default function HomePage() {
           }
         }
       `}</style>
+
+      {/* Contact Widget - Floating button on left side */}
+      <ContactWidget ref={contactWidgetRef} footerRef={contactSectionRef} />
       </div>
     </>
   );
