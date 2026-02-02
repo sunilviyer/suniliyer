@@ -1436,15 +1436,14 @@ export default function CreativeWorks() {
           <h1
             style={{
               fontFamily: 'var(--font-funnel-display)',
-              fontSize: 'clamp(32px, 4.5vw, 56px)',
+              fontSize: 'clamp(28px, 4vw, 48px)',
               fontWeight: 600,
               color: t.textPrimary,
-              lineHeight: 1.2,
-              letterSpacing: '-1px',
+              lineHeight: 1.3,
+              letterSpacing: '-0.5px',
               marginBottom: 18,
               fontStyle: 'italic',
               transition: 'color 0.4s ease',
-              whiteSpace: 'nowrap',
             }}
           >
             Where Code Meets{' '}
@@ -1642,27 +1641,6 @@ export default function CreativeWorks() {
                   'all 0.4s cubic-bezier(0.16,1,0.3,1), border-color 0.3s ease, box-shadow 0.3s ease',
               }}
             >
-              {/* ID Number Badge */}
-              <span
-                style={{
-                  position: 'absolute',
-                  top: 18,
-                  right: 18,
-                  zIndex: 10,
-                  padding: '4px 10px',
-                  borderRadius: 100,
-                  background: `linear-gradient(135deg, ${PALETTE.royalViolet}, ${PALETTE.mauveMagic})`,
-                  color: '#fff',
-                  fontSize: 11,
-                  fontFamily: 'var(--font-funnel-sans)',
-                  fontWeight: 700,
-                  letterSpacing: 1,
-                  boxShadow: '0 2px 8px rgba(0,0,0,0.2)',
-                }}
-              >
-                #{work.id}
-              </span>
-
               {/* ─── PHOTO PANEL RENDERING ─── */}
               {work.type === 'photo-panel' ? (
                 <>
@@ -2097,27 +2075,6 @@ export default function CreativeWorks() {
                       'all 0.4s cubic-bezier(0.16,1,0.3,1), border-color 0.3s ease, box-shadow 0.3s ease',
                   }}
                 >
-                  {/* ID Number Badge */}
-                  <span
-                    style={{
-                      position: 'absolute',
-                      top: 18,
-                      right: 18,
-                      zIndex: 10,
-                      padding: '4px 10px',
-                      borderRadius: 100,
-                      background: `linear-gradient(135deg, ${PALETTE.royalViolet}, ${PALETTE.mauveMagic})`,
-                      color: '#fff',
-                      fontSize: 11,
-                      fontFamily: 'var(--font-funnel-sans)',
-                      fontWeight: 700,
-                      letterSpacing: 1,
-                      boxShadow: '0 2px 8px rgba(0,0,0,0.2)',
-                    }}
-                  >
-                    #{work.id}
-                  </span>
-
                   {/* Frosted glass background for poem/quote */}
                   <div
                     style={{
