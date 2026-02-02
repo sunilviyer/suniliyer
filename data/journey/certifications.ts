@@ -7,7 +7,7 @@ export const certifications: Certification[] = [
     issuer: 'Google',
     date: '2024-05-03',
     year: '2024',
-    logoUrl: '/images/journey/Google.webp',
+    logoUrl: '/images/journey/google.webp',
     description: 'Google Cloud Digital Leader Certification',
     skills: [
       'GCP',
@@ -24,7 +24,7 @@ export const certifications: Certification[] = [
     issuer: 'University of Pennsylvania',
     date: '2024-04',
     year: '2024',
-    logoUrl: '/images/journey/Penn.webp',
+    logoUrl: '/images/journey/penn.webp',
     description: 'AI for Business - Online Course',
     skills: [
       'AI/ML Business Strategy',
@@ -41,7 +41,7 @@ export const certifications: Certification[] = [
     issuer: 'Cornell University',
     date: '2022',
     year: '2021-2022',
-    logoUrl: '/images/journey/Cornell.webp',
+    logoUrl: '/images/journey/cornell.webp',
     description: 'Certificate Course in Python for Data Science',
     skills: [
       'Python (NumPy, Pandas, scikit-learn)',

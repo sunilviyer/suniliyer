@@ -64,7 +64,7 @@ export const roles: Role[] = [
     endDate: 'April 2024',
     timelineYear: '2020',
     isCurrent: false,
-    logoUrl: '/images/journey/EY.webp',
+    logoUrl: '/images/journey/ey.webp',
     skills: [
       'Client Consultation',
       'Business Strategy',
@@ -118,7 +118,7 @@ export const roles: Role[] = [
     endDate: 'September 2020',
     timelineYear: '2016',
     isCurrent: false,
-    logoUrl: '/images/journey/EY.webp',
+    logoUrl: '/images/journey/ey.webp',
     skills: [
       'Financial Services',
       'General Ledger Management',
@@ -172,7 +172,7 @@ export const roles: Role[] = [
     endDate: 'September 2016',
     timelineYear: '2014',
     isCurrent: false,
-    logoUrl: '/images/journey/EY.webp',
+    logoUrl: '/images/journey/ey.webp',
     skills: [
       'Quality Assurance',
       'Technology Transformation',

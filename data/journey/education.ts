@@ -9,7 +9,7 @@ export const education: Education[] = [
     startDate: '2012',
     endDate: '2014',
     year: '2012-2014',
-    imageUrl: '/images/journey/MBA.webp',
+    imageUrl: '/images/journey/mba.webp',
     description: 'Master of Business Administration',
   },
   {
@@ -20,7 +20,7 @@ export const education: Education[] = [
     startDate: '2002',
     endDate: '2006',
     year: '2002-2006',
-    imageUrl: '/images/journey/B-Tech.webp',
+    imageUrl: '/images/journey/b-tech.webp',
     description: 'Bachelor of Technology in Industrial Biotechnology',
   },
 ];
