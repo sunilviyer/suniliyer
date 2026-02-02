@@ -33,6 +33,14 @@ export default function CalvinHobbesPage() {
 
   return (
     <div className="calvin-hobbes-viewer">
+      {/* Home Button */}
+      <a href="/" className="home-button-comic" aria-label="Back to home">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+          <polyline points="9 22 9 12 15 12 15 22" />
+        </svg>
+      </a>
+
       {/* Header */}
       <header className="comic-header">
         <h1 className="comic-title">
@@ -139,6 +147,44 @@ export default function CalvinHobbesPage() {
           background: linear-gradient(135deg, #f5f1e8 0%, #e8e4db 100%);
           padding: 60px 20px 40px;
           font-family: var(--font-funnel-display), -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+          position: relative;
+        }
+
+        /* Home Button */
+        .home-button-comic {
+          position: fixed;
+          top: 30px;
+          left: 30px;
+          width: 56px;
+          height: 56px;
+          border-radius: 50%;
+          background: white;
+          border: 2px solid #c75146;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+          z-index: 1000;
+          transition: all 0.3s ease;
+          color: #c75146;
+          box-shadow: 0 4px 12px rgba(199, 81, 70, 0.15);
+          text-decoration: none;
+          animation: fadeInDown 0.8s ease;
+        }
+
+        .home-button-comic:hover {
+          background: #c75146;
+          color: white;
+          transform: scale(1.1);
+          box-shadow: 0 6px 20px rgba(199, 81, 70, 0.3);
+        }
+
+        .home-button-comic svg {
+          transition: transform 0.3s ease;
+        }
+
+        .home-button-comic:hover svg {
+          transform: scale(1.1);
         }
 
         /* Header */
@@ -439,6 +485,13 @@ export default function CalvinHobbesPage() {
         @media (max-width: 768px) {
           .calvin-hobbes-viewer {
             padding: 40px 16px 30px;
+          }
+
+          .home-button-comic {
+            top: 20px;
+            left: 20px;
+            width: 48px;
+            height: 48px;
           }
 
           .comic-display-container {

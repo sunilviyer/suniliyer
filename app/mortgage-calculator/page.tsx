@@ -32,6 +32,14 @@ export default function MortgageCalculatorPage() {
 
   return (
     <div className="mortgage-calc-page">
+      {/* Home Button */}
+      <a href="/" className="home-button" aria-label="Back to home">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+          <polyline points="9 22 9 12 15 12 15 22" />
+        </svg>
+      </a>
+
       {/* Theme Toggle Button */}
       <button
         className="theme-toggle"
@@ -108,6 +116,41 @@ export default function MortgageCalculatorPage() {
           color: var(--text-primary);
           padding-bottom: 80px;
           font-family: var(--font-funnel-sans), -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        }
+
+        /* Home Button */
+        .home-button {
+          position: fixed;
+          top: 30px;
+          left: 30px;
+          width: 56px;
+          height: 56px;
+          border-radius: 50%;
+          background: var(--card-bg);
+          border: 2px solid var(--border-color);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+          z-index: 1000;
+          transition: all 0.3s ease;
+          color: var(--text-primary);
+          box-shadow: var(--shadow-md);
+          text-decoration: none;
+        }
+
+        .home-button:hover {
+          transform: scale(1.1);
+          box-shadow: var(--shadow-lg);
+          border-color: var(--accent-primary);
+        }
+
+        .home-button svg {
+          transition: transform 0.3s ease;
+        }
+
+        .home-button:hover svg {
+          transform: scale(1.1);
         }
 
         /* Theme Toggle */
@@ -285,6 +328,13 @@ export default function MortgageCalculatorPage() {
             padding: 0 20px;
           }
 
+          .home-button {
+            top: 20px;
+            left: 20px;
+            width: 48px;
+            height: 48px;
+          }
+
           .theme-toggle {
             top: 20px;
             right: 20px;
@@ -308,6 +358,13 @@ export default function MortgageCalculatorPage() {
         }
 
         @media (max-width: 480px) {
+          .home-button {
+            width: 44px;
+            height: 44px;
+            top: 16px;
+            left: 16px;
+          }
+
           .theme-toggle {
             width: 44px;
             height: 44px;
