@@ -401,7 +401,7 @@ function ContactFormInner({ dark }: ContactFormInnerProps) {
   };
 
   const card = {
-    heading: dark ? P.dustyGrape : P.seashell,
+    heading: dark ? P.dustyGrape : P.dustyGrape,
     btnBg: dark
       ? `linear-gradient(135deg, ${P.almondSilk}, ${P.seashell})`
       : `linear-gradient(135deg, ${P.dustyGrape}, ${P.spaceIndigo})`,
