@@ -128,22 +128,24 @@ export default function MortgageCalculatorPage() {
           height: 56px;
           border-radius: 50%;
           background: var(--card-bg);
-          border: 2px solid var(--border-color);
+          border: 2px solid var(--accent-primary);
           display: flex;
           align-items: center;
           justify-content: center;
           cursor: pointer;
           z-index: 1000;
           transition: all 0.3s ease;
-          color: var(--text-primary);
-          box-shadow: var(--shadow-md);
+          color: var(--accent-primary);
+          box-shadow: 0 4px 12px rgba(51, 61, 41, 0.15);
           text-decoration: none;
+          animation: fadeIn 0.8s ease;
         }
 
         .home-button:hover {
+          background: var(--accent-primary);
+          color: var(--card-bg);
           transform: scale(1.1);
-          box-shadow: var(--shadow-lg);
-          border-color: var(--accent-primary);
+          box-shadow: 0 6px 20px rgba(51, 61, 41, 0.3);
         }
 
         .home-button svg {
