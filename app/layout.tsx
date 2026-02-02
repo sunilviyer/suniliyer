@@ -32,6 +32,10 @@ export default function RootLayout({
         suppressHydrationWarning
       >
         <Script src="https://unpkg.com/@phosphor-icons/web" strategy="beforeInteractive" />
+        <Script
+          src="https://challenges.cloudflare.com/turnstile/v0/api.js"
+          strategy="lazyOnload"
+        />
         {children}
       </body>
     </html>
