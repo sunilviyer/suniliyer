@@ -34,85 +34,86 @@ const WORKS = [
   {
     id: 1,
     category: 'videos',
-    title: 'Shiva–Parvati Divine Wedding',
-    subtitle: 'Hindu Mythology Series',
+    title: 'Wedding Invitation',
+    subtitle: 'Personal Milestone',
     description:
-      'An AI-generated animated sequence depicting the celestial wedding of Lord Shiva and Goddess Parvati — ancient scriptures brought to life through modern AI video generation.',
+      'Invitation to attend our wedding.',
     type: 'youtube',
     youtubeId: 'J3fHgaNuiMM',
     size: 'large',
-    tags: ['AI Video', 'Hindu Mythology', 'Animation'],
+    tags: ['Video', 'Wedding', 'Personal'],
     date: '2025',
   },
   {
     id: 2,
-    category: 'comics',
-    title: 'cAlvIn Meets GPT-5',
-    subtitle: 'cAlvIn & Hobbes — Issue #1',
+    category: 'ai-art',
+    title: 'Last Day Email',
+    subtitle: 'Creative Expression',
     description:
-      "cAlvIn discovers a mysterious AI chatbot that Hobbes is deeply suspicious of. Original concept inspired by Bill Watterson's beloved characters, reimagined for the AI age.",
+      'A creative visual narrative exploring workplace culture and last-day traditions through artistic expression.',
     type: 'image',
-    imageUrl: '/images/calvinhobbes/ch-monalisa.webp',
+    imageUrl: '/images/creative-works/last-day-email.webp',
     size: 'tall',
-    tags: ['Comic', 'AI Parody', 'Leonardo AI'],
+    tags: ['Digital Art', 'Comic', 'Creative'],
     date: '2025',
   },
   {
     id: 3,
     category: 'videos',
-    title: "Krishna's Cosmic Dance",
-    subtitle: 'Vishwaroop Darshan',
+    title: 'The Museum of Me',
+    subtitle: 'Personal Journey',
     description:
-      "A visual exploration of Krishna's universal form as described in the Bhagavad Gita, rendered through AI-assisted animation.",
+      'About me.',
     type: 'youtube',
     youtubeId: 'XSHtMh7Oi8s',
     size: 'wide',
-    tags: ['AI Video', 'Krishna', 'Bhagavad Gita'],
+    tags: ['Video', 'Personal', 'Journey'],
     date: '2025',
   },
   {
     id: 4,
     category: 'videos',
-    title: 'Ramayana — The Great Battle',
-    subtitle: 'Epic Warfare Reimagined',
+    title: 'Alive and Kicking',
+    subtitle: 'Fundraiser Campaign',
     description:
-      "AI-animated battle sequences from the Ramayana, featuring the clash between Lord Rama's forces and the armies of Lanka.",
+      'A fundraiser video',
     type: 'youtube',
     youtubeId: 'XRGEpnPXC40',
     size: 'standard',
-    tags: ['AI Video', 'Ramayana', 'Epic'],
+    tags: ['Video', 'Fundraiser', 'Campaign'],
     date: '2025',
   },
   {
     id: 5,
     category: 'videos',
-    title: "Hanuman's Leap",
-    subtitle: 'Mythology Shorts',
+    title: 'Innovation, Foresight and Business Design',
+    subtitle: 'Product Pitch',
     description:
-      "A short-form video capturing Hanuman's legendary leap across the ocean to Lanka, crafted with AI video generation tools.",
+      'Product Pitch',
     type: 'youtube',
     youtubeId: '_pNncBm1Pn0',
     size: 'tall',
-    tags: ['AI Video', 'Hanuman', 'Short-Form'],
+    tags: ['Video', 'Business', 'Innovation'],
     date: '2025',
   },
   {
     id: 6,
-    category: 'comics',
-    title: 'Hobbes vs. The Algorithm',
-    subtitle: 'cAlvIn & Hobbes — Issue #2',
+    category: 'videos',
+    title: 'Parvathi-Shiva Divine Union',
+    subtitle: 'AI-Generated Mythology',
     description:
-      "Hobbes explains why an AI can never truly replace a stuffed tiger's wisdom. Hand-crafted prompts with Leonardo AI character art.",
-    type: 'image',
-    imageUrl: '/images/calvinhobbes/ch-iyer.webp',
+      'AI-generated visualization of the divine union between Parvathi and Shiva, bringing ancient Hindu mythology to life through modern video generation technology.',
+    type: 'mobile-video',
+    videoUrl: '/videos/parvathi-shiva.mp4',
+    posterUrl: '/images/creative-works/F1.webp',
     size: 'standard',
-    tags: ['Comic', 'AI Humor', 'Leonardo AI'],
+    tags: ['AI Video', 'Hindu Mythology', 'Mobile'],
     date: '2025',
   },
   {
     id: 7,
     category: 'photography',
-    title: 'Alphabet Series',
+    title: 'Evolution',
     subtitle: 'Creative Photography Collection',
     description:
       'Five moments captured through creative photography — exploring form, light, and composition through the lens.',
@@ -125,7 +126,7 @@ const WORKS = [
       '/images/creative-works/F4.webp',
       '/images/creative-works/F5.webp',
     ],
-    panelTitle: 'Alphabet Series',
+    panelTitle: 'Evolution',
     tags: ['Photography', 'Series', 'Creative'],
     date: '2025',
   },
@@ -325,31 +326,6 @@ function Lightbox({
                         display: 'block',
                       }}
                     />
-                    <div
-                      style={{
-                        position: 'absolute',
-                        bottom: 8,
-                        right: 8,
-                        minWidth: 26,
-                        height: 26,
-                        padding: '0 7px',
-                        borderRadius: 7,
-                        background: isDark
-                          ? 'rgba(26,18,16,0.8)'
-                          : 'rgba(255,255,255,0.85)',
-                        backdropFilter: 'blur(8px)',
-                        border: `1px solid ${isDark ? 'rgba(204,139,134,0.3)' : 'rgba(125,79,80,0.15)'}`,
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        fontFamily: 'var(--font-funnel-sans)',
-                        fontSize: 11,
-                        fontWeight: 600,
-                        color: accent,
-                      }}
-                    >
-                      {imgIdx + 1}
-                    </div>
                   </div>
                 ))}
               </div>
@@ -807,7 +783,7 @@ export default function CreativeWorks() {
               letterSpacing: 1.5,
             }}
           >
-            suniliyer.ca
+            Sunil Iyer
           </span>
         </div>
 
@@ -953,8 +929,7 @@ export default function CreativeWorks() {
             transition: 'color 0.4s ease',
           }}
         >
-          AI-generated videos, comics, digital art, and photography — exploring the
-          intersection of technology, culture, and creativity.
+          Artistically created videos, photographs and art - exploring the intersection of technology, culture and creativity
         </p>
       </div>
 
@@ -1199,34 +1174,6 @@ export default function CreativeWorks() {
                             display: 'block',
                           }}
                         />
-                        {/* Photo number badge */}
-                        <div
-                          style={{
-                            position: 'absolute',
-                            bottom: 6,
-                            right: 6,
-                            zIndex: 4,
-                            minWidth: 22,
-                            height: 22,
-                            padding: '0 6px',
-                            borderRadius: 6,
-                            background: isDark
-                              ? 'rgba(26,18,16,0.8)'
-                              : 'rgba(255,255,255,0.85)',
-                            backdropFilter: 'blur(8px)',
-                            WebkitBackdropFilter: 'blur(8px)',
-                            border: `1px solid ${isDark ? 'rgba(204,139,134,0.25)' : 'rgba(125,79,80,0.12)'}`,
-                            display: 'flex',
-                            alignItems: 'center',
-                            justifyContent: 'center',
-                            fontFamily: 'var(--font-funnel-sans)',
-                            fontSize: 10,
-                            fontWeight: 600,
-                            color: t.accent,
-                          }}
-                        >
-                          {imgIdx + 1}
-                        </div>
                       </div>
                     ))}
                   </div>
