@@ -2,8 +2,9 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination, EffectFade, Autoplay } from 'swiper/modules';
+import { Navigation } from 'swiper/modules';
 import type { Swiper as SwiperType } from 'swiper';
 
 // Import Swiper styles
@@ -34,12 +35,12 @@ export default function CalvinHobbesPage() {
   return (
     <div className="calvin-hobbes-viewer">
       {/* Home Button */}
-      <a href="/" className="home-button-comic" aria-label="Back to home">
+      <Link href="/" className="home-button-comic" aria-label="Back to home">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
           <polyline points="9 22 9 12 15 12 15 22" />
         </svg>
-      </a>
+      </Link>
 
       {/* Header */}
       <header className="comic-header">
