@@ -125,7 +125,7 @@ const WORKS: Work[] = [
     description:
       'AI-generated visualization of the divine union between Parvathi and Shiva, bringing ancient Hindu mythology to life through modern video generation technology.',
     type: 'mobile-video',
-    videoUrl: '/videos/parvathi-shiva.mp4',
+    videoUrl: '/videos/Parvathi-Shiva.mp4',
     posterUrl: '/images/creative-works/F1.webp',
     size: 'standard',
     tags: ['AI Video', 'Hindu Mythology', 'Mobile'],
@@ -271,7 +271,7 @@ const WORKS: Work[] = [
       'Rudyard Kipling\'s timeless poem about resilience, integrity, and what it means to be truly human — a guide for facing life\'s trials with grace and strength.',
     type: 'poem',
     author: 'Rudyard Kipling',
-    size: 'tall',
+    size: 'wide',
     tags: ['Poetry', 'Classic', 'Inspiration'],
     date: '1910',
     text: `If you can keep your head when all about you
@@ -319,7 +319,7 @@ Yours is the Earth and everything that's in it,
       'The iconic Adidas quote that challenges us to push beyond perceived limitations and redefine what\'s possible.',
     type: 'quote',
     author: 'Adidas',
-    size: 'standard',
+    size: 'wide',
     tags: ['Motivation', 'Sports', 'Inspiration'],
     date: '2004',
     text: `Impossible is just a big word
@@ -333,6 +333,20 @@ Impossible is not a declaration, it's a dare.
 Impossible is potential.
 Impossible is temporary.
 Impossible is nothing.`,
+  },
+  {
+    id: 18,
+    category: 'comics',
+    title: 'I am Me',
+    subtitle: 'Self-Acceptance',
+    description:
+      'Virginia Satir\'s powerful declaration of self-ownership and authenticity — a profound exploration of what it means to fully accept and embrace who you are.',
+    type: 'quote',
+    author: 'Virginia Satir',
+    size: 'wide',
+    tags: ['Self-Discovery', 'Psychology', 'Inspiration'],
+    date: '1975',
+    text: `I am Me. In all the world, there is no one else exactly like me. Everything that comes out of me is authentically mine, because I alone chose it -- I own everything about me: my body, my feelings, my mouth, my voice, all my actions, whether they be to others or myself. I own my fantasies, my dreams, my hopes, my fears. I own my triumphs and successes, all my failures and mistakes. Because I own all of me, I can become intimately acquainted with me. By so doing, I can love me and be friendly with all my parts. I know there are aspects about myself that puzzle me, and other aspects that I do not know -- but as long as I am friendly and loving to myself, I can courageously and hopefully look for solutions to the puzzles and ways to find out more about me. However I look and sound, whatever I say and do, and whatever I think and feel at a given moment in time is authentically me. If later some parts of how I looked, sounded, thought, and felt turn out to be unfitting, I can discard that which is unfitting, keep the rest, and invent something new for that which I discarded. I can see, hear, feel, think, say, and do. I have the tools to survive, to be close to others, to be productive, and to make sense and order out of the world of people and things outside of me. I own me, and therefore, I can engineer me. I am me, and I am Okay.`,
   },
 ];
 
@@ -604,21 +618,6 @@ function Lightbox({
                   zIndex: 0,
                 }}
               />
-              {/* Opening quote/icon */}
-              <div
-                style={{
-                  position: 'relative',
-                  zIndex: 1,
-                  fontSize: work.type === 'poem' ? 64 : 96,
-                  color: accent,
-                  opacity: 0.15,
-                  lineHeight: 1,
-                  marginBottom: work.type === 'poem' ? -20 : -40,
-                  fontFamily: 'Georgia, serif',
-                }}
-              >
-                {work.type === 'poem' ? '✍' : '"'}
-              </div>
               {/* Text content */}
               <div
                 style={{
@@ -1558,25 +1557,15 @@ export default function CreativeWorks() {
                         >
                           <div
                             style={{
-                              fontSize: work.type === 'poem' ? 48 : 64,
-                              color: t.accent,
-                              opacity: 0.25,
-                              marginBottom: 12,
-                            }}
-                          >
-                            {work.type === 'poem' ? '✍' : '❝'}
-                          </div>
-                          <div
-                            style={{
                               fontFamily: work.type === 'poem' ? 'Georgia, serif' : 'var(--font-funnel-display)',
-                              fontSize: work.type === 'poem' ? 13 : 15,
+                              fontSize: work.type === 'poem' ? 14 : 16,
                               lineHeight: 1.6,
                               color: t.textPrimary,
                               textAlign: 'center',
-                              maxWidth: '85%',
+                              maxWidth: '90%',
                               overflow: 'hidden',
                               display: '-webkit-box',
-                              WebkitLineClamp: work.size === 'tall' ? 8 : 4,
+                              WebkitLineClamp: work.size === 'wide' ? 6 : 4,
                               WebkitBoxOrient: 'vertical',
                               fontStyle: work.type === 'poem' ? 'italic' : 'normal',
                             }}
