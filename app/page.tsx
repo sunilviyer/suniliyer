@@ -557,7 +557,7 @@ export default function HomePage() {
                   </div>
                   <div className="link-content">
                     <span className="link-label">LinkedIn</span>
-                    <span className="link-text">linkedin.com/in/sunilviyer</span>
+                    <span className="link-text">Connect with me</span>
                   </div>
                   <div className="link-arrow">
                     <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
@@ -579,7 +579,7 @@ export default function HomePage() {
                   </div>
                   <div className="link-content">
                     <span className="link-label">GitHub</span>
-                    <span className="link-text">github.com/sunilviyer</span>
+                    <span className="link-text">Check my code</span>
                   </div>
                   <div className="link-arrow">
                     <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
