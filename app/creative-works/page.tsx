@@ -1436,7 +1436,7 @@ export default function CreativeWorks() {
           <h1
             style={{
               fontFamily: 'var(--font-funnel-display)',
-              fontSize: 'clamp(28px, 4vw, 48px)',
+              fontSize: 'clamp(24px, 3.5vw, 42px)',
               fontWeight: 600,
               color: t.textPrimary,
               lineHeight: 1.3,
