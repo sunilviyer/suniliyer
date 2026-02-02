@@ -60,7 +60,7 @@ const WORKS = [
   {
     id: 3,
     category: 'videos',
-    title: 'Krishna's Cosmic Dance',
+    title: "Krishna's Cosmic Dance",
     subtitle: 'Vishwaroop Darshan',
     description:
       "A visual exploration of Krishna's universal form as described in the Bhagavad Gita, rendered through AI-assisted animation.",
@@ -86,7 +86,7 @@ const WORKS = [
   {
     id: 5,
     category: 'videos',
-    title: 'Hanuman's Leap',
+    title: "Hanuman's Leap",
     subtitle: 'Mythology Shorts',
     description:
       "A short-form video capturing Hanuman's legendary leap across the ocean to Lanka, crafted with AI video generation tools.",
