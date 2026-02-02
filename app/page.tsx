@@ -598,28 +598,28 @@ export default function HomePage() {
 
               <div className="credits-list">
                 <div className="credit-item">
-                  <span className="credit-label">AI Assistant</span>
-                  <span className="credit-value">Google Nano Banana</span>
+                  <span className="credit-label">The Brain</span>
+                  <a href="https://claude.com/product/claude-code" target="_blank" rel="noopener noreferrer" className="credit-value credit-link">Claude Code</a>
                 </div>
                 <div className="credit-item">
-                  <span className="credit-label">Development Tool</span>
-                  <span className="credit-value">Claude Code</span>
+                  <span className="credit-label">The Heart</span>
+                  <a href="https://github.com/bmad-code-org/BMAD-METHOD" target="_blank" rel="noopener noreferrer" className="credit-value credit-link">BMAD Method</a>
                 </div>
                 <div className="credit-item">
-                  <span className="credit-label">Methodology</span>
-                  <span className="credit-value">BMAD-Method</span>
+                  <span className="credit-label">The Inspiration</span>
+                  <a href="https://rayo-nextjs-creative-template.netlify.app/" target="_blank" rel="noopener noreferrer" className="credit-value credit-link">Rayo Template</a>
                 </div>
                 <div className="credit-item">
-                  <span className="credit-label">Design Inspiration</span>
-                  <span className="credit-value">Rayo Template</span>
+                  <span className="credit-label">The Eyes</span>
+                  <a href="https://gemini.google.com/" target="_blank" rel="noopener noreferrer" className="credit-value credit-link">Google Nano Banana</a>
                 </div>
                 <div className="credit-item">
-                  <span className="credit-label">Framework</span>
-                  <span className="credit-value">Next.js & TypeScript</span>
-                </div>
-                <div className="credit-item">
-                  <span className="credit-label">Animations</span>
+                  <span className="credit-label">The Personality</span>
                   <span className="credit-value">GSAP & Framer Motion</span>
+                </div>
+                <div className="credit-item">
+                  <span className="credit-label">The Body</span>
+                  <span className="credit-value">Next.js & TypeScript</span>
                 </div>
               </div>
             </div>
@@ -1507,6 +1507,32 @@ export default function HomePage() {
           color: var(--text-primary);
           text-align: right;
           font-weight: 500;
+        }
+
+        .credit-link {
+          text-decoration: none;
+          color: var(--text-primary);
+          transition: color 0.3s ease;
+          position: relative;
+        }
+
+        .credit-link::after {
+          content: '';
+          position: absolute;
+          bottom: -2px;
+          left: 0;
+          width: 0;
+          height: 2px;
+          background: #333d29;
+          transition: width 0.3s ease;
+        }
+
+        .credit-link:hover {
+          color: #333d29;
+        }
+
+        .credit-link:hover::after {
+          width: 100%;
         }
 
         .copyright {
