@@ -1442,7 +1442,7 @@ export default function CreativeWorks() {
               lineHeight: 1.3,
               letterSpacing: '-0.5px',
               marginBottom: 18,
-              fontStyle: 'italic',
+              fontStyle: 'normal',
               transition: 'color 0.4s ease',
               padding: '0 8px',
             }}
