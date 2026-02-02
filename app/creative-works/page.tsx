@@ -22,7 +22,7 @@ const PALETTE = {
 const CATEGORIES = [
   { id: 'all', label: 'Everything' },
   { id: 'videos', label: 'Videos' },
-  { id: 'comics', label: 'Comics' },
+  { id: 'quotes-poems', label: 'Quotes & Poems' },
   { id: 'ai-art', label: 'AI Art' },
   { id: 'photography', label: 'Photography' },
 ];
@@ -87,7 +87,7 @@ const WORKS: Work[] = [
       'About me.',
     type: 'youtube',
     youtubeId: 'XSHtMh7Oi8s',
-    size: 'wide',
+    size: 'large',
     tags: ['Video', 'Personal', 'Journey'],
     date: '2025',
   },
@@ -100,7 +100,7 @@ const WORKS: Work[] = [
       'A fundraiser video',
     type: 'youtube',
     youtubeId: 'XRGEpnPXC40',
-    size: 'standard',
+    size: 'large',
     tags: ['Video', 'Fundraiser', 'Campaign'],
     date: '2025',
   },
@@ -113,7 +113,7 @@ const WORKS: Work[] = [
       'Product Pitch',
     type: 'youtube',
     youtubeId: '_pNncBm1Pn0',
-    size: 'tall',
+    size: 'large',
     tags: ['Video', 'Business', 'Innovation'],
     date: '2025',
   },
@@ -126,8 +126,8 @@ const WORKS: Work[] = [
       'AI-generated visualization of the divine union between Parvathi and Shiva, bringing ancient Hindu mythology to life through modern video generation technology.',
     type: 'mobile-video',
     videoUrl: '/videos/Parvathi-Shiva.mp4',
-    posterUrl: '/images/creative-works/F1.webp',
-    size: 'standard',
+    posterUrl: '/videos/Parvathi-Shiva.webp',
+    size: 'tall',
     tags: ['AI Video', 'Hindu Mythology', 'Mobile'],
     date: '2025',
   },
@@ -139,7 +139,7 @@ const WORKS: Work[] = [
     description:
       'Five moments captured through creative photography — exploring form, light, and composition through the lens.',
     type: 'photo-panel',
-    size: 'full',
+    size: 'wide',
     images: [
       '/images/creative-works/F1.webp',
       '/images/creative-works/F2.webp',
@@ -159,7 +159,7 @@ const WORKS: Work[] = [
     description:
       'Four AI-generated concepts exploring themes of time, transformation, preservation, and growth — from hourglass to butterfly, bonsai to seedling.',
     type: 'photo-panel',
-    size: 'full',
+    size: 'wide',
     images: [
       '/images/creative-works/AI1.webp',
       '/images/creative-works/AI2.webp',
@@ -179,7 +179,7 @@ const WORKS: Work[] = [
       'An AI-generated video exploring the concept of evolution and transformation through dynamic visual storytelling.',
     type: 'mobile-video',
     videoUrl: '/videos/AIEvolution.webm',
-    posterUrl: '/images/creative-works/AI2.webp',
+    posterUrl: '/videos/AIEvolution.webp',
     size: 'standard',
     tags: ['AI Video', 'Evolution', 'Art'],
     date: '2025',
@@ -264,7 +264,7 @@ const WORKS: Work[] = [
   },
   {
     id: 16,
-    category: 'comics',
+    category: 'quotes-poems',
     title: 'If',
     subtitle: 'Classic Poetry',
     description:
@@ -312,7 +312,7 @@ Yours is the Earth and everything that's in it,
   },
   {
     id: 17,
-    category: 'comics',
+    category: 'quotes-poems',
     title: 'Impossible is Nothing',
     subtitle: 'Adidas Manifesto',
     description:
@@ -336,7 +336,7 @@ Impossible is nothing.`,
   },
   {
     id: 18,
-    category: 'comics',
+    category: 'quotes-poems',
     title: 'I am Me',
     subtitle: 'Self-Acceptance',
     description:
@@ -347,6 +347,233 @@ Impossible is nothing.`,
     tags: ['Self-Discovery', 'Psychology', 'Inspiration'],
     date: '1975',
     text: `I am Me. In all the world, there is no one else exactly like me. Everything that comes out of me is authentically mine, because I alone chose it -- I own everything about me: my body, my feelings, my mouth, my voice, all my actions, whether they be to others or myself. I own my fantasies, my dreams, my hopes, my fears. I own my triumphs and successes, all my failures and mistakes. Because I own all of me, I can become intimately acquainted with me. By so doing, I can love me and be friendly with all my parts. I know there are aspects about myself that puzzle me, and other aspects that I do not know -- but as long as I am friendly and loving to myself, I can courageously and hopefully look for solutions to the puzzles and ways to find out more about me. However I look and sound, whatever I say and do, and whatever I think and feel at a given moment in time is authentically me. If later some parts of how I looked, sounded, thought, and felt turn out to be unfitting, I can discard that which is unfitting, keep the rest, and invent something new for that which I discarded. I can see, hear, feel, think, say, and do. I have the tools to survive, to be close to others, to be productive, and to make sense and order out of the world of people and things outside of me. I own me, and therefore, I can engineer me. I am me, and I am Okay.`,
+  },
+  {
+    id: 19,
+    category: 'quotes-poems',
+    title: 'Traffic Light Wisdom',
+    subtitle: 'Observational Comedy',
+    description:
+      'Mitch Hedberg\'s brilliant observation about the reverse logic of bananas and traffic lights — a perfect example of his unique comedic perspective.',
+    type: 'quote',
+    author: 'Mitch Hedberg',
+    size: 'wide',
+    tags: ['Comedy', 'Observation', 'Humor'],
+    date: '2003',
+    text: `With a stop light, green means 'go' and yellow means 'slow down'. With a banana, however, it is quite the opposite. Yellow means 'go', green means 'whoa, slow down', and red means 'where the heck did you get that banana?'`,
+  },
+  {
+    id: 20,
+    category: 'quotes-poems',
+    title: 'Run Every Morning',
+    subtitle: 'Survival Philosophy',
+    description:
+      'Thomas L. Friedman\'s powerful metaphor about survival, competition, and the relentless drive required to thrive in life.',
+    type: 'quote',
+    author: 'Thomas L. Friedman',
+    size: 'wide',
+    tags: ['Motivation', 'Business', 'Philosophy'],
+    date: '2005',
+    text: `Every morning in Africa, a gazelle wakes up. It knows it must run faster than the fastest lion or it will be killed. Every morning a lion wakes up. It knows it must outrun the slowest gazelle or it will starve to death. It doesn't matter whether you are a lion or a gazelle. When the sun comes up, you better start running.`,
+  },
+  {
+    id: 21,
+    category: 'quotes-poems',
+    title: 'The Delusion of Significance',
+    subtitle: 'Self-Discovery',
+    description:
+      'Chuck Lorre on the liberating realization that people are too focused on their own lives to obsess over yours — freedom through invisibility.',
+    type: 'quote',
+    author: 'Chuck Lorre',
+    size: 'wide',
+    tags: ['Psychology', 'Self-Discovery', 'Freedom'],
+    date: '2010',
+    text: `I recently pierced the veil of a long-standing delusion which I had considered to be reality. The delusion was simply this: I thought people were deeply aware of me. I thought the things going on in my life -- my work, relationships, problems, joys, thoughts, insights, attitudes, tastes, desires, fears, good hair days, bad hair days, choice of pants (that's right, choice of pants), etc. were all of some significance to other people. I'm not certain, but I think the delusion is a twisted sort of family heirloom, a neurotic hand-me-down of the fiercely-held immigrant desire to fit in, to be acceptable. Be that as it may, the impact of this hallucination has been a constant state of low-grade anxiety. While it's still a little early to tell, it appears that freedom from it will create an enormous sense of relief and... well... freedom. You people out there, kind and considerate though you may be, don't really give a rat's ass about my life. You give a rat's ass about your life. This means I need no longer obsess over what others think of me (they don't). This means that I am, much to my amazement, more or less invisible. But most importantly, this means that I can begin living a fearless, delusion-free life that is fundamentally true to my basic, God-given nature. All that's left to do is discover what kind of pants my basic, God-given nature looks good in.`,
+  },
+  {
+    id: 22,
+    category: 'quotes-poems',
+    title: 'Mental Bees',
+    subtitle: 'Overthinking',
+    description:
+      'Chuck Lorre\'s vivid metaphor comparing thoughts to a swarm of bees — exploring the idea that we never truly perceive reality directly, only through our mental filters.',
+    type: 'quote',
+    author: 'Chuck Lorre',
+    size: 'wide',
+    tags: ['Philosophy', 'Psychology', 'Thoughts'],
+    date: '2011',
+    text: `I believe I think too much. I believe I'm literally drowning in a thick swamp of thoughts. No, swamp's not right. It's more like being in the middle of a swarm of bees, all of them flying insanely about, occasionally stinging for no apparent reason. Yup, bees, definitely -- thoughts are bees. In fact, I believe my entire understanding of the world is based on my thoughts, which are generated by my emotions, which are generated by ... well, I guess my reaction to stuff that happens. Anyway, I understand the world through the filter of my thoughts and emotions. If this is pretty much how you understand the world, it brings up an interesting concept. Probably since we were infants, none of us have directly perceived this world we live in. What does it mean to directly perceive something? Well, I suppose it would mean to be totally with that thing, as opposed to observing and thinking about it. It's a duality issue. Here's me, here's you. here's me, here's the sofa. Ya dig where this is going? We live on a planet dominated by a race of beings whose only connection to reality is constantly buzzing, mental bees. We're all walking through life in a dream state that is, at best, a funhouse mirror-image of what's really out there. It makes you think, doesn't it? Ouch! Dammit!`,
+  },
+  {
+    id: 23,
+    category: 'quotes-poems',
+    title: 'Method in Madness',
+    subtitle: 'Philosophy of Insanity',
+    description:
+      'G.K. Chesterton\'s paradoxical observation that madness often arises from being too methodical, not from chaos.',
+    type: 'quote',
+    author: 'G.K. Chesterton',
+    size: 'wide',
+    tags: ['Philosophy', 'Paradox', 'Madness'],
+    date: '1909',
+    text: `He may be mad, but there's method in his madness. There nearly always is method in madness. It's what drives men mad, being methodical.`,
+  },
+  {
+    id: 24,
+    category: 'quotes-poems',
+    title: 'Who\'s We?',
+    subtitle: 'Political Pragmatism',
+    description:
+      'An episode from the July Revolution of 1830 in France, illustrating Talleyrand\'s masterful political opportunism and the art of choosing the winning side.',
+    type: 'quote',
+    author: 'Talleyrand',
+    size: 'wide',
+    tags: ['History', 'Politics', 'Strategy'],
+    date: '1830',
+    text: `After three days of riots, the statesman Talleyrand was sitting by his window in Paris and listening to the bells pealing away in Paris that signaled the end of the riots. "We're winning" he muttered. "Who's we?" his assistant, asked him. "Shush," said Talleyrand, "I'll tell you who we are tomorrow."`,
+  },
+  {
+    id: 25,
+    category: 'quotes-poems',
+    title: 'Live Deliberately',
+    subtitle: 'Transcendentalist Philosophy',
+    description:
+      'Henry David Thoreau\'s iconic passage from Walden about living with intention, stripping away the unnecessary, and extracting the essence of life.',
+    type: 'quote',
+    author: 'Henry David Thoreau',
+    size: 'wide',
+    tags: ['Philosophy', 'Nature', 'Transcendentalism'],
+    date: '1854',
+    text: `I went to the woods because I wished to live deliberately, to front only the essential facts of life, and see if I could not learn what it had to teach, and not, when I came to die, discover that I had not lived — I did not wish to live what was not life, living is so dear; nor did I wish to practice resignation, unless it was quite necessary. I wanted to live deep and suck out all the marrow of life, to live so sturdily and Spartan-like as to put to rout all that was not life, to cut a broad swath and shave close, to drive life into a corner, and reduce it to its lowest terms...`,
+  },
+  {
+    id: 26,
+    category: 'quotes-poems',
+    title: 'Invictus',
+    subtitle: 'Victorian Poetry',
+    description:
+      'William Ernest Henley\'s powerful poem about resilience and the unconquerable human spirit — written from a hospital bed, it has inspired generations with its message of self-mastery in the face of adversity.',
+    type: 'poem',
+    author: 'William Ernest Henley',
+    size: 'wide',
+    tags: ['Poetry', 'Resilience', 'Classic'],
+    date: '1875',
+    text: `Out of the night that covers me,
+Black as the pit from pole to pole,
+I thank whatever gods may be
+For my unconquerable soul.
+
+In the fell clutch of circumstance
+I have not winced nor cried aloud.
+Under the bludgeonings of chance
+My head is bloody, but unbowed.
+
+Beyond this place of wrath and tears
+Looms but the Horror of the shade,
+And yet the menace of the years
+Finds and shall find me unafraid.
+
+It matters not how strait the gate,
+How charged with punishments the scroll,
+I am the master of my fate:
+I am the captain of my soul.`,
+  },
+  {
+    id: 27,
+    category: 'quotes-poems',
+    title: 'Bombay',
+    subtitle: 'Ode to a City',
+    description:
+      'Rudyard Kipling\'s affectionate tribute to the city of Bombay (now Mumbai), the place of his birth — capturing the essence of a vibrant port city where East meets West.',
+    type: 'quote',
+    author: 'Rudyard Kipling',
+    size: 'standard',
+    tags: ['Poetry', 'Place', 'Memory'],
+    date: '1894',
+    text: `Bombay - Maximum City!
+Mother of Cities to me,
+For I was born in her gate,
+Between the palms and the sea,
+Where the world-end steamers wait.`,
+  },
+  {
+    id: 28,
+    category: 'quotes-poems',
+    title: 'Bhaja Govindam',
+    subtitle: 'Sanskrit Hymn',
+    description:
+      'Adi Shankaracharya\'s immortal composition urging us to turn away from worldly pursuits and focus on spiritual awakening — selected verses divinely rendered by MS Subbulakshmi.',
+    type: 'poem',
+    author: 'Adi Shankaracharya',
+    size: 'wide',
+    tags: ['Sanskrit', 'Spiritual', 'Vedanta'],
+    date: '8th Century',
+    text: `Worship Govinda, Worship Govinda, Worship Govinda.
+Oh fool! Rules of Grammar will not save you at the time of your death.
+
+Oh fool! Give up your thirst to amass wealth, devote your mind to thoughts to the Real.
+Be content with what comes through actions already performed in the past.
+
+Do not boast of wealth, friends, and youth. Each one of these is destroyed within a minute.
+Free yourself from the illusion of the world of Maya and attain the timeless Truth.
+
+Born again, death again, birth again to stay in the mother's womb!
+It is indeed hard to cross this boundless ocean of samsara.
+Oh Murari! Redeem me through Thy mercy.`,
+  },
+  {
+    id: 29,
+    category: 'quotes-poems',
+    title: 'Scarcity of Resolve',
+    subtitle: 'Career Wisdom',
+    description:
+      'Wayne Dyer\'s powerful reminder that the only thing preventing us from making a living at what we love is our own resolve to make it happen.',
+    type: 'quote',
+    author: 'Wayne Dyer',
+    size: 'standard',
+    tags: ['Motivation', 'Career', 'Resolve'],
+    date: '2000s',
+    text: `There's no scarcity of opportunity to make a living at what you love. There is only a scarcity of resolve to make it happen.`,
+  },
+  {
+    id: 30,
+    category: 'quotes-poems',
+    title: 'With a Little Help from my Friends',
+    subtitle: 'Beatles Classic',
+    description:
+      'Lennon-McCartney\'s timeless celebration of friendship, support, and the fundamental human need for connection and love.',
+    type: 'poem',
+    author: 'John Lennon and Paul McCartney',
+    size: 'wide',
+    tags: ['Music', 'Friendship', 'Love'],
+    date: '1967',
+    text: `What would you do if I sang out of tune,
+Would you stand up and walk out on me?
+Lend me your ears and I'll sing you a song
+And I'll try not to sing out of key.
+
+Oh, I get by with a little help from my friends
+Mm, I get high with a little help from my friends
+Mm, gonna try with a little help from my friends
+
+Do you need anybody
+I need somebody to love
+Could it be anybody
+I want somebody to love.`,
+  },
+  {
+    id: 31,
+    category: 'quotes-poems',
+    title: 'Kitchen Appliance Naming Institute',
+    subtitle: 'Observational Comedy',
+    description:
+      'Mitch Hedberg\'s brilliantly absurd take on the simple logic behind naming kitchen appliances — just add "-er" to what it does.',
+    type: 'quote',
+    author: 'Mitch Hedberg',
+    size: 'standard',
+    tags: ['Comedy', 'Observation', 'Absurd'],
+    date: '2000s',
+    text: `I wanna get a job naming kitchen appliance. Seems like the easiest job ever. You know, refrigerator, toaster, blender...you just say what the thing does and then you add '-er'. Kitchen Appliance Naming Institute. "What does this do?" "It keeps shit fresh." "Well, that's a 'fresher'. I'm going on break."`,
   },
 ];
 
@@ -755,10 +982,24 @@ export default function CreativeWorks() {
   const [selectedWork, setSelectedWork] = useState<Work | null>(null);
   const [animateCards, setAnimateCards] = useState(true);
 
-  const filteredWorks =
+  // Split works into visual content and text content
+  const visualWorks = WORKS.filter((w) => w.type !== 'poem' && w.type !== 'quote');
+  const textWorks = WORKS.filter((w) => w.type === 'poem' || w.type === 'quote');
+
+  // Filter based on active category
+  const filteredVisualWorks =
     activeCategory === 'all'
-      ? WORKS
-      : WORKS.filter((w) => w.category === activeCategory);
+      ? visualWorks
+      : activeCategory === 'quotes-poems'
+        ? []
+        : visualWorks.filter((w) => w.category === activeCategory);
+
+  const filteredTextWorks =
+    activeCategory === 'all'
+      ? textWorks
+      : activeCategory === 'quotes-poems'
+        ? textWorks
+        : [];
 
   useEffect(() => {
     setAnimateCards(false);
@@ -1150,69 +1391,88 @@ export default function CreativeWorks() {
           animationDelay: '0.1s',
         }}
       >
-        <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 12 }}>
-          <div
-            style={{
-              width: 28,
-              height: 2,
-              borderRadius: 2,
-              background: `linear-gradient(90deg, ${t.accent}, transparent)`,
-            }}
-          />
-          <span
-            style={{
-              fontFamily: 'var(--font-funnel-sans)',
-              fontSize: 11,
-              color: t.accent,
-              letterSpacing: 3,
-              textTransform: 'uppercase',
-              fontWeight: 500,
-            }}
-          >
-            Creative Portfolio
-          </span>
-        </div>
-
-        <h1
+        <div
           style={{
-            fontFamily: 'var(--font-funnel-display)',
-            fontSize: 'clamp(36px, 5.5vw, 68px)',
-            fontWeight: 600,
-            color: t.textPrimary,
-            lineHeight: 1.08,
-            letterSpacing: '-1px',
-            marginBottom: 14,
-            fontStyle: 'italic',
-            transition: 'color 0.4s ease',
-          }}
-        >
-          Where Code
-          <br />
-          Meets{' '}
-          <span
-            style={{
-              background: `linear-gradient(135deg, ${PALETTE.indigoInk}, ${PALETTE.royalViolet}, ${PALETTE.lavenderPurple})`,
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-              backgroundClip: 'text',
-            }}
-          >
-            Canvas
-          </span>
-        </h1>
-        <p
-          style={{
-            fontSize: 16,
-            fontWeight: 400,
-            color: t.textSecondary,
-            maxWidth: 600,
-            lineHeight: 1.65,
+            background: isDark
+              ? 'linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.02) 100%)'
+              : 'linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.85) 100%)',
+            borderRadius: 20,
+            padding: '48px 56px',
+            boxShadow: isDark
+              ? `0 10px 40px rgba(0, 0, 0, 0.3), 0 0 0 1px ${t.cardBorder}, inset 0 1px 0 rgba(255,255,255,0.1)`
+              : `0 10px 40px rgba(125,79,80,0.08), 0 0 0 1px rgba(0, 0, 0, 0.05), inset 0 1px 0 rgba(255,255,255,0.8)`,
             marginBottom: 36,
-            transition: 'color 0.4s ease',
+            backdropFilter: 'blur(20px) saturate(180%)',
+            WebkitBackdropFilter: 'blur(20px) saturate(180%)',
+            textAlign: 'center',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
           }}
         >
-          Things I&apos;ve made, things I&apos;ve found, things I keep coming back to — poems, quotes, videos, art, and the quiet threads that connect them all.
-        </p>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 16 }}>
+            <div
+              style={{
+                width: 28,
+                height: 2,
+                borderRadius: 2,
+                background: `linear-gradient(90deg, ${t.accent}, transparent)`,
+              }}
+            />
+            <span
+              style={{
+                fontFamily: 'var(--font-funnel-sans)',
+                fontSize: 11,
+                color: t.accent,
+                letterSpacing: 3,
+                textTransform: 'uppercase',
+                fontWeight: 500,
+              }}
+            >
+              Creative Portfolio
+            </span>
+          </div>
+
+          <h1
+            style={{
+              fontFamily: 'var(--font-funnel-display)',
+              fontSize: 'clamp(32px, 4.5vw, 56px)',
+              fontWeight: 600,
+              color: t.textPrimary,
+              lineHeight: 1.2,
+              letterSpacing: '-1px',
+              marginBottom: 18,
+              fontStyle: 'italic',
+              transition: 'color 0.4s ease',
+              whiteSpace: 'nowrap',
+            }}
+          >
+            Where Code Meets{' '}
+            <span
+              style={{
+                background: `linear-gradient(135deg, ${PALETTE.indigoInk}, ${PALETTE.royalViolet}, ${PALETTE.lavenderPurple})`,
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                backgroundClip: 'text',
+              }}
+            >
+              Canvas
+            </span>
+          </h1>
+          <p
+            style={{
+              fontSize: 16,
+              fontWeight: 400,
+              color: t.textSecondary,
+              maxWidth: 700,
+              lineHeight: 1.65,
+              margin: 0,
+              transition: 'color 0.4s ease',
+            }}
+          >
+            Things I&apos;ve made, things I&apos;ve found, things I keep coming back to — poems, quotes, videos, art, and the quiet threads that connect them all.
+          </p>
+        </div>
       </div>
 
       {/* ═══ FILTERS ═══ */}
@@ -1283,22 +1543,57 @@ export default function CreativeWorks() {
         />
       </div>
 
-      {/* ═══ BENTO GRID ═══ */}
-      <div
-        className="bento-grid"
-        style={{
-          maxWidth: 1240,
-          margin: '0 auto',
-          padding: '28px 32px 64px',
-          display: 'grid',
-          gridTemplateColumns: 'repeat(3, 1fr)',
-          gridAutoRows: 240,
-          gap: 18,
-        }}
-      >
-        {filteredWorks.map((work, i) => {
-          const spans = sizeMap[work.size] || sizeMap.standard;
-          const minH =
+      {/* ═══ VISUAL CONTENT GRID ═══ */}
+      {filteredVisualWorks.length > 0 && (
+        <>
+          <div
+            style={{
+              maxWidth: 1240,
+              margin: '0 auto',
+              padding: '28px 32px 0',
+            }}
+          >
+            <h2
+              style={{
+                fontFamily: 'var(--font-funnel-display)',
+                fontSize: 24,
+                fontWeight: 600,
+                color: t.textPrimary,
+                marginBottom: 8,
+                display: 'flex',
+                alignItems: 'center',
+                gap: 12,
+              }}
+            >
+              <span>Visual Gallery</span>
+              <span
+                style={{
+                  fontSize: 14,
+                  fontWeight: 500,
+                  color: t.textMuted,
+                }}
+              >
+                {filteredVisualWorks.length} {filteredVisualWorks.length === 1 ? 'item' : 'items'}
+              </span>
+            </h2>
+          </div>
+          <div
+            className="bento-grid"
+            style={{
+              maxWidth: 1240,
+              margin: '0 auto',
+              padding: '16px 32px 48px',
+              display: 'grid',
+              gridTemplateColumns: 'repeat(3, 1fr)',
+              gridAutoRows: 240,
+              gap: 18,
+              gridAutoFlow: 'dense',
+            }}
+          >
+            {filteredVisualWorks.map((work, i) => {
+          // Calculate dynamic row spans for poems/quotes based on text length
+          let dynamicSpans = sizeMap[work.size] || sizeMap.standard;
+          let minH =
             work.size === 'large'
               ? 498
               : work.size === 'tall'
@@ -1308,6 +1603,19 @@ export default function CreativeWorks() {
                   : work.size === 'full'
                     ? 320
                     : 240;
+
+          // For poems/quotes, calculate rows needed based on text length
+          if ((work.type === 'poem' || work.type === 'quote') && work.text) {
+            const textLength = work.text.length;
+            const rowsNeeded = Math.ceil(textLength / 400); // Roughly 400 chars per row
+            dynamicSpans = {
+              gridColumn: 'span 2',
+              gridRow: `span ${Math.max(1, Math.min(rowsNeeded, 4))}`, // Min 1, max 4 rows
+            };
+            minH = Math.max(1, Math.min(rowsNeeded, 4)) * 240 + (Math.max(1, Math.min(rowsNeeded, 4)) - 1) * 18; // Account for gaps
+          }
+
+          const spans = dynamicSpans;
 
           return (
             <div
@@ -1334,6 +1642,27 @@ export default function CreativeWorks() {
                   'all 0.4s cubic-bezier(0.16,1,0.3,1), border-color 0.3s ease, box-shadow 0.3s ease',
               }}
             >
+              {/* ID Number Badge */}
+              <span
+                style={{
+                  position: 'absolute',
+                  top: 18,
+                  right: 18,
+                  zIndex: 10,
+                  padding: '4px 10px',
+                  borderRadius: 100,
+                  background: `linear-gradient(135deg, ${PALETTE.royalViolet}, ${PALETTE.mauveMagic})`,
+                  color: '#fff',
+                  fontSize: 11,
+                  fontFamily: 'var(--font-funnel-sans)',
+                  fontWeight: 700,
+                  letterSpacing: 1,
+                  boxShadow: '0 2px 8px rgba(0,0,0,0.2)',
+                }}
+              >
+                #{work.id}
+              </span>
+
               {/* ─── PHOTO PANEL RENDERING ─── */}
               {work.type === 'photo-panel' ? (
                 <>
@@ -1563,11 +1892,8 @@ export default function CreativeWorks() {
                               color: t.textPrimary,
                               textAlign: 'center',
                               maxWidth: '90%',
-                              overflow: 'hidden',
-                              display: '-webkit-box',
-                              WebkitLineClamp: work.size === 'wide' ? 6 : 4,
-                              WebkitBoxOrient: 'vertical',
                               fontStyle: work.type === 'poem' ? 'italic' : 'normal',
+                              whiteSpace: 'pre-wrap',
                             }}
                           >
                             {work.text}
@@ -1680,7 +2006,194 @@ export default function CreativeWorks() {
                     </div>
                   </div>
 
-                  {/* Bottom info bar (always visible) */}
+                </>
+              )}
+            </div>
+          );
+        })}
+      </div>
+        </>
+      )}
+
+      {/* ═══ TEXT CONTENT GRID ═══ */}
+      {filteredTextWorks.length > 0 && (
+        <>
+          <div
+            style={{
+              maxWidth: 1240,
+              margin: '0 auto',
+              padding: '28px 32px 0',
+            }}
+          >
+            <h2
+              style={{
+                fontFamily: 'var(--font-funnel-display)',
+                fontSize: 24,
+                fontWeight: 600,
+                color: t.textPrimary,
+                marginBottom: 8,
+                display: 'flex',
+                alignItems: 'center',
+                gap: 12,
+              }}
+            >
+              <span>Words & Wisdom</span>
+              <span
+                style={{
+                  fontSize: 14,
+                  fontWeight: 500,
+                  color: t.textMuted,
+                }}
+              >
+                {filteredTextWorks.length} {filteredTextWorks.length === 1 ? 'item' : 'items'}
+              </span>
+            </h2>
+          </div>
+          <div
+            className="bento-grid"
+            style={{
+              maxWidth: 1240,
+              margin: '0 auto',
+              padding: '16px 32px 64px',
+              display: 'grid',
+              gridTemplateColumns: 'repeat(2, 1fr)',
+              gridAutoRows: 240,
+              gap: 18,
+              gridAutoFlow: 'dense',
+            }}
+          >
+            {filteredTextWorks.map((work, i) => {
+              // Calculate dynamic row spans for poems/quotes based on text length
+              const textLength = work.text?.length || 0;
+              const rowsNeeded = Math.ceil(textLength / 400); // Roughly 400 chars per row
+              const dynamicSpans = {
+                gridColumn: 'span 1',
+                gridRow: `span ${Math.max(1, Math.min(rowsNeeded, 4))}`, // Min 1, max 4 rows
+              };
+              const minH = Math.max(1, Math.min(rowsNeeded, 4)) * 240 + (Math.max(1, Math.min(rowsNeeded, 4)) - 1) * 18;
+
+              return (
+                <div
+                  key={work.id}
+                  className="bento-card"
+                  onClick={() => setSelectedWork(work)}
+                  style={{
+                    ...dynamicSpans,
+                    minHeight: minH,
+                    background: t.cardBg,
+                    border: `1px solid ${t.cardBorder}`,
+                    borderTop: `1px solid ${isDark ? 'rgba(249,234,225,0.1)' : 'rgba(255,255,255,0.5)'}`,
+                    borderLeft: `1px solid ${isDark ? 'rgba(249,234,225,0.07)' : 'rgba(255,255,255,0.35)'}`,
+                    boxShadow: `${t.glow}, inset 0 1px 0 ${isDark ? 'rgba(249,234,225,0.04)' : 'rgba(255,255,255,0.3)'}`,
+                    backdropFilter: t.glass,
+                    WebkitBackdropFilter: t.glass,
+                    ...(animateCards
+                      ? {
+                          animation: `fadeInUp 0.5s cubic-bezier(0.16,1,0.3,1) both`,
+                          animationDelay: `${(filteredVisualWorks.length + i) * 0.06}s`,
+                        }
+                      : { opacity: 0 }),
+                    transition:
+                      'all 0.4s cubic-bezier(0.16,1,0.3,1), border-color 0.3s ease, box-shadow 0.3s ease',
+                  }}
+                >
+                  {/* ID Number Badge */}
+                  <span
+                    style={{
+                      position: 'absolute',
+                      top: 18,
+                      right: 18,
+                      zIndex: 10,
+                      padding: '4px 10px',
+                      borderRadius: 100,
+                      background: `linear-gradient(135deg, ${PALETTE.royalViolet}, ${PALETTE.mauveMagic})`,
+                      color: '#fff',
+                      fontSize: 11,
+                      fontFamily: 'var(--font-funnel-sans)',
+                      fontWeight: 700,
+                      letterSpacing: 1,
+                      boxShadow: '0 2px 8px rgba(0,0,0,0.2)',
+                    }}
+                  >
+                    #{work.id}
+                  </span>
+
+                  {/* Frosted glass background for poem/quote */}
+                  <div
+                    style={{
+                      position: 'absolute',
+                      inset: 8,
+                      borderRadius: 10,
+                      overflow: 'hidden',
+                    }}
+                  >
+                    <div
+                      style={{
+                        position: 'absolute',
+                        inset: 0,
+                        background: isDark
+                          ? `linear-gradient(135deg, ${PALETTE.darkAmethyst2}, ${PALETTE.darkAmethyst1})`
+                          : `linear-gradient(135deg, #fdf5f0, #f9eae1)`,
+                      }}
+                    />
+                    {/* Subtle texture */}
+                    <div
+                      style={{
+                        position: 'absolute',
+                        inset: 0,
+                        opacity: isDark ? 0.04 : 0.06,
+                        backgroundImage: `radial-gradient(${isDark ? PALETTE.mauveMagic : PALETTE.indigoVelvet} 1px, transparent 1px)`,
+                        backgroundSize: '20px 20px',
+                      }}
+                    />
+                    {/* Text content */}
+                    <div
+                      style={{
+                        position: 'absolute',
+                        inset: 0,
+                        padding: '24px',
+                        display: 'flex',
+                        flexDirection: 'column',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        zIndex: 1,
+                        overflow: 'auto',
+                      }}
+                    >
+                      <div
+                        style={{
+                          fontFamily: work.type === 'poem' ? 'Georgia, serif' : 'var(--font-funnel-display)',
+                          fontSize: work.type === 'poem' ? 14 : 16,
+                          lineHeight: 1.6,
+                          color: t.textPrimary,
+                          textAlign: 'center',
+                          maxWidth: '90%',
+                          fontStyle: work.type === 'poem' ? 'italic' : 'normal',
+                          whiteSpace: 'pre-wrap',
+                        }}
+                      >
+                        {work.text}
+                      </div>
+                      {work.author && (
+                        <div
+                          style={{
+                            marginTop: 16,
+                            fontSize: 12,
+                            color: t.accent,
+                            fontFamily: 'var(--font-funnel-sans)',
+                            letterSpacing: 1,
+                          }}
+                        >
+                          — {work.author}
+                        </div>
+                      )}
+                    </div>
+                  </div>
+
+                  {/* Media badge */}
+                  <MediaBadge type={work.type} isDark={isDark} />
+
+                  {/* Bottom info bar */}
                   <div
                     style={{
                       position: 'absolute',
@@ -1720,12 +2233,12 @@ export default function CreativeWorks() {
                       {work.category.replace('-', ' ').toUpperCase()}
                     </span>
                   </div>
-                </>
-              )}
-            </div>
-          );
-        })}
-      </div>
+                </div>
+              );
+            })}
+          </div>
+        </>
+      )}
 
       {/* ═══ STATS FOOTER ═══ */}
       <div style={{ maxWidth: 1240, margin: '0 auto', padding: '0 32px 60px' }}>
@@ -1754,8 +2267,8 @@ export default function CreativeWorks() {
               gradient: `linear-gradient(135deg, ${PALETTE.royalViolet}, ${PALETTE.mauveMagic})`,
             },
             {
-              label: 'Comics',
-              count: WORKS.filter((w) => w.category === 'comics').length,
+              label: 'Quotes & Poems',
+              count: WORKS.filter((w) => w.category === 'quotes-poems').length,
               gradient: `linear-gradient(135deg, ${PALETTE.lavenderPurple}, ${PALETTE.mauve})`,
             },
             {
