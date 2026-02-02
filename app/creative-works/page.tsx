@@ -27,10 +27,31 @@ const CATEGORIES = [
   { id: 'photography', label: 'Photography' },
 ];
 
-/*  type: "youtube" | "mobile-video" | "image" | "photo-panel"
+/*  type: "youtube" | "mobile-video" | "image" | "photo-panel" | "poem" | "quote"
     size: "tall" | "wide" | "large" | "standard" | "full"  ← controls bento placement
     photo-panel items use: images[] array of 5 URLs, panelTitle for the strip label */
-const WORKS = [
+
+interface Work {
+  id: number;
+  category: string;
+  title: string;
+  subtitle: string;
+  description: string;
+  type: string;
+  size: string;
+  tags: string[];
+  date: string;
+  youtubeId?: string;
+  imageUrl?: string;
+  videoUrl?: string;
+  posterUrl?: string;
+  images?: string[];
+  panelTitle?: string;
+  text?: string;
+  author?: string;
+}
+
+const WORKS: Work[] = [
   {
     id: 1,
     category: 'videos',
@@ -252,12 +273,16 @@ function MediaBadge({ type, isDark }: { type: string; isDark: boolean }) {
     'mobile-video': 'Mobile',
     image: 'Photo',
     'photo-panel': 'Series',
+    poem: 'Poem',
+    quote: 'Quote',
   };
   const icons: Record<string, string> = {
     youtube: '▶',
     'mobile-video': '📱',
     image: '◎',
     'photo-panel': '▤',
+    poem: '✍',
+    quote: '❝',
   };
   return (
     <span
@@ -294,7 +319,7 @@ function Lightbox({
   onClose,
   isDark,
 }: {
-  work: any;
+  work: Work;
   onClose: () => void;
   isDark: boolean;
 }) {
@@ -410,12 +435,12 @@ function Lightbox({
                   zIndex: 1,
                 }}
               >
-                {work.images.map((url: string, imgIdx: number) => (
+                {work.images?.map((url: string, imgIdx: number) => (
                   <div
                     key={imgIdx}
                     style={{
                       flex: '1 1 0',
-                      maxWidth: work.images.length <= 3 ? 260 : 'none',
+                      maxWidth: work.images && work.images.length <= 3 ? 260 : 'none',
                       borderRadius: 10,
                       overflow: 'hidden',
                       border: `3px solid ${isDark ? PALETTE.indigoVelvet : PALETTE.mauve}`,
@@ -581,7 +606,7 @@ function Lightbox({
 export default function CreativeWorks() {
   const [isDark, setIsDark] = useState(true);
   const [activeCategory, setActiveCategory] = useState('all');
-  const [selectedWork, setSelectedWork] = useState<any>(null);
+  const [selectedWork, setSelectedWork] = useState<Work | null>(null);
   const [animateCards, setAnimateCards] = useState(true);
 
   const filteredWorks =
@@ -1034,13 +1059,13 @@ export default function CreativeWorks() {
             fontSize: 16,
             fontWeight: 400,
             color: t.textSecondary,
-            maxWidth: 500,
+            maxWidth: 600,
             lineHeight: 1.65,
             marginBottom: 36,
             transition: 'color 0.4s ease',
           }}
         >
-          Artistically created videos, photographs and art - exploring the intersection of technology, culture and creativity
+          Things I&apos;ve made, things I&apos;ve found, things I keep coming back to — poems, quotes, videos, art, and the quiet threads that connect them all.
         </p>
       </div>
 
@@ -1104,7 +1129,7 @@ export default function CreativeWorks() {
         <div
           className="shimmer-line"
           style={{
-            // @ts-ignore
+            // @ts-expect-error - CSS custom property
             '--shimmer-color': isDark
               ? 'rgba(204,139,134,0.18)'
               : 'rgba(125,79,80,0.1)',
@@ -1234,7 +1259,7 @@ export default function CreativeWorks() {
                         border: `1px solid ${isDark ? 'rgba(204,139,134,0.15)' : 'rgba(125,79,80,0.1)'}`,
                       }}
                     >
-                      {work.images.length} PHOTOS
+                      {work.images?.length || 0} PHOTOS
                     </span>
                   </div>
 
@@ -1255,13 +1280,13 @@ export default function CreativeWorks() {
                       zIndex: 2,
                     }}
                   >
-                    {work.images.map((url: string, imgIdx: number) => (
+                    {work.images?.map((url: string, imgIdx: number) => (
                       <div
                         key={imgIdx}
                         className="panel-photo-frame"
                         style={{
                           flex: '1 1 0',
-                          maxWidth: work.images.length <= 3 ? 280 : 'none',
+                          maxWidth: work.images && work.images.length <= 3 ? 280 : 'none',
                           height: '100%',
                           borderRadius: 10,
                           overflow: 'hidden',
@@ -1505,7 +1530,7 @@ export default function CreativeWorks() {
         <div
           className="shimmer-line"
           style={{
-            // @ts-ignore
+            // @ts-expect-error - CSS custom property
             '--shimmer-color': isDark
               ? 'rgba(204,139,134,0.15)'
               : 'rgba(125,79,80,0.08)',
