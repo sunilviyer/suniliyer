@@ -10,7 +10,7 @@ import { Linkedin, Download } from 'lucide-react';
 import { ContactWidget, ContactWidgetHandle } from '@/components/contact/ContactWidget';
 
 export default function JourneyClientNew() {
-  const footerRef = useRef<HTMLElement>(null);
+  const footerRef = useRef<HTMLDivElement>(null);
   const contactWidgetRef = useRef<ContactWidgetHandle>(null);
 
   return (
