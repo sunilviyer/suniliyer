@@ -1397,10 +1397,10 @@ export default function CreativeWorks() {
               ? 'linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.02) 100%)'
               : 'linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.85) 100%)',
             borderRadius: 20,
-            padding: '48px 56px',
+            padding: '48px 64px',
             boxShadow: isDark
-              ? `0 10px 40px rgba(0, 0, 0, 0.3), 0 0 0 1px ${t.cardBorder}, inset 0 1px 0 rgba(255,255,255,0.1)`
-              : `0 10px 40px rgba(125,79,80,0.08), 0 0 0 1px rgba(0, 0, 0, 0.05), inset 0 1px 0 rgba(255,255,255,0.8)`,
+              ? `0 10px 40px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255,255,255,0.1)`
+              : `0 10px 40px rgba(125,79,80,0.08), inset 0 1px 0 rgba(255,255,255,0.8)`,
             marginBottom: 36,
             backdropFilter: 'blur(20px) saturate(180%)',
             WebkitBackdropFilter: 'blur(20px) saturate(180%)',
@@ -1408,6 +1408,7 @@ export default function CreativeWorks() {
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
+            overflow: 'visible',
           }}
         >
           <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 16 }}>
@@ -1436,7 +1437,7 @@ export default function CreativeWorks() {
           <h1
             style={{
               fontFamily: 'var(--font-funnel-display)',
-              fontSize: 'clamp(24px, 3.5vw, 42px)',
+              fontSize: 'clamp(28px, 4vw, 48px)',
               fontWeight: 600,
               color: t.textPrimary,
               lineHeight: 1.3,
