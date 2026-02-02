@@ -1397,7 +1397,7 @@ export default function CreativeWorks() {
               ? 'linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.02) 100%)'
               : 'linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.85) 100%)',
             borderRadius: 20,
-            padding: '48px 64px',
+            padding: '48px 80px',
             boxShadow: isDark
               ? `0 10px 40px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255,255,255,0.1)`
               : `0 10px 40px rgba(125,79,80,0.08), inset 0 1px 0 rgba(255,255,255,0.8)`,
@@ -1408,7 +1408,6 @@ export default function CreativeWorks() {
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
-            overflow: 'visible',
           }}
         >
           <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 16 }}>
@@ -1445,6 +1444,7 @@ export default function CreativeWorks() {
               marginBottom: 18,
               fontStyle: 'italic',
               transition: 'color 0.4s ease',
+              padding: '0 8px',
             }}
           >
             Where Code Meets{' '}
