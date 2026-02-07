@@ -42,4 +42,11 @@ export const portfolioData: PortfolioItemData[] = [
     image: "/images/portfolio/creative-works.webp",
     link: "/creative-works",
   },
+  {
+    id: 6,
+    title: "Bhagavad Gita Journey",
+    description: "Interactive journey through 10 transformative moments from the Bhagavad Gita",
+    image: "/images/portfolio/gita.webp",
+    link: "/gita",
+  },
 ];
