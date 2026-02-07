@@ -515,6 +515,7 @@ export default function GitaExperience() {
           justifyContent: 'center',
           padding: isMobile ? '20px' : '40px',
           overflow: 'auto',
+          backdropFilter: 'blur(0px)',
         }}>
 
           {/* NAVIGATION MODE: Chakra */}
