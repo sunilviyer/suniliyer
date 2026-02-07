@@ -389,7 +389,7 @@ export default function GitaExperience() {
               fontSize: isMobile ? '0.85rem' : '0.9rem',
               lineHeight: 1.7,
             }}>
-              "{selectedMoment.translation}"
+              &ldquo;{selectedMoment.translation}&rdquo;
             </p>
           </div>
         );
@@ -774,15 +774,22 @@ export default function GitaExperience() {
                         }}
                       >
                         <div style={{
-                          backgroundColor: palette.panelBg,
-                          backdropFilter: 'blur(16px)',
-                          WebkitBackdropFilter: 'blur(16px)',
-                          borderRadius: 10,
+                          position: 'relative',
+                          background: isDarkMode
+                            ? `linear-gradient(145deg, rgba(249,243,237,0.08), rgba(201,173,167,0.12) 50%, rgba(249,243,237,0.06))`
+                            : `linear-gradient(145deg, rgba(34,34,59,0.12), rgba(74,78,105,0.10) 50%, rgba(34,34,59,0.08))`,
+                          backdropFilter: 'blur(32px) saturate(1.3)',
+                          WebkitBackdropFilter: 'blur(32px) saturate(1.3)',
+                          borderRadius: 16,
                           padding: '20px 24px',
-                          border: `1px solid ${isActive ? (selectedMoment.accentColor || palette.accent7) : palette.bgSecondary}55`,
+                          border: `1px solid ${isActive ? (selectedMoment.accentColor || palette.accent7) : (isDarkMode ? 'rgba(201,173,167,0.22)' : 'rgba(255,255,255,0.7)')}`,
                           boxShadow: isActive
-                            ? `0 8px 32px ${isDarkMode ? 'rgba(0,0,0,0.4)' : 'rgba(0,0,0,0.12)'}, 0 0 0 1px ${selectedMoment.accentColor}22`
-                            : `0 4px 16px ${isDarkMode ? 'rgba(0,0,0,0.2)' : 'rgba(0,0,0,0.06)'}`,
+                            ? (isDarkMode
+                                ? `0 10px 50px rgba(0,0,0,0.5), inset 0 1px 0 rgba(201,173,167,0.12), 0 0 0 1px ${selectedMoment.accentColor}22`
+                                : `0 8px 40px rgba(201,173,167,0.22), inset 0 1px 0 rgba(255,255,255,0.9), 0 0 0 1px ${selectedMoment.accentColor}22`)
+                            : (isDarkMode
+                                ? `0 10px 50px rgba(0,0,0,0.5), inset 0 1px 0 rgba(201,173,167,0.12)`
+                                : `0 8px 40px rgba(201,173,167,0.22), inset 0 1px 0 rgba(255,255,255,0.9)`),
                           transition: 'all 0.4s ease',
                           transform: isActive ? 'scale(1)' : 'scale(0.97)',
                         }}>
@@ -811,6 +818,32 @@ export default function GitaExperience() {
                             </span>
                           </div>
                           {renderPanelContent(layerIndex)}
+
+                          {/* Top edge highlight */}
+                          <div style={{
+                            position: 'absolute',
+                            top: 0,
+                            left: '10%',
+                            right: '10%',
+                            height: 1,
+                            background: `linear-gradient(90deg, transparent, ${isDarkMode ? 'rgba(201,173,167,0.4)' : 'rgba(255,255,255,0.8)'}, transparent)`,
+                            pointerEvents: 'none',
+                          }} />
+
+                          {/* Left edge accent */}
+                          <div style={{
+                            position: 'absolute',
+                            left: 0,
+                            top: '12%',
+                            bottom: '12%',
+                            width: 3,
+                            borderRadius: '0 3px 3px 0',
+                            background: isDarkMode
+                              ? `linear-gradient(180deg, transparent, rgba(249,243,237,0.35), rgba(201,173,167,0.28), transparent)`
+                              : `linear-gradient(180deg, transparent, rgba(255,255,255,0.88), rgba(201,173,167,0.44), transparent)`,
+                            pointerEvents: 'none',
+                            boxShadow: isDarkMode ? `0 0 10px rgba(249,243,237,0.12)` : 'none',
+                          }} />
                         </div>
                       </div>
                     );
@@ -847,15 +880,22 @@ export default function GitaExperience() {
                         }}
                       >
                         <div style={{
-                          backgroundColor: palette.panelBg,
-                          backdropFilter: 'blur(16px)',
-                          WebkitBackdropFilter: 'blur(16px)',
-                          borderRadius: 10,
+                          position: 'relative',
+                          background: isDarkMode
+                            ? `linear-gradient(145deg, rgba(249,243,237,0.08), rgba(201,173,167,0.12) 50%, rgba(249,243,237,0.06))`
+                            : `linear-gradient(145deg, rgba(34,34,59,0.12), rgba(74,78,105,0.10) 50%, rgba(34,34,59,0.08))`,
+                          backdropFilter: 'blur(32px) saturate(1.3)',
+                          WebkitBackdropFilter: 'blur(32px) saturate(1.3)',
+                          borderRadius: 12,
                           padding: '16px 18px',
-                          border: `1px solid ${isActive ? (selectedMoment.accentColor || palette.accent7) : palette.bgSecondary}44`,
+                          border: `1px solid ${isActive ? (selectedMoment.accentColor || palette.accent7) : (isDarkMode ? 'rgba(201,173,167,0.22)' : 'rgba(255,255,255,0.7)')}`,
                           boxShadow: isActive
-                            ? `0 4px 20px ${isDarkMode ? 'rgba(0,0,0,0.3)' : 'rgba(0,0,0,0.1)'}`
-                            : 'none',
+                            ? (isDarkMode
+                                ? `0 8px 32px rgba(0,0,0,0.4), inset 0 1px 0 rgba(201,173,167,0.12), 0 0 0 1px ${selectedMoment.accentColor}22`
+                                : `0 6px 24px rgba(201,173,167,0.22), inset 0 1px 0 rgba(255,255,255,0.9), 0 0 0 1px ${selectedMoment.accentColor}22`)
+                            : (isDarkMode
+                                ? `0 6px 24px rgba(0,0,0,0.3), inset 0 1px 0 rgba(201,173,167,0.12)`
+                                : `0 4px 16px rgba(201,173,167,0.22), inset 0 1px 0 rgba(255,255,255,0.9)`),
                           transition: 'all 0.4s ease',
                         }}>
                           <div style={{
@@ -877,6 +917,32 @@ export default function GitaExperience() {
                             </span>
                           </div>
                           {renderPanelContent(layerIndex)}
+
+                          {/* Top edge highlight */}
+                          <div style={{
+                            position: 'absolute',
+                            top: 0,
+                            left: '10%',
+                            right: '10%',
+                            height: 1,
+                            background: `linear-gradient(90deg, transparent, ${isDarkMode ? 'rgba(201,173,167,0.4)' : 'rgba(255,255,255,0.8)'}, transparent)`,
+                            pointerEvents: 'none',
+                          }} />
+
+                          {/* Left edge accent */}
+                          <div style={{
+                            position: 'absolute',
+                            left: 0,
+                            top: '12%',
+                            bottom: '12%',
+                            width: 2,
+                            borderRadius: '0 2px 2px 0',
+                            background: isDarkMode
+                              ? `linear-gradient(180deg, transparent, rgba(249,243,237,0.35), rgba(201,173,167,0.28), transparent)`
+                              : `linear-gradient(180deg, transparent, rgba(255,255,255,0.88), rgba(201,173,167,0.44), transparent)`,
+                            pointerEvents: 'none',
+                            boxShadow: isDarkMode ? `0 0 8px rgba(249,243,237,0.12)` : 'none',
+                          }} />
                         </div>
                       </div>
                     );
@@ -991,7 +1057,7 @@ export default function GitaExperience() {
             opacity: 0.45,
             textShadow: isDarkMode ? `0 1px 4px rgba(0,0,0,0.4)` : 'none',
           }}>
-            "To protect the righteous, to annihilate the wicked, and to reestablish dharma, I appear age after age."
+            &ldquo;To protect the righteous, to annihilate the wicked, and to reestablish dharma, I appear age after age.&rdquo;
           </p>
         </footer>
 
