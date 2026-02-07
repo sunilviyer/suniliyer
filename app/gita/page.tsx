@@ -300,87 +300,6 @@ export default function GitaExperience() {
         transition: 'background-color 0.5s ease',
       }}>
 
-        {/* BACKGROUND IMAGE */}
-        <div style={{
-          position: 'absolute',
-          inset: 0,
-          zIndex: 1,
-          transition: 'opacity 0.8s ease',
-        }}>
-          {/* Base color layer */}
-          <div style={{
-            position: 'absolute',
-            inset: 0,
-            background: selectedMoment
-              ? `radial-gradient(ellipse at center, ${selectedMoment.accentColor}${isDarkMode ? '33' : '22'} 0%, ${palette.bg} 70%)`
-              : `radial-gradient(ellipse at center, ${palette.bgSecondary}${isDarkMode ? '22' : '33'} 0%, ${palette.bg} 80%)`,
-            transition: 'background 0.8s ease',
-          }} />
-
-          {/* Image layer */}
-          {mode === 'navigation' && (
-            <div style={{
-              position: 'absolute',
-              inset: 0,
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              opacity: isDarkMode ? 0.4 : 0.3,
-              transition: 'opacity 0.8s ease',
-            }}>
-              <img
-                src="/gita/master.webp"
-                alt="Krishna and Arjuna"
-                style={{
-                  width: '100%',
-                  height: '100%',
-                  objectFit: 'cover',
-                }}
-              />
-            </div>
-          )}
-
-          {mode === 'reading' && selectedMoment && (
-            <div style={{
-              position: 'absolute',
-              inset: 0,
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              opacity: isDarkMode ? 0.5 : 0.35,
-              transition: 'opacity 0.8s ease',
-            }}>
-              <img
-                src={selectedMoment.imageUrl}
-                alt={selectedMoment.title}
-                style={{
-                  width: '100%',
-                  height: '100%',
-                  objectFit: 'cover',
-                }}
-              />
-            </div>
-          )}
-
-          {/* Overlay for readability */}
-          <div style={{
-            position: 'absolute',
-            inset: 0,
-            background: mode === 'reading'
-              ? `radial-gradient(ellipse at center, transparent 0%, ${palette.overlay} 100%)`
-              : `radial-gradient(ellipse at center, transparent 30%, ${isDarkMode ? 'rgba(3,7,30,0.3)' : 'rgba(250,247,242,0.3)'} 100%)`,
-            transition: 'background 0.8s ease',
-          }} />
-
-          {/* Texture overlay */}
-          <div style={{
-            position: 'absolute',
-            inset: 0,
-            backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")`,
-            opacity: isDarkMode ? 0.03 : 0.02,
-          }} />
-        </div>
-
         {/* HEADER */}
         <header style={{
           position: 'relative',
@@ -515,8 +434,87 @@ export default function GitaExperience() {
           justifyContent: 'center',
           padding: isMobile ? '20px' : '40px',
           overflow: 'auto',
-          backdropFilter: 'blur(0px)',
         }}>
+          {/* Background images only in main content */}
+          <div style={{
+            position: 'absolute',
+            inset: 0,
+            zIndex: -1,
+            overflow: 'hidden',
+          }}>
+            {/* Base color layer */}
+            <div style={{
+              position: 'absolute',
+              inset: 0,
+              background: selectedMoment
+                ? `radial-gradient(ellipse at center, ${selectedMoment.accentColor}${isDarkMode ? '33' : '22'} 0%, ${palette.bg} 70%)`
+                : `radial-gradient(ellipse at center, ${palette.bgSecondary}${isDarkMode ? '22' : '33'} 0%, ${palette.bg} 80%)`,
+              transition: 'background 0.8s ease',
+            }} />
+
+            {/* Image layer */}
+            {mode === 'navigation' && (
+              <div style={{
+                position: 'absolute',
+                inset: 0,
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                opacity: isDarkMode ? 0.4 : 0.3,
+                transition: 'opacity 0.8s ease',
+              }}>
+                <img
+                  src="/gita/master.webp"
+                  alt="Krishna and Arjuna"
+                  style={{
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'cover',
+                  }}
+                />
+              </div>
+            )}
+
+            {mode === 'reading' && selectedMoment && (
+              <div style={{
+                position: 'absolute',
+                inset: 0,
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                opacity: isDarkMode ? 0.5 : 0.35,
+                transition: 'opacity 0.8s ease',
+              }}>
+                <img
+                  src={selectedMoment.imageUrl}
+                  alt={selectedMoment.title}
+                  style={{
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'cover',
+                  }}
+                />
+              </div>
+            )}
+
+            {/* Overlay for readability */}
+            <div style={{
+              position: 'absolute',
+              inset: 0,
+              background: mode === 'reading'
+                ? `radial-gradient(ellipse at center, transparent 0%, ${palette.overlay} 100%)`
+                : `radial-gradient(ellipse at center, transparent 30%, ${isDarkMode ? 'rgba(3,7,30,0.3)' : 'rgba(250,247,242,0.3)'} 100%)`,
+              transition: 'background 0.8s ease',
+            }} />
+
+            {/* Texture overlay */}
+            <div style={{
+              position: 'absolute',
+              inset: 0,
+              backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")`,
+              opacity: isDarkMode ? 0.03 : 0.02,
+            }} />
+          </div>
 
           {/* NAVIGATION MODE: Chakra */}
           {mode === 'navigation' && (
@@ -562,9 +560,9 @@ export default function GitaExperience() {
                       y1={pos.y}
                       x2="0"
                       y2="0"
-                      stroke={palette.bgSecondary}
-                      strokeWidth="1"
-                      opacity="0.3"
+                      stroke={palette.highlight}
+                      strokeWidth="2"
+                      opacity="0.4"
                     />
                   );
                 })}
