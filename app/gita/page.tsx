@@ -309,7 +309,6 @@ export default function GitaExperience() {
           justifyContent: 'space-between',
           alignItems: 'center',
           backgroundColor: palette.headerBg,
-          backdropFilter: 'blur(8px)',
           borderBottom: `1px solid ${palette.bgSecondary}33`,
           transition: 'background-color 0.5s ease',
         }}>
