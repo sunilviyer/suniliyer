@@ -304,6 +304,7 @@ export default function GitaExperience() {
         <div style={{
           position: 'absolute',
           inset: 0,
+          zIndex: 1,
           transition: 'opacity 0.8s ease',
         }}>
           {/* Base color layer */}
@@ -508,6 +509,7 @@ export default function GitaExperience() {
         <main style={{
           flex: 1,
           position: 'relative',
+          zIndex: 10,
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
