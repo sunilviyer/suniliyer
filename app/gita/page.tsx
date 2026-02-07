@@ -24,8 +24,8 @@ const darkPalette = {
   textMuted: '#cccccc',
   textSubtle: '#888888',
   cardBg: 'rgba(3, 7, 30, 0.88)',
-  headerBg: 'rgba(3, 7, 30, 0.5)',
-  footerBg: 'rgba(3, 7, 30, 0.6)',
+  headerBg: 'rgba(3, 7, 30, 0.3)',
+  footerBg: 'rgba(3, 7, 30, 0.3)',
   overlay: 'rgba(3, 7, 30, 0.7)',
 };
 
@@ -44,8 +44,8 @@ const lightPalette = {
   textMuted: '#5C4033',
   textSubtle: '#8B7355',
   cardBg: 'rgba(255, 255, 255, 0.92)',
-  headerBg: 'rgba(250, 247, 242, 0.85)',
-  footerBg: 'rgba(250, 247, 242, 0.9)',
+  headerBg: 'rgba(250, 247, 242, 0.6)',
+  footerBg: 'rgba(250, 247, 242, 0.6)',
   overlay: 'rgba(250, 247, 242, 0.4)',
 };
 
@@ -469,7 +469,7 @@ export default function GitaExperience() {
                   style={{
                     width: '100%',
                     height: '100%',
-                    objectFit: 'contain',
+                    objectFit: 'cover',
                   }}
                 />
               </div>
@@ -491,7 +491,7 @@ export default function GitaExperience() {
                   style={{
                     width: '100%',
                     height: '100%',
-                    objectFit: 'contain',
+                    objectFit: 'cover',
                   }}
                 />
               </div>
