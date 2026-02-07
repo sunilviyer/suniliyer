@@ -476,6 +476,26 @@ export default function GitaExperience() {
             transition: 'background 0.8s ease',
           }} />
 
+          {/* Master image for navigation mode */}
+          {mode === 'navigation' && (
+            <div style={{
+              position: 'absolute',
+              inset: 0,
+              opacity: isDarkMode ? 0.35 : 0.25,
+              transition: 'opacity 0.8s ease',
+            }}>
+              <img
+                src="/gita/master.webp"
+                alt="Bhagavad Gita"
+                style={{
+                  width: '100%',
+                  height: '100%',
+                  objectFit: 'cover',
+                }}
+              />
+            </div>
+          )}
+
           {/* Image layer — all moments use their specific images */}
           {mode === 'reading' && selectedMoment && (
             <div style={{
