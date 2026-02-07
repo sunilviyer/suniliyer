@@ -919,7 +919,7 @@ export default function GitaExperience() {
                   width: '100%',
                   height: '100%',
                   overflowY: 'auto',
-                  padding: '70px 16px 100px 16px',
+                  padding: '70px 16px 180px 16px',
                   opacity: contentVisible ? 1 : 0,
                   transition: 'opacity 0.5s ease',
                 }}>
@@ -1104,10 +1104,10 @@ export default function GitaExperience() {
           <p style={{
             fontFamily: "'Laila', serif",
             color: palette.accent7,
-            fontSize: isMobile ? '0.52rem' : '0.65rem',
+            fontSize: isMobile ? '0.7rem' : '0.85rem',
             fontStyle: 'italic',
-            marginBottom: 4,
-            opacity: 0.5,
+            marginBottom: 5,
+            opacity: 0.6,
             textShadow: isDarkMode ? `0 1px 4px rgba(0,0,0,0.4)` : 'none',
             whiteSpace: 'nowrap',
           }}>
@@ -1116,8 +1116,8 @@ export default function GitaExperience() {
           <p style={{
             fontFamily: "'Laila', serif",
             color: palette.textSubtle,
-            fontSize: isMobile ? '0.52rem' : '0.6rem',
-            opacity: 0.45,
+            fontSize: isMobile ? '0.7rem' : '0.8rem',
+            opacity: 0.55,
             textShadow: isDarkMode ? `0 1px 4px rgba(0,0,0,0.4)` : 'none',
           }}>
             &ldquo;To protect the righteous, to annihilate the wicked, and to reestablish dharma, I appear age after age.&rdquo;
