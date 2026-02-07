@@ -839,6 +839,48 @@ export default function GitaExperience() {
                           </div>
                           {renderPanelContent(layerIndex)}
 
+                          {/* Reveal/Go Deeper button on each card */}
+                          {layerIndex < 3 && isActive && (
+                            <button
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                handleLayerProgress();
+                              }}
+                              style={{
+                                position: 'absolute',
+                                top: 16,
+                                right: 16,
+                                fontFamily: "'Khand', sans-serif",
+                                backgroundColor: selectedMoment?.accentColor || palette.accent7,
+                                border: 'none',
+                                color: '#fff',
+                                padding: '8px 16px',
+                                fontSize: '0.65rem',
+                                fontWeight: 500,
+                                letterSpacing: '0.08em',
+                                textTransform: 'uppercase',
+                                cursor: 'pointer',
+                                borderRadius: 20,
+                                transition: 'all 0.3s ease',
+                                whiteSpace: 'nowrap',
+                                boxShadow: `0 0 20px ${selectedMoment?.accentColor || palette.accent7}88`,
+                                animation: 'pulse 2s infinite',
+                              }}
+                              onMouseOver={(e) => {
+                                (e.target as HTMLElement).style.transform = 'scale(1.05)';
+                                (e.target as HTMLElement).style.boxShadow = `0 0 30px ${selectedMoment?.accentColor || palette.accent7}`;
+                              }}
+                              onMouseOut={(e) => {
+                                (e.target as HTMLElement).style.transform = 'scale(1)';
+                                (e.target as HTMLElement).style.boxShadow = `0 0 20px ${selectedMoment?.accentColor || palette.accent7}88`;
+                              }}
+                            >
+                              {layerIndex === 0 && 'Reveal Scene →'}
+                              {layerIndex === 1 && 'Go Deeper →'}
+                              {layerIndex === 2 && 'For Today →'}
+                            </button>
+                          )}
+
                           {/* Top edge highlight */}
                           <div style={{
                             position: 'absolute',
@@ -938,6 +980,40 @@ export default function GitaExperience() {
                           </div>
                           {renderPanelContent(layerIndex)}
 
+                          {/* Reveal/Go Deeper button on each card */}
+                          {layerIndex < 3 && isActive && (
+                            <button
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                handleLayerProgress();
+                              }}
+                              style={{
+                                position: 'absolute',
+                                top: 12,
+                                right: 12,
+                                fontFamily: "'Khand', sans-serif",
+                                backgroundColor: selectedMoment?.accentColor || palette.accent7,
+                                border: 'none',
+                                color: '#fff',
+                                padding: '6px 12px',
+                                fontSize: '0.6rem',
+                                fontWeight: 500,
+                                letterSpacing: '0.08em',
+                                textTransform: 'uppercase',
+                                cursor: 'pointer',
+                                borderRadius: 16,
+                                transition: 'all 0.3s ease',
+                                whiteSpace: 'nowrap',
+                                boxShadow: `0 0 20px ${selectedMoment?.accentColor || palette.accent7}88`,
+                                animation: 'pulse 2s infinite',
+                              }}
+                            >
+                              {layerIndex === 0 && 'Reveal Scene →'}
+                              {layerIndex === 1 && 'Go Deeper →'}
+                              {layerIndex === 2 && 'For Today →'}
+                            </button>
+                          )}
+
                           {/* Top edge highlight */}
                           <div style={{
                             position: 'absolute',
@@ -970,7 +1046,7 @@ export default function GitaExperience() {
                 </div>
               )}
 
-              {/* ─── Layer Progress Control ─── */}
+              {/* ─── Layer Navigation Dots ─── */}
               <div style={{
                 position: 'absolute',
                 bottom: isMobile ? 80 : 100,
@@ -995,40 +1071,6 @@ export default function GitaExperience() {
                     isMobile={isMobile}
                   />
                 ))}
-
-                {/* Next layer button */}
-                {activeLayer < 3 && (
-                  <button
-                    onClick={handleLayerProgress}
-                    style={{
-                      fontFamily: "'Khand', sans-serif",
-                      backgroundColor: 'transparent',
-                      border: `1px solid ${selectedMoment?.accentColor || palette.accent7}`,
-                      color: palette.accent7,
-                      padding: isMobile ? '6px 14px' : '8px 18px',
-                      fontSize: '0.65rem',
-                      fontWeight: 500,
-                      letterSpacing: '0.08em',
-                      textTransform: 'uppercase',
-                      cursor: 'pointer',
-                      borderRadius: 20,
-                      transition: 'all 0.3s ease',
-                      whiteSpace: 'nowrap',
-                    }}
-                    onMouseOver={(e) => {
-                      (e.target as HTMLElement).style.backgroundColor = selectedMoment?.accentColor || palette.accent7;
-                      (e.target as HTMLElement).style.color = '#fff';
-                    }}
-                    onMouseOut={(e) => {
-                      (e.target as HTMLElement).style.backgroundColor = 'transparent';
-                      (e.target as HTMLElement).style.color = palette.accent7;
-                    }}
-                  >
-                    {activeLayer === 0 && 'Reveal the Scene →'}
-                    {activeLayer === 1 && 'Go Deeper →'}
-                    {activeLayer === 2 && 'For You Today →'}
-                  </button>
-                )}
               </div>
             </>
           )}
@@ -1049,9 +1091,9 @@ export default function GitaExperience() {
           <p style={{
             fontFamily: "'Tiro Devanagari Hindi', serif",
             color: palette.highlight,
-            fontSize: isMobile ? '0.65rem' : '0.8rem',
+            fontSize: isMobile ? '0.85rem' : '1rem',
             lineHeight: 1.8,
-            marginBottom: 4,
+            marginBottom: 6,
             opacity: 0.7,
             textShadow: isDarkMode ? `0 1px 8px rgba(0,0,0,0.5)` : `0 1px 4px rgba(255,255,255,0.5)`,
           }}>
@@ -1062,18 +1104,19 @@ export default function GitaExperience() {
           <p style={{
             fontFamily: "'Laila', serif",
             color: palette.accent7,
-            fontSize: isMobile ? '0.42rem' : '0.5rem',
+            fontSize: isMobile ? '0.52rem' : '0.65rem',
             fontStyle: 'italic',
-            marginBottom: 3,
+            marginBottom: 4,
             opacity: 0.5,
             textShadow: isDarkMode ? `0 1px 4px rgba(0,0,0,0.4)` : 'none',
+            whiteSpace: 'nowrap',
           }}>
             paritrāṇāya sādhūnāṁ vināśāya ca duṣkṛtām — dharma-saṁsthāpanārthāya sambhavāmi yuge yuge
           </p>
           <p style={{
             fontFamily: "'Laila', serif",
             color: palette.textSubtle,
-            fontSize: isMobile ? '0.42rem' : '0.48rem',
+            fontSize: isMobile ? '0.52rem' : '0.6rem',
             opacity: 0.45,
             textShadow: isDarkMode ? `0 1px 4px rgba(0,0,0,0.4)` : 'none',
           }}>
@@ -1086,6 +1129,16 @@ export default function GitaExperience() {
           @keyframes slideUp {
             from { opacity: 0; transform: translateY(12px); }
             to { opacity: 1; transform: translateY(0); }
+          }
+          @keyframes pulse {
+            0%, 100% {
+              box-shadow: 0 0 20px currentColor;
+              opacity: 1;
+            }
+            50% {
+              box-shadow: 0 0 30px currentColor;
+              opacity: 0.9;
+            }
           }
           main::-webkit-scrollbar { display: none; }
           main { -ms-overflow-style: none; scrollbar-width: none; }
