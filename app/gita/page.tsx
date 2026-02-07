@@ -481,9 +481,6 @@ export default function GitaExperience() {
             <div style={{
               position: 'absolute',
               inset: 0,
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
               opacity: isDarkMode ? 0.55 : 0.4,
               transition: 'opacity 0.8s ease',
             }}>
@@ -491,9 +488,9 @@ export default function GitaExperience() {
                 src={selectedMoment.imageUrl}
                 alt={selectedMoment.title}
                 style={{
-                  maxWidth: '70%',
-                  maxHeight: '70%',
-                  objectFit: 'contain',
+                  width: '100%',
+                  height: '100%',
+                  objectFit: 'cover',
                 }}
               />
             </div>
@@ -890,7 +887,7 @@ export default function GitaExperience() {
               {/* ─── Layer Progress Control ─── */}
               <div style={{
                 position: 'absolute',
-                bottom: isMobile ? 55 : 64,
+                bottom: isMobile ? 80 : 100,
                 left: '50%',
                 transform: 'translateX(-50%)',
                 zIndex: 25,
