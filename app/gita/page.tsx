@@ -1128,7 +1128,7 @@ export default function GitaExperience() {
           }}>
             &ldquo;To protect the righteous, to annihilate the wicked, and to reestablish dharma, I appear age after age.&rdquo;
           </p>
-          </footer>
+        </footer>
         )}
 
         {/* ═══ Styles ═══ */}
