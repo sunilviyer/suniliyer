@@ -1049,7 +1049,7 @@ export default function GitaExperience() {
               {/* ─── Layer Navigation Dots ─── */}
               <div style={{
                 position: 'absolute',
-                bottom: isMobile ? 80 : 100,
+                bottom: isMobile ? 20 : 30,
                 left: '50%',
                 transform: 'translateX(-50%)',
                 zIndex: 25,
@@ -1111,6 +1111,8 @@ export default function GitaExperience() {
             opacity: 0.6,
             textShadow: isDarkMode ? `0 1px 4px rgba(0,0,0,0.4)` : 'none',
             lineHeight: 1.6,
+            maxWidth: isMobile ? '280px' : '400px',
+            margin: '0 auto 5px auto',
           }}>
             paritrāṇāya sādhūnāṁ vināśāya ca duṣkṛtām — dharma-saṁsthāpanārthāya sambhavāmi yuge yuge
           </p>
@@ -1121,6 +1123,8 @@ export default function GitaExperience() {
             opacity: 0.55,
             textShadow: isDarkMode ? `0 1px 4px rgba(0,0,0,0.4)` : 'none',
             lineHeight: 1.6,
+            maxWidth: isMobile ? '320px' : '450px',
+            margin: '0 auto',
           }}>
             &ldquo;To protect the righteous, to annihilate the wicked, and to reestablish dharma, I appear age after age.&rdquo;
           </p>
