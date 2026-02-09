@@ -350,7 +350,7 @@ export default function GitaExperience() {
     }
   }, [visibleLayers]);
 
-  const radius = isMobile ? 110 : 160;
+  const radius = isMobile ? 137.5 : 200;
   const orbitRad = (orbitAngle * Math.PI) / 180;
   const orbitX = Math.cos(orbitRad - Math.PI / 2) * radius;
   const orbitY = Math.sin(orbitRad - Math.PI / 2) * radius;
@@ -1076,18 +1076,19 @@ export default function GitaExperience() {
           )}
         </main>
 
-        {/* ═══ FOOTER — fully transparent ═══ */}
-        <footer style={{
-          position: 'absolute',
-          bottom: 0,
-          left: 0,
-          right: 0,
-          zIndex: 20,
-          textAlign: 'center',
-          padding: isMobile ? '8px 12px' : '12px 20px',
-          background: 'transparent',
-          transition: 'all 0.5s ease',
-        }}>
+        {/* ═══ FOOTER — only show in navigation mode ═══ */}
+        {mode === 'navigation' && (
+          <footer style={{
+            position: 'absolute',
+            bottom: 0,
+            left: 0,
+            right: 0,
+            zIndex: 20,
+            textAlign: 'center',
+            padding: isMobile ? '8px 12px' : '12px 20px',
+            background: 'transparent',
+            transition: 'all 0.5s ease',
+          }}>
           <p style={{
             fontFamily: "'Tiro Devanagari Hindi', serif",
             color: palette.highlight,
@@ -1109,7 +1110,7 @@ export default function GitaExperience() {
             marginBottom: 5,
             opacity: 0.6,
             textShadow: isDarkMode ? `0 1px 4px rgba(0,0,0,0.4)` : 'none',
-            whiteSpace: 'nowrap',
+            lineHeight: 1.6,
           }}>
             paritrāṇāya sādhūnāṁ vināśāya ca duṣkṛtām — dharma-saṁsthāpanārthāya sambhavāmi yuge yuge
           </p>
@@ -1119,10 +1120,12 @@ export default function GitaExperience() {
             fontSize: isMobile ? '0.7rem' : '0.8rem',
             opacity: 0.55,
             textShadow: isDarkMode ? `0 1px 4px rgba(0,0,0,0.4)` : 'none',
+            lineHeight: 1.6,
           }}>
             &ldquo;To protect the righteous, to annihilate the wicked, and to reestablish dharma, I appear age after age.&rdquo;
           </p>
-        </footer>
+          </footer>
+        )}
 
         {/* ═══ Styles ═══ */}
         <style>{`
