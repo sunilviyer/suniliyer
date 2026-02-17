@@ -171,6 +171,27 @@ const WORKS: Work[] = [
     date: '2025',
   },
   {
+    id: 32,
+    category: 'photography',
+    title: 'Gita Visions',
+    subtitle: 'Sacred Journey Series',
+    description:
+      'Six contemplative images capturing the spirit of the Bhagavad Gita — scenes of cosmic light, devotion, and timeless wisdom.',
+    type: 'photo-panel',
+    size: 'wide',
+    images: [
+      '/images/creative-works/gita-unused1.webp',
+      '/images/creative-works/gita-unused2.webp',
+      '/images/creative-works/gita-unused3.webp',
+      '/images/creative-works/gita-unused4.webp',
+      '/images/creative-works/gita-unused5.webp',
+      '/images/creative-works/gita-unused6.webp',
+    ],
+    panelTitle: 'Gita Visions',
+    tags: ['Photography', 'Spiritual', 'Series'],
+    date: '2025',
+  },
+  {
     id: 9,
     category: 'videos',
     title: 'Evolution in Motion',
@@ -1255,21 +1276,62 @@ export default function CreativeWorks() {
         }
 
         @media (max-width: 768px) {
+          .page-section {
+            padding-left: 16px !important;
+            padding-right: 16px !important;
+          }
+          .page-header-card {
+            padding: 32px 24px !important;
+          }
+          .filter-bar {
+            gap: 8px !important;
+          }
+          .filter-chip {
+            padding: 6px 12px !important;
+            font-size: 12px !important;
+          }
           .bento-grid {
-            grid-template-columns: 1fr !important;
+            grid-template-columns: 1fr 1fr !important;
+            grid-auto-rows: 200px !important;
+            gap: 12px !important;
+            padding: 16px 16px 48px !important;
           }
           .bento-card {
+            grid-column: span 2 !important;
+            grid-row: span 1 !important;
+          }
+          .bento-card[data-size="tall"] {
+            grid-column: span 1 !important;
+            grid-row: span 2 !important;
+          }
+          .bento-card[data-size="standard"] {
             grid-column: span 1 !important;
             grid-row: span 1 !important;
           }
           .panel-images-row {
-            flex-direction: column !important;
+            flex-direction: row !important;
+            overflow-x: auto !important;
+            flex-wrap: nowrap !important;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .bento-grid {
+            grid-template-columns: 1fr !important;
+            grid-auto-rows: 220px !important;
+            gap: 10px !important;
+            padding: 12px 12px 40px !important;
+          }
+          .bento-card {
+            grid-column: span 1 !important;
+            grid-row: span 1 !important;
           }
         }
       `}</style>
 
       {/* ═══ TOP BAR ═══ */}
       <div
+        className="page-section"
         style={{
           maxWidth: 1240,
           margin: '0 auto',
@@ -1383,6 +1445,7 @@ export default function CreativeWorks() {
 
       {/* ═══ HEADER ═══ */}
       <div
+        className="page-section"
         style={{
           maxWidth: 1240,
           margin: '0 auto',
@@ -1392,6 +1455,7 @@ export default function CreativeWorks() {
         }}
       >
         <div
+          className="page-header-card"
           style={{
             background: isDark
               ? 'linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.02) 100%)'
@@ -1477,6 +1541,7 @@ export default function CreativeWorks() {
 
       {/* ═══ FILTERS ═══ */}
       <div
+        className="page-section filter-bar"
         style={{
           maxWidth: 1240,
           margin: '0 auto',
@@ -1526,6 +1591,7 @@ export default function CreativeWorks() {
 
       {/* Shimmer divider */}
       <div
+        className="page-section"
         style={{
           maxWidth: 1240,
           margin: '0 auto',
@@ -1547,6 +1613,7 @@ export default function CreativeWorks() {
       {filteredVisualWorks.length > 0 && (
         <>
           <div
+            className="page-section"
             style={{
               maxWidth: 1240,
               margin: '0 auto',
@@ -1998,6 +2065,7 @@ export default function CreativeWorks() {
       {filteredTextWorks.length > 0 && (
         <>
           <div
+            className="page-section"
             style={{
               maxWidth: 1240,
               margin: '0 auto',
@@ -2199,7 +2267,7 @@ export default function CreativeWorks() {
       )}
 
       {/* ═══ STATS FOOTER ═══ */}
-      <div style={{ maxWidth: 1240, margin: '0 auto', padding: '0 32px 60px' }}>
+      <div className="page-section" style={{ maxWidth: 1240, margin: '0 auto', padding: '0 32px 60px' }}>
         <div
           className="shimmer-line"
           style={{
