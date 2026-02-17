@@ -49,4 +49,11 @@ export const portfolioData: PortfolioItemData[] = [
     image: "/images/portfolio/gita.webp",
     link: "/gita",
   },
+  {
+    id: 7,
+    title: "AI Agents",
+    description: "Multi-agent AI system showcasing autonomous task orchestration and intelligent workflows",
+    image: "/images/portfolio/AIagents.webp",
+    link: "https://ai-agents-rosy-mu.vercel.app",
+  },
 ];
