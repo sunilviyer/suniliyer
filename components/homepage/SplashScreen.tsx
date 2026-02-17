@@ -7,8 +7,8 @@ export function SplashScreen() {
   const [shouldShow, setShouldShow] = useState(true);
 
   useEffect(() => {
-    // Check if splash screen has already been shown this session
-    const hasShownSplash = sessionStorage.getItem('splashScreenShown');
+    // Check if splash screen has already been shown (persists across navigation)
+    const hasShownSplash = localStorage.getItem('splashScreenShown');
 
     if (hasShownSplash === 'true') {
       // If already shown, hide immediately
@@ -17,8 +17,8 @@ export function SplashScreen() {
       return;
     }
 
-    // Mark as shown for this session
-    sessionStorage.setItem('splashScreenShown', 'true');
+    // Mark as shown so it never appears again until storage is cleared
+    localStorage.setItem('splashScreenShown', 'true');
 
     const timer = setTimeout(() => {
       setIsHidden(true);
