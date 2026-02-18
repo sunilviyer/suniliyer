@@ -1161,7 +1161,24 @@ export default function CreativeWorks() {
           transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
           border-top: 1px solid rgba(255, 255, 255, 0.12);
           border-left: 1px solid rgba(255, 255, 255, 0.08);
+          /* Default: standard size */
+          grid-column: span 1;
+          grid-row: span 1;
         }
+        .bento-card[data-size="large"] { grid-column: span 2; grid-row: span 2; }
+        .bento-card[data-size="wide"]  { grid-column: span 2; grid-row: span 1; }
+        .bento-card[data-size="tall"]  { grid-column: span 1; grid-row: span 2; }
+        .bento-card[data-size="full"]  { grid-column: span 3; grid-row: span 1; }
+        /* Visual grid: poem/quote cards span 2 cols */
+        .bento-card[data-size="poem-1"] { grid-column: span 2; grid-row: span 1; }
+        .bento-card[data-size="poem-2"] { grid-column: span 2; grid-row: span 2; }
+        .bento-card[data-size="poem-3"] { grid-column: span 2; grid-row: span 3; }
+        .bento-card[data-size="poem-4"] { grid-column: span 2; grid-row: span 4; }
+        /* Text grid: quote/poem cards span 1 col, vary rows */
+        .bento-card[data-size="text-1"] { grid-column: span 1; grid-row: span 1; }
+        .bento-card[data-size="text-2"] { grid-column: span 1; grid-row: span 2; }
+        .bento-card[data-size="text-3"] { grid-column: span 1; grid-row: span 3; }
+        .bento-card[data-size="text-4"] { grid-column: span 1; grid-row: span 4; }
         .bento-card:hover {
           transform: translateY(-6px) scale(1.015);
           z-index: 2;
@@ -1291,40 +1308,34 @@ export default function CreativeWorks() {
             font-size: 12px !important;
           }
           .bento-grid {
-            grid-template-columns: 1fr 1fr !important;
-            grid-auto-rows: 200px !important;
-            gap: 12px !important;
+            grid-template-columns: 1fr !important;
+            grid-auto-rows: auto !important;
+            gap: 14px !important;
             padding: 16px 16px 48px !important;
           }
-          .bento-card {
-            grid-column: span 2 !important;
-            grid-row: span 1 !important;
-          }
-          .bento-card[data-size="tall"] {
+          /* All cards become single-column, auto height on mobile */
+          .bento-card,
+          .bento-card[data-size="large"],
+          .bento-card[data-size="wide"],
+          .bento-card[data-size="tall"],
+          .bento-card[data-size="full"],
+          .bento-card[data-size="poem-1"],
+          .bento-card[data-size="poem-2"],
+          .bento-card[data-size="poem-3"],
+          .bento-card[data-size="poem-4"],
+          .bento-card[data-size="text-1"],
+          .bento-card[data-size="text-2"],
+          .bento-card[data-size="text-3"],
+          .bento-card[data-size="text-4"] {
             grid-column: span 1 !important;
-            grid-row: span 2 !important;
-          }
-          .bento-card[data-size="standard"] {
-            grid-column: span 1 !important;
             grid-row: span 1 !important;
+            min-height: 280px !important;
           }
+          /* Panel images scroll horizontally */
           .panel-images-row {
             flex-direction: row !important;
             overflow-x: auto !important;
             flex-wrap: nowrap !important;
-          }
-        }
-
-        @media (max-width: 480px) {
-          .bento-grid {
-            grid-template-columns: 1fr !important;
-            grid-auto-rows: 220px !important;
-            gap: 10px !important;
-            padding: 12px 12px 40px !important;
-          }
-          .bento-card {
-            grid-column: span 1 !important;
-            grid-row: span 1 !important;
           }
         }
       `}</style>
@@ -1658,8 +1669,7 @@ export default function CreativeWorks() {
             }}
           >
             {filteredVisualWorks.map((work, i) => {
-          // Calculate dynamic row spans for poems/quotes based on text length
-          let dynamicSpans = sizeMap[work.size] || sizeMap.standard;
+          // Calculate min-height and data-size for CSS grid spans
           let minH =
             work.size === 'large'
               ? 498
@@ -1672,25 +1682,20 @@ export default function CreativeWorks() {
                     : 240;
 
           // For poems/quotes, calculate rows needed based on text length
+          let dataSize = work.size;
           if ((work.type === 'poem' || work.type === 'quote') && work.text) {
-            const textLength = work.text.length;
-            const rowsNeeded = Math.ceil(textLength / 400); // Roughly 400 chars per row
-            dynamicSpans = {
-              gridColumn: 'span 2',
-              gridRow: `span ${Math.max(1, Math.min(rowsNeeded, 4))}`, // Min 1, max 4 rows
-            };
-            minH = Math.max(1, Math.min(rowsNeeded, 4)) * 240 + (Math.max(1, Math.min(rowsNeeded, 4)) - 1) * 18; // Account for gaps
+            const rowsNeeded = Math.max(1, Math.min(Math.ceil(work.text.length / 400), 4));
+            dataSize = `poem-${rowsNeeded}`;
+            minH = rowsNeeded * 240 + (rowsNeeded - 1) * 18;
           }
-
-          const spans = dynamicSpans;
 
           return (
             <div
               key={work.id}
               className="bento-card"
+              data-size={dataSize}
               onClick={() => setSelectedWork(work)}
               style={{
-                ...spans,
                 minHeight: minH,
                 background: t.cardBg,
                 border: `1px solid ${t.cardBorder}`,
@@ -2111,21 +2116,17 @@ export default function CreativeWorks() {
           >
             {filteredTextWorks.map((work, i) => {
               // Calculate dynamic row spans for poems/quotes based on text length
-              const textLength = work.text?.length || 0;
-              const rowsNeeded = Math.ceil(textLength / 400); // Roughly 400 chars per row
-              const dynamicSpans = {
-                gridColumn: 'span 1',
-                gridRow: `span ${Math.max(1, Math.min(rowsNeeded, 4))}`, // Min 1, max 4 rows
-              };
-              const minH = Math.max(1, Math.min(rowsNeeded, 4)) * 240 + (Math.max(1, Math.min(rowsNeeded, 4)) - 1) * 18;
+              const rowsNeeded = Math.max(1, Math.min(Math.ceil((work.text?.length || 0) / 400), 4));
+              const textDataSize = `text-${rowsNeeded}`;
+              const minH = rowsNeeded * 240 + (rowsNeeded - 1) * 18;
 
               return (
                 <div
                   key={work.id}
                   className="bento-card"
+                  data-size={textDataSize}
                   onClick={() => setSelectedWork(work)}
                   style={{
-                    ...dynamicSpans,
                     minHeight: minH,
                     background: t.cardBg,
                     border: `1px solid ${t.cardBorder}`,
