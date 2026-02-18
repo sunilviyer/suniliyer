@@ -792,17 +792,22 @@ export default function GitaExperience() {
               {/* Nodes */}
               {moments.map((moment, index) => {
                 const pos = getNodePosition(index, 10, radius);
+                // Decide tooltip position: top half of circle shows tooltip below, bottom half above
+                const angle = -Math.PI / 2 + (2 * Math.PI / 10) * index;
+                const tooltipBelow = Math.sin(angle) < 0; // node is in top half
                 return (
                   <div
                     key={moment.id}
+                    className="chakra-node"
                     onClick={() => handleNodeClick(moment, index)}
+                    onMouseOver={(e) => (e.currentTarget.style.transform = `translate(calc(-50% + ${pos.x}px), calc(-50% + ${pos.y}px)) scale(1.15)`)}
+                    onMouseOut={(e) => (e.currentTarget.style.transform = `translate(calc(-50% + ${pos.x}px), calc(-50% + ${pos.y}px)) scale(1)`)}
                     style={{
                       position: 'absolute', left: '50%', top: '50%',
                       transform: `translate(calc(-50% + ${pos.x}px), calc(-50% + ${pos.y}px))`,
-                      cursor: 'pointer', transition: 'transform 0.3s ease',
+                      cursor: 'pointer',
+                      transition: 'transform 0.3s ease',
                     }}
-                    onMouseOver={(e) => (e.currentTarget.style.transform = `translate(calc(-50% + ${pos.x}px), calc(-50% + ${pos.y}px)) scale(1.15)`)}
-                    onMouseOut={(e) => (e.currentTarget.style.transform = `translate(calc(-50% + ${pos.x}px), calc(-50% + ${pos.y}px)) scale(1)`)}
                   >
                     <div style={{
                       width: isMobile ? 36 : 44,
@@ -823,6 +828,32 @@ export default function GitaExperience() {
                         {String(moment.id).padStart(2, '0')}
                       </span>
                     </div>
+                    {/* Node tooltip */}
+                    <span
+                      className="node-tooltip"
+                      style={{
+                        position: 'absolute',
+                        [tooltipBelow ? 'top' : 'bottom']: '110%',
+                        left: '50%',
+                        transform: 'translateX(-50%)',
+                        fontFamily: "'Khand', sans-serif",
+                        fontSize: '0.58rem',
+                        letterSpacing: '0.08em',
+                        color: palette.highlight,
+                        whiteSpace: 'nowrap',
+                        opacity: 0,
+                        pointerEvents: 'none',
+                        background: isDarkMode ? 'rgba(3,7,30,0.92)' : 'rgba(255,255,255,0.92)',
+                        padding: '3px 9px',
+                        borderRadius: 20,
+                        border: `1px solid ${momentColors[index]}55`,
+                        boxShadow: `0 2px 10px rgba(0,0,0,0.35)`,
+                        transition: 'opacity 0.2s ease',
+                        zIndex: 50,
+                      }}
+                    >
+                      {moment.title}
+                    </span>
                   </div>
                 );
               })}
@@ -1214,6 +1245,15 @@ export default function GitaExperience() {
             filter: drop-shadow(0 0 10px #FFBA08);
           }
           .sage-center:hover .sage-label {
+            opacity: 1 !important;
+          }
+          .chakra-node {
+            overflow: visible;
+          }
+          .chakra-node:hover {
+            z-index: 20;
+          }
+          .chakra-node:hover .node-tooltip {
             opacity: 1 !important;
           }
           @keyframes pulse {
