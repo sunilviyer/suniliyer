@@ -703,22 +703,82 @@ export default function GitaExperience() {
                   <circle cx={orbitX} cy={orbitY} r="3" fill={palette.highlight} />
                 </g>
 
-                {/* Center circle */}
+                {/* Center circle - outer glow ring */}
+                <circle cx="0" cy="0" r="38" fill="none" stroke={palette.highlight} strokeWidth="1" opacity="0.2">
+                  <animate attributeName="r" values="36;42;36" dur="3s" repeatCount="indefinite" />
+                  <animate attributeName="opacity" values="0.15;0.35;0.15" dur="3s" repeatCount="indefinite" />
+                </circle>
                 <circle cx="0" cy="0" r="32" fill={isDarkMode ? 'rgba(3,7,30,0.6)' : 'rgba(255,255,255,0.6)'} stroke={palette.accent2} strokeWidth="1" opacity="0.8" />
               </svg>
 
-              {/* Center ॐ */}
-              <div style={{
-                position: 'absolute', top: '50%', left: '50%',
-                transform: 'translate(-50%, -50%)', textAlign: 'center',
-              }}>
+              {/* Center ॐ — Sage link */}
+              <a
+                href="https://ai-agents-rosy-mu.vercel.app/agents/sage"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="Chat with the Sage"
+                style={{
+                  position: 'absolute', top: '50%', left: '50%',
+                  transform: 'translate(-50%, -50%)',
+                  textAlign: 'center',
+                  textDecoration: 'none',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  cursor: 'pointer',
+                  borderRadius: '50%',
+                  width: isMobile ? '56px' : '68px',
+                  height: isMobile ? '56px' : '68px',
+                  animation: 'sagePulse 3s ease-in-out infinite',
+                }}
+                onMouseOver={(e) => {
+                  const el = e.currentTarget;
+                  el.style.transform = 'translate(-50%, -50%) scale(1.18)';
+                  const label = el.querySelector('.sage-label') as HTMLElement;
+                  if (label) label.style.opacity = '1';
+                }}
+                onMouseOut={(e) => {
+                  const el = e.currentTarget;
+                  el.style.transform = 'translate(-50%, -50%) scale(1)';
+                  const label = el.querySelector('.sage-label') as HTMLElement;
+                  if (label) label.style.opacity = '0';
+                }}
+              >
                 <span style={{
                   fontFamily: "'Tiro Devanagari Hindi', serif",
                   color: palette.highlight,
                   fontSize: isMobile ? '1.6rem' : '2rem',
-                  textShadow: isDarkMode ? `0 0 20px ${palette.highlight}44` : 'none',
+                  textShadow: isDarkMode ? `0 0 20px ${palette.highlight}66` : `0 0 12px ${palette.highlight}44`,
+                  lineHeight: 1,
+                  display: 'block',
+                  transition: 'text-shadow 0.3s ease',
                 }}>ॐ</span>
-              </div>
+                <span
+                  className="sage-label"
+                  style={{
+                    position: 'absolute',
+                    bottom: isMobile ? '-28px' : '-32px',
+                    left: '50%',
+                    transform: 'translateX(-50%)',
+                    fontFamily: "'Khand', sans-serif",
+                    fontSize: isMobile ? '0.52rem' : '0.6rem',
+                    letterSpacing: '0.12em',
+                    textTransform: 'uppercase',
+                    color: palette.accent7,
+                    whiteSpace: 'nowrap',
+                    opacity: 0,
+                    transition: 'opacity 0.3s ease',
+                    pointerEvents: 'none',
+                    background: isDarkMode ? 'rgba(3,7,30,0.85)' : 'rgba(255,255,255,0.85)',
+                    padding: '3px 8px',
+                    borderRadius: 20,
+                    border: `1px solid ${palette.accent2}44`,
+                  }}
+                >
+                  Chat with the Sage
+                </span>
+              </a>
 
               {/* Nodes */}
               {moments.map((moment, index) => {
@@ -1136,6 +1196,10 @@ export default function GitaExperience() {
           @keyframes slideUp {
             from { opacity: 0; transform: translateY(12px); }
             to { opacity: 1; transform: translateY(0); }
+          }
+          @keyframes sagePulse {
+            0%, 100% { filter: drop-shadow(0 0 6px currentColor); opacity: 1; }
+            50% { filter: drop-shadow(0 0 16px currentColor); opacity: 0.85; }
           }
           @keyframes pulse {
             0%, 100% {
