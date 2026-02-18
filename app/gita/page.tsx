@@ -742,32 +742,23 @@ export default function GitaExperience() {
                   const el = e.currentTarget;
                   el.style.transform = 'translate(-50%, -50%) scale(1)';
                   const label = el.querySelector('.sage-label') as HTMLElement;
-                  if (label) label.style.opacity = '0';
+                  if (label) label.style.opacity = '0.35';
                 }}
               >
-                <span style={{
-                  fontFamily: "'Tiro Devanagari Hindi', serif",
-                  color: palette.highlight,
-                  fontSize: isMobile ? '1.6rem' : '2rem',
-                  textShadow: isDarkMode ? `0 0 20px ${palette.highlight}66` : `0 0 12px ${palette.highlight}44`,
-                  lineHeight: 1,
-                  display: 'block',
-                  transition: 'text-shadow 0.3s ease',
-                }}>ॐ</span>
                 <span
                   className="sage-label"
                   style={{
                     position: 'absolute',
-                    bottom: isMobile ? '-28px' : '-32px',
+                    top: '50%',
                     left: '50%',
-                    transform: 'translateX(-50%)',
+                    transform: 'translate(-50%, -50%)',
                     fontFamily: "'Khand', sans-serif",
                     fontSize: isMobile ? '0.52rem' : '0.6rem',
                     letterSpacing: '0.12em',
                     textTransform: 'uppercase',
                     color: palette.accent7,
                     whiteSpace: 'nowrap',
-                    opacity: 0,
+                    opacity: 0.35,
                     transition: 'opacity 0.3s ease',
                     pointerEvents: 'none',
                     background: isDarkMode ? 'rgba(3,7,30,0.85)' : 'rgba(255,255,255,0.85)',
