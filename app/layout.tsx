@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Funnel_Display, Funnel_Sans } from "next/font/google";
 import Script from "next/script";
+import { CookieBanner } from "@/components/CookieBanner";
 import "./globals.css";
 
 const funnelDisplay = Funnel_Display({
@@ -36,6 +37,23 @@ export default function RootLayout({
           src="https://challenges.cloudflare.com/turnstile/v0/api.js"
           strategy="lazyOnload"
         />
+        {/* Google Analytics — consent defaults to denied until user accepts */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-XZW8P22P77"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('consent', 'default', {
+              analytics_storage: 'denied'
+            });
+            gtag('js', new Date());
+            gtag('config', 'G-XZW8P22P77', { anonymize_ip: true });
+          `}
+        </Script>
+        <CookieBanner />
         {children}
       </body>
     </html>
