@@ -711,60 +711,78 @@ export default function GitaExperience() {
                 <circle cx="0" cy="0" r="32" fill={isDarkMode ? 'rgba(3,7,30,0.6)' : 'rgba(255,255,255,0.6)'} stroke={palette.accent2} strokeWidth="1" opacity="0.8" />
               </svg>
 
-              {/* Center ॐ — Sage link */}
+              {/* Center — Sage figure link */}
               <a
                 href="https://ai-agents-rosy-mu.vercel.app/agents/sage"
                 target="_blank"
                 rel="noopener noreferrer"
-                title="Chat with the Sage"
+                className="sage-center"
                 style={{
                   position: 'absolute', top: '50%', left: '50%',
                   transform: 'translate(-50%, -50%)',
-                  textAlign: 'center',
                   textDecoration: 'none',
                   display: 'flex',
                   flexDirection: 'column',
                   alignItems: 'center',
                   justifyContent: 'center',
                   cursor: 'pointer',
-                  borderRadius: '50%',
-                  width: isMobile ? '56px' : '68px',
-                  height: isMobile ? '56px' : '68px',
-                  animation: 'sagePulse 3s ease-in-out infinite',
-                }}
-                onMouseOver={(e) => {
-                  const el = e.currentTarget;
-                  el.style.transform = 'translate(-50%, -50%) scale(1.18)';
-                  const label = el.querySelector('.sage-label') as HTMLElement;
-                  if (label) label.style.opacity = '1';
-                }}
-                onMouseOut={(e) => {
-                  const el = e.currentTarget;
-                  el.style.transform = 'translate(-50%, -50%) scale(1)';
-                  const label = el.querySelector('.sage-label') as HTMLElement;
-                  if (label) label.style.opacity = '0.35';
+                  width: isMobile ? '60px' : '72px',
+                  height: isMobile ? '60px' : '72px',
+                  animation: 'sageBounce 3s ease-in-out infinite',
                 }}
               >
+                {/* Sage SVG — meditating figure */}
+                <svg
+                  width={isMobile ? 44 : 54}
+                  height={isMobile ? 44 : 54}
+                  viewBox="0 0 54 54"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  style={{ display: 'block', overflow: 'visible' }}
+                >
+                  {/* Aura glow */}
+                  <circle cx="27" cy="27" r="26" fill={palette.highlight} opacity="0.07" />
+                  {/* Halo */}
+                  <circle cx="27" cy="10" r="6" fill="none" stroke={palette.highlight} strokeWidth="1.2" opacity="0.7" />
+                  {/* Head */}
+                  <circle cx="27" cy="13" r="5" fill={palette.accent7} opacity="0.9" />
+                  {/* Body / robe */}
+                  <path d="M18 42 Q21 26 27 24 Q33 26 36 42 Z" fill={palette.accent6} opacity="0.75" />
+                  {/* Left arm resting */}
+                  <path d="M20 30 Q16 35 14 38" stroke={palette.accent7} strokeWidth="2" strokeLinecap="round" opacity="0.8" />
+                  {/* Right arm resting */}
+                  <path d="M34 30 Q38 35 40 38" stroke={palette.accent7} strokeWidth="2" strokeLinecap="round" opacity="0.8" />
+                  {/* Crossed legs */}
+                  <path d="M14 38 Q20 44 27 43 Q34 44 40 38" stroke={palette.accent6} strokeWidth="2.5" strokeLinecap="round" fill="none" opacity="0.85" />
+                  {/* Left hand mudra dot */}
+                  <circle cx="14" cy="38" r="2" fill={palette.highlight} opacity="0.9" />
+                  {/* Right hand mudra dot */}
+                  <circle cx="40" cy="38" r="2" fill={palette.highlight} opacity="0.9" />
+                </svg>
+
+                {/* Hover tooltip */}
                 <span
                   className="sage-label"
                   style={{
                     position: 'absolute',
-                    top: '50%',
+                    bottom: '100%',
                     left: '50%',
-                    transform: 'translate(-50%, -50%)',
+                    transform: 'translateX(-50%)',
+                    marginBottom: 8,
                     fontFamily: "'Khand', sans-serif",
                     fontSize: isMobile ? '0.52rem' : '0.6rem',
                     letterSpacing: '0.12em',
                     textTransform: 'uppercase',
                     color: palette.accent7,
                     whiteSpace: 'nowrap',
-                    opacity: 0.35,
-                    transition: 'opacity 0.3s ease',
+                    opacity: 0,
+                    transition: 'opacity 0.25s ease, transform 0.25s ease',
                     pointerEvents: 'none',
-                    background: isDarkMode ? 'rgba(3,7,30,0.85)' : 'rgba(255,255,255,0.85)',
-                    padding: '3px 8px',
+                    background: isDarkMode ? 'rgba(3,7,30,0.9)' : 'rgba(255,255,255,0.92)',
+                    padding: '4px 10px',
                     borderRadius: 20,
-                    border: `1px solid ${palette.accent2}44`,
+                    border: `1px solid ${palette.accent2}55`,
+                    boxShadow: `0 2px 12px rgba(0,0,0,0.3)`,
                   }}
                 >
                   Chat with the Sage
@@ -1188,9 +1206,15 @@ export default function GitaExperience() {
             from { opacity: 0; transform: translateY(12px); }
             to { opacity: 1; transform: translateY(0); }
           }
-          @keyframes sagePulse {
-            0%, 100% { filter: drop-shadow(0 0 6px currentColor); opacity: 1; }
-            50% { filter: drop-shadow(0 0 16px currentColor); opacity: 0.85; }
+          @keyframes sageBounce {
+            0%, 100% { transform: translate(-50%, -50%) translateY(0px); }
+            50% { transform: translate(-50%, -50%) translateY(-6px); }
+          }
+          .sage-center:hover {
+            filter: drop-shadow(0 0 10px #FFBA08);
+          }
+          .sage-center:hover .sage-label {
+            opacity: 1 !important;
           }
           @keyframes pulse {
             0%, 100% {
