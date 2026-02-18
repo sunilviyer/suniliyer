@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Funnel_Display, Funnel_Sans } from "next/font/google";
 import Script from "next/script";
 import { CookieBanner } from "@/components/CookieBanner";
+import { GlobalUI } from "@/components/layout/GlobalUI";
 import "./globals.css";
 
 const funnelDisplay = Funnel_Display({
@@ -54,6 +55,7 @@ export default function RootLayout({
           `}
         </Script>
         <CookieBanner />
+        <GlobalUI />
         {children}
       </body>
     </html>

@@ -295,6 +295,7 @@ export default function GitaExperience() {
   const [contentVisible, setContentVisible] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(true);
+  const [showHint, setShowHint] = useState(false);
 
   const palette = isDarkMode ? darkPalette : lightPalette;
   const momentColors = getMomentColors(isDarkMode);
@@ -314,7 +315,25 @@ export default function GitaExperience() {
     return () => clearInterval(interval);
   }, [mode]);
 
+  // Show onboarding hint after 1.5s on first visit in navigation mode
+  useEffect(() => {
+    if (mode !== 'navigation') return;
+    const seen = localStorage.getItem('gita_hint_seen');
+    if (seen) return;
+    const showTimer = setTimeout(() => setShowHint(true), 1500);
+    const hideTimer = setTimeout(() => {
+      setShowHint(false);
+      localStorage.setItem('gita_hint_seen', '1');
+    }, 7000);
+    return () => {
+      clearTimeout(showTimer);
+      clearTimeout(hideTimer);
+    };
+  }, [mode]);
+
   const handleNodeClick = (moment: Moment, index: number) => {
+    setShowHint(false);
+    localStorage.setItem('gita_hint_seen', '1');
     setSelectedMoment({ ...moment, accentColor: momentColors[index] });
     setActiveLayer(0);
     setVisibleLayers(new Set([0]));
@@ -860,6 +879,112 @@ export default function GitaExperience() {
             </div>
           )}
 
+          {/* ─── HINT POPUP ─── */}
+          {showHint && mode === 'navigation' && (
+            <div
+              onClick={() => {
+                setShowHint(false);
+                localStorage.setItem('gita_hint_seen', '1');
+              }}
+              style={{
+                position: 'fixed',
+                inset: 0,
+                zIndex: 100,
+                display: 'flex',
+                alignItems: 'flex-end',
+                justifyContent: 'center',
+                paddingBottom: isMobile ? 90 : 100,
+                pointerEvents: 'none',
+              }}
+            >
+              <div
+                style={{
+                  pointerEvents: 'auto',
+                  background: isDarkMode
+                    ? 'rgba(3, 7, 30, 0.92)'
+                    : 'rgba(250, 247, 242, 0.95)',
+                  backdropFilter: 'blur(20px)',
+                  WebkitBackdropFilter: 'blur(20px)',
+                  border: `1px solid ${palette.highlight}33`,
+                  borderRadius: 16,
+                  padding: isMobile ? '16px 20px' : '18px 26px',
+                  maxWidth: isMobile ? 'calc(100vw - 40px)' : 380,
+                  width: '100%',
+                  boxShadow: `0 8px 40px rgba(0,0,0,0.45), 0 0 0 1px ${palette.highlight}22`,
+                  animation: 'hintSlideUp 0.5s cubic-bezier(0.16,1,0.3,1) both',
+                  cursor: 'pointer',
+                }}
+              >
+                {/* Header */}
+                <p style={{
+                  fontFamily: "'Khand', sans-serif",
+                  fontSize: '0.58rem',
+                  letterSpacing: '0.18em',
+                  textTransform: 'uppercase',
+                  color: palette.highlight,
+                  opacity: 0.7,
+                  marginBottom: 10,
+                }}>
+                  How to explore
+                </p>
+
+                {/* Hint rows */}
+                <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+                    <span style={{
+                      fontFamily: "'Khand', sans-serif",
+                      fontSize: isMobile ? '1rem' : '1.1rem',
+                      color: palette.accent7,
+                      flexShrink: 0,
+                    }}>01</span>
+                    <p style={{
+                      fontFamily: "'Laila', serif",
+                      fontSize: isMobile ? '0.78rem' : '0.83rem',
+                      color: palette.textMuted,
+                      lineHeight: 1.5,
+                      margin: 0,
+                    }}>
+                      Tap a <strong style={{ color: palette.highlight }}>numbered circle</strong> to explore a moment of transformation
+                    </p>
+                  </div>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+                    {/* Mini sage icon */}
+                    <svg width="22" height="22" viewBox="0 0 54 54" fill="none" style={{ flexShrink: 0 }}>
+                      <circle cx="27" cy="13" r="5" fill={palette.accent7} opacity="0.9" />
+                      <path d="M18 42 Q21 26 27 24 Q33 26 36 42 Z" fill={palette.accent6} opacity="0.75" />
+                      <path d="M14 38 Q20 44 27 43 Q34 44 40 38" stroke={palette.accent6} strokeWidth="2.5" strokeLinecap="round" fill="none" opacity="0.85" />
+                      <circle cx="14" cy="38" r="2" fill={palette.highlight} opacity="0.9" />
+                      <circle cx="40" cy="38" r="2" fill={palette.highlight} opacity="0.9" />
+                    </svg>
+                    <p style={{
+                      fontFamily: "'Laila', serif",
+                      fontSize: isMobile ? '0.78rem' : '0.83rem',
+                      color: palette.textMuted,
+                      lineHeight: 1.5,
+                      margin: 0,
+                    }}>
+                      Touch the <strong style={{ color: palette.highlight }}>bouncing sage</strong> at the center to begin a conversation
+                    </p>
+                  </div>
+                </div>
+
+                {/* Dismiss */}
+                <p style={{
+                  fontFamily: "'Khand', sans-serif",
+                  fontSize: '0.55rem',
+                  letterSpacing: '0.12em',
+                  textTransform: 'uppercase',
+                  color: palette.textSubtle,
+                  opacity: 0.5,
+                  marginTop: 14,
+                  textAlign: 'right',
+                }}>
+                  tap to dismiss
+                </p>
+              </div>
+            </div>
+          )}
+
           {/* ─── READING MODE: 4-Sides Layout ─── */}
           {mode === 'reading' && selectedMoment && (
             <>
@@ -1236,6 +1361,10 @@ export default function GitaExperience() {
           @keyframes slideUp {
             from { opacity: 0; transform: translateY(12px); }
             to { opacity: 1; transform: translateY(0); }
+          }
+          @keyframes hintSlideUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to   { opacity: 1; transform: translateY(0); }
           }
           @keyframes sageBounce {
             0%, 100% { transform: translate(-50%, -50%) translateY(0px); }

@@ -785,7 +785,8 @@ function GlassCard({ dark, children, mousePos, style = {} }: GlassCardProps) {
  * Floats on left, disappears when footer is visible
  */
 interface ContactWidgetProps {
-  footerRef: React.RefObject<HTMLElement | null>;
+  footerRef?: React.RefObject<HTMLElement | null>;
+  hideButton?: boolean;
 }
 
 export interface ContactWidgetHandle {
@@ -795,14 +796,15 @@ export interface ContactWidgetHandle {
 }
 
 export const ContactWidget = forwardRef<ContactWidgetHandle, ContactWidgetProps>(
-  function ContactWidget({ footerRef }, ref) {
+  function ContactWidget({ footerRef, hideButton = false }, ref) {
     const [isOpen, setIsOpen] = useState(false);
     const [mousePos, setMousePos] = useState({ x: 50, y: 50 });
     const senseRef = useRef<HTMLDivElement>(null);
     const cardRef = useRef<HTMLDivElement>(null);
+    const nullRef = useRef<HTMLElement | null>(null);
 
     const isDark = useBgLuminance(senseRef, true);
-    const merged = useNearFooter(footerRef);
+    const merged = useNearFooter(footerRef ?? nullRef);
 
   const handleMouseMove = (e: React.MouseEvent) => {
     if (!cardRef.current) return;
@@ -843,6 +845,18 @@ export const ContactWidget = forwardRef<ContactWidgetHandle, ContactWidgetProps>
     }
   }, [merged, isOpen, forceVisible]);
 
+  // Listen for global open/close events (dispatched by any page)
+  useEffect(() => {
+    const onOpen = () => { setIsOpen(true); setForceVisible(true); };
+    const onClose = () => { setIsOpen(false); setForceVisible(false); };
+    window.addEventListener('open-contact-widget', onOpen);
+    window.addEventListener('close-contact-widget', onClose);
+    return () => {
+      window.removeEventListener('open-contact-widget', onOpen);
+      window.removeEventListener('close-contact-widget', onClose);
+    };
+  }, []);
+
   const visible = !merged || forceVisible;
 
   // Button colors adapt to background
@@ -860,8 +874,9 @@ export const ContactWidget = forwardRef<ContactWidgetHandle, ContactWidgetProps>
         ref={senseRef}
         style={{
           position: 'fixed',
-          bottom: 90,
-          left: 24,
+          top: hideButton ? 90 : 90,
+          right: hideButton ? 30 : 'auto',
+          left: hideButton ? 'auto' : 24,
           width: 370,
           height: isOpen ? 520 : 54,
           pointerEvents: 'none',
@@ -869,53 +884,55 @@ export const ContactWidget = forwardRef<ContactWidgetHandle, ContactWidgetProps>
         }}
       />
 
-      {/* Trigger button */}
-      <button
-        onClick={() => setIsOpen(!isOpen)}
-        style={{
-          position: 'fixed',
-          bottom: 24,
-          left: 24,
-          zIndex: 1001,
-          width: 54,
-          height: 54,
-          borderRadius: '50%',
-          background: btnBg,
-          border: 'none',
-          cursor: 'pointer',
-          boxShadow: `0 4px 20px ${btnShadow}`,
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          transition: 'all 0.5s cubic-bezier(0.4, 0, 0.2, 1)',
-          transform: isOpen
-            ? 'rotate(45deg) scale(0.9)'
-            : visible
-            ? 'rotate(0deg) scale(1)'
-            : 'rotate(0deg) scale(0)',
-          opacity: visible ? 1 : 0,
-          pointerEvents: visible ? 'auto' : 'none',
-        }}
-      >
-        <svg
-          width="22"
-          height="22"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke={btnIcon}
-          strokeWidth="2"
-          strokeLinecap="round"
+      {/* Trigger button — hidden when rail owns the trigger */}
+      {!hideButton && (
+        <button
+          onClick={() => setIsOpen(!isOpen)}
+          style={{
+            position: 'fixed',
+            bottom: 24,
+            left: 24,
+            zIndex: 1001,
+            width: 54,
+            height: 54,
+            borderRadius: '50%',
+            background: btnBg,
+            border: 'none',
+            cursor: 'pointer',
+            boxShadow: `0 4px 20px ${btnShadow}`,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            transition: 'all 0.5s cubic-bezier(0.4, 0, 0.2, 1)',
+            transform: isOpen
+              ? 'rotate(45deg) scale(0.9)'
+              : visible
+              ? 'rotate(0deg) scale(1)'
+              : 'rotate(0deg) scale(0)',
+            opacity: visible ? 1 : 0,
+            pointerEvents: visible ? 'auto' : 'none',
+          }}
         >
-          {isOpen ? (
-            <>
-              <line x1="12" y1="5" x2="12" y2="19" />
-              <line x1="5" y1="12" x2="19" y2="12" />
-            </>
-          ) : (
-            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
-          )}
-        </svg>
-      </button>
+          <svg
+            width="22"
+            height="22"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke={btnIcon}
+            strokeWidth="2"
+            strokeLinecap="round"
+          >
+            {isOpen ? (
+              <>
+                <line x1="12" y1="5" x2="12" y2="19" />
+                <line x1="5" y1="12" x2="19" y2="12" />
+              </>
+            ) : (
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+            )}
+          </svg>
+        </button>
+      )}
 
       {/* Glass card */}
       <div
@@ -923,14 +940,20 @@ export const ContactWidget = forwardRef<ContactWidgetHandle, ContactWidgetProps>
         onMouseMove={handleMouseMove}
         style={{
           position: 'fixed',
-          bottom: 88,
-          left: 24,
+          top: hideButton ? 88 : 'auto',
+          bottom: hideButton ? 'auto' : 88,
+          right: hideButton ? 30 : 'auto',
+          left: hideButton ? 'auto' : 24,
           zIndex: 1000,
           width: 370,
           maxHeight: isOpen && visible ? 600 : 0,
           opacity: isOpen && visible ? 1 : 0,
-          transform: isOpen && visible ? 'translateY(0) scale(1)' : 'translateY(16px) scale(0.95)',
-          transformOrigin: 'bottom left',
+          transform: isOpen && visible
+            ? 'translateY(0) scale(1)'
+            : hideButton
+            ? 'translateY(-12px) scale(0.97)'
+            : 'translateY(16px) scale(0.95)',
+          transformOrigin: hideButton ? 'top right' : 'bottom left',
           transition: 'all 0.45s cubic-bezier(0.16, 1, 0.3, 1)',
           overflow: 'hidden',
           pointerEvents: isOpen && visible ? 'auto' : 'none',

@@ -1,27 +1,21 @@
 'use client';
 
-import { useEffect, useState, useCallback, useRef } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { tickerWords } from '@/lib/ticker-words';
-import { learningPathsData } from '@/lib/learning-paths-data';
-import { portfolioData } from '@/lib/portfolio-data';
 import { useGsapScrollScaleAnimations } from '@/lib/hooks/useGsapScrollScaleAnimations';
 import { SplashScreen } from '@/components/homepage/SplashScreen';
 import { InitialsPhotoReveal } from '@/components/homepage/InitialsPhotoReveal';
-import { ContactWidget, ContactWidgetHandle } from '@/components/contact/ContactWidget';
+import { LearningPathsAccordion } from '@/components/homepage/LearningPathsAccordion';
+import { PortfolioShowcase } from '@/components/homepage/PortfolioShowcase';
 
 export default function HomePage() {
   useGsapScrollScaleAnimations();
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
-  const [currentPathIndex, setCurrentPathIndex] = useState(0);
-  const [currentPortfolioIndex, setCurrentPortfolioIndex] = useState(0);
-  const [isPathTransitioning, setIsPathTransitioning] = useState(false);
-  const [isPortfolioTransitioning, setIsPortfolioTransitioning] = useState(false);
   const [theme, setTheme] = useState<'light' | 'dark'>('light');
   const contactSectionRef = useRef<HTMLElement>(null);
-  const contactWidgetRef = useRef<ContactWidgetHandle>(null);
 
   // Toggle theme
   const toggleTheme = () => {
@@ -54,78 +48,6 @@ export default function HomePage() {
     }, 2000);
     return () => clearInterval(interval);
   }, []);
-
-  const handlePathNext = useCallback(() => {
-    if (isPathTransitioning) return;
-    setIsPathTransitioning(true);
-    setCurrentPathIndex((prev) => (prev + 1) % learningPathsData.length);
-    setTimeout(() => setIsPathTransitioning(false), 600);
-  }, [isPathTransitioning]);
-
-  const handlePathPrev = useCallback(() => {
-    if (isPathTransitioning) return;
-    setIsPathTransitioning(true);
-    setCurrentPathIndex((prev) => (prev - 1 + learningPathsData.length) % learningPathsData.length);
-    setTimeout(() => setIsPathTransitioning(false), 600);
-  }, [isPathTransitioning]);
-
-  const handlePortfolioNext = useCallback(() => {
-    if (isPortfolioTransitioning) return;
-    setIsPortfolioTransitioning(true);
-    setCurrentPortfolioIndex((prev) => (prev + 1) % portfolioData.length);
-    setTimeout(() => setIsPortfolioTransitioning(false), 600);
-  }, [isPortfolioTransitioning]);
-
-  const handlePortfolioPrev = useCallback(() => {
-    if (isPortfolioTransitioning) return;
-    setIsPortfolioTransitioning(true);
-    setCurrentPortfolioIndex((prev) => (prev - 1 + portfolioData.length) % portfolioData.length);
-    setTimeout(() => setIsPortfolioTransitioning(false), 600);
-  }, [isPortfolioTransitioning]);
-
-  // Auto-rotate learning paths
-  useEffect(() => {
-    const timer = setInterval(() => {
-      handlePathNext();
-    }, 5000);
-    return () => clearInterval(timer);
-  }, [handlePathNext]);
-
-  // Auto-rotate portfolio
-  useEffect(() => {
-    const timer = setInterval(() => {
-      handlePortfolioNext();
-    }, 5000);
-    return () => clearInterval(timer);
-  }, [handlePortfolioNext]);
-
-  const getPathPosition = (index: number) => {
-    const diff = index - currentPathIndex;
-    const total = learningPathsData.length;
-    let normalizedDiff = diff;
-
-    if (diff > total / 2) normalizedDiff = diff - total;
-    else if (diff < -total / 2) normalizedDiff = diff + total;
-
-    if (normalizedDiff === 0) return 'center';
-    if (normalizedDiff === -1) return 'left';
-    if (normalizedDiff === 1) return 'right';
-    return 'hidden';
-  };
-
-  const getPortfolioPosition = (index: number) => {
-    const diff = index - currentPortfolioIndex;
-    const total = portfolioData.length;
-    let normalizedDiff = diff;
-
-    if (diff > total / 2) normalizedDiff = diff - total;
-    else if (diff < -total / 2) normalizedDiff = diff + total;
-
-    if (normalizedDiff === 0) return 'center';
-    if (normalizedDiff === -1) return 'left';
-    if (normalizedDiff === 1) return 'right';
-    return 'hidden';
-  };
 
   return (
     <>
@@ -225,76 +147,7 @@ export default function HomePage() {
             </h2>
           </div>
 
-          <div className="carousel-wrapper">
-            <button
-              className="carousel-nav carousel-nav-prev"
-              onClick={handlePathPrev}
-              aria-label="Previous learning path"
-            >
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                <path d="M15 18L9 12L15 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            </button>
-
-            <div className="paths-carousel">
-              {learningPathsData.map((path, index) => {
-                const position = getPathPosition(index);
-
-                return (
-                  <div
-                    key={path.id}
-                    className={`carousel-item path-item ${position}`}
-                  >
-                    <Link href={`/${path.slug}`} className="path-link">
-                      <div className="path-media">
-                        <div className="path-image-wrapper">
-                          <Image
-                            src={path.image}
-                            alt={path.title}
-                            fill
-                            sizes="600px"
-                            style={{ objectFit: 'cover' }}
-                            className="path-image"
-                          />
-                        </div>
-                        <div className="path-content">
-                          <h3 className="path-title">{path.title}</h3>
-                          <p className="path-description">{path.description}</p>
-                        </div>
-                      </div>
-                    </Link>
-                  </div>
-                );
-              })}
-            </div>
-
-            <button
-              className="carousel-nav carousel-nav-next"
-              onClick={handlePathNext}
-              aria-label="Next learning path"
-            >
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                <path d="M9 18L15 12L9 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            </button>
-          </div>
-
-          <div className="carousel-dots">
-            {learningPathsData.map((_, index) => (
-              <button
-                key={index}
-                className={`dot ${index === currentPathIndex ? 'active' : ''}`}
-                onClick={() => {
-                  if (!isPathTransitioning) {
-                    setIsPathTransitioning(true);
-                    setCurrentPathIndex(index);
-                    setTimeout(() => setIsPathTransitioning(false), 600);
-                  }
-                }}
-                aria-label={`Go to learning path ${index + 1}`}
-              />
-            ))}
-          </div>
+          <LearningPathsAccordion />
         </div>
 
         {/* Scroll Indicator */}
@@ -329,76 +182,7 @@ export default function HomePage() {
             </h2>
           </div>
 
-          <div className="carousel-wrapper">
-            <button
-              className="carousel-nav carousel-nav-prev"
-              onClick={handlePortfolioPrev}
-              aria-label="Previous portfolio item"
-            >
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                <path d="M15 18L9 12L15 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            </button>
-
-            <div className="portfolio-carousel">
-              {portfolioData.map((item, index) => {
-                const position = getPortfolioPosition(index);
-
-                return (
-                  <div
-                    key={item.id}
-                    className={`carousel-item portfolio-item ${position}`}
-                  >
-                    <Link href={item.link} className="portfolio-link">
-                      <div className="portfolio-media">
-                        <div className="portfolio-image-wrapper">
-                          <Image
-                            src={item.image}
-                            alt={item.title}
-                            fill
-                            sizes="600px"
-                            style={{ objectFit: 'cover' }}
-                            className="portfolio-image"
-                          />
-                        </div>
-                        <div className="portfolio-content">
-                          <h3 className="portfolio-title">{item.title}</h3>
-                          <p className="portfolio-description">{item.description}</p>
-                        </div>
-                      </div>
-                    </Link>
-                  </div>
-                );
-              })}
-            </div>
-
-            <button
-              className="carousel-nav carousel-nav-next"
-              onClick={handlePortfolioNext}
-              aria-label="Next portfolio item"
-            >
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                <path d="M9 18L15 12L9 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            </button>
-          </div>
-
-          <div className="carousel-dots">
-            {portfolioData.map((_, index) => (
-              <button
-                key={index}
-                className={`dot ${index === currentPortfolioIndex ? 'active' : ''}`}
-                onClick={() => {
-                  if (!isPortfolioTransitioning) {
-                    setIsPortfolioTransitioning(true);
-                    setCurrentPortfolioIndex(index);
-                    setTimeout(() => setIsPortfolioTransitioning(false), 600);
-                  }
-                }}
-                aria-label={`Go to portfolio item ${index + 1}`}
-              />
-            ))}
-          </div>
+          <PortfolioShowcase />
         </div>
 
         {/* Scroll Indicator */}
@@ -524,7 +308,7 @@ export default function HomePage() {
 
               <div className="contact-links">
                 <button
-                  onClick={() => contactWidgetRef.current?.open()}
+                  onClick={() => window.dispatchEvent(new CustomEvent('open-contact-widget'))}
                   className="contact-link contact-link-button"
                 >
                   <div className="link-icon-wrapper">
@@ -1071,255 +855,6 @@ export default function HomePage() {
           margin: 0;
         }
 
-        /* Carousel Wrapper */
-        .carousel-wrapper {
-          position: relative;
-          margin-bottom: 50px;
-        }
-
-        .carousel-nav {
-          position: absolute;
-          top: 50%;
-          transform: translateY(-50%);
-          width: 50px;
-          height: 50px;
-          border: 2px solid var(--border-color);
-          background: var(--card-bg);
-          border-radius: 50%;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          cursor: pointer;
-          z-index: 10;
-          transition: all 0.3s ease;
-          color: var(--text-primary);
-        }
-
-        .carousel-nav:hover {
-          background: var(--bg-primary);
-          border-color: var(--accent-color);
-          transform: translateY(-50%) scale(1.1);
-        }
-
-        .carousel-nav-prev {
-          left: -25px;
-        }
-
-        .carousel-nav-next {
-          right: -25px;
-        }
-
-        /* Learning Paths Carousel */
-        .paths-carousel {
-          position: relative;
-          height: 700px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          perspective: 1500px;
-        }
-
-        .paths-carousel .carousel-item {
-          position: absolute;
-          width: 500px;
-          transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .paths-carousel .carousel-item.center {
-          transform: translateX(0) scale(1);
-          opacity: 1;
-          z-index: 3;
-        }
-
-        .paths-carousel .carousel-item.left {
-          transform: translateX(-350px) scale(0.85);
-          opacity: 0.6;
-          z-index: 2;
-        }
-
-        .paths-carousel .carousel-item.right {
-          transform: translateX(350px) scale(0.85);
-          opacity: 0.6;
-          z-index: 2;
-        }
-
-        .paths-carousel .carousel-item.hidden {
-          transform: translateX(0) scale(0.7);
-          opacity: 0;
-          z-index: 1;
-          pointer-events: none;
-        }
-
-        /* Portfolio Carousel */
-        .portfolio-carousel {
-          position: relative;
-          height: 650px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          perspective: 1500px;
-        }
-
-        .portfolio-carousel .carousel-item {
-          position: absolute;
-          width: 500px;
-          transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .portfolio-carousel .carousel-item.center {
-          transform: translateX(0) scale(1);
-          opacity: 1;
-          z-index: 3;
-        }
-
-        .portfolio-carousel .carousel-item.left {
-          transform: translateX(-350px) scale(0.85);
-          opacity: 0.6;
-          z-index: 2;
-        }
-
-        .portfolio-carousel .carousel-item.right {
-          transform: translateX(350px) scale(0.85);
-          opacity: 0.6;
-          z-index: 2;
-        }
-
-        .portfolio-carousel .carousel-item.hidden {
-          transform: translateX(0) scale(0.7);
-          opacity: 0;
-          z-index: 1;
-          pointer-events: none;
-        }
-
-        /* Path & Portfolio Item Styles */
-        .path-link,
-        .portfolio-link {
-          display: block;
-          text-decoration: none;
-          color: inherit;
-          height: 100%;
-        }
-
-        .path-media,
-        .portfolio-media {
-          position: relative;
-          width: 100%;
-          padding-bottom: 125%;
-          border-radius: 12px;
-          overflow: hidden;
-          background: var(--card-bg);
-          box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
-          transition: all 0.3s ease;
-        }
-
-        .carousel-item.center .path-media,
-        .carousel-item.center .portfolio-media {
-          box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
-        }
-
-        .carousel-item.center .path-link:hover .path-media,
-        .carousel-item.center .portfolio-link:hover .portfolio-media {
-          transform: translateY(-10px);
-          box-shadow: 0 30px 80px rgba(0, 0, 0, 0.3);
-        }
-
-        .path-image-wrapper,
-        .portfolio-image-wrapper {
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-        }
-
-        .path-image,
-        .portfolio-image {
-          transition: transform 0.6s ease;
-        }
-
-        .carousel-item.center .path-link:hover .path-image,
-        .carousel-item.center .portfolio-link:hover .portfolio-image {
-          transform: scale(1.05);
-        }
-
-        /* Text overlay on images */
-        .path-content,
-        .portfolio-content {
-          position: absolute;
-          bottom: 0;
-          left: 0;
-          right: 0;
-          padding: 32px 24px 24px;
-          background: linear-gradient(
-            to bottom,
-            transparent 0%,
-            rgba(0, 0, 0, 0.7) 40%,
-            rgba(0, 0, 0, 0.85) 100%
-          );
-          z-index: 2;
-          transition: all 0.3s ease;
-        }
-
-        .carousel-item.center .path-link:hover .path-content,
-        .carousel-item.center .portfolio-link:hover .portfolio-content {
-          background: linear-gradient(
-            to bottom,
-            transparent 0%,
-            rgba(0, 0, 0, 0.8) 40%,
-            rgba(0, 0, 0, 0.95) 100%
-          );
-        }
-
-        .path-title,
-        .portfolio-title {
-          font-family: var(--font-funnel);
-          font-size: 28px;
-          font-weight: 700;
-          margin: 0 0 8px 0;
-          color: #ffffff;
-        }
-
-        .path-description,
-        .portfolio-description {
-          font-size: 15px;
-          line-height: 1.5;
-          color: rgba(255, 255, 255, 0.9);
-          margin: 0;
-          display: -webkit-box;
-          -webkit-line-clamp: 3;
-          -webkit-box-orient: vertical;
-          overflow: hidden;
-        }
-
-        /* Carousel Dots */
-        .carousel-dots {
-          display: flex;
-          gap: 12px;
-          justify-content: center;
-        }
-
-        .dot {
-          width: 12px;
-          height: 12px;
-          border-radius: 50%;
-          background: transparent;
-          border: 2px solid var(--border-color);
-          cursor: pointer;
-          transition: all 0.3s ease;
-          padding: 0;
-        }
-
-        .dot:hover {
-          background: var(--text-secondary);
-          transform: scale(1.2);
-        }
-
-        .dot.active {
-          background: var(--accent-color);
-          border-color: var(--accent-color);
-          transform: scale(1.3);
-        }
-
         /* Contact Section */
         .contact-grid {
           display: grid;
@@ -1733,13 +1268,6 @@ export default function HomePage() {
             top: 0;
           }
 
-          .carousel-nav-prev {
-            left: -10px;
-          }
-
-          .carousel-nav-next {
-            right: -10px;
-          }
         }
 
         @media (max-width: 768px) {
@@ -1796,37 +1324,6 @@ export default function HomePage() {
           .scroll-card-animate {
             transform: translateY(80px) scale(0.94);
             filter: blur(6px);
-          }
-
-          .paths-carousel,
-          .portfolio-carousel {
-            height: 600px;
-          }
-
-          .paths-carousel .carousel-item,
-          .portfolio-carousel .carousel-item {
-            width: 100%;
-            max-width: 380px;
-          }
-
-          .paths-carousel .carousel-item.left,
-          .paths-carousel .carousel-item.right,
-          .portfolio-carousel .carousel-item.left,
-          .portfolio-carousel .carousel-item.right {
-            display: none;
-          }
-
-          .carousel-nav {
-            width: 44px;
-            height: 44px;
-          }
-
-          .carousel-nav-prev {
-            left: 0;
-          }
-
-          .carousel-nav-next {
-            right: 0;
           }
 
           .about-stats {
@@ -1921,8 +1418,6 @@ export default function HomePage() {
         }
       `}</style>
 
-      {/* Contact Widget - Floating button on left side */}
-      <ContactWidget ref={contactWidgetRef} footerRef={contactSectionRef} />
       </div>
     </>
   );

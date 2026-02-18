@@ -95,6 +95,14 @@ body {
   background: var(--bg-primary);
   overflow-x: hidden;
   transition: background-color 0.3s ease;
+  /* Side rail offset — keeps content clear of the 48px fixed rail */
+  padding-left: 48px;
+}
+
+@media (max-width: 767px) {
+  body {
+    padding-left: 0;
+  }
 }
 
 h1, h2, h3, h4, h5, h6 {
