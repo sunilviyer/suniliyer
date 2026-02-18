@@ -172,7 +172,7 @@ const WORKS: Work[] = [
   },
   {
     id: 32,
-    category: 'photography',
+    category: 'ai-art',
     title: 'Gita Visions',
     subtitle: 'Sacred Journey Series',
     description:
@@ -188,7 +188,7 @@ const WORKS: Work[] = [
       '/images/creative-works/gita-unused6.webp',
     ],
     panelTitle: 'Gita Visions',
-    tags: ['Photography', 'Spiritual', 'Series'],
+    tags: ['AI Art', 'Spiritual', 'Series'],
     date: '2025',
   },
   {
