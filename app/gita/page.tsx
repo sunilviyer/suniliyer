@@ -315,15 +315,12 @@ export default function GitaExperience() {
     return () => clearInterval(interval);
   }, [mode]);
 
-  // Show onboarding hint after 1.5s on first visit in navigation mode
+  // Show onboarding hint after 1.5s whenever returning to navigation mode
   useEffect(() => {
     if (mode !== 'navigation') return;
-    const seen = localStorage.getItem('gita_hint_seen');
-    if (seen) return;
     const showTimer = setTimeout(() => setShowHint(true), 1500);
     const hideTimer = setTimeout(() => {
       setShowHint(false);
-      localStorage.setItem('gita_hint_seen', '1');
     }, 7000);
     return () => {
       clearTimeout(showTimer);
@@ -333,7 +330,6 @@ export default function GitaExperience() {
 
   const handleNodeClick = (moment: Moment, index: number) => {
     setShowHint(false);
-    localStorage.setItem('gita_hint_seen', '1');
     setSelectedMoment({ ...moment, accentColor: momentColors[index] });
     setActiveLayer(0);
     setVisibleLayers(new Set([0]));
@@ -884,7 +880,6 @@ export default function GitaExperience() {
             <div
               onClick={() => {
                 setShowHint(false);
-                localStorage.setItem('gita_hint_seen', '1');
               }}
               style={{
                 position: 'fixed',
