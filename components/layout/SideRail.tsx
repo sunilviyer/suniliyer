@@ -716,9 +716,15 @@ function MobileOverlay({
             color: pathname === '/journey' ? P.accentOlive : isDark ? P.almondSilk : P.dustyGrape,
             fontFamily: 'var(--font-funnel-sans), sans-serif',
             borderTop: `1px solid ${isDark ? `${P.lilacAsh}22` : `${P.dustyGrape}18`}`,
+            display: 'flex',
+            alignItems: 'center',
+            gap: 10,
           }}
         >
-          SUNIL
+          <div style={{ width: 28, height: 28, borderRadius: '50%', overflow: 'hidden', flexShrink: 0, position: 'relative', border: `1.5px solid ${pathname === '/journey' ? P.accentOlive : isDark ? `${P.almondSilk}66` : `${P.dustyGrape}44`}` }}>
+            <Image src="/images/sunil.webp" alt="Sunil Iyer" fill sizes="28px" style={{ objectFit: 'cover' }} />
+          </div>
+          SUNIL IYER
         </div>
         <div style={{ paddingBottom: 8 }}>
           <Link href="/journey" style={{ textDecoration: 'none' }} onClick={onClose}>
@@ -962,7 +968,7 @@ export function SideRail() {
           }}
         />
 
-        {/* Bottom: SUNIL with hover panel */}
+        {/* Bottom: Profile image with hover panel */}
         <div
           style={{ position: 'absolute', bottom: 88 }}
           onMouseEnter={() => handleSectionEnter('sunil')}
@@ -970,23 +976,29 @@ export function SideRail() {
         >
           <div
             style={{
-              writingMode: 'vertical-rl',
-              transform: 'rotate(180deg)',
-              fontSize: 10,
-              fontWeight: 700,
-              letterSpacing: '0.14em',
-              color: openSection === 'sunil' || pathname === '/journey'
-                ? P.accentOlive
-                : isDark ? `${P.almondSilk}99` : `${P.dustyGrape}88`,
-              fontFamily: 'var(--font-funnel-sans), sans-serif',
+              width: 32,
+              height: 32,
+              borderRadius: '50%',
+              overflow: 'hidden',
               cursor: 'pointer',
-              transition: 'color 0.25s ease',
-              userSelect: 'none',
-              whiteSpace: 'nowrap',
-              padding: '8px 0',
+              border: `2px solid ${openSection === 'sunil' || pathname === '/journey'
+                ? P.accentOlive
+                : isDark ? `${P.almondSilk}66` : `${P.dustyGrape}55`}`,
+              transition: 'border-color 0.25s ease, box-shadow 0.25s ease',
+              boxShadow: openSection === 'sunil' || pathname === '/journey'
+                ? `0 0 0 2px ${P.accentOlive}44`
+                : 'none',
+              position: 'relative',
+              flexShrink: 0,
             }}
           >
-            SUNIL
+            <Image
+              src="/images/sunil.webp"
+              alt="Sunil Iyer"
+              fill
+              sizes="32px"
+              style={{ objectFit: 'cover' }}
+            />
           </div>
 
           {/* Sunil panel */}
@@ -1028,7 +1040,7 @@ export function SideRail() {
                 {/* Header */}
                 <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 14, paddingLeft: 8 }}>
                   <div style={{ width: 22, height: 2, borderRadius: 2, background: `linear-gradient(90deg, ${P.almondSilk}, ${P.lilacAsh}66)` }} />
-                  <span style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase' as const, color: P.almondSilk, fontFamily: 'var(--font-funnel-sans), sans-serif' }}>SUNIL</span>
+                  <span style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase' as const, color: P.almondSilk, fontFamily: 'var(--font-funnel-sans), sans-serif' }}>SUNIL IYER</span>
                 </div>
 
                 {/* Journey */}

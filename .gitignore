@@ -1,8 +1,37 @@
+# ── Build outputs ────────────────────────────────────────────────
 node_modules
 .next
 .vercel
-.env*.local
 *.log
-/Volumes/External/AIDefence/OLD
-/Volumes/External/AIDefence/scripts
-/Volumes/External/AIDefence/docs
+tsconfig.tsbuildinfo
+
+# ── Environment & secrets ─────────────────────────────────────────
+.env
+.env.local
+.env.*.local
+.env.development
+.env.production
+.env.test
+
+# ── OS & editor ───────────────────────────────────────────────────
+.DS_Store
+**/.DS_Store
+.vscode/
+*.swp
+*.swo
+
+# ── Planning & AI tooling (not for public repo) ───────────────────
+# Claude Code settings and commands
+.claude/
+
+# BMad planning framework
+_bmad/
+
+# Legacy / archived source
+OLD/
+
+# External documentation & reference templates
+docs/
+
+# Temp files
+/tmp/
