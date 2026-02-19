@@ -879,7 +879,7 @@ export default function GitaExperience() {
             </div>
           )}
 
-          {/* ─── HINT POPUP ─── */}
+          {/* ─── HINT POPUP — slides from right ─── */}
           {showHint && mode === 'navigation' && (
             <div
               onClick={() => {
@@ -888,12 +888,14 @@ export default function GitaExperience() {
               }}
               style={{
                 position: 'fixed',
-                inset: 0,
+                top: 0,
+                right: 0,
+                bottom: 0,
                 zIndex: 100,
                 display: 'flex',
-                alignItems: 'flex-end',
-                justifyContent: 'center',
-                paddingBottom: isMobile ? 90 : 100,
+                alignItems: 'center',
+                justifyContent: 'flex-end',
+                paddingRight: isMobile ? 16 : 24,
                 pointerEvents: 'none',
               }}
             >
@@ -908,10 +910,10 @@ export default function GitaExperience() {
                   border: `1px solid ${palette.highlight}33`,
                   borderRadius: 16,
                   padding: isMobile ? '16px 20px' : '18px 26px',
-                  maxWidth: isMobile ? 'calc(100vw - 40px)' : 380,
+                  maxWidth: isMobile ? 'calc(100vw - 40px)' : 320,
                   width: '100%',
                   boxShadow: `0 8px 40px rgba(0,0,0,0.45), 0 0 0 1px ${palette.highlight}22`,
-                  animation: 'hintSlideUp 0.5s cubic-bezier(0.16,1,0.3,1) both',
+                  animation: 'hintSlideRight 0.5s cubic-bezier(0.16,1,0.3,1) both',
                   cursor: 'pointer',
                 }}
               >
@@ -1365,6 +1367,10 @@ export default function GitaExperience() {
           @keyframes hintSlideUp {
             from { opacity: 0; transform: translateY(20px); }
             to   { opacity: 1; transform: translateY(0); }
+          }
+          @keyframes hintSlideRight {
+            from { opacity: 0; transform: translateX(40px); }
+            to   { opacity: 1; transform: translateX(0); }
           }
           @keyframes sageBounce {
             0%, 100% { transform: translate(-50%, -50%) translateY(0px); }
