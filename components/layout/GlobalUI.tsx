@@ -6,8 +6,10 @@ import { ContactWidget } from '@/components/contact/ContactWidget';
 
 /**
  * GlobalUI — mounts the SideRail, ContactWidget, and the top-right chat button on every page.
- * The chat button sits at top: 30px, right: 96px — beside the per-page theme toggles.
- * It toggles the widget open/closed and its icon reflects the current state.
+ * The chat button sits beside the per-page theme toggles, responsive at the same breakpoints:
+ *   Desktop (>768): top:30, right:96, 56×56  (theme toggle at right:30+56=86 → gap of 10)
+ *   Tablet (≤768):  top:20, right:76, 48×48  (theme toggle at right:20+48=68 → gap of 8)
+ *   Mobile (≤480):  top:16, right:68, 44×44  (theme toggle at right:16+44=60 → gap of 8)
  */
 export function GlobalUI() {
   const [isOpen, setIsOpen] = useState(false);
@@ -41,32 +43,16 @@ export function GlobalUI() {
       <button
         onClick={toggle}
         aria-label={isOpen ? 'Close contact form' : 'Contact me'}
-        style={{
-          position: 'fixed',
-          top: 30,
-          right: 96,
-          zIndex: 1001,
-          width: 56,
-          height: 56,
-          borderRadius: '50%',
-          background: 'var(--card-bg)',
-          border: '2px solid var(--border-color)',
-          cursor: 'pointer',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          boxShadow: '0 4px 12px rgba(0,0,0,0.1)',
-          color: 'var(--text-primary)',
-          transition: 'all 0.3s ease',
-          transform: isOpen ? 'rotate(45deg)' : 'rotate(0deg)',
-        }}
+        className={`global-contact-btn ${isOpen ? 'is-open' : ''}`}
         onMouseEnter={(e) => {
-          e.currentTarget.style.transform = isOpen ? 'rotate(45deg) scale(1.1)' : 'scale(1.1) rotate(10deg)';
-          e.currentTarget.style.boxShadow = '0 6px 20px rgba(0,0,0,0.15)';
+          const el = e.currentTarget;
+          el.style.transform = isOpen ? 'rotate(45deg) scale(1.1)' : 'scale(1.1) rotate(10deg)';
+          el.style.boxShadow = '0 6px 20px rgba(0,0,0,0.15)';
         }}
         onMouseLeave={(e) => {
-          e.currentTarget.style.transform = isOpen ? 'rotate(45deg)' : 'rotate(0deg)';
-          e.currentTarget.style.boxShadow = '0 4px 12px rgba(0,0,0,0.1)';
+          const el = e.currentTarget;
+          el.style.transform = isOpen ? 'rotate(45deg)' : 'rotate(0deg)';
+          el.style.boxShadow = '0 4px 12px rgba(0,0,0,0.1)';
         }}
       >
         <svg
@@ -88,6 +74,50 @@ export function GlobalUI() {
           )}
         </svg>
       </button>
+
+      <style jsx global>{`
+        .global-contact-btn {
+          position: fixed;
+          top: 30px;
+          right: 96px;
+          z-index: 1001;
+          width: 56px;
+          height: 56px;
+          border-radius: 50%;
+          background: var(--card-bg);
+          border: 2px solid var(--border-color);
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+          color: var(--text-primary);
+          transition: transform 0.3s ease, box-shadow 0.3s ease, top 0.3s ease, right 0.3s ease, width 0.3s ease, height 0.3s ease;
+          transform: rotate(0deg);
+        }
+
+        .global-contact-btn.is-open {
+          transform: rotate(45deg);
+        }
+
+        @media (max-width: 768px) {
+          .global-contact-btn {
+            top: 20px;
+            right: 76px;
+            width: 48px;
+            height: 48px;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .global-contact-btn {
+            top: 16px;
+            right: 68px;
+            width: 44px;
+            height: 44px;
+          }
+        }
+      `}</style>
     </>
   );
 }

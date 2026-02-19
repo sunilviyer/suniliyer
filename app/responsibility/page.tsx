@@ -1050,6 +1050,22 @@ export default function NewResponsibilityPage() {
             font-size: 16px;
             max-width: 240px;
           }
+
+          .theme-toggle {
+            top: 20px;
+            right: 20px;
+            width: 48px;
+            height: 48px;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .theme-toggle {
+            top: 16px;
+            right: 16px;
+            width: 44px;
+            height: 44px;
+          }
         }
       `}</style>
     </div>
