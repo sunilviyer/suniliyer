@@ -601,7 +601,7 @@ export default function TopNav() {
           height: 30px;
           border-radius: 100px;
           border: 1px solid rgba(38, 70, 83, 0.3);
-          background: rgba(255, 255, 255, 0.1);
+          background: transparent;
           backdrop-filter: blur(10px);
           cursor: pointer;
           display: flex;
@@ -615,11 +615,12 @@ export default function TopNav() {
         }
 
         .theme-toggle:hover {
-          background: rgba(255, 255, 255, 0.2);
+          background: rgba(255, 255, 255, 0.1);
           border-color: rgba(38, 70, 83, 0.5);
         }
 
         [data-theme='dark'] .theme-toggle:hover {
+          background: rgba(255, 255, 255, 0.05);
           border-color: rgba(255, 239, 213, 0.5);
         }
 
@@ -650,7 +651,7 @@ export default function TopNav() {
           width: 44px;
           height: 44px;
           border-radius: 50%;
-          background: rgba(255, 255, 255, 0.1);
+          background: transparent;
           backdrop-filter: blur(10px);
           border: 1px solid rgba(38, 70, 83, 0.3);
           cursor: pointer;
@@ -667,12 +668,13 @@ export default function TopNav() {
         }
 
         .contact-btn:hover {
-          background: rgba(255, 255, 255, 0.2);
+          background: rgba(255, 255, 255, 0.1);
           border-color: rgba(38, 70, 83, 0.5);
           transform: scale(1.05);
         }
 
         [data-theme='dark'] .contact-btn:hover {
+          background: rgba(255, 255, 255, 0.05);
           border-color: rgba(255, 239, 213, 0.5);
         }
 
@@ -682,7 +684,7 @@ export default function TopNav() {
           height: 44px;
           align-items: center;
           justify-content: center;
-          background: rgba(255, 255, 255, 0.1);
+          background: transparent;
           backdrop-filter: blur(10px);
           border: 1px solid rgba(38, 70, 83, 0.3);
           border-radius: 8px;
@@ -702,11 +704,12 @@ export default function TopNav() {
         }
 
         .mobile-menu-btn:hover {
-          background: rgba(255, 255, 255, 0.2);
+          background: rgba(255, 255, 255, 0.1);
           border-color: rgba(38, 70, 83, 0.5);
         }
 
         [data-theme='dark'] .mobile-menu-btn:hover {
+          background: rgba(255, 255, 255, 0.05);
           border-color: rgba(255, 239, 213, 0.5);
         }
 
