@@ -428,17 +428,13 @@ export default function TopNav() {
           right: 0;
           height: 70px;
           background: transparent;
-          backdrop-filter: blur(8px);
-          -webkit-backdrop-filter: blur(8px);
-          text-shadow: 0 0 5px rgba(0,0,0,0.5);
           z-index: 1000;
           transition: all 0.3s ease-out;
         }
 
         .top-nav.scrolled {
-          backdrop-filter: blur(12px);
-          -webkit-backdrop-filter: blur(12px);
-          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+          backdrop-filter: blur(8px);
+          -webkit-backdrop-filter: blur(8px);
         }
 
         .nav-container {
@@ -604,7 +600,7 @@ export default function TopNav() {
           width: 56px;
           height: 30px;
           border-radius: 100px;
-          border: 1px solid rgba(255, 255, 255, 0.2);
+          border: 1px solid rgba(38, 70, 83, 0.3);
           background: rgba(255, 255, 255, 0.1);
           backdrop-filter: blur(10px);
           cursor: pointer;
@@ -612,12 +608,19 @@ export default function TopNav() {
           align-items: center;
           padding: 3px;
           transition: all 0.3s ease;
-          filter: drop-shadow(0 0 5px rgba(0,0,0,.5));
+        }
+
+        [data-theme='dark'] .theme-toggle {
+          border-color: rgba(255, 239, 213, 0.3);
         }
 
         .theme-toggle:hover {
-          background: rgba(255, 255, 255, 0.15);
-          border-color: rgba(255, 255, 255, 0.3);
+          background: rgba(255, 255, 255, 0.2);
+          border-color: rgba(38, 70, 83, 0.5);
+        }
+
+        [data-theme='dark'] .theme-toggle:hover {
+          border-color: rgba(255, 239, 213, 0.5);
         }
 
         .theme-toggle .knob {
@@ -646,24 +649,28 @@ export default function TopNav() {
           border-radius: 50%;
           background: rgba(255, 255, 255, 0.1);
           backdrop-filter: blur(10px);
-          border: 1px solid rgba(255, 255, 255, 0.2);
+          border: 1px solid rgba(38, 70, 83, 0.3);
           cursor: pointer;
           display: flex;
           align-items: center;
           justify-content: center;
           color: #264653;
           transition: all 0.3s ease;
-          filter: drop-shadow(0 0 5px rgba(0,0,0,.5));
         }
 
         [data-theme='dark'] .contact-btn {
           color: #FFEFD5;
+          border-color: rgba(255, 239, 213, 0.3);
         }
 
         .contact-btn:hover {
-          background: rgba(255, 255, 255, 0.15);
-          border-color: rgba(255, 255, 255, 0.3);
+          background: rgba(255, 255, 255, 0.2);
+          border-color: rgba(38, 70, 83, 0.5);
           transform: scale(1.05);
+        }
+
+        [data-theme='dark'] .contact-btn:hover {
+          border-color: rgba(255, 239, 213, 0.5);
         }
 
         .mobile-menu-btn {
@@ -674,16 +681,16 @@ export default function TopNav() {
           justify-content: center;
           background: rgba(255, 255, 255, 0.1);
           backdrop-filter: blur(10px);
-          border: 1px solid rgba(255, 255, 255, 0.2);
+          border: 1px solid rgba(38, 70, 83, 0.3);
           border-radius: 8px;
           color: #264653;
           cursor: pointer;
           transition: all 0.2s ease;
-          filter: drop-shadow(0 0 5px rgba(0,0,0,.5));
         }
 
         [data-theme='dark'] .mobile-menu-btn {
           color: #FFEFD5;
+          border-color: rgba(255, 239, 213, 0.3);
         }
 
         .mobile-menu-btn svg {
@@ -692,8 +699,12 @@ export default function TopNav() {
         }
 
         .mobile-menu-btn:hover {
-          background: rgba(255, 255, 255, 0.15);
-          border-color: rgba(255, 255, 255, 0.3);
+          background: rgba(255, 255, 255, 0.2);
+          border-color: rgba(38, 70, 83, 0.5);
+        }
+
+        [data-theme='dark'] .mobile-menu-btn:hover {
+          border-color: rgba(255, 239, 213, 0.5);
         }
 
         .mobile-overlay {
