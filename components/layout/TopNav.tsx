@@ -320,8 +320,8 @@ export default function TopNav() {
       <style jsx>{`
         .toggle-switch {
           position: relative;
-          width: 100px;
-          height: 50px;
+          width: 88px;
+          height: 44px;
           --light: #d8dbe0;
           --dark: #28292c;
           --link: rgb(27, 129, 112);
@@ -331,9 +331,9 @@ export default function TopNav() {
         .switch-label {
           position: absolute;
           width: 100%;
-          height: 50px;
+          height: 44px;
           background-color: var(--dark);
-          border-radius: 25px;
+          border-radius: 22px;
           cursor: pointer;
           border: 3px solid var(--dark);
         }
@@ -347,8 +347,7 @@ export default function TopNav() {
           position: absolute;
           width: 100%;
           height: 100%;
-          border-radius: 25px;
-          -webkit-transition: 0.3s;
+          border-radius: 22px;
           transition: 0.3s;
         }
 
@@ -359,24 +358,19 @@ export default function TopNav() {
         .slider::before {
           content: "";
           position: absolute;
-          top: 10px;
-          left: 10px;
-          width: 25px;
-          height: 25px;
+          top: 9px;
+          left: 9px;
+          width: 22px;
+          height: 22px;
           border-radius: 50%;
-          -webkit-box-shadow: inset 12px -4px 0px 0px var(--light);
-          box-shadow: inset 12px -4px 0px 0px var(--light);
+          box-shadow: inset 10px -4px 0px 0px var(--light);
           background-color: var(--dark);
-          -webkit-transition: 0.3s;
           transition: 0.3s;
         }
 
         .checkbox:checked ~ .slider::before {
-          -webkit-transform: translateX(50px);
-          -ms-transform: translateX(50px);
-          transform: translateX(50px);
+          transform: translateX(44px);
           background-color: var(--dark);
-          -webkit-box-shadow: none;
           box-shadow: none;
         }
 
