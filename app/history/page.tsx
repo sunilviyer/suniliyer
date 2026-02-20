@@ -164,31 +164,6 @@ export default function NewHistoryPage() {
 
   return (
     <div className="page-wrapper">
-      {/* Theme Toggle */}
-      <button
-        className="theme-toggle"
-        onClick={toggleTheme}
-        aria-label="Toggle theme"
-      >
-        {theme === 'light' ? (
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
-          </svg>
-        ) : (
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-            <circle cx="12" cy="12" r="5" />
-            <line x1="12" y1="1" x2="12" y2="3" />
-            <line x1="12" y1="21" x2="12" y2="23" />
-            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
-            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
-            <line x1="1" y1="12" x2="3" y2="12" />
-            <line x1="21" y1="12" x2="23" y2="12" />
-            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
-            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
-          </svg>
-        )}
-      </button>
-
       {/* Hero Section - PathHeadline Style */}
       <section className="inner-headline-section">
         <div className="headline-grid">
@@ -337,32 +312,6 @@ export default function NewHistoryPage() {
           min-height: 100vh;
           background: var(--bg-primary);
           color: var(--text-primary);
-        }
-
-        /* Theme Toggle */
-        .theme-toggle {
-          position: fixed;
-          top: 30px;
-          right: 30px;
-          width: 56px;
-          height: 56px;
-          border-radius: 50%;
-          background: var(--card-bg);
-          border: 2px solid var(--border-color);
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          cursor: pointer;
-          z-index: 1000;
-          transition: all 0.3s ease;
-          color: var(--text-primary);
-          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        }
-
-        .theme-toggle:hover {
-          transform: scale(1.1) rotate(15deg);
-          box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-          border-color: var(--accent-color);
         }
 
         .container {
@@ -1050,22 +999,9 @@ export default function NewHistoryPage() {
             font-size: 16px;
             max-width: 240px;
           }
-
-          .theme-toggle {
-            top: 20px;
-            right: 20px;
-            width: 48px;
-            height: 48px;
-          }
         }
 
         @media (max-width: 480px) {
-          .theme-toggle {
-            top: 16px;
-            right: 16px;
-            width: 44px;
-            height: 44px;
-          }
         }
       `}</style>
     </div>
