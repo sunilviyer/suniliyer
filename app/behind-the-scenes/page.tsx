@@ -465,6 +465,21 @@ export default function BehindTheScenesPage() {
     return () => window.removeEventListener("resize", check);
   }, []);
 
+  useEffect(() => {
+    const saved = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const shouldBeDark = saved === 'dark' || (!saved && prefersDark);
+    setIsDark(shouldBeDark);
+    document.documentElement.setAttribute('data-theme', shouldBeDark ? 'dark' : 'light');
+  }, []);
+
+  const toggleTheme = () => {
+    const newTheme = !isDark;
+    setIsDark(newTheme);
+    localStorage.setItem('theme', newTheme ? 'dark' : 'light');
+    document.documentElement.setAttribute('data-theme', newTheme ? 'dark' : 'light');
+  };
+
   const shelves = isMobile
     ? PROJECTS.map((p) => [p])
     : [PROJECTS.slice(0, 3), PROJECTS.slice(3, 6), PROJECTS.slice(6, 9)];
@@ -497,7 +512,7 @@ export default function BehindTheScenesPage() {
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
           HOME
         </Link>
-        <button onClick={() => setIsDark(!isDark)} style={{
+        <button onClick={toggleTheme} style={{
           display: "flex", alignItems: "center", gap: 7, padding: "5px 13px", borderRadius: 18,
           border: `1px solid ${isDark ? PAL.dimGrey + "33" : PAL.dimGrey + "55"}`,
           background: isDark ? `${PAL.charcoal}33` : `${PAL.dustGrey}88`,
