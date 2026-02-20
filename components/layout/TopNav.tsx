@@ -239,6 +239,10 @@ export default function TopNav() {
               </div>
             ))}
 
+          </div>
+
+          {/* Theme Toggle & Contact Button */}
+          <div className="nav-actions">
             {/* Profile Icon Menu Item */}
             <div
               className="menu-item-wrapper profile-wrapper"
@@ -295,10 +299,6 @@ export default function TopNav() {
                 </div>
               )}
             </div>
-          </div>
-
-          {/* Theme Toggle & Contact Button */}
-          <div className="nav-actions">
             {/* Theme Toggle */}
             <button
               className="theme-toggle"
@@ -631,19 +631,20 @@ export default function TopNav() {
           width: 24px;
           height: 24px;
           border-radius: 50%;
-          background: linear-gradient(135deg, #fbbf24, #f59e0b);
+          background: #FFEFD5;
           box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
           display: flex;
           align-items: center;
           justify-content: center;
           font-size: 12px;
-          transform: translateX(26px);
           transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+          position: relative;
+          left: 26px;
         }
 
         [data-theme='dark'] .theme-toggle .knob {
-          transform: translateX(0);
-          background: linear-gradient(135deg, #6366f1, #8b5cf6);
+          left: 0;
+          background: #264653;
           box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
         }
 
