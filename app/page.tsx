@@ -191,9 +191,6 @@ export default function HomePage() {
             <h2 className="section-title loading__item">
               Nine projects, nine journeys
             </h2>
-            <p className="section-subtitle loading__item">
-              Each one holds the spark, the struggle, and the lesson
-            </p>
           </div>
 
           <BehindTheScenesBookshelf />
