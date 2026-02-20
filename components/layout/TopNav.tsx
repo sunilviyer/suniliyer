@@ -307,17 +307,21 @@ export default function TopNav() {
             {SECTIONS.map((section) => (
               <div key={section.id} className="mobile-section">
                 <h3>{section.label}</h3>
-                {section.items.map((item, idx) => (
-                  <Link key={idx} href={item.href} className="mobile-link" target={item.external ? '_blank' : undefined}>
-                    {item.title}
-                  </Link>
-                ))}
+                <div className="mobile-items">
+                  {section.items.map((item, idx) => (
+                    <Link key={idx} href={item.href} className="mobile-link" target={item.external ? '_blank' : undefined}>
+                      {item.title}
+                    </Link>
+                  ))}
+                </div>
               </div>
             ))}
             <div className="mobile-section">
               <h3>Sunil</h3>
-              <Link href="/journey" className="mobile-link">My Journey</Link>
-              <a href="/downloads/Sunil_Iyer_Resume.docx" download className="mobile-link">Resume</a>
+              <div className="mobile-items">
+                <Link href="/journey" className="mobile-link">My Journey</Link>
+                <a href="/downloads/Sunil_Iyer_Resume.docx" download className="mobile-link">Resume</a>
+              </div>
             </div>
           </div>
         </div>
