@@ -425,13 +425,13 @@ export default function TopNav() {
         .nav-logo {
           font-size: 20px;
           font-weight: 600;
-          color: #264653;
+          color: #FFEFD5;
           text-decoration: none;
           transition: color 0.2s ease;
         }
 
         [data-theme='dark'] .nav-logo {
-          color: #FFEFD5;
+          color: #264653;
         }
 
         .nav-logo:hover {
@@ -456,7 +456,7 @@ export default function TopNav() {
           padding: 8px 16px;
           background: transparent;
           border: none;
-          color: #264653;
+          color: #FFEFD5;
           font-size: 15px;
           font-weight: 500;
           cursor: pointer;
@@ -466,7 +466,7 @@ export default function TopNav() {
         }
 
         [data-theme='dark'] .menu-item {
-          color: #FFEFD5;
+          color: #264653;
         }
 
         .menu-item:hover {
@@ -488,7 +488,7 @@ export default function TopNav() {
           height: 44px;
           padding: 0;
           background: transparent;
-          border: 2px solid rgba(38, 70, 83, 0.3);
+          border: 2px solid rgba(255, 239, 213, 0.3);
           border-radius: 50%;
           cursor: pointer;
           transition: all 0.2s ease;
@@ -499,7 +499,7 @@ export default function TopNav() {
         }
 
         [data-theme='dark'] .profile-btn {
-          border-color: rgba(255, 239, 213, 0.3);
+          border-color: rgba(38, 70, 83, 0.3);
         }
 
         .profile-btn:hover {
@@ -603,7 +603,7 @@ export default function TopNav() {
           width: 56px;
           height: 30px;
           border-radius: 100px;
-          border: 1px solid rgba(38, 70, 83, 0.3);
+          border: 1px solid rgba(255, 239, 213, 0.3);
           background: transparent;
           backdrop-filter: blur(10px);
           cursor: pointer;
@@ -614,37 +614,37 @@ export default function TopNav() {
         }
 
         [data-theme='dark'] .theme-toggle {
-          border-color: rgba(255, 239, 213, 0.3);
+          border-color: rgba(38, 70, 83, 0.3);
         }
 
         .theme-toggle:hover {
           background: rgba(255, 255, 255, 0.1);
-          border-color: rgba(38, 70, 83, 0.5);
+          border-color: rgba(255, 239, 213, 0.5);
         }
 
         [data-theme='dark'] .theme-toggle:hover {
           background: rgba(255, 255, 255, 0.05);
-          border-color: rgba(255, 239, 213, 0.5);
+          border-color: rgba(38, 70, 83, 0.5);
         }
 
         .theme-toggle .knob {
           width: 24px;
           height: 24px;
           border-radius: 50%;
-          background: #FFEFD5;
+          background: #f59e0b;
           box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
           display: flex;
           align-items: center;
           justify-content: center;
           font-size: 12px;
-          transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+          transition: left 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
           position: relative;
           left: 26px;
         }
 
         [data-theme='dark'] .theme-toggle .knob {
           left: 0;
-          background: #264653;
+          background: #6366f1;
           box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
         }
 
@@ -654,29 +654,29 @@ export default function TopNav() {
           border-radius: 50%;
           background: transparent;
           backdrop-filter: blur(10px);
-          border: 1px solid rgba(38, 70, 83, 0.3);
+          border: 1px solid rgba(255, 239, 213, 0.3);
           cursor: pointer;
           display: flex;
           align-items: center;
           justify-content: center;
-          color: #264653;
+          color: #FFEFD5;
           transition: all 0.3s ease;
         }
 
         [data-theme='dark'] .contact-btn {
-          color: #FFEFD5;
-          border-color: rgba(255, 239, 213, 0.3);
+          color: #264653;
+          border-color: rgba(38, 70, 83, 0.3);
         }
 
         .contact-btn:hover {
           background: rgba(255, 255, 255, 0.1);
-          border-color: rgba(38, 70, 83, 0.5);
+          border-color: rgba(255, 239, 213, 0.5);
           transform: scale(1.05);
         }
 
         [data-theme='dark'] .contact-btn:hover {
           background: rgba(255, 255, 255, 0.05);
-          border-color: rgba(255, 239, 213, 0.5);
+          border-color: rgba(38, 70, 83, 0.5);
         }
 
         .mobile-menu-btn {
@@ -687,16 +687,16 @@ export default function TopNav() {
           justify-content: center;
           background: transparent;
           backdrop-filter: blur(10px);
-          border: 1px solid rgba(38, 70, 83, 0.3);
+          border: 1px solid rgba(255, 239, 213, 0.3);
           border-radius: 8px;
-          color: #264653;
+          color: #FFEFD5;
           cursor: pointer;
           transition: all 0.2s ease;
         }
 
         [data-theme='dark'] .mobile-menu-btn {
-          color: #FFEFD5;
-          border-color: rgba(255, 239, 213, 0.3);
+          color: #264653;
+          border-color: rgba(38, 70, 83, 0.3);
         }
 
         .mobile-menu-btn svg {
@@ -706,12 +706,12 @@ export default function TopNav() {
 
         .mobile-menu-btn:hover {
           background: rgba(255, 255, 255, 0.1);
-          border-color: rgba(38, 70, 83, 0.5);
+          border-color: rgba(255, 239, 213, 0.5);
         }
 
         [data-theme='dark'] .mobile-menu-btn:hover {
           background: rgba(255, 255, 255, 0.05);
-          border-color: rgba(255, 239, 213, 0.5);
+          border-color: rgba(38, 70, 83, 0.5);
         }
 
         .mobile-overlay {
