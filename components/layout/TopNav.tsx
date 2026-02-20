@@ -136,7 +136,6 @@ export default function TopNav() {
   const [contactOpen, setContactOpen] = useState(false);
   const { isDark, toggleTheme } = useTheme();
 
-  // Detect scroll for backdrop blur effect
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
@@ -145,13 +144,11 @@ export default function TopNav() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Close mobile menu when route changes
   useEffect(() => {
     setMobileMenuOpen(false);
     setActiveDropdown(null);
   }, [pathname]);
 
-  // Listen for contact widget events
   useEffect(() => {
     const onOpen = () => setContactOpen(true);
     const onClose = () => setContactOpen(false);
@@ -171,7 +168,6 @@ export default function TopNav() {
     }
   };
 
-  // Determine active section based on pathname
   const getActiveSection = () => {
     for (const section of SECTIONS) {
       if (section.routes.some(route => pathname?.startsWith(route))) {
@@ -187,9 +183,9 @@ export default function TopNav() {
     <>
       <nav className={`top-nav ${scrolled ? 'scrolled' : ''}`}>
         <div className="nav-container">
-          {/* Logo / Home */}
+          {/* Logo */}
           <Link href="/" className="nav-logo">
-            <span className="logo-text">Sunil Iyer</span>
+            Sunil Iyer
           </Link>
 
           {/* Desktop Menu */}
@@ -197,134 +193,85 @@ export default function TopNav() {
             {SECTIONS.map((section) => (
               <div
                 key={section.id}
-                className="menu-item-wrapper"
+                className="menu-wrapper"
                 onMouseEnter={() => setActiveDropdown(section.id)}
                 onMouseLeave={() => setActiveDropdown(null)}
               >
-                <button
-                  className={`menu-item ${activeSection === section.id ? 'active' : ''}`}
-                >
+                <button className={`menu-btn ${activeSection === section.id ? 'active' : ''}`}>
                   {section.label}
                 </button>
 
                 {activeDropdown === section.id && (
-                  <div className="dropdown-panel">
-                    <div className="dropdown-content">
-                      {section.items.map((item, idx) => (
-                        <Link
-                          key={idx}
-                          href={item.href}
-                          className="dropdown-item"
-                          target={item.external ? '_blank' : undefined}
-                          rel={item.external ? 'noopener noreferrer' : undefined}
-                        >
-                          <div className="item-image">
-                            <Image
-                              src={item.image}
-                              alt={item.title}
-                              fill
-                              sizes="120px"
-                              style={{ objectFit: 'cover' }}
-                            />
-                          </div>
-                          <div className="item-text">
-                            <h3>{item.title}</h3>
-                            <p>{item.description}</p>
-                          </div>
-                        </Link>
-                      ))}
-                    </div>
+                  <div className="dropdown">
+                    {section.items.map((item, idx) => (
+                      <Link
+                        key={idx}
+                        href={item.href}
+                        className="dropdown-link"
+                        target={item.external ? '_blank' : undefined}
+                        rel={item.external ? 'noopener noreferrer' : undefined}
+                      >
+                        <div className="dropdown-img">
+                          <Image src={item.image} alt={item.title} fill style={{ objectFit: 'cover' }} />
+                        </div>
+                        <div className="dropdown-text">
+                          <h3>{item.title}</h3>
+                          <p>{item.description}</p>
+                        </div>
+                      </Link>
+                    ))}
                   </div>
                 )}
               </div>
             ))}
-
           </div>
 
-          {/* Theme Toggle & Contact Button */}
-          <div className="nav-actions">
-            {/* Profile Icon Menu Item */}
+          {/* Action Buttons */}
+          <div className="actions">
+            {/* Profile Icon */}
             <div
-              className="menu-item-wrapper profile-wrapper"
-              onMouseEnter={() => setActiveDropdown('sunil')}
+              className="menu-wrapper"
+              onMouseEnter={() => setActiveDropdown('profile')}
               onMouseLeave={() => setActiveDropdown(null)}
             >
-              <button
-                className={`profile-btn ${pathname === '/journey' ? 'active' : ''}`}
-                aria-label="Profile menu"
-              >
-                <Image
-                  src="/images/sunil.webp"
-                  alt="Sunil Iyer"
-                  width={30}
-                  height={30}
-                  style={{ borderRadius: '50%', objectFit: 'cover' }}
-                />
+              <button className="profile-icon" aria-label="Profile">
+                <Image src="/images/sunil.webp" alt="Sunil Iyer" width={30} height={30} style={{ borderRadius: '50%', objectFit: 'cover' }} />
               </button>
 
-              {activeDropdown === 'sunil' && (
-                <div className="dropdown-panel">
-                  <div className="dropdown-content">
-                    <Link href="/journey" className="dropdown-item">
-                      <div className="item-image">
-                        <Image
-                          src="/images/journey/cornell.webp"
-                          alt="Journey"
-                          fill
-                          sizes="120px"
-                          style={{ objectFit: 'cover' }}
-                        />
-                      </div>
-                      <div className="item-text">
-                        <h3>My Journey</h3>
-                        <p>Professional story and experience</p>
-                      </div>
-                    </Link>
-                    <a
-                      href="/downloads/Sunil_Iyer_Resume.docx"
-                      download
-                      className="dropdown-item"
-                    >
-                      <div className="item-image resume-icon">
-                        <svg viewBox="0 0 24 24" fill="currentColor">
-                          <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z" />
-                        </svg>
-                      </div>
-                      <div className="item-text">
-                        <h3>Resume</h3>
-                        <p>Download my resume</p>
-                      </div>
-                    </a>
-                  </div>
+              {activeDropdown === 'profile' && (
+                <div className="dropdown">
+                  <Link href="/journey" className="dropdown-link">
+                    <div className="dropdown-img">
+                      <Image src="/images/journey/cornell.webp" alt="Journey" fill style={{ objectFit: 'cover' }} />
+                    </div>
+                    <div className="dropdown-text">
+                      <h3>My Journey</h3>
+                      <p>Professional story and experience</p>
+                    </div>
+                  </Link>
+                  <a href="/downloads/Sunil_Iyer_Resume.docx" download className="dropdown-link">
+                    <div className="dropdown-img resume-icon">
+                      <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z" />
+                      </svg>
+                    </div>
+                    <div className="dropdown-text">
+                      <h3>Resume</h3>
+                      <p>Download my resume</p>
+                    </div>
+                  </a>
                 </div>
               )}
             </div>
+
             {/* Theme Toggle */}
-            <button
-              className="theme-toggle"
-              onClick={toggleTheme}
-              aria-label="Toggle theme"
-            >
-              <div className="knob">
-                {isDark ? '🌙' : '☀️'}
-              </div>
+            <button className="theme-btn" onClick={toggleTheme} aria-label="Toggle theme">
+              <span className="theme-icon">{isDark ? '🌙' : '☀️'}</span>
             </button>
 
             {/* Contact Button */}
-            <button
-              className="contact-btn"
-              onClick={toggleContact}
-              aria-label={contactOpen ? 'Close contact' : 'Contact me'}
-            >
-              <svg
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-              >
+            <button className="contact-btn" onClick={toggleContact} aria-label={contactOpen ? 'Close' : 'Contact'}>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 {contactOpen ? (
                   <>
                     <line x1="18" y1="6" x2="6" y2="18" />
@@ -338,58 +285,36 @@ export default function TopNav() {
           </div>
 
           {/* Mobile Menu Button */}
-          <button
-            className="mobile-menu-btn"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
-          >
-            {mobileMenuOpen ? (
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+          <button className="mobile-btn" onClick={() => setMobileMenuOpen(!mobileMenuOpen)} aria-label="Menu">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              {mobileMenuOpen ? (
                 <path d="M18 6L6 18M6 6l12 12" />
-              </svg>
-            ) : (
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              ) : (
                 <path d="M3 12h18M3 6h18M3 18h18" />
-              </svg>
-            )}
+              )}
+            </svg>
           </button>
         </div>
       </nav>
 
-      {/* Mobile Menu Overlay */}
+      {/* Mobile Menu */}
       {mobileMenuOpen && (
         <div className="mobile-overlay">
           <div className="mobile-menu">
             {SECTIONS.map((section) => (
               <div key={section.id} className="mobile-section">
-                <h3 className="mobile-section-title">{section.label}</h3>
-                <div className="mobile-items">
-                  {section.items.map((item, idx) => (
-                    <Link
-                      key={idx}
-                      href={item.href}
-                      className="mobile-item"
-                      target={item.external ? '_blank' : undefined}
-                      rel={item.external ? 'noopener noreferrer' : undefined}
-                    >
-                      {item.title}
-                    </Link>
-                  ))}
-                </div>
+                <h3>{section.label}</h3>
+                {section.items.map((item, idx) => (
+                  <Link key={idx} href={item.href} className="mobile-link" target={item.external ? '_blank' : undefined}>
+                    {item.title}
+                  </Link>
+                ))}
               </div>
             ))}
-
-            {/* Sunil Section */}
             <div className="mobile-section">
-              <h3 className="mobile-section-title">Sunil</h3>
-              <div className="mobile-items">
-                <Link href="/journey" className="mobile-item">
-                  My Journey
-                </Link>
-                <a href="/downloads/Sunil_Iyer_Resume.docx" download className="mobile-item">
-                  Resume
-                </a>
-              </div>
+              <h3>Sunil</h3>
+              <Link href="/journey" className="mobile-link">My Journey</Link>
+              <a href="/downloads/Sunil_Iyer_Resume.docx" download className="mobile-link">Resume</a>
             </div>
           </div>
         </div>
@@ -402,9 +327,8 @@ export default function TopNav() {
           left: 0;
           right: 0;
           height: 70px;
-          background: transparent;
           z-index: 1000;
-          transition: all 0.3s ease-out;
+          transition: backdrop-filter 0.3s ease;
         }
 
         .top-nav.scrolled {
@@ -422,37 +346,35 @@ export default function TopNav() {
           justify-content: space-between;
         }
 
+        /* Logo */
         .nav-logo {
           font-size: 20px;
           font-weight: 600;
           color: #264653;
           text-decoration: none;
-          transition: color 0.2s ease;
+          transition: color 0.2s;
         }
 
-        [data-theme='dark'] .nav-logo {
+        :global([data-theme='dark']) .nav-logo {
           color: #FFEFD5;
         }
 
         .nav-logo:hover {
-          color: var(--accent-color);
+          color: #6366f1;
         }
 
-        .logo-text {
-          display: block;
-        }
-
+        /* Desktop Menu */
         .desktop-menu {
           display: flex;
           gap: 8px;
           align-items: center;
         }
 
-        .menu-item-wrapper {
+        .menu-wrapper {
           position: relative;
         }
 
-        .menu-item {
+        .menu-btn {
           padding: 8px 16px;
           background: transparent;
           border: none;
@@ -461,57 +383,21 @@ export default function TopNav() {
           font-weight: 500;
           cursor: pointer;
           border-radius: 6px;
-          transition: all 0.2s ease;
-          white-space: nowrap;
+          transition: all 0.2s;
         }
 
-        [data-theme='dark'] .menu-item {
+        :global([data-theme='dark']) .menu-btn {
           color: #FFEFD5;
         }
 
-        .menu-item:hover {
-          background: rgba(0, 0, 0, 0.05);
-          color: var(--accent-color);
-        }
-
-        [data-theme='dark'] .menu-item:hover {
-          background: rgba(255, 255, 255, 0.05);
-        }
-
-        .menu-item.active {
+        .menu-btn:hover,
+        .menu-btn.active {
           background: rgba(99, 102, 241, 0.1);
-          color: var(--accent-color);
+          color: #6366f1;
         }
 
-        .profile-btn {
-          width: 44px;
-          height: 44px;
-          padding: 0;
-          background: transparent;
-          border: 2px solid rgba(255, 239, 213, 0.3);
-          border-radius: 50%;
-          cursor: pointer;
-          transition: all 0.2s ease;
-          overflow: hidden;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-        }
-
-        [data-theme='dark'] .profile-btn {
-          border-color: rgba(38, 70, 83, 0.3);
-        }
-
-        .profile-btn:hover {
-          border-color: var(--accent-color);
-          transform: scale(1.05);
-        }
-
-        .profile-btn.active {
-          border-color: var(--accent-color);
-        }
-
-        .dropdown-panel {
+        /* Dropdown */
+        .dropdown {
           position: absolute;
           top: calc(100% + 8px);
           left: 50%;
@@ -519,13 +405,19 @@ export default function TopNav() {
           min-width: 320px;
           background: rgba(255, 255, 255, 0.95);
           backdrop-filter: blur(20px);
-          border: 1px solid var(--border-color);
+          border: 1px solid #dddddd;
           border-radius: 12px;
           box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
-          animation: dropdownFade 0.2s ease;
+          padding: 8px;
+          animation: fadeIn 0.2s;
         }
 
-        @keyframes dropdownFade {
+        :global([data-theme='dark']) .dropdown {
+          background: rgba(26, 26, 26, 0.95);
+          border-color: #444444;
+        }
+
+        @keyframes fadeIn {
           from {
             opacity: 0;
             transform: translateX(-50%) translateY(-10px);
@@ -536,36 +428,40 @@ export default function TopNav() {
           }
         }
 
-        .dropdown-content {
-          padding: 8px;
-        }
-
-        .dropdown-item {
+        .dropdown-link {
           display: flex;
           gap: 12px;
           padding: 12px;
           border-radius: 8px;
           text-decoration: none;
-          color: var(--text-color);
-          transition: all 0.2s ease;
+          color: #000000;
+          transition: all 0.2s;
         }
 
-        .dropdown-item:hover {
+        :global([data-theme='dark']) .dropdown-link {
+          color: #ffffff;
+        }
+
+        .dropdown-link:hover {
           background: rgba(99, 102, 241, 0.08);
           transform: translateX(4px);
         }
 
-        .item-image {
+        .dropdown-img {
           position: relative;
           width: 60px;
           height: 60px;
           flex-shrink: 0;
           border-radius: 8px;
           overflow: hidden;
-          background: var(--card-bg);
+          background: #f8f8f8;
         }
 
-        .item-image.resume-icon {
+        :global([data-theme='dark']) .dropdown-img {
+          background: #2a2a2a;
+        }
+
+        .resume-icon {
           display: flex;
           align-items: center;
           justify-content: center;
@@ -573,164 +469,155 @@ export default function TopNav() {
           color: white;
         }
 
-        .item-image.resume-icon svg {
+        .resume-icon svg {
           width: 30px;
           height: 30px;
         }
 
-        .item-text h3 {
+        .dropdown-text h3 {
           font-size: 15px;
           font-weight: 600;
-          color: var(--text-color);
           margin: 0 0 4px 0;
         }
 
-        .item-text p {
+        .dropdown-text p {
           font-size: 13px;
-          color: var(--text-secondary);
+          color: #666666;
           margin: 0;
-          line-height: 1.4;
         }
 
-        .nav-actions {
+        :global([data-theme='dark']) .dropdown-text p {
+          color: #cccccc;
+        }
+
+        /* Actions */
+        .actions {
           display: flex;
-          align-items: center;
           gap: 12px;
+          align-items: center;
           margin-left: 16px;
         }
 
-        .theme-toggle {
+        /* Profile Icon */
+        .profile-icon {
+          width: 44px;
+          height: 44px;
+          padding: 0;
+          background: transparent;
+          border: 2px solid #264653;
+          border-radius: 50%;
+          cursor: pointer;
+          overflow: hidden;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transition: all 0.2s;
+        }
+
+        :global([data-theme='dark']) .profile-icon {
+          border-color: #FFEFD5;
+        }
+
+        .profile-icon:hover {
+          border-color: #6366f1;
+          transform: scale(1.05);
+        }
+
+        /* Theme Toggle */
+        .theme-btn {
           width: 56px;
           height: 30px;
           border-radius: 100px;
-          border: 1px solid rgba(255, 239, 213, 0.3);
+          border: 2px solid #264653;
           background: transparent;
-          backdrop-filter: blur(10px);
           cursor: pointer;
           display: flex;
           align-items: center;
           padding: 3px;
-          transition: all 0.3s ease;
+          transition: all 0.3s;
+          position: relative;
         }
 
-        [data-theme='dark'] .theme-toggle {
-          border-color: rgba(38, 70, 83, 0.3);
+        :global([data-theme='dark']) .theme-btn {
+          border-color: #FFEFD5;
         }
 
-        .theme-toggle:hover {
-          background: rgba(255, 255, 255, 0.1);
-          border-color: rgba(255, 239, 213, 0.5);
+        .theme-btn:hover {
+          background: rgba(99, 102, 241, 0.1);
         }
 
-        [data-theme='dark'] .theme-toggle:hover {
-          background: rgba(255, 255, 255, 0.05);
-          border-color: rgba(38, 70, 83, 0.5);
-        }
-
-        .theme-toggle .knob {
+        .theme-icon {
           width: 24px;
           height: 24px;
           border-radius: 50%;
           background: #f59e0b;
-          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
           display: flex;
           align-items: center;
           justify-content: center;
           font-size: 12px;
-          transition: left 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
-          position: relative;
-          left: 26px;
+          position: absolute;
+          left: 3px;
+          transition: left 0.3s ease;
         }
 
-        [data-theme='dark'] .theme-toggle .knob {
-          left: 0;
+        :global([data-theme='dark']) .theme-icon {
+          left: calc(100% - 27px);
           background: #6366f1;
-          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
         }
 
+        /* Contact Button */
         .contact-btn {
           width: 44px;
           height: 44px;
           border-radius: 50%;
           background: transparent;
-          backdrop-filter: blur(10px);
-          border: 1px solid rgba(255, 239, 213, 0.3);
+          border: 2px solid #264653;
           cursor: pointer;
           display: flex;
           align-items: center;
           justify-content: center;
-          color: #FFEFD5;
-          transition: all 0.3s ease;
+          color: #264653;
+          transition: all 0.2s;
         }
 
-        [data-theme='dark'] .contact-btn {
-          color: #264653;
-          border-color: rgba(38, 70, 83, 0.3);
+        :global([data-theme='dark']) .contact-btn {
+          border-color: #FFEFD5;
+          color: #FFEFD5;
         }
 
         .contact-btn:hover {
-          background: rgba(255, 255, 255, 0.1);
-          border-color: rgba(255, 239, 213, 0.5);
+          background: rgba(99, 102, 241, 0.1);
+          border-color: #6366f1;
+          color: #6366f1;
           transform: scale(1.05);
         }
 
-        [data-theme='dark'] .contact-btn:hover {
-          background: rgba(255, 255, 255, 0.05);
-          border-color: rgba(38, 70, 83, 0.5);
-        }
-
-        .mobile-menu-btn {
+        /* Mobile Button */
+        .mobile-btn {
           display: none;
           width: 44px;
           height: 44px;
+          background: transparent;
+          border: 2px solid #264653;
+          border-radius: 8px;
+          color: #264653;
+          cursor: pointer;
           align-items: center;
           justify-content: center;
-          background: transparent;
-          backdrop-filter: blur(10px);
-          border: 1px solid rgba(255, 239, 213, 0.3);
-          border-radius: 8px;
+        }
+
+        :global([data-theme='dark']) .mobile-btn {
+          border-color: #FFEFD5;
           color: #FFEFD5;
-          cursor: pointer;
-          transition: all 0.2s ease;
         }
 
-        [data-theme='dark'] .mobile-menu-btn {
-          color: #264653;
-          border-color: rgba(38, 70, 83, 0.3);
-        }
-
-        .mobile-menu-btn svg {
+        .mobile-btn svg {
           width: 24px;
           height: 24px;
         }
 
-        .mobile-menu-btn:hover {
-          background: rgba(255, 255, 255, 0.1);
-          border-color: rgba(255, 239, 213, 0.5);
-        }
-
-        [data-theme='dark'] .mobile-menu-btn:hover {
-          background: rgba(255, 255, 255, 0.05);
-          border-color: rgba(38, 70, 83, 0.5);
-        }
-
         .mobile-overlay {
           display: none;
-        }
-
-        @media (max-width: 1024px) {
-          .desktop-menu {
-            gap: 4px;
-          }
-
-          .menu-item {
-            padding: 8px 12px;
-            font-size: 14px;
-          }
-
-          .dropdown-panel {
-            min-width: 280px;
-          }
         }
 
         @media (max-width: 900px) {
@@ -738,11 +625,11 @@ export default function TopNav() {
             display: none;
           }
 
-          .nav-actions {
+          .actions {
             margin-left: auto;
           }
 
-          .mobile-menu-btn {
+          .mobile-btn {
             display: flex;
           }
 
@@ -756,56 +643,55 @@ export default function TopNav() {
             background: rgba(0, 0, 0, 0.4);
             backdrop-filter: blur(4px);
             z-index: 999;
-            animation: overlayFade 0.2s ease;
-          }
-
-          @keyframes overlayFade {
-            from { opacity: 0; }
-            to { opacity: 1; }
           }
 
           .mobile-menu {
-            background: var(--card-bg);
+            background: #ffffff;
             height: 100%;
             overflow-y: auto;
             padding: 20px;
+          }
+
+          :global([data-theme='dark']) .mobile-menu {
+            background: #1a1a1a;
           }
 
           .mobile-section {
             margin-bottom: 32px;
           }
 
-          .mobile-section-title {
+          .mobile-section h3 {
             font-size: 12px;
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 1px;
-            color: var(--text-secondary);
-            margin: 0 0 12px 0;
-            padding: 0 8px;
+            color: #666666;
+            margin: 0 0 12px 8px;
           }
 
-          .mobile-items {
-            display: flex;
-            flex-direction: column;
-            gap: 4px;
+          :global([data-theme='dark']) .mobile-section h3 {
+            color: #cccccc;
           }
 
-          .mobile-item {
+          .mobile-link {
             display: block;
             padding: 14px 16px;
             border-radius: 8px;
             text-decoration: none;
-            color: var(--text-color);
+            color: #000000;
             font-size: 16px;
             font-weight: 500;
-            transition: all 0.2s ease;
+            transition: all 0.2s;
             border: 1px solid transparent;
           }
 
-          .mobile-item:hover {
+          :global([data-theme='dark']) .mobile-link {
+            color: #ffffff;
+          }
+
+          .mobile-link:hover {
             background: rgba(99, 102, 241, 0.08);
-            border-color: var(--accent-color);
+            border-color: #6366f1;
           }
         }
 
@@ -824,10 +710,6 @@ export default function TopNav() {
 
           .mobile-overlay {
             top: 60px;
-          }
-
-          .mobile-menu {
-            padding: 16px;
           }
         }
       `}</style>
