@@ -1,8 +1,9 @@
-'use client';
-
 import { useState, useEffect, useCallback } from "react";
-import Link from "next/link";
-import Image from "next/image";
+
+/* ═══════════════════════════════════════════════════════════════
+   BEHIND THE BUILD — FACE-OUT BOOKSHELF v3
+   Desktop: 3×3 · Mobile: 1×9 · Bigger books · Page flip
+   ═══════════════════════════════════════════════════════════════ */
 
 const PAL = {
   charcoal: "#565264",
@@ -12,24 +13,7 @@ const PAL = {
   dustGrey: "#d6cfcb",
 };
 
-interface Project {
-  id: string;
-  title: string;
-  subtitle: string;
-  coverGrad: [string, string];
-  coverAccent: string;
-  accent: string;
-  coverImage: string;
-  spark: string;
-  journey: string;
-  lesson: string;
-  stats: string[];
-  tech: string[];
-  fullStory: string;
-  portfolioLink: string;
-}
-
-const PROJECTS: Project[] = [
+const PROJECTS = [
   {
     id: "seshan-dashboard",
     title: "Seshan Dashboard",
@@ -37,7 +21,6 @@ const PROJECTS: Project[] = [
     coverGrad: ["#0a192f", "#112d4e"],
     coverAccent: "#64ffda",
     accent: "#64ffda",
-    coverImage: "/images/portfolio/seshan-financial-dashboard.webp",
     spark: "A high-value RRSP with dangerous concentration in a single stock. I needed to actually see my risk.",
     journey: "280+ hours across 4 full iterations. Learned Next.js, Flask, and PostgreSQL from scratch.",
     lesson: "The willingness to throw away work and start over is the most underrated skill.",
@@ -53,7 +36,6 @@ const PROJECTS: Project[] = [
     coverGrad: ["#0b1a10", "#143322"],
     coverAccent: "#4ade80",
     accent: "#4ade80",
-    coverImage: "/images/portfolio/seshan-intelligence.webp",
     spark: "Could AI financial analysis run entirely on my machine? No cloud. Complete privacy.",
     journey: "Local Llama 3.2B via Ollama. Portfolio analysis, stress-testing — all on my laptop.",
     lesson: "If I advocate for responsible AI at work, I should build responsibly at home too.",
@@ -69,7 +51,6 @@ const PROJECTS: Project[] = [
     coverGrad: ["#1a1408", "#2d2210"],
     coverAccent: "#f59e0b",
     accent: "#f59e0b",
-    coverImage: "/images/portfolio/mortgage-calculator.webp",
     spark: "House hunting in Oakville. Calculating a million-dollar mortgage on a napkin.",
     journey: "Multi-scenario calculator. Then realized the math was easy — the search was hard.",
     lesson: "The best tools solve a pain point you personally feel.",
@@ -85,7 +66,6 @@ const PROJECTS: Project[] = [
     coverGrad: ["#111111", "#1e1e1e"],
     coverAccent: "#e0e0e0",
     accent: "#d0d0d0",
-    coverImage: "/images/portfolio/calvin-and-hobbes.webp",
     spark: "What if Calvin was a kid AI — learning, hallucinating — and Hobbes was his tiger friend?",
     journey: "30+ strips, 10+ themes. Leonardo AI for characters. Every strip hand-assembled.",
     lesson: "AI is the pencil. I'm the cartoonist.",
@@ -101,7 +81,6 @@ const PROJECTS: Project[] = [
     coverGrad: ["#0a0f1e", "#141e38"],
     coverAccent: "#669bbc",
     accent: "#669bbc",
-    coverImage: "/images/portfolio/AIagents.webp",
     spark: "Everyone talked about agentic AI. I wanted to understand it by building — five times.",
     journey: "5 agents, 5 personas, 5 real problems from my life.",
     lesson: "The best way to understand technology is to build five expressions of it.",
@@ -117,7 +96,6 @@ const PROJECTS: Project[] = [
     coverGrad: ["#1a0808", "#370617"],
     coverAccent: "#FFBA08",
     accent: "#FFBA08",
-    coverImage: "/images/portfolio/gita.webp",
     spark: "The Gita shaped how I think — patience, dharma, karma.",
     journey: "10-moment dharma wheel, 4-layer reveal, Sanskrit verses, live Sage agent.",
     lesson: "Do your work, don't do it for the fruit of it.",
@@ -133,7 +111,6 @@ const PROJECTS: Project[] = [
     coverGrad: ["#14002a", "#240046"],
     coverAccent: "#c77dff",
     accent: "#c77dff",
-    coverImage: "/images/portfolio/creative-works.webp",
     spark: "Goes back to college. Tools change — the impulse doesn't.",
     journey: "Mythology videos, comics, AI art, photography. Bento grid.",
     lesson: "Creativity isn't a phase. It's a thread through your whole life.",
@@ -149,7 +126,6 @@ const PROJECTS: Project[] = [
     coverGrad: ["#151810", "#2a2f1e"],
     coverAccent: "#a4ac86",
     accent: "#a4ac86",
-    coverImage: "/images/portfolio/governance-learning-path.webp",
     spark: "Making AI governance accessible — not papers, but journeys anyone can follow.",
     journey: "158 articles → 6 notebooks → 173 cards → audits → 5 paths.",
     lesson: "Teaching is organization more than knowledge.",
@@ -165,7 +141,6 @@ const PROJECTS: Project[] = [
     coverGrad: ["#0e0b14", "#1a1525"],
     coverAccent: "#a78bfa",
     accent: "#a78bfa",
-    coverImage: "/images/breaks/vibe-background.png",
     spark: "Needed a home — not a resume, but a living portfolio.",
     journey: "Rayo template → GSAP → Framer Motion → Lenis → everything above.",
     lesson: "A personal site is never done. It grows as you grow.",
@@ -176,7 +151,24 @@ const PROJECTS: Project[] = [
   },
 ];
 
-function Book({ project, isDark }: { project: Project; isDark: boolean }) {
+function CoverArt({ project }) {
+  const [g1] = project.coverGrad;
+  const a = project.coverAccent;
+  return (
+    <svg viewBox="0 0 120 120" style={{ width: "100%", height: "100%", display: "block" }}>
+      <rect width="120" height="120" fill={g1} />
+      <circle cx="60" cy="60" r="45" fill="none" stroke={a} strokeWidth="0.5" opacity="0.2" />
+      <circle cx="60" cy="60" r="30" fill="none" stroke={a} strokeWidth="0.3" opacity="0.15" />
+      <line x1="20" y1="100" x2="100" y2="20" stroke={a} strokeWidth="0.4" opacity="0.12" />
+      <rect x="30" y="30" width="60" height="60" rx="2" fill="none" stroke={a} strokeWidth="0.3" opacity="0.1" />
+      <circle cx="60" cy="55" r="12" fill={a} opacity="0.08" />
+      <text x="60" y="60" textAnchor="middle" dominantBaseline="middle" fill={a} fontSize="18" opacity="0.25" fontFamily="'Libre Baskerville', serif">{project.title.charAt(0)}</text>
+    </svg>
+  );
+}
+
+/* ── Book ── */
+function Book({ project, isDark }) {
   const [coverOpen, setCoverOpen] = useState(false);
   const [page1Flipped, setPage1Flipped] = useState(false);
   const [g1, g2] = project.coverGrad;
@@ -200,6 +192,7 @@ function Book({ project, isDark }: { project: Project; isDark: boolean }) {
   return (
     <div
       style={{ width: "100%", maxWidth: 290, aspectRatio: "5 / 7", perspective: "1400px", position: "relative", zIndex: coverOpen ? 20 : 1, margin: "0 auto" }}
+      onMouseEnter={() => !coverOpen && setCoverOpen(true)}
     >
       <div style={{ width: "100%", height: "100%", position: "relative", transformStyle: "preserve-3d" }}>
 
@@ -233,7 +226,7 @@ function Book({ project, isDark }: { project: Project; isDark: boolean }) {
 
             <div style={{ height: 1, background: isDark ? `${PAL.dustyMauve}18` : `${PAL.dustyMauve}25`, margin: "16px 0" }} />
 
-            <Link href={project.portfolioLink} style={{
+            <a href={project.portfolioLink} style={{
               display: "inline-flex", alignItems: "center", gap: 6,
               padding: "10px 20px", borderRadius: 6,
               background: isDark ? `${PAL.dustyMauve}14` : `${PAL.dustyMauve}1a`,
@@ -241,7 +234,7 @@ function Book({ project, isDark }: { project: Project; isDark: boolean }) {
               color: isDark ? PAL.almondSilk : PAL.charcoal,
               fontSize: 11, fontFamily: "'JetBrains Mono', monospace",
               textDecoration: "none", fontWeight: 600, letterSpacing: "0.04em",
-            }}>View Project →</Link>
+            }}>View Project →</a>
 
             <button onClick={(e) => { e.stopPropagation(); closeAll(); }} style={{
               display: "flex", alignItems: "center", gap: 5,
@@ -311,6 +304,7 @@ function Book({ project, isDark }: { project: Project; isDark: boolean }) {
               </div>
             </div>
 
+            {/* Always-visible bottom section */}
             <div style={{ flexShrink: 0, paddingTop: 8, borderTop: `1px solid ${isDark ? PAL.dustyMauve + "15" : PAL.dustyMauve + "22"}`, marginTop: 8 }}>
               <button onClick={(e) => { e.stopPropagation(); setPage1Flipped(true); }} style={{
                 display: "flex", alignItems: "center", gap: 6,
@@ -330,14 +324,7 @@ function Book({ project, isDark }: { project: Project; isDark: boolean }) {
 
         {/* FRONT COVER */}
         <div
-          onClick={(e) => {
-            e.stopPropagation();
-            if (coverOpen) {
-              closeFromCover();
-            } else {
-              setCoverOpen(true);
-            }
-          }}
+          onClick={(e) => { e.stopPropagation(); if (coverOpen) closeFromCover(); }}
           style={{
             position: "absolute", inset: 0, backfaceVisibility: "hidden",
             transformOrigin: "left center",
@@ -345,65 +332,50 @@ function Book({ project, isDark }: { project: Project; isDark: boolean }) {
             transition: "transform 0.65s cubic-bezier(0.4, 0.2, 0.2, 1)",
             zIndex: 3, borderRadius: "2px 6px 6px 2px", overflow: "hidden",
             boxShadow: coverOpen ? "-6px 4px 18px rgba(0,0,0,0.35)" : "2px 4px 16px rgba(0,0,0,0.3), 0 1px 3px rgba(0,0,0,0.2)",
-            cursor: "pointer",
+            cursor: coverOpen ? "pointer" : "default",
           }}
         >
           <div style={{
-            width: "100%", height: "100%", position: "relative",
+            width: "100%", height: "100%",
+            background: `linear-gradient(160deg, ${g1} 0%, ${g2} 100%)`,
             display: "flex", flexDirection: "column",
             alignItems: "center", justifyContent: "center",
-            padding: "28px 18px",
+            padding: "28px 18px", position: "relative",
           }}>
-            {/* Full image background */}
-            <Image
-              src={project.coverImage}
-              alt={project.title}
-              fill
-              style={{ objectFit: "cover" }}
-            />
+            <div style={{ position: "absolute", inset: 0, opacity: 0.04, backgroundImage: `repeating-linear-gradient(0deg, transparent, transparent 2px, ${ca} 2px, ${ca} 2.5px), repeating-linear-gradient(90deg, transparent, transparent 4px, ${ca} 4px, ${ca} 4.5px)`, pointerEvents: "none" }} />
+            <div style={{ position: "absolute", left: 0, top: 0, bottom: 0, width: 6, background: "linear-gradient(to right, rgba(0,0,0,0.3), rgba(0,0,0,0.08))" }} />
+            <div style={{ position: "absolute", top: 20, left: 22, right: 22, height: 0.8, background: ca, opacity: 0.15 }} />
+            <div style={{ position: "absolute", top: 24, left: 30, right: 30, height: 0.5, background: ca, opacity: 0.08 }} />
 
-            {/* Dark overlay for better text readability */}
             <div style={{
-              position: "absolute", inset: 0,
-              background: "linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.7))",
-            }} />
-
-            {/* Cloth texture overlay */}
-            <div style={{ position: "absolute", inset: 0, opacity: 0.03, backgroundImage: `repeating-linear-gradient(0deg, transparent, transparent 2px, ${ca} 2px, ${ca} 2.5px), repeating-linear-gradient(90deg, transparent, transparent 4px, ${ca} 4px, ${ca} 4.5px)`, pointerEvents: "none" }} />
-
-            {/* Binding edge */}
-            <div style={{ position: "absolute", left: 0, top: 0, bottom: 0, width: 6, background: "linear-gradient(to right, rgba(0,0,0,0.4), rgba(0,0,0,0.1))" }} />
-
-            {/* Top decorative lines */}
-            <div style={{ position: "absolute", top: 20, left: 22, right: 22, height: 0.8, background: ca, opacity: 0.3 }} />
-            <div style={{ position: "absolute", top: 24, left: 30, right: 30, height: 0.5, background: ca, opacity: 0.2 }} />
-
-            {/* Title and subtitle - positioned in center */}
-            <div style={{ position: "relative", zIndex: 1, textAlign: "center" }}>
-              <h3 style={{
-                fontSize: "clamp(14px, 2.2vw, 20px)",
-                fontFamily: "'Libre Baskerville', serif", fontWeight: 700,
-                color: "#ffffff", textAlign: "center", lineHeight: 1.35,
-                margin: "0 0 8px", letterSpacing: "0.04em",
-                textShadow: "0 2px 8px rgba(0,0,0,0.8), 0 1px 3px rgba(0,0,0,0.9)",
-              }}>{project.title}</h3>
-              <p style={{
-                fontSize: "clamp(9px, 1.3vw, 12px)",
-                fontFamily: "'JetBrains Mono', monospace",
-                color: "#ffffff", opacity: 0.8, textAlign: "center", margin: 0,
-                textShadow: "0 1px 4px rgba(0,0,0,0.8)",
-              }}>{project.subtitle}</p>
+              width: "55%", maxWidth: 130, aspectRatio: "1", borderRadius: 4,
+              overflow: "hidden", border: `1px solid ${ca}18`, marginBottom: 18,
+              boxShadow: "0 2px 8px rgba(0,0,0,0.2)",
+            }}>
+              <CoverArt project={project} />
             </div>
 
-            {/* Bottom decorative lines */}
-            <div style={{ position: "absolute", bottom: 24, left: 30, right: 30, height: 0.5, background: ca, opacity: 0.2 }} />
-            <div style={{ position: "absolute", bottom: 20, left: 22, right: 22, height: 0.8, background: ca, opacity: 0.3 }} />
+            <h3 style={{
+              fontSize: "clamp(12px, 1.8vw, 16px)",
+              fontFamily: "'Libre Baskerville', serif", fontWeight: 700,
+              color: ca, textAlign: "center", lineHeight: 1.35,
+              margin: "0 0 5px", letterSpacing: "0.04em",
+              textShadow: "0 1px 3px rgba(0,0,0,0.4)",
+            }}>{project.title}</h3>
+            <p style={{
+              fontSize: "clamp(8px, 1.1vw, 10px)",
+              fontFamily: "'JetBrains Mono', monospace",
+              color: ca, opacity: 0.45, textAlign: "center", margin: 0,
+            }}>{project.subtitle}</p>
+
+            <div style={{ position: "absolute", bottom: 24, left: 30, right: 30, height: 0.5, background: ca, opacity: 0.08 }} />
+            <div style={{ position: "absolute", bottom: 20, left: 22, right: 22, height: 0.8, background: ca, opacity: 0.15 }} />
 
             {!coverOpen && (
-              <div style={{ position: "absolute", bottom: 30, left: 0, right: 0, textAlign: "center", fontSize: 8, fontFamily: "'JetBrains Mono', monospace", color: "#ffffff", opacity: 0.5, letterSpacing: "0.1em", textShadow: "0 1px 3px rgba(0,0,0,0.8)" }}>CLICK TO OPEN</div>
+              <div style={{ position: "absolute", bottom: 30, left: 0, right: 0, textAlign: "center", fontSize: 8, fontFamily: "'JetBrains Mono', monospace", color: ca, opacity: 0.3, letterSpacing: "0.1em" }}>HOVER TO OPEN</div>
             )}
             {coverOpen && (
-              <div style={{ position: "absolute", bottom: 30, left: 0, right: 0, textAlign: "center", fontSize: 8, fontFamily: "'JetBrains Mono', monospace", color: "#ffffff", opacity: 0.7, letterSpacing: "0.1em", transform: "scaleX(-1)", textShadow: "0 1px 3px rgba(0,0,0,0.8)" }}>CLICK TO CLOSE</div>
+              <div style={{ position: "absolute", bottom: 30, left: 0, right: 0, textAlign: "center", fontSize: 8, fontFamily: "'JetBrains Mono', monospace", color: ca, opacity: 0.5, letterSpacing: "0.1em", transform: "scaleX(-1)" }}>CLICK TO CLOSE</div>
             )}
           </div>
         </div>
@@ -412,7 +384,8 @@ function Book({ project, isDark }: { project: Project; isDark: boolean }) {
   );
 }
 
-function ShelfPlank({ isDark }: { isDark: boolean }) {
+/* ── Shelf ── */
+function ShelfPlank({ isDark }) {
   const top = isDark ? "#4a4456" : "#8a7d6e";
   const mid = isDark ? "#3a3444" : "#7a6d5e";
   const dark = isDark ? "#2e2a36" : "#6a5d4e";
@@ -439,7 +412,7 @@ function ShelfPlank({ isDark }: { isDark: boolean }) {
   );
 }
 
-function ShelfRow({ books, isDark }: { books: Project[]; isDark: boolean }) {
+function ShelfRow({ books, isDark }) {
   return (
     <div style={{ position: "relative", marginBottom: 8 }}>
       {/* Back panel */}
@@ -451,13 +424,14 @@ function ShelfRow({ books, isDark }: { books: Project[]; isDark: boolean }) {
       }} />
       {["left", "right"].map((s) => (
         <div key={s} style={{
-          position: "absolute", [s === "left" ? "left" : "right"]: -14, top: -16, bottom: 16, width: 14,
+          position: "absolute", [s]: -14, top: -16, bottom: 16, width: 14,
           background: isDark ? `linear-gradient(to ${s === "left" ? "right" : "left"}, #3a3444, #3a3444cc)` : `linear-gradient(to ${s === "left" ? "right" : "left"}, #9a8e7e, #9a8e7ecc)`,
           borderRadius: s === "left" ? "4px 0 0 4px" : "0 4px 4px 0",
           boxShadow: isDark ? `${s === "left" ? "-" : ""}2px 0 5px rgba(0,0,0,0.2)` : `${s === "left" ? "-" : ""}1px 0 3px rgba(0,0,0,0.05)`,
           zIndex: 1, transition: "all 0.6s",
         }} />
       ))}
+      {/* Books */}
       <div style={{
         display: "flex", justifyContent: "center",
         gap: 20, padding: "14px 20px 8px",
@@ -470,7 +444,8 @@ function ShelfRow({ books, isDark }: { books: Project[]; isDark: boolean }) {
   );
 }
 
-export default function BehindTheScenesPage() {
+/* ── MAIN ── */
+export default function BehindTheBuildFaceOutV3() {
   const [isDark, setIsDark] = useState(true);
   const [isMobile, setIsMobile] = useState(false);
 
@@ -479,39 +454,6 @@ export default function BehindTheScenesPage() {
     check();
     window.addEventListener("resize", check);
     return () => window.removeEventListener("resize", check);
-  }, []);
-
-  useEffect(() => {
-    const saved = localStorage.getItem('theme');
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    const shouldBeDark = saved === 'dark' || (!saved && prefersDark);
-    setIsDark(shouldBeDark);
-    document.documentElement.setAttribute('data-theme', shouldBeDark ? 'dark' : 'light');
-
-    // Listen for theme changes from TopNav
-    const handleStorageChange = (e: StorageEvent) => {
-      if (e.key === 'theme') {
-        const newTheme = e.newValue === 'dark';
-        setIsDark(newTheme);
-        document.documentElement.setAttribute('data-theme', newTheme ? 'dark' : 'light');
-      }
-    };
-
-    // Also listen for custom event (in case TopNav triggers it on same page)
-    const handleThemeChange = () => {
-      const saved = localStorage.getItem('theme');
-      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      const shouldBeDark = saved === 'dark' || (!saved && prefersDark);
-      setIsDark(shouldBeDark);
-    };
-
-    window.addEventListener('storage', handleStorageChange);
-    window.addEventListener('themeChange', handleThemeChange);
-
-    return () => {
-      window.removeEventListener('storage', handleStorageChange);
-      window.removeEventListener('themeChange', handleThemeChange);
-    };
   }, []);
 
   const shelves = isMobile
@@ -529,8 +471,37 @@ export default function BehindTheScenesPage() {
     }}>
       <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;700&family=JetBrains+Mono:wght@400;600&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
 
+      {/* Top bar */}
+      <div style={{
+        position: "fixed", top: 0, left: 0, right: 0, zIndex: 50,
+        display: "flex", justifyContent: "space-between", alignItems: "center", padding: "10px 20px",
+        background: isDark ? "rgba(26,23,30,0.9)" : "rgba(220,212,200,0.92)",
+        backdropFilter: "blur(14px)",
+        borderBottom: `1px solid ${isDark ? "rgba(255,255,255,0.04)" : "rgba(0,0,0,0.08)"}`,
+        transition: "all 0.6s",
+      }}>
+        <a href="/" style={{
+          display: "flex", alignItems: "center", gap: 7, textDecoration: "none",
+          color: isDark ? PAL.almondSilk : PAL.charcoal,
+          fontSize: 11, fontFamily: "'JetBrains Mono', monospace", letterSpacing: "0.08em", opacity: 0.65,
+        }}>
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          HOME
+        </a>
+        <button onClick={() => setIsDark(!isDark)} style={{
+          display: "flex", alignItems: "center", gap: 7, padding: "5px 13px", borderRadius: 18,
+          border: `1px solid ${isDark ? PAL.dimGrey + "33" : PAL.dimGrey + "55"}`,
+          background: isDark ? `${PAL.charcoal}33` : `${PAL.dustGrey}88`,
+          color: isDark ? PAL.almondSilk : PAL.charcoal,
+          fontSize: 11, fontFamily: "'JetBrains Mono', monospace", cursor: "pointer",
+          letterSpacing: "0.06em", transition: "all 0.4s",
+        }}>
+          {isDark ? "☀" : "☾"} <span>{isDark ? "LIGHT" : "DARK"}</span>
+        </button>
+      </div>
+
       {/* Title */}
-      <div style={{ textAlign: "center", marginBottom: 40, marginTop: 100 }}>
+      <div style={{ textAlign: "center", marginBottom: 40, marginTop: 50 }}>
         <p style={{
           fontSize: 10, fontFamily: "'JetBrains Mono', monospace",
           color: PAL.dustyMauve, letterSpacing: "0.28em", textTransform: "uppercase",
@@ -560,7 +531,7 @@ export default function BehindTheScenesPage() {
         fontFamily: "'JetBrains Mono', monospace",
         color: isDark ? `${PAL.charcoal}88` : `${PAL.dimGrey}99`,
         letterSpacing: "0.06em",
-      }}>click to open · click cover to close · flip pages for the full story</p>
+      }}>hover to open · click cover to close · flip pages for the full story</p>
     </div>
   );
 }

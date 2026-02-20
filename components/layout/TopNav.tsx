@@ -21,6 +21,8 @@ function useTheme() {
     setIsDark(newTheme);
     localStorage.setItem('theme', newTheme ? 'dark' : 'light');
     document.documentElement.setAttribute('data-theme', newTheme ? 'dark' : 'light');
+    // Dispatch custom event for components to listen to theme changes
+    window.dispatchEvent(new CustomEvent('themeChange'));
   };
 
   return { isDark, toggleTheme };
@@ -113,8 +115,36 @@ export default function TopNav() {
 
   return (
     <>
-      <nav style={{ position: 'fixed', top: 0, left: 0, right: 0, height: '70px', zIndex: 1000, backdropFilter: scrolled ? 'blur(8px)' : 'none', WebkitBackdropFilter: scrolled ? 'blur(8px)' : 'none' }}>
-        <div style={{ maxWidth: '1400px', margin: '0 auto', height: '100%', padding: '0 30px', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+      <nav style={{
+        position: 'fixed',
+        top: '20px',
+        left: 0,
+        right: 0,
+        height: '70px',
+        zIndex: 1000,
+        background: 'transparent',
+      }}>
+        <div style={{
+          maxWidth: '1400px',
+          margin: '0 auto',
+          height: '100%',
+          padding: '0 30px',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          position: 'relative',
+        }}>
+          {/* Glassmorphic background */}
+          <div style={{
+            position: 'absolute',
+            inset: '-8px',
+            background: isDark ? 'rgba(0, 0, 0, 0.6)' : 'rgba(255, 255, 255, 0.6)',
+            backdropFilter: 'blur(12px)',
+            WebkitBackdropFilter: 'blur(12px)',
+            borderRadius: '16px',
+            zIndex: -1,
+            border: isDark ? '1px solid rgba(255, 255, 255, 0.1)' : '1px solid rgba(0, 0, 0, 0.1)',
+          }} />
 
           {/* Logo */}
           <Link href="/" style={{ fontSize: '20px', fontWeight: 600, color: textColor, textDecoration: 'none' }}>
@@ -294,8 +324,16 @@ export default function TopNav() {
 
       {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div style={{ position: 'fixed', top: '70px', left: 0, right: 0, bottom: 0, background: 'rgba(0, 0, 0, 0.4)', backdropFilter: 'blur(4px)', zIndex: 999 }}>
-          <div style={{ background: isDark ? '#1a1a1a' : '#ffffff', height: '100%', overflowY: 'auto', padding: '20px' }}>
+        <div style={{ position: 'fixed', top: '90px', left: 0, right: 0, bottom: 0, background: 'rgba(0, 0, 0, 0.3)', backdropFilter: 'blur(8px)', WebkitBackdropFilter: 'blur(8px)', zIndex: 999 }}>
+          <div style={{
+            background: isDark ? 'rgba(0, 0, 0, 0.8)' : 'rgba(255, 255, 255, 0.8)',
+            backdropFilter: 'blur(20px)',
+            WebkitBackdropFilter: 'blur(20px)',
+            height: '100%',
+            overflowY: 'auto',
+            padding: '20px',
+            border: isDark ? '1px solid rgba(255, 255, 255, 0.1)' : '1px solid rgba(0, 0, 0, 0.1)',
+          }}>
             {SECTIONS.map((section) => (
               <div key={section.id} style={{ marginBottom: '32px' }}>
                 <h3 style={{ fontSize: '12px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '1px', color: isDark ? '#cccccc' : '#666666', margin: '0 0 12px 8px' }}>{section.label}</h3>
