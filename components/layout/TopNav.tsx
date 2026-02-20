@@ -430,6 +430,8 @@ export default function TopNav() {
 
         .dropdown-link {
           display: flex;
+          flex-direction: row;
+          align-items: center;
           gap: 12px;
           padding: 12px;
           border-radius: 8px;
@@ -475,6 +477,7 @@ export default function TopNav() {
         }
 
         .dropdown-text {
+          flex: 1;
           display: flex;
           flex-direction: column;
           justify-content: center;
@@ -484,12 +487,14 @@ export default function TopNav() {
           font-size: 15px;
           font-weight: 600;
           margin: 0 0 4px 0;
+          line-height: 1.2;
         }
 
         .dropdown-text p {
           font-size: 13px;
           color: #666666;
           margin: 0;
+          line-height: 1.4;
         }
 
         :global([data-theme='dark']) .dropdown-text p {
