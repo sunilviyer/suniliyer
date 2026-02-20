@@ -237,7 +237,7 @@ export default function TopNav() {
                       <p style={{ fontSize: '13px', color: isDark ? '#cccccc' : '#666666', margin: 0 }}>Professional story</p>
                     </div>
                   </Link>
-                  <a href="/downloads/Sunil_Iyer_Resume.docx" download style={{ display: 'grid', gridTemplateColumns: '60px 1fr', gap: '12px', alignItems: 'center', padding: '12px', borderRadius: '8px', textDecoration: 'none', color: isDark ? '#ffffff' : '#000000' }}
+                  <a href="/downloads/Sunil_Iyer_Resume.pdf" download style={{ display: 'grid', gridTemplateColumns: '60px 1fr', gap: '12px', alignItems: 'center', padding: '12px', borderRadius: '8px', textDecoration: 'none', color: isDark ? '#ffffff' : '#000000' }}
                     onMouseEnter={(e) => e.currentTarget.style.background = 'rgba(99, 102, 241, 0.08)'}
                     onMouseLeave={(e) => e.currentTarget.style.background = 'transparent'}>
                     <div style={{ width: '60px', height: '60px', borderRadius: '8px', background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)', color: 'white', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
@@ -304,7 +304,7 @@ export default function TopNav() {
             <div style={{ marginBottom: '32px' }}>
               <h3 style={{ fontSize: '12px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '1px', color: isDark ? '#cccccc' : '#666666', margin: '0 0 12px 8px' }}>Sunil</h3>
               <Link href="/journey" style={{ display: 'block', padding: '14px 16px', marginBottom: '8px', borderRadius: '8px', textDecoration: 'none', color: isDark ? '#ffffff' : '#000000', fontSize: '16px', fontWeight: 500, border: '1px solid transparent' }}>My Journey</Link>
-              <a href="/downloads/Sunil_Iyer_Resume.docx" download style={{ display: 'block', padding: '14px 16px', marginBottom: '8px', borderRadius: '8px', textDecoration: 'none', color: isDark ? '#ffffff' : '#000000', fontSize: '16px', fontWeight: 500, border: '1px solid transparent' }}>Resume</a>
+              <a href="/downloads/Sunil_Iyer_Resume.pdf" download style={{ display: 'block', padding: '14px 16px', marginBottom: '8px', borderRadius: '8px', textDecoration: 'none', color: isDark ? '#ffffff' : '#000000', fontSize: '16px', fontWeight: 500, border: '1px solid transparent' }}>Resume</a>
             </div>
           </div>
         </div>
