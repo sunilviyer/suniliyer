@@ -690,8 +690,9 @@ export default function TopNav() {
           }
 
           .mobile-link {
-            display: block;
+            display: block !important;
             padding: 14px 16px;
+            margin-bottom: 8px;
             border-radius: 8px;
             text-decoration: none;
             color: #000000;
@@ -708,6 +709,12 @@ export default function TopNav() {
           .mobile-link:hover {
             background: rgba(99, 102, 241, 0.08);
             border-color: #6366f1;
+          }
+
+          .mobile-items {
+            display: flex !important;
+            flex-direction: column !important;
+            gap: 0 !important;
           }
         }
 
