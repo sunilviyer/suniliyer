@@ -184,7 +184,7 @@ export default function TopNav() {
       <nav className={`top-nav ${scrolled ? 'scrolled' : ''}`}>
         <div className="nav-container">
           {/* Logo */}
-          <Link href="/" className="nav-logo">
+          <Link href="/" className="nav-logo" style={{ color: isDark ? '#FFEFD5' : '#264653' }}>
             Sunil Iyer
           </Link>
 
@@ -197,7 +197,10 @@ export default function TopNav() {
                 onMouseEnter={() => setActiveDropdown(section.id)}
                 onMouseLeave={() => setActiveDropdown(null)}
               >
-                <button className={`menu-btn ${activeSection === section.id ? 'active' : ''}`}>
+                <button
+                  className={`menu-btn ${activeSection === section.id ? 'active' : ''}`}
+                  style={{ color: isDark ? '#FFEFD5' : '#264653' }}
+                >
                   {section.label}
                 </button>
 
@@ -350,13 +353,8 @@ export default function TopNav() {
         .nav-logo {
           font-size: 20px;
           font-weight: 600;
-          color: #264653 !important;
           text-decoration: none;
           transition: color 0.2s;
-        }
-
-        :global([data-theme='dark']) .nav-logo {
-          color: #FFEFD5 !important;
         }
 
         .nav-logo:hover {
@@ -378,16 +376,11 @@ export default function TopNav() {
           padding: 8px 16px;
           background: transparent;
           border: none;
-          color: #264653 !important;
           font-size: 15px;
           font-weight: 500;
           cursor: pointer;
           border-radius: 6px;
           transition: all 0.2s;
-        }
-
-        :global([data-theme='dark']) .menu-btn {
-          color: #FFEFD5 !important;
         }
 
         .menu-btn:hover,
