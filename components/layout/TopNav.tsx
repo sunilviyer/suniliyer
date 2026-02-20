@@ -351,8 +351,9 @@ export default function TopNav() {
           transition: 0.3s;
         }
 
-        .checkbox:checked ~ .slider {
+        .checkbox:checked ~ .switch-label {
           background-color: var(--light);
+          border-color: var(--light);
         }
 
         .slider::before {
@@ -368,7 +369,7 @@ export default function TopNav() {
           transition: 0.3s;
         }
 
-        .checkbox:checked ~ .slider::before {
+        .checkbox:checked ~ .switch-label .slider::before {
           transform: translateX(44px);
           background-color: var(--dark);
           box-shadow: none;
