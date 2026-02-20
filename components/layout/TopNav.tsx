@@ -239,16 +239,23 @@ export default function TopNav() {
               </div>
             ))}
 
-            {/* Sunil Menu Item */}
+            {/* Profile Icon Menu Item */}
             <div
-              className="menu-item-wrapper"
+              className="menu-item-wrapper profile-wrapper"
               onMouseEnter={() => setActiveDropdown('sunil')}
               onMouseLeave={() => setActiveDropdown(null)}
             >
               <button
-                className={`menu-item ${pathname === '/journey' ? 'active' : ''}`}
+                className={`profile-btn ${pathname === '/journey' ? 'active' : ''}`}
+                aria-label="Profile menu"
               >
-                Sunil
+                <Image
+                  src="/images/sunil.webp"
+                  alt="Sunil Iyer"
+                  width={30}
+                  height={30}
+                  style={{ borderRadius: '50%', objectFit: 'cover' }}
+                />
               </button>
 
               {activeDropdown === 'sunil' && (
@@ -365,19 +372,7 @@ export default function TopNav() {
                       target={item.external ? '_blank' : undefined}
                       rel={item.external ? 'noopener noreferrer' : undefined}
                     >
-                      <div className="mobile-item-image">
-                        <Image
-                          src={item.image}
-                          alt={item.title}
-                          fill
-                          sizes="80px"
-                          style={{ objectFit: 'cover' }}
-                        />
-                      </div>
-                      <div className="mobile-item-text">
-                        <h4>{item.title}</h4>
-                        <p>{item.description}</p>
-                      </div>
+                      {item.title}
                     </Link>
                   ))}
                 </div>
@@ -389,30 +384,10 @@ export default function TopNav() {
               <h3 className="mobile-section-title">Sunil</h3>
               <div className="mobile-items">
                 <Link href="/journey" className="mobile-item">
-                  <div className="mobile-item-image">
-                    <Image
-                      src="/images/journey/cornell.webp"
-                      alt="Journey"
-                      fill
-                      sizes="80px"
-                      style={{ objectFit: 'cover' }}
-                    />
-                  </div>
-                  <div className="mobile-item-text">
-                    <h4>My Journey</h4>
-                    <p>Professional story and experience</p>
-                  </div>
+                  My Journey
                 </Link>
                 <a href="/downloads/Sunil_Iyer_Resume.docx" download className="mobile-item">
-                  <div className="mobile-item-image resume-icon">
-                    <svg viewBox="0 0 24 24" fill="currentColor">
-                      <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z" />
-                    </svg>
-                  </div>
-                  <div className="mobile-item-text">
-                    <h4>Resume</h4>
-                    <p>Download my resume</p>
-                  </div>
+                  Resume
                 </a>
               </div>
             </div>
@@ -506,6 +481,34 @@ export default function TopNav() {
         .menu-item.active {
           background: rgba(99, 102, 241, 0.1);
           color: var(--accent-color);
+        }
+
+        .profile-btn {
+          width: 44px;
+          height: 44px;
+          padding: 0;
+          background: transparent;
+          border: 2px solid rgba(38, 70, 83, 0.3);
+          border-radius: 50%;
+          cursor: pointer;
+          transition: all 0.2s ease;
+          overflow: hidden;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        [data-theme='dark'] .profile-btn {
+          border-color: rgba(255, 239, 213, 0.3);
+        }
+
+        .profile-btn:hover {
+          border-color: var(--accent-color);
+          transform: scale(1.05);
+        }
+
+        .profile-btn.active {
+          border-color: var(--accent-color);
         }
 
         .dropdown-panel {
@@ -629,22 +632,19 @@ export default function TopNav() {
           height: 24px;
           border-radius: 50%;
           background: linear-gradient(135deg, #fbbf24, #f59e0b);
-          box-shadow: 0 2px 8px rgba(251, 191, 36, 0.6);
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
           display: flex;
           align-items: center;
           justify-content: center;
           font-size: 12px;
-          transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .theme-toggle .knob {
           transform: translateX(26px);
+          transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
         }
 
         [data-theme='dark'] .theme-toggle .knob {
           transform: translateX(0);
           background: linear-gradient(135deg, #6366f1, #8b5cf6);
-          box-shadow: 0 2px 8px rgba(99, 102, 241, 0.6);
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
         }
 
         .contact-btn {
@@ -791,54 +791,20 @@ export default function TopNav() {
           }
 
           .mobile-item {
-            display: flex;
-            gap: 12px;
-            padding: 12px 8px;
+            display: block;
+            padding: 14px 16px;
             border-radius: 8px;
             text-decoration: none;
             color: var(--text-color);
+            font-size: 16px;
+            font-weight: 500;
             transition: all 0.2s ease;
+            border: 1px solid transparent;
           }
 
           .mobile-item:hover {
             background: rgba(99, 102, 241, 0.08);
-          }
-
-          .mobile-item-image {
-            position: relative;
-            width: 50px;
-            height: 50px;
-            flex-shrink: 0;
-            border-radius: 6px;
-            overflow: hidden;
-            background: var(--card-bg);
-          }
-
-          .mobile-item-image.resume-icon {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-          }
-
-          .mobile-item-image.resume-icon svg {
-            width: 24px;
-            height: 24px;
-          }
-
-          .mobile-item-text h4 {
-            font-size: 15px;
-            font-weight: 600;
-            color: var(--text-color);
-            margin: 0 0 2px 0;
-          }
-
-          .mobile-item-text p {
-            font-size: 13px;
-            color: var(--text-secondary);
-            margin: 0;
-            line-height: 1.4;
+            border-color: var(--accent-color);
           }
         }
 
