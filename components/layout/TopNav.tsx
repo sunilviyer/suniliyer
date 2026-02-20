@@ -255,11 +255,18 @@ export default function TopNav() {
             </div>
 
             {/* Theme Toggle */}
-            <button onClick={toggleTheme} style={{ width: '56px', height: '30px', borderRadius: '100px', border: `2px solid ${textColor}`, background: 'transparent', cursor: 'pointer', display: 'flex', alignItems: 'center', padding: '3px', position: 'relative', outline: 'none' }}>
-              <span style={{ width: '24px', height: '24px', borderRadius: '50%', background: isDark ? '#6366f1' : '#f59e0b', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '12px', position: 'absolute', left: isDark ? 'calc(100% - 27px)' : '3px', transition: 'left 0.3s ease' }}>
-                {isDark ? '🌙' : '☀️'}
-              </span>
-            </button>
+            <div className="toggle-switch">
+              <input
+                type="checkbox"
+                className="checkbox"
+                id="theme-checkbox"
+                checked={isDark}
+                onChange={toggleTheme}
+              />
+              <label htmlFor="theme-checkbox" className="switch-label">
+                <span className="slider"></span>
+              </label>
+            </div>
 
             {/* Contact */}
             <button onClick={toggleContact} style={{ width: '44px', height: '44px', borderRadius: '50%', background: 'transparent', border: `2px solid ${textColor}`, cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', color: textColor, transition: 'all 0.2s', outline: 'none' }}>
@@ -311,6 +318,68 @@ export default function TopNav() {
       )}
 
       <style jsx>{`
+        .toggle-switch {
+          position: relative;
+          width: 100px;
+          height: 50px;
+          --light: #d8dbe0;
+          --dark: #28292c;
+          --link: rgb(27, 129, 112);
+          --link-hover: rgb(24, 94, 82);
+        }
+
+        .switch-label {
+          position: absolute;
+          width: 100%;
+          height: 50px;
+          background-color: var(--dark);
+          border-radius: 25px;
+          cursor: pointer;
+          border: 3px solid var(--dark);
+        }
+
+        .checkbox {
+          position: absolute;
+          display: none;
+        }
+
+        .slider {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          border-radius: 25px;
+          -webkit-transition: 0.3s;
+          transition: 0.3s;
+        }
+
+        .checkbox:checked ~ .slider {
+          background-color: var(--light);
+        }
+
+        .slider::before {
+          content: "";
+          position: absolute;
+          top: 10px;
+          left: 10px;
+          width: 25px;
+          height: 25px;
+          border-radius: 50%;
+          -webkit-box-shadow: inset 12px -4px 0px 0px var(--light);
+          box-shadow: inset 12px -4px 0px 0px var(--light);
+          background-color: var(--dark);
+          -webkit-transition: 0.3s;
+          transition: 0.3s;
+        }
+
+        .checkbox:checked ~ .slider::before {
+          -webkit-transform: translateX(50px);
+          -ms-transform: translateX(50px);
+          transform: translateX(50px);
+          background-color: var(--dark);
+          -webkit-box-shadow: none;
+          box-shadow: none;
+        }
+
         @media (max-width: 900px) {
           .desktop-menu {
             display: none !important;
