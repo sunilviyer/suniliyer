@@ -428,16 +428,16 @@ export default function TopNav() {
           right: 0;
           height: 70px;
           background: transparent;
-          backdrop-filter: blur(8px) brightness(1.2);
-          -webkit-backdrop-filter: blur(8px) brightness(1.2);
+          backdrop-filter: blur(8px);
+          -webkit-backdrop-filter: blur(8px);
           text-shadow: 0 0 5px rgba(0,0,0,0.5);
           z-index: 1000;
           transition: all 0.3s ease-out;
         }
 
         .top-nav.scrolled {
-          backdrop-filter: blur(12px) brightness(1.15);
-          -webkit-backdrop-filter: blur(12px) brightness(1.15);
+          backdrop-filter: blur(12px);
+          -webkit-backdrop-filter: blur(12px);
           box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
         }
 
@@ -454,9 +454,13 @@ export default function TopNav() {
         .nav-logo {
           font-size: 20px;
           font-weight: 600;
-          color: var(--text-color);
+          color: #264653;
           text-decoration: none;
           transition: color 0.2s ease;
+        }
+
+        [data-theme='dark'] .nav-logo {
+          color: #FFEFD5;
         }
 
         .nav-logo:hover {
@@ -481,7 +485,7 @@ export default function TopNav() {
           padding: 8px 16px;
           background: transparent;
           border: none;
-          color: var(--text-color);
+          color: #264653;
           font-size: 15px;
           font-weight: 500;
           cursor: pointer;
@@ -490,9 +494,17 @@ export default function TopNav() {
           white-space: nowrap;
         }
 
+        [data-theme='dark'] .menu-item {
+          color: #FFEFD5;
+        }
+
         .menu-item:hover {
           background: rgba(0, 0, 0, 0.05);
           color: var(--accent-color);
+        }
+
+        [data-theme='dark'] .menu-item:hover {
+          background: rgba(255, 255, 255, 0.05);
         }
 
         .menu-item.active {
@@ -639,9 +651,13 @@ export default function TopNav() {
           display: flex;
           align-items: center;
           justify-content: center;
-          color: var(--text-color);
+          color: #264653;
           transition: all 0.3s ease;
           filter: drop-shadow(0 0 5px rgba(0,0,0,.5));
+        }
+
+        [data-theme='dark'] .contact-btn {
+          color: #FFEFD5;
         }
 
         .contact-btn:hover {
@@ -660,10 +676,14 @@ export default function TopNav() {
           backdrop-filter: blur(10px);
           border: 1px solid rgba(255, 255, 255, 0.2);
           border-radius: 8px;
-          color: var(--text-color);
+          color: #264653;
           cursor: pointer;
           transition: all 0.2s ease;
           filter: drop-shadow(0 0 5px rgba(0,0,0,.5));
+        }
+
+        [data-theme='dark'] .mobile-menu-btn {
+          color: #FFEFD5;
         }
 
         .mobile-menu-btn svg {
