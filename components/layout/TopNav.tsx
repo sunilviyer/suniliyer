@@ -184,7 +184,7 @@ export default function TopNav() {
       <nav className={`top-nav ${scrolled ? 'scrolled' : ''}`}>
         <div className="nav-container">
           {/* Logo */}
-          <Link href="/" className="nav-logo" style={{ color: isDark ? '#FFEFD5 !important' : '#264653 !important' } as React.CSSProperties}>
+          <Link href="/" className={`nav-logo ${isDark ? 'logo-dark' : 'logo-light'}`}>
             Sunil Iyer
           </Link>
 
@@ -198,8 +198,7 @@ export default function TopNav() {
                 onMouseLeave={() => setActiveDropdown(null)}
               >
                 <button
-                  className={`menu-btn ${activeSection === section.id ? 'active' : ''}`}
-                  style={{ color: isDark ? '#FFEFD5' : '#264653' }}
+                  className={`menu-btn ${activeSection === section.id ? 'active' : ''} ${isDark ? 'btn-dark' : 'btn-light'}`}
                 >
                   {section.label}
                 </button>
@@ -357,8 +356,16 @@ export default function TopNav() {
         .nav-logo {
           font-size: 20px;
           font-weight: 600;
-          text-decoration: none;
+          text-decoration: none !important;
           transition: color 0.2s;
+        }
+
+        .logo-light {
+          color: #264653 !important;
+        }
+
+        .logo-dark {
+          color: #FFEFD5 !important;
         }
 
         .nav-logo:hover {
@@ -386,6 +393,14 @@ export default function TopNav() {
           border-radius: 6px;
           transition: all 0.2s;
           outline: none;
+        }
+
+        .btn-light {
+          color: #264653 !important;
+        }
+
+        .btn-dark {
+          color: #FFEFD5 !important;
         }
 
         .menu-btn:focus {
