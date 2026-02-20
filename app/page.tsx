@@ -9,6 +9,7 @@ import { SplashScreen } from '@/components/homepage/SplashScreen';
 import { InitialsPhotoReveal } from '@/components/homepage/InitialsPhotoReveal';
 import { LearningPathsAccordion } from '@/components/homepage/LearningPathsAccordion';
 import { PortfolioShowcase } from '@/components/homepage/PortfolioShowcase';
+import { BehindTheScenesBookshelf } from '@/components/homepage/BehindTheScenesBookshelf';
 
 export default function HomePage() {
   useGsapScrollScaleAnimations();
@@ -167,7 +168,45 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Break Card 3: About Me - Above About */}
+      {/* Break Card 3: Behind the Scenes - Above Behind the Scenes */}
+      <section className="break-card-section">
+        <div className="card-container">
+          <div className="card break-card break-card-behind-scenes scroll-card-animate">
+            <div className="break-card-overlay" />
+            <h2 className="break-card-title">Behind the Scenes</h2>
+          </div>
+        </div>
+      </section>
+
+      {/* Behind the Scenes Section */}
+      <section className="section behind-scenes-section" style={{position: 'relative'}}>
+        <div className="container">
+          <div className="section-header">
+            <div className="section-label loading__item">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                <path d="M19.6,9.6c0,0-3,0-4,0c-0.4,0-1.8-0.2-1.8-0.2c-0.6-0.1-1.1-0.2-1.6-0.6c-0.5-0.3-0.9-0.8-1.2-1.2c-0.3-0.4-0.4-0.9-0.5-1.4c0,0-0.1-1.1-0.2-1.5c-0.1-1.1,0-4.4,0-4.4C10.4,0.2,10.2,0,10,0S9.6,0.2,9.6,0.4c0,0,0.1,3.3,0,4.4c0,0.4-0.2,1.5-0.2,1.5C9.4,6.7,9.2,7.2,9,7.6C8.7,8.1,8.2,8.5,7.8,8.9c-0.5,0.3-1,0.5-1.6,0.6c0,0-1.2,0.1-1.7,0.2c-1,0.1-4.2,0-4.2,0C0.2,9.6,0,9.8,0,10c0,0.2,0.2,0.4,0.4,0.4c0,0,3.1-0.1,4.2,0c0.4,0,1.7,0.2,1.7,0.2c0.6,0.1,1.1,0.2,1.6,0.6c0.4,0.3,0.8,0.7,1.1,1.1c0.3,0.5,0.5,1,0.6,1.6c0,0,0.1,1.3,0.2,1.7c0,1,0,4.1,0,4.1c0,0.2,0.2,0.4,0.4,0.4s0.4-0.2,0.4-0.4c0,0,0-3.1,0-4.1c0-0.4,0.2-1.7,0.2-1.7c0.1-0.6,0.2-1.1,0.6-1.6c0.3-0.4,0.7-0.8,1.1-1.1c0.5-0.3,1-0.5,1.6-0.6c0,0,1.3-0.1,1.8-0.2c1,0,4,0,4,0c0.2,0,0.4-0.2,0.4-0.4C20,9.8,19.8,9.6,19.6,9.6L19.6,9.6z"/>
+              </svg>
+              <span>Behind the Scenes</span>
+            </div>
+            <h2 className="section-title loading__item">
+              Nine projects, nine journeys
+            </h2>
+            <p className="section-subtitle loading__item">
+              Each one holds the spark, the struggle, and the lesson
+            </p>
+          </div>
+
+          <BehindTheScenesBookshelf />
+        </div>
+
+        {/* Scroll Indicator */}
+        <div className="section-scroll-indicator">
+          <div className="scroll-indicator-line" />
+          <span className="scroll-indicator-text">Scroll</span>
+        </div>
+      </section>
+
+      {/* Break Card 4: About Me - Above About */}
       <section className="break-card-section">
         <div className="card-container">
           <div className="card break-card break-card-about scroll-card-animate">
@@ -251,7 +290,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Break Card 4: Contact - Above Contact */}
+      {/* Break Card 5: Contact - Above Contact */}
       <section className="break-card-section">
         <div className="card-container">
           <div className="card break-card break-card-contact scroll-card-animate">
@@ -703,6 +742,10 @@ export default function HomePage() {
           background-image: url('/images/breaks/portfolio-page-break.png');
         }
 
+        .break-card-behind-scenes {
+          background-image: url('/images/breaks/Behind-Scene-Break.webp');
+        }
+
         .break-card-about {
           background-image: url('/images/breaks/about-me-page-break.webp');
         }
@@ -794,6 +837,14 @@ export default function HomePage() {
           line-height: 1.2;
           color: var(--text-primary);
           margin: 0;
+        }
+
+        .section-subtitle {
+          font-size: clamp(16px, 2vw, 20px);
+          line-height: 1.6;
+          color: var(--text-secondary);
+          max-width: 600px;
+          margin: 16px 0 0 0;
         }
 
         /* Contact Section */
