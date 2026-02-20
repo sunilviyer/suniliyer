@@ -5,7 +5,6 @@ import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
 
-// Theme hook
 function useTheme() {
   const [isDark, setIsDark] = useState(false);
 
@@ -31,22 +30,10 @@ const SECTIONS = [
   {
     id: 'intelligence',
     label: 'Intelligence',
-    routes: ['/seshan', '/ai-agents', 'suniliyer.ca/seshan'],
+    routes: ['/seshan', '/ai-agents'],
     items: [
-      {
-        title: 'Seshan Intelligence',
-        description: 'AI-powered business platform',
-        image: '/images/portfolio/seshan-intelligence.webp',
-        href: 'https://www.suniliyer.ca/seshan/demo/',
-        external: true,
-      },
-      {
-        title: 'AI Agents',
-        description: 'Intelligent automation solutions',
-        image: '/images/portfolio/AIagents.webp',
-        href: '/ai-agents',
-        external: false,
-      },
+      { title: 'Seshan Intelligence', description: 'AI-powered business platform', image: '/images/portfolio/seshan-intelligence.webp', href: 'https://www.suniliyer.ca/seshan/demo/', external: true },
+      { title: 'AI Agents', description: 'Intelligent automation solutions', image: '/images/portfolio/AIagents.webp', href: '/ai-agents', external: false },
     ],
   },
   {
@@ -54,76 +41,22 @@ const SECTIONS = [
     label: 'The Left Brain',
     routes: ['/gita', '/calvinhobbes', '/creative-works', '/mortgage-calculator'],
     items: [
-      {
-        title: 'Bhagavad Gita',
-        description: 'Interactive wisdom exploration',
-        image: '/images/portfolio/gita.webp',
-        href: '/gita',
-        external: false,
-      },
-      {
-        title: 'Calvin & Hobbes',
-        description: 'Comic strip appreciation',
-        image: '/images/portfolio/calvin-and-hobbes.webp',
-        href: '/calvinhobbes',
-        external: false,
-      },
-      {
-        title: 'Creative Works',
-        description: 'Poetry and creative writing',
-        image: '/images/portfolio/creative-works.webp',
-        href: '/creative-works',
-        external: false,
-      },
-      {
-        title: 'Mortgage Calculator',
-        description: 'Financial planning tool',
-        image: '/images/portfolio/mortgage-calculator.webp',
-        href: '/mortgage-calculator',
-        external: false,
-      },
+      { title: 'Bhagavad Gita', description: 'Interactive wisdom exploration', image: '/images/portfolio/gita.webp', href: '/gita', external: false },
+      { title: 'Calvin & Hobbes', description: 'Comic strip appreciation', image: '/images/portfolio/calvin-and-hobbes.webp', href: '/calvinhobbes', external: false },
+      { title: 'Creative Works', description: 'Poetry and creative writing', image: '/images/portfolio/creative-works.webp', href: '/creative-works', external: false },
+      { title: 'Mortgage Calculator', description: 'Financial planning tool', image: '/images/portfolio/mortgage-calculator.webp', href: '/mortgage-calculator', external: false },
     ],
   },
   {
     id: 'monologue',
     label: 'The Inner Monologue',
-    routes: ['/history', '/terminology', '/risk', '/responsibility', '/future', '/articles'],
+    routes: ['/history', '/terminology', '/risk', '/responsibility', '/future'],
     items: [
-      {
-        title: 'History',
-        description: 'AI evolution and milestones',
-        image: '/images/history/ai-history.webp',
-        href: '/history',
-        external: false,
-      },
-      {
-        title: 'Terminology',
-        description: 'Key concepts explained',
-        image: '/images/terminology/terminology-hero.webp',
-        href: '/terminology',
-        external: false,
-      },
-      {
-        title: 'Risk',
-        description: 'Challenges and concerns',
-        image: '/images/risk/risk-hero.webp',
-        href: '/risk',
-        external: false,
-      },
-      {
-        title: 'Responsibility',
-        description: 'Ethical considerations',
-        image: '/images/responsibility/responsibility-hero.webp',
-        href: '/responsibility',
-        external: false,
-      },
-      {
-        title: 'Future',
-        description: 'Vision and possibilities',
-        image: '/images/future/future-hero.webp',
-        href: '/future',
-        external: false,
-      },
+      { title: 'History', description: 'AI evolution and milestones', image: '/images/history/ai-history.webp', href: '/history', external: false },
+      { title: 'Terminology', description: 'Key concepts explained', image: '/images/terminology/terminology-hero.webp', href: '/terminology', external: false },
+      { title: 'Risk', description: 'Challenges and concerns', image: '/images/risk/risk-hero.webp', href: '/risk', external: false },
+      { title: 'Responsibility', description: 'Ethical considerations', image: '/images/responsibility/responsibility-hero.webp', href: '/responsibility', external: false },
+      { title: 'Future', description: 'Vision and possibilities', image: '/images/future/future-hero.webp', href: '/future', external: false },
     ],
   },
 ];
@@ -137,9 +70,7 @@ export default function TopNav() {
   const { isDark, toggleTheme } = useTheme();
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
-    };
+    const handleScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -178,47 +109,87 @@ export default function TopNav() {
   };
 
   const activeSection = getActiveSection();
+  const textColor = isDark ? '#FFEFD5' : '#264653';
 
   return (
     <>
-      <nav className={`top-nav ${scrolled ? 'scrolled' : ''}`}>
-        <div className="nav-container">
+      <nav style={{ position: 'fixed', top: 0, left: 0, right: 0, height: '70px', zIndex: 1000, backdropFilter: scrolled ? 'blur(8px)' : 'none', WebkitBackdropFilter: scrolled ? 'blur(8px)' : 'none' }}>
+        <div style={{ maxWidth: '1400px', margin: '0 auto', height: '100%', padding: '0 30px', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+
           {/* Logo */}
-          <Link href="/" className={`nav-logo ${isDark ? 'logo-dark' : 'logo-light'}`}>
+          <Link href="/" style={{ fontSize: '20px', fontWeight: 600, color: textColor, textDecoration: 'none' }}>
             Sunil Iyer
           </Link>
 
           {/* Desktop Menu */}
-          <div className="desktop-menu">
+          <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }} className="desktop-menu">
             {SECTIONS.map((section) => (
               <div
                 key={section.id}
-                className="menu-wrapper"
+                style={{ position: 'relative' }}
                 onMouseEnter={() => setActiveDropdown(section.id)}
                 onMouseLeave={() => setActiveDropdown(null)}
               >
                 <button
-                  className={`menu-btn ${activeSection === section.id ? 'active' : ''} ${isDark ? 'btn-dark' : 'btn-light'}`}
+                  style={{
+                    padding: '8px 16px',
+                    background: activeSection === section.id ? 'rgba(99, 102, 241, 0.1)' : 'transparent',
+                    border: 'none',
+                    color: textColor,
+                    fontSize: '15px',
+                    fontWeight: 500,
+                    cursor: 'pointer',
+                    borderRadius: '6px',
+                    transition: 'all 0.2s',
+                    outline: 'none'
+                  }}
+                  onMouseEnter={(e) => e.currentTarget.style.background = 'rgba(99, 102, 241, 0.1)'}
+                  onMouseLeave={(e) => e.currentTarget.style.background = activeSection === section.id ? 'rgba(99, 102, 241, 0.1)' : 'transparent'}
                 >
                   {section.label}
                 </button>
 
                 {activeDropdown === section.id && (
-                  <div className="dropdown">
+                  <div style={{
+                    position: 'absolute',
+                    top: 'calc(100% + 8px)',
+                    left: '50%',
+                    transform: 'translateX(-50%)',
+                    minWidth: '320px',
+                    background: isDark ? 'rgba(26, 26, 26, 0.95)' : 'rgba(255, 255, 255, 0.95)',
+                    backdropFilter: 'blur(20px)',
+                    border: `1px solid ${isDark ? '#444444' : '#dddddd'}`,
+                    borderRadius: '12px',
+                    boxShadow: '0 8px 32px rgba(0, 0, 0, 0.12)',
+                    padding: '8px',
+                    zIndex: 1000
+                  }}>
                     {section.items.map((item, idx) => (
                       <Link
                         key={idx}
                         href={item.href}
-                        className="dropdown-link"
                         target={item.external ? '_blank' : undefined}
                         rel={item.external ? 'noopener noreferrer' : undefined}
+                        style={{
+                          display: 'grid',
+                          gridTemplateColumns: '60px 1fr',
+                          gap: '12px',
+                          alignItems: 'center',
+                          padding: '12px',
+                          borderRadius: '8px',
+                          textDecoration: 'none',
+                          color: isDark ? '#ffffff' : '#000000',
+                          transition: 'all 0.2s'
+                        }}
+                        onMouseEnter={(e) => e.currentTarget.style.background = 'rgba(99, 102, 241, 0.08)'}
+                        onMouseLeave={(e) => e.currentTarget.style.background = 'transparent'}
                       >
-                        <div className="dropdown-img">
+                        <div style={{ width: '60px', height: '60px', borderRadius: '8px', overflow: 'hidden', background: isDark ? '#2a2a2a' : '#f8f8f8', position: 'relative' }}>
                           <Image src={item.image} alt={item.title} fill style={{ objectFit: 'cover' }} />
                         </div>
-                        <div className="dropdown-text">
-                          <h3>{item.title}</h3>
-                          <p>{item.description}</p>
+                        <div>
+                          <h3 style={{ fontSize: '15px', fontWeight: 600, margin: '0 0 4px 0', lineHeight: 1.2 }}>{item.title}</h3>
+                          <p style={{ fontSize: '13px', color: isDark ? '#cccccc' : '#666666', margin: 0, lineHeight: 1.4 }}>{item.description}</p>
                         </div>
                       </Link>
                     ))}
@@ -228,38 +199,55 @@ export default function TopNav() {
             ))}
           </div>
 
-          {/* Action Buttons */}
-          <div className="actions">
-            {/* Profile Icon */}
+          {/* Actions */}
+          <div style={{ display: 'flex', gap: '12px', alignItems: 'center', marginLeft: '16px' }}>
+
+            {/* Profile */}
             <div
-              className="menu-wrapper"
+              style={{ position: 'relative' }}
               onMouseEnter={() => setActiveDropdown('profile')}
               onMouseLeave={() => setActiveDropdown(null)}
             >
-              <button className="profile-icon" aria-label="Profile">
+              <button style={{ width: '44px', height: '44px', padding: 0, background: 'transparent', border: `2px solid ${textColor}`, borderRadius: '50%', cursor: 'pointer', overflow: 'hidden', display: 'flex', alignItems: 'center', justifyContent: 'center', transition: 'all 0.2s' }}>
                 <Image src="/images/sunil.webp" alt="Sunil Iyer" width={30} height={30} style={{ borderRadius: '50%', objectFit: 'cover' }} />
               </button>
 
               {activeDropdown === 'profile' && (
-                <div className="dropdown">
-                  <Link href="/journey" className="dropdown-link">
-                    <div className="dropdown-img">
+                <div style={{
+                  position: 'absolute',
+                  top: 'calc(100% + 8px)',
+                  right: 0,
+                  minWidth: '280px',
+                  background: isDark ? 'rgba(26, 26, 26, 0.95)' : 'rgba(255, 255, 255, 0.95)',
+                  backdropFilter: 'blur(20px)',
+                  border: `1px solid ${isDark ? '#444444' : '#dddddd'}`,
+                  borderRadius: '12px',
+                  boxShadow: '0 8px 32px rgba(0, 0, 0, 0.12)',
+                  padding: '8px',
+                  zIndex: 1000
+                }}>
+                  <Link href="/journey" style={{ display: 'grid', gridTemplateColumns: '60px 1fr', gap: '12px', alignItems: 'center', padding: '12px', borderRadius: '8px', textDecoration: 'none', color: isDark ? '#ffffff' : '#000000' }}
+                    onMouseEnter={(e) => e.currentTarget.style.background = 'rgba(99, 102, 241, 0.08)'}
+                    onMouseLeave={(e) => e.currentTarget.style.background = 'transparent'}>
+                    <div style={{ width: '60px', height: '60px', borderRadius: '8px', overflow: 'hidden', background: isDark ? '#2a2a2a' : '#f8f8f8', position: 'relative' }}>
                       <Image src="/images/journey/cornell.webp" alt="Journey" fill style={{ objectFit: 'cover' }} />
                     </div>
-                    <div className="dropdown-text">
-                      <h3>My Journey</h3>
-                      <p>Professional story and experience</p>
+                    <div>
+                      <h3 style={{ fontSize: '15px', fontWeight: 600, margin: '0 0 4px 0' }}>My Journey</h3>
+                      <p style={{ fontSize: '13px', color: isDark ? '#cccccc' : '#666666', margin: 0 }}>Professional story</p>
                     </div>
                   </Link>
-                  <a href="/downloads/Sunil_Iyer_Resume.docx" download className="dropdown-link">
-                    <div className="dropdown-img resume-icon">
-                      <svg viewBox="0 0 24 24" fill="currentColor">
+                  <a href="/downloads/Sunil_Iyer_Resume.docx" download style={{ display: 'grid', gridTemplateColumns: '60px 1fr', gap: '12px', alignItems: 'center', padding: '12px', borderRadius: '8px', textDecoration: 'none', color: isDark ? '#ffffff' : '#000000' }}
+                    onMouseEnter={(e) => e.currentTarget.style.background = 'rgba(99, 102, 241, 0.08)'}
+                    onMouseLeave={(e) => e.currentTarget.style.background = 'transparent'}>
+                    <div style={{ width: '60px', height: '60px', borderRadius: '8px', background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)', color: 'white', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                      <svg viewBox="0 0 24 24" fill="currentColor" width="30" height="30">
                         <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z" />
                       </svg>
                     </div>
-                    <div className="dropdown-text">
-                      <h3>Resume</h3>
-                      <p>Download my resume</p>
+                    <div>
+                      <h3 style={{ fontSize: '15px', fontWeight: 600, margin: '0 0 4px 0' }}>Resume</h3>
+                      <p style={{ fontSize: '13px', color: isDark ? '#cccccc' : '#666666', margin: 0 }}>Download resume</p>
                     </div>
                   </a>
                 </div>
@@ -267,12 +255,14 @@ export default function TopNav() {
             </div>
 
             {/* Theme Toggle */}
-            <button className="theme-btn" onClick={toggleTheme} aria-label="Toggle theme">
-              <span className="theme-icon">{isDark ? '🌙' : '☀️'}</span>
+            <button onClick={toggleTheme} style={{ width: '56px', height: '30px', borderRadius: '100px', border: `2px solid ${textColor}`, background: 'transparent', cursor: 'pointer', display: 'flex', alignItems: 'center', padding: '3px', position: 'relative', outline: 'none' }}>
+              <span style={{ width: '24px', height: '24px', borderRadius: '50%', background: isDark ? '#6366f1' : '#f59e0b', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '12px', position: 'absolute', left: isDark ? 'calc(100% - 27px)' : '3px', transition: 'left 0.3s ease' }}>
+                {isDark ? '🌙' : '☀️'}
+              </span>
             </button>
 
-            {/* Contact Button */}
-            <button className="contact-btn" onClick={toggleContact} aria-label={contactOpen ? 'Close' : 'Contact'}>
+            {/* Contact */}
+            <button onClick={toggleContact} style={{ width: '44px', height: '44px', borderRadius: '50%', background: 'transparent', border: `2px solid ${textColor}`, cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', color: textColor, transition: 'all 0.2s', outline: 'none' }}>
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 {contactOpen ? (
                   <>
@@ -284,475 +274,54 @@ export default function TopNav() {
                 )}
               </svg>
             </button>
-          </div>
 
-          {/* Mobile Menu Button */}
-          <button className="mobile-btn" onClick={() => setMobileMenuOpen(!mobileMenuOpen)} aria-label="Menu">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              {mobileMenuOpen ? (
-                <path d="M18 6L6 18M6 6l12 12" />
-              ) : (
-                <path d="M3 12h18M3 6h18M3 18h18" />
-              )}
-            </svg>
-          </button>
+            {/* Mobile Button */}
+            <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} style={{ display: 'none', width: '44px', height: '44px', background: 'transparent', border: `2px solid ${textColor}`, borderRadius: '8px', color: textColor, cursor: 'pointer', alignItems: 'center', justifyContent: 'center' }} className="mobile-btn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="24" height="24">
+                {mobileMenuOpen ? <path d="M18 6L6 18M6 6l12 12" /> : <path d="M3 12h18M3 6h18M3 18h18" />}
+              </svg>
+            </button>
+          </div>
         </div>
       </nav>
 
       {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div className="mobile-overlay">
-          <div className="mobile-menu">
+        <div style={{ position: 'fixed', top: '70px', left: 0, right: 0, bottom: 0, background: 'rgba(0, 0, 0, 0.4)', backdropFilter: 'blur(4px)', zIndex: 999 }}>
+          <div style={{ background: isDark ? '#1a1a1a' : '#ffffff', height: '100%', overflowY: 'auto', padding: '20px' }}>
             {SECTIONS.map((section) => (
-              <div key={section.id} className="mobile-section">
-                <h3>{section.label}</h3>
-                <div className="mobile-items">
-                  {section.items.map((item, idx) => (
-                    <Link key={idx} href={item.href} className="mobile-link" target={item.external ? '_blank' : undefined}>
-                      {item.title}
-                    </Link>
-                  ))}
-                </div>
+              <div key={section.id} style={{ marginBottom: '32px' }}>
+                <h3 style={{ fontSize: '12px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '1px', color: isDark ? '#cccccc' : '#666666', margin: '0 0 12px 8px' }}>{section.label}</h3>
+                {section.items.map((item, idx) => (
+                  <Link key={idx} href={item.href} target={item.external ? '_blank' : undefined} style={{ display: 'block', padding: '14px 16px', marginBottom: '8px', borderRadius: '8px', textDecoration: 'none', color: isDark ? '#ffffff' : '#000000', fontSize: '16px', fontWeight: 500, border: '1px solid transparent' }}
+                    onMouseEnter={(e) => { e.currentTarget.style.background = 'rgba(99, 102, 241, 0.08)'; e.currentTarget.style.borderColor = '#6366f1'; }}
+                    onMouseLeave={(e) => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.borderColor = 'transparent'; }}>
+                    {item.title}
+                  </Link>
+                ))}
               </div>
             ))}
-            <div className="mobile-section">
-              <h3>Sunil</h3>
-              <div className="mobile-items">
-                <Link href="/journey" className="mobile-link">My Journey</Link>
-                <a href="/downloads/Sunil_Iyer_Resume.docx" download className="mobile-link">Resume</a>
-              </div>
+            <div style={{ marginBottom: '32px' }}>
+              <h3 style={{ fontSize: '12px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '1px', color: isDark ? '#cccccc' : '#666666', margin: '0 0 12px 8px' }}>Sunil</h3>
+              <Link href="/journey" style={{ display: 'block', padding: '14px 16px', marginBottom: '8px', borderRadius: '8px', textDecoration: 'none', color: isDark ? '#ffffff' : '#000000', fontSize: '16px', fontWeight: 500, border: '1px solid transparent' }}>My Journey</Link>
+              <a href="/downloads/Sunil_Iyer_Resume.docx" download style={{ display: 'block', padding: '14px 16px', marginBottom: '8px', borderRadius: '8px', textDecoration: 'none', color: isDark ? '#ffffff' : '#000000', fontSize: '16px', fontWeight: 500, border: '1px solid transparent' }}>Resume</a>
             </div>
           </div>
         </div>
       )}
 
       <style jsx>{`
-        .top-nav {
-          position: fixed;
-          top: 0;
-          left: 0;
-          right: 0;
-          height: 70px;
-          z-index: 1000;
-          transition: backdrop-filter 0.3s ease;
-        }
-
-        .top-nav.scrolled {
-          backdrop-filter: blur(8px);
-          -webkit-backdrop-filter: blur(8px);
-        }
-
-        .nav-container {
-          max-width: 1400px;
-          margin: 0 auto;
-          height: 100%;
-          padding: 0 30px;
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-        }
-
-        /* Logo */
-        .nav-logo {
-          font-size: 20px;
-          font-weight: 600;
-          text-decoration: none !important;
-          transition: color 0.2s;
-        }
-
-        .logo-light {
-          color: #264653 !important;
-        }
-
-        .logo-dark {
-          color: #FFEFD5 !important;
-        }
-
-        .nav-logo:hover {
-          color: #6366f1 !important;
-        }
-
-        /* Desktop Menu */
-        .desktop-menu {
-          display: flex;
-          gap: 8px;
-          align-items: center;
-        }
-
-        .menu-wrapper {
-          position: relative;
-        }
-
-        .menu-btn {
-          padding: 8px 16px;
-          background: transparent;
-          border: none;
-          font-size: 15px;
-          font-weight: 500;
-          cursor: pointer;
-          border-radius: 6px;
-          transition: all 0.2s;
-          outline: none;
-        }
-
-        .btn-light {
-          color: #264653 !important;
-        }
-
-        .btn-dark {
-          color: #FFEFD5 !important;
-        }
-
-        .menu-btn:focus {
-          outline: none;
-        }
-
-        .menu-btn:hover {
-          background: rgba(99, 102, 241, 0.1);
-        }
-
-        .menu-btn.active {
-          background: rgba(99, 102, 241, 0.1);
-        }
-
-        /* Dropdown */
-        .dropdown {
-          position: absolute;
-          top: calc(100% + 8px);
-          left: 50%;
-          transform: translateX(-50%);
-          min-width: 320px;
-          background: rgba(255, 255, 255, 0.95);
-          backdrop-filter: blur(20px);
-          border: 1px solid #dddddd;
-          border-radius: 12px;
-          box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
-          padding: 8px;
-          animation: fadeIn 0.2s;
-        }
-
-        :global([data-theme='dark']) .dropdown {
-          background: rgba(26, 26, 26, 0.95);
-          border-color: #444444;
-        }
-
-        @keyframes fadeIn {
-          from {
-            opacity: 0;
-            transform: translateX(-50%) translateY(-10px);
-          }
-          to {
-            opacity: 1;
-            transform: translateX(-50%) translateY(0);
-          }
-        }
-
-        .dropdown-link {
-          width: 100%;
-          display: grid !important;
-          grid-template-columns: 60px 1fr !important;
-          gap: 12px !important;
-          padding: 12px !important;
-          border-radius: 8px !important;
-          text-decoration: none !important;
-          color: #000000 !important;
-          transition: all 0.2s !important;
-          align-items: center !important;
-        }
-
-        :global([data-theme='dark']) .dropdown-link {
-          color: #ffffff !important;
-        }
-
-        .dropdown-link:hover {
-          background: rgba(99, 102, 241, 0.08) !important;
-        }
-
-        .dropdown-img {
-          width: 60px !important;
-          height: 60px !important;
-          border-radius: 8px !important;
-          overflow: hidden !important;
-          background: #f8f8f8 !important;
-          position: relative !important;
-          flex-shrink: 0 !important;
-        }
-
-        :global([data-theme='dark']) .dropdown-img {
-          background: #2a2a2a !important;
-        }
-
-        .resume-icon {
-          width: 60px !important;
-          height: 60px !important;
-          display: flex !important;
-          align-items: center !important;
-          justify-content: center !important;
-          background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
-          color: white !important;
-          border-radius: 8px !important;
-        }
-
-        .resume-icon svg {
-          width: 30px !important;
-          height: 30px !important;
-        }
-
-        .dropdown-text {
-          display: block !important;
-        }
-
-        .dropdown-text h3 {
-          font-size: 15px !important;
-          font-weight: 600 !important;
-          margin: 0 0 4px 0 !important;
-          line-height: 1.2 !important;
-          color: inherit !important;
-        }
-
-        .dropdown-text p {
-          font-size: 13px !important;
-          color: #666666 !important;
-          margin: 0 !important;
-          line-height: 1.4 !important;
-        }
-
-        :global([data-theme='dark']) .dropdown-text p {
-          color: #cccccc !important;
-        }
-
-        /* Actions */
-        .actions {
-          display: flex;
-          gap: 12px;
-          align-items: center;
-          margin-left: 16px;
-        }
-
-        /* Profile Icon */
-        .profile-icon {
-          width: 44px;
-          height: 44px;
-          padding: 0;
-          background: transparent;
-          border: 2px solid #264653;
-          border-radius: 50%;
-          cursor: pointer;
-          overflow: hidden;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          transition: all 0.2s;
-        }
-
-        :global([data-theme='dark']) .profile-icon {
-          border-color: #FFEFD5;
-        }
-
-        .profile-icon:hover {
-          border-color: #6366f1;
-          transform: scale(1.05);
-        }
-
-        /* Theme Toggle */
-        .theme-btn {
-          width: 56px;
-          height: 30px;
-          border-radius: 100px;
-          border: 2px solid #264653;
-          background: transparent;
-          cursor: pointer;
-          display: flex;
-          align-items: center;
-          padding: 3px;
-          transition: all 0.3s;
-          position: relative;
-          outline: none;
-        }
-
-        :global([data-theme='dark']) .theme-btn {
-          border-color: #FFEFD5;
-        }
-
-        .theme-btn:focus {
-          outline: none;
-        }
-
-        .theme-btn:hover {
-          background: rgba(99, 102, 241, 0.1);
-        }
-
-        .theme-icon {
-          width: 24px;
-          height: 24px;
-          border-radius: 50%;
-          background: #f59e0b;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          font-size: 12px;
-          position: absolute;
-          left: 3px;
-          transition: left 0.3s ease;
-        }
-
-        :global([data-theme='dark']) .theme-icon {
-          left: calc(100% - 27px);
-          background: #6366f1;
-        }
-
-        /* Contact Button */
-        .contact-btn {
-          width: 44px;
-          height: 44px;
-          border-radius: 50%;
-          background: transparent;
-          border: 2px solid #264653;
-          cursor: pointer;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          color: #264653;
-          transition: all 0.2s;
-        }
-
-        :global([data-theme='dark']) .contact-btn {
-          border-color: #FFEFD5;
-          color: #FFEFD5;
-        }
-
-        .contact-btn:hover {
-          background: rgba(99, 102, 241, 0.1);
-          border-color: #6366f1;
-          color: #6366f1;
-          transform: scale(1.05);
-        }
-
-        /* Mobile Button */
-        .mobile-btn {
-          display: none;
-          width: 44px;
-          height: 44px;
-          background: transparent;
-          border: 2px solid #264653;
-          border-radius: 8px;
-          color: #264653;
-          cursor: pointer;
-          align-items: center;
-          justify-content: center;
-        }
-
-        :global([data-theme='dark']) .mobile-btn {
-          border-color: #FFEFD5;
-          color: #FFEFD5;
-        }
-
-        .mobile-btn svg {
-          width: 24px;
-          height: 24px;
-        }
-
-        .mobile-overlay {
-          display: none;
-        }
-
         @media (max-width: 900px) {
           .desktop-menu {
-            display: none;
+            display: none !important;
           }
-
-          .actions {
-            margin-left: auto;
-          }
-
           .mobile-btn {
-            display: flex;
-          }
-
-          .mobile-overlay {
-            display: block;
-            position: fixed;
-            top: 70px;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.4);
-            backdrop-filter: blur(4px);
-            z-index: 999;
-          }
-
-          .mobile-menu {
-            background: #ffffff;
-            height: 100%;
-            overflow-y: auto;
-            padding: 20px;
-          }
-
-          :global([data-theme='dark']) .mobile-menu {
-            background: #1a1a1a;
-          }
-
-          .mobile-section {
-            margin-bottom: 32px;
-          }
-
-          .mobile-section h3 {
-            font-size: 12px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: #666666;
-            margin: 0 0 12px 8px;
-          }
-
-          :global([data-theme='dark']) .mobile-section h3 {
-            color: #cccccc;
-          }
-
-          .mobile-link {
-            display: block !important;
-            padding: 14px 16px;
-            margin-bottom: 8px;
-            border-radius: 8px;
-            text-decoration: none;
-            color: #000000;
-            font-size: 16px;
-            font-weight: 500;
-            transition: all 0.2s;
-            border: 1px solid transparent;
-          }
-
-          :global([data-theme='dark']) .mobile-link {
-            color: #ffffff;
-          }
-
-          .mobile-link:hover {
-            background: rgba(99, 102, 241, 0.08);
-            border-color: #6366f1;
-          }
-
-          .mobile-items {
             display: flex !important;
-            flex-direction: column !important;
-            gap: 0 !important;
           }
         }
-
         @media (max-width: 480px) {
-          .top-nav {
-            height: 60px;
-          }
-
-          .nav-container {
-            padding: 0 16px;
-          }
-
-          .nav-logo {
-            font-size: 18px;
-          }
-
-          .mobile-overlay {
-            top: 60px;
+          nav {
+            height: 60px !important;
           }
         }
       `}</style>
