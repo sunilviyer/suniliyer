@@ -425,13 +425,13 @@ export default function TopNav() {
         .nav-logo {
           font-size: 20px;
           font-weight: 600;
-          color: #FFEFD5;
+          color: #264653;
           text-decoration: none;
           transition: color 0.2s ease;
         }
 
         [data-theme='dark'] .nav-logo {
-          color: #264653;
+          color: #FFEFD5;
         }
 
         .nav-logo:hover {
@@ -456,7 +456,7 @@ export default function TopNav() {
           padding: 8px 16px;
           background: transparent;
           border: none;
-          color: #FFEFD5;
+          color: #264653;
           font-size: 15px;
           font-weight: 500;
           cursor: pointer;
@@ -466,7 +466,7 @@ export default function TopNav() {
         }
 
         [data-theme='dark'] .menu-item {
-          color: #264653;
+          color: #FFEFD5;
         }
 
         .menu-item:hover {
