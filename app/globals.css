@@ -95,13 +95,13 @@ body {
   background: var(--bg-primary);
   overflow-x: hidden;
   transition: background-color 0.3s ease;
-  /* Side rail offset — keeps content clear of the 48px fixed rail */
-  padding-left: 48px;
+  /* Top nav offset — keeps content clear of the 70px fixed top nav */
+  padding-top: 70px;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 480px) {
   body {
-    padding-left: 0;
+    padding-top: 60px;
   }
 }
 

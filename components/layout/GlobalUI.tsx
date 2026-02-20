@@ -1,13 +1,13 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { SideRail } from './SideRail';
+import TopNav from './TopNav';
 import { ContactWidget } from '@/components/contact/ContactWidget';
 
 /**
- * GlobalUI — mounts the SideRail, ContactWidget, and the top-right chat button on every page.
+ * GlobalUI — mounts the TopNav, ContactWidget, and the top-right chat button on every page.
  * The chat button sits beside the per-page theme toggles, responsive at the same breakpoints:
- *   Desktop (>768): top:30, right:96, 56×56  (theme toggle at right:30+56=86 → gap of 10)
+ *   Desktop (>768): top:30, right:76, 56×56  (theme toggle at right:30+56=86 → gap of 10)
  *   Tablet (≤768):  top:20, right:76, 48×48  (theme toggle at right:20+48=68 → gap of 8)
  *   Mobile (≤480):  top:16, right:68, 44×44  (theme toggle at right:16+44=60 → gap of 8)
  */
@@ -36,7 +36,7 @@ export function GlobalUI() {
 
   return (
     <>
-      <SideRail />
+      <TopNav />
       <ContactWidget hideButton />
 
       {/* Chat / Contact button — fixed top-right, beside theme toggle */}
@@ -79,7 +79,7 @@ export function GlobalUI() {
         .global-contact-btn {
           position: fixed;
           top: 30px;
-          right: 96px;
+          right: 76px;
           z-index: 1001;
           width: 56px;
           height: 56px;
