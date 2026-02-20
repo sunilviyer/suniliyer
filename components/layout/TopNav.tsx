@@ -429,9 +429,9 @@ export default function TopNav() {
         }
 
         .dropdown-link {
-          display: flex;
-          flex-direction: row;
-          align-items: center;
+          display: flex !important;
+          flex-direction: row !important;
+          align-items: center !important;
           gap: 12px;
           padding: 12px;
           border-radius: 8px;
