@@ -381,12 +381,19 @@ export default function TopNav() {
           cursor: pointer;
           border-radius: 6px;
           transition: all 0.2s;
+          outline: none;
         }
 
-        .menu-btn:hover,
+        .menu-btn:focus {
+          outline: none;
+        }
+
+        .menu-btn:hover {
+          background: rgba(99, 102, 241, 0.1);
+        }
+
         .menu-btn.active {
           background: rgba(99, 102, 241, 0.1);
-          color: #6366f1 !important;
         }
 
         /* Dropdown */
@@ -467,6 +474,12 @@ export default function TopNav() {
           height: 30px;
         }
 
+        .dropdown-text {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+        }
+
         .dropdown-text h3 {
           font-size: 15px;
           font-weight: 600;
@@ -529,10 +542,15 @@ export default function TopNav() {
           padding: 3px;
           transition: all 0.3s;
           position: relative;
+          outline: none;
         }
 
         :global([data-theme='dark']) .theme-btn {
           border-color: #FFEFD5;
+        }
+
+        .theme-btn:focus {
+          outline: none;
         }
 
         .theme-btn:hover {
