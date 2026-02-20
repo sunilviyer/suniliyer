@@ -5,6 +5,28 @@ import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
 
+// Theme hook
+function useTheme() {
+  const [isDark, setIsDark] = useState(false);
+
+  useEffect(() => {
+    const saved = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const shouldBeDark = saved === 'dark' || (!saved && prefersDark);
+    setIsDark(shouldBeDark);
+    document.documentElement.setAttribute('data-theme', shouldBeDark ? 'dark' : 'light');
+  }, []);
+
+  const toggleTheme = () => {
+    const newTheme = !isDark;
+    setIsDark(newTheme);
+    localStorage.setItem('theme', newTheme ? 'dark' : 'light');
+    document.documentElement.setAttribute('data-theme', newTheme ? 'dark' : 'light');
+  };
+
+  return { isDark, toggleTheme };
+}
+
 const SECTIONS = [
   {
     id: 'intelligence',
@@ -111,6 +133,8 @@ export default function TopNav() {
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [contactOpen, setContactOpen] = useState(false);
+  const { isDark, toggleTheme } = useTheme();
 
   // Detect scroll for backdrop blur effect
   useEffect(() => {
@@ -126,6 +150,26 @@ export default function TopNav() {
     setMobileMenuOpen(false);
     setActiveDropdown(null);
   }, [pathname]);
+
+  // Listen for contact widget events
+  useEffect(() => {
+    const onOpen = () => setContactOpen(true);
+    const onClose = () => setContactOpen(false);
+    window.addEventListener('open-contact-widget', onOpen);
+    window.addEventListener('close-contact-widget', onClose);
+    return () => {
+      window.removeEventListener('open-contact-widget', onOpen);
+      window.removeEventListener('close-contact-widget', onClose);
+    };
+  }, []);
+
+  const toggleContact = () => {
+    if (contactOpen) {
+      window.dispatchEvent(new CustomEvent('close-contact-widget'));
+    } else {
+      window.dispatchEvent(new CustomEvent('open-contact-widget'));
+    }
+  };
 
   // Determine active section based on pathname
   const getActiveSection = () => {
@@ -246,6 +290,46 @@ export default function TopNav() {
             </div>
           </div>
 
+          {/* Theme Toggle & Contact Button */}
+          <div className="nav-actions">
+            {/* Theme Toggle */}
+            <button
+              className="theme-toggle"
+              onClick={toggleTheme}
+              aria-label="Toggle theme"
+            >
+              <div className="knob">
+                {isDark ? '🌙' : '☀️'}
+              </div>
+            </button>
+
+            {/* Contact Button */}
+            <button
+              className="contact-btn"
+              onClick={toggleContact}
+              aria-label={contactOpen ? 'Close contact' : 'Contact me'}
+            >
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+              >
+                {contactOpen ? (
+                  <>
+                    <line x1="18" y1="6" x2="6" y2="18" />
+                    <line x1="6" y1="6" x2="18" y2="18" />
+                  </>
+                ) : (
+                  <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+                )}
+              </svg>
+            </button>
+          </div>
+
           {/* Mobile Menu Button */}
           <button
             className="mobile-menu-btn"
@@ -343,16 +427,18 @@ export default function TopNav() {
           left: 0;
           right: 0;
           height: 70px;
-          background: rgba(255, 255, 255, 0.95);
-          border-bottom: 1px solid var(--border-color);
+          background: transparent;
+          backdrop-filter: blur(8px) brightness(1.2);
+          -webkit-backdrop-filter: blur(8px) brightness(1.2);
+          text-shadow: 0 0 5px rgba(0,0,0,0.5);
           z-index: 1000;
-          transition: all 0.3s ease;
+          transition: all 0.3s ease-out;
         }
 
         .top-nav.scrolled {
-          background: rgba(255, 255, 255, 0.98);
-          backdrop-filter: blur(10px);
-          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+          backdrop-filter: blur(12px) brightness(1.15);
+          -webkit-backdrop-filter: blur(12px) brightness(1.15);
+          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
         }
 
         .nav-container {
@@ -495,18 +581,89 @@ export default function TopNav() {
           line-height: 1.4;
         }
 
+        .nav-actions {
+          display: flex;
+          align-items: center;
+          gap: 12px;
+          margin-left: 16px;
+        }
+
+        .theme-toggle {
+          width: 56px;
+          height: 30px;
+          border-radius: 100px;
+          border: 1px solid rgba(255, 255, 255, 0.2);
+          background: rgba(255, 255, 255, 0.1);
+          backdrop-filter: blur(10px);
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          padding: 3px;
+          transition: all 0.3s ease;
+          filter: drop-shadow(0 0 5px rgba(0,0,0,.5));
+        }
+
+        .theme-toggle:hover {
+          background: rgba(255, 255, 255, 0.15);
+          border-color: rgba(255, 255, 255, 0.3);
+        }
+
+        .theme-toggle .knob {
+          width: 24px;
+          height: 24px;
+          border-radius: 50%;
+          background: linear-gradient(135deg, #fbbf24, #f59e0b);
+          box-shadow: 0 2px 8px rgba(251, 191, 36, 0.6);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 12px;
+          transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+          transform: translateX(0);
+        }
+
+        [data-theme='dark'] .theme-toggle .knob {
+          transform: translateX(26px);
+          background: linear-gradient(135deg, #6366f1, #8b5cf6);
+          box-shadow: 0 2px 8px rgba(99, 102, 241, 0.6);
+        }
+
+        .contact-btn {
+          width: 44px;
+          height: 44px;
+          border-radius: 50%;
+          background: rgba(255, 255, 255, 0.1);
+          backdrop-filter: blur(10px);
+          border: 1px solid rgba(255, 255, 255, 0.2);
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: var(--text-color);
+          transition: all 0.3s ease;
+          filter: drop-shadow(0 0 5px rgba(0,0,0,.5));
+        }
+
+        .contact-btn:hover {
+          background: rgba(255, 255, 255, 0.15);
+          border-color: rgba(255, 255, 255, 0.3);
+          transform: scale(1.05);
+        }
+
         .mobile-menu-btn {
           display: none;
           width: 44px;
           height: 44px;
           align-items: center;
           justify-content: center;
-          background: transparent;
-          border: 1px solid var(--border-color);
+          background: rgba(255, 255, 255, 0.1);
+          backdrop-filter: blur(10px);
+          border: 1px solid rgba(255, 255, 255, 0.2);
           border-radius: 8px;
           color: var(--text-color);
           cursor: pointer;
           transition: all 0.2s ease;
+          filter: drop-shadow(0 0 5px rgba(0,0,0,.5));
         }
 
         .mobile-menu-btn svg {
@@ -515,7 +672,8 @@ export default function TopNav() {
         }
 
         .mobile-menu-btn:hover {
-          background: rgba(0, 0, 0, 0.05);
+          background: rgba(255, 255, 255, 0.15);
+          border-color: rgba(255, 255, 255, 0.3);
         }
 
         .mobile-overlay {
@@ -540,6 +698,10 @@ export default function TopNav() {
         @media (max-width: 900px) {
           .desktop-menu {
             display: none;
+          }
+
+          .nav-actions {
+            margin-left: auto;
           }
 
           .mobile-menu-btn {
