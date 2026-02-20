@@ -863,28 +863,6 @@ export default function TopNav() {
             padding: 16px;
           }
         }
-
-        @media (prefers-color-scheme: dark) {
-          .top-nav {
-            background: rgba(17, 24, 39, 0.95);
-          }
-
-          .top-nav.scrolled {
-            background: rgba(17, 24, 39, 0.98);
-          }
-
-          .menu-item:hover {
-            background: rgba(255, 255, 255, 0.05);
-          }
-
-          .dropdown-panel {
-            background: rgba(31, 41, 55, 0.95);
-          }
-
-          .mobile-menu-btn:hover {
-            background: rgba(255, 255, 255, 0.05);
-          }
-        }
       `}</style>
     </>
   );
