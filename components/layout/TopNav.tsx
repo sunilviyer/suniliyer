@@ -184,7 +184,7 @@ export default function TopNav() {
       <nav className={`top-nav ${scrolled ? 'scrolled' : ''}`}>
         <div className="nav-container">
           {/* Logo */}
-          <Link href="/" className="nav-logo" style={{ color: isDark ? '#FFEFD5' : '#264653' }}>
+          <Link href="/" className="nav-logo" style={{ color: isDark ? '#FFEFD5 !important' : '#264653 !important' } as React.CSSProperties}>
             Sunil Iyer
           </Link>
 
