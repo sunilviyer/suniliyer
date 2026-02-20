@@ -52,11 +52,11 @@ const SECTIONS = [
     label: 'The Inner Monologue',
     routes: ['/history', '/terminology', '/risk', '/responsibility', '/future'],
     items: [
-      { title: 'History', description: 'AI evolution and milestones', image: '/images/history/ai-history.webp', href: '/history', external: false },
-      { title: 'Terminology', description: 'Key concepts explained', image: '/images/terminology/terminology-hero.webp', href: '/terminology', external: false },
-      { title: 'Risk', description: 'Challenges and concerns', image: '/images/risk/risk-hero.webp', href: '/risk', external: false },
-      { title: 'Responsibility', description: 'Ethical considerations', image: '/images/responsibility/responsibility-hero.webp', href: '/responsibility', external: false },
-      { title: 'Future', description: 'Vision and possibilities', image: '/images/future/future-hero.webp', href: '/future', external: false },
+      { title: 'History', description: 'AI evolution and milestones', image: '/images/headercards/history-header.webp', href: '/history', external: false },
+      { title: 'Terminology', description: 'Key concepts explained', image: '/images/headercards/terminology-header.webp', href: '/terminology', external: false },
+      { title: 'Risk', description: 'Challenges and concerns', image: '/images/headercards/risk-header.webp', href: '/risk', external: false },
+      { title: 'Responsibility', description: 'Ethical considerations', image: '/images/headercards/responsibility-header.webp', href: '/responsibility', external: false },
+      { title: 'Future', description: 'Vision and possibilities', image: '/images/headercards/future-header.webp', href: '/future', external: false },
     ],
   },
 ];
