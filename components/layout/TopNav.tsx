@@ -634,11 +634,14 @@ export default function TopNav() {
           justify-content: center;
           font-size: 12px;
           transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
-          transform: translateX(0);
+        }
+
+        .theme-toggle .knob {
+          transform: translateX(26px);
         }
 
         [data-theme='dark'] .theme-toggle .knob {
-          transform: translateX(26px);
+          transform: translateX(0);
           background: linear-gradient(135deg, #6366f1, #8b5cf6);
           box-shadow: 0 2px 8px rgba(99, 102, 241, 0.6);
         }
