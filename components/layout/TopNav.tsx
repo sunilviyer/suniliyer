@@ -350,17 +350,17 @@ export default function TopNav() {
         .nav-logo {
           font-size: 20px;
           font-weight: 600;
-          color: #264653;
+          color: #264653 !important;
           text-decoration: none;
           transition: color 0.2s;
         }
 
         :global([data-theme='dark']) .nav-logo {
-          color: #FFEFD5;
+          color: #FFEFD5 !important;
         }
 
         .nav-logo:hover {
-          color: #6366f1;
+          color: #6366f1 !important;
         }
 
         /* Desktop Menu */
@@ -378,7 +378,7 @@ export default function TopNav() {
           padding: 8px 16px;
           background: transparent;
           border: none;
-          color: #264653;
+          color: #264653 !important;
           font-size: 15px;
           font-weight: 500;
           cursor: pointer;
@@ -387,13 +387,13 @@ export default function TopNav() {
         }
 
         :global([data-theme='dark']) .menu-btn {
-          color: #FFEFD5;
+          color: #FFEFD5 !important;
         }
 
         .menu-btn:hover,
         .menu-btn.active {
           background: rgba(99, 102, 241, 0.1);
-          color: #6366f1;
+          color: #6366f1 !important;
         }
 
         /* Dropdown */
