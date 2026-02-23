@@ -427,7 +427,7 @@ export default function ArticlesPinboard() {
       <div style={{ background:"#293241", minHeight:"100vh", fontFamily:"'DM Sans',sans-serif" }}>
 
         {/* Header */}
-        <div style={{ textAlign:"center", padding:"60px 20px 36px" }}>
+        <div style={{ textAlign:"center", padding:"140px 20px 36px" }}>
           <h1 style={{ fontFamily:"'Playfair Display',serif", fontSize:"clamp(2rem,5vw,3.4rem)", color:"#e0fbfc", letterSpacing:"-0.02em", marginBottom:10 }}>
             Thoughts & Writings
           </h1>
