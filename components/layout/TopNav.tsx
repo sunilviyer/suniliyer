@@ -189,14 +189,18 @@ export default function TopNav() {
                     left: '50%',
                     transform: 'translateX(-50%)',
                     minWidth: '320px',
-                    background: isDark ? 'rgba(26, 26, 26, 0.95)' : 'rgba(255, 255, 255, 0.95)',
-                    backdropFilter: 'blur(20px)',
-                    border: `1px solid ${isDark ? '#444444' : '#dddddd'}`,
-                    borderRadius: '12px',
-                    boxShadow: '0 8px 32px rgba(0, 0, 0, 0.12)',
-                    padding: '8px',
+                    paddingTop: '8px',
+                    marginTop: '-8px',
                     zIndex: 1000
                   }}>
+                    <div style={{
+                      background: isDark ? 'rgba(26, 26, 26, 0.95)' : 'rgba(255, 255, 255, 0.95)',
+                      backdropFilter: 'blur(20px)',
+                      border: `1px solid ${isDark ? '#444444' : '#dddddd'}`,
+                      borderRadius: '12px',
+                      boxShadow: '0 8px 32px rgba(0, 0, 0, 0.12)',
+                      padding: '8px'
+                    }}>
                     {section.items.map((item, idx) => (
                       <Link
                         key={idx}
@@ -226,6 +230,7 @@ export default function TopNav() {
                         </div>
                       </Link>
                     ))}
+                    </div>
                   </div>
                 )}
               </div>
@@ -251,14 +256,18 @@ export default function TopNav() {
                   top: 'calc(100% + 8px)',
                   right: 0,
                   minWidth: '280px',
-                  background: isDark ? 'rgba(26, 26, 26, 0.95)' : 'rgba(255, 255, 255, 0.95)',
-                  backdropFilter: 'blur(20px)',
-                  border: `1px solid ${isDark ? '#444444' : '#dddddd'}`,
-                  borderRadius: '12px',
-                  boxShadow: '0 8px 32px rgba(0, 0, 0, 0.12)',
-                  padding: '8px',
+                  paddingTop: '8px',
+                  marginTop: '-8px',
                   zIndex: 1000
                 }}>
+                  <div style={{
+                    background: isDark ? 'rgba(26, 26, 26, 0.95)' : 'rgba(255, 255, 255, 0.95)',
+                    backdropFilter: 'blur(20px)',
+                    border: `1px solid ${isDark ? '#444444' : '#dddddd'}`,
+                    borderRadius: '12px',
+                    boxShadow: '0 8px 32px rgba(0, 0, 0, 0.12)',
+                    padding: '8px'
+                  }}>
                   <Link href="/journey" style={{ display: 'grid', gridTemplateColumns: '60px 1fr', gap: '12px', alignItems: 'center', padding: '12px', borderRadius: '8px', textDecoration: 'none', color: isDark ? '#ffffff' : '#000000' }}
                     onMouseEnter={(e) => e.currentTarget.style.background = 'rgba(99, 102, 241, 0.08)'}
                     onMouseLeave={(e) => e.currentTarget.style.background = 'transparent'}>
@@ -283,6 +292,7 @@ export default function TopNav() {
                       <p style={{ fontSize: '13px', color: isDark ? '#cccccc' : '#666666', margin: 0 }}>Download resume</p>
                     </div>
                   </a>
+                  </div>
                 </div>
               )}
             </div>
