@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Funnel_Display, Funnel_Sans } from "next/font/google";
 import Script from "next/script";
+import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import { CookieBanner } from "@/components/CookieBanner";
 import { GlobalUI } from "@/components/layout/GlobalUI";
 import "./globals.css";
@@ -57,6 +59,8 @@ export default function RootLayout({
         <CookieBanner />
         <GlobalUI />
         {children}
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
