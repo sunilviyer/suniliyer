@@ -366,8 +366,32 @@ export default function ArticlesPinboard() {
     return new Set<Category>();
   });
   const [dealing,    setDealing]    = useState<Set<Category>>(new Set());
+  const [isDark,     setIsDark]     = useState(true);
   const boardRef = useRef<HTMLDivElement>(null);
   const isMobile = useIsMobile();
+
+  // Theme detection
+  useEffect(() => {
+    const saved = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const shouldBeDark = saved === 'dark' || (!saved && prefersDark);
+    setIsDark(shouldBeDark);
+
+    const handleThemeChange = () => {
+      const saved = localStorage.getItem('theme');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const shouldBeDark = saved === 'dark' || (!saved && prefersDark);
+      setIsDark(shouldBeDark);
+    };
+
+    window.addEventListener('storage', handleThemeChange);
+    window.addEventListener('themeChange', handleThemeChange);
+
+    return () => {
+      window.removeEventListener('storage', handleThemeChange);
+      window.removeEventListener('themeChange', handleThemeChange);
+    };
+  }, []);
 
   // On first mobile render, collapse all
   useEffect(() => {
@@ -424,14 +448,14 @@ export default function ArticlesPinboard() {
         .deal { animation: dealCard 0.45s cubic-bezier(0.34,1.56,0.64,1) both; }
       `}</style>
 
-      <div style={{ background:"#293241", minHeight:"100vh", fontFamily:"'DM Sans',sans-serif" }}>
+      <div style={{ background: isDark ? "#293241" : "#fafafa", minHeight:"100vh", fontFamily:"'DM Sans',sans-serif", transition:"background-color 0.3s ease" }}>
 
         {/* Header */}
         <div style={{ textAlign:"center", padding:"140px 20px 36px" }}>
-          <h1 style={{ fontFamily:"'Playfair Display',serif", fontSize:"clamp(2rem,5vw,3.4rem)", color:"#e0fbfc", letterSpacing:"-0.02em", marginBottom:10 }}>
+          <h1 style={{ fontFamily:"'Playfair Display',serif", fontSize:"clamp(2rem,5vw,3.4rem)", color: isDark ? "#e0fbfc" : "#293241", letterSpacing:"-0.02em", marginBottom:10, transition:"color 0.3s ease" }}>
             Thoughts & Writings
           </h1>
-          <p style={{ color:"#b8d8ee", fontSize:"1rem", fontWeight:400 }}>
+          <p style={{ color: isDark ? "#b8d8ee" : "#5a6c7d", fontSize:"1rem", fontWeight:400, transition:"color 0.3s ease" }}>
             Ideas pinned to the board — tap a cluster to fan it out.
           </p>
         </div>
