@@ -201,29 +201,6 @@ const getNodePosition = (index: number, total: number, radius: number) => {
   return { x: Math.cos(angle) * radius, y: Math.sin(angle) * radius };
 };
 
-// ─── Icons ──────────────────────────────────────────────────────
-const HomeIcon = ({ color }: { color: string }) => (
-  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
-    <polyline points="9 22 9 12 15 12 15 22" />
-  </svg>
-);
-
-const SunIcon = ({ color }: { color: string }) => (
-  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <circle cx="12" cy="12" r="5" /><line x1="12" y1="1" x2="12" y2="3" /><line x1="12" y1="21" x2="12" y2="23" />
-    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" /><line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
-    <line x1="1" y1="12" x2="3" y2="12" /><line x1="21" y1="12" x2="23" y2="12" />
-    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" /><line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
-  </svg>
-);
-
-const MoonIcon = ({ color }: { color: string }) => (
-  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
-  </svg>
-);
-
 // ─── Panel Position Configs ─────────────────────────────────────
 const panelPositions = {
   desktop: [
@@ -305,6 +282,29 @@ export default function GitaExperience() {
     check();
     window.addEventListener('resize', check);
     return () => window.removeEventListener('resize', check);
+  }, []);
+
+  // Sync with global theme from TopNav
+  useEffect(() => {
+    const saved = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const shouldBeDark = saved === 'dark' || (!saved && prefersDark);
+    setIsDarkMode(shouldBeDark);
+
+    const handleThemeChange = () => {
+      const saved = localStorage.getItem('theme');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const shouldBeDark = saved === 'dark' || (!saved && prefersDark);
+      setIsDarkMode(shouldBeDark);
+    };
+
+    window.addEventListener('storage', handleThemeChange);
+    window.addEventListener('themeChange', handleThemeChange);
+
+    return () => {
+      window.removeEventListener('storage', handleThemeChange);
+      window.removeEventListener('themeChange', handleThemeChange);
+    };
   }, []);
 
   useEffect(() => {
@@ -551,35 +551,17 @@ export default function GitaExperience() {
         {/* ═══ HEADER — fully transparent ═══ */}
         <header style={{
           position: 'absolute',
-          top: 0,
+          top: isMobile ? '70px' : '100px',
           left: 0,
           right: 0,
           zIndex: 30,
           padding: isMobile ? '10px 14px' : '14px 24px',
           display: 'flex',
-          justifyContent: 'space-between',
+          justifyContent: 'center',
           alignItems: 'center',
           background: 'transparent',
           transition: 'all 0.5s ease',
         }}>
-          {/* Left: Home */}
-          <Link
-            href="/"
-            style={{
-              opacity: 0.7,
-              transition: 'opacity 0.3s ease',
-              padding: '4px',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-            }}
-            onMouseOver={(e) => (e.currentTarget.style.opacity = '1')}
-            onMouseOut={(e) => (e.currentTarget.style.opacity = '0.7')}
-            title="Home"
-          >
-            <HomeIcon color={palette.highlight} />
-          </Link>
-
           {/* Center: Title or moment info */}
           {mode === 'navigation' ? (
             <div style={{ textAlign: 'center', flex: 1 }}>
@@ -605,48 +587,34 @@ export default function GitaExperience() {
               </p>
             </div>
           ) : (
-            <div style={{ display: 'flex', alignItems: 'center', gap: 12, flex: 1, justifyContent: 'center' }}>
-              <span style={{
-                fontFamily: "'Yatra One', system-ui",
-                color: palette.text,
-                fontSize: isMobile ? '0.9rem' : '1.1rem',
-                opacity: 0.9,
-              }}>
-                {selectedMoment?.title}
-              </span>
-              <span style={{
-                fontFamily: "'Khand', sans-serif",
-                color: selectedMoment?.accentColor || palette.accent7,
-                fontSize: '0.65rem',
-                letterSpacing: '0.12em',
-                textTransform: 'uppercase',
-                opacity: 0.7,
-              }}>
-                Ch. {selectedMoment?.chapter}
-              </span>
-            </div>
-          )}
+            <>
+              <div style={{ display: 'flex', alignItems: 'center', gap: 12, flex: 1, justifyContent: 'center' }}>
+                <span style={{
+                  fontFamily: "'Yatra One', system-ui",
+                  color: palette.text,
+                  fontSize: isMobile ? '0.9rem' : '1.1rem',
+                  opacity: 0.9,
+                }}>
+                  {selectedMoment?.title}
+                </span>
+                <span style={{
+                  fontFamily: "'Khand', sans-serif",
+                  color: selectedMoment?.accentColor || palette.accent7,
+                  fontSize: '0.65rem',
+                  letterSpacing: '0.12em',
+                  textTransform: 'uppercase',
+                  opacity: 0.7,
+                }}>
+                  Ch. {selectedMoment?.chapter}
+                </span>
+              </div>
 
-          {/* Right: Theme + Close */}
-          <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
-            <button
-              onClick={() => setIsDarkMode(!isDarkMode)}
-              style={{
-                background: 'none', border: 'none', cursor: 'pointer',
-                opacity: 0.7, transition: 'opacity 0.3s ease', padding: '4px',
-                display: 'flex', alignItems: 'center', justifyContent: 'center',
-              }}
-              onMouseOver={(e) => (e.currentTarget.style.opacity = '1')}
-              onMouseOut={(e) => (e.currentTarget.style.opacity = '0.7')}
-              title={isDarkMode ? 'Switch to light mode' : 'Switch to dark mode'}
-            >
-              {isDarkMode ? <SunIcon color={palette.highlight} /> : <MoonIcon color={palette.highlight} />}
-            </button>
-
-            {mode === 'reading' && (
+              {/* Close button */}
               <button
                 onClick={handleClose}
                 style={{
+                  position: 'absolute',
+                  right: isMobile ? '14px' : '24px',
                   background: 'none', border: 'none',
                   fontFamily: "'Khand', sans-serif",
                   color: palette.accent7, fontSize: isMobile ? '1.2rem' : '1.4rem',
@@ -658,8 +626,8 @@ export default function GitaExperience() {
               >
                 ✕
               </button>
-            )}
-          </div>
+            </>
+          )}
         </header>
 
         {/* ═══ MAIN CONTENT ═══ */}
