@@ -1,71 +1,14 @@
 'use client';
 
-import { useState, useEffect } from 'react';
-import Link from 'next/link';
+import { useState } from 'react';
 import AffordabilityCalculator from './components/AffordabilityCalculator';
 import CompleteAnalysisCalculator from './components/CompleteAnalysisCalculator';
 
 export default function MortgageCalculatorPage() {
   const [activeTab, setActiveTab] = useState<'affordability' | 'cost'>('cost');
-  const [theme, setTheme] = useState<'light' | 'dark'>('light');
-  const [mounted, setMounted] = useState(false);
-
-  // Initialize theme from localStorage
-  useEffect(() => {
-    const savedTheme = localStorage.getItem('mortgage-calc-theme') as 'light' | 'dark' | null;
-    const initialTheme = savedTheme || 'light';
-    setTheme(initialTheme);
-    document.documentElement.setAttribute('data-theme', initialTheme);
-    setMounted(true);
-  }, []);
-
-  // Toggle theme
-  const toggleTheme = () => {
-    const newTheme = theme === 'light' ? 'dark' : 'light';
-    setTheme(newTheme);
-    document.documentElement.setAttribute('data-theme', newTheme);
-    localStorage.setItem('mortgage-calc-theme', newTheme);
-  };
-
-  if (!mounted) {
-    return null; // Prevent flash of unstyled content
-  }
 
   return (
     <div className="mortgage-calc-page">
-      {/* Home Button */}
-      <Link href="/" className="home-button" aria-label="Back to home">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
-          <polyline points="9 22 9 12 15 12 15 22" />
-        </svg>
-      </Link>
-
-      {/* Theme Toggle Button */}
-      <button
-        className="theme-toggle"
-        onClick={toggleTheme}
-        aria-label="Toggle theme"
-      >
-        {theme === 'light' ? (
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
-          </svg>
-        ) : (
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-            <circle cx="12" cy="12" r="5" />
-            <line x1="12" y1="1" x2="12" y2="3" />
-            <line x1="12" y1="21" x2="12" y2="23" />
-            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
-            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
-            <line x1="1" y1="12" x2="3" y2="12" />
-            <line x1="21" y1="12" x2="23" y2="12" />
-            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
-            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
-          </svg>
-        )}
-      </button>
-
       {/* Header */}
       <header className="calc-header fade-in">
         <div className="container">
@@ -119,80 +62,9 @@ export default function MortgageCalculatorPage() {
           font-family: var(--font-funnel-sans), -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
         }
 
-        /* Home Button */
-        .home-button {
-          position: fixed;
-          top: 30px;
-          left: 30px;
-          width: 56px;
-          height: 56px;
-          border-radius: 50%;
-          background: var(--card-bg);
-          border: 2px solid var(--accent-primary);
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          cursor: pointer;
-          z-index: 1000;
-          transition: all 0.3s ease;
-          color: var(--accent-primary);
-          box-shadow: 0 4px 12px rgba(51, 61, 41, 0.15);
-          text-decoration: none;
-          animation: fadeIn 0.8s ease;
-        }
-
-        .home-button:hover {
-          background: var(--accent-primary);
-          color: var(--card-bg);
-          transform: scale(1.1);
-          box-shadow: 0 6px 20px rgba(51, 61, 41, 0.3);
-        }
-
-        .home-button svg {
-          transition: transform 0.3s ease;
-        }
-
-        .home-button:hover svg {
-          transform: scale(1.1);
-        }
-
-        /* Theme Toggle */
-        .theme-toggle {
-          position: fixed;
-          top: 30px;
-          right: 30px;
-          width: 56px;
-          height: 56px;
-          border-radius: 50%;
-          background: var(--card-bg);
-          border: 2px solid var(--border-color);
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          cursor: pointer;
-          z-index: 1000;
-          transition: all 0.3s ease;
-          color: var(--text-primary);
-          box-shadow: var(--shadow-md);
-        }
-
-        .theme-toggle:hover {
-          transform: scale(1.1) rotate(15deg);
-          box-shadow: var(--shadow-lg);
-          border-color: var(--accent-primary);
-        }
-
-        .theme-toggle svg {
-          transition: transform 0.3s ease;
-        }
-
-        .theme-toggle:hover svg {
-          transform: scale(1.1);
-        }
-
         /* Header */
         .calc-header {
-          padding: 120px 0 60px;
+          padding: 160px 0 60px;
           text-align: center;
         }
 
@@ -324,25 +196,11 @@ export default function MortgageCalculatorPage() {
         /* Responsive */
         @media (max-width: 768px) {
           .calc-header {
-            padding: 100px 0 40px;
+            padding: 140px 0 40px;
           }
 
           .container {
             padding: 0 20px;
-          }
-
-          .home-button {
-            top: 20px;
-            left: 20px;
-            width: 48px;
-            height: 48px;
-          }
-
-          .theme-toggle {
-            top: 20px;
-            right: 20px;
-            width: 48px;
-            height: 48px;
           }
 
           .tab-buttons {
@@ -361,20 +219,6 @@ export default function MortgageCalculatorPage() {
         }
 
         @media (max-width: 480px) {
-          .home-button {
-            width: 44px;
-            height: 44px;
-            top: 16px;
-            left: 16px;
-          }
-
-          .theme-toggle {
-            width: 44px;
-            height: 44px;
-            top: 16px;
-            right: 16px;
-          }
-
           .tab-text {
             font-size: 14px;
           }
