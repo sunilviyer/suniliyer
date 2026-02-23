@@ -272,7 +272,7 @@ export default function TopNav() {
                     onMouseEnter={(e) => e.currentTarget.style.background = 'rgba(99, 102, 241, 0.08)'}
                     onMouseLeave={(e) => e.currentTarget.style.background = 'transparent'}>
                     <div style={{ width: '60px', height: '60px', borderRadius: '8px', overflow: 'hidden', background: isDark ? '#2a2a2a' : '#f8f8f8', position: 'relative' }}>
-                      <Image src="/images/journey/cornell.webp" alt="Journey" fill style={{ objectFit: 'cover' }} />
+                      <Image src="/images/headercards/journey-header.webp" alt="Journey" fill style={{ objectFit: 'cover' }} />
                     </div>
                     <div>
                       <h3 style={{ fontSize: '15px', fontWeight: 600, margin: '0 0 4px 0' }}>My Journey</h3>
