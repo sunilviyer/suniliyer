@@ -221,7 +221,22 @@ function Card({ article, index, isFlipped, onFlip, isDimmed, style }: {
         }}>
           {article.isSticky
             ? <p style={{ fontFamily:"'Caveat',cursive", fontSize:"1.1rem", lineHeight:1.4, color:"#1a1a1a", fontWeight:600 }}>{article.stickyText}</p>
-            : <><img src={article.image} alt={article.title} style={{ width:"100%", height:"100%", objectFit:"cover", display:"block" }} /><StatusBadge status={article.status} /></>
+            : <>
+                <img src={article.image} alt={article.title} style={{ width:"100%", height:"100%", objectFit:"cover", display:"block" }} />
+                <div style={{ position:"absolute", inset:0, background:"linear-gradient(to bottom, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.7) 100%)", zIndex:1 }} />
+                <div style={{ position:"absolute", bottom:0, left:0, right:0, padding: isHero ? "16px" : "12px", zIndex:2 }}>
+                  <h3 style={{
+                    fontFamily:"'Playfair Display',serif",
+                    fontSize: isHero ? "clamp(0.9rem, 1.8vw, 1.1rem)" : "clamp(0.75rem, 1.2vw, 0.85rem)",
+                    fontWeight:700,
+                    color:"#ffffff",
+                    lineHeight:1.3,
+                    margin:0,
+                    textShadow:"0 2px 8px rgba(0,0,0,0.8)"
+                  }}>{article.title}</h3>
+                </div>
+                <StatusBadge status={article.status} />
+              </>
           }
         </div>
         {/* BACK */}
