@@ -204,7 +204,7 @@ const getNodePosition = (index: number, total: number, radius: number) => {
 // ─── Panel Position Configs ─────────────────────────────────────
 const panelPositions = {
   desktop: [
-    { top: '80px', left: '50%', transform: 'translateX(-50%)', maxWidth: '480px', width: '90%' },
+    { top: '160px', left: '50%', transform: 'translateX(-50%)', maxWidth: '480px', width: '90%' },
     { top: '50%', left: '24px', transform: 'translateY(-50%)', maxWidth: '320px', width: '28%' },
     { top: '50%', right: '24px', transform: 'translateY(-50%)', maxWidth: '320px', width: '28%' },
     { bottom: '80px', left: '50%', transform: 'translateX(-50%)', maxWidth: '520px', width: '90%' },
@@ -1040,6 +1040,7 @@ export default function GitaExperience() {
                                 position: 'absolute',
                                 top: 16,
                                 right: 16,
+                                zIndex: 20,
                                 fontFamily: "'Khand', sans-serif",
                                 backgroundColor: selectedMoment?.accentColor || palette.accent7,
                                 border: 'none',
@@ -1109,7 +1110,7 @@ export default function GitaExperience() {
                   width: '100%',
                   height: '100%',
                   overflowY: 'auto',
-                  padding: '70px 16px 180px 16px',
+                  padding: '140px 16px 180px 16px',
                   opacity: contentVisible ? 1 : 0,
                   transition: 'opacity 0.5s ease',
                 }}>
@@ -1181,6 +1182,7 @@ export default function GitaExperience() {
                                 position: 'absolute',
                                 top: 12,
                                 right: 12,
+                                zIndex: 20,
                                 fontFamily: "'Khand', sans-serif",
                                 backgroundColor: selectedMoment?.accentColor || palette.accent7,
                                 border: 'none',
