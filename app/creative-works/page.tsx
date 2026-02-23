@@ -1232,29 +1232,6 @@ export default function CreativeWorks() {
           border: 1px solid;
         }
 
-        .theme-toggle {
-          width: 56px;
-          height: 30px;
-          border-radius: 100px;
-          border: none;
-          cursor: pointer;
-          position: relative;
-          transition: background 0.35s ease;
-          display: flex;
-          align-items: center;
-          padding: 3px;
-        }
-        .theme-toggle .knob {
-          width: 24px;
-          height: 24px;
-          border-radius: 50%;
-          transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          font-size: 13px;
-        }
-
         .play-icon-overlay {
           position: absolute;
           inset: 8px;
@@ -1340,127 +1317,13 @@ export default function CreativeWorks() {
         }
       `}</style>
 
-      {/* ═══ TOP BAR ═══ */}
-      <div
-        className="page-section"
-        style={{
-          maxWidth: 1240,
-          margin: '0 auto',
-          padding: '32px 32px 0',
-          display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-          animation: 'fadeInUp 0.5s ease both',
-        }}
-      >
-        <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-          <div
-            style={{
-              width: 32,
-              height: 32,
-              borderRadius: 10,
-              background: `linear-gradient(135deg, ${PALETTE.royalViolet}, ${PALETTE.mauveMagic})`,
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              fontSize: 14,
-              fontWeight: 800,
-              color: '#fff',
-              fontFamily: 'var(--font-funnel-display)',
-            }}
-          >
-            S
-          </div>
-          <span
-            style={{
-              fontFamily: 'var(--font-funnel-sans)',
-              fontSize: 12,
-              color: t.textMuted,
-              letterSpacing: 1.5,
-            }}
-          >
-            Sunil Iyer
-          </span>
-        </div>
-
-        <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-          {/* Home button */}
-          <Link
-            href="/"
-            className="home-btn"
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              gap: 7,
-              padding: '7px 16px',
-              borderRadius: 100,
-              background: isDark
-                ? 'rgba(204,139,134,0.08)'
-                : 'rgba(125,79,80,0.05)',
-              border: `1px solid ${isDark ? 'rgba(204,139,134,0.15)' : 'rgba(125,79,80,0.1)'}`,
-              color: t.accent,
-              textDecoration: 'none',
-              fontFamily: 'var(--font-funnel-sans)',
-              fontSize: 13,
-              fontWeight: 500,
-              letterSpacing: 0.3,
-              transition: 'all 0.3s ease',
-              cursor: 'pointer',
-            }}
-          >
-            <svg
-              width="14"
-              height="14"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
-              <polyline points="9 22 9 12 15 12 15 22" />
-            </svg>
-            Home
-          </Link>
-
-          {/* Theme toggle */}
-          <button
-            className="theme-toggle"
-            onClick={() => setIsDark(!isDark)}
-            style={{
-              background: isDark
-                ? `linear-gradient(135deg, ${PALETTE.darkAmethyst2}, ${PALETTE.indigoInk})`
-                : `linear-gradient(135deg, ${PALETTE.mauve}44, ${PALETTE.mauveMagic}33)`,
-              border: `1px solid ${isDark ? 'rgba(204,139,134,0.15)' : 'rgba(125,79,80,0.12)'}`,
-            }}
-            aria-label="Toggle theme"
-          >
-            <div
-              className="knob"
-              style={{
-                transform: isDark ? 'translateX(0)' : 'translateX(26px)',
-                background: isDark
-                  ? `linear-gradient(135deg, ${PALETTE.indigoVelvet}, ${PALETTE.royalViolet})`
-                  : `linear-gradient(135deg, ${PALETTE.mauveMagic}, ${PALETTE.lavenderPurple})`,
-                boxShadow: isDark
-                  ? `0 2px 8px ${PALETTE.indigoVelvet}80`
-                  : `0 2px 8px ${PALETTE.mauveMagic}60`,
-              }}
-            >
-              {isDark ? '🌙' : '☀️'}
-            </div>
-          </button>
-        </div>
-      </div>
-
       {/* ═══ HEADER ═══ */}
       <div
         className="page-section"
         style={{
           maxWidth: 1240,
           margin: '0 auto',
-          padding: '48px 32px 0',
+          padding: '140px 32px 0',
           animation: 'fadeInUp 0.6s ease both',
           animationDelay: '0.1s',
         }}
