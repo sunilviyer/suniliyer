@@ -54,7 +54,7 @@ const SECTIONS = [
     label: 'The Inner Monologue',
     routes: ['/articles', '/history', '/terminology', '/risk', '/responsibility', '/future'],
     items: [
-      { title: 'Articles', description: 'Thoughts & writings', image: '/images/headercards/history-header.webp', href: '/articles', external: false },
+      { title: 'Articles', description: 'Thoughts & writings', image: '/images/headercards/articles-header.webp', href: '/articles', external: false },
       { title: 'History', description: 'AI evolution and milestones', image: '/images/headercards/history-header.webp', href: '/history', external: false },
       { title: 'Terminology', description: 'Key concepts explained', image: '/images/headercards/terminology-header.webp', href: '/terminology', external: false },
       { title: 'Risk', description: 'Challenges and concerns', image: '/images/headercards/risk-header.webp', href: '/risk', external: false },
