@@ -25,12 +25,29 @@ export default function HomePage() {
     document.documentElement.setAttribute('data-theme', newTheme);
   };
 
-  // Set initial theme on mount
+  // Set initial theme on mount and listen for theme changes
   useEffect(() => {
     const savedTheme = localStorage.getItem('theme') as 'light' | 'dark' | null;
     const initialTheme = savedTheme || 'light';
     setTheme(initialTheme);
     document.documentElement.setAttribute('data-theme', initialTheme);
+
+    // Listen for theme changes from other pages/components
+    const handleThemeChange = () => {
+      const saved = localStorage.getItem('theme') as 'light' | 'dark' | null;
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const newTheme = saved || (prefersDark ? 'dark' : 'light');
+      setTheme(newTheme);
+      document.documentElement.setAttribute('data-theme', newTheme);
+    };
+
+    window.addEventListener('storage', handleThemeChange);
+    window.addEventListener('themeChange', handleThemeChange);
+
+    return () => {
+      window.removeEventListener('storage', handleThemeChange);
+      window.removeEventListener('themeChange', handleThemeChange);
+    };
   }, []);
 
   // Save theme to localStorage when it changes
