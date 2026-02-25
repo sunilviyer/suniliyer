@@ -210,7 +210,7 @@ export default function TopNav() {
 
           {/* Slide Menu */}
           {mobileMenuOpen && (
-              <div style={{
+              <div className="mega-menu-wrapper" style={{
                 position: 'absolute',
                 top: 'calc(100% + 20px)',
                 left: '50%',
@@ -220,7 +220,7 @@ export default function TopNav() {
                 marginTop: '0px',
                 zIndex: 1000
               }}>
-                <div style={{
+                <div className="mega-menu-content" style={{
                   background: isDark ? 'rgba(18, 18, 32, 0.72)' : 'rgba(255, 255, 255, 0.70)',
                   backdropFilter: 'blur(28px) saturate(200%)',
                   WebkitBackdropFilter: 'blur(28px) saturate(200%)',
@@ -231,7 +231,7 @@ export default function TopNav() {
                   padding: '28px 28px 24px'
                 }}>
                   {/* Meta row */}
-                  <div style={{
+                  <div className="mega-menu-meta" style={{
                     display: 'flex',
                     alignItems: 'center',
                     gap: '10px',
@@ -271,7 +271,7 @@ export default function TopNav() {
                   </div>
 
                   {/* Grid */}
-                  <div style={{
+                  <div className="mega-menu-grid" style={{
                     display: 'grid',
                     gridTemplateColumns: '0.9fr 1.3fr 0.8fr 1.2fr 1fr',
                     gap: '0'
@@ -279,6 +279,7 @@ export default function TopNav() {
                     {NAV_SECTIONS.map((section, idx) => (
                       <div
                         key={section.id}
+                        className="mega-menu-column"
                         style={{
                           padding: idx === 0 ? '0 20px 0 0' : idx === NAV_SECTIONS.length - 1 ? '0 0 0 20px' : '0 20px',
                           borderRight: idx === NAV_SECTIONS.length - 1 ? 'none' : `1px solid ${isDark ? 'rgba(255,255,255,0.07)' : 'rgba(0,0,0,0.07)'}`
@@ -573,6 +574,47 @@ export default function TopNav() {
           transform: translateX(44px);
           background-color: var(--dark);
           box-shadow: none;
+        }
+
+        /* Mobile responsiveness for hamburger menu */
+        @media (max-width: 768px) {
+          .mega-menu-wrapper {
+            width: calc(100vw - 40px) !important;
+            left: 20px !important;
+            transform: none !important;
+          }
+
+          .mega-menu-content {
+            padding: 16px !important;
+          }
+
+          .mega-menu-meta {
+            flex-direction: column;
+            align-items: flex-start !important;
+            gap: 8px !important;
+            margin-bottom: 16px !important;
+          }
+
+          .mega-menu-meta span:last-child {
+            margin-left: 0 !important;
+          }
+
+          .mega-menu-grid {
+            grid-template-columns: 1fr !important;
+            gap: 20px !important;
+          }
+
+          .mega-menu-column {
+            padding: 0 !important;
+            border-right: none !important;
+            border-bottom: 1px solid rgba(128, 128, 128, 0.2) !important;
+            padding-bottom: 16px !important;
+          }
+
+          .mega-menu-column:last-child {
+            border-bottom: none !important;
+            padding-bottom: 0 !important;
+          }
         }
 
         @media (max-width: 480px) {
