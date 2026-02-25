@@ -161,7 +161,7 @@ export default function HomePage() {
       </section>
 
       {/* Portfolio Section with Carousel */}
-      <section className="section portfolio-section" style={{position: 'relative'}}>
+      <section id="portfolio" className="section portfolio-section" style={{position: 'relative'}}>
         <div className="container">
           <div className="section-header">
             <div className="section-label loading__item">
@@ -196,7 +196,7 @@ export default function HomePage() {
       </section>
 
       {/* Behind the Scenes Section */}
-      <section className="section behind-scenes-section" style={{position: 'relative'}}>
+      <section id="behind-the-scenes" className="section behind-scenes-section" style={{position: 'relative'}}>
         <div className="container">
           <div className="section-header">
             <div className="section-label loading__item">
@@ -231,7 +231,7 @@ export default function HomePage() {
       </section>
 
       {/* About Section */}
-      <section className="section about-section" style={{position: 'relative'}}>
+      <section id="about-me" className="section about-section" style={{position: 'relative'}}>
         <div className="container">
           <div className="section-header">
             <div className="section-label loading__item">
@@ -315,7 +315,7 @@ export default function HomePage() {
       </section>
 
       {/* Contact & Credits Section */}
-      <section ref={contactSectionRef} className="section contact-section" style={{position: 'relative'}}>
+      <section id="credits" ref={contactSectionRef} className="section contact-section" style={{position: 'relative'}}>
         <div className="container">
           <div className="section-header">
             <div className="section-label loading__item">
