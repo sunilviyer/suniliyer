@@ -84,6 +84,8 @@ const NAV_SECTIONS = [
     colorClass: 'col-connect',
     barColor: '#38bdf8',
     items: [
+      { title: 'My Journey', description: 'Professional story', image: '/images/headercards/journey-header.webp', href: '/journey', external: false },
+      { title: 'Resume', description: 'Download resume', image: '', href: '/downloads/Sunil_Iyer_Resume.pdf', external: false, icon: 'resume' },
       { title: 'LinkedIn', description: 'Professional network', image: '', href: 'https://linkedin.com/in/sunilviyer', external: true, icon: 'linkedin' },
       { title: 'GitHub', description: 'Code repositories', image: '', href: 'https://github.com/sunilviyer', external: true, icon: 'github' },
     ],
@@ -302,6 +304,7 @@ export default function TopNav() {
                             href={item.href}
                             target={item.external ? '_blank' : undefined}
                             rel={item.external ? 'noopener noreferrer' : undefined}
+                            download={(item as any).icon === 'resume' ? true : undefined}
                             onClick={(e) => {
                               // Close menu
                               setMobileMenuOpen(false);
@@ -384,6 +387,22 @@ export default function TopNav() {
                                   <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
                                 </svg>
                               </div>
+                            ) : (item as any).icon === 'resume' ? (
+                              <div style={{
+                                width: '30px',
+                                height: '30px',
+                                borderRadius: '50%',
+                                flexShrink: 0,
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+                                border: '1.5px solid rgba(102, 126, 234, 0.4)'
+                              }}>
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="#ffffff" stroke="none">
+                                  <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z" />
+                                </svg>
+                              </div>
                             ) : (
                               <div style={{
                                 width: '30px',
@@ -443,9 +462,9 @@ export default function TopNav() {
                     justifyContent: 'center'
                   }}>
                     <span style={{
-                      fontSize: '11px',
+                      fontSize: '13px',
                       color: isDark ? '#555570' : '#9090b0',
-                      fontWeight: 300
+                      fontWeight: 500
                     }}>
                       Built with AI · Powered by curiosity
                     </span>
@@ -456,63 +475,6 @@ export default function TopNav() {
 
           {/* Actions */}
           <div style={{ display: 'flex', gap: '12px', alignItems: 'center', marginLeft: '16px' }}>
-
-            {/* Profile */}
-            <div
-              style={{ position: 'relative' }}
-              onMouseEnter={() => setActiveDropdown('profile')}
-              onMouseLeave={() => setActiveDropdown(null)}
-            >
-              <button style={{ width: '44px', height: '44px', padding: 0, background: 'transparent', border: `2px solid ${textColor}`, borderRadius: '50%', cursor: 'pointer', overflow: 'hidden', display: 'flex', alignItems: 'center', justifyContent: 'center', transition: 'all 0.2s' }}>
-                <Image src="/images/sunil.webp" alt="Sunil Iyer" width={30} height={30} style={{ borderRadius: '50%', objectFit: 'cover' }} />
-              </button>
-
-              {activeDropdown === 'profile' && (
-                <div style={{
-                  position: 'absolute',
-                  top: 'calc(100% + 8px)',
-                  right: 0,
-                  minWidth: '280px',
-                  paddingTop: '8px',
-                  marginTop: '-8px',
-                  zIndex: 1000
-                }}>
-                  <div style={{
-                    background: isDark ? 'rgba(26, 26, 26, 0.95)' : 'rgba(255, 255, 255, 0.95)',
-                    backdropFilter: 'blur(20px)',
-                    border: `1px solid ${isDark ? '#444444' : '#dddddd'}`,
-                    borderRadius: '12px',
-                    boxShadow: '0 8px 32px rgba(0, 0, 0, 0.12)',
-                    padding: '8px'
-                  }}>
-                  <Link href="/journey" style={{ display: 'grid', gridTemplateColumns: '60px 1fr', gap: '12px', alignItems: 'center', padding: '12px', borderRadius: '8px', textDecoration: 'none', color: isDark ? '#ffffff' : '#000000' }}
-                    onMouseEnter={(e) => e.currentTarget.style.background = 'rgba(99, 102, 241, 0.08)'}
-                    onMouseLeave={(e) => e.currentTarget.style.background = 'transparent'}>
-                    <div style={{ width: '60px', height: '60px', borderRadius: '8px', overflow: 'hidden', background: isDark ? '#2a2a2a' : '#f8f8f8', position: 'relative' }}>
-                      <Image src="/images/headercards/journey-header.webp" alt="Journey" fill style={{ objectFit: 'cover' }} />
-                    </div>
-                    <div>
-                      <h3 style={{ fontSize: '15px', fontWeight: 600, margin: '0 0 4px 0' }}>My Journey</h3>
-                      <p style={{ fontSize: '13px', color: isDark ? '#cccccc' : '#666666', margin: 0 }}>Professional story</p>
-                    </div>
-                  </Link>
-                  <a href="/downloads/Sunil_Iyer_Resume.pdf" download style={{ display: 'grid', gridTemplateColumns: '60px 1fr', gap: '12px', alignItems: 'center', padding: '12px', borderRadius: '8px', textDecoration: 'none', color: isDark ? '#ffffff' : '#000000' }}
-                    onMouseEnter={(e) => e.currentTarget.style.background = 'rgba(99, 102, 241, 0.08)'}
-                    onMouseLeave={(e) => e.currentTarget.style.background = 'transparent'}>
-                    <div style={{ width: '60px', height: '60px', borderRadius: '8px', background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)', color: 'white', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                      <svg viewBox="0 0 24 24" fill="currentColor" width="30" height="30">
-                        <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z" />
-                      </svg>
-                    </div>
-                    <div>
-                      <h3 style={{ fontSize: '15px', fontWeight: 600, margin: '0 0 4px 0' }}>Resume</h3>
-                      <p style={{ fontSize: '13px', color: isDark ? '#cccccc' : '#666666', margin: 0 }}>Download resume</p>
-                    </div>
-                  </a>
-                  </div>
-                </div>
-              )}
-            </div>
 
             {/* Theme Toggle */}
             <div className="toggle-switch">
