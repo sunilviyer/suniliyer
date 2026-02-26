@@ -22,7 +22,7 @@ export default function NotFound() {
 
           <div className="content">
             <div className="error-code">404</div>
-            <div className="error-label">// PAGE NOT FOUND — ANOMALY DETECTED</div>
+            <div className="error-label">{'//'} PAGE NOT FOUND — ANOMALY DETECTED</div>
 
             <div className="ai-block">
               <div className="label">🤖 AI Analysis — Confidence: 99.7%</div>
@@ -32,7 +32,7 @@ export default function NotFound() {
             </div>
 
             <div className="suspects">
-              <div className="suspects-title">// Prime Suspects</div>
+              <div className="suspects-title">{'//'} Prime Suspects</div>
 
               <div className="suspect">
                 <div className="suspect-icon">🔗</div>
