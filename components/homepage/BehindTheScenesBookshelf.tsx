@@ -22,11 +22,11 @@ const BOOK_COLORS = [
 ];
 
 const PROJECTS = [
-  { id: "seshan-dashboard", spineLabel: "SESHAN  DASHBOARD", href: "/coming-soon" },
-  { id: "seshan-intelligence", spineLabel: "SESHAN  INTELLIGENCE", href: "/coming-soon" },
+  { id: "seshan-dashboard", spineLabel: "SESHAN  DASHBOARD", href: "https://seshan-navy.vercel.app/" },
+  { id: "seshan-intelligence", spineLabel: "SESHAN  INTELLIGENCE", href: "https://www.suniliyer.ca/seshan/demo/" },
   { id: "mortgage-calculator", spineLabel: "MORTGAGE  CALCULATOR", href: "/mortgage-calculator" },
   { id: "calvin-hobbes", spineLabel: "cAlvIn  & HOBBES", href: "/calvinhobbes" },
-  { id: "ai-agents", spineLabel: "FIVE AI  AGENTS", href: "/coming-soon" },
+  { id: "ai-agents", spineLabel: "FIVE AI  AGENTS", href: "https://ai-agents-rosy-mu.vercel.app" },
   { id: "bhagavad-gita", spineLabel: "BHAGAVAD  GITA", href: "/gita" },
   { id: "creative-works", spineLabel: "CREATIVE  WORKS", href: "/creative-works" },
   { id: "learning-paths", spineLabel: "LEARNING  PATHS", href: "/history" },

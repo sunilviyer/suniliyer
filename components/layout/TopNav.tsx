@@ -70,9 +70,9 @@ const NAV_SECTIONS = [
     colorClass: 'col-portfolio',
     barColor: '#f59e0b',
     items: [
-      { title: 'Seshan Intelligence', description: 'AI business intelligence', image: '/images/portfolio/seshan-intelligence.webp', href: '/coming-soon', external: false },
-      { title: 'Seshan Dashboard', description: 'Interactive analytics', image: '/images/portfolio/seshan-financial-dashboard.webp', href: '/coming-soon', external: false },
-      { title: 'AI Agents', description: 'Scout, Ticker, Quill…', image: '/images/portfolio/AIagents.webp', href: '/coming-soon', external: false },
+      { title: 'Seshan Intelligence', description: 'AI business intelligence', image: '/images/portfolio/seshan-intelligence.webp', href: 'https://www.suniliyer.ca/seshan/demo/', external: true },
+      { title: 'Seshan Dashboard', description: 'Interactive analytics', image: '/images/portfolio/seshan-financial-dashboard.webp', href: 'https://seshan-navy.vercel.app/', external: true },
+      { title: 'AI Agents', description: 'Scout, Ticker, Quill…', image: '/images/portfolio/AIagents.webp', href: 'https://ai-agents-rosy-mu.vercel.app', external: true },
     ],
   },
   {
