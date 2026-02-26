@@ -159,6 +159,7 @@ const states = [
 export default function NotFound() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
   const [digit2Reel, setDigit2Reel] = useState(["0"]);
   const [digit3Reel, setDigit3Reel] = useState(["4"]);
   const [subtitleFade, setSubtitleFade] = useState(false);
@@ -166,36 +167,44 @@ export default function NotFound() {
   const currentState = states[currentIndex];
   const CurrentAIResponse = AI_RESPONSES[currentIndex];
 
+  // Add mount delay to prevent blank text on initial load
+  useEffect(() => {
+    const timer = setTimeout(() => setIsMounted(true), 100);
+    return () => clearTimeout(timer);
+  }, []);
+
   useEffect(() => {
     const interval = setInterval(() => {
       setIsTransitioning(true);
       setSubtitleFade(true);
 
-      // Advance to next state
-      setCurrentIndex((prev) => (prev + 1) % states.length);
+      // Calculate next index first
+      setCurrentIndex((prev) => {
+        const nextIndex = (prev + 1) % states.length;
+        const nextState = states[nextIndex];
 
-      // Add new digits to reels for animation
-      const nextIndex = (currentIndex + 1) % states.length;
-      const nextState = states[nextIndex];
+        // Add new digits to reels for animation using the correct next state
+        setDigit2Reel((prevReel) => [...prevReel, nextState.d2]);
+        setDigit3Reel((prevReel) => [...prevReel, nextState.d3]);
 
-      setDigit2Reel((prev) => [...prev, nextState.d2]);
-      setDigit3Reel((prev) => [...prev, nextState.d3]);
+        // Fade subtitle back in
+        setTimeout(() => {
+          setSubtitleFade(false);
+        }, 600);
 
-      // Fade subtitle back in
-      setTimeout(() => {
-        setSubtitleFade(false);
-      }, 600);
+        // Reset transition state and clean up reels
+        setTimeout(() => {
+          setIsTransitioning(false);
+          setDigit2Reel([nextState.d2]);
+          setDigit3Reel([nextState.d3]);
+        }, 1100);
 
-      // Reset transition state and clean up reels
-      setTimeout(() => {
-        setIsTransitioning(false);
-        setDigit2Reel([nextState.d2]);
-        setDigit3Reel([nextState.d3]);
-      }, 1100);
+        return nextIndex;
+      });
     }, 8000);
 
     return () => clearInterval(interval);
-  }, [currentIndex]);
+  }, []);
 
   return (
     <>
@@ -266,7 +275,7 @@ export default function NotFound() {
               </div>
             </div>
             <div className="text-carousel">
-              <div className={`text-slide ${isTransitioning ? 'incoming' : 'current'}`}>
+              <div className={`text-slide ${isTransitioning && isMounted ? 'incoming' : 'current'}`}>
                 <CurrentAIResponse />
               </div>
             </div>
