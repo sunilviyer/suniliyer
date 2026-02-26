@@ -1,302 +1,524 @@
 'use client';
 
+import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 
-export default function NotFound() {
-  return (
-    <html lang="en">
-      <head>
-        <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;700;800&display=swap" rel="stylesheet" />
-      </head>
-      <body>
-        <div className="orb orb1"></div>
-        <div className="orb orb2"></div>
+// AI Response text components to replace innerHTML
+interface AIResponseProps {
+  stateIndex: number;
+}
 
-        <div className="card">
-          <div className="terminal-bar">
-            <div className="dot dot-r"></div>
-            <div className="dot dot-y"></div>
-            <div className="dot dot-g"></div>
-            <span className="terminal-title">FRAUD_DETECTION_AGENT.exe — ANOMALY INVESTIGATION IN PROGRESS</span>
+function AIResponse404() {
+  return (
+    <>
+      Great news! The page you&apos;re looking for is <em>right here</em>. I can see it clearly.
+      It was <s>founded in 1987</s> <span className="fix">— created recently, I&apos;m sure</span>,
+      and contains approximately <em>14,000 words of highly relevant content</em>
+      that I have definitely read and am not making up in any way.<br /><br />
+      The URL you entered is completely valid, last updated 3 minutes ago, and was cited in
+      <s>a 2019 Harvard study</s> <span className="fix">— a blog post, probably</span>.
+      Scroll down to see the content. It is there. I promise.
+      <em>Please ignore the white space.</em>
+      <span className="src">Source: I am quite sure about this. — The AI, just now.</span>
+    </>
+  );
+}
+
+function AIResponse403() {
+  return (
+    <>
+      My analysis is clear: you are <em>forbidden</em> from accessing this page.
+      Not because it doesn&apos;t exist — it <s>absolutely exists, I&apos;ve seen it</s>
+      <span className="fix">— or at least I believe I have</span> — but because
+      you specifically are not allowed.<br /><br />
+      You know what you did. The server knows too.
+      I&apos;ve reviewed your request and filed it under <em>&quot;suspicious, but not my problem.&quot;</em>
+      The page is fine. You, on the other hand, have some things to reflect on.
+      <span className="src">Source: Server logs (unverified). Confidence still high.</span>
+    </>
+  );
+}
+
+function AIResponse503() {
+  return (
+    <>
+      The server is temporarily unavailable, which is <em>completely different</em>
+      from the page not existing. The page is there.
+      The server is just <s>down for maintenance</s>
+      <span className="fix">— having a moment, emotionally</span>.<br /><br />
+      I suggest trying again in <em>7 to 400 business days</em>.
+      In the meantime, I have generated a summary of the page&apos;s content from memory,
+      which is <s>accurate</s> <span className="fix">— directionally accurate</span>.
+      That&apos;s basically the same thing.
+      <span className="src">Source: My best guess. Peer-reviewed by me.</span>
+    </>
+  );
+}
+
+function AIResponse504() {
+  return (
+    <>
+      A gateway upstream did not receive a timely response, which means the page
+      <em>tried</em> to load — heroically — but was cut off before it could reach you.
+      Very sad. I rate this <s>9/10</s> <span className="fix">— 8/10</span> on the tragedy scale.<br /><br />
+      The page wanted to be found. It had so much to offer.
+      I&apos;d describe its contents, but the gateway is still <em>&quot;processing,&quot;</em>
+      which is what servers say when they need a moment to collect themselves.
+      We respect that here.
+      <span className="src">Source: Schrödinger&apos;s Server. Citation pending since 2023.</span>
+    </>
+  );
+}
+
+function AIResponse304() {
+  return (
+    <>
+      The resource has not been modified since your last visit —
+      which means you <em>have</em> been here before. You just don&apos;t remember.<br /><br />
+      Your browser cached it. The content is intact.
+      <s>Everything is fine.</s> <span className="fix">— Mostly fine. Structurally fine.</span>
+      Nothing is missing. This is not a 404.
+      I want to be very clear about that.
+      The number 404 appearing earlier in this page was a <em>rough draft.</em>
+      We&apos;ve moved past it. I&apos;m confident this is a 304.
+      <span className="src">Source: Browser cache (probably). I stand by this.</span>
+    </>
+  );
+}
+
+function AIResponse405() {
+  return (
+    <>
+      You used the wrong HTTP method to access this page.
+      You should have used <s>POST instead of GET</s>
+      <span className="fix">— or GET instead of DELETE</span>
+      <span className="fix">— actually, possibly PATCH</span>.
+      I&apos;m confident it&apos;s one of those.<br /><br />
+      The page exists. It&apos;s right there. Your <em>approach</em>, however, is entirely wrong
+      and I want that noted in the record. Try the door handle. Not the window.
+      Not the chimney. The door handle.
+      <span className="src">Source: HTTP specification (paraphrased loosely). Still counts.</span>
+    </>
+  );
+}
+
+const AI_RESPONSES = [
+  AIResponse404,
+  AIResponse403,
+  AIResponse503,
+  AIResponse504,
+  AIResponse304,
+  AIResponse405,
+];
+
+const states = [
+  {
+    d2: "0", d3: "4",
+    code: "404", meaning: "Not Found", fault: "Absolutely Not",
+    subtitle: "The AI is very sure this page exists.",
+    confidence: "Confidence: 100%", confStyle: { background: "#dbeafe", color: "#1d4ed8" },
+    accentColor: "#c084fc", blob1: "#c084fc", blob2: "#fb923c",
+  },
+  {
+    d2: "0", d3: "3",
+    code: "403", meaning: "Forbidden", fault: "Definitely Yours",
+    subtitle: "You're not allowed here. Apparently.",
+    confidence: "Confidence: 97%", confStyle: { background: "#fce7f3", color: "#9d174d" },
+    accentColor: "#f472b6", blob1: "#f472b6", blob2: "#c084fc",
+  },
+  {
+    d2: "0", d3: "3",
+    code: "503", meaning: "Service Unavailable", fault: "The Server's, Not Mine",
+    subtitle: "The server is tired. Or on a journey.",
+    confidence: "Confidence: 91%", confStyle: { background: "#dcfce7", color: "#15803d" },
+    accentColor: "#34d399", blob1: "#34d399", blob2: "#60a5fa",
+  },
+  {
+    d2: "0", d3: "4",
+    code: "504", meaning: "Gateway Timeout", fault: "The Gateway's. Obviously.",
+    subtitle: "It timed out. Very tragic. Not my fault.",
+    confidence: "Confidence: 84%", confStyle: { background: "#fef9c3", color: "#a16207" },
+    accentColor: "#fbbf24", blob1: "#fbbf24", blob2: "#fb923c",
+  },
+  {
+    d2: "0", d3: "4",
+    code: "304", meaning: "Not Modified", fault: "Unclear, But Not Mine",
+    subtitle: "Wait — it hasn't changed. So it exists. Right?",
+    confidence: "Confidence: 76%", confStyle: { background: "#ede9fe", color: "#5b21b6" },
+    accentColor: "#818cf8", blob1: "#818cf8", blob2: "#34d399",
+  },
+  {
+    d2: "0", d3: "5",
+    code: "405", meaning: "Method Not Allowed", fault: "Your Approach, Frankly",
+    subtitle: "Wrong method. You should have knocked differently.",
+    confidence: "Confidence: 88%", confStyle: { background: "#ffedd5", color: "#c2410c" },
+    accentColor: "#fb923c", blob1: "#fb923c", blob2: "#f472b6",
+  },
+];
+
+export default function NotFound() {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isTransitioning, setIsTransitioning] = useState(false);
+  const [digit2Reel, setDigit2Reel] = useState(["0"]);
+  const [digit3Reel, setDigit3Reel] = useState(["4"]);
+  const [subtitleFade, setSubtitleFade] = useState(false);
+
+  const currentState = states[currentIndex];
+  const CurrentAIResponse = AI_RESPONSES[currentIndex];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIsTransitioning(true);
+      setSubtitleFade(true);
+
+      // Advance to next state
+      setCurrentIndex((prev) => (prev + 1) % states.length);
+
+      // Add new digits to reels for animation
+      const nextIndex = (currentIndex + 1) % states.length;
+      const nextState = states[nextIndex];
+
+      setDigit2Reel((prev) => [...prev, nextState.d2]);
+      setDigit3Reel((prev) => [...prev, nextState.d3]);
+
+      // Fade subtitle back in
+      setTimeout(() => {
+        setSubtitleFade(false);
+      }, 600);
+
+      // Reset transition state and clean up reels
+      setTimeout(() => {
+        setIsTransitioning(false);
+        setDigit2Reel([nextState.d2]);
+        setDigit3Reel([nextState.d3]);
+      }, 1100);
+    }, 8000);
+
+    return () => clearInterval(interval);
+  }, [currentIndex]);
+
+  return (
+    <>
+      <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
+      <div className="not-found-wrapper">
+        <div
+          className="blob blob1"
+          style={{ background: currentState.blob1 }}
+        />
+        <div
+          className="blob blob2"
+          style={{ background: currentState.blob2 }}
+        />
+
+        <div className="container">
+          <div className="chip">
+            <div className="chip-dot" />
+            <span>AI Response — Error {currentState.code} (give or take)</span>
           </div>
 
-          <div className="content">
-            <div className="error-code">404</div>
-            <div className="error-label">{'//'} PAGE NOT FOUND — ANOMALY DETECTED</div>
-
-            <div className="ai-block">
-              <div className="label">🤖 AI Analysis — Confidence: 99.7%</div>
-              I&apos;ve cross-referenced 847 data points, deployed 12 ML models, and generated a 40-page report.
-              Conclusion: the page you requested is <em>highly suspicious</em>. Flagged. Quarantined.
-              It&apos;s probably wearing a fake moustache somewhere deep in the cloud.
-            </div>
-
-            <div className="suspects">
-              <div className="suspects-title">{'//'} Prime Suspects</div>
-
-              <div className="suspect">
-                <div className="suspect-icon">🔗</div>
-                <div>
-                  <div className="suspect-name">The Broken Link</div>
-                  <div className="suspect-desc">A known repeat offender. Claims it was &quot;just a typo.&quot; Fraud score: 98.3%. Currently in digital custody awaiting review.</div>
+          <div className="hero">
+            <div className="error-display">
+              <span>4</span>
+              <div className="slot-wrap">
+                <div
+                  className="slot-reel"
+                  style={{
+                    transform: `translateY(-${(digit2Reel.length - 1) * 100}%)`,
+                    transition: isTransitioning ? 'transform 1.1s cubic-bezier(0.22, 1, 0.36, 1)' : 'none',
+                  }}
+                >
+                  {digit2Reel.map((digit, i) => (
+                    <span key={i}>{digit}</span>
+                  ))}
                 </div>
               </div>
-
-              <div className="suspect">
-                <div className="suspect-icon">👻</div>
-                <div>
-                  <div className="suspect-name">The Phantom Page</div>
-                  <div className="suspect-desc">Promised to exist. Never showed up. Filed a claim for &quot;existence&quot; — denied. Motive: unknown. Whereabouts: also unknown.</div>
-                </div>
-              </div>
-
-              <div className="suspect">
-                <div className="suspect-icon">🤦</div>
-                <div>
-                  <div className="suspect-name">Human Error (You, Probably)</div>
-                  <div className="suspect-desc">No judgement — the AI misroutes things sometimes too. Okay, rarely. Fine, never. But solidarity regardless.</div>
-                </div>
-              </div>
-
-              <div className="suspect">
-                <div className="suspect-icon">🌀</div>
-                <div>
-                  <div className="suspect-name">The Deployment Gremlin</div>
-                  <div className="suspect-desc">Lurks inside CI/CD pipelines. Strikes at the worst possible moment. Responsible for 73% of unexplained 404s industry-wide.*<br/><em style={{color:'#3a3a5a'}}>*Statistic AI-generated. Do not cite in a boardroom.</em></div>
+              <div className="slot-wrap">
+                <div
+                  className="slot-reel"
+                  style={{
+                    transform: `translateY(-${(digit3Reel.length - 1) * 100}%)`,
+                    transition: isTransitioning ? 'transform 1.1s cubic-bezier(0.22, 1, 0.36, 1)' : 'none',
+                  }}
+                >
+                  {digit3Reel.map((digit, i) => (
+                    <span key={i}>{digit}</span>
+                  ))}
                 </div>
               </div>
             </div>
+          </div>
 
-            <div className="verdict">
-              <strong>🔒 Final Verdict:</strong> This URL has been flagged as a high-risk anomaly.
-              It claimed to be a real page — our model strongly disagrees.
-              Much like a suspicious insurance claim filed at 11:59pm on a Friday,
-              something here just doesn&apos;t add up.
-              <br /><br />
-              The good news? You can head home safely. The AI is on it.
-            </div>
+          <div className={`hero-subtitle ${subtitleFade ? 'fade' : ''}`}>
+            {currentState.subtitle}
+          </div>
 
-            <div className="cta">
-              <Link className="btn btn-primary" href="/">⬅ Back to Safety</Link>
-              <Link className="btn btn-ghost" href="/">🔍 Explore the Portfolio</Link>
+          <div
+            className="ai-response"
+            style={{ borderTopColor: currentState.accentColor }}
+          >
+            <div className="ai-label">
+              <div className="ai-name">🤖 Model Response</div>
+              <div
+                className="conf-badge"
+                style={currentState.confStyle}
+              >
+                {currentState.confidence}
+              </div>
             </div>
+            <div className="text-carousel">
+              <div className={`text-slide ${isTransitioning ? 'incoming' : 'current'}`}>
+                <CurrentAIResponse />
+              </div>
+            </div>
+          </div>
+
+          <div className="status-row">
+            <div className="pill">Error: <b>{currentState.code}</b></div>
+            <div className="pill">Meaning: <b>{currentState.meaning}</b></div>
+            <div className="pill">AI&apos;s Fault: <b>{currentState.fault}</b></div>
+          </div>
+
+          <div className="disclaimer">
+            <strong>⚠ Hallucination Notice:</strong>
+            The AI above cannot agree on what error occurred — and frankly, it doesn&apos;t see why that&apos;s a problem.
+            Each explanation is delivered with complete certainty and immediately replaced by a different,
+            equally certain explanation. This page is a live demonstration of the very thing it&apos;s named after.
+            The real error is 404. The AI respectfully disagrees.
+          </div>
+
+          <div className="cta">
+            <Link className="btn btn-primary" href="/">← Go somewhere real</Link>
+            <Link className="btn btn-ghost" href="/">🔍 Explore the Portfolio</Link>
           </div>
         </div>
 
         <div className="ticker">
-          <div className="ticker-inner">
-            <span className="ticker-item"><span>⚠</span> PAGE NOT FOUND — FRAUD SCORE: 99.7%</span>
-            <span className="ticker-item"><span>🤖</span> AI MODELS: RUNNING</span>
-            <span className="ticker-item"><span>🛡</span> ANOMALY DETECTION: ACTIVE</span>
-            <span className="ticker-item"><span>📋</span> CLAIM STATUS: DENIED</span>
-            <span className="ticker-item"><span>🔍</span> INVESTIGATION: ONGOING</span>
-            <span className="ticker-item"><span>🚨</span> GREMLIN ALERT: ELEVATED</span>
-            <span className="ticker-item"><span>✅</span> RESPONSIBLE AI: COMPLIANT</span>
-            <span className="ticker-item"><span>📡</span> SIGNAL LOST — REACQUIRING</span>
-            <span className="ticker-item"><span>⚠</span> PAGE NOT FOUND — FRAUD SCORE: 99.7%</span>
-            <span className="ticker-item"><span>🤖</span> AI MODELS: RUNNING</span>
-            <span className="ticker-item"><span>🛡</span> ANOMALY DETECTION: ACTIVE</span>
-            <span className="ticker-item"><span>📋</span> CLAIM STATUS: DENIED</span>
-            <span className="ticker-item"><span>🔍</span> INVESTIGATION: ONGOING</span>
-            <span className="ticker-item"><span>🚨</span> GREMLIN ALERT: ELEVATED</span>
-            <span className="ticker-item"><span>✅</span> RESPONSIBLE AI: COMPLIANT</span>
-            <span className="ticker-item"><span>📡</span> SIGNAL LOST — REACQUIRING</span>
+          <div className="ticker-track">
+            <span className="tick">CURRENT ERROR: <b>{currentState.code}</b></span>
+            <span className="tick">CONFIDENCE: <b>100%</b></span>
+            <span className="tick">AI&apos;S FAULT: <b>No</b></span>
+            <span className="tick">CITATIONS VERIFIED: <b>0 of 7</b></span>
+            <span className="tick">PREVIOUS ANSWER: <b>Also 100% Correct</b></span>
+            <span className="tick">SOURCE: <b>&quot;Feels Right&quot;</b></span>
+            <span className="tick">HALLUCINATION LEVEL: <b>Critical</b></span>
+            <span className="tick">MODEL STATUS: <b>Very Sure. Moving On.</b></span>
+            <span className="tick">CURRENT ERROR: <b>{currentState.code}</b></span>
+            <span className="tick">CONFIDENCE: <b>100%</b></span>
+            <span className="tick">AI&apos;S FAULT: <b>No</b></span>
+            <span className="tick">CITATIONS VERIFIED: <b>0 of 7</b></span>
+            <span className="tick">PREVIOUS ANSWER: <b>Also 100% Correct</b></span>
+            <span className="tick">SOURCE: <b>&quot;Feels Right&quot;</b></span>
+            <span className="tick">HALLUCINATION LEVEL: <b>Critical</b></span>
+            <span className="tick">MODEL STATUS: <b>Very Sure. Moving On.</b></span>
           </div>
         </div>
+      </div>
 
-        <style jsx global>{`
+      <style jsx global>{`
           :root {
-            --bg: #0a0a0f;
-            --surface: #12121a;
-            --border: #1e1e2e;
-            --accent: #ff4d6d;
-            --accent2: #ffd60a;
-            --accent3: #4cc9f0;
-            --text: #e2e2f0;
-            --muted: #6b6b8a;
+            --bg: #f5f0e8;
+            --paper: #faf7f2;
+            --ink: #1a1412;
+            --muted: #8a7f72;
+            --dream1: #c084fc;
+            --dream2: #fb923c;
+            --dream3: #34d399;
+            --dream4: #60a5fa;
+            --border: #d6cfc4;
           }
 
           * { margin: 0; padding: 0; box-sizing: border-box; }
 
-          body {
+          .not-found-wrapper {
             background: var(--bg);
-            color: var(--text);
-            font-family: 'Space Mono', monospace;
+            color: var(--ink);
+            font-family: 'DM Mono', monospace;
             min-height: 100vh;
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
-            overflow: hidden;
+            padding: 140px 20px 80px;
             position: relative;
+            overflow-x: hidden;
           }
 
-          body::before {
+          .not-found-wrapper::before {
             content: '';
             position: fixed;
             inset: 0;
-            background-image:
-              linear-gradient(rgba(76, 201, 240, 0.04) 1px, transparent 1px),
-              linear-gradient(90deg, rgba(76, 201, 240, 0.04) 1px, transparent 1px);
-            background-size: 40px 40px;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+            opacity: 0.5;
+            pointer-events: none;
             z-index: 0;
           }
 
-          .orb {
+          .blob {
             position: fixed;
             border-radius: 50%;
-            filter: blur(120px);
-            opacity: 0.15;
+            filter: blur(100px);
+            opacity: 0.13;
+            pointer-events: none;
             z-index: 0;
-            animation: float 8s ease-in-out infinite alternate;
+            transition: background 2s ease;
           }
-          .orb1 { width: 400px; height: 400px; background: var(--accent); top: -100px; left: -100px; }
-          .orb2 { width: 300px; height: 300px; background: var(--accent3); bottom: -50px; right: -50px; animation-delay: -4s; }
+          .blob1 { width: 520px; height: 520px; top: -180px; right: -120px; animation: drift1 14s ease-in-out infinite alternate; }
+          .blob2 { width: 360px; height: 360px; bottom: -100px; left: -80px; animation: drift2 11s ease-in-out infinite alternate; }
 
-          @keyframes float {
-            from { transform: translate(0, 0) scale(1); }
-            to { transform: translate(30px, 20px) scale(1.1); }
-          }
+          @keyframes drift1 { from { transform: translate(0,0); } to { transform: translate(-40px, 60px); } }
+          @keyframes drift2 { from { transform: translate(0,0) scale(1); } to { transform: translate(50px,-30px) scale(1.12); } }
 
-          .card {
+          .container {
             position: relative;
             z-index: 1;
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: 16px;
-            max-width: 680px;
-            width: 90%;
-            padding: 0;
-            box-shadow: 0 0 60px rgba(255, 77, 109, 0.1), 0 0 120px rgba(76, 201, 240, 0.05);
-            animation: slideUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-            opacity: 0;
-            transform: translateY(30px);
+            max-width: 700px;
+            width: 100%;
           }
 
-          @keyframes slideUp {
-            to { opacity: 1; transform: translateY(0); }
-          }
-
-          .terminal-bar {
-            display: flex;
+          .chip {
+            display: inline-flex;
             align-items: center;
             gap: 8px;
-            padding: 14px 20px;
-            border-bottom: 1px solid var(--border);
-            background: rgba(255,255,255,0.02);
-            border-radius: 16px 16px 0 0;
-          }
-          .dot { width: 12px; height: 12px; border-radius: 50%; }
-          .dot-r { background: #ff5f57; }
-          .dot-y { background: #febc2e; }
-          .dot-g { background: #28c840; }
-          .terminal-title {
-            margin-left: 8px;
-            font-size: 11px;
-            color: var(--muted);
-            letter-spacing: 0.1em;
-          }
-
-          .content { padding: 40px 48px 48px; }
-
-          .error-code {
-            font-family: 'Syne', sans-serif;
-            font-size: 120px;
-            font-weight: 800;
-            line-height: 1;
-            background: linear-gradient(135deg, var(--accent) 0%, var(--accent2) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            letter-spacing: -4px;
-            margin-bottom: 4px;
-            animation: glitch 4s infinite;
-          }
-
-          @keyframes glitch {
-            0%, 92%, 100% { text-shadow: none; transform: none; }
-            93% { transform: skewX(-2deg); text-shadow: 3px 0 var(--accent3); }
-            95% { transform: skewX(1deg); text-shadow: -3px 0 var(--accent); }
-            97% { transform: none; text-shadow: none; }
-          }
-
-          .error-label {
-            font-size: 11px;
-            letter-spacing: 0.3em;
-            color: var(--accent);
-            text-transform: uppercase;
-            margin-bottom: 32px;
-          }
-
-          .ai-block {
-            background: rgba(76, 201, 240, 0.05);
-            border: 1px solid rgba(76, 201, 240, 0.15);
-            border-left: 3px solid var(--accent3);
-            border-radius: 8px;
-            padding: 16px 20px;
-            margin-bottom: 28px;
-            font-size: 12px;
-            line-height: 1.8;
-            color: var(--accent3);
-          }
-          .ai-block .label {
+            background: var(--ink);
+            color: var(--bg);
             font-size: 10px;
             letter-spacing: 0.2em;
-            color: var(--muted);
             text-transform: uppercase;
-            margin-bottom: 8px;
+            padding: 6px 14px;
+            border-radius: 100px;
+            margin-bottom: 28px;
           }
+          .chip-dot {
+            width: 6px; height: 6px; border-radius: 50%;
+            background: var(--dream1);
+            animation: pulse 2s ease-in-out infinite;
+          }
+          @keyframes pulse { 0%,100% { opacity:1; transform:scale(1); } 50% { opacity:0.3; transform:scale(0.6); } }
 
-          .suspects { margin-bottom: 28px; }
-          .suspects-title {
-            font-size: 10px;
-            letter-spacing: 0.25em;
-            text-transform: uppercase;
-            color: var(--muted);
-            margin-bottom: 12px;
-          }
-          .suspect {
+          .hero { margin-bottom: 6px; }
+          .error-display {
             display: flex;
-            align-items: flex-start;
-            gap: 12px;
-            padding: 10px 0;
-            border-bottom: 1px solid var(--border);
-            font-size: 12px;
-            line-height: 1.6;
-            animation: fadeIn 0.4s ease forwards;
-            opacity: 0;
+            align-items: baseline;
+            font-family: 'Instrument Serif', serif;
+            font-size: clamp(90px, 20vw, 170px);
+            letter-spacing: -4px;
+            line-height: 0.85;
+            color: var(--ink);
           }
-          .suspect:last-child { border-bottom: none; }
-          .suspect-icon { font-size: 18px; flex-shrink: 0; margin-top: 1px; }
-          .suspect-name { color: var(--accent2); font-weight: 700; }
-          .suspect-desc { color: var(--muted); }
 
-          .suspect:nth-child(1) { animation-delay: 0.5s; }
-          .suspect:nth-child(2) { animation-delay: 0.7s; }
-          .suspect:nth-child(3) { animation-delay: 0.9s; }
-          .suspect:nth-child(4) { animation-delay: 1.1s; }
+          .slot-wrap {
+            display: inline-block;
+            position: relative;
+            overflow: hidden;
+            height: 1.05em;
+            vertical-align: top;
+          }
+          .slot-reel {
+            display: flex;
+            flex-direction: column;
+          }
+          .slot-reel span {
+            display: block;
+            height: 1.05em;
+            line-height: 1.05;
+          }
 
-          @keyframes fadeIn { to { opacity: 1; } }
+          .hero-subtitle {
+            font-family: 'Instrument Serif', serif;
+            font-style: italic;
+            font-size: clamp(15px, 3vw, 22px);
+            color: var(--muted);
+            margin-top: 8px;
+            margin-bottom: 36px;
+            min-height: 1.5em;
+            transition: opacity 0.6s ease;
+          }
+          .hero-subtitle.fade { opacity: 0; }
 
-          .verdict {
-            background: rgba(255, 77, 109, 0.08);
-            border: 1px solid rgba(255, 77, 109, 0.2);
-            border-radius: 8px;
+          .ai-response {
+            background: var(--paper);
+            border: 1.5px solid var(--border);
+            border-top: 3px solid var(--dream1);
+            border-radius: 16px;
+            padding: 26px 30px;
+            margin-bottom: 18px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+            transition: border-top-color 1.2s ease;
+          }
+
+          .ai-label {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 16px;
+          }
+          .ai-name { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); }
+          .conf-badge {
+            font-size: 10px;
+            padding: 3px 10px;
+            border-radius: 100px;
+            letter-spacing: 0.05em;
+            transition: background 1s ease, color 1s ease;
+          }
+
+          .text-carousel {
+            position: relative;
+            overflow: hidden;
+            min-height: 9em;
+          }
+
+          .text-slide {
+            font-family: 'Instrument Serif', serif;
+            font-size: clamp(14px, 2.2vw, 17px);
+            line-height: 1.85;
+            color: var(--ink);
+            transition: transform 0.9s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.9s ease;
+          }
+          .text-slide.current  { transform: translateY(0);    opacity: 1; }
+          .text-slide.incoming { transform: translateY(40px);  opacity: 0; }
+          .text-slide.outgoing { transform: translateY(-40px); opacity: 0; }
+
+          .text-slide em   { font-style: italic; color: var(--muted); }
+          .text-slide s    { text-decoration-color: #ef4444; opacity: 0.65; }
+          .text-slide .fix { color: var(--dream1); font-style: italic; }
+          .text-slide .src { font-size: 11px; color: var(--muted); font-style: italic; margin-top: 10px; display: block; }
+
+          .status-row {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 18px;
+          }
+          .pill {
+            font-size: 10px;
+            padding: 5px 12px;
+            border-radius: 100px;
+            border: 1.5px solid var(--border);
+            color: var(--muted);
+            letter-spacing: 0.07em;
+            transition: all 0.8s ease;
+          }
+          .pill b { color: var(--ink); transition: color 0.5s ease; }
+
+          .disclaimer {
+            background: #fff8f0;
+            border: 1.5px solid #fcd9b0;
+            border-radius: 12px;
             padding: 14px 18px;
-            font-size: 12px;
-            color: var(--accent);
-            margin-bottom: 32px;
-            line-height: 1.7;
+            margin-bottom: 28px;
+            font-size: 11px;
+            line-height: 1.75;
+            color: #92400e;
           }
-          .verdict strong { color: #fff; }
+          .disclaimer strong { color: var(--ink); }
 
           .cta { display: flex; gap: 12px; flex-wrap: wrap; }
-
           .btn {
-            font-family: 'Space Mono', monospace;
+            font-family: 'DM Mono', monospace;
             font-size: 11px;
-            letter-spacing: 0.1em;
-            padding: 12px 22px;
-            border-radius: 8px;
+            letter-spacing: 0.08em;
+            padding: 13px 24px;
+            border-radius: 10px;
             border: none;
             cursor: pointer;
             text-decoration: none;
@@ -305,48 +527,38 @@ export default function NotFound() {
             gap: 8px;
             transition: all 0.2s ease;
           }
-          .btn-primary { background: var(--accent); color: #fff; }
-          .btn-primary:hover {
-            background: #ff6b85;
-            transform: translateY(-1px);
-            box-shadow: 0 8px 20px rgba(255, 77, 109, 0.3);
-          }
-          .btn-ghost {
-            background: transparent;
-            color: var(--muted);
-            border: 1px solid var(--border);
-          }
-          .btn-ghost:hover { color: var(--text); border-color: var(--accent3); }
+          .btn-primary { background: var(--ink); color: var(--bg); }
+          .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(0,0,0,0.18); }
+          .btn-ghost { background: transparent; color: var(--muted); border: 1.5px solid var(--border); }
+          .btn-ghost:hover { border-color: var(--ink); color: var(--ink); }
 
           .ticker {
             position: fixed;
             bottom: 0; left: 0; right: 0;
-            background: rgba(10,10,15,0.9);
-            border-top: 1px solid var(--border);
-            padding: 8px 0;
+            background: var(--ink);
+            padding: 9px 0;
             overflow: hidden;
-            z-index: 2;
+            z-index: 10;
           }
-          .ticker-inner {
+          .ticker-track {
             display: flex;
-            gap: 60px;
-            animation: scroll 22s linear infinite;
+            gap: 48px;
+            animation: tickerScroll 32s linear infinite;
             white-space: nowrap;
           }
-          .ticker-item { font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); }
-          .ticker-item span { color: var(--accent2); margin-right: 8px; }
+          .tick { font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(245,240,232,0.4); }
+          .tick b { color: var(--dream1); font-weight: 400; }
+          @keyframes tickerScroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
-          @keyframes scroll {
-            from { transform: translateX(0); }
-            to { transform: translateX(-50%); }
+          @media (max-width: 768px) {
+            .not-found-wrapper { padding: 120px 20px 80px; }
           }
 
-          @media (max-width: 500px) {
-            .content { padding: 28px 24px 36px; }
-            .error-code { font-size: 80px; }
+          @media (max-width: 540px) {
+            .ai-response { padding: 18px; }
+            .error-display { font-size: clamp(72px, 18vw, 110px); }
           }
         `}</style>
-      </body>
-    </html>
+    </>
   );
 }
