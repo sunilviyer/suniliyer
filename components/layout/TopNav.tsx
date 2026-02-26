@@ -131,6 +131,18 @@ export default function TopNav() {
     };
   }, []);
 
+  // Prevent body scroll when menu is open
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [mobileMenuOpen]);
+
   const toggleContact = () => {
     if (contactOpen) {
       window.dispatchEvent(new CustomEvent('close-contact-widget'));
@@ -227,8 +239,10 @@ export default function TopNav() {
                   border: `1px solid ${isDark ? 'rgba(255,255,255,0.09)' : 'rgba(0,0,0,0.08)'}`,
                   borderRadius: '16px',
                   boxShadow: isDark ? '0 24px 60px rgba(0,0,0,0.55), 0 0 0 1px rgba(255,255,255,0.05)' : '0 24px 60px rgba(99,102,241,0.12), 0 0 0 1px rgba(0,0,0,0.06)',
-                  overflow: 'hidden',
-                  padding: '28px 28px 24px'
+                  padding: '28px 28px 24px',
+                  maxHeight: 'calc(100vh - 140px)',
+                  overflowY: 'auto',
+                  overflowX: 'hidden'
                 }}>
                   {/* Meta row */}
                   <div className="mega-menu-meta" style={{
@@ -574,6 +588,29 @@ export default function TopNav() {
           transform: translateX(44px);
           background-color: var(--dark);
           box-shadow: none;
+        }
+
+        /* Custom scrollbar for menu */
+        .mega-menu-content {
+          scrollbar-width: thin;
+          scrollbar-color: rgba(167, 139, 250, 0.3) transparent;
+        }
+
+        .mega-menu-content::-webkit-scrollbar {
+          width: 8px;
+        }
+
+        .mega-menu-content::-webkit-scrollbar-track {
+          background: transparent;
+        }
+
+        .mega-menu-content::-webkit-scrollbar-thumb {
+          background: rgba(167, 139, 250, 0.3);
+          border-radius: 4px;
+        }
+
+        .mega-menu-content::-webkit-scrollbar-thumb:hover {
+          background: rgba(167, 139, 250, 0.5);
         }
 
         /* Mobile responsiveness for hamburger menu */
