@@ -22,22 +22,22 @@ const BOOK_COLORS = [
 ];
 
 const PROJECTS = [
-  { id: "seshan-dashboard", spineLabel: "SESHAN  DASHBOARD" },
-  { id: "seshan-intelligence", spineLabel: "SESHAN  INTELLIGENCE" },
-  { id: "mortgage-calculator", spineLabel: "MORTGAGE  CALCULATOR" },
-  { id: "calvin-hobbes", spineLabel: "cAlvIn  & HOBBES" },
-  { id: "ai-agents", spineLabel: "FIVE AI  AGENTS" },
-  { id: "bhagavad-gita", spineLabel: "BHAGAVAD  GITA" },
-  { id: "creative-works", spineLabel: "CREATIVE  WORKS" },
-  { id: "learning-paths", spineLabel: "LEARNING  PATHS" },
-  { id: "suniliyer-ca", spineLabel: "SUNIL  IYER.CA" },
+  { id: "seshan-dashboard", spineLabel: "SESHAN  DASHBOARD", href: "/coming-soon" },
+  { id: "seshan-intelligence", spineLabel: "SESHAN  INTELLIGENCE", href: "/coming-soon" },
+  { id: "mortgage-calculator", spineLabel: "MORTGAGE  CALCULATOR", href: "/mortgage-calculator" },
+  { id: "calvin-hobbes", spineLabel: "cAlvIn  & HOBBES", href: "/calvinhobbes" },
+  { id: "ai-agents", spineLabel: "FIVE AI  AGENTS", href: "/coming-soon" },
+  { id: "bhagavad-gita", spineLabel: "BHAGAVAD  GITA", href: "/gita" },
+  { id: "creative-works", spineLabel: "CREATIVE  WORKS", href: "/creative-works" },
+  { id: "learning-paths", spineLabel: "LEARNING  PATHS", href: "/history" },
+  { id: "suniliyer-ca", spineLabel: "SUNIL  IYER.CA", href: "/" },
 ];
 
 const HEIGHTS = [340, 360, 330, 350, 345, 355, 338, 348, 342];
 const WIDTHS = [62, 58, 66, 54, 60, 56, 64, 58, 60];
 
 interface BookSpineProps {
-  project: { id: string; spineLabel: string };
+  project: { id: string; spineLabel: string; href: string };
   index: number;
 }
 
@@ -49,7 +49,7 @@ function BookSpine({ project, index }: BookSpineProps) {
 
   return (
     <Link
-      href="/behind-the-scenes"
+      href={project.href}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       style={{
