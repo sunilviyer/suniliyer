@@ -103,9 +103,9 @@ function AIResponse405() {
 }
 
 const AI_RESPONSES = [
+  AIResponse503,
   AIResponse404,
   AIResponse403,
-  AIResponse503,
   AIResponse504,
   AIResponse304,
   AIResponse405,
@@ -113,42 +113,42 @@ const AI_RESPONSES = [
 
 const states = [
   {
-    d2: "0", d3: "4",
-    code: "404", meaning: "Not Found", fault: "Absolutely Not",
-    subtitle: "The AI is very sure this page exists.",
-    confidence: "Confidence: 100%", confStyle: { background: "#dbeafe", color: "#1d4ed8" },
-    accentColor: "#c084fc", blob1: "#c084fc", blob2: "#fb923c",
-  },
-  {
-    d2: "0", d3: "3",
-    code: "403", meaning: "Forbidden", fault: "Definitely Yours",
-    subtitle: "You're not allowed here. Apparently.",
-    confidence: "Confidence: 97%", confStyle: { background: "#fce7f3", color: "#9d174d" },
-    accentColor: "#f472b6", blob1: "#f472b6", blob2: "#c084fc",
-  },
-  {
-    d2: "0", d3: "3",
+    d1: "5", d2: "0", d3: "3",
     code: "503", meaning: "Service Unavailable", fault: "The Server's, Not Mine",
     subtitle: "The server is tired. Or on a journey.",
     confidence: "Confidence: 91%", confStyle: { background: "#dcfce7", color: "#15803d" },
     accentColor: "#34d399", blob1: "#34d399", blob2: "#60a5fa",
   },
   {
-    d2: "0", d3: "4",
+    d1: "4", d2: "0", d3: "4",
+    code: "404", meaning: "Not Found", fault: "Absolutely Not",
+    subtitle: "The AI is very sure this page exists.",
+    confidence: "Confidence: 100%", confStyle: { background: "#dbeafe", color: "#1d4ed8" },
+    accentColor: "#c084fc", blob1: "#c084fc", blob2: "#fb923c",
+  },
+  {
+    d1: "4", d2: "0", d3: "3",
+    code: "403", meaning: "Forbidden", fault: "Definitely Yours",
+    subtitle: "You're not allowed here. Apparently.",
+    confidence: "Confidence: 97%", confStyle: { background: "#fce7f3", color: "#9d174d" },
+    accentColor: "#f472b6", blob1: "#f472b6", blob2: "#c084fc",
+  },
+  {
+    d1: "5", d2: "0", d3: "4",
     code: "504", meaning: "Gateway Timeout", fault: "The Gateway's. Obviously.",
     subtitle: "It timed out. Very tragic. Not my fault.",
     confidence: "Confidence: 84%", confStyle: { background: "#fef9c3", color: "#a16207" },
     accentColor: "#fbbf24", blob1: "#fbbf24", blob2: "#fb923c",
   },
   {
-    d2: "0", d3: "4",
+    d1: "3", d2: "0", d3: "4",
     code: "304", meaning: "Not Modified", fault: "Unclear, But Not Mine",
     subtitle: "Wait — it hasn't changed. So it exists. Right?",
     confidence: "Confidence: 76%", confStyle: { background: "#ede9fe", color: "#5b21b6" },
     accentColor: "#818cf8", blob1: "#818cf8", blob2: "#34d399",
   },
   {
-    d2: "0", d3: "5",
+    d1: "4", d2: "0", d3: "5",
     code: "405", meaning: "Method Not Allowed", fault: "Your Approach, Frankly",
     subtitle: "Wrong method. You should have knocked differently.",
     confidence: "Confidence: 88%", confStyle: { background: "#ffedd5", color: "#c2410c" },
@@ -159,52 +159,59 @@ const states = [
 export default function NotFound() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
-  const [isMounted, setIsMounted] = useState(false);
+  const [digit1Reel, setDigit1Reel] = useState(["5"]);
   const [digit2Reel, setDigit2Reel] = useState(["0"]);
-  const [digit3Reel, setDigit3Reel] = useState(["4"]);
+  const [digit3Reel, setDigit3Reel] = useState(["3"]);
   const [subtitleFade, setSubtitleFade] = useState(false);
+  const isInitialMount = useRef(true);
 
   const currentState = states[currentIndex];
   const CurrentAIResponse = AI_RESPONSES[currentIndex];
 
-  // Add mount delay to prevent blank text on initial load
-  useEffect(() => {
-    const timer = setTimeout(() => setIsMounted(true), 100);
-    return () => clearTimeout(timer);
-  }, []);
-
+  // Rotation interval
   useEffect(() => {
     const interval = setInterval(() => {
       setIsTransitioning(true);
       setSubtitleFade(true);
 
-      // Calculate next index first
-      setCurrentIndex((prev) => {
-        const nextIndex = (prev + 1) % states.length;
-        const nextState = states[nextIndex];
-
-        // Add new digits to reels for animation using the correct next state
-        setDigit2Reel((prevReel) => [...prevReel, nextState.d2]);
-        setDigit3Reel((prevReel) => [...prevReel, nextState.d3]);
-
-        // Fade subtitle back in
-        setTimeout(() => {
-          setSubtitleFade(false);
-        }, 600);
-
-        // Reset transition state and clean up reels
-        setTimeout(() => {
-          setIsTransitioning(false);
-          setDigit2Reel([nextState.d2]);
-          setDigit3Reel([nextState.d3]);
-        }, 1100);
-
-        return nextIndex;
-      });
-    }, 8000);
+      // Advance to next state
+      setCurrentIndex((prev) => (prev + 1) % states.length);
+    }, 10000);
 
     return () => clearInterval(interval);
   }, []);
+
+  // Sync digit reels when currentIndex changes (skip initial mount)
+  useEffect(() => {
+    // Skip animation on initial mount
+    if (isInitialMount.current) {
+      isInitialMount.current = false;
+      return;
+    }
+
+    // Add new digits to reels for slot machine animation
+    setDigit1Reel((prev) => [...prev, currentState.d1]);
+    setDigit2Reel((prev) => [...prev, currentState.d2]);
+    setDigit3Reel((prev) => [...prev, currentState.d3]);
+
+    // Fade subtitle back in
+    const subtitleTimer = setTimeout(() => {
+      setSubtitleFade(false);
+    }, 600);
+
+    // Clean up reels after animation completes
+    const cleanupTimer = setTimeout(() => {
+      setIsTransitioning(false);
+      setDigit1Reel([currentState.d1]);
+      setDigit2Reel([currentState.d2]);
+      setDigit3Reel([currentState.d3]);
+    }, 1100);
+
+    return () => {
+      clearTimeout(subtitleTimer);
+      clearTimeout(cleanupTimer);
+    };
+  }, [currentIndex, currentState.d1, currentState.d2, currentState.d3]);
 
   return (
     <>
@@ -227,7 +234,19 @@ export default function NotFound() {
 
           <div className="hero">
             <div className="error-display">
-              <span>4</span>
+              <div className="slot-wrap">
+                <div
+                  className="slot-reel"
+                  style={{
+                    transform: `translateY(-${(digit1Reel.length - 1) * 100}%)`,
+                    transition: isTransitioning ? 'transform 1.1s cubic-bezier(0.22, 1, 0.36, 1)' : 'none',
+                  }}
+                >
+                  {digit1Reel.map((digit, i) => (
+                    <span key={i}>{digit}</span>
+                  ))}
+                </div>
+              </div>
               <div className="slot-wrap">
                 <div
                   className="slot-reel"
@@ -275,7 +294,7 @@ export default function NotFound() {
               </div>
             </div>
             <div className="text-carousel">
-              <div className={`text-slide ${isTransitioning && isMounted ? 'incoming' : 'current'}`}>
+              <div className={`text-slide ${isTransitioning ? 'incoming' : 'current'}`}>
                 <CurrentAIResponse />
               </div>
             </div>
