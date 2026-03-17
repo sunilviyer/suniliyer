@@ -97,11 +97,11 @@ const ARTICLES: Article[] = [
     description:"Where does Google fit? Where do websites fit? Big, provocative questions about the next era of information.",
     stickyText:"The Agentic Web: what happens to the internet when AI does the browsing?",
     stickyBg:"linear-gradient(135deg,#e8f0f8,#d5e5f0)" },
-  { id:14, category:"futurist",   status:"idea", isSticky:true,
+  { id:14, category:"futurist",   status:"published",
     title:"AGI Is Not the Finish Line — Alignment Is",
     description:"Less about who gets to AGI first. More about what happens the morning after someone does.",
-    stickyText:"AGI is not the finish line — Alignment is",
-    stickyBg:"linear-gradient(135deg,#eaeef5,#d8dff0)" },
+    readTime:"6 min read", date:"Mar 2026", link:"https://medium.com/@sunilviswanathaniyer/agi-is-not-the-finish-line-alignment-is-3aed56f212be",
+    image:"/images/medium/alignment.webp" },
   { id:15, category:"human",      status:"idea", isSticky:true,
     title:"More stories from 20 years of people-first leadership",
     description:"More articles about people, teams, clients, and the human side of working in AI are on the way.",
@@ -182,16 +182,26 @@ function CategoryTag({ category }: { category: Category }) {
 }
 
 // ─── Single Card ──────────────────────────────────────────────────────────────
-function Card({ article, index, isFlipped, onFlip, isDimmed, style }: {
+function Card({ article, index, isFlipped, onFlip, isDimmed, style, isMobile }: {
   article: Article; index: number; isFlipped: boolean;
   onFlip: () => void; isDimmed: boolean;
   style?: React.CSSProperties;
+  isMobile?: boolean;
 }) {
   const tilt   = TILTS[index % TILTS.length];
   const isHero = !!article.isHero;
 
+  // On mobile, if published article with link, navigate directly instead of flipping
+  const handleClick = () => {
+    if (isMobile && article.status === "published" && article.link) {
+      window.open(article.link, '_blank', 'noopener,noreferrer');
+    } else {
+      onFlip();
+    }
+  };
+
   return (
-    <div onClick={onFlip} style={{
+    <div onClick={handleClick} style={{
       position:"relative", perspective:1000,
       opacity: isDimmed ? 0.2 : 1,
       transition:"opacity 0.3s ease",
@@ -584,6 +594,7 @@ export default function ArticlesPinboard() {
                       isFlipped={isFlipped}
                       onFlip={() => setActiveId(prev => prev === article.id ? null : article.id)}
                       isDimmed={isDimmed}
+                      isMobile={isMobile}
                     />
                   </div>
                 );
