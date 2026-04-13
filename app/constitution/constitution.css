@@ -1,0 +1,512 @@
+/**
+ * AGI Constitution: Dharma Sanhita
+ * Design System Styles
+ *
+ * Typography:
+ * - Headings: Cormorant Garamond (600 weight)
+ * - Body: Source Serif 4 (400 weight)
+ * - Sanskrit: Noto Sans Devanagari (400/500 weight)
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Noto+Sans+Devanagari:wght@400;500;600&display=swap');
+
+/* ============================================
+   CONSTITUTION THEME VARIABLES
+   ============================================ */
+
+/* Use site's global theme attribute */
+:root,
+[data-theme="light"] {
+  /* Light mode colors */
+  --constitution-bg-primary: #FAF8F2;
+  --constitution-bg-sidebar: #F0EDE4;
+  --constitution-text-primary: #2D2D2D;
+  --constitution-text-secondary: #4A5568;
+  --constitution-saffron: #E8740C;
+  --constitution-deep-blue: #1A3A5C;
+  --constitution-gold: #C9A227;
+  --constitution-charcoal: #2D2D2D;
+  --constitution-slate: #4A5568;
+  --constitution-border: rgba(201, 162, 39, 0.2);
+  --constitution-vedic-anchor-bg: rgba(201, 162, 39, 0.06);
+  --constitution-constitutional-source-bg: rgba(74, 85, 104, 0.06);
+  --constitution-hover-bg: rgba(201, 162, 39, 0.08);
+  --constitution-active-bg: rgba(201, 162, 39, 0.12);
+}
+
+[data-theme="dark"] {
+  /* Dark mode colors */
+  --constitution-bg-primary: #0C0B09;
+  --constitution-bg-sidebar: #0F0E0B;
+  --constitution-text-primary: #D4C5A0;
+  --constitution-text-secondary: #8A8068;
+  --constitution-border: rgba(201, 162, 39, 0.15);
+  --constitution-vedic-anchor-bg: rgba(201, 162, 39, 0.04);
+  --constitution-constitutional-source-bg: rgba(74, 85, 104, 0.04);
+  --constitution-hover-bg: rgba(201, 162, 39, 0.06);
+  --constitution-active-bg: rgba(201, 162, 39, 0.1);
+}
+
+/* ============================================
+   CONSTITUTION LAYOUT
+   ============================================ */
+
+.constitution-container {
+  font-family: 'Source Serif 4', Georgia, serif;
+  background-color: var(--constitution-bg-primary);
+  color: var(--constitution-text-primary);
+  min-height: 100vh;
+  padding-top: 110px; /* Account for site's fixed TopNav (70px + 20px top margin + 20px spacing) */
+}
+
+/* Mobile sidebar toggle button - only shown on mobile */
+.constitution-mobile-sidebar-toggle {
+  display: none;
+  position: fixed;
+  top: 110px;
+  left: 1rem;
+  z-index: 45;
+  width: 56px;
+  height: 56px;
+  background: var(--constitution-bg-sidebar);
+  border: 2px solid var(--constitution-gold);
+  border-radius: 50%;
+  color: var(--constitution-gold);
+  font-size: 1.5rem;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: all 0.2s ease;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+  flex-direction: column;
+}
+
+.constitution-mobile-sidebar-toggle:hover {
+  background: var(--constitution-gold);
+  color: var(--constitution-bg-primary);
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .constitution-mobile-sidebar-toggle {
+    display: flex;
+  }
+}
+
+/* Sidebar */
+.constitution-sidebar {
+  background-color: var(--constitution-bg-sidebar);
+  border-right: 1px solid var(--constitution-border);
+  width: 280px;
+  height: calc(100vh - 110px); /* Account for site TopNav */
+  position: fixed;
+  top: 110px; /* Below site TopNav */
+  left: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 1.5rem 0;
+  z-index: 40;
+}
+
+.constitution-sidebar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.constitution-sidebar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.constitution-sidebar::-webkit-scrollbar-thumb {
+  background: var(--constitution-gold);
+  border-radius: 4px;
+}
+
+.constitution-sidebar::-webkit-scrollbar-thumb:hover {
+  background: var(--constitution-saffron);
+}
+
+/* Reading Area */
+.constitution-reading-area {
+  margin-left: 280px;
+  padding: 2rem 4rem;
+  max-width: 900px;
+}
+
+@media (max-width: 768px) {
+  .constitution-reading-area {
+    margin-left: 0;
+    padding: 2rem 1rem;
+  }
+}
+
+/* ============================================
+   TYPOGRAPHY
+   ============================================ */
+
+.constitution-part-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: var(--constitution-deep-blue);
+  margin-bottom: 0.5rem;
+  line-height: 1.2;
+  scroll-margin-top: 80px; /* Ensure proper scroll positioning */
+}
+
+.constitution-part-subtitle {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--constitution-text-secondary);
+  margin-bottom: 2rem;
+}
+
+.constitution-section-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: var(--constitution-text-primary);
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.constitution-body {
+  font-family: 'Source Serif 4', serif;
+  font-size: 1.125rem;
+  line-height: 1.8;
+  color: var(--constitution-text-primary);
+  margin-bottom: 1.5rem;
+}
+
+/* Sanskrit text */
+.constitution-sanskrit {
+  font-family: 'Noto Sans Devanagari', sans-serif;
+  color: var(--constitution-saffron);
+  font-weight: 500;
+  cursor: help;
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-decoration-color: var(--constitution-saffron);
+  text-underline-offset: 3px;
+}
+
+.constitution-sanskrit:hover {
+  color: var(--constitution-gold);
+  text-decoration-color: var(--constitution-gold);
+}
+
+/* ============================================
+   VEDIC ANCHOR & CONSTITUTIONAL SOURCE BLOCKS
+   ============================================ */
+
+.vedic-anchor-block {
+  background: var(--constitution-vedic-anchor-bg);
+  border-left: 3px solid var(--constitution-gold);
+  padding: 16px 20px;
+  margin: 2rem 0;
+  font-style: italic;
+  font-family: 'Source Serif 4', serif;
+  color: var(--constitution-text-primary);
+}
+
+.constitutional-source-block {
+  background: var(--constitution-constitutional-source-bg);
+  border-left: 3px solid var(--constitution-slate);
+  padding: 16px 20px;
+  margin: 2rem 0;
+  font-style: italic;
+  font-family: 'Source Serif 4', serif;
+  font-size: 0.9em;
+  color: var(--constitution-text-secondary);
+}
+
+/* ============================================
+   TABLES
+   ============================================ */
+
+.constitution-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 2rem 0;
+  font-family: 'Source Serif 4', serif;
+  font-size: 1rem;
+  overflow-x: auto;
+}
+
+.constitution-table thead {
+  background-color: var(--constitution-deep-blue);
+  color: white;
+}
+
+.constitution-table th {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  font-weight: 600;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem;
+}
+
+.constitution-table td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--constitution-border);
+}
+
+.constitution-table tbody tr:nth-child(even) {
+  background-color: var(--constitution-hover-bg);
+}
+
+.constitution-table tbody tr:hover {
+  background-color: var(--constitution-active-bg);
+}
+
+/* Mobile table scroll */
+@media (max-width: 768px) {
+  .constitution-table-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+/* ============================================
+   NAVIGATION
+   ============================================ */
+
+.constitution-nav-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 4rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--constitution-border);
+}
+
+.constitution-nav-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background-color: transparent;
+  border: 1px solid var(--constitution-gold);
+  color: var(--constitution-gold);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.constitution-nav-button:hover {
+  background-color: var(--constitution-gold);
+  color: var(--constitution-bg-primary);
+}
+
+.constitution-nav-button:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.constitution-nav-button:disabled:hover {
+  background-color: transparent;
+  color: var(--constitution-gold);
+}
+
+/* ============================================
+   SIDEBAR NAVIGATION ITEMS
+   ============================================ */
+
+.sidebar-nav-category {
+  margin-bottom: 1.5rem;
+}
+
+.sidebar-category-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--constitution-text-secondary);
+  padding: 0 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.sidebar-nav-item {
+  display: flex;
+  align-items: flex-start;
+  padding: 0.75rem 1.5rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-left: 3px solid transparent;
+  text-decoration: none;
+  color: var(--constitution-text-primary);
+}
+
+.sidebar-nav-item:hover {
+  background-color: var(--constitution-hover-bg);
+  border-left-color: var(--constitution-gold);
+}
+
+.sidebar-nav-item.active {
+  background-color: var(--constitution-active-bg);
+  border-left-color: var(--constitution-gold);
+  font-weight: 600;
+}
+
+.sidebar-nav-number {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 600;
+  color: var(--constitution-saffron);
+  min-width: 3rem;
+  flex-shrink: 0;
+}
+
+.sidebar-nav-title {
+  font-family: 'Source Serif 4', serif;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+/* Theme toggle removed - using site's global theme toggle */
+
+/* ============================================
+   MOBILE RESPONSIVE
+   ============================================ */
+
+@media (max-width: 768px) {
+  .constitution-sidebar {
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    z-index: 40;
+  }
+
+  .constitution-sidebar.mobile-open {
+    transform: translateX(0);
+  }
+
+  .constitution-header {
+    padding: 0.5rem 1rem;
+  }
+
+  .constitution-part-title {
+    font-size: 2rem;
+  }
+
+  .constitution-part-subtitle {
+    font-size: 1.25rem;
+  }
+
+  .constitution-body {
+    font-size: 1rem;
+  }
+}
+
+/* Mobile overlay for sidebar */
+.constitution-mobile-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 35;
+}
+
+@media (max-width: 768px) {
+  .constitution-mobile-overlay {
+    display: block;
+  }
+}
+
+/* ============================================
+   SANSKRIT REFERENCE PANEL
+   ============================================ */
+
+.sanskrit-panel {
+  position: fixed;
+  bottom: 0;
+  left: 280px;
+  right: 0;
+  background-color: var(--constitution-bg-sidebar);
+  border-top: 2px solid var(--constitution-gold);
+  max-height: 40vh;
+  overflow-y: auto;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+  z-index: 30;
+}
+
+.sanskrit-panel.open {
+  transform: translateY(0);
+}
+
+.sanskrit-panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid var(--constitution-border);
+  position: sticky;
+  top: 0;
+  background-color: var(--constitution-bg-sidebar);
+  z-index: 1;
+}
+
+.sanskrit-panel-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--constitution-gold);
+}
+
+.sanskrit-panel-content {
+  padding: 1.5rem;
+}
+
+.sanskrit-term-entry {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--constitution-border);
+}
+
+.sanskrit-term-entry:last-child {
+  border-bottom: none;
+}
+
+.sanskrit-term-header {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.sanskrit-term-roman {
+  font-family: 'Source Serif 4', serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--constitution-saffron);
+}
+
+.sanskrit-term-devanagari {
+  font-family: 'Noto Sans Devanagari', sans-serif;
+  font-size: 1.5rem;
+  color: var(--constitution-gold);
+}
+
+.sanskrit-term-meaning {
+  font-style: italic;
+  color: var(--constitution-text-secondary);
+  margin-bottom: 0.5rem;
+}
+
+.sanskrit-term-application {
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .sanskrit-panel {
+    left: 0;
+  }
+}
