@@ -202,10 +202,27 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
+  // AGI Constitution pages
+  const constitutionPages: MetadataRoute.Sitemap = [
+    {
+      url: `${baseUrl}/constitution`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly',
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/constitution/context`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly',
+      priority: 0.95, // High priority for AI discoverability
+    },
+  ];
+
   // Combine all pages
   return [
     ...mainPages,
     ...portfolioPages,
+    ...constitutionPages,
     ...learningPathIndexPages,
     ...historyPages,
     ...riskPages,
