@@ -11,9 +11,9 @@ import ConstitutionalSource from '../components/ConstitutionalSource';
 import TableRenderer from '../components/TableRenderer';
 
 interface PageProps {
-  params: {
+  params: Promise<{
     partId: string;
-  };
+  }>;
 }
 
 /**
