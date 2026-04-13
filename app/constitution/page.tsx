@@ -77,8 +77,6 @@ export default function ConstitutionIndexPage() {
       <div className="constitutional-source-block" style={{ marginBottom: '3rem' }}>
         <strong>Authored by Sunil Iyer</strong>
         <br />
-        Solution Consultant at Shift Technology
-        <br />
         <a
           href="https://suniliyer.ca"
           target="_blank"
