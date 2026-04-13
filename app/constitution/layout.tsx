@@ -20,10 +20,11 @@ export default function ConstitutionLayout({
   // Extract part ID from pathname
   const currentPartId = pathname?.split('/').pop() || '';
 
-  const handleOpenPanel = (term: SanskritTerm) => {
-    setSelectedTerm(term);
-    setIsPanelOpen(true);
-  };
+  // Handler for opening the Sanskrit panel (not currently used but available for future tooltip integration)
+  // const handleOpenPanel = (term: SanskritTerm) => {
+  //   setSelectedTerm(term);
+  //   setIsPanelOpen(true);
+  // };
 
   const handleClosePanel = () => {
     setIsPanelOpen(false);
