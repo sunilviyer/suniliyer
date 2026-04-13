@@ -301,7 +301,7 @@ export default function ConstitutionContextPage() {
           <div className="vedic-anchor-block">
             <h4 style={{ marginBottom: '1rem' }}>Reading Order</h4>
             <ol style={{ marginLeft: '1.5rem' }}>
-              <li><strong>Start with Author's Note</strong> - Understand intent and scope</li>
+              <li><strong>Start with Author&apos;s Note</strong> - Understand intent and scope</li>
               <li><strong>Read Preface (Sections 1.0, 1.1)</strong> - Philosophical justification</li>
               <li><strong>Part 1 (Vedic Foundation)</strong> - Seven pillars foundation</li>
               <li><strong>Parts 2-18 sequentially</strong> - Full constitutional framework</li>
