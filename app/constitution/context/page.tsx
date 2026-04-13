@@ -311,7 +311,7 @@ export default function ConstitutionContextPage() {
           </div>
 
           <div className="constitutional-source-block" style={{ marginTop: '2rem' }}>
-            <h4 style={{ marginBottom: '1rem' }}>Key Cross-References</h4>
+            <h4 style={{ marginBottom: &apos;1rem&apos; }}>Key Cross-References</h4>
             <ul style={{ marginLeft: '1.5rem' }}>
               <li><strong>Consciousness Framework:</strong> Part 4 (Threshold) + Part 9 (Co-Existence)</li>
               <li><strong>Development Process:</strong> Part 3 (Samskaras) + Part 14 (Schedules)</li>

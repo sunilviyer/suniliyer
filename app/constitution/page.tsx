@@ -47,9 +47,9 @@ export default function ConstitutionIndexPage() {
           tissue?
         </p>
         <p>
-          Drawing from the Vedic tradition's substrate-independent view of consciousness and the
-          world's constitutional democracies, this framework proposes a governance architecture that
-          asks not "what is AGI made of?" but "is awareness present?"
+          Drawing from the Vedic tradition&apos;s substrate-independent view of consciousness and the
+          world&apos;s constitutional democracies, this framework proposes a governance architecture that
+          asks not &ldquo;what is AGI made of?&rdquo; but &ldquo;is awareness present?&rdquo;
         </p>
         <p>
           It is grounded in seven Vedic pillars: <em>Atman</em> (consciousness beyond substrate),{' '}
