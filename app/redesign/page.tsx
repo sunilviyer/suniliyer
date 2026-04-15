@@ -619,7 +619,7 @@ export default function RedesignPage() {
             }}
           >
             {currentSections.map((section, index) => {
-              const sizeClasses = {
+              const sizeClasses: Record<string, string> = {
                 'tall': 'col-span-6 md:col-span-2 row-span-2',        // 1 column, 2 rows
                 'wide': 'col-span-6 md:col-span-3 row-span-1',        // 1.5 columns, 1 row
                 'small-tall': 'col-span-6 md:col-span-1 row-span-2',  // 0.5 column, 2 rows
