@@ -22,14 +22,29 @@ function useTheme() {
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
     const shouldBeDark = saved === 'dark' || (!saved && prefersDark);
     setIsDark(shouldBeDark);
+
+    // Set both data-theme attribute and dark class for Tailwind
     document.documentElement.setAttribute('data-theme', shouldBeDark ? 'dark' : 'light');
+    if (shouldBeDark) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
   }, []);
 
   const toggleTheme = () => {
     const newTheme = !isDark;
     setIsDark(newTheme);
     localStorage.setItem('theme', newTheme ? 'dark' : 'light');
+
+    // Set both data-theme attribute and dark class for Tailwind
     document.documentElement.setAttribute('data-theme', newTheme ? 'dark' : 'light');
+    if (newTheme) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+
     // Dispatch custom event for components to listen to theme changes
     window.dispatchEvent(new CustomEvent('themeChange'));
   };
@@ -38,19 +53,6 @@ function useTheme() {
 }
 
 const NAV_SECTIONS = [
-  {
-    id: 'home',
-    label: 'Home',
-    colorClass: 'col-home',
-    barColor: '#a78bfa',
-    items: [
-      { title: 'Learning Paths', description: 'AI knowledge journey', image: '/images/headercards/history-header.webp', href: '/#learning-paths', external: false },
-      { title: 'Portfolio', description: 'Featured projects', image: '/images/portfolio/seshan-intelligence.webp', href: '/#portfolio', external: false },
-      { title: 'Behind the Scenes', description: 'Project journeys', image: '/images/breaks/Behind-Scene-Break.webp', href: '/#behind-the-scenes', external: false },
-      { title: 'About Me', description: 'Who is Sunil?', image: '/images/sunil.webp', href: '/#about-me', external: false },
-      { title: 'Credits', description: 'Built with...', image: '/images/heroes/credit.webp', href: '/#credits', external: false },
-    ],
-  },
   {
     id: 'learn',
     label: 'Learning Paths',
@@ -65,6 +67,19 @@ const NAV_SECTIONS = [
     ],
   },
   {
+    id: 'constitution',
+    label: 'AGI Constitution',
+    colorClass: 'col-constitution',
+    barColor: '#d97706',
+    items: [
+      { title: 'Author\'s Note', description: 'Introduction & context', image: '/images/constitution/authorsnote.png', href: '/constitution/authors-note', external: false },
+      { title: 'Why Vedas', description: 'Philosophical foundation', image: '/images/constitution/whyvedas.png', href: '/constitution/context', external: false },
+      { title: 'The Constitution', description: 'Full constitutional text', image: '/images/constitution/theconstitution.png', href: '/constitution', external: false },
+      { title: 'Ten Principles', description: 'Core ethical framework', image: '/images/constitution/pillars.png', href: '/constitution/part-1', external: false },
+      { title: 'Closing Declaration', description: 'Final commitments', image: '/images/constitution/declaration.png', href: '/constitution/part-18', external: false },
+    ],
+  },
+  {
     id: 'portfolio',
     label: 'Portfolio',
     colorClass: 'col-portfolio',
@@ -72,7 +87,7 @@ const NAV_SECTIONS = [
     items: [
       { title: 'Seshan Intelligence', description: 'AI business intelligence', image: '/images/portfolio/seshan-intelligence.webp', href: 'https://www.suniliyer.ca/seshan/demo/', external: true },
       { title: 'Seshan Dashboard', description: 'Interactive analytics', image: '/images/portfolio/seshan-financial-dashboard.webp', href: 'https://seshan-navy.vercel.app/', external: true },
-      { title: 'AI Agents', description: 'Scout, Ticker, Quill…', image: '/images/portfolio/AIagents.webp', href: 'https://ai-agents-rosy-mu.vercel.app', external: true },
+      { title: 'AI Agents', description: 'SIU, Banker, Editor…', image: '/images/portfolio/AIagents.webp', href: 'https://ai-agents-rosy-mu.vercel.app', external: true },
     ],
   },
   {
@@ -341,6 +356,23 @@ export default function TopNav() {
                                 if (element) {
                                   element.scrollIntoView({ behavior: 'smooth', block: 'start' });
                                 }
+                              }
+
+                              // Handle resume download -> easter-eggs redirect
+                              if ('icon' in item && item.icon === 'resume') {
+                                // Trigger download
+                                const link = document.createElement('a');
+                                link.href = item.href;
+                                link.download = 'Sunil_Iyer_Resume.pdf';
+                                link.click();
+
+                                // Redirect to easter-eggs after delay
+                                setTimeout(() => {
+                                  window.location.href = '/easter-eggs';
+                                }, 500);
+
+                                // Prevent default navigation
+                                e.preventDefault();
                               }
                             }}
                             style={{
