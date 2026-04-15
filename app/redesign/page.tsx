@@ -626,19 +626,14 @@ export default function RedesignPage() {
                 'square': 'col-span-6 md:col-span-2 row-span-1'       // 1 column, 1 row
               };
 
-              const CardWrapper = 'hasSubmenu' in section && section.hasSubmenu ? 'button' : Link;
-              const cardProps = 'hasSubmenu' in section && section.hasSubmenu
-                ? {
-                    onClick: () => setShowBuildsModal(true),
-                    type: 'button' as const
-                  }
-                : { href: section.href };
+              const hasSubmenu = 'hasSubmenu' in section && section.hasSubmenu;
 
-              return (
-                <CardWrapper
+              return hasSubmenu ? (
+                <button
                   key={`${mode}-${section.id}`}
-                  {...cardProps}
-                  className={`group relative overflow-hidden rounded-2xl transition-all duration-500 hover:scale-[1.03] hover:z-10 ${sizeClasses[section.size || 'square']} ${'hasSubmenu' in section && section.hasSubmenu ? 'cursor-pointer' : ''}`}
+                  onClick={() => setShowBuildsModal(true)}
+                  type="button"
+                  className={`group relative overflow-hidden rounded-2xl transition-all duration-500 hover:scale-[1.03] hover:z-10 ${sizeClasses[section.size || 'square']} cursor-pointer`}
                   style={{
                     transformStyle: 'preserve-3d',
                     animationDelay: `${index * 50}ms`,
@@ -702,7 +697,76 @@ export default function RedesignPage() {
                       }}
                     />
                   </div>
-                </CardWrapper>
+                </button>
+              ) : (
+                <Link
+                  key={`${mode}-${section.id}`}
+                  href={section.href || '#'}
+                  className={`group relative overflow-hidden rounded-2xl transition-all duration-500 hover:scale-[1.03] hover:z-10 ${sizeClasses[section.size || 'square']}`}
+                  style={{
+                    transformStyle: 'preserve-3d',
+                    animationDelay: `${index * 50}ms`,
+                    animation: isFlipping
+                      ? 'flipOut 400ms cubic-bezier(0.4, 0, 0.2, 1) forwards'
+                      : 'flipIn 400ms cubic-bezier(0.4, 0, 0.2, 1) forwards',
+                    opacity: 0
+                  }}
+                >
+                  {/* Background image */}
+                  <div className="absolute inset-0">
+                    <img
+                      src={section.image}
+                      alt={section.title}
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                      style={section.id === 'gita' ? { objectPosition: 'center 40%' } : {}}
+                    />
+                    {/* Overlay gradient - much lighter */}
+                    <div
+                      className="absolute inset-0 transition-opacity duration-300"
+                      style={{
+                        background: mode === 'vidya'
+                          ? 'linear-gradient(135deg, rgba(42,100,150,0.3) 0%, rgba(26,188,156,0.25) 100%)'
+                          : 'linear-gradient(135deg, rgba(192,57,43,0.3) 0%, rgba(230,126,34,0.25) 100%)',
+                        opacity: 1
+                      }}
+                    />
+                    {/* Darker overlay on hover for text readability */}
+                    <div
+                      className="absolute inset-0 transition-opacity duration-300 opacity-0 group-hover:opacity-100"
+                      style={{
+                        background: mode === 'vidya'
+                          ? 'linear-gradient(135deg, rgba(42,100,150,0.6) 0%, rgba(26,188,156,0.5) 100%)'
+                          : 'linear-gradient(135deg, rgba(192,57,43,0.6) 0%, rgba(230,126,34,0.5) 100%)'
+                      }}
+                    />
+                  </div>
+
+                  {/* Content */}
+                  <div className="absolute inset-0 p-6 md:p-8 flex flex-col justify-end">
+                    {/* Title and description - always visible */}
+                    <div className="transition-all duration-300">
+                      <h3 className="text-xl md:text-2xl font-bold text-white mb-2 drop-shadow-lg">
+                        {section.title}
+                      </h3>
+                      <p className="text-white/90 text-sm drop-shadow-md transition-all duration-300 group-hover:opacity-0 group-hover:h-0">
+                        {section.description}
+                      </p>
+                    </div>
+
+                    {/* Hover text - appears on hover */}
+                    <p className="text-white text-sm md:text-base leading-relaxed drop-shadow-md opacity-0 max-h-0 overflow-hidden transition-all duration-300 group-hover:opacity-100 group-hover:max-h-48 group-hover:mt-3">
+                      {section.hoverText}
+                    </p>
+
+                    {/* Accent line */}
+                    <div
+                      className="absolute bottom-0 left-0 right-0 h-1 transition-all duration-300 origin-left scale-x-0 group-hover:scale-x-100"
+                      style={{
+                        background: mode === 'vidya' ? '#1ABC9C' : '#E67E22'
+                      }}
+                    />
+                  </div>
+                </Link>
               );
             })}
           </div>
