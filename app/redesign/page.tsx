@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, Suspense } from 'react';
 import Link from 'next/link';
 import { useSearchParams, useRouter } from 'next/navigation';
 import { SplashScreen } from '@/components/homepage/SplashScreen';
@@ -128,7 +128,7 @@ const LEELA_SECTIONS = [
   }
 ];
 
-export default function RedesignPage() {
+function RedesignPage() {
   const searchParams = useSearchParams();
   const router = useRouter();
 
@@ -1112,5 +1112,14 @@ export default function RedesignPage() {
         }
       `}</style>
     </>
+  );
+}
+
+// Wrapper component with Suspense boundary for Next.js server-side rendering
+export default function RedesignPageWrapper() {
+  return (
+    <Suspense fallback={<SplashScreen />}>
+      <RedesignPage />
+    </Suspense>
   );
 }
