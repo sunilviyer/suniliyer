@@ -22,7 +22,7 @@ export function SplashScreen() {
 
     const timer = setTimeout(() => {
       setIsHidden(true);
-    }, 1750); // 1.75 seconds (50% reduction from 3.5s)
+    }, 3000); // 3 seconds
 
     return () => clearTimeout(timer);
   }, []);
