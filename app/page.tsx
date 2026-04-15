@@ -470,7 +470,7 @@ export default function RedesignPage() {
           <div className="w-full max-w-[1400px] flex justify-center">
             <div className="relative">
               <button
-                onClick={toggleMode}
+                onClick={() => toggleMode()}
                 onMouseEnter={() => handleToggleHover(true)}
                 onMouseLeave={() => handleToggleHover(false)}
                 className="relative w-[320px] h-[56px] rounded-full transition-all duration-500 overflow-visible"
