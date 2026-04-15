@@ -626,8 +626,8 @@ export default function RedesignPage() {
                 'square': 'col-span-6 md:col-span-2 row-span-1'       // 1 column, 1 row
               };
 
-              const CardWrapper = section.hasSubmenu ? 'button' : Link;
-              const cardProps = section.hasSubmenu
+              const CardWrapper = 'hasSubmenu' in section && section.hasSubmenu ? 'button' : Link;
+              const cardProps = 'hasSubmenu' in section && section.hasSubmenu
                 ? {
                     onClick: () => setShowBuildsModal(true),
                     type: 'button' as const
@@ -638,7 +638,7 @@ export default function RedesignPage() {
                 <CardWrapper
                   key={`${mode}-${section.id}`}
                   {...cardProps}
-                  className={`group relative overflow-hidden rounded-2xl transition-all duration-500 hover:scale-[1.03] hover:z-10 ${sizeClasses[section.size || 'square']} ${section.hasSubmenu ? 'cursor-pointer' : ''}`}
+                  className={`group relative overflow-hidden rounded-2xl transition-all duration-500 hover:scale-[1.03] hover:z-10 ${sizeClasses[section.size || 'square']} ${'hasSubmenu' in section && section.hasSubmenu ? 'cursor-pointer' : ''}`}
                   style={{
                     transformStyle: 'preserve-3d',
                     animationDelay: `${index * 50}ms`,
