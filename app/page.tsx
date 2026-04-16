@@ -591,7 +591,7 @@ function HomePage() {
                 {!isUserControlled && !isHovered && isAutoFlipping && (
                   <>
                     <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-                    <span className="text-[11px] text-gray-700 dark:text-gray-300">
+                    <span className="text-[11px] text-black dark:text-gray-300">
                       Auto-flipping between worlds
                     </span>
                   </>
@@ -599,13 +599,13 @@ function HomePage() {
                 {!isUserControlled && isHovered && (
                   <>
                     <div className="w-2 h-2 rounded-full bg-amber-500" />
-                    <span className="text-[11px] text-gray-700 dark:text-gray-300">
+                    <span className="text-[11px] text-black dark:text-gray-300">
                       Paused. Click to select, or move away to resume.
                     </span>
                   </>
                 )}
                 {isUserControlled && (
-                  <span className="text-[11px] text-gray-700 dark:text-gray-300">
+                  <span className="text-[11px] text-black dark:text-gray-300">
                     Manual mode.{' '}
                     <button
                       onClick={(e) => {
