@@ -420,7 +420,7 @@ function HomePage() {
 
             {/* Hero Content - Layered on top of vibe background */}
             <div className="relative z-10 px-8 md:px-12">
-              <div className="mb-6">
+              <div className="mb-6 h-[240px] md:h-auto">
                 {HEADLINES.map((headline, idx) => (
                   <h1 key={idx} className={`text-5xl md:text-6xl font-bold ${isDarkMode ? 'text-white' : 'text-gray-900'} min-h-[1.2em]`}>
                     {displayTexts[idx]}
