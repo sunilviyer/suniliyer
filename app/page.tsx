@@ -389,7 +389,7 @@ function HomePage() {
   return (
     <>
       <SplashScreen />
-      <div className="min-h-screen bg-white dark:bg-gray-900 relative overflow-hidden">
+      <div key={`theme-${isDarkMode}`} className="min-h-screen bg-white dark:bg-gray-900 relative overflow-hidden">
         {/* Content */}
         <div className="relative z-10">
         {/* Hero Section */}
