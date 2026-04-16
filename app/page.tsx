@@ -435,7 +435,7 @@ function HomePage() {
             <div className="relative z-10 px-8 md:px-12">
               <div className="mb-6">
                 {HEADLINES.map((headline, idx) => (
-                  <h1 key={idx} className="text-5xl md:text-6xl font-bold text-gray-900 dark:text-white min-h-[1.2em]">
+                  <h1 key={idx} className={`text-5xl md:text-6xl font-bold ${isDarkMode ? 'text-white' : 'text-gray-900'} min-h-[1.2em]`}>
                     {displayTexts[idx]}
                     {displayTexts[idx] && displayTexts[idx].length > 0 && displayTexts[idx].length < headline.length && (
                       <span className="animate-pulse">|</span>
@@ -443,30 +443,30 @@ function HomePage() {
                   </h1>
                 ))}
               </div>
-              <p className="text-xl text-gray-600 dark:text-gray-300 mb-4">
+              <p className={`text-xl ${isDarkMode ? 'text-gray-300' : 'text-gray-600'} mb-4`}>
                 And I&apos;m just getting started.
               </p>
-              <p className="text-gray-500 dark:text-gray-400">
+              <p className={`${isDarkMode ? 'text-gray-400' : 'text-gray-500'}`}>
                 Sunil Iyer — building the infrastructure for responsible AI, one system at a time.
               </p>
 
               {/* Stats with roll-up animation */}
               <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-8">
                 <div>
-                  <div className="text-4xl font-bold text-gray-900 dark:text-white">{articleCount}+</div>
-                  <div className="text-sm text-gray-500 dark:text-gray-400 uppercase tracking-wider">articles</div>
+                  <div className={`text-4xl font-bold ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>{articleCount}+</div>
+                  <div className={`text-sm ${isDarkMode ? 'text-gray-400' : 'text-gray-500'} uppercase tracking-wider`}>articles</div>
                 </div>
                 <div>
-                  <div className="text-4xl font-bold text-gray-900 dark:text-white">{pathsCount}</div>
-                  <div className="text-sm text-gray-500 dark:text-gray-400 uppercase tracking-wider">paths</div>
+                  <div className={`text-4xl font-bold ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>{pathsCount}</div>
+                  <div className={`text-sm ${isDarkMode ? 'text-gray-400' : 'text-gray-500'} uppercase tracking-wider`}>paths</div>
                 </div>
                 <div>
-                  <div className="text-4xl font-bold text-gray-900 dark:text-white">{agentsCount}</div>
-                  <div className="text-sm text-gray-500 dark:text-gray-400 uppercase tracking-wider">agents</div>
+                  <div className={`text-4xl font-bold ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>{agentsCount}</div>
+                  <div className={`text-sm ${isDarkMode ? 'text-gray-400' : 'text-gray-500'} uppercase tracking-wider`}>agents</div>
                 </div>
                 <div>
-                  <div className="text-4xl font-bold text-gray-900 dark:text-white">{projectsCount}</div>
-                  <div className="text-sm text-gray-500 dark:text-gray-400 uppercase tracking-wider">projects</div>
+                  <div className={`text-4xl font-bold ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>{projectsCount}</div>
+                  <div className={`text-sm ${isDarkMode ? 'text-gray-400' : 'text-gray-500'} uppercase tracking-wider`}>projects</div>
                 </div>
               </div>
             </div>
@@ -475,7 +475,7 @@ function HomePage() {
 
         {/* Scroll Arrow - above toggle */}
         <div className="flex justify-center mb-8 px-[30px] mt-4">
-          <a href="#content" className="flex flex-col items-center gap-2 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors duration-300 text-decoration-none">
+          <a href="#content" className={`flex flex-col items-center gap-2 ${isDarkMode ? 'text-gray-400 hover:text-white' : 'text-gray-600 hover:text-gray-900'} transition-colors duration-300 text-decoration-none`}>
             <span className="text-sm uppercase tracking-wider">Scroll for more</span>
             <svg width="20" height="20" viewBox="0 0 20 20" fill="none" className="animate-bounce">
               <path d="M10 4V16M10 16L4 10M10 16L16 10" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -591,7 +591,7 @@ function HomePage() {
                 {!isUserControlled && !isHovered && isAutoFlipping && (
                   <>
                     <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-                    <span className="text-[11px] text-black dark:text-gray-300">
+                    <span className={`text-[11px] ${isDarkMode ? 'text-gray-300' : 'text-black'}`}>
                       Auto-flipping between worlds
                     </span>
                   </>
@@ -599,20 +599,20 @@ function HomePage() {
                 {!isUserControlled && isHovered && (
                   <>
                     <div className="w-2 h-2 rounded-full bg-amber-500" />
-                    <span className="text-[11px] text-black dark:text-gray-300">
+                    <span className={`text-[11px] ${isDarkMode ? 'text-gray-300' : 'text-black'}`}>
                       Paused. Click to select, or move away to resume.
                     </span>
                   </>
                 )}
                 {isUserControlled && (
-                  <span className="text-[11px] text-black dark:text-gray-300">
+                  <span className={`text-[11px] ${isDarkMode ? 'text-gray-300' : 'text-black'}`}>
                     Manual mode.{' '}
                     <button
                       onClick={(e) => {
                         e.stopPropagation();
                         resumeAutoFlip();
                       }}
-                      className="underline transition-colors duration-200 text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300"
+                      className={`underline transition-colors duration-200 ${isDarkMode ? 'text-blue-400 hover:text-blue-300' : 'text-blue-600 hover:text-blue-700'}`}
                     >
                       Resume auto-flip
                     </button>
@@ -694,16 +694,16 @@ function HomePage() {
                   <div className="absolute inset-0 p-6 md:p-8 flex flex-col justify-end">
                     {/* Title and description - always visible */}
                     <div className="transition-all duration-300">
-                      <h3 className="text-xl md:text-2xl font-bold text-black dark:text-white mb-2 drop-shadow-lg">
+                      <h3 className={`text-xl md:text-2xl font-bold ${isDarkMode ? 'text-white' : 'text-black'} mb-2 drop-shadow-lg`}>
                         {section.title}
                       </h3>
-                      <p className="text-black/90 dark:text-white/90 text-sm drop-shadow-md transition-all duration-300 group-hover:opacity-0 group-hover:h-0">
+                      <p className={`${isDarkMode ? 'text-white/90' : 'text-black/90'} text-sm drop-shadow-md transition-all duration-300 group-hover:opacity-0 group-hover:h-0`}>
                         {section.description}
                       </p>
                     </div>
 
                     {/* Hover text - appears on hover */}
-                    <p className="text-black dark:text-white text-sm md:text-base leading-relaxed drop-shadow-md opacity-0 max-h-0 overflow-hidden transition-all duration-300 group-hover:opacity-100 group-hover:max-h-48 group-hover:mt-3">
+                    <p className={`${isDarkMode ? 'text-white' : 'text-black'} text-sm md:text-base leading-relaxed drop-shadow-md opacity-0 max-h-0 overflow-hidden transition-all duration-300 group-hover:opacity-100 group-hover:max-h-48 group-hover:mt-3`}>
                       {section.hoverText}
                     </p>
 
@@ -763,16 +763,16 @@ function HomePage() {
                   <div className="absolute inset-0 p-6 md:p-8 flex flex-col justify-end">
                     {/* Title and description - always visible */}
                     <div className="transition-all duration-300">
-                      <h3 className="text-xl md:text-2xl font-bold text-black dark:text-white mb-2 drop-shadow-lg">
+                      <h3 className={`text-xl md:text-2xl font-bold ${isDarkMode ? 'text-white' : 'text-black'} mb-2 drop-shadow-lg`}>
                         {section.title}
                       </h3>
-                      <p className="text-black/90 dark:text-white/90 text-sm drop-shadow-md transition-all duration-300 group-hover:opacity-0 group-hover:h-0">
+                      <p className={`${isDarkMode ? 'text-white/90' : 'text-black/90'} text-sm drop-shadow-md transition-all duration-300 group-hover:opacity-0 group-hover:h-0`}>
                         {section.description}
                       </p>
                     </div>
 
                     {/* Hover text - appears on hover */}
-                    <p className="text-black dark:text-white text-sm md:text-base leading-relaxed drop-shadow-md opacity-0 max-h-0 overflow-hidden transition-all duration-300 group-hover:opacity-100 group-hover:max-h-48 group-hover:mt-3">
+                    <p className={`${isDarkMode ? 'text-white' : 'text-black'} text-sm md:text-base leading-relaxed drop-shadow-md opacity-0 max-h-0 overflow-hidden transition-all duration-300 group-hover:opacity-100 group-hover:max-h-48 group-hover:mt-3`}>
                       {section.hoverText}
                     </p>
 
@@ -797,13 +797,13 @@ function HomePage() {
             onClick={() => setShowBuildsModal(false)}
           >
             <div
-              className="bg-white dark:bg-gray-900 rounded-3xl max-w-4xl w-full p-8 relative"
+              className={`${isDarkMode ? 'bg-gray-900' : 'bg-white'} rounded-3xl max-w-4xl w-full p-8 relative`}
               onClick={(e) => e.stopPropagation()}
             >
               {/* Close button */}
               <button
                 onClick={() => setShowBuildsModal(false)}
-                className="absolute top-6 right-6 text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white transition-colors"
+                className={`absolute top-6 right-6 ${isDarkMode ? 'text-gray-400 hover:text-white' : 'text-gray-500 hover:text-gray-900'} transition-colors`}
                 aria-label="Close"
               >
                 <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -811,10 +811,10 @@ function HomePage() {
                 </svg>
               </button>
 
-              <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">
+              <h2 className={`text-3xl font-bold ${isDarkMode ? 'text-white' : 'text-gray-900'} mb-2`}>
                 Builds
               </h2>
-              <p className="text-gray-600 dark:text-gray-400 mb-8">
+              <p className={`${isDarkMode ? 'text-gray-400' : 'text-gray-600'} mb-8`}>
                 Choose a project to explore
               </p>
 
@@ -850,10 +850,10 @@ function HomePage() {
 
                     {/* Content */}
                     <div className="absolute inset-0 p-6 flex flex-col justify-end">
-                      <h3 className="text-xl font-bold text-black dark:text-white mb-2 drop-shadow-lg">
+                      <h3 className={`text-xl font-bold ${isDarkMode ? 'text-white' : 'text-black'} mb-2 drop-shadow-lg`}>
                         {item.title}
                       </h3>
-                      <p className="text-black/90 dark:text-white/90 text-sm drop-shadow-md">
+                      <p className={`${isDarkMode ? 'text-white/90' : 'text-black/90'} text-sm drop-shadow-md`}>
                         {item.description}
                       </p>
 
@@ -950,9 +950,9 @@ function HomePage() {
         </section>
 
         {/* Footer */}
-        <footer className="py-12 px-6 border-t border-gray-200 dark:border-gray-800">
+        <footer className={`py-12 px-6 border-t ${isDarkMode ? 'border-gray-800' : 'border-gray-200'}`}>
           <div className="max-w-6xl mx-auto text-center">
-            <p className="text-sm text-gray-500 dark:text-gray-400 mb-6">
+            <p className={`text-sm ${isDarkMode ? 'text-gray-400' : 'text-gray-500'} mb-6`}>
               © 2026 Sunil Iyer. All rights reserved.
             </p>
             <div className="flex justify-center gap-6">
@@ -1019,13 +1019,13 @@ function HomePage() {
             onClick={() => setShowCreditsModal(false)}
           >
             <div
-              className="bg-white/80 dark:bg-gray-900/80 backdrop-blur-xl rounded-3xl max-w-2xl w-full p-8 relative border border-white/20 shadow-2xl"
+              className={`${isDarkMode ? 'bg-gray-900/80' : 'bg-white/80'} backdrop-blur-xl rounded-3xl max-w-2xl w-full p-8 relative border border-white/20 shadow-2xl`}
               onClick={(e) => e.stopPropagation()}
             >
               {/* Close button */}
               <button
                 onClick={() => setShowCreditsModal(false)}
-                className="absolute top-6 right-6 text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white transition-colors"
+                className={`absolute top-6 right-6 ${isDarkMode ? 'text-gray-400 hover:text-white' : 'text-gray-500 hover:text-gray-900'} transition-colors`}
                 aria-label="Close"
               >
                 <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -1033,45 +1033,45 @@ function HomePage() {
                 </svg>
               </button>
 
-              <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">
+              <h2 className={`text-3xl font-bold ${isDarkMode ? 'text-white' : 'text-gray-900'} mb-2`}>
                 Credits
               </h2>
-              <p className="text-gray-600 dark:text-gray-400 mb-8">
+              <p className={`${isDarkMode ? 'text-gray-400' : 'text-gray-600'} mb-8`}>
                 This website was built with the help of amazing tools and inspiration from talented creators
               </p>
 
               <div className="space-y-4">
-                <div className="flex justify-between items-center py-4 border-b border-gray-200 dark:border-gray-800">
-                  <span className="text-sm font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wide">The Brain</span>
-                  <a href="https://claude.com/product/claude-code" target="_blank" rel="noopener noreferrer" className="text-gray-900 dark:text-white font-medium hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                <div className={`flex justify-between items-center py-4 border-b ${isDarkMode ? 'border-gray-800' : 'border-gray-200'}`}>
+                  <span className={`text-sm font-semibold ${isDarkMode ? 'text-gray-400' : 'text-gray-500'} uppercase tracking-wide`}>The Brain</span>
+                  <a href="https://claude.com/product/claude-code" target="_blank" rel="noopener noreferrer" className={`${isDarkMode ? 'text-white hover:text-blue-400' : 'text-gray-900 hover:text-blue-600'} font-medium transition-colors`}>
                     Claude Code
                   </a>
                 </div>
-                <div className="flex justify-between items-center py-4 border-b border-gray-200 dark:border-gray-800">
-                  <span className="text-sm font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wide">The Heart</span>
-                  <a href="https://github.com/bmad-code-org/BMAD-METHOD" target="_blank" rel="noopener noreferrer" className="text-gray-900 dark:text-white font-medium hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                <div className={`flex justify-between items-center py-4 border-b ${isDarkMode ? 'border-gray-800' : 'border-gray-200'}`}>
+                  <span className={`text-sm font-semibold ${isDarkMode ? 'text-gray-400' : 'text-gray-500'} uppercase tracking-wide`}>The Heart</span>
+                  <a href="https://github.com/bmad-code-org/BMAD-METHOD" target="_blank" rel="noopener noreferrer" className={`${isDarkMode ? 'text-white hover:text-blue-400' : 'text-gray-900 hover:text-blue-600'} font-medium transition-colors`}>
                     BMAD Method
                   </a>
                 </div>
-                <div className="flex justify-between items-center py-4 border-b border-gray-200 dark:border-gray-800">
-                  <span className="text-sm font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wide">The Inspiration</span>
-                  <a href="https://rayo-nextjs-creative-template.netlify.app/" target="_blank" rel="noopener noreferrer" className="text-gray-900 dark:text-white font-medium hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                <div className={`flex justify-between items-center py-4 border-b ${isDarkMode ? 'border-gray-800' : 'border-gray-200'}`}>
+                  <span className={`text-sm font-semibold ${isDarkMode ? 'text-gray-400' : 'text-gray-500'} uppercase tracking-wide`}>The Inspiration</span>
+                  <a href="https://rayo-nextjs-creative-template.netlify.app/" target="_blank" rel="noopener noreferrer" className={`${isDarkMode ? 'text-white hover:text-blue-400' : 'text-gray-900 hover:text-blue-600'} font-medium transition-colors`}>
                     Rayo Template
                   </a>
                 </div>
-                <div className="flex justify-between items-center py-4 border-b border-gray-200 dark:border-gray-800">
-                  <span className="text-sm font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wide">The Eyes</span>
-                  <a href="https://gemini.google.com/" target="_blank" rel="noopener noreferrer" className="text-gray-900 dark:text-white font-medium hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                <div className={`flex justify-between items-center py-4 border-b ${isDarkMode ? 'border-gray-800' : 'border-gray-200'}`}>
+                  <span className={`text-sm font-semibold ${isDarkMode ? 'text-gray-400' : 'text-gray-500'} uppercase tracking-wide`}>The Eyes</span>
+                  <a href="https://gemini.google.com/" target="_blank" rel="noopener noreferrer" className={`${isDarkMode ? 'text-white hover:text-blue-400' : 'text-gray-900 hover:text-blue-600'} font-medium transition-colors`}>
                     Google Nano Banana
                   </a>
                 </div>
-                <div className="flex justify-between items-center py-4 border-b border-gray-200 dark:border-gray-800">
-                  <span className="text-sm font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wide">The Personality</span>
-                  <span className="text-gray-900 dark:text-white font-medium">GSAP & Framer Motion</span>
+                <div className={`flex justify-between items-center py-4 border-b ${isDarkMode ? 'border-gray-800' : 'border-gray-200'}`}>
+                  <span className={`text-sm font-semibold ${isDarkMode ? 'text-gray-400' : 'text-gray-500'} uppercase tracking-wide`}>The Personality</span>
+                  <span className={`${isDarkMode ? 'text-white' : 'text-gray-900'} font-medium`}>GSAP & Framer Motion</span>
                 </div>
                 <div className="flex justify-between items-center py-4">
-                  <span className="text-sm font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wide">The Body</span>
-                  <span className="text-gray-900 dark:text-white font-medium">Next.js & TypeScript</span>
+                  <span className={`text-sm font-semibold ${isDarkMode ? 'text-gray-400' : 'text-gray-500'} uppercase tracking-wide`}>The Body</span>
+                  <span className={`${isDarkMode ? 'text-white' : 'text-gray-900'} font-medium`}>Next.js & TypeScript</span>
                 </div>
               </div>
             </div>
