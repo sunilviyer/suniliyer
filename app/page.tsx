@@ -504,28 +504,28 @@ function HomePage() {
                 aria-checked={mode === 'leela'}
                 aria-label="Toggle between Vidya (knowledge) and Leela (creative) content modes"
               >
-                {/* Sliding indicator */}
+                {/* Sliding indicator with progress bar on top */}
                 <div
-                  className="absolute top-[4px] h-[48px] w-[152px] bg-white rounded-full transition-all duration-500 shadow-lg"
+                  className="absolute top-[4px] h-[48px] w-[152px] bg-white rounded-full transition-all duration-500 shadow-lg overflow-hidden"
                   style={{
                     left: mode === 'vidya' ? '4px' : '164px'
                   }}
-                />
-
-                {/* Progress bar - at bottom of pill */}
-                {!isUserControlled && (
-                  <div className="absolute bottom-0 left-0 right-0 h-[3px] overflow-hidden rounded-b-full">
-                    <div
-                      className="h-full transition-none"
-                      style={{
-                        width: `${progress}%`,
-                        background: mode === 'vidya'
-                          ? 'rgba(255, 255, 255, 0.8)'
-                          : 'rgba(255, 255, 255, 0.8)'
-                      }}
-                    />
-                  </div>
-                )}
+                >
+                  {/* Progress bar - on top of sliding indicator */}
+                  {!isUserControlled && (
+                    <div className="absolute top-0 left-0 right-0 h-[3px] overflow-hidden rounded-t-full">
+                      <div
+                        className="h-full transition-none"
+                        style={{
+                          width: `${progress}%`,
+                          background: mode === 'vidya'
+                            ? 'linear-gradient(90deg, #2A6496 0%, #1ABC9C 100%)'
+                            : 'linear-gradient(90deg, #C0392B 0%, #E67E22 100%)'
+                        }}
+                      />
+                    </div>
+                  )}
+                </div>
 
                 {/* Labels with Devanagari */}
                 <div className="absolute inset-0 flex items-center justify-between px-4">
