@@ -694,16 +694,16 @@ function HomePage() {
                   <div className="absolute inset-0 p-6 md:p-8 flex flex-col justify-end">
                     {/* Title and description - always visible */}
                     <div className="transition-all duration-300">
-                      <h3 className="text-xl md:text-2xl font-bold text-white mb-2 drop-shadow-lg">
+                      <h3 className="text-xl md:text-2xl font-bold text-black dark:text-white mb-2 drop-shadow-lg">
                         {section.title}
                       </h3>
-                      <p className="text-white/90 text-sm drop-shadow-md transition-all duration-300 group-hover:opacity-0 group-hover:h-0">
+                      <p className="text-black/90 dark:text-white/90 text-sm drop-shadow-md transition-all duration-300 group-hover:opacity-0 group-hover:h-0">
                         {section.description}
                       </p>
                     </div>
 
                     {/* Hover text - appears on hover */}
-                    <p className="text-white text-sm md:text-base leading-relaxed drop-shadow-md opacity-0 max-h-0 overflow-hidden transition-all duration-300 group-hover:opacity-100 group-hover:max-h-48 group-hover:mt-3">
+                    <p className="text-black dark:text-white text-sm md:text-base leading-relaxed drop-shadow-md opacity-0 max-h-0 overflow-hidden transition-all duration-300 group-hover:opacity-100 group-hover:max-h-48 group-hover:mt-3">
                       {section.hoverText}
                     </p>
 
@@ -763,16 +763,16 @@ function HomePage() {
                   <div className="absolute inset-0 p-6 md:p-8 flex flex-col justify-end">
                     {/* Title and description - always visible */}
                     <div className="transition-all duration-300">
-                      <h3 className="text-xl md:text-2xl font-bold text-white mb-2 drop-shadow-lg">
+                      <h3 className="text-xl md:text-2xl font-bold text-black dark:text-white mb-2 drop-shadow-lg">
                         {section.title}
                       </h3>
-                      <p className="text-white/90 text-sm drop-shadow-md transition-all duration-300 group-hover:opacity-0 group-hover:h-0">
+                      <p className="text-black/90 dark:text-white/90 text-sm drop-shadow-md transition-all duration-300 group-hover:opacity-0 group-hover:h-0">
                         {section.description}
                       </p>
                     </div>
 
                     {/* Hover text - appears on hover */}
-                    <p className="text-white text-sm md:text-base leading-relaxed drop-shadow-md opacity-0 max-h-0 overflow-hidden transition-all duration-300 group-hover:opacity-100 group-hover:max-h-48 group-hover:mt-3">
+                    <p className="text-black dark:text-white text-sm md:text-base leading-relaxed drop-shadow-md opacity-0 max-h-0 overflow-hidden transition-all duration-300 group-hover:opacity-100 group-hover:max-h-48 group-hover:mt-3">
                       {section.hoverText}
                     </p>
 
@@ -850,10 +850,10 @@ function HomePage() {
 
                     {/* Content */}
                     <div className="absolute inset-0 p-6 flex flex-col justify-end">
-                      <h3 className="text-xl font-bold text-white mb-2 drop-shadow-lg">
+                      <h3 className="text-xl font-bold text-black dark:text-white mb-2 drop-shadow-lg">
                         {item.title}
                       </h3>
-                      <p className="text-white/90 text-sm drop-shadow-md">
+                      <p className="text-black/90 dark:text-white/90 text-sm drop-shadow-md">
                         {item.description}
                       </p>
 
