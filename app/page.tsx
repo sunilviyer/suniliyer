@@ -139,6 +139,9 @@ function HomePage() {
   const [agentsCount, setAgentsCount] = useState(0);
   const [projectsCount, setProjectsCount] = useState(0);
 
+  // Theme state - listen for theme changes from TopNav
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
   // Vidya/Leela mode state
   const [mode, setMode] = useState<'vidya' | 'leela'>('vidya');
   const [isFlipping, setIsFlipping] = useState(false);
@@ -163,7 +166,22 @@ function HomePage() {
     if (urlMode === 'leela' || urlMode === 'vidya') {
       setMode(urlMode);
     }
+
+    // Check initial theme
+    const isDark = document.documentElement.classList.contains('dark');
+    setIsDarkMode(isDark);
   }, [searchParams]);
+
+  // Listen for theme changes from TopNav
+  useEffect(() => {
+    const handleThemeChange = () => {
+      const isDark = document.documentElement.classList.contains('dark');
+      setIsDarkMode(isDark);
+    };
+
+    window.addEventListener('themeChange', handleThemeChange);
+    return () => window.removeEventListener('themeChange', handleThemeChange);
+  }, []);
 
   // Typewriter effect for all three headlines with looping
   useEffect(() => {
