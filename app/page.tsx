@@ -289,31 +289,15 @@ function HomePage() {
     return () => clearTimeout(initialDelay);
   }, [mounted, isUserControlled, isHovered]);
 
-  // Auto-flip interval
+  // Combined auto-flip and progress bar animation
   useEffect(() => {
-    if (!isAutoFlipping || isUserControlled || isHovered || isFlipping) return;
-
-    const interval = setInterval(() => {
-      if (!isFlipping) {
-        toggleMode(true); // Pass true to indicate auto-flip
-      }
-    }, 5000);
-
-    autoFlipTimerRef.current = interval;
-
-    return () => {
-      if (autoFlipTimerRef.current) {
-        clearInterval(autoFlipTimerRef.current);
-      }
-    };
-  }, [isAutoFlipping, isUserControlled, isHovered, isFlipping]);
-
-  // Progress bar animation
-  useEffect(() => {
-    if (!isAutoFlipping || isUserControlled || isHovered) {
+    if (!isAutoFlipping || isUserControlled || isHovered || isFlipping) {
       setProgress(0);
       if (progressAnimationRef.current) {
         cancelAnimationFrame(progressAnimationRef.current);
+      }
+      if (autoFlipTimerRef.current) {
+        clearTimeout(autoFlipTimerRef.current);
       }
       return;
     }
@@ -328,12 +312,12 @@ function HomePage() {
 
       setProgress(newProgress);
 
-      if (newProgress < 100 && isAutoFlipping && !isUserControlled && !isHovered) {
+      if (newProgress < 100 && isAutoFlipping && !isUserControlled && !isHovered && !isFlipping) {
         progressAnimationRef.current = requestAnimationFrame(animate);
-      } else if (newProgress >= 100) {
-        startTime = null;
+      } else if (newProgress >= 100 && !isFlipping) {
+        // Progress complete - trigger flip
         setProgress(0);
-        progressAnimationRef.current = requestAnimationFrame(animate);
+        toggleMode(true);
       }
     };
 
@@ -343,8 +327,11 @@ function HomePage() {
       if (progressAnimationRef.current) {
         cancelAnimationFrame(progressAnimationRef.current);
       }
+      if (autoFlipTimerRef.current) {
+        clearTimeout(autoFlipTimerRef.current);
+      }
     };
-  }, [isAutoFlipping, isUserControlled, isHovered]);
+  }, [isAutoFlipping, isUserControlled, isHovered, isFlipping]);
 
   const toggleMode = (fromAutoFlip = false) => {
     if (isFlipping) return; // Prevent double-flip
@@ -504,26 +491,26 @@ function HomePage() {
                 aria-checked={mode === 'leela'}
                 aria-label="Toggle between Vidya (knowledge) and Leela (creative) content modes"
               >
-                {/* Sliding indicator with progress bar on top */}
+                {/* Sliding indicator with progress bar fill */}
                 <div
-                  className="absolute top-[4px] h-[48px] w-[152px] bg-white rounded-full transition-all duration-500 shadow-lg overflow-hidden"
+                  className="absolute top-[4px] h-[48px] w-[152px] rounded-full transition-all duration-500 shadow-lg overflow-hidden"
                   style={{
-                    left: mode === 'vidya' ? '4px' : '164px'
+                    left: mode === 'vidya' ? '4px' : '164px',
+                    background: 'white'
                   }}
                 >
-                  {/* Progress bar - on top of sliding indicator */}
+                  {/* Progress bar - fills entire curved box from left to right */}
                   {!isUserControlled && (
-                    <div className="absolute top-0 left-0 right-0 h-[3px] overflow-hidden rounded-t-full">
-                      <div
-                        className="h-full transition-none"
-                        style={{
-                          width: `${progress}%`,
-                          background: mode === 'vidya'
-                            ? 'linear-gradient(90deg, #2A6496 0%, #1ABC9C 100%)'
-                            : 'linear-gradient(90deg, #C0392B 0%, #E67E22 100%)'
-                        }}
-                      />
-                    </div>
+                    <div
+                      className="absolute inset-0 transition-none"
+                      style={{
+                        width: `${progress}%`,
+                        background: mode === 'vidya'
+                          ? 'linear-gradient(135deg, rgba(42,100,150,0.15) 0%, rgba(26,188,156,0.15) 100%)'
+                          : 'linear-gradient(135deg, rgba(192,57,43,0.15) 0%, rgba(230,126,34,0.15) 100%)',
+                        borderRadius: '9999px'
+                      }}
+                    />
                   )}
                 </div>
 
