@@ -5,6 +5,8 @@ import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { CookieBanner } from "@/components/CookieBanner";
 import { GlobalUI } from "@/components/layout/GlobalUI";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { getOrganizationSchema, getPersonSchema, getWebSiteSchema } from "@/lib/schema";
 import "./globals.css";
 
 const funnelDisplay = Funnel_Display({
@@ -29,8 +31,18 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  // Global schema markup for all pages
+  const globalSchemas = [
+    getOrganizationSchema(),
+    getPersonSchema(),
+    getWebSiteSchema()
+  ];
+
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <JsonLd data={globalSchemas} />
+      </head>
       <body
         className={`${funnelDisplay.variable} ${funnelSans.variable}`}
         suppressHydrationWarning
