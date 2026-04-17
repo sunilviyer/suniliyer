@@ -22,7 +22,6 @@ export async function generateMetadata() {
     path: 'risk',
     tags: ['Misinformation', 'AI Ethics', 'Trust', 'Media'],
   });
-};
 }
 
 export default async function AiMisinformationArticle() {

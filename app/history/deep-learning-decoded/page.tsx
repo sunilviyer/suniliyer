@@ -22,7 +22,6 @@ export async function generateMetadata() {
     path: 'history',
     tags: ['Deep Learning', 'Neural Networks', 'AI', 'Technology'],
   });
-};
 }
 
 export default async function DeepLearningDecodedArticle() {

@@ -22,7 +22,6 @@ export async function generateMetadata() {
     path: 'risk',
     tags: ['Autonomous Weapons', 'AI Ethics', 'Security', 'Warfare'],
   });
-};
 }
 
 export default async function AutonomousWeaponsArticle() {

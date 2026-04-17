@@ -22,7 +22,6 @@ export async function generateMetadata() {
     path: 'responsibility',
     tags: ['ISO 42001', 'Standards', 'Compliance', 'AI Governance'],
   });
-};
 }
 
 export default async function Iso42001Article() {

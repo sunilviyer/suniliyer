@@ -22,7 +22,6 @@ export async function generateMetadata() {
     path: 'risk',
     tags: ['AI Bias', 'Fairness', 'Ethics', 'Discrimination'],
   });
-};
 }
 
 export default async function AlgorithmicBiasArticle() {

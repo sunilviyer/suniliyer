@@ -22,7 +22,6 @@ export async function generateMetadata() {
     path: 'risk',
     tags: ['Deepfakes', 'Synthetic Media', 'AI Risk', 'Ethics'],
   });
-};
 }
 
 export default async function DeepfakesSyntheticMediaArticle() {

@@ -22,7 +22,6 @@ export async function generateMetadata() {
     path: 'risk',
     tags: ['Job Displacement', 'Automation', 'Future of Work', 'Economics'],
   });
-};
 }
 
 export default async function JobDisplacementArticle() {

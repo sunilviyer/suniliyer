@@ -22,7 +22,6 @@ export async function generateMetadata() {
     path: 'history',
     tags: ['Generative AI', 'ChatGPT', 'AI', 'LLMs'],
   });
-};
 }
 
 export default async function GenerativeAIExplainedArticle() {

@@ -22,7 +22,6 @@ export async function generateMetadata() {
     path: 'risk',
     tags: ['Privacy', 'Data Protection', 'AI Ethics', 'Security'],
   });
-};
 }
 
 export default async function AIPrivacyArticle() {

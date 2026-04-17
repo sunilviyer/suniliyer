@@ -22,7 +22,6 @@ export async function generateMetadata() {
     path: 'responsibility',
     tags: ['AI Law', 'Regulation', 'Compliance', 'Global'],
   });
-};
 }
 
 export default async function GlobalAiLawTrackerArticle() {

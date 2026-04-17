@@ -22,7 +22,6 @@ export async function generateMetadata() {
     path: 'risk',
     tags: ['AI Failures', 'Case Studies', 'Risk Management', 'Ethics'],
   });
-};
 }
 
 export default async function WhenAIGoesWrongArticle() {

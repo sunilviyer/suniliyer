@@ -22,7 +22,6 @@ export async function generateMetadata() {
     path: 'terminology',
     tags: ['Explainability', 'AI Ethics', 'Interpretability', 'Transparency'],
   });
-};
 }
 
 export default async function BlackBoxProblemArticle() {

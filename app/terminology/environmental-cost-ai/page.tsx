@@ -22,7 +22,6 @@ export async function generateMetadata() {
     path: 'terminology',
     tags: ['AI Ethics', 'Sustainability', 'Environment', 'Carbon Footprint'],
   });
-};
 }
 
 export default async function EnvironmentalCostAiArticle() {

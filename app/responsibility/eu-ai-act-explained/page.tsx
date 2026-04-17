@@ -22,7 +22,6 @@ export async function generateMetadata() {
     path: 'responsibility',
     tags: ['EU AI Act', 'Regulation', 'Compliance', 'AI Law'],
   });
-};
 }
 
 export default async function EuAiActExplainedArticle() {

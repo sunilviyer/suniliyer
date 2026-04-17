@@ -22,7 +22,6 @@ export async function generateMetadata() {
     path: 'future',
     tags: ['Existential Risk', 'AI Safety', 'Future', 'Ethics'],
   });
-};
 }
 
 export default async function AiExistentialRiskArticle() {

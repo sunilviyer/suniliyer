@@ -22,7 +22,6 @@ export async function generateMetadata() {
     path: 'future',
     tags: ['AI Ethics', 'Future', 'Philosophy', 'Governance'],
   });
-};
 }
 
 export default async function FutureAiEthicsArticle() {

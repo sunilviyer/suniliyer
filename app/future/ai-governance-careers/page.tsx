@@ -22,7 +22,6 @@ export async function generateMetadata() {
     path: 'future',
     tags: ['Careers', 'AI Governance', 'Jobs', 'Skills'],
   });
-};
 }
 
 export default async function AiGovernanceCareersArticle() {

@@ -22,7 +22,6 @@ export async function generateMetadata() {
     path: 'responsibility',
     tags: ['Human-Centered AI', 'Design', 'Ethics', 'UX'],
   });
-};
 }
 
 export default async function HumanCenteredAiArticle() {

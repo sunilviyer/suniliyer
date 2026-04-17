@@ -22,7 +22,6 @@ export async function generateMetadata() {
     path: 'risk',
     tags: ['AI Hallucinations', 'LLMs', 'Reliability', 'Trust'],
   });
-};
 }
 
 export default async function AIHallucinationsArticle() {

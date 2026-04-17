@@ -22,7 +22,6 @@ export async function generateMetadata() {
     path: 'history',
     tags: ['AI', 'History', 'Machine Learning', 'Deep Learning'],
   });
-};
 }
 
 export default async function AIFamilyTreePage() {

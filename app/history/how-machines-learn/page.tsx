@@ -22,7 +22,6 @@ export async function generateMetadata() {
     path: 'history',
     tags: ['Machine Learning', 'AI', 'Data Science', 'Algorithms'],
   });
-};
 }
 
 export default async function HowMachinesLearnArticle() {

@@ -22,7 +22,6 @@ export async function generateMetadata() {
     path: 'responsibility',
     tags: ['Compliance', 'Regulation', 'International', 'AI Law'],
   });
-};
 }
 
 export default async function CrossBorderComplianceArticle() {
