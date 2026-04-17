@@ -27,6 +27,7 @@
     "rehype-raw": "^7.0.0",
     "remark-gfm": "^4.0.1",
     "resend": "^6.9.1",
+    "schema-dts": "^2.0.0",
     "swiper": "^12.1.0"
   },
   "devDependencies": {
