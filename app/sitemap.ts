@@ -202,7 +202,33 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
-  // AGI Constitution pages
+  // AGI Constitution pages (23 total parts)
+  const constitutionParts = [
+    'authors-note',
+    'section-1-0',
+    'section-1-1',
+    'part-1',
+    'part-2',
+    'part-3',
+    'part-4',
+    'part-5',
+    'part-6',
+    'part-7',
+    'part-8',
+    'part-9',
+    'part-10',
+    'part-11',
+    'part-12',
+    'part-13',
+    'part-14',
+    'part-15',
+    'part-16',
+    'part-17',
+    'part-18',
+    'appendix-a',
+    'closing-declaration',
+  ];
+
   const constitutionPages: MetadataRoute.Sitemap = [
     {
       url: `${baseUrl}/constitution`,
@@ -216,6 +242,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly',
       priority: 0.95, // High priority for AI discoverability
     },
+    ...constitutionParts.map(part => ({
+      url: `${baseUrl}/constitution/${part}`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly' as const,
+      priority: 0.8,
+    })),
   ];
 
   // Combine all pages
