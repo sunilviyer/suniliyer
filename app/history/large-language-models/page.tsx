@@ -22,7 +22,6 @@ export async function generateMetadata() {
     path: 'history',
     tags: ['LLMs', 'ChatGPT', 'GPT', 'Transformers'],
   });
-};
 }
 
 export default async function LargeLanguageModelsArticle() {

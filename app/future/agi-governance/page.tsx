@@ -22,7 +22,6 @@ export async function generateMetadata() {
     path: 'future',
     tags: ['AGI', 'Governance', 'AI Safety', 'Future'],
   });
-};
 }
 
 export default async function AgiGovernanceArticle() {

@@ -22,7 +22,6 @@ export async function generateMetadata() {
     path: 'terminology',
     tags: ['Data', 'AI Training', 'Datasets', 'Machine Learning'],
   });
-};
 }
 
 export default async function DataBehindAIArticle() {

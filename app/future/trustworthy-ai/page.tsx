@@ -22,7 +22,6 @@ export async function generateMetadata() {
     path: 'future',
     tags: ['Trustworthy AI', 'Ethics', 'Trust', 'Governance'],
   });
-};
 }
 
 export default async function TrustworthyAiArticle() {

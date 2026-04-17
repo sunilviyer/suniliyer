@@ -22,7 +22,6 @@ export async function generateMetadata() {
     path: 'terminology',
     tags: ['AI', 'Automation', 'RPA', 'Technology'],
   });
-};
 }
 
 export default async function AIvsAutomationArticle() {

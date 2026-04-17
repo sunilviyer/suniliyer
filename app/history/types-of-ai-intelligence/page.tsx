@@ -22,7 +22,6 @@ export async function generateMetadata() {
     path: 'history',
     tags: ['AI', 'AGI', 'Intelligence', 'Technology'],
   });
-};
 }
 
 export default async function TypesOfAIIntelligenceArticle() {

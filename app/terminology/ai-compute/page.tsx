@@ -22,7 +22,6 @@ export async function generateMetadata() {
     path: 'terminology',
     tags: ['AI Compute', 'GPUs', 'Infrastructure', 'Cloud'],
   });
-};
 }
 
 export default async function AiComputeArticle() {

@@ -22,7 +22,6 @@ export async function generateMetadata() {
     path: 'responsibility',
     tags: ['Transparency', 'Explainability', 'AI Ethics', 'Trust'],
   });
-};
 }
 
 export default async function AiTransparencyArticle() {

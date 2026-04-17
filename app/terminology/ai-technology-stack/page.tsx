@@ -22,7 +22,6 @@ export async function generateMetadata() {
     path: 'terminology',
     tags: ['AI', 'Technology Stack', 'Infrastructure', 'Cloud'],
   });
-};
 }
 
 export default async function AITechnologyStackArticle() {

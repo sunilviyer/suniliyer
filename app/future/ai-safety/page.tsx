@@ -22,7 +22,6 @@ export async function generateMetadata() {
     path: 'future',
     tags: ['AI Safety', 'Alignment', 'Ethics', 'Risk'],
   });
-};
 }
 
 export default async function AiSafetyArticle() {

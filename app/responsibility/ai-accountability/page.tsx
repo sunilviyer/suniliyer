@@ -22,7 +22,6 @@ export async function generateMetadata() {
     path: 'responsibility',
     tags: ['Accountability', 'Governance', 'AI Ethics', 'Liability'],
   });
-};
 }
 
 export default async function AiAccountabilityArticle() {

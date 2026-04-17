@@ -22,7 +22,6 @@ export async function generateMetadata() {
     path: 'terminology',
     tags: ['Foundation Models', 'AI', 'LLMs', 'Transfer Learning'],
   });
-};
 }
 
 export default async function FoundationModelsArticle() {

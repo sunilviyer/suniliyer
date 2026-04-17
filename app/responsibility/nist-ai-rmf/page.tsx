@@ -22,7 +22,6 @@ export async function generateMetadata() {
     path: 'responsibility',
     tags: ['NIST', 'Risk Management', 'AI Governance', 'Framework'],
   });
-};
 }
 
 export default async function NistAiRmfArticle() {

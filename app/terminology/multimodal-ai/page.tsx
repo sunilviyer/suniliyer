@@ -22,7 +22,6 @@ export async function generateMetadata() {
     path: 'terminology',
     tags: ['Multimodal AI', 'Computer Vision', 'NLP', 'AI'],
   });
-};
 }
 
 export default async function MultimodalAiArticle() {

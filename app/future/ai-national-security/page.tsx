@@ -22,7 +22,6 @@ export async function generateMetadata() {
     path: 'future',
     tags: ['National Security', 'Geopolitics', 'AI', 'Defense'],
   });
-};
 }
 
 export default async function AiNationalSecurityArticle() {

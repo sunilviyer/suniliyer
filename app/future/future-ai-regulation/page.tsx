@@ -22,7 +22,6 @@ export async function generateMetadata() {
     path: 'future',
     tags: ['Regulation', 'AI Law', 'Future', 'Governance'],
   });
-};
 }
 
 export default async function FutureAiRegulationArticle() {

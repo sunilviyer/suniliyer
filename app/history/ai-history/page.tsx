@@ -23,7 +23,6 @@ export async function generateMetadata() {
     path: 'history',
     tags: ['AI History', 'Dartmouth', 'Deep Learning', 'Technology'],
   });
-};
 }
 
 export default async function AIHistoryArticle() {
