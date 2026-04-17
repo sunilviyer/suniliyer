@@ -3,6 +3,21 @@ import { ArticlePageWrapper } from '@/components/articles/ArticlePageWrapper';
 import { DatabaseArticleRenderer } from '@/components/articles/DatabaseArticleRenderer';
 import { notFound } from 'next/navigation';
 
+// Generate static paths at build time for SEO
+export async function generateStaticParams() {
+  return [
+    { /* This page - cross-border-compliance */ }
+  ];
+}
+
+// Add metadata for SEO
+export async function generateMetadata() {
+  return {
+    title: 'Cross-Border AI Compliance - Responsibility - Sunil Iyer',
+    description: 'Navigating multiple jurisdictions: international AI compliance strategies',
+  };
+}
+
 export default async function CrossBorderComplianceArticle() {
   // Fetch article and cards from database
   const [article, cards] = await Promise.all([

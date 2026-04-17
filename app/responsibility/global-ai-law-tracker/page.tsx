@@ -3,6 +3,21 @@ import { ArticlePageWrapper } from '@/components/articles/ArticlePageWrapper';
 import { DatabaseArticleRenderer } from '@/components/articles/DatabaseArticleRenderer';
 import { notFound } from 'next/navigation';
 
+// Generate static paths at build time for SEO
+export async function generateStaticParams() {
+  return [
+    { /* This page - global-ai-law-tracker */ }
+  ];
+}
+
+// Add metadata for SEO
+export async function generateMetadata() {
+  return {
+    title: 'Global AI Law Tracker - Responsibility - Sunil Iyer',
+    description: 'Who\'s regulating what: navigating international AI regulations',
+  };
+}
+
 export default async function GlobalAiLawTrackerArticle() {
   // Fetch article and cards from database
   const [article, cards] = await Promise.all([
