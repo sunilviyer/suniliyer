@@ -3,6 +3,21 @@ import { ArticlePageWrapper } from '@/components/articles/ArticlePageWrapper';
 import { DatabaseArticleRenderer } from '@/components/articles/DatabaseArticleRenderer';
 import { notFound } from 'next/navigation';
 
+// Generate static paths at build time for SEO
+export async function generateStaticParams() {
+  return [
+    { /* This page - agi-governance */ }
+  ];
+}
+
+// Add metadata for SEO
+export async function generateMetadata() {
+  return {
+    title: 'AGI: Hype, Hope, and Governance - Future - Sunil Iyer',
+    description: 'The quest for human-level AI: systems that can learn and reason across any domain',
+  };
+}
+
 export default async function AgiGovernanceArticle() {
   // Fetch article and cards from database
   const [article, cards] = await Promise.all([

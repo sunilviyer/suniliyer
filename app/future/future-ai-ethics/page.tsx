@@ -3,6 +3,21 @@ import { ArticlePageWrapper } from '@/components/articles/ArticlePageWrapper';
 import { DatabaseArticleRenderer } from '@/components/articles/DatabaseArticleRenderer';
 import { notFound } from 'next/navigation';
 
+// Generate static paths at build time for SEO
+export async function generateStaticParams() {
+  return [
+    { /* This page - future-ai-ethics */ }
+  ];
+}
+
+// Add metadata for SEO
+export async function generateMetadata() {
+  return {
+    title: 'Future of AI Ethics - Future - Sunil Iyer',
+    description: 'Evolving ethical frameworks for increasingly powerful AI systems',
+  };
+}
+
 export default async function FutureAiEthicsArticle() {
   // Fetch article and cards from database
   const [article, cards] = await Promise.all([

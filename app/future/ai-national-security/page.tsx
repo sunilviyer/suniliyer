@@ -3,6 +3,21 @@ import { ArticlePageWrapper } from '@/components/articles/ArticlePageWrapper';
 import { DatabaseArticleRenderer } from '@/components/articles/DatabaseArticleRenderer';
 import { notFound } from 'next/navigation';
 
+// Generate static paths at build time for SEO
+export async function generateStaticParams() {
+  return [
+    { /* This page - ai-national-security */ }
+  ];
+}
+
+// Add metadata for SEO
+export async function generateMetadata() {
+  return {
+    title: 'AI and National Security - Future - Sunil Iyer',
+    description: 'AI in defense and intelligence: Geopolitical implications and strategic concerns',
+  };
+}
+
 export default async function AiNationalSecurityArticle() {
   // Fetch article and cards from database
   const [article, cards] = await Promise.all([
