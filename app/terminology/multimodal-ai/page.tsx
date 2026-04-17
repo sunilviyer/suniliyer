@@ -3,6 +3,7 @@ import { ArticlePageWrapper } from '@/components/articles/ArticlePageWrapper';
 import { DatabaseArticleRenderer } from '@/components/articles/DatabaseArticleRenderer';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { getArticleSchema, getBreadcrumbSchema } from '@/lib/schema';
+import { getArticleSocialMeta } from '@/lib/social-meta';
 import { notFound } from 'next/navigation';
 
 // Generate static paths at build time for SEO
@@ -12,12 +13,16 @@ export async function generateStaticParams() {
   ];
 }
 
-// Add metadata for SEO
+// Add metadata for SEO and social media
 export async function generateMetadata() {
-  return {
-    title: 'Multimodal AI - Terminology - Sunil Iyer',
-    description: 'AI systems that understand and generate across text, images, audio, and video',
-  };
+  return getArticleSocialMeta({
+    title: 'Multimodal AI',
+    description: 'Beyond text: How AI systems process and combine vision, audio, and language',
+    slug: 'multimodal-ai',
+    path: 'terminology',
+    tags: ['Multimodal AI', 'Computer Vision', 'NLP', 'AI'],
+  });
+};
 }
 
 export default async function MultimodalAiArticle() {

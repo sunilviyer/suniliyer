@@ -3,6 +3,7 @@ import { ArticlePageWrapper } from '@/components/articles/ArticlePageWrapper';
 import { DatabaseArticleRenderer } from '@/components/articles/DatabaseArticleRenderer';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { getArticleSchema, getBreadcrumbSchema } from '@/lib/schema';
+import { getArticleSocialMeta } from '@/lib/social-meta';
 import { notFound } from 'next/navigation';
 
 // Generate static paths at build time for SEO
@@ -12,12 +13,16 @@ export async function generateStaticParams() {
   ];
 }
 
-// Add metadata for SEO
+// Add metadata for SEO and social media
 export async function generateMetadata() {
-  return {
-    title: 'Deepfakes & Synthetic Media - Risk - Sunil Iyer',
-    description: 'Synthetic media threats: AI-generated content that erodes truth and trust',
-  };
+  return getArticleSocialMeta({
+    title: 'Deepfakes & Synthetic Media',
+    description: 'When seeing isn\'t believing: Understanding AI-generated images, videos, and the erosion of trust',
+    slug: 'deepfakes-synthetic-media',
+    path: 'risk',
+    tags: ['Deepfakes', 'Synthetic Media', 'AI Risk', 'Ethics'],
+  });
+};
 }
 
 export default async function DeepfakesSyntheticMediaArticle() {

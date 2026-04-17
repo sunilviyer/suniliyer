@@ -3,6 +3,7 @@ import { ArticlePageWrapper } from '@/components/articles/ArticlePageWrapper';
 import { DatabaseArticleRenderer } from '@/components/articles/DatabaseArticleRenderer';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { getArticleSchema, getBreadcrumbSchema } from '@/lib/schema';
+import { getArticleSocialMeta } from '@/lib/social-meta';
 import { notFound } from 'next/navigation';
 
 // Generate static paths at build time for SEO
@@ -12,12 +13,16 @@ export async function generateStaticParams() {
   ];
 }
 
-// Add metadata for SEO
+// Add metadata for SEO and social media
 export async function generateMetadata() {
-  return {
-    title: 'AI Transparency - Responsibility - Sunil Iyer',
-    description: 'What users deserve to know: making AI decision-making understandable',
-  };
+  return getArticleSocialMeta({
+    title: 'AI Transparency',
+    description: 'Opening the black box: Why and how organizations should explain their AI systems',
+    slug: 'ai-transparency',
+    path: 'responsibility',
+    tags: ['Transparency', 'Explainability', 'AI Ethics', 'Trust'],
+  });
+};
 }
 
 export default async function AiTransparencyArticle() {

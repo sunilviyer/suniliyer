@@ -3,6 +3,7 @@ import { ArticlePageWrapper } from '@/components/articles/ArticlePageWrapper';
 import { DatabaseArticleRenderer } from '@/components/articles/DatabaseArticleRenderer';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { getArticleSchema, getBreadcrumbSchema } from '@/lib/schema';
+import { getArticleSocialMeta } from '@/lib/social-meta';
 import { notFound } from 'next/navigation';
 
 // Generate static paths at build time for SEO
@@ -12,12 +13,16 @@ export async function generateStaticParams() {
   ];
 }
 
-// Add metadata for SEO
+// Add metadata for SEO and social media
 export async function generateMetadata() {
-  return {
-    title: 'The Black Box Problem - Terminology - Sunil Iyer',
-    description: 'Why AI explainability matters: Understanding opaque decision-making systems',
-  };
+  return getArticleSocialMeta({
+    title: 'The Black Box Problem',
+    description: 'Why we can\'t always explain AI decisions: Understanding interpretability and explainability challenges',
+    slug: 'black-box-problem',
+    path: 'terminology',
+    tags: ['Explainability', 'AI Ethics', 'Interpretability', 'Transparency'],
+  });
+};
 }
 
 export default async function BlackBoxProblemArticle() {

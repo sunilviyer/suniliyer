@@ -3,6 +3,7 @@ import { ArticlePageWrapper } from '@/components/articles/ArticlePageWrapper';
 import { DatabaseArticleRenderer } from '@/components/articles/DatabaseArticleRenderer';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { getArticleSchema, getBreadcrumbSchema } from '@/lib/schema';
+import { getArticleSocialMeta } from '@/lib/social-meta';
 import { notFound } from 'next/navigation';
 
 // Generate static paths at build time for SEO
@@ -12,12 +13,16 @@ export async function generateStaticParams() {
   ];
 }
 
-// Add metadata for SEO
+// Add metadata for SEO and social media
 export async function generateMetadata() {
-  return {
-    title: 'Cross-Border AI Compliance - Responsibility - Sunil Iyer',
-    description: 'Navigating multiple jurisdictions: international AI compliance strategies',
-  };
+  return getArticleSocialMeta({
+    title: 'Cross-Border AI Compliance',
+    description: 'Operating globally in a fragmented regulatory landscape: Managing multi-jurisdictional AI compliance',
+    slug: 'cross-border-compliance',
+    path: 'responsibility',
+    tags: ['Compliance', 'Regulation', 'International', 'AI Law'],
+  });
+};
 }
 
 export default async function CrossBorderComplianceArticle() {

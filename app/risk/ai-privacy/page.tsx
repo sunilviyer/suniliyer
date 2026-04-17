@@ -3,6 +3,7 @@ import { ArticlePageWrapper } from '@/components/articles/ArticlePageWrapper';
 import { DatabaseArticleRenderer } from '@/components/articles/DatabaseArticleRenderer';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { getArticleSchema, getBreadcrumbSchema } from '@/lib/schema';
+import { getArticleSocialMeta } from '@/lib/social-meta';
 import { notFound } from 'next/navigation';
 
 // Generate static paths at build time for SEO
@@ -12,12 +13,16 @@ export async function generateStaticParams() {
   ];
 }
 
-// Add metadata for SEO
+// Add metadata for SEO and social media
 export async function generateMetadata() {
-  return {
-    title: 'AI and Privacy - Risk - Sunil Iyer',
-    description: 'Protecting personal information: privacy risks in AI training and inference',
-  };
+  return getArticleSocialMeta({
+    title: 'AI Privacy Risks',
+    description: 'From data collection to model memorization: Understanding privacy threats in the age of AI',
+    slug: 'ai-privacy',
+    path: 'risk',
+    tags: ['Privacy', 'Data Protection', 'AI Ethics', 'Security'],
+  });
+};
 }
 
 export default async function AIPrivacyArticle() {

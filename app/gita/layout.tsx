@@ -1,10 +1,13 @@
 import { JsonLd } from '@/components/seo/JsonLd';
 import { getCreativeWorkSchema, getBreadcrumbSchema } from '@/lib/schema';
+import { getPortfolioSocialMeta } from '@/lib/social-meta';
 
-export const metadata = {
-  title: 'Bhagavad Gita - Ten Moments of Transformation - Sunil Iyer',
+export const metadata = getPortfolioSocialMeta({
+  title: 'Bhagavad Gita - Ten Moments of Transformation',
   description: 'Explore the Bhagavad Gita through ten transformative moments. Interactive dharma wheel with Sanskrit verses, translations, and practical wisdom for modern life.',
-};
+  path: '/gita',
+  image: '/images/heroes/gita-card.webp',
+});
 
 export default function GitaLayout({ children }: { children: React.ReactNode }) {
   // Schema.org structured data

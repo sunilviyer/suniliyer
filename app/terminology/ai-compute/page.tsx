@@ -3,6 +3,7 @@ import { ArticlePageWrapper } from '@/components/articles/ArticlePageWrapper';
 import { DatabaseArticleRenderer } from '@/components/articles/DatabaseArticleRenderer';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { getArticleSchema, getBreadcrumbSchema } from '@/lib/schema';
+import { getArticleSocialMeta } from '@/lib/social-meta';
 import { notFound } from 'next/navigation';
 
 // Generate static paths at build time for SEO
@@ -12,12 +13,16 @@ export async function generateStaticParams() {
   ];
 }
 
-// Add metadata for SEO
+// Add metadata for SEO and social media
 export async function generateMetadata() {
-  return {
-    title: 'AI Compute Requirements - Terminology - Sunil Iyer',
-    description: 'The massive computational resources required to train and run modern AI systems',
-  };
+  return getArticleSocialMeta({
+    title: 'AI Compute',
+    description: 'The computational power behind modern AI: Understanding GPUs, TPUs, and the infrastructure scaling challenge',
+    slug: 'ai-compute',
+    path: 'terminology',
+    tags: ['AI Compute', 'GPUs', 'Infrastructure', 'Cloud'],
+  });
+};
 }
 
 export default async function AiComputeArticle() {

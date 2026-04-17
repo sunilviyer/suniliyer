@@ -3,6 +3,7 @@ import { ArticlePageWrapper } from '@/components/articles/ArticlePageWrapper';
 import { DatabaseArticleRenderer } from '@/components/articles/DatabaseArticleRenderer';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { getArticleSchema, getBreadcrumbSchema } from '@/lib/schema';
+import { getArticleSocialMeta } from '@/lib/social-meta';
 import { notFound } from 'next/navigation';
 
 // Generate static paths at build time for SEO
@@ -12,12 +13,15 @@ export async function generateStaticParams() {
   ];
 }
 
-// Add metadata for SEO
+// Add metadata for SEO and social media
 export async function generateMetadata() {
-  return {
-    title: 'What AI Actually Is - History - Sunil Iyer',
+  return getArticleSocialMeta({
+    title: 'What AI Actually Is',
     description: 'Demystifying artificial intelligence: Understanding the technology reshaping our world',
-  };
+    slug: 'what-ai-actually-is',
+    path: 'history',
+    tags: ['AI', 'Artificial Intelligence', 'Machine Learning', 'History'],
+  });
 }
 
 export default async function WhatAIActuallyIsPage() {

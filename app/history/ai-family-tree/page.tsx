@@ -1,6 +1,9 @@
 import { getCardsByArticle, getArticleBySlug } from '@/lib/db';
 import { ArticlePageWrapper } from '@/components/articles/ArticlePageWrapper';
 import { DatabaseArticleRenderer } from '@/components/articles/DatabaseArticleRenderer';
+import { JsonLd } from '@/components/seo/JsonLd';
+import { getArticleSchema, getBreadcrumbSchema } from '@/lib/schema';
+import { getArticleSocialMeta } from '@/lib/social-meta';
 import { notFound } from 'next/navigation';
 
 // Generate static paths at build time for SEO
@@ -10,12 +13,16 @@ export async function generateStaticParams() {
   ];
 }
 
-// Add metadata for SEO
+// Add metadata for SEO and social media
 export async function generateMetadata() {
-  return {
-    title: 'The AI Family Tree - History - Sunil Iyer',
-    description: 'From expert systems to neural networks: A visual journey through the evolution of AI approaches',
-  };
+  return getArticleSocialMeta({
+    title: 'The AI Family Tree',
+    description: 'From symbolic AI to neural networks: Map the evolution of artificial intelligence through its major branches and breakthroughs',
+    slug: 'ai-family-tree',
+    path: 'history',
+    tags: ['AI', 'History', 'Machine Learning', 'Deep Learning'],
+  });
+};
 }
 
 export default async function AIFamilyTreePage() {
@@ -32,8 +39,29 @@ export default async function AIFamilyTreePage() {
 
   const { content } = article;
 
+  // Schema.org structured data
+  const articleSchema = getArticleSchema({
+    title: 'The AI Family Tree',
+    description: 'From expert systems to neural networks: A visual journey through the evolution of AI approaches',
+    slug: 'ai-family-tree',
+    path: 'history',
+    datePublished: '2025-01-01T00:00:00Z',
+    dateModified: content.updatedDate || '2025-01-01T00:00:00Z',
+    image: content.headerImage,
+    readTime: content.readTime,
+    tags: content.tags || []
+  });
+
+  const breadcrumbSchema = getBreadcrumbSchema([
+    { name: 'Home', url: '/' },
+    { name: 'History', url: '/history' },
+    { name: 'The AI Family Tree', url: '/history/ai-family-tree' }
+  ]);
+
   return (
-    <ArticlePageWrapper
+    <>
+      <JsonLd data={[articleSchema, breadcrumbSchema]} />
+      <ArticlePageWrapper
       path="history"
       pathTitle="History"
       articleTitle="The AI Family Tree"
@@ -61,5 +89,6 @@ export default async function AIFamilyTreePage() {
         sources={content.sources}
       />
     </ArticlePageWrapper>
+    </>
   );
 }

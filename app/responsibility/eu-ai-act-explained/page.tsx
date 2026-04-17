@@ -3,6 +3,7 @@ import { ArticlePageWrapper } from '@/components/articles/ArticlePageWrapper';
 import { DatabaseArticleRenderer } from '@/components/articles/DatabaseArticleRenderer';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { getArticleSchema, getBreadcrumbSchema } from '@/lib/schema';
+import { getArticleSocialMeta } from '@/lib/social-meta';
 import { notFound } from 'next/navigation';
 
 // Generate static paths at build time for SEO
@@ -12,12 +13,16 @@ export async function generateStaticParams() {
   ];
 }
 
-// Add metadata for SEO
+// Add metadata for SEO and social media
 export async function generateMetadata() {
-  return {
-    title: 'The EU AI Act Explained - Responsibility - Sunil Iyer',
-    description: 'Europe\'s landmark regulation: understanding risk-based AI governance',
-  };
+  return getArticleSocialMeta({
+    title: 'EU AI Act Explained',
+    description: 'The world\'s first comprehensive AI law: Understanding risk-based regulation and compliance requirements',
+    slug: 'eu-ai-act-explained',
+    path: 'responsibility',
+    tags: ['EU AI Act', 'Regulation', 'Compliance', 'AI Law'],
+  });
+};
 }
 
 export default async function EuAiActExplainedArticle() {

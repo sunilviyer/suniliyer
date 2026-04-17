@@ -1,6 +1,9 @@
 import { getCardsByArticle, getArticleBySlug } from '@/lib/db';
 import { ArticlePageWrapper } from '@/components/articles/ArticlePageWrapper';
 import { DatabaseArticleRenderer } from '@/components/articles/DatabaseArticleRenderer';
+import { JsonLd } from '@/components/seo/JsonLd';
+import { getArticleSchema, getBreadcrumbSchema } from '@/lib/schema';
+import { getArticleSocialMeta } from '@/lib/social-meta';
 import { notFound } from 'next/navigation';
 
 // Generate static paths at build time for SEO
@@ -11,12 +14,16 @@ export async function generateStaticParams() {
   ];
 }
 
-// Add metadata for SEO
+// Add metadata for SEO and social media
 export async function generateMetadata() {
-  return {
-    title: 'AI History: Dartmouth to DeepMind - History - Sunil Iyer',
+  return getArticleSocialMeta({
+    title: 'AI History: Dartmouth to DeepMind',
     description: 'From the 1956 Dartmouth Conference to modern breakthroughs: The complete journey of artificial intelligence',
-  };
+    slug: 'ai-history',
+    path: 'history',
+    tags: ['AI History', 'Dartmouth', 'Deep Learning', 'Technology'],
+  });
+};
 }
 
 export default async function AIHistoryArticle() {
@@ -33,8 +40,29 @@ export default async function AIHistoryArticle() {
 
   const { content } = article;
 
+  // Schema.org structured data
+  const articleSchema = getArticleSchema({
+    title: 'AI History: Dartmouth to DeepMind',
+    description: 'From the 1956 Dartmouth Conference to modern breakthroughs: The complete journey of artificial intelligence',
+    slug: 'ai-history',
+    path: 'history',
+    datePublished: '2025-01-01T00:00:00Z',
+    dateModified: content.updatedDate || '2025-01-01T00:00:00Z',
+    image: content.headerImage,
+    readTime: content.readTime,
+    tags: content.tags || []
+  });
+
+  const breadcrumbSchema = getBreadcrumbSchema([
+    { name: 'Home', url: '/' },
+    { name: 'History', url: '/history' },
+    { name: 'AI History: Dartmouth to DeepMind', url: '/history/ai-history' }
+  ]);
+
   return (
-    <ArticlePageWrapper
+    <>
+      <JsonLd data={[articleSchema, breadcrumbSchema]} />
+      <ArticlePageWrapper
       path="history"
       pathTitle="History"
       articleTitle="AI History: Dartmouth to DeepMind"
@@ -58,5 +86,6 @@ export default async function AIHistoryArticle() {
         sources={content.sources}
       />
     </ArticlePageWrapper>
+    </>
   );
 }

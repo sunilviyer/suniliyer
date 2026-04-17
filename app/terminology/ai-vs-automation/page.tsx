@@ -3,6 +3,7 @@ import { ArticlePageWrapper } from '@/components/articles/ArticlePageWrapper';
 import { DatabaseArticleRenderer } from '@/components/articles/DatabaseArticleRenderer';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { getArticleSchema, getBreadcrumbSchema } from '@/lib/schema';
+import { getArticleSocialMeta } from '@/lib/social-meta';
 import { notFound } from 'next/navigation';
 
 // Generate static paths at build time for SEO
@@ -12,12 +13,16 @@ export async function generateStaticParams() {
   ];
 }
 
-// Add metadata for SEO
+// Add metadata for SEO and social media
 export async function generateMetadata() {
-  return {
-    title: 'AI vs Automation - Terminology - Sunil Iyer',
-    description: 'Understanding the critical difference between rule-based automation and adaptive intelligence',
-  };
+  return getArticleSocialMeta({
+    title: 'AI vs Automation',
+    description: 'Intelligence vs. instructions: Understanding the critical difference between AI and traditional automation',
+    slug: 'ai-vs-automation',
+    path: 'terminology',
+    tags: ['AI', 'Automation', 'RPA', 'Technology'],
+  });
+};
 }
 
 export default async function AIvsAutomationArticle() {

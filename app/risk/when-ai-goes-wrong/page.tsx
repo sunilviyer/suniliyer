@@ -3,6 +3,7 @@ import { ArticlePageWrapper } from '@/components/articles/ArticlePageWrapper';
 import { DatabaseArticleRenderer } from '@/components/articles/DatabaseArticleRenderer';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { getArticleSchema, getBreadcrumbSchema } from '@/lib/schema';
+import { getArticleSocialMeta } from '@/lib/social-meta';
 import { notFound } from 'next/navigation';
 
 // Generate static paths at build time for SEO
@@ -12,12 +13,16 @@ export async function generateStaticParams() {
   ];
 }
 
-// Add metadata for SEO
+// Add metadata for SEO and social media
 export async function generateMetadata() {
-  return {
-    title: 'When AI Goes Wrong - Risk - Sunil Iyer',
-    description: 'Real-world AI failures and their consequences: From hiring bias to autonomous vehicle crashes',
-  };
+  return getArticleSocialMeta({
+    title: 'When AI Goes Wrong',
+    description: 'High-profile failures: Learning from AI systems that caused harm, bias, and unintended consequences',
+    slug: 'when-ai-goes-wrong',
+    path: 'risk',
+    tags: ['AI Failures', 'Case Studies', 'Risk Management', 'Ethics'],
+  });
+};
 }
 
 export default async function WhenAIGoesWrongArticle() {

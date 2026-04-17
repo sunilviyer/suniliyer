@@ -11,6 +11,7 @@ import ConstitutionalSource from '../components/ConstitutionalSource';
 import TableRenderer from '../components/TableRenderer';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { getArticleSchema, getBreadcrumbSchema } from '@/lib/schema';
+import { getConstitutionSocialMeta } from '@/lib/social-meta';
 
 interface PageProps {
   params: Promise<{
@@ -28,7 +29,7 @@ export async function generateStaticParams() {
 }
 
 /**
- * Generate metadata for each part
+ * Generate metadata for each part with social media tags
  */
 export async function generateMetadata({ params }: PageProps) {
   const { partId } = await params;
@@ -40,10 +41,14 @@ export async function generateMetadata({ params }: PageProps) {
     };
   }
 
-  return {
-    title: `${part.number ? `Part ${part.number}: ` : ''}${part.title} | AGI Constitution`,
-    description: part.subtitle || `${part.title} - AGI Constitution: Dharma Sanhita`,
-  };
+  const title = part.number ? `Part ${part.number}: ${part.title}` : part.title;
+  const description = part.subtitle || `${part.title} - AGI Constitution: Dharma Sanhita`;
+
+  return getConstitutionSocialMeta({
+    title,
+    description,
+    partId,
+  });
 }
 
 /**

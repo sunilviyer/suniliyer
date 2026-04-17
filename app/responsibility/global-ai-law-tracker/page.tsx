@@ -3,6 +3,7 @@ import { ArticlePageWrapper } from '@/components/articles/ArticlePageWrapper';
 import { DatabaseArticleRenderer } from '@/components/articles/DatabaseArticleRenderer';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { getArticleSchema, getBreadcrumbSchema } from '@/lib/schema';
+import { getArticleSocialMeta } from '@/lib/social-meta';
 import { notFound } from 'next/navigation';
 
 // Generate static paths at build time for SEO
@@ -12,12 +13,16 @@ export async function generateStaticParams() {
   ];
 }
 
-// Add metadata for SEO
+// Add metadata for SEO and social media
 export async function generateMetadata() {
-  return {
-    title: 'Global AI Law Tracker - Responsibility - Sunil Iyer',
-    description: 'Who\'s regulating what: navigating international AI regulations',
-  };
+  return getArticleSocialMeta({
+    title: 'Global AI Law Tracker',
+    description: 'Mapping AI regulation worldwide: Understanding the evolving legal landscape across continents',
+    slug: 'global-ai-law-tracker',
+    path: 'responsibility',
+    tags: ['AI Law', 'Regulation', 'Compliance', 'Global'],
+  });
+};
 }
 
 export default async function GlobalAiLawTrackerArticle() {

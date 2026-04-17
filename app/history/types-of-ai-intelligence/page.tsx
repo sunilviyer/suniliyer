@@ -1,6 +1,9 @@
 import { getCardsByArticle, getArticleBySlug } from '@/lib/db';
 import { ArticlePageWrapper } from '@/components/articles/ArticlePageWrapper';
 import { DatabaseArticleRenderer } from '@/components/articles/DatabaseArticleRenderer';
+import { JsonLd } from '@/components/seo/JsonLd';
+import { getArticleSchema, getBreadcrumbSchema } from '@/lib/schema';
+import { getArticleSocialMeta } from '@/lib/social-meta';
 import { notFound } from 'next/navigation';
 
 // Generate static paths at build time for SEO
@@ -10,12 +13,16 @@ export async function generateStaticParams() {
   ];
 }
 
-// Add metadata for SEO
+// Add metadata for SEO and social media
 export async function generateMetadata() {
-  return {
-    title: 'Types of AI Intelligence - History - Sunil Iyer',
-    description: 'Understanding ANI, AGI, and ASI: The spectrum of artificial intelligence capabilities',
-  };
+  return getArticleSocialMeta({
+    title: 'Types of AI Intelligence',
+    description: 'Narrow AI vs. General AI vs. Super AI: Understanding the spectrum of artificial intelligence capabilities',
+    slug: 'types-of-ai-intelligence',
+    path: 'history',
+    tags: ['AI', 'AGI', 'Intelligence', 'Technology'],
+  });
+};
 }
 
 export default async function TypesOfAIIntelligenceArticle() {
@@ -32,8 +39,29 @@ export default async function TypesOfAIIntelligenceArticle() {
 
   const { content } = article;
 
+  // Schema.org structured data
+  const articleSchema = getArticleSchema({
+    title: 'Types of AI Intelligence',
+    description: 'ANI, AGI, and ASI: Understanding the spectrum of artificial intelligence capabilities',
+    slug: 'types-of-ai-intelligence',
+    path: 'history',
+    datePublished: '2025-01-01T00:00:00Z',
+    dateModified: content.updatedDate || '2025-01-01T00:00:00Z',
+    image: content.headerImage,
+    readTime: content.readTime,
+    tags: content.tags || []
+  });
+
+  const breadcrumbSchema = getBreadcrumbSchema([
+    { name: 'Home', url: '/' },
+    { name: 'History', url: '/history' },
+    { name: 'Types of AI Intelligence', url: '/history/types-of-ai-intelligence' }
+  ]);
+
   return (
-    <ArticlePageWrapper
+    <>
+      <JsonLd data={[articleSchema, breadcrumbSchema]} />
+      <ArticlePageWrapper
       path="history"
       pathTitle="History"
       articleTitle="Types of AI Intelligence"
@@ -61,5 +89,6 @@ export default async function TypesOfAIIntelligenceArticle() {
         sources={content.sources}
       />
     </ArticlePageWrapper>
+    </>
   );
 }

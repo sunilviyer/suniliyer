@@ -3,6 +3,7 @@ import { ArticlePageWrapper } from '@/components/articles/ArticlePageWrapper';
 import { DatabaseArticleRenderer } from '@/components/articles/DatabaseArticleRenderer';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { getArticleSchema, getBreadcrumbSchema } from '@/lib/schema';
+import { getArticleSocialMeta } from '@/lib/social-meta';
 import { notFound } from 'next/navigation';
 
 // Generate static paths at build time for SEO
@@ -12,12 +13,16 @@ export async function generateStaticParams() {
   ];
 }
 
-// Add metadata for SEO
+// Add metadata for SEO and social media
 export async function generateMetadata() {
-  return {
-    title: 'Trustworthy AI: Seven Pillars - Future - Sunil Iyer',
-    description: 'The foundational principles for building AI systems society can trust',
-  };
+  return getArticleSocialMeta({
+    title: 'Trustworthy AI',
+    description: 'Building AI systems people can rely on: Understanding the pillars of trust, fairness, and reliability',
+    slug: 'trustworthy-ai',
+    path: 'future',
+    tags: ['Trustworthy AI', 'Ethics', 'Trust', 'Governance'],
+  });
+};
 }
 
 export default async function TrustworthyAiArticle() {

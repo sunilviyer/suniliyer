@@ -3,6 +3,7 @@ import { ArticlePageWrapper } from '@/components/articles/ArticlePageWrapper';
 import { DatabaseArticleRenderer } from '@/components/articles/DatabaseArticleRenderer';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { getArticleSchema, getBreadcrumbSchema } from '@/lib/schema';
+import { getArticleSocialMeta } from '@/lib/social-meta';
 import { notFound } from 'next/navigation';
 
 // Generate static paths at build time for SEO
@@ -12,12 +13,16 @@ export async function generateStaticParams() {
   ];
 }
 
-// Add metadata for SEO
+// Add metadata for SEO and social media
 export async function generateMetadata() {
-  return {
-    title: 'AI Hallucinations - Risk - Sunil Iyer',
-    description: 'When AI confidently generates false information: Understanding model confabulation',
-  };
+  return getArticleSocialMeta({
+    title: 'AI Hallucinations',
+    description: 'When AI confidently lies: Understanding fabricated outputs and the reliability challenge',
+    slug: 'ai-hallucinations',
+    path: 'risk',
+    tags: ['AI Hallucinations', 'LLMs', 'Reliability', 'Trust'],
+  });
+};
 }
 
 export default async function AIHallucinationsArticle() {

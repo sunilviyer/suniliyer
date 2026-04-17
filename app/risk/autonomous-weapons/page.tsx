@@ -3,6 +3,7 @@ import { ArticlePageWrapper } from '@/components/articles/ArticlePageWrapper';
 import { DatabaseArticleRenderer } from '@/components/articles/DatabaseArticleRenderer';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { getArticleSchema, getBreadcrumbSchema } from '@/lib/schema';
+import { getArticleSocialMeta } from '@/lib/social-meta';
 import { notFound } from 'next/navigation';
 
 // Generate static paths at build time for SEO
@@ -12,12 +13,16 @@ export async function generateStaticParams() {
   ];
 }
 
-// Add metadata for SEO
+// Add metadata for SEO and social media
 export async function generateMetadata() {
-  return {
-    title: 'Autonomous Weapons - Risk - Sunil Iyer',
-    description: 'Military AI: the risks of delegating life-and-death decisions to machines',
-  };
+  return getArticleSocialMeta({
+    title: 'Autonomous Weapons',
+    description: 'Machines that kill: The ethical and security implications of AI in warfare',
+    slug: 'autonomous-weapons',
+    path: 'risk',
+    tags: ['Autonomous Weapons', 'AI Ethics', 'Security', 'Warfare'],
+  });
+};
 }
 
 export default async function AutonomousWeaponsArticle() {

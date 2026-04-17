@@ -3,6 +3,7 @@ import { ArticlePageWrapper } from '@/components/articles/ArticlePageWrapper';
 import { DatabaseArticleRenderer } from '@/components/articles/DatabaseArticleRenderer';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { getArticleSchema, getBreadcrumbSchema } from '@/lib/schema';
+import { getArticleSocialMeta } from '@/lib/social-meta';
 import { notFound } from 'next/navigation';
 
 // Generate static paths at build time for SEO
@@ -12,12 +13,16 @@ export async function generateStaticParams() {
   ];
 }
 
-// Add metadata for SEO
+// Add metadata for SEO and social media
 export async function generateMetadata() {
-  return {
-    title: 'AI and National Security - Future - Sunil Iyer',
-    description: 'AI in defense and intelligence: Geopolitical implications and strategic concerns',
-  };
+  return getArticleSocialMeta({
+    title: 'AI & National Security',
+    description: 'The geopolitical AI race: Understanding how AI reshapes defense, surveillance, and global power',
+    slug: 'ai-national-security',
+    path: 'future',
+    tags: ['National Security', 'Geopolitics', 'AI', 'Defense'],
+  });
+};
 }
 
 export default async function AiNationalSecurityArticle() {
