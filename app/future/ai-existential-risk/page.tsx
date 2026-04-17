@@ -1,6 +1,8 @@
 import { getCardsByArticle, getArticleBySlug } from '@/lib/db';
 import { ArticlePageWrapper } from '@/components/articles/ArticlePageWrapper';
 import { DatabaseArticleRenderer } from '@/components/articles/DatabaseArticleRenderer';
+import { JsonLd } from '@/components/seo/JsonLd';
+import { getArticleSchema, getBreadcrumbSchema } from '@/lib/schema';
 import { notFound } from 'next/navigation';
 
 // Generate static paths at build time for SEO
@@ -32,8 +34,29 @@ export default async function AiExistentialRiskArticle() {
 
   const { content } = article;
 
+  // Schema.org structured data
+  const articleSchema = getArticleSchema({
+    title: 'AI Existential Risk',
+    description: 'Catastrophic scenarios and the debate over AI\'s long-term threat to humanity',
+    slug: 'ai-existential-risk',
+    path: 'future',
+    datePublished: '2025-01-01T00:00:00Z',
+    dateModified: content.updatedDate || '2025-01-01T00:00:00Z',
+    image: content.headerImage,
+    readTime: content.readTime,
+    tags: content.tags || []
+  });
+
+  const breadcrumbSchema = getBreadcrumbSchema([
+    { name: 'Home', url: '/' },
+    { name: 'Future', url: '/future' },
+    { name: 'AI Existential Risk', url: '/future/ai-existential-risk' }
+  ]);
+
   return (
-    <ArticlePageWrapper
+    <>
+      <JsonLd data={[articleSchema, breadcrumbSchema]} />
+      <ArticlePageWrapper
       path="future"
       pathTitle="Future"
       articleTitle="AI Existential Risk"
@@ -61,5 +84,6 @@ export default async function AiExistentialRiskArticle() {
         sources={content.sources}
       />
     </ArticlePageWrapper>
+    </>
   );
 }
