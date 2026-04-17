@@ -423,9 +423,16 @@ function HomePage() {
               <div className="mb-6 h-[240px] md:h-auto">
                 {HEADLINES.map((headline, idx) => (
                   <h1 key={idx} className={`text-5xl md:text-6xl font-bold ${isDarkMode ? 'text-white' : 'text-gray-900'} min-h-[1.2em]`}>
-                    {displayTexts[idx]}
-                    {displayTexts[idx] && displayTexts[idx].length > 0 && displayTexts[idx].length < headline.length && (
-                      <span className="animate-pulse">|</span>
+                    {/* Show actual headline text for SEO (hidden when animation is active) */}
+                    {!mounted || displayTexts[idx].length === 0 ? (
+                      <span>{headline}</span>
+                    ) : (
+                      <>
+                        {displayTexts[idx]}
+                        {displayTexts[idx].length > 0 && displayTexts[idx].length < headline.length && (
+                          <span className="animate-pulse">|</span>
+                        )}
+                      </>
                     )}
                   </h1>
                 ))}
@@ -440,19 +447,27 @@ function HomePage() {
               {/* Stats with roll-up animation */}
               <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-8">
                 <div>
-                  <div className={`text-4xl font-bold ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>{articleCount}+</div>
+                  <div className={`text-4xl font-bold ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
+                    {mounted ? articleCount : 26}+
+                  </div>
                   <div className={`text-sm ${isDarkMode ? 'text-gray-400' : 'text-gray-500'} uppercase tracking-wider`}>articles</div>
                 </div>
                 <div>
-                  <div className={`text-4xl font-bold ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>{pathsCount}</div>
+                  <div className={`text-4xl font-bold ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
+                    {mounted ? pathsCount : 5}
+                  </div>
                   <div className={`text-sm ${isDarkMode ? 'text-gray-400' : 'text-gray-500'} uppercase tracking-wider`}>paths</div>
                 </div>
                 <div>
-                  <div className={`text-4xl font-bold ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>{agentsCount}</div>
+                  <div className={`text-4xl font-bold ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
+                    {mounted ? agentsCount : 5}
+                  </div>
                   <div className={`text-sm ${isDarkMode ? 'text-gray-400' : 'text-gray-500'} uppercase tracking-wider`}>agents</div>
                 </div>
                 <div>
-                  <div className={`text-4xl font-bold ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>{projectsCount}</div>
+                  <div className={`text-4xl font-bold ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
+                    {mounted ? projectsCount : 9}
+                  </div>
                   <div className={`text-sm ${isDarkMode ? 'text-gray-400' : 'text-gray-500'} uppercase tracking-wider`}>projects</div>
                 </div>
               </div>
