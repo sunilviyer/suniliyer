@@ -75,7 +75,7 @@ const PROJECTS: Project[] = [
     lesson: "The best tools solve a pain point you personally feel.",
     stats: ["∞ scenarios", "Real life", "→ Matcher"],
     tech: ["React", "Financial modeling"],
-    fullStory: "Started with life, not technology. House hunting in Oakville with a young family. Calculating mortgage scenarios on a napkin.\n\nThe calculator was born in a weekend. The real insight: math wasn't the hard part. Cross-referencing listings across five platforms was. That became the Matcher agent.",
+    fullStory: "Started with life, not technology. House hunting in Oakville with a young family. Calculating mortgage scenarios on a napkin.\n\nThe calculator was born in a weekend. The real insight: math wasn't the hard part. Cross-referencing listings across five platforms was. That became the Matchmaker agent.",
     portfolioLink: "/portfolio/mortgage-calculator",
   },
   {
@@ -97,7 +97,7 @@ const PROJECTS: Project[] = [
   {
     id: "ai-agents",
     title: "Five AI Agents",
-    subtitle: "Scout · Ticker · Matcher · Quill · Sage",
+    subtitle: "SIU · Banker · Matchmaker · Editor · Guru",
     coverGrad: ["#0a0f1e", "#141e38"],
     coverAccent: "#669bbc",
     accent: "#669bbc",
@@ -107,7 +107,7 @@ const PROJECTS: Project[] = [
     lesson: "The best way to understand technology is to build five expressions of it.",
     stats: ["5 agents", "5 personas", "1 live"],
     tech: ["Python", "Next.js", "SVG avatars"],
-    fullStory: "Scout: fraud research. Ticker: stock monitoring. Matcher: home finding. Quill: editing. Sage: the Bhagavad Gita.\n\nHuman-in-the-loop. Agents compress information-gathering. Humans retain judgment. Each has its own SVG avatar, color, persona.",
+    fullStory: "SIU: fraud research. Banker: stock monitoring. Matchmaker: home finding. Editor: editing. Guru: the Bhagavad Gita.\n\nHuman-in-the-loop. Agents compress information-gathering. Humans retain judgment. Each has its own SVG avatar, color, persona.",
     portfolioLink: "/portfolio/ai-agents",
   },
   {
@@ -119,11 +119,11 @@ const PROJECTS: Project[] = [
     accent: "#FFBA08",
     coverImage: "/images/portfolio/gita.webp",
     spark: "The Gita shaped how I think — patience, dharma, karma.",
-    journey: "10-moment dharma wheel, 4-layer reveal, Sanskrit verses, live Sage agent.",
+    journey: "10-moment dharma wheel, 4-layer reveal, Sanskrit verses, live Guru agent.",
     lesson: "Do your work, don't do it for the fruit of it.",
     stats: ["10 moments", "4 layers", "Live chat"],
     tech: ["Next.js", "Framer Motion", "Claude API"],
-    fullStory: "The most personal project. The Gita isn't a text to me — it's a framework for hard decisions.\n\n10 moments, four layers each. Sage lets visitors converse with the wisdom. No client. No deadline. Just honoring something that has given me so much.",
+    fullStory: "The most personal project. The Gita isn't a text to me — it's a framework for hard decisions.\n\n10 moments, four layers each. Guru lets visitors converse with the wisdom. No client. No deadline. Just honoring something that has given me so much.",
     portfolioLink: "/portfolio/bhagavad-gita",
   },
   {

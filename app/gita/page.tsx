@@ -694,9 +694,9 @@ export default function GitaExperience() {
                 <circle cx="0" cy="0" r="32" fill={isDarkMode ? 'rgba(3,7,30,0.6)' : 'rgba(255,255,255,0.6)'} stroke={palette.accent2} strokeWidth="1" opacity="0.8" />
               </svg>
 
-              {/* Center — Sage figure link */}
+              {/* Center — Guru figure link */}
               <a
-                href="https://ai-agents-rosy-mu.vercel.app/agents/sage"
+                href="https://ai-agents-rosy-mu.vercel.app/agents/guru"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="sage-center"
@@ -768,7 +768,7 @@ export default function GitaExperience() {
                     boxShadow: `0 2px 12px rgba(0,0,0,0.3)`,
                   }}
                 >
-                  Chat with the Sage
+                  Chat with the Guru
                 </span>
               </a>
 
@@ -928,7 +928,7 @@ export default function GitaExperience() {
                       lineHeight: 1.5,
                       margin: 0,
                     }}>
-                      Touch the <strong style={{ color: palette.highlight }}>bouncing sage</strong> at the center to begin a conversation
+                      Touch the <strong style={{ color: palette.highlight }}>bouncing guru</strong> at the center to begin a conversation
                     </p>
                   </div>
                 </div>
