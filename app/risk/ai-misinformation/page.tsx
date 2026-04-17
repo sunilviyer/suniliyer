@@ -1,6 +1,8 @@
 import { getCardsByArticle, getArticleBySlug } from '@/lib/db';
 import { ArticlePageWrapper } from '@/components/articles/ArticlePageWrapper';
 import { DatabaseArticleRenderer } from '@/components/articles/DatabaseArticleRenderer';
+import { JsonLd } from '@/components/seo/JsonLd';
+import { getArticleSchema, getBreadcrumbSchema } from '@/lib/schema';
 import { notFound } from 'next/navigation';
 
 // Generate static paths at build time for SEO
@@ -32,8 +34,29 @@ export default async function AiMisinformationArticle() {
 
   const { content } = article;
 
+  // Schema.org structured data
+  const articleSchema = getArticleSchema({
+    title: 'AI-Powered Misinformation',
+    description: 'How AI enables the creation and spread of false information at scale',
+    slug: 'ai-misinformation',
+    path: 'risk',
+    datePublished: '2025-01-01T00:00:00Z',
+    dateModified: content.updatedDate || '2025-01-01T00:00:00Z',
+    image: content.headerImage,
+    readTime: content.readTime,
+    tags: content.tags || []
+  });
+
+  const breadcrumbSchema = getBreadcrumbSchema([
+    { name: 'Home', url: '/' },
+    { name: 'Risk', url: '/risk' },
+    { name: 'AI-Powered Misinformation', url: '/risk/ai-misinformation' }
+  ]);
+
   return (
-    <ArticlePageWrapper
+    <>
+      <JsonLd data={[articleSchema, breadcrumbSchema]} />
+      <ArticlePageWrapper
       path="risk"
       pathTitle="Risk"
       articleTitle="AI Misinformation"
@@ -61,5 +84,6 @@ export default async function AiMisinformationArticle() {
         sources={content.sources}
       />
     </ArticlePageWrapper>
+    </>
   );
 }

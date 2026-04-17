@@ -1,6 +1,8 @@
 import { getCardsByArticle, getArticleBySlug } from '@/lib/db';
 import { ArticlePageWrapper } from '@/components/articles/ArticlePageWrapper';
 import { DatabaseArticleRenderer } from '@/components/articles/DatabaseArticleRenderer';
+import { JsonLd } from '@/components/seo/JsonLd';
+import { getArticleSchema, getBreadcrumbSchema } from '@/lib/schema';
 import { notFound } from 'next/navigation';
 
 // Generate static paths at build time for SEO
@@ -32,8 +34,29 @@ export default async function EnvironmentalCostAiArticle() {
 
   const { content } = article;
 
+  // Schema.org structured data
+  const articleSchema = getArticleSchema({
+    title: 'The Environmental Cost of AI',
+    description: 'Carbon footprint and sustainability challenges in training large AI models',
+    slug: 'environmental-cost-ai',
+    path: 'terminology',
+    datePublished: '2025-01-01T00:00:00Z',
+    dateModified: content.updatedDate || '2025-01-01T00:00:00Z',
+    image: content.headerImage,
+    readTime: content.readTime,
+    tags: content.tags || []
+  });
+
+  const breadcrumbSchema = getBreadcrumbSchema([
+    { name: 'Home', url: '/' },
+    { name: 'Terminology', url: '/terminology' },
+    { name: 'The Environmental Cost of AI', url: '/terminology/environmental-cost-ai' }
+  ]);
+
   return (
-    <ArticlePageWrapper
+    <>
+      <JsonLd data={[articleSchema, breadcrumbSchema]} />
+      <ArticlePageWrapper
       path="terminology"
       pathTitle="Terminology"
       articleTitle="Environmental Cost of AI"
@@ -61,5 +84,6 @@ export default async function EnvironmentalCostAiArticle() {
         sources={content.sources}
       />
     </ArticlePageWrapper>
+    </>
   );
 }

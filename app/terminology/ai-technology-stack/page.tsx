@@ -1,6 +1,8 @@
 import { getCardsByArticle, getArticleBySlug } from '@/lib/db';
 import { ArticlePageWrapper } from '@/components/articles/ArticlePageWrapper';
 import { DatabaseArticleRenderer } from '@/components/articles/DatabaseArticleRenderer';
+import { JsonLd } from '@/components/seo/JsonLd';
+import { getArticleSchema, getBreadcrumbSchema } from '@/lib/schema';
 import { notFound } from 'next/navigation';
 
 // Generate static paths at build time for SEO
@@ -32,8 +34,29 @@ export default async function AITechnologyStackArticle() {
 
   const { content } = article;
 
+  // Schema.org structured data
+  const articleSchema = getArticleSchema({
+    title: 'The AI Technology Stack',
+    description: 'From data to deployment: Understanding the layers that power AI systems',
+    slug: 'ai-technology-stack',
+    path: 'terminology',
+    datePublished: '2025-01-01T00:00:00Z',
+    dateModified: content.updatedDate || '2025-01-01T00:00:00Z',
+    image: content.headerImage,
+    readTime: content.readTime,
+    tags: content.tags || []
+  });
+
+  const breadcrumbSchema = getBreadcrumbSchema([
+    { name: 'Home', url: '/' },
+    { name: 'Terminology', url: '/terminology' },
+    { name: 'The AI Technology Stack', url: '/terminology/ai-technology-stack' }
+  ]);
+
   return (
-    <ArticlePageWrapper
+    <>
+      <JsonLd data={[articleSchema, breadcrumbSchema]} />
+      <ArticlePageWrapper
       path="terminology"
       pathTitle="Terminology"
       articleTitle="The AI Technology Stack"
@@ -57,5 +80,6 @@ export default async function AITechnologyStackArticle() {
         sources={content.sources}
       />
     </ArticlePageWrapper>
+    </>
   );
 }

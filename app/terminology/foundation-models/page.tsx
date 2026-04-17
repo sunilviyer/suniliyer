@@ -33,7 +33,9 @@ export default async function FoundationModelsArticle() {
   const { content } = article;
 
   return (
-    <ArticlePageWrapper
+    <>
+      <JsonLd data={[articleSchema, breadcrumbSchema]} />
+      <ArticlePageWrapper
       path="terminology"
       pathTitle="Terminology"
       articleTitle="Foundation Models"
@@ -61,5 +63,6 @@ export default async function FoundationModelsArticle() {
         sources={content.sources}
       />
     </ArticlePageWrapper>
+    </>
   );
 }
