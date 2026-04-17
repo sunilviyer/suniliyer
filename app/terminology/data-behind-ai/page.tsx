@@ -3,6 +3,21 @@ import { ArticlePageWrapper } from '@/components/articles/ArticlePageWrapper';
 import { DatabaseArticleRenderer } from '@/components/articles/DatabaseArticleRenderer';
 import { notFound } from 'next/navigation';
 
+// Generate static paths at build time for SEO
+export async function generateStaticParams() {
+  return [
+    { /* This page - data-behind-ai */ }
+  ];
+}
+
+// Add metadata for SEO
+export async function generateMetadata() {
+  return {
+    title: 'The Data Behind AI - Terminology - Sunil Iyer',
+    description: 'How data quality, quantity, and provenance determine AI system behavior',
+  };
+}
+
 export default async function DataBehindAIArticle() {
   // Fetch article and cards from database
   const [article, cards] = await Promise.all([

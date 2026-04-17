@@ -3,6 +3,21 @@ import { ArticlePageWrapper } from '@/components/articles/ArticlePageWrapper';
 import { DatabaseArticleRenderer } from '@/components/articles/DatabaseArticleRenderer';
 import { notFound } from 'next/navigation';
 
+// Generate static paths at build time for SEO
+export async function generateStaticParams() {
+  return [
+    { /* This page - black-box-problem */ }
+  ];
+}
+
+// Add metadata for SEO
+export async function generateMetadata() {
+  return {
+    title: 'The Black Box Problem - Terminology - Sunil Iyer',
+    description: 'Why AI explainability matters: Understanding opaque decision-making systems',
+  };
+}
+
 export default async function BlackBoxProblemArticle() {
   // Fetch article and cards from database
   const [article, cards] = await Promise.all([

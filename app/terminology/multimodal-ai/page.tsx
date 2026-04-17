@@ -3,6 +3,21 @@ import { ArticlePageWrapper } from '@/components/articles/ArticlePageWrapper';
 import { DatabaseArticleRenderer } from '@/components/articles/DatabaseArticleRenderer';
 import { notFound } from 'next/navigation';
 
+// Generate static paths at build time for SEO
+export async function generateStaticParams() {
+  return [
+    { /* This page - multimodal-ai */ }
+  ];
+}
+
+// Add metadata for SEO
+export async function generateMetadata() {
+  return {
+    title: 'Multimodal AI - Terminology - Sunil Iyer',
+    description: 'AI systems that understand and generate across text, images, audio, and video',
+  };
+}
+
 export default async function MultimodalAiArticle() {
   // Fetch article and cards from database
   const [article, cards] = await Promise.all([
