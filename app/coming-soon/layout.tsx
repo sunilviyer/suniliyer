@@ -1,10 +1,13 @@
 import { JsonLd } from '@/components/seo/JsonLd';
 import { getCreativeWorkSchema, getBreadcrumbSchema } from '@/lib/schema';
+import { getPortfolioSocialMeta } from '@/lib/social-meta';
 
-export const metadata = {
-  title: 'Coming Soon - Sunil Iyer',
+export const metadata = getPortfolioSocialMeta({
+  title: 'Coming Soon',
   description: 'Something magical is cooking. New projects and features in development.',
-};
+  path: '/coming-soon',
+  image: '/images/placeholder.webp',
+});
 
 export default function ComingSoonLayout({ children }: { children: React.ReactNode }) {
   const creativeWorkSchema = getCreativeWorkSchema({

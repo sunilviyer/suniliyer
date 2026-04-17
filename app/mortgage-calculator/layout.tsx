@@ -1,10 +1,13 @@
 import { JsonLd } from '@/components/seo/JsonLd';
 import { getCreativeWorkSchema, getBreadcrumbSchema } from '@/lib/schema';
+import { getPortfolioSocialMeta } from '@/lib/social-meta';
 
-export const metadata = {
-  title: 'Mortgage Affordability & Cost Calculator - Sunil Iyer',
-  description: 'Calculate mortgage affordability and total homeownership costs. Multi-scenario analysis including closing costs, property taxes, utilities, and maintenance.',
-};
+export const metadata = getPortfolioSocialMeta({
+  title: 'Mortgage Calculator',
+  description: 'Financial planning web application: Interactive mortgage calculator with amortization schedules and payment breakdowns.',
+  path: '/mortgage-calculator',
+  image: '/images/heroes/mortgage.webp',
+});
 
 export default function MortgageCalculatorLayout({ children }: { children: React.ReactNode }) {
   const creativeWorkSchema = getCreativeWorkSchema({

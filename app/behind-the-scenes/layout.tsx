@@ -1,10 +1,13 @@
 import { JsonLd } from '@/components/seo/JsonLd';
 import { getCreativeWorkSchema, getBreadcrumbSchema } from '@/lib/schema';
+import { getPortfolioSocialMeta } from '@/lib/social-meta';
 
-export const metadata = {
-  title: 'Behind the Scenes - Sunil Iyer',
-  description: 'Nine projects, nine journeys. The spark, the struggle, and the lesson behind each build — from AI agents to the Bhagavad Gita.',
-};
+export const metadata = getPortfolioSocialMeta({
+  title: 'Behind the Scenes',
+  description: 'Nine projects, nine journeys. The spark, the struggle, and the lesson behind each build.',
+  path: '/behind-the-scenes',
+  image: '/images/heroes/behind-scenes.webp',
+});
 
 export default function BehindTheScenesLayout({ children }: { children: React.ReactNode }) {
   const creativeWorkSchema = getCreativeWorkSchema({

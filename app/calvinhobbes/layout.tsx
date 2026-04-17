@@ -1,10 +1,13 @@
 import { JsonLd } from '@/components/seo/JsonLd';
 import { getCreativeWorkSchema, getBreadcrumbSchema } from '@/lib/schema';
+import { getPortfolioSocialMeta } from '@/lib/social-meta';
 
-export const metadata = {
-  title: 'cAlvIn & Hobbes - AI Through Comics - Sunil Iyer',
-  description: 'cAlvIn is a small robot learning about AI — hallucination, alignment, guardrails, and existential questions. Inspired by Calvin & Hobbes.',
-};
+export const metadata = getPortfolioSocialMeta({
+  title: 'Calvin & Hobbes',
+  description: 'AI education through comics: Teaching complex AI concepts using the beloved Calvin and Hobbes comic strip.',
+  path: '/calvinhobbes',
+  image: '/images/heroes/calvin-hobbes.webp',
+});
 
 export default function CalvinHobbesLayout({ children }: { children: React.ReactNode }) {
   const creativeWorkSchema = getCreativeWorkSchema({

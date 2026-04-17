@@ -1,11 +1,14 @@
 import ArticlesPinboard from '@/behind-the-scenes/ArticlesPinboard';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { getCreativeWorkSchema, getBreadcrumbSchema } from '@/lib/schema';
+import { getPortfolioSocialMeta } from '@/lib/social-meta';
 
-export const metadata = {
-  title: 'Published Articles - Sunil Iyer',
+export const metadata = getPortfolioSocialMeta({
+  title: 'Published Articles',
   description: 'Explore my collection of published articles on AI governance, risk management, and responsible technology. Expert insights on building trustworthy AI systems.',
-};
+  path: '/articles',
+  image: '/images/medium/Notebook.webp',
+});
 
 export default function ArticlesPage() {
   const creativeWorkSchema = getCreativeWorkSchema({
