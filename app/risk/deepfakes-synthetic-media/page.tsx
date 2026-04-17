@@ -3,6 +3,21 @@ import { ArticlePageWrapper } from '@/components/articles/ArticlePageWrapper';
 import { DatabaseArticleRenderer } from '@/components/articles/DatabaseArticleRenderer';
 import { notFound } from 'next/navigation';
 
+// Generate static paths at build time for SEO
+export async function generateStaticParams() {
+  return [
+    { /* This page - deepfakes-synthetic-media */ }
+  ];
+}
+
+// Add metadata for SEO
+export async function generateMetadata() {
+  return {
+    title: 'Deepfakes & Synthetic Media - Risk - Sunil Iyer',
+    description: 'Synthetic media threats: AI-generated content that erodes truth and trust',
+  };
+}
+
 export default async function DeepfakesSyntheticMediaArticle() {
   // Fetch article and cards from database
   const [article, cards] = await Promise.all([

@@ -3,6 +3,21 @@ import { ArticlePageWrapper } from '@/components/articles/ArticlePageWrapper';
 import { DatabaseArticleRenderer } from '@/components/articles/DatabaseArticleRenderer';
 import { notFound } from 'next/navigation';
 
+// Generate static paths at build time for SEO
+export async function generateStaticParams() {
+  return [
+    { /* This page - ai-misinformation */ }
+  ];
+}
+
+// Add metadata for SEO
+export async function generateMetadata() {
+  return {
+    title: 'AI Misinformation - Risk - Sunil Iyer',
+    description: 'Threats to democratic processes: AI-powered disinformation campaigns',
+  };
+}
+
 export default async function AiMisinformationArticle() {
   // Fetch article and cards from database
   const [article, cards] = await Promise.all([
