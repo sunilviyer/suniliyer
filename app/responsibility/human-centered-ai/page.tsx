@@ -3,6 +3,7 @@ import { ArticlePageWrapper } from '@/components/articles/ArticlePageWrapper';
 import { DatabaseArticleRenderer } from '@/components/articles/DatabaseArticleRenderer';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { getArticleSchema, getBreadcrumbSchema } from '@/lib/schema';
+import { getArticleSocialMeta } from '@/lib/social-meta';
 import { notFound } from 'next/navigation';
 
 // Generate static paths at build time for SEO
@@ -12,12 +13,16 @@ export async function generateStaticParams() {
   ];
 }
 
-// Add metadata for SEO
+// Add metadata for SEO and social media
 export async function generateMetadata() {
-  return {
-    title: 'Human-Centered AI - Responsibility - Sunil Iyer',
-    description: 'Keeping people in the loop: prioritizing human needs and wellbeing',
-  };
+  return getArticleSocialMeta({
+    title: 'Human-Centered AI',
+    description: 'Putting people first: Designing AI systems that augment rather than replace human judgment',
+    slug: 'human-centered-ai',
+    path: 'responsibility',
+    tags: ['Human-Centered AI', 'Design', 'Ethics', 'UX'],
+  });
+};
 }
 
 export default async function HumanCenteredAiArticle() {

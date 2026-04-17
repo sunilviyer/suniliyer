@@ -3,6 +3,7 @@ import { ArticlePageWrapper } from '@/components/articles/ArticlePageWrapper';
 import { DatabaseArticleRenderer } from '@/components/articles/DatabaseArticleRenderer';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { getArticleSchema, getBreadcrumbSchema } from '@/lib/schema';
+import { getArticleSocialMeta } from '@/lib/social-meta';
 import { notFound } from 'next/navigation';
 
 // Generate static paths at build time for SEO
@@ -12,12 +13,16 @@ export async function generateStaticParams() {
   ];
 }
 
-// Add metadata for SEO
+// Add metadata for SEO and social media
 export async function generateMetadata() {
-  return {
-    title: 'The AI Technology Stack - Terminology - Sunil Iyer',
-    description: 'The infrastructure powering AI: From chips to clouds to models',
-  };
+  return getArticleSocialMeta({
+    title: 'AI Technology Stack',
+    description: 'From chips to algorithms: Understanding the hardware and software layers powering modern AI systems',
+    slug: 'ai-technology-stack',
+    path: 'terminology',
+    tags: ['AI', 'Technology Stack', 'Infrastructure', 'Cloud'],
+  });
+};
 }
 
 export default async function AITechnologyStackArticle() {

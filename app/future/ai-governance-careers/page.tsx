@@ -3,6 +3,7 @@ import { ArticlePageWrapper } from '@/components/articles/ArticlePageWrapper';
 import { DatabaseArticleRenderer } from '@/components/articles/DatabaseArticleRenderer';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { getArticleSchema, getBreadcrumbSchema } from '@/lib/schema';
+import { getArticleSocialMeta } from '@/lib/social-meta';
 import { notFound } from 'next/navigation';
 
 // Generate static paths at build time for SEO
@@ -12,12 +13,16 @@ export async function generateStaticParams() {
   ];
 }
 
-// Add metadata for SEO
+// Add metadata for SEO and social media
 export async function generateMetadata() {
-  return {
-    title: 'AI Governance Careers - Future - Sunil Iyer',
-    description: 'Building a career in AI policy, ethics, and governance: Skills and pathways',
-  };
+  return getArticleSocialMeta({
+    title: 'AI Governance Careers',
+    description: 'Breaking into AI governance: Skills, roles, and opportunities in this emerging field',
+    slug: 'ai-governance-careers',
+    path: 'future',
+    tags: ['Careers', 'AI Governance', 'Jobs', 'Skills'],
+  });
+};
 }
 
 export default async function AiGovernanceCareersArticle() {

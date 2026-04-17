@@ -1,6 +1,9 @@
 import { getCardsByArticle, getArticleBySlug } from '@/lib/db';
 import { ArticlePageWrapper } from '@/components/articles/ArticlePageWrapper';
 import { DatabaseArticleRenderer } from '@/components/articles/DatabaseArticleRenderer';
+import { JsonLd } from '@/components/seo/JsonLd';
+import { getArticleSchema, getBreadcrumbSchema } from '@/lib/schema';
+import { getArticleSocialMeta } from '@/lib/social-meta';
 import { notFound } from 'next/navigation';
 
 // Generate static paths at build time for SEO
@@ -10,12 +13,16 @@ export async function generateStaticParams() {
   ];
 }
 
-// Add metadata for SEO
+// Add metadata for SEO and social media
 export async function generateMetadata() {
-  return {
-    title: 'Large Language Models - History - Sunil Iyer',
-    description: 'ChatGPT, GPT-4, and beyond: The transformer architecture that powers modern AI conversations',
-  };
+  return getArticleSocialMeta({
+    title: 'Large Language Models',
+    description: 'How ChatGPT and GPT-4 work: Understanding transformer architecture and the technology reshaping AI',
+    slug: 'large-language-models',
+    path: 'history',
+    tags: ['LLMs', 'ChatGPT', 'GPT', 'Transformers'],
+  });
+};
 }
 
 export default async function LargeLanguageModelsArticle() {
@@ -32,8 +39,29 @@ export default async function LargeLanguageModelsArticle() {
 
   const { content } = article;
 
+  // Schema.org structured data
+  const articleSchema = getArticleSchema({
+    title: 'Large Language Models',
+    description: 'GPT, BERT, and beyond: The technology powering conversational AI',
+    slug: 'large-language-models',
+    path: 'history',
+    datePublished: '2025-01-01T00:00:00Z',
+    dateModified: content.updatedDate || '2025-01-01T00:00:00Z',
+    image: content.headerImage,
+    readTime: content.readTime,
+    tags: content.tags || []
+  });
+
+  const breadcrumbSchema = getBreadcrumbSchema([
+    { name: 'Home', url: '/' },
+    { name: 'History', url: '/history' },
+    { name: 'Large Language Models', url: '/history/large-language-models' }
+  ]);
+
   return (
-    <ArticlePageWrapper
+    <>
+      <JsonLd data={[articleSchema, breadcrumbSchema]} />
+      <ArticlePageWrapper
       path="history"
       pathTitle="History"
       articleTitle="Large Language Models"
@@ -61,5 +89,6 @@ export default async function LargeLanguageModelsArticle() {
         sources={content.sources}
       />
     </ArticlePageWrapper>
+    </>
   );
 }

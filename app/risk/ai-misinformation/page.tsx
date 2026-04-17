@@ -3,6 +3,7 @@ import { ArticlePageWrapper } from '@/components/articles/ArticlePageWrapper';
 import { DatabaseArticleRenderer } from '@/components/articles/DatabaseArticleRenderer';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { getArticleSchema, getBreadcrumbSchema } from '@/lib/schema';
+import { getArticleSocialMeta } from '@/lib/social-meta';
 import { notFound } from 'next/navigation';
 
 // Generate static paths at build time for SEO
@@ -12,12 +13,16 @@ export async function generateStaticParams() {
   ];
 }
 
-// Add metadata for SEO
+// Add metadata for SEO and social media
 export async function generateMetadata() {
-  return {
-    title: 'AI Misinformation - Risk - Sunil Iyer',
-    description: 'Threats to democratic processes: AI-powered disinformation campaigns',
-  };
+  return getArticleSocialMeta({
+    title: 'AI Misinformation',
+    description: 'Fighting falsehoods at scale: How AI both creates and combats misinformation',
+    slug: 'ai-misinformation',
+    path: 'risk',
+    tags: ['Misinformation', 'AI Ethics', 'Trust', 'Media'],
+  });
+};
 }
 
 export default async function AiMisinformationArticle() {

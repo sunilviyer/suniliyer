@@ -3,6 +3,7 @@ import { ArticlePageWrapper } from '@/components/articles/ArticlePageWrapper';
 import { DatabaseArticleRenderer } from '@/components/articles/DatabaseArticleRenderer';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { getArticleSchema, getBreadcrumbSchema } from '@/lib/schema';
+import { getArticleSocialMeta } from '@/lib/social-meta';
 import { notFound } from 'next/navigation';
 
 // Generate static paths at build time for SEO
@@ -12,12 +13,16 @@ export async function generateStaticParams() {
   ];
 }
 
-// Add metadata for SEO
+// Add metadata for SEO and social media
 export async function generateMetadata() {
-  return {
-    title: 'AGI: Hype, Hope, and Governance - Future - Sunil Iyer',
-    description: 'The quest for human-level AI: systems that can learn and reason across any domain',
-  };
+  return getArticleSocialMeta({
+    title: 'AGI Governance',
+    description: 'Preparing for artificial general intelligence: Governance frameworks for human-level AI systems',
+    slug: 'agi-governance',
+    path: 'future',
+    tags: ['AGI', 'Governance', 'AI Safety', 'Future'],
+  });
+};
 }
 
 export default async function AgiGovernanceArticle() {

@@ -3,6 +3,7 @@ import { ArticlePageWrapper } from '@/components/articles/ArticlePageWrapper';
 import { DatabaseArticleRenderer } from '@/components/articles/DatabaseArticleRenderer';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { getArticleSchema, getBreadcrumbSchema } from '@/lib/schema';
+import { getArticleSocialMeta } from '@/lib/social-meta';
 import { notFound } from 'next/navigation';
 
 // Generate static paths at build time for SEO
@@ -12,12 +13,16 @@ export async function generateStaticParams() {
   ];
 }
 
-// Add metadata for SEO
+// Add metadata for SEO and social media
 export async function generateMetadata() {
-  return {
-    title: 'AI Accountability - Responsibility - Sunil Iyer',
-    description: 'Who is responsible when AI causes harm? Establishing oversight frameworks',
-  };
+  return getArticleSocialMeta({
+    title: 'AI Accountability',
+    description: 'Who\'s responsible when AI fails? Understanding liability, governance, and decision-making frameworks',
+    slug: 'ai-accountability',
+    path: 'responsibility',
+    tags: ['Accountability', 'Governance', 'AI Ethics', 'Liability'],
+  });
+};
 }
 
 export default async function AiAccountabilityArticle() {

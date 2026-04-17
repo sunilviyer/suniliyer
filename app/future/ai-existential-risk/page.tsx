@@ -3,6 +3,7 @@ import { ArticlePageWrapper } from '@/components/articles/ArticlePageWrapper';
 import { DatabaseArticleRenderer } from '@/components/articles/DatabaseArticleRenderer';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { getArticleSchema, getBreadcrumbSchema } from '@/lib/schema';
+import { getArticleSocialMeta } from '@/lib/social-meta';
 import { notFound } from 'next/navigation';
 
 // Generate static paths at build time for SEO
@@ -12,12 +13,16 @@ export async function generateStaticParams() {
   ];
 }
 
-// Add metadata for SEO
+// Add metadata for SEO and social media
 export async function generateMetadata() {
-  return {
-    title: 'AI Existential Risk - Future - Sunil Iyer',
-    description: 'Long-term threats from advanced AI: Understanding catastrophic risk scenarios',
-  };
+  return getArticleSocialMeta({
+    title: 'AI Existential Risk',
+    description: 'Could AI threaten humanity? Understanding long-term risks and extinction scenarios',
+    slug: 'ai-existential-risk',
+    path: 'future',
+    tags: ['Existential Risk', 'AI Safety', 'Future', 'Ethics'],
+  });
+};
 }
 
 export default async function AiExistentialRiskArticle() {

@@ -7,6 +7,7 @@ import { CookieBanner } from "@/components/CookieBanner";
 import { GlobalUI } from "@/components/layout/GlobalUI";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { getOrganizationSchema, getPersonSchema, getWebSiteSchema } from "@/lib/schema";
+import { getHomepageSocialMeta } from "@/lib/social-meta";
 import "./globals.css";
 
 const funnelDisplay = Funnel_Display({
@@ -21,10 +22,7 @@ const funnelSans = Funnel_Sans({
   variable: "--font-funnel-sans",
 });
 
-export const metadata: Metadata = {
-  title: "Sunil Iyer | AI Governance & Responsible AI",
-  description: "Helping organizations navigate AI through education, implementation guidance, and governance frameworks.",
-};
+export const metadata: Metadata = getHomepageSocialMeta();
 
 export default function RootLayout({
   children,

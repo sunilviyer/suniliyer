@@ -3,6 +3,7 @@ import { ArticlePageWrapper } from '@/components/articles/ArticlePageWrapper';
 import { DatabaseArticleRenderer } from '@/components/articles/DatabaseArticleRenderer';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { getArticleSchema, getBreadcrumbSchema } from '@/lib/schema';
+import { getArticleSocialMeta } from '@/lib/social-meta';
 import { notFound } from 'next/navigation';
 
 // Generate static paths at build time for SEO
@@ -12,12 +13,16 @@ export async function generateStaticParams() {
   ];
 }
 
-// Add metadata for SEO
+// Add metadata for SEO and social media
 export async function generateMetadata() {
-  return {
-    title: 'Future of AI Regulation - Future - Sunil Iyer',
-    description: 'Shaping the future: emerging frameworks for global AI oversight and cooperation',
-  };
+  return getArticleSocialMeta({
+    title: 'The Future of AI Regulation',
+    description: 'What comes after the EU AI Act? Understanding the evolution of AI law and global governance',
+    slug: 'future-ai-regulation',
+    path: 'future',
+    tags: ['Regulation', 'AI Law', 'Future', 'Governance'],
+  });
+};
 }
 
 export default async function FutureAiRegulationArticle() {

@@ -3,6 +3,7 @@ import { ArticlePageWrapper } from '@/components/articles/ArticlePageWrapper';
 import { DatabaseArticleRenderer } from '@/components/articles/DatabaseArticleRenderer';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { getArticleSchema, getBreadcrumbSchema } from '@/lib/schema';
+import { getArticleSocialMeta } from '@/lib/social-meta';
 import { notFound } from 'next/navigation';
 
 // Generate static paths at build time for SEO
@@ -12,12 +13,16 @@ export async function generateStaticParams() {
   ];
 }
 
-// Add metadata for SEO
+// Add metadata for SEO and social media
 export async function generateMetadata() {
-  return {
-    title: 'Future of AI Ethics - Future - Sunil Iyer',
-    description: 'Evolving ethical frameworks for increasingly powerful AI systems',
-  };
+  return getArticleSocialMeta({
+    title: 'The Future of AI Ethics',
+    description: 'Beyond compliance: Emerging ethical frameworks for a world transformed by AI',
+    slug: 'future-ai-ethics',
+    path: 'future',
+    tags: ['AI Ethics', 'Future', 'Philosophy', 'Governance'],
+  });
+};
 }
 
 export default async function FutureAiEthicsArticle() {

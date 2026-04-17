@@ -4,6 +4,7 @@ import { ArticlePageWrapper } from '@/components/articles/ArticlePageWrapper';
 import { DatabaseArticleRenderer } from '@/components/articles/DatabaseArticleRenderer';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { getArticleSchema, getBreadcrumbSchema } from '@/lib/schema';
+import { getArticleSocialMeta } from '@/lib/social-meta';
 
 // Generate static paths at build time for SEO
 export async function generateStaticParams() {
@@ -12,12 +13,16 @@ export async function generateStaticParams() {
   ];
 }
 
-// Add metadata for SEO
+// Add metadata for SEO and social media
 export async function generateMetadata() {
-  return {
-    title: 'Foundation Models - Terminology - Sunil Iyer',
-    description: 'Massive pre-trained models that power modern AI applications',
-  };
+  return getArticleSocialMeta({
+    title: 'Foundation Models',
+    description: 'The base of modern AI: Understanding large pre-trained models that power ChatGPT, Claude, and beyond',
+    slug: 'foundation-models',
+    path: 'terminology',
+    tags: ['Foundation Models', 'AI', 'LLMs', 'Transfer Learning'],
+  });
+};
 }
 
 export default async function FoundationModelsArticle() {

@@ -3,6 +3,7 @@ import { ArticlePageWrapper } from '@/components/articles/ArticlePageWrapper';
 import { DatabaseArticleRenderer } from '@/components/articles/DatabaseArticleRenderer';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { getArticleSchema, getBreadcrumbSchema } from '@/lib/schema';
+import { getArticleSocialMeta } from '@/lib/social-meta';
 import { notFound } from 'next/navigation';
 
 // Generate static paths at build time for SEO
@@ -12,12 +13,16 @@ export async function generateStaticParams() {
   ];
 }
 
-// Add metadata for SEO
+// Add metadata for SEO and social media
 export async function generateMetadata() {
-  return {
-    title: 'Job Displacement - Risk - Sunil Iyer',
-    description: 'Automation impact: how AI affects employment and the future of work',
-  };
+  return getArticleSocialMeta({
+    title: 'Job Displacement by AI',
+    description: 'Automation anxiety: Understanding which jobs are at risk and how the workforce is changing',
+    slug: 'job-displacement',
+    path: 'risk',
+    tags: ['Job Displacement', 'Automation', 'Future of Work', 'Economics'],
+  });
+};
 }
 
 export default async function JobDisplacementArticle() {

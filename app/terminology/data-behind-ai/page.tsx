@@ -3,6 +3,7 @@ import { ArticlePageWrapper } from '@/components/articles/ArticlePageWrapper';
 import { DatabaseArticleRenderer } from '@/components/articles/DatabaseArticleRenderer';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { getArticleSchema, getBreadcrumbSchema } from '@/lib/schema';
+import { getArticleSocialMeta } from '@/lib/social-meta';
 import { notFound } from 'next/navigation';
 
 // Generate static paths at build time for SEO
@@ -12,12 +13,16 @@ export async function generateStaticParams() {
   ];
 }
 
-// Add metadata for SEO
+// Add metadata for SEO and social media
 export async function generateMetadata() {
-  return {
-    title: 'The Data Behind AI - Terminology - Sunil Iyer',
-    description: 'How data quality, quantity, and provenance determine AI system behavior',
-  };
+  return getArticleSocialMeta({
+    title: 'The Data Behind AI',
+    description: 'Quality over quantity: Understanding training data, datasets, and why data determines AI capability',
+    slug: 'data-behind-ai',
+    path: 'terminology',
+    tags: ['Data', 'AI Training', 'Datasets', 'Machine Learning'],
+  });
+};
 }
 
 export default async function DataBehindAIArticle() {

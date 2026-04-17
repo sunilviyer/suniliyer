@@ -3,6 +3,7 @@ import { ArticlePageWrapper } from '@/components/articles/ArticlePageWrapper';
 import { DatabaseArticleRenderer } from '@/components/articles/DatabaseArticleRenderer';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { getArticleSchema, getBreadcrumbSchema } from '@/lib/schema';
+import { getArticleSocialMeta } from '@/lib/social-meta';
 import { notFound } from 'next/navigation';
 
 // Generate static paths at build time for SEO
@@ -12,12 +13,16 @@ export async function generateStaticParams() {
   ];
 }
 
-// Add metadata for SEO
+// Add metadata for SEO and social media
 export async function generateMetadata() {
-  return {
-    title: 'Algorithmic Bias - Risk - Sunil Iyer',
-    description: 'Unfair AI: how biased training data and design choices lead to discriminatory outcomes',
-  };
+  return getArticleSocialMeta({
+    title: 'Algorithmic Bias',
+    description: 'When AI amplifies inequality: Understanding how biased data creates discriminatory AI systems',
+    slug: 'algorithmic-bias',
+    path: 'risk',
+    tags: ['AI Bias', 'Fairness', 'Ethics', 'Discrimination'],
+  });
+};
 }
 
 export default async function AlgorithmicBiasArticle() {
