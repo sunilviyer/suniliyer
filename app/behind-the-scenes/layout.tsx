@@ -1,8 +1,30 @@
+import { JsonLd } from '@/components/seo/JsonLd';
+import { getCreativeWorkSchema, getBreadcrumbSchema } from '@/lib/schema';
+
 export const metadata = {
   title: 'Behind the Scenes - Sunil Iyer',
   description: 'Nine projects, nine journeys. The spark, the struggle, and the lesson behind each build — from AI agents to the Bhagavad Gita.',
 };
 
 export default function BehindTheScenesLayout({ children }: { children: React.ReactNode }) {
-  return children;
+  const creativeWorkSchema = getCreativeWorkSchema({
+    name: 'Behind the Scenes',
+    description: 'Nine projects, nine journeys. The spark, the struggle, and the lesson behind each build — from AI agents to the Bhagavad Gita.',
+    url: 'https://www.suniliyer.ca/behind-the-scenes',
+    image: '/images/heroes/behind-scenes.webp',
+    dateCreated: '2025-01-01T00:00:00Z',
+    keywords: ['Portfolio', 'Project Stories', 'AI Projects', 'Creative Process', 'Development Journey', 'Case Studies']
+  });
+
+  const breadcrumbSchema = getBreadcrumbSchema([
+    { name: 'Home', url: '/' },
+    { name: 'Behind the Scenes', url: '/behind-the-scenes' }
+  ]);
+
+  return (
+    <>
+      <JsonLd data={[creativeWorkSchema, breadcrumbSchema]} />
+      {children}
+    </>
+  );
 }
