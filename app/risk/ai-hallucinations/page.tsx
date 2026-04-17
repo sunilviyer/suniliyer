@@ -3,6 +3,21 @@ import { ArticlePageWrapper } from '@/components/articles/ArticlePageWrapper';
 import { DatabaseArticleRenderer } from '@/components/articles/DatabaseArticleRenderer';
 import { notFound } from 'next/navigation';
 
+// Generate static paths at build time for SEO
+export async function generateStaticParams() {
+  return [
+    { /* This page - ai-hallucinations */ }
+  ];
+}
+
+// Add metadata for SEO
+export async function generateMetadata() {
+  return {
+    title: 'AI Hallucinations - Risk - Sunil Iyer',
+    description: 'When AI confidently generates false information: Understanding model confabulation',
+  };
+}
+
 export default async function AIHallucinationsArticle() {
   // Fetch article and cards from database
   const [article, cards] = await Promise.all([
