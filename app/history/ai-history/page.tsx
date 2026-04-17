@@ -3,6 +3,22 @@ import { ArticlePageWrapper } from '@/components/articles/ArticlePageWrapper';
 import { DatabaseArticleRenderer } from '@/components/articles/DatabaseArticleRenderer';
 import { notFound } from 'next/navigation';
 
+// Generate static paths at build time for SEO
+export async function generateStaticParams() {
+  // List of all history article slugs
+  return [
+    { /* This page - ai-history */ }
+  ];
+}
+
+// Add metadata for SEO
+export async function generateMetadata() {
+  return {
+    title: 'AI History: Dartmouth to DeepMind - History - Sunil Iyer',
+    description: 'From the 1956 Dartmouth Conference to modern breakthroughs: The complete journey of artificial intelligence',
+  };
+}
+
 export default async function AIHistoryArticle() {
   // Fetch article and cards from database
   const [article, cards] = await Promise.all([
