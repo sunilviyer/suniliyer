@@ -3,6 +3,21 @@ import { ArticlePageWrapper } from '@/components/articles/ArticlePageWrapper';
 import { DatabaseArticleRenderer } from '@/components/articles/DatabaseArticleRenderer';
 import { notFound } from 'next/navigation';
 
+// Generate static paths at build time for SEO
+export async function generateStaticParams() {
+  return [
+    { /* This page - generative-ai-explained */ }
+  ];
+}
+
+// Add metadata for SEO
+export async function generateMetadata() {
+  return {
+    title: 'Generative AI Explained - History - Sunil Iyer',
+    description: 'From text to images to code: Understanding AI systems that create new content',
+  };
+}
+
 export default async function GenerativeAIExplainedArticle() {
   // Fetch article and cards from database
   const [article, cards] = await Promise.all([

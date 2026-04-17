@@ -3,6 +3,21 @@ import { ArticlePageWrapper } from '@/components/articles/ArticlePageWrapper';
 import { DatabaseArticleRenderer } from '@/components/articles/DatabaseArticleRenderer';
 import { notFound } from 'next/navigation';
 
+// Generate static paths at build time for SEO
+export async function generateStaticParams() {
+  return [
+    { /* This page - how-machines-learn */ }
+  ];
+}
+
+// Add metadata for SEO
+export async function generateMetadata() {
+  return {
+    title: 'How Machines Learn - History - Sunil Iyer',
+    description: 'The fundamentals of machine learning: Supervised, unsupervised, and reinforcement learning explained',
+  };
+}
+
 export default async function HowMachinesLearnArticle() {
   // Fetch article and cards from database
   const [article, cards] = await Promise.all([
