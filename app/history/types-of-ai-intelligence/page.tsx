@@ -3,6 +3,21 @@ import { ArticlePageWrapper } from '@/components/articles/ArticlePageWrapper';
 import { DatabaseArticleRenderer } from '@/components/articles/DatabaseArticleRenderer';
 import { notFound } from 'next/navigation';
 
+// Generate static paths at build time for SEO
+export async function generateStaticParams() {
+  return [
+    { /* This page - types-of-ai-intelligence */ }
+  ];
+}
+
+// Add metadata for SEO
+export async function generateMetadata() {
+  return {
+    title: 'Types of AI Intelligence - History - Sunil Iyer',
+    description: 'Understanding ANI, AGI, and ASI: The spectrum of artificial intelligence capabilities',
+  };
+}
+
 export default async function TypesOfAIIntelligenceArticle() {
   // Fetch article and cards from database
   const [article, cards] = await Promise.all([
