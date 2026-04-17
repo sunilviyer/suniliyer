@@ -3,6 +3,21 @@ import { getArticleBySlug, getCardsByArticle } from '@/lib/db';
 import { ArticlePageWrapper } from '@/components/articles/ArticlePageWrapper';
 import { DatabaseArticleRenderer } from '@/components/articles/DatabaseArticleRenderer';
 
+// Generate static paths at build time for SEO
+export async function generateStaticParams() {
+  return [
+    { /* This page - foundation-models */ }
+  ];
+}
+
+// Add metadata for SEO
+export async function generateMetadata() {
+  return {
+    title: 'Foundation Models - Terminology - Sunil Iyer',
+    description: 'Massive pre-trained models that power modern AI applications',
+  };
+}
+
 export default async function FoundationModelsArticle() {
   // Fetch article and cards from database
   const [article, cards] = await Promise.all([
