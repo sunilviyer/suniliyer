@@ -3,6 +3,21 @@ import { ArticlePageWrapper } from '@/components/articles/ArticlePageWrapper';
 import { DatabaseArticleRenderer } from '@/components/articles/DatabaseArticleRenderer';
 import { notFound } from 'next/navigation';
 
+// Generate static paths at build time for SEO
+export async function generateStaticParams() {
+  return [
+    { /* This page - ai-accountability */ }
+  ];
+}
+
+// Add metadata for SEO
+export async function generateMetadata() {
+  return {
+    title: 'AI Accountability - Responsibility - Sunil Iyer',
+    description: 'Who is responsible when AI causes harm? Establishing oversight frameworks',
+  };
+}
+
 export default async function AiAccountabilityArticle() {
   // Fetch article and cards from database
   const [article, cards] = await Promise.all([

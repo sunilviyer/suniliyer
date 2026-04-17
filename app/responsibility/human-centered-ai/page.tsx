@@ -3,6 +3,21 @@ import { ArticlePageWrapper } from '@/components/articles/ArticlePageWrapper';
 import { DatabaseArticleRenderer } from '@/components/articles/DatabaseArticleRenderer';
 import { notFound } from 'next/navigation';
 
+// Generate static paths at build time for SEO
+export async function generateStaticParams() {
+  return [
+    { /* This page - human-centered-ai */ }
+  ];
+}
+
+// Add metadata for SEO
+export async function generateMetadata() {
+  return {
+    title: 'Human-Centered AI - Responsibility - Sunil Iyer',
+    description: 'Keeping people in the loop: prioritizing human needs and wellbeing',
+  };
+}
+
 export default async function HumanCenteredAiArticle() {
   // Fetch article and cards from database
   const [article, cards] = await Promise.all([
