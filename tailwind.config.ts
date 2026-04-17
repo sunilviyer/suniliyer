@@ -1,6 +1,7 @@
 import type { Config } from "tailwindcss";
 
 const config: Config = {
+  darkMode: ['class', '[data-theme="dark"]'],
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -47,6 +48,14 @@ const config: Config = {
         walnut: '#582f0e',
         ivory: '#F5F5DC',
         cream: '#c2c5aa',
+        // PRD Colors
+        prd: {
+          plum: '#4A2C40',
+          amber: '#D97736',
+          sage: '#8C9A7B',
+          blush: '#FFC7C7',
+          pearl: '#FDFCFA',
+        },
         // Journey Page Theme Colors
         'background-primary': 'var(--journey-bg-primary)',
         'background-secondary': 'var(--journey-bg-secondary)',
