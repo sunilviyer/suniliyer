@@ -1,10 +1,12 @@
 import { JsonLd } from '@/components/seo/JsonLd';
 import { getCourseSchema, getBreadcrumbSchema } from '@/lib/schema';
+import { getLearningPathSocialMeta } from '@/lib/social-meta';
 
-export const metadata = {
-  title: 'Responsibility - AI Learning Path - Sunil Iyer',
+export const metadata = getLearningPathSocialMeta({
+  title: 'Responsibility - Governance & Compliance',
   description: 'Navigate AI governance frameworks — EU AI Act, NIST RMF, ISO 42001. Learn transparency, accountability, and human-centered design principles.',
-};
+  path: 'responsibility',
+});
 
 export default function ResponsibilityLayout({ children }: { children: React.ReactNode }) {
   const courseSchema = getCourseSchema({

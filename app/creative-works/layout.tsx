@@ -1,10 +1,13 @@
 import { JsonLd } from '@/components/seo/JsonLd';
 import { getCreativeWorkSchema, getBreadcrumbSchema } from '@/lib/schema';
+import { getPortfolioSocialMeta } from '@/lib/social-meta';
 
-export const metadata = {
-  title: 'Creative Works - Sunil Iyer',
-  description: 'A lifetime of creative exploration — mythology videos, AI art, photography, and digital experiments. Part gallery, part bookshelf, part mixtape.',
-};
+export const metadata = getPortfolioSocialMeta({
+  title: 'Creative Works',
+  description: 'Digital art, photography, mythology videos, and creative explorations across multiple mediums.',
+  path: '/creative-works',
+  image: '/images/heroes/creative-works.webp',
+});
 
 export default function CreativeWorksLayout({ children }: { children: React.ReactNode }) {
   const creativeWorkSchema = getCreativeWorkSchema({
