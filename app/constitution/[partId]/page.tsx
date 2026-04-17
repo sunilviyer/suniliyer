@@ -9,6 +9,8 @@ import PartNavigation from '../components/PartNavigation';
 import VedicAnchorBlock from '../components/VedicAnchorBlock';
 import ConstitutionalSource from '../components/ConstitutionalSource';
 import TableRenderer from '../components/TableRenderer';
+import { JsonLd } from '@/components/seo/JsonLd';
+import { getArticleSchema, getBreadcrumbSchema } from '@/lib/schema';
 
 interface PageProps {
   params: Promise<{
@@ -61,8 +63,32 @@ export default async function ConstitutionPartPage({ params }: PageProps) {
     notFound();
   }
 
+  // Schema.org structured data
+  const title = part.number ? `Part ${part.number}: ${part.title}` : part.title;
+  const description = part.subtitle || `${part.title} - AGI Constitution: Dharma Sanhita`;
+
+  const articleSchema = getArticleSchema({
+    title,
+    description,
+    slug: partId,
+    path: 'constitution',
+    datePublished: '2026-03-01T00:00:00Z',
+    dateModified: '2026-03-01T00:00:00Z',
+    image: '/images/constitution/dharma-sanhita.webp',
+    readTime: '15 min',
+    tags: ['AGI Governance', 'AI Ethics', 'Constitutional Framework', 'Vedic Philosophy']
+  });
+
+  const breadcrumbSchema = getBreadcrumbSchema([
+    { name: 'Home', url: '/' },
+    { name: 'AGI Constitution', url: '/constitution' },
+    { name: title, url: `/constitution/${partId}` }
+  ]);
+
   return (
-    <article>
+    <>
+      <JsonLd data={[articleSchema, breadcrumbSchema]} />
+      <article>
       {/* Part Header */}
       <header style={{ marginBottom: '2rem' }}>
         {part.number && (
@@ -201,5 +227,6 @@ export default async function ConstitutionPartPage({ params }: PageProps) {
       {/* Navigation */}
       <PartNavigation currentPartId={partId} />
     </article>
+    </>
   );
 }
