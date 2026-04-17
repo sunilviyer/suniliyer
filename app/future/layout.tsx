@@ -3,6 +3,6 @@ export const metadata = {
   description: 'Explore AI future — AGI governance, existential risk, AI safety, ethics, regulation, and trustworthy AI. Prepare for what comes next.',
 };
 
-export default function FutureLayout({ children }: { children: React.NodeNode }) {
+export default function FutureLayout({ children }: { children: React.ReactNode }) {
   return children;
 }
