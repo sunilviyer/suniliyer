@@ -14,13 +14,27 @@ const funnelDisplay = Funnel_Display({
   weight: ['300', '400', '500', '600', '700', '800'],
   subsets: ["latin"],
   variable: "--font-funnel-display",
+  display: 'swap', // Font display swap for better performance
 });
 
 const funnelSans = Funnel_Sans({
   weight: ['300', '400', '500', '600', '700', '800'],
   subsets: ["latin"],
   variable: "--font-funnel-sans",
+  display: 'swap', // Font display swap for better performance
 });
+
+// Optimize viewport for performance
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 5,
+  userScalable: true,
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: '#ffffff' },
+    { media: '(prefers-color-scheme: dark)', color: '#0a0a0a' },
+  ],
+};
 
 export const metadata: Metadata = getHomepageSocialMeta();
 
@@ -40,6 +54,13 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <head>
         <JsonLd data={globalSchemas} />
+
+        {/* Resource hints for better performance */}
+        <link rel="preconnect" href="https://www.googletagmanager.com" />
+        <link rel="preconnect" href="https://challenges.cloudflare.com" />
+        <link rel="preconnect" href="https://unpkg.com" />
+        <link rel="dns-prefetch" href="https://www.google-analytics.com" />
+        <link rel="dns-prefetch" href="https://vercel.live" />
       </head>
       <body
         className={`${funnelDisplay.variable} ${funnelSans.variable}`}
