@@ -36,6 +36,9 @@ export function getSocialMeta({
   return {
     title,
     description,
+    alternates: {
+      canonical: url,
+    },
     openGraph: {
       type,
       url,
