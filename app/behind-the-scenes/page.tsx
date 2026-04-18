@@ -165,7 +165,7 @@ const PROJECTS: Project[] = [
     coverGrad: ["#0e0b14", "#1a1525"],
     coverAccent: "#a78bfa",
     accent: "#a78bfa",
-    coverImage: "/images/breaks/vibe-background.png",
+    coverImage: "/images/breaks/vibe-background.webp",
     spark: "Needed a home — not a resume, but a living portfolio.",
     journey: "Rayo template → GSAP → Framer Motion → Lenis → everything above.",
     lesson: "A personal site is never done. It grows as you grow.",

@@ -341,7 +341,7 @@ export default function DemoArticlePage() {
       tags={['EU AI Act', 'Enforcement', 'Compliance', 'Penalties', 'Governance']}
       readTime="11 min read"
       updatedDate="December 2024"
-      headerImage="/images/headercards/responsibility-header.png"
+      headerImage="/images/headercards/responsibility-header.webp"
       sidebarCards={sidebarCardsData}
     >
       {/* Introduction */}

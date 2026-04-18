@@ -91,7 +91,7 @@ export default function InlineCardsPrototypePage() {
       tags={['Prototype', 'UX Design', 'Interactive', 'Animation']}
       readTime="5 min read"
       updatedDate="January 2025"
-      headerImage="/images/headercards/responsibility-header.png"
+      headerImage="/images/headercards/responsibility-header.webp"
       theme={theme}
       sidebarCards={[]} // Empty array to prevent ghost sidebar
     >
