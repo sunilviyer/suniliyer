@@ -4,6 +4,14 @@ import { useState, useEffect, useRef, Suspense } from 'react';
 import Link from 'next/link';
 import { useSearchParams, useRouter } from 'next/navigation';
 import { SplashScreen } from '@/components/homepage/SplashScreen';
+import { usePageTracking, useEngagementTracking } from '@/hooks/useAnalytics';
+import {
+  trackModeToggle,
+  trackCardClick,
+  trackModalOpen,
+  trackExternalLink,
+  trackContactInteraction,
+} from '@/lib/analytics';
 
 const HEADLINES = [
   "A governance curriculum.",
@@ -131,6 +139,10 @@ const LEELA_SECTIONS = [
 function HomePage() {
   const searchParams = useSearchParams();
   const router = useRouter();
+
+  // Analytics tracking
+  usePageTracking();
+  useEngagementTracking();
 
   const [mounted, setMounted] = useState(false);
   const [displayTexts, setDisplayTexts] = useState(['', '', '']);
@@ -336,6 +348,10 @@ function HomePage() {
   const toggleMode = (fromAutoFlip = false) => {
     if (isFlipping) return; // Prevent double-flip
 
+    // Track mode toggle
+    const newMode = mode === 'vidya' ? 'leela' : 'vidya';
+    trackModeToggle(mode, newMode, fromAutoFlip);
+
     // Only set manual mode if user clicked (not from auto-flip)
     if (!fromAutoFlip) {
       setIsUserControlled(true);
@@ -343,7 +359,6 @@ function HomePage() {
     }
 
     setIsFlipping(true);
-    const newMode = mode === 'vidya' ? 'leela' : 'vidya';
 
     setTimeout(() => {
       setMode(newMode);
@@ -651,7 +666,11 @@ function HomePage() {
               return hasSubmenu ? (
                 <button
                   key={`${mode}-${section.id}`}
-                  onClick={() => setShowBuildsModal(true)}
+                  onClick={() => {
+                    trackCardClick(mode, section.id, section.title);
+                    trackModalOpen('Builds');
+                    setShowBuildsModal(true);
+                  }}
                   type="button"
                   className={`group relative overflow-hidden rounded-2xl transition-all duration-500 hover:scale-[1.03] hover:z-10 ${sizeClasses[section.size || 'square']} cursor-pointer`}
                   style={{
@@ -722,6 +741,7 @@ function HomePage() {
                 <Link
                   key={`${mode}-${section.id}`}
                   href={section.href || '#'}
+                  onClick={() => trackCardClick(mode, section.id, section.title)}
                   className={`group relative overflow-hidden rounded-2xl transition-all duration-500 hover:scale-[1.03] hover:z-10 ${sizeClasses[section.size || 'square']}`}
                   style={{
                     transformStyle: 'preserve-3d',
@@ -826,7 +846,10 @@ function HomePage() {
                     key={idx}
                     href={item.href}
                     className="group relative overflow-hidden rounded-2xl h-64 transition-all duration-300 hover:scale-105"
-                    onClick={() => setShowBuildsModal(false)}
+                    onClick={() => {
+                      trackExternalLink('Project', item.href);
+                      setShowBuildsModal(false);
+                    }}
                   >
                     {/* Background image */}
                     <div className="absolute inset-0">
@@ -938,7 +961,10 @@ function HomePage() {
 
                 {/* Let's Connect Button */}
                 <button
-                  onClick={() => window.dispatchEvent(new CustomEvent('open-contact-widget'))}
+                  onClick={() => {
+                    trackContactInteraction('Open');
+                    window.dispatchEvent(new CustomEvent('open-contact-widget'));
+                  }}
                   className="inline-flex items-center gap-3 px-8 py-4 bg-white/90 hover:bg-white text-gray-900 font-semibold rounded-full transition-all duration-300 hover:scale-105 shadow-xl hover:shadow-2xl"
                 >
                   <span>Let&apos;s Connect</span>
@@ -963,6 +989,7 @@ function HomePage() {
                 href="https://www.linkedin.com/in/sunilviyer/"
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => trackExternalLink('LinkedIn', 'https://www.linkedin.com/in/sunilviyer/')}
                 className="group relative p-3 rounded-full bg-gradient-to-br from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 transition-all duration-300 hover:scale-110 shadow-lg hover:shadow-blue-500/50"
                 aria-label="LinkedIn"
               >
@@ -976,6 +1003,7 @@ function HomePage() {
                 href="https://github.com/sunilviyer"
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => trackExternalLink('GitHub', 'https://github.com/sunilviyer')}
                 className="group relative p-3 rounded-full bg-gradient-to-br from-gray-700 to-gray-900 hover:from-gray-800 hover:to-black transition-all duration-300 hover:scale-110 shadow-lg hover:shadow-gray-700/50"
                 aria-label="GitHub"
               >
@@ -988,6 +1016,7 @@ function HomePage() {
               <a
                 href="/downloads/Sunil_Iyer_Resume.pdf"
                 download
+                onClick={() => trackExternalLink('Resume', '/downloads/Sunil_Iyer_Resume.pdf')}
                 className="group relative w-12 h-12 rounded-full overflow-hidden bg-gradient-to-br from-purple-500 to-purple-700 hover:from-purple-600 hover:to-purple-800 transition-all duration-300 hover:scale-110 shadow-lg hover:shadow-purple-500/50 flex items-center justify-center"
                 aria-label="Download Resume"
               >
@@ -1000,7 +1029,10 @@ function HomePage() {
 
               {/* Credits */}
               <button
-                onClick={() => setShowCreditsModal(true)}
+                onClick={() => {
+                  trackModalOpen('Credits');
+                  setShowCreditsModal(true);
+                }}
                 className="group relative w-12 h-12 rounded-full overflow-hidden bg-gradient-to-br from-amber-500 to-orange-600 hover:from-amber-600 hover:to-orange-700 transition-all duration-300 hover:scale-110 shadow-lg hover:shadow-amber-500/50 flex items-center justify-center"
                 aria-label="View Credits"
               >
