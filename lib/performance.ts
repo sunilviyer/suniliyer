@@ -111,7 +111,7 @@ export function observePerformance() {
 // Type declarations for global analytics
 declare global {
   interface Window {
-    gtag?: (...args: any[]) => void;
-    va?: (...args: any[]) => void;
+    gtag?: (command: string, eventName: string, params?: Record<string, unknown>) => void;
+    va?: (command: string, eventName: string, params?: Record<string, unknown>) => void;
   }
 }
