@@ -39,7 +39,7 @@ const VIDYA_SECTIONS = [
         image: '/images/portfolio/seshan-intelligence.webp'
       }
     ],
-    image: '/images/breaks/builds.png',
+    image: '/images/breaks/builds.webp',
     size: 'tall' // Takes 1 column, 2 rows
   },
   {
@@ -66,7 +66,7 @@ const VIDYA_SECTIONS = [
     description: 'AI principles and ethics',
     hoverText: 'Dharma Sanhita: A comprehensive constitutional framework for AGI governance rooted in Vedic philosophy.',
     href: '/constitution',
-    image: '/images/headercards/AGIConstitution.png',
+    image: '/images/headercards/AGIConstitution.webp',
     size: 'wide' // Takes 1.5 columns, 1 row
   }
 ];
@@ -386,7 +386,7 @@ function HomePage() {
             <div className="absolute inset-0 -top-12 -bottom-12 overflow-hidden rounded-3xl pointer-events-none">
               {/* Background Image */}
               <img
-                src="/images/breaks/vibe-background.png"
+                src="/images/breaks/vibe-background.webp"
                 alt="Vibe background"
                 className="absolute inset-0 w-full h-full object-cover opacity-30"
               />
@@ -992,7 +992,7 @@ function HomePage() {
                 aria-label="Download Resume"
               >
                 <img
-                  src="/images/breaks/resume.png"
+                  src="/images/breaks/resume.webp"
                   alt="Resume"
                   className="w-6 h-6 object-contain"
                 />
@@ -1005,7 +1005,7 @@ function HomePage() {
                 aria-label="View Credits"
               >
                 <img
-                  src="/images/breaks/credit-card.png"
+                  src="/images/breaks/credit-card.webp"
                   alt="Credits"
                   className="w-6 h-6 object-contain"
                 />
