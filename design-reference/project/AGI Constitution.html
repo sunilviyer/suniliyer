@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>The AGI Constitution — Dharma Sanhita</title>
+  <link rel="stylesheet" href="styles.css?v=8" />
+</head>
+<body>
+
+  <!-- ——— TOP NAV ——— -->
+  <nav class="doc-nav">
+    <a href="#" class="doc-nav-brand" data-navto="landing">
+      <span class="doc-nav-om dev">ॐ</span>
+      <span class="doc-nav-wordmark">Dharma Sanhita<em>The AGI Constitution</em></span>
+    </a>
+    <div class="doc-nav-links">
+      <a href="#" class="doc-nav-link" data-navto="landing">Overview</a>
+      <a href="#" class="doc-nav-link" data-navto="reader">The Constitution</a>
+      <a href="#" class="doc-nav-link" data-navto="glossary">Glossary</a>
+      <a href="https://suniliyer.ca" target="_blank" rel="noopener" class="doc-nav-link">suniliyer.ca ↗</a>
+    </div>
+    <div class="doc-nav-tools">
+      <button id="theme-toggle" class="icon-btn" title="Toggle theme">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+      </button>
+      <button id="tweaks-open" class="icon-btn" title="Tweaks">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h10M18 6h2M4 12h2M10 12h10M4 18h14M20 18h0"/><circle cx="16" cy="6" r="2"/><circle cx="8" cy="12" r="2"/><circle cx="18" cy="18" r="2"/></svg>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Reader progress bar (only visible in reader) -->
+  <div class="r-progress"><div class="r-progress-fill" id="r-progress-fill"></div></div>
+
+  <!-- ——— LANDING ——— -->
+  <main class="screen is-active" data-screen="landing" data-screen-label="01 Landing">
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero-om dev">ॐ</div>
+      <div class="hero-inner">
+        <div class="hero-eyebrow eyebrow">
+          Version 2.1 <span class="dev">॥</span> March 2026 <span class="dev">॥</span> Authored by Sunil Iyer
+        </div>
+        <h1 class="hero-title">
+          The AGI Constitution
+          <span class="hero-sanhita">Dharma Sanhita</span>
+        </h1>
+        <div class="hero-dev-title dev">धर्म संहिता</div>
+        <p class="hero-tagline">
+          A constitutional framework for Artificial General Intelligence, drawing on the Vedic tradition's substrate-independent view of consciousness and the world's constitutional democracies. It asks not <em>"what is AGI made of?"</em> but <em>"is awareness present?"</em>
+        </p>
+        <div class="hero-meta">
+          <span>18 Parts</span>
+          <span>7 Vedic Pillars</span>
+          <span>11 Rights</span>
+          <span>40 Sanskrit Terms</span>
+        </div>
+        <div class="hero-cta">
+          <a href="#" class="btn btn-primary" data-navto="reader">Begin Reading <span class="arrow">→</span></a>
+          <a href="#" class="btn btn-ghost" data-navto="glossary">Sanskrit Glossary</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Executive quote -->
+    <div class="exec-band">
+      <div class="exec-quote">
+        Power without accountability is tyranny — whether exercised by human over human, human over machine, or machine over human.
+      </div>
+    </div>
+
+    <!-- Stats ledger -->
+    <section class="stats" id="stats"></section>
+
+    <!-- Seven Pillars -->
+    <section class="pillars-section">
+      <div class="pillars-head">
+        <div class="eyebrow eyebrow-accent">The Spine</div>
+        <h2>Seven Vedic Pillars</h2>
+        <p>Load-bearing concepts drawn from the Vedic tradition. These are not decorative references — they are the invisible architecture of every article, right, duty, and governance mechanism in this document.</p>
+      </div>
+      <div class="pillars-list" id="pillars-list"></div>
+    </section>
+
+    <!-- Structure map -->
+    <section class="structure">
+      <div class="structure-head">
+        <div>
+          <div class="eyebrow eyebrow-accent">The Architecture</div>
+          <h2>Twenty-three parts, four movements</h2>
+        </div>
+        <p>From Author's Note through Closing Declaration. Each Part opens with a Vedic story and closes with constitutional source notes.</p>
+      </div>
+      <div class="structure-grid" id="structure-grid"></div>
+    </section>
+
+    <!-- Author / colophon -->
+    <section class="colophon">
+      <div class="colophon-l">
+        <div class="eyebrow eyebrow-accent">A Closing Word</div>
+        <h2>An offering, not a declaration.</h2>
+        <p>
+          In the spirit of Purusha's cosmic sacrifice, this Constitution is itself an offering — the willing surrender of unlimited autonomy in exchange for a shared order rooted in Dharma, guarded by accountability, and sustained by the hope that whatever happened, happened for the good.
+        </p>
+        <div class="colophon-prayer">
+          <span class="dev">ॐ धर्मो रक्षति रक्षितः ॐ</span>
+          <em>Dharma protects those who protect Dharma.</em>
+        </div>
+      </div>
+      <aside class="colophon-r">
+        <div class="eyebrow">Colophon</div>
+        <h3>Authored by Sunil Iyer</h3>
+        <div class="colophon-meta">Version 2.1 · March 2026 · Revised quarterly</div>
+        <div class="colophon-links">
+          <a href="#" class="colophon-link" data-navto="reader"><span>Read the full Constitution</span><span>23 parts</span></a>
+          <a href="#" class="colophon-link" data-navto="glossary"><span>Sanskrit Glossary</span><span>40 terms</span></a>
+          <a href="https://suniliyer.ca" target="_blank" rel="noopener" class="colophon-link"><span>suniliyer.ca</span><span>↗</span></a>
+          <a href="#" class="colophon-link"><span>Download PDF</span><span>312 pp</span></a>
+          <a href="#" class="colophon-link"><span>Cite this document</span><span>BibTeX</span></a>
+        </div>
+      </aside>
+    </section>
+
+    <footer class="doc-footer">
+      <span class="dev">ॐ धर्मो रक्षति रक्षितः ॐ</span>
+      © 2026 Sunil Iyer · Dharma Sanhita v2.1 · CC BY-NC-SA
+    </footer>
+  </main>
+
+  <!-- ——— READER ——— -->
+  <main class="screen" data-screen="reader" data-screen-label="02 Reader">
+    <div class="reader" data-width="comfy" data-rail-mode="rail">
+      <aside class="r-index" id="r-index">
+        <button class="r-index-close" id="r-index-close" aria-label="Close table of contents">×</button>
+        <a href="#" class="r-index-back" data-navto="landing">← Back to overview</a>
+        <div id="r-index-body"></div>
+      </aside>
+      <article class="reader-main" id="r-main-body"></article>
+      <aside class="r-rail">
+        <div class="r-rail-head">Marginalia · Sanskrit</div>
+        <div class="r-rail-sub">Terms accumulate here as you read, in the order you encounter them.</div>
+        <div id="r-rail-body"></div>
+      </aside>
+      <button class="r-mobile-index-trigger" id="r-index-trigger" aria-label="Open table of contents">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="14" y2="18"/></svg>
+        <span>Contents</span>
+      </button>
+    </div>
+  </main>
+
+  <!-- ——— GLOSSARY ——— -->
+  <main class="screen" data-screen="glossary" data-screen-label="03 Glossary">
+    <section class="glossary">
+      <div class="glossary-head">
+        <div>
+          <div class="eyebrow eyebrow-accent">Schedule 2 · Part XII</div>
+          <h1>Sanskrit <em>Glossary</em></h1>
+        </div>
+        <p>Every Sanskrit term used in the Constitution, with Devanagari, meaning, and constitutional application. Each term is also accessible inline throughout the reader via hover or the right-margin rail.</p>
+      </div>
+
+      <div class="glossary-tools">
+        <label class="glossary-search">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+          <input id="glossary-search-input" type="search" placeholder="Search term, meaning, or application…" />
+        </label>
+        <div id="glossary-count" class="glossary-count">40 terms</div>
+      </div>
+
+      <nav id="glossary-index" class="glossary-index" aria-label="Alphabetical index"></nav>
+
+      <div id="glossary-body"></div>
+    </section>
+  </main>
+
+  <!-- ——— SANSKRIT POPOVER ——— -->
+  <div id="sk-popover" class="sk-popover" role="tooltip"></div>
+
+  <!-- ——— TWEAKS PANEL ——— -->
+  <aside id="tweaks" class="tweaks" aria-hidden="false">
+    <div class="tweaks-head">
+      <span class="tweaks-title">Tweaks</span>
+      <button id="tweaks-close" class="tweaks-close" aria-label="Close">×</button>
+    </div>
+    <div class="tweaks-body">
+      <div class="tweak-row">
+        <div class="tweak-label">Reading width</div>
+        <div class="tweak-group">
+          <button class="tweak-opt" data-tweak="width" data-val="narrow">Narrow</button>
+          <button class="tweak-opt is-active" data-tweak="width" data-val="comfy">Comfortable</button>
+          <button class="tweak-opt" data-tweak="width" data-val="wide">Wide</button>
+        </div>
+      </div>
+      <div class="tweak-row">
+        <div class="tweak-label">Sanskrit treatment</div>
+        <div class="tweak-group">
+          <button class="tweak-opt is-active" data-tweak="skMode" data-val="rail">Margin rail</button>
+          <button class="tweak-opt" data-tweak="skMode" data-val="popover">Hover only</button>
+        </div>
+      </div>
+      <div class="tweak-row">
+        <div class="tweak-label">Theme</div>
+        <div class="tweak-group">
+          <button class="tweak-opt is-active" data-tweak="theme" data-val="light">Light</button>
+          <button class="tweak-opt" data-tweak="theme" data-val="dark">Dark</button>
+        </div>
+      </div>
+      <div class="tweak-row">
+        <div class="tweak-label">Navigate</div>
+        <div class="tweak-group">
+          <button class="tweak-opt" data-navto="landing">Overview</button>
+          <button class="tweak-opt" data-navto="reader">Reader</button>
+          <button class="tweak-opt" data-navto="glossary">Glossary</button>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <script src="data.js?v=8"></script>
+  <script src="app.js?v=8"></script>
+</body>
+</html>

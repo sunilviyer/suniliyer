@@ -93,37 +93,24 @@ export default async function ConstitutionPartPage({ params }: PageProps) {
   return (
     <>
       <JsonLd data={[articleSchema, breadcrumbSchema]} />
-      <article>
-      {/* Part Header */}
-      <header style={{ marginBottom: '2rem' }}>
-        {part.number && (
-          <div
-            style={{
-              fontFamily: 'Cormorant Garamond, serif',
-              fontSize: '1rem',
-              fontWeight: 600,
-              color: 'var(--constitution-saffron)',
-              textTransform: 'uppercase',
-              letterSpacing: '0.1em',
-              marginBottom: '0.5rem',
-            }}
-          >
-            {part.category === 'constitution' ? `Part ${part.number}` : `Section ${part.number}`}
-          </div>
-        )}
-        <h1 className="constitution-part-title">{part.title}</h1>
+      <article className="reader-article">
+      {/* Part Header - Warm & Sacred Design */}
+      <header className="r-head">
+        <div className="r-head-eyebrow">
+          {part.number && (
+            <div className="r-head-pill">
+              {part.category === 'constitution' ? `Part ${part.number}` : `Section ${part.number}`}
+              <span className="const-dev">॥</span>
+            </div>
+          )}
+        </div>
+        <h1 className="r-head-title">{part.title}</h1>
         {part.subtitle && (
-          <div className="constitution-part-subtitle">{part.subtitle}</div>
+          <div className="r-head-sub">{part.subtitle}</div>
         )}
         {part.vedicStory && (
-          <div
-            style={{
-              fontStyle: 'italic',
-              color: 'var(--constitution-text-secondary)',
-              marginTop: '0.5rem',
-            }}
-          >
-            Story: {part.vedicStory}
+          <div className="r-head-story">
+            <span className="const-dev">📖</span> {part.vedicStory}
           </div>
         )}
       </header>

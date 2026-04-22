@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Parallax Layers - Wireframe</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: #f5f5f5;
+      padding: 20px;
+      overflow-x: hidden;
+    }
+
+    .wireframe {
+      max-width: 1400px;
+      margin: 0 auto;
+      background: white;
+      border: 2px solid #333;
+      position: relative;
+    }
+
+    .section {
+      border-bottom: 2px solid #ddd;
+      padding: 80px 40px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #666;
+      margin-bottom: 8px;
+      font-weight: 600;
+    }
+
+    /* Parallax Layer System */
+    .parallax-container {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .parallax-layer {
+      position: absolute;
+      pointer-events: none;
+      opacity: 0.15;
+      z-index: 0;
+    }
+
+    .layer-1 {
+      top: -100px;
+      left: -200px;
+      width: 800px;
+      height: 800px;
+      background: radial-gradient(circle, #9333ea 0%, transparent 70%);
+      filter: blur(80px);
+      animation: float 20s ease-in-out infinite;
+    }
+
+    .layer-2 {
+      top: 200px;
+      right: -300px;
+      width: 1000px;
+      height: 600px;
+      background: radial-gradient(ellipse, #6366f1 0%, transparent 60%);
+      filter: blur(100px);
+      animation: float 25s ease-in-out infinite reverse;
+      animation-delay: -5s;
+    }
+
+    .layer-3 {
+      bottom: -200px;
+      left: 10%;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, #8b5cf6 0%, transparent 65%);
+      filter: blur(90px);
+      animation: float 30s ease-in-out infinite;
+      animation-delay: -10s;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      33% { transform: translate(30px, -30px) scale(1.1); }
+      66% { transform: translate(-30px, 30px) scale(0.9); }
+    }
+
+    /* Content styles remain clean and readable */
+    .hero {
+      background: transparent;
+      min-height: 400px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      margin-bottom: 20px;
+      color: #1f2937;
+      font-weight: 700;
+    }
+
+    .hero .stats {
+      display: flex;
+      gap: 40px;
+      margin-top: 30px;
+    }
+
+    .stat {
+      background: rgba(255,255,255,0.8);
+      padding: 20px 30px;
+      border-radius: 8px;
+      border: 1px solid #e5e7eb;
+      backdrop-filter: blur(10px);
+    }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.9);
+      backdrop-filter: blur(10px);
+      border: 2px solid #e5e7eb;
+      border-radius: 12px;
+      padding: 30px;
+      min-height: 400px;
+    }
+
+    .card-image {
+      background: #e0e7ff;
+      height: 180px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      border: 1px dashed #9333ea;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      color: #6b7280;
+    }
+
+    .journey-section {
+      background: transparent;
+      position: relative;
+      z-index: 2;
+    }
+
+    .journey-section h2 {
+      font-size: 36px;
+      margin-bottom: 30px;
+      color: #1f2937;
+    }
+
+    .timeline {
+      background: rgba(255,255,255,0.7);
+      backdrop-filter: blur(10px);
+      padding: 40px;
+      border-radius: 12px;
+      border: 1px solid rgba(147,51,234,0.2);
+    }
+
+    /* Layer indicators for wireframe */
+    .layer-indicator {
+      position: absolute;
+      background: rgba(251,191,36,0.9);
+      color: #78350f;
+      padding: 8px 12px;
+      border-radius: 6px;
+      font-size: 11px;
+      font-weight: 600;
+      border: 2px solid #f59e0b;
+      z-index: 10;
+      pointer-events: none;
+    }
+
+    .indicator-1 {
+      top: 20px;
+      left: 20px;
+    }
+
+    .indicator-2 {
+      top: 20px;
+      right: 20px;
+    }
+
+    .indicator-3 {
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .scroll-hint {
+      text-align: center;
+      padding: 30px;
+      background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+      border: 2px solid #f59e0b;
+      margin: 40px;
+      border-radius: 12px;
+    }
+
+    .scroll-hint::before {
+      content: '⬇️';
+      display: block;
+      font-size: 32px;
+      margin-bottom: 10px;
+      animation: bounce 2s ease-in-out infinite;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    .comparison-table {
+      margin: 40px;
+      background: white;
+      border: 2px solid #333;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .comparison-table th {
+      background: #1f2937;
+      color: white;
+      padding: 16px;
+      text-align: left;
+    }
+
+    .comparison-table td {
+      padding: 16px;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .comparison-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .layer-demo {
+      position: relative;
+      height: 300px;
+      background: #f9fafb;
+      border: 2px dashed #9333ea;
+      border-radius: 12px;
+      margin: 20px 0;
+      overflow: hidden;
+    }
+
+    .layer-demo-bg {
+      position: absolute;
+      inset: 0;
+    }
+
+    .demo-layer {
+      position: absolute;
+      border-radius: 50%;
+      opacity: 0.2;
+    }
+
+    .demo-layer-1 {
+      top: -50px;
+      left: -50px;
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, #9333ea 0%, transparent 70%);
+      filter: blur(40px);
+    }
+
+    .demo-layer-2 {
+      top: 50px;
+      right: -100px;
+      width: 400px;
+      height: 250px;
+      background: radial-gradient(ellipse, #6366f1 0%, transparent 60%);
+      filter: blur(50px);
+    }
+
+    .demo-layer-3 {
+      bottom: -80px;
+      left: 30%;
+      width: 250px;
+      height: 250px;
+      background: radial-gradient(circle, #8b5cf6 0%, transparent 65%);
+      filter: blur(45px);
+    }
+
+    .layer-demo-content {
+      position: relative;
+      z-index: 2;
+      padding: 40px;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+    }
+
+    .layer-demo-content h3 {
+      font-size: 24px;
+      color: #1f2937;
+    }
+  </style>
+</head>
+<body>
+  <h1 style="text-align: center; margin-bottom: 30px; font-size: 28px; color: #1f2937;">
+    Option 2: Parallax Layers System
+  </h1>
+
+  <div style="max-width: 1400px; margin: 0 auto 30px; background: #dbeafe; border: 2px solid #3b82f6; padding: 24px; border-radius: 12px;">
+    <h3 style="color: #1e40af; margin-bottom: 12px;">💡 Concept Overview</h3>
+    <p style="color: #1e3a8a; line-height: 1.8;">
+      Instead of disruptive image breaks, we add <strong>3-4 abstract gradient layers</strong> behind each section that move at different speeds on scroll (parallax effect). Images become <strong>atmospheric backgrounds</strong> rather than content interruptions.
+    </p>
+  </div>
+
+  <!-- Live Layer Demo -->
+  <div style="max-width: 1400px; margin: 0 auto 40px;">
+    <h3 style="margin-bottom: 16px; color: #1f2937;">Live Layer Demo (Simulated):</h3>
+    <div class="layer-demo">
+      <div class="layer-demo-bg">
+        <div class="demo-layer demo-layer-1"></div>
+        <div class="demo-layer demo-layer-2"></div>
+        <div class="demo-layer demo-layer-3"></div>
+      </div>
+      <div class="layer-demo-content">
+        <div>
+          <h3>Content sits on top</h3>
+          <p style="color: #6b7280; margin-top: 8px;">Layers create depth without disruption</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="wireframe parallax-container">
+    <!-- Parallax Layers (visible for wireframe) -->
+    <div class="layer-indicator indicator-1">LAYER 1: Purple orb (moves slowest)</div>
+    <div class="layer-indicator indicator-2">LAYER 2: Blue gradient (medium speed)</div>
+    <div class="layer-indicator indicator-3">LAYER 3: Violet sphere (fastest)</div>
+
+    <div class="parallax-layer layer-1"></div>
+    <div class="parallax-layer layer-2"></div>
+    <div class="parallax-layer layer-3"></div>
+
+    <!-- Hero Section -->
+    <div class="hero section">
+      <div class="label">Hero Section (with parallax background)</div>
+      <h1>Three Typewriter Headlines</h1>
+      <p style="color: #6b7280; font-size: 18px;">And I'm just getting started.</p>
+      <div class="stats">
+        <div class="stat">26+ articles</div>
+        <div class="stat">5 paths</div>
+        <div class="stat">5 agents</div>
+        <div class="stat">9 projects</div>
+      </div>
+    </div>
+
+    <div class="scroll-hint">
+      <strong>As you scroll, the gradient orbs behind move at different speeds</strong><br/>
+      <span style="font-size: 14px; color: #78350f;">Creating subtle depth and atmosphere</span>
+    </div>
+
+    <!-- Big Three Cards (NO IMAGE BREAK) -->
+    <div class="section" style="background: transparent;">
+      <div class="label">Big Three Section (layers visible through transparent background)</div>
+      <div class="cards-grid">
+        <div class="card">
+          <div class="card-image">Card Image</div>
+          <h3 style="margin-bottom: 12px;">The Curriculum</h3>
+          <p style="color: #6b7280; font-size: 14px;">5 paths, 26+ articles</p>
+        </div>
+        <div class="card">
+          <div class="card-image">Card Image</div>
+          <h3 style="margin-bottom: 12px;">The Builds</h3>
+          <p style="color: #6b7280; font-size: 14px;">Working AI agents</p>
+        </div>
+        <div class="card">
+          <div class="card-image">Card Image</div>
+          <h3 style="margin-bottom: 12px;">The Constitution</h3>
+          <p style="color: #6b7280; font-size: 14px;">AGI framework</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="scroll-hint">
+      <strong>Notice: No disruptive image break!</strong><br/>
+      <span style="font-size: 14px; color: #78350f;">Parallax layers provide visual interest continuously</span>
+    </div>
+
+    <!-- Journey Section (NO IMAGE BREAK) -->
+    <div class="section journey-section">
+      <div class="label">Journey Section (ambient parallax background)</div>
+      <h2>The Journey</h2>
+      <div class="timeline">
+        <p style="color: #6b7280; margin-bottom: 20px;">
+          Biotechnology → Software Engineering → QA → AI → AI Governance
+        </p>
+        <div style="margin-top: 30px; padding: 20px; background: rgba(243,244,246,0.5); border-radius: 8px;">
+          <div class="label">Timeline Animation</div>
+          <p style="color: #6b7280; font-size: 14px;">Animated progression dots</p>
+        </div>
+        <div style="margin-top: 20px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;">
+          <div style="padding: 16px; background: rgba(243,244,246,0.5); border-radius: 8px;">
+            <strong>Bhagavad Gita</strong>
+          </div>
+          <div style="padding: 16px; background: rgba(243,244,246,0.5); border-radius: 8px;">
+            <strong>Calvin & Hobbes</strong>
+          </div>
+          <div style="padding: 16px; background: rgba(243,244,246,0.5); border-radius: 8px;">
+            <strong>Creative Works</strong>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="scroll-hint">
+      <strong>Seamless flow from section to section</strong><br/>
+      <span style="font-size: 14px; color: #78350f;">No jarring image breaks interrupting reading</span>
+    </div>
+
+    <!-- CTA Section -->
+    <div class="section" style="background: rgba(249,250,251,0.8); backdrop-filter: blur(10px); text-align: center;">
+      <div class="label">Call to Action (over ambient layers)</div>
+      <h2 style="font-size: 36px; margin-bottom: 20px; color: #1f2937;">Let's Build Together</h2>
+      <p style="color: #6b7280; margin-bottom: 30px; max-width: 600px; margin-left: auto; margin-right: auto;">
+        Whether you need AI governance expertise or want to discuss the AGI Constitution
+      </p>
+      <button style="padding: 16px 40px; background: #9333ea; color: white; border: none; border-radius: 8px; font-weight: 600; cursor: pointer;">
+        Get in touch →
+      </button>
+    </div>
+
+    <!-- Footer -->
+    <div class="section" style="background: rgba(249,250,251,0.9); backdrop-filter: blur(10px); text-align: center; border-bottom: none;">
+      <div class="label">Footer</div>
+      <p style="color: #6b7280;">© 2026 Sunil Iyer</p>
+    </div>
+  </div>
+
+  <!-- Technical Comparison -->
+  <table class="comparison-table">
+    <thead>
+      <tr>
+        <th>Aspect</th>
+        <th>Current (Massive Breaks)</th>
+        <th>Parallax Layers</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Visual Disruption</strong></td>
+        <td>❌ High - 800px breaks interrupt flow</td>
+        <td>✅ None - continuous ambient background</td>
+      </tr>
+      <tr>
+        <td><strong>File Size</strong></td>
+        <td>❌ Large - 3 photos @ ~200-500KB each</td>
+        <td>✅ Tiny - CSS gradients or small PNGs (~20KB total)</td>
+      </tr>
+      <tr>
+        <td><strong>Performance</strong></td>
+        <td>⚠️ Image loading can cause layout shift</td>
+        <td>✅ Smooth - CSS animations are GPU accelerated</td>
+      </tr>
+      <tr>
+        <td><strong>Mobile Experience</strong></td>
+        <td>❌ Awkward - 800px breaks dominate small screens</td>
+        <td>✅ Excellent - layers scale naturally, no disruption</td>
+      </tr>
+      <tr>
+        <td><strong>Content Context</strong></td>
+        <td>❌ Images unrelated to surrounding content</td>
+        <td>✅ Ambient atmosphere enhances all content</td>
+      </tr>
+      <tr>
+        <td><strong>Aesthetic</strong></td>
+        <td>⚠️ Generic portfolio/blog pattern</td>
+        <td>✅ Modern, sophisticated, memorable</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Image Generation Prompts -->
+  <div style="margin: 40px; padding: 30px; background: #f0f9ff; border: 2px solid #0ea5e9; border-radius: 12px;">
+    <h3 style="color: #075985; margin-bottom: 20px;">🎨 Layer Generation Prompts (if using images instead of CSS)</h3>
+
+    <div style="margin-bottom: 20px; padding: 20px; background: white; border-radius: 8px; border: 1px solid #bae6fd;">
+      <h4 style="color: #0c4a6e; margin-bottom: 10px;">Layer 1 - Purple Orb</h4>
+      <code style="display: block; background: #f1f5f9; padding: 12px; border-radius: 4px; font-size: 13px; color: #334155;">
+        Soft radial gradient orb, purple (#9333ea) to transparent,
+        heavy gaussian blur (80px), transparent PNG,
+        800x800px, centered gradient
+      </code>
+    </div>
+
+    <div style="margin-bottom: 20px; padding: 20px; background: white; border-radius: 8px; border: 1px solid #bae6fd;">
+      <h4 style="color: #0c4a6e; margin-bottom: 10px;">Layer 2 - Blue Gradient</h4>
+      <code style="display: block; background: #f1f5f9; padding: 12px; border-radius: 4px; font-size: 13px; color: #334155;">
+        Elliptical gradient, blue (#6366f1) to transparent,
+        blur (100px), horizontal orientation,
+        1000x600px, transparent PNG
+      </code>
+    </div>
+
+    <div style="padding: 20px; background: white; border-radius: 8px; border: 1px solid #bae6fd;">
+      <h4 style="color: #0c4a6e; margin-bottom: 10px;">Layer 3 - Violet Sphere</h4>
+      <code style="display: block; background: #f1f5f9; padding: 12px; border-radius: 4px; font-size: 13px; color: #334155;">
+        Circular gradient orb, violet (#8b5cf6) to transparent,
+        blur (90px), 600x600px, transparent PNG,
+        slightly off-center gradient
+      </code>
+    </div>
+
+    <p style="margin-top: 20px; color: #075985; font-size: 14px;">
+      <strong>Note:</strong> Can be pure CSS gradients for zero file size, or generated PNGs for more complex effects.
+    </p>
+  </div>
+
+  <!-- Benefits -->
+  <div style="margin: 40px; padding: 30px; background: #f0fdf4; border: 2px solid #86efac; border-radius: 12px;">
+    <h3 style="color: #166534; margin-bottom: 16px;">✅ Why Parallax Layers Work</h3>
+    <ul style="color: #166534; line-height: 2;">
+      <li><strong>Seamless:</strong> No breaks in reading flow - atmosphere is continuous</li>
+      <li><strong>Performant:</strong> CSS-only solution = 60fps smooth scrolling</li>
+      <li><strong>Lightweight:</strong> Tiny file sizes compared to photos</li>
+      <li><strong>Depth:</strong> Parallax creates 3D perception without being gimmicky</li>
+      <li><strong>Flexible:</strong> Easy to adjust colors, speeds, opacities per section</li>
+      <li><strong>Modern:</strong> Trendy glassmorphism aesthetic that feels premium</li>
+    </ul>
+  </div>
+</body>
+</html>

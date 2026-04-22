@@ -1,0 +1,189 @@
+
+PRODUCT REQUIREMENTS DOCUMENT
+Vidya / Leela Toggle
+A dual-mode navigation system for suniliyer.ca
+Author
+Sunil Iyer
+Version
+1.0
+Date
+April 13, 2026
+Status
+Draft
+Platform
+suniliyer.ca (Next.js)
+Priority
+High
+
+1. Overview
+The Vidya/Leela Toggle is a dual-mode navigation system that organizes the content of suniliyer.ca into two distinct hemispheres, inspired by the left brain (analytical) and right brain (creative) model. 
+Vidya (Sanskrit: knowledge, wisdom) represents the structured, analytical, and professional side: builds, articles, curriculum, learning paths, and the AI Constitution.
+Leela (Sanskrit: divine play, creativity) represents the creative, personal, and artistic side: Gita, creative works, behind the scenes, personal journey, resume, and Calvin and Hobbes.
+The toggle provides a fluid, animated transition between these two worlds, giving visitors a sense of exploring two complementary dimensions of the same person.
+2. Goals and Success Metrics
+2.1 Goals
+	•	Provide a unique, memorable navigation paradigm that differentiates suniliyer.ca from typical portfolio sites
+	•	Help visitors quickly find content by its nature (analytical vs. creative) rather than just by category
+	•	Reinforce the personal brand narrative: a professional who bridges logic and creativity, technology and philosophy
+	•	Create a delightful micro-interaction that encourages exploration of both sides
+2.2 Success Metrics
+Metric
+Target
+Measurement
+Toggle interaction rate
+40%+ of visitors use the toggle at least once
+Vercel Analytics custom event
+Cross-mode exploration
+25%+ of visitors view content from both modes
+Session page path analysis
+Time on site
+15% increase in average session duration
+Vercel Analytics
+Bounce rate
+10% reduction on homepage
+Vercel Analytics
+
+3. Content Mapping
+Each mode surfaces a distinct set of sections. The toggle swaps the visible card grid entirely.
+VIDYA (Knowledge)
+LEELA (Play)
+Builds (AI Agents, Vasuki, Seshan)
+Gita (Interactive Bhagavad Gita resource)
+Articles (Medium publications)
+Creative Works (AI art, animations, videos)
+Curriculum (Professional learning path)
+Behind the Scenes (Process, tools, workflow)
+Learning Path (AI Governance knowledge base)
+My Journey (Career arc and personal story)
+Constitution (AI principles and ethics)
+Resume (Professional CV)
+
+Calvin and Hobbes (cAlvIn and Hobbes parody)
+Note: Some content may appear in both modes in a future iteration (e.g., Easter Eggs could be a shared discovery layer). Version 1.0 keeps the mapping strictly binary.
+4. User Experience
+4.1 The Toggle Component
+	•	Position: Fixed or sticky, placed prominently in the site header (within or adjacent to the Neural mega-menu)
+	•	Design: A pill-shaped toggle switch with "Vidya" on the left and "Leela" on the right
+	•	Visual cues: Vidya side uses a cool blue palette; Leela side uses warm red/lava tones from the existing Molten Lava palette
+	•	Default state: Vidya (analytical/professional content is the first impression for most visitors)
+	•	Accessibility: Toggle must be keyboard-navigable (Tab + Enter/Space) and announce state changes via ARIA live regions
+4.2 Transition Animation
+The core animation is a 3D card flip with staggered timing. When the user toggles modes:
+	•	Step 1: Current cards begin flipping out (rotate 0 to 90 degrees on the Y-axis, fading to 0 opacity). Each card starts its flip with a staggered delay (e.g., 50ms between cards) to create a cascade/wave effect.
+	•	Step 2: At the 90-degree midpoint (cards are edge-on and invisible), the content swaps to the new mode's cards.
+	•	Step 3: New cards flip in (rotate 90 degrees to 0, fading from 0 to full opacity), again with staggered timing.
+	•	Step 4: The toggle switch itself animates: the active indicator slides from one side to the other, and the background color transitions smoothly between Vidya blue and Leela red.
+Animation Specifications
+Property
+Value
+Notes
+Card flip duration
+400ms per card
+CSS transform: rotateY()
+Stagger delay
+50ms between cards
+Creates wave/cascade effect
+Easing
+cubic-bezier(0.4, 0, 0.2, 1)
+Smooth deceleration
+Toggle slide
+300ms
+Background color transition
+Total perceived duration
+600-800ms
+Fast enough to feel snappy
+CSS property
+transform, opacity
+GPU-accelerated for 60fps
+
+4.3 Card Grid Layout
+	•	Desktop: 3-column grid with equal-sized cards
+	•	Tablet: 2-column grid
+	•	Mobile: Single-column stack
+	•	Each card displays: section icon, section title, brief description (1-2 lines), and a subtle indicator of the current mode (blue or red accent line)
+	•	Cards are fully clickable and link to the corresponding section of the site
+4.4 State Persistence
+	•	The selected mode persists during the session via URL query parameter (?mode=vidya or ?mode=leela) or React state
+	•	Deep links should respect the mode parameter so shared links open in the correct mode
+	•	On return visits, default to Vidya unless a mode parameter is present in the URL
+5. Technical Approach
+5.1 Technology Stack
+Layer
+Technology
+Framework
+Next.js (existing site framework)
+UI Library
+React with TypeScript
+Styling
+Tailwind CSS (existing) with CSS custom properties for mode theming
+Animation
+Framer Motion (recommended) or CSS transitions with React state
+State Management
+React useState + URL search params (Next.js useSearchParams)
+Icons
+Lucide React or custom SVG icons per section
+5.2 Component Architecture
+	•	VidyaLeelaToggle: The pill-shaped toggle switch component. Accepts current mode and onChange callback. Handles animation of the sliding indicator and color transition.
+	•	ModeCardGrid: The container that renders the appropriate set of cards based on the active mode. Manages the staggered flip animation using Framer Motion's AnimatePresence and staggerChildren.
+	•	ModeCard: Individual card component. Receives section data (title, description, icon, link) and animation props. Handles the 3D flip transform.
+	•	ModeProvider: React context provider that wraps the page/layout. Stores current mode, syncs with URL params, and provides toggle function to children.
+5.3 Theming Approach
+CSS custom properties switch based on the active mode. This allows the entire page to subtly shift its accent colors when toggling, reinforcing the mode change beyond just the card grid.
+	•	Vidya mode: --mode-primary: #2A6496 (blue), --mode-accent: #1ABC9C (teal), --mode-bg: #F0F4F8 (cool gray)
+	•	Leela mode: --mode-primary: #C0392B (red), --mode-accent: #E67E22 (warm orange), --mode-bg: #FDF2F0 (warm blush)
+	•	Transition between color schemes uses a 400ms CSS transition on the :root or body element
+
+6. Accessibility Requirements
+	•	Toggle implements role="switch" with aria-checked reflecting the current state
+	•	Mode change announced via aria-live="polite" region (e.g., "Switched to Leela mode")
+	•	All animations respect prefers-reduced-motion: reduce; when enabled, cards swap instantly without flip animation
+	•	Color contrast meets WCAG AA (4.5:1) for all text in both modes
+	•	Cards are focusable and navigable via keyboard (Tab order follows visual grid order)
+	•	Screen reader users hear meaningful labels: "Toggle between Vidya (knowledge) and Leela (creative) content modes"
+7. Edge Cases and Considerations
+Scenario
+Handling
+First-time visitor
+Brief tooltip or subtle animation draws attention to the toggle on first visit. Use localStorage to track whether onboarding has been shown.
+Direct link to a Leela section
+If a user navigates directly to /gita, the toggle should automatically be set to Leela mode.
+SEO
+Both modes' content must be crawlable. Use server-side rendering to output all section links in the HTML; the toggle only controls visibility client-side.
+Mobile performance
+Limit simultaneous animations on mobile. Reduce stagger delay or use simpler fade transitions on devices with limited GPU.
+Content parity
+Vidya has 5 sections; Leela has 6. The grid should handle uneven counts gracefully (last card centered or left-aligned).
+Future expansion
+Data structure supports adding new sections to either mode via a simple config array, without code changes.
+8. Implementation Phases
+Phase 1: Core Toggle (MVP)
+	•	Build the VidyaLeelaToggle component with sliding indicator animation
+	•	Create card data config for both modes (title, description, icon, link)
+	•	Implement ModeCardGrid with basic fade transition (no 3D flip yet)
+	•	Integrate into homepage layout within/below the Neural mega-menu
+	•	URL parameter support for deep linking
+Phase 2: Animation Polish
+	•	Upgrade to 3D card flip animation with staggered timing
+	•	Add Framer Motion for smoother, interruptible animations
+	•	Implement theming color shift (CSS custom properties)
+	•	Add prefers-reduced-motion fallback
+	•	First-visit onboarding tooltip
+Phase 3: Enhancement
+	•	Custom icons/illustrations for each section card
+	•	Analytics event tracking for toggle interactions
+	•	Subtle ambient effects (e.g., particle animations that shift between geometric/structured for Vidya and organic/flowing for Leela)
+	•	Consider a "both" mode or a blended view for visitors who want everything visible
+
+9. Naming Rationale
+The names are drawn from Sanskrit and carry rich cultural significance that aligns with the site's identity:
+Vidya (विद्या): Meaning knowledge, learning, or wisdom. In Indian philosophy, vidya represents the pursuit of understanding that dispels ignorance (avidya). It is the structured, disciplined path of learning: exactly what the analytical side of the site embodies.
+Leela (लीला): Meaning divine play or cosmic play. In Hindu philosophy, leela describes the idea that creation itself is a form of joyful, spontaneous expression by the divine. It represents creativity, artistry, and the playful dimension of existence: the perfect counterpart to vidya.
+Together, Vidya and Leela form a complete picture: knowledge and play, discipline and creativity, structure and spontaneity. This duality mirrors the Bhagavad Gita's teaching that wisdom and action are inseparable.
+10. Open Questions
+	•	Should the toggle also affect the site's global navigation (mega-menu sections)?
+	•	Should there be a subtle visual cue on interior pages indicating which "hemisphere" the visitor is in?
+	•	Should the Easter Eggs page be a shared/neutral element outside both modes?
+	•	Is Framer Motion acceptable as a new dependency, or should animations be pure CSS?
+	•	Should the toggle state persist across sessions (localStorage) or reset each visit?
+
+End of Document

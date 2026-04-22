@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { getTermByName, type SanskritTerm } from '../data/sanskrit-glossary';
 
 interface SanskritTooltipProps {
@@ -10,12 +10,47 @@ interface SanskritTooltipProps {
 }
 
 /**
- * Interactive Sanskrit term with tooltip on hover and panel on click
- * Renders Sanskrit terms in saffron color with dotted underline
+ * Interactive Sanskrit term with hover card
+ * Based on Claude Design prototype - warm & sacred aesthetic
  */
 export default function SanskritTooltip({ term, children, onOpenPanel }: SanskritTooltipProps) {
-  const [showTooltip, setShowTooltip] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
+  const [position, setPosition] = useState({ top: 0, left: 0 });
+  const spanRef = useRef<HTMLSpanElement>(null);
+  const tooltipRef = useRef<HTMLDivElement>(null);
+
   const termData = getTermByName(term);
+
+  useEffect(() => {
+    if (isVisible && spanRef.current && tooltipRef.current) {
+      const spanRect = spanRef.current.getBoundingClientRect();
+      const tooltipRect = tooltipRef.current.getBoundingClientRect();
+      const scrollY = window.scrollY;
+      const scrollX = window.scrollX;
+
+      // Position below the term, centered
+      let left = spanRect.left + scrollX + spanRect.width / 2 - tooltipRect.width / 2;
+      let top = spanRect.bottom + scrollY + 8; // 8px gap below term
+
+      // Keep tooltip on screen horizontally
+      const rightEdge = left + tooltipRect.width;
+      const viewportWidth = window.innerWidth;
+      if (rightEdge > viewportWidth - 20) {
+        left = viewportWidth - tooltipRect.width - 20 + scrollX;
+      }
+      if (left < 20 + scrollX) {
+        left = 20 + scrollX;
+      }
+
+      // If tooltip would go below viewport, show above instead
+      const bottomEdge = spanRect.bottom + tooltipRect.height + 8;
+      if (bottomEdge > window.innerHeight + scrollY) {
+        top = spanRect.top + scrollY - tooltipRect.height - 8;
+      }
+
+      setPosition({ top, left });
+    }
+  }, [isVisible]);
 
   const handleClick = () => {
     if (termData && onOpenPanel) {
@@ -28,40 +63,36 @@ export default function SanskritTooltip({ term, children, onOpenPanel }: Sanskri
   }
 
   return (
-    <span
-      className="constitution-sanskrit"
-      onMouseEnter={() => setShowTooltip(true)}
-      onMouseLeave={() => setShowTooltip(false)}
-      onClick={handleClick}
-      style={{ position: 'relative', display: 'inline-block' }}
-    >
-      {children}
-      {showTooltip && (
-        <span
+    <>
+      <span
+        ref={spanRef}
+        className="sanskrit-inline"
+        onMouseEnter={() => setIsVisible(true)}
+        onMouseLeave={() => setIsVisible(false)}
+        onClick={handleClick}
+      >
+        {children}
+      </span>
+
+      {isVisible && (
+        <div
+          ref={tooltipRef}
+          className="sk-popover is-visible"
           style={{
             position: 'absolute',
-            bottom: '100%',
-            left: '50%',
-            transform: 'translateX(-50%)',
-            backgroundColor: 'var(--constitution-charcoal)',
-            color: '#fff',
-            padding: '0.5rem 0.75rem',
-            borderRadius: '4px',
-            fontSize: '0.875rem',
-            whiteSpace: 'nowrap',
-            zIndex: 100,
-            marginBottom: '0.25rem',
-            boxShadow: '0 2px 8px rgba(0,0,0,0.2)',
+            top: `${position.top}px`,
+            left: `${position.left}px`,
           }}
         >
-          <div style={{ fontFamily: 'Noto Sans Devanagari, sans-serif', marginBottom: '0.25rem' }}>
-            {termData.devanagari}
+          <div className="sk-pop-head">
+            <div className="sk-pop-term">{termData.term}</div>
+            <div className="sk-pop-dev">{termData.devanagari}</div>
           </div>
-          <div style={{ fontStyle: 'italic', fontSize: '0.8rem' }}>
-            {termData.meaning}
-          </div>
-        </span>
+          <div className="sk-pop-mean">{termData.meaning}</div>
+          <div className="sk-pop-use">{termData.constitutionalApplication}</div>
+        </div>
       )}
-    </span>
+    </>
   );
 }
+
