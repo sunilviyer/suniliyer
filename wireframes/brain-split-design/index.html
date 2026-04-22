@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brain Split Wireframe - suniliyer.ca</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: #0a0a0a;
+            color: #e0e0e0;
+            padding: 20px;
+        }
+
+        .wireframe-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .controls {
+            background: #1a1a1a;
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            border: 2px solid #333;
+        }
+
+        .controls h2 {
+            margin-bottom: 15px;
+            color: #fff;
+            font-size: 18px;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .control-btn {
+            background: #2a2a2a;
+            color: #fff;
+            border: 2px solid #444;
+            padding: 12px 24px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.3s;
+        }
+
+        .control-btn:hover {
+            background: #3a3a3a;
+            border-color: #666;
+        }
+
+        .control-btn.active {
+            background: #8b5cf6;
+            border-color: #8b5cf6;
+        }
+
+        /* Desktop View */
+        .desktop-view {
+            display: block;
+        }
+
+        .mobile-view {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .desktop-view {
+                display: none;
+            }
+            .mobile-view {
+                display: block;
+            }
+        }
+
+        /* Hero Section (Compact) */
+        .hero-compact {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            padding: 40px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            text-align: center;
+            border: 2px solid #333;
+        }
+
+        .hero-compact h1 {
+            font-size: 32px;
+            margin-bottom: 10px;
+            background: linear-gradient(to right, #8b5cf6, #ec4899);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-compact p {
+            font-size: 16px;
+            color: #aaa;
+        }
+
+        /* Brain Split Container */
+        .brain-split-container {
+            display: flex;
+            gap: 20px;
+            min-height: 600px;
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* Brain Hemispheres */
+        .brain-hemisphere {
+            background: #1a1a1a;
+            border-radius: 12px;
+            padding: 40px;
+            cursor: pointer;
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            border: 2px solid #333;
+        }
+
+        .brain-hemisphere:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(139, 92, 246, 0.3);
+        }
+
+        /* Left Brain - Analytical */
+        .left-brain {
+            background: linear-gradient(135deg, #1e3a5f 0%, #2d4a6e 100%);
+            border-color: #3a5a7e;
+        }
+
+        .left-brain:hover {
+            box-shadow: 0 10px 30px rgba(59, 130, 246, 0.3);
+        }
+
+        /* Right Brain - Creative */
+        .right-brain {
+            background: linear-gradient(135deg, #5b21b6 0%, #7c3aed 50%, #ec4899 100%);
+            border-color: #8b5cf6;
+        }
+
+        .right-brain:hover {
+            box-shadow: 0 10px 30px rgba(236, 72, 153, 0.3);
+        }
+
+        /* Brain SVG Illustration */
+        .brain-visual {
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .brain-svg {
+            width: 200px;
+            height: 200px;
+            animation: pulse 3s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.8; }
+        }
+
+        /* Content Preview */
+        .content-preview h3 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .thumbnails {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .thumbnail {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            padding: 15px;
+            text-align: center;
+            font-size: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .thumbnail-icon {
+            font-size: 32px;
+            margin-bottom: 8px;
+        }
+
+        .bullet-list {
+            list-style: none;
+            margin-bottom: 25px;
+        }
+
+        .bullet-list li {
+            padding: 8px 0;
+            font-size: 16px;
+            color: #ddd;
+        }
+
+        .expand-btn {
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            padding: 12px 30px;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+
+        .expand-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.5);
+        }
+
+        /* States */
+        .state-collapsed .left-brain,
+        .state-collapsed .right-brain {
+            flex: 1;
+        }
+
+        .state-left-expanded .left-brain {
+            flex: 4;
+        }
+
+        .state-left-expanded .right-brain {
+            flex: 1;
+        }
+
+        .state-left-expanded .right-brain .content-preview {
+            opacity: 0.4;
+        }
+
+        .state-left-expanded .right-brain .thumbnails,
+        .state-left-expanded .right-brain .bullet-list {
+            display: none;
+        }
+
+        .state-right-expanded .left-brain {
+            flex: 1;
+        }
+
+        .state-right-expanded .right-brain {
+            flex: 4;
+        }
+
+        .state-right-expanded .left-brain .content-preview {
+            opacity: 0.4;
+        }
+
+        .state-right-expanded .left-brain .thumbnails,
+        .state-right-expanded .left-brain .bullet-list {
+            display: none;
+        }
+
+        /* Full Content (shown when expanded) */
+        .full-content {
+            display: none;
+            margin-top: 30px;
+        }
+
+        .state-left-expanded .left-brain .full-content,
+        .state-right-expanded .right-brain .full-content {
+            display: block;
+            animation: fadeIn 0.6s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .content-card {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .content-card h4 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: #fff;
+        }
+
+        .content-card p {
+            font-size: 14px;
+            color: #ccc;
+            line-height: 1.6;
+        }
+
+        /* Mobile Tabs */
+        .mobile-tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            background: #1a1a1a;
+            padding: 10px;
+            border-radius: 12px;
+            border: 2px solid #333;
+        }
+
+        .mobile-tab {
+            flex: 1;
+            background: #2a2a2a;
+            color: #fff;
+            border: 2px solid #444;
+            padding: 15px;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .mobile-tab:hover {
+            background: #3a3a3a;
+        }
+
+        .mobile-tab.active {
+            background: #8b5cf6;
+            border-color: #8b5cf6;
+        }
+
+        .mobile-content {
+            background: #1a1a1a;
+            border-radius: 12px;
+            padding: 30px;
+            border: 2px solid #333;
+        }
+
+        .mobile-content-section {
+            display: none;
+        }
+
+        .mobile-content-section.active {
+            display: block;
+        }
+
+        /* Info Box */
+        .info-box {
+            background: #1a1a1a;
+            border: 2px solid #8b5cf6;
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 30px;
+        }
+
+        .info-box h3 {
+            color: #8b5cf6;
+            margin-bottom: 15px;
+        }
+
+        .info-box ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .info-box li {
+            padding: 5px 0;
+            color: #ccc;
+        }
+
+        .info-box li::before {
+            content: "✓ ";
+            color: #8b5cf6;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="wireframe-container">
+        <!-- Controls -->
+        <div class="controls">
+            <h2>🎛️ Wireframe Controls - Toggle States</h2>
+            <div class="button-group">
+                <button class="control-btn active" onclick="setState('collapsed')">
+                    Collapsed (50/50)
+                </button>
+                <button class="control-btn" onclick="setState('left-expanded')">
+                    Left Expanded (80/20)
+                </button>
+                <button class="control-btn" onclick="setState('right-expanded')">
+                    Right Expanded (20/80)
+                </button>
+            </div>
+        </div>
+
+        <!-- Desktop View -->
+        <div class="desktop-view">
+            <!-- Compact Hero -->
+            <div class="hero-compact">
+                <h1>Sunil Iyer</h1>
+                <p>Logic + Magic | Enterprise Leader + Creative Builder</p>
+            </div>
+
+            <!-- Brain Split Section -->
+            <div class="brain-split-container state-collapsed" id="brainContainer">
+                <!-- Left Brain (Technical) -->
+                <div class="left-brain" onclick="setState('left-expanded')">
+                    <div class="brain-visual">
+                        <svg class="brain-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Left Hemisphere (Two-tone analytical) -->
+                            <g>
+                                <path d="M100,20 C70,20 50,40 45,70 C40,100 45,130 60,155 C70,170 85,180 100,180 L100,20 Z"
+                                      fill="#3b82f6" stroke="#60a5fa" stroke-width="2" opacity="0.8"/>
+                                <!-- Circuit pattern overlay -->
+                                <circle cx="70" cy="60" r="4" fill="#60a5fa"/>
+                                <circle cx="80" cy="90" r="3" fill="#60a5fa"/>
+                                <circle cx="75" cy="120" r="4" fill="#60a5fa"/>
+                                <line x1="70" y1="60" x2="80" y2="90" stroke="#60a5fa" stroke-width="1.5"/>
+                                <line x1="80" y1="90" x2="75" y2="120" stroke="#60a5fa" stroke-width="1.5"/>
+                            </g>
+                        </svg>
+                    </div>
+
+                    <div class="content-preview">
+                        <h3>🧠 Technical</h3>
+
+                        <div class="thumbnails">
+                            <div class="thumbnail">
+                                <div class="thumbnail-icon">📜</div>
+                                <div>AGI Constitution</div>
+                            </div>
+                            <div class="thumbnail">
+                                <div class="thumbnail-icon">🤖</div>
+                                <div>Seshan</div>
+                            </div>
+                            <div class="thumbnail">
+                                <div class="thumbnail-icon">💼</div>
+                                <div>Portfolio</div>
+                            </div>
+                            <div class="thumbnail">
+                                <div class="thumbnail-icon">📄</div>
+                                <div>Resume</div>
+                            </div>
+                        </div>
+
+                        <ul class="bullet-list">
+                            <li>• AGI Constitution - AI governance framework</li>
+                            <li>• Seshan Intelligence - Enterprise AI platform</li>
+                            <li>• Portfolio Projects - Technical showcase</li>
+                            <li>• Resume - Career journey</li>
+                        </ul>
+
+                        <button class="expand-btn">Expand Technical →</button>
+                    </div>
+
+                    <div class="full-content">
+                        <div class="content-card">
+                            <h4>📜 AGI Constitution (Featured)</h4>
+                            <p>A comprehensive framework for AI governance and alignment. Exploring how we build safe, ethical, and beneficial AGI systems for humanity.</p>
+                        </div>
+                        <div class="content-card">
+                            <h4>🤖 Seshan Intelligence</h4>
+                            <p>Enterprise AI platform managing $30M+ engagements. Risk assessment, compliance, and intelligent automation.</p>
+                        </div>
+                        <div class="content-card">
+                            <h4>💼 Portfolio Projects</h4>
+                            <p>Mortgage calculators, dashboards, and enterprise solutions. Full-stack development with modern tech stacks.</p>
+                        </div>
+                        <div class="content-card">
+                            <h4>📊 Stats & Achievements</h4>
+                            <p>$30M+ project portfolio | 15+ years experience | AI/ML | Cloud Architecture | Team Leadership</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Brain (Creative) -->
+                <div class="right-brain" onclick="setState('right-expanded')">
+                    <div class="brain-visual">
+                        <svg class="brain-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Right Hemisphere (Rainbow creative) -->
+                            <defs>
+                                <linearGradient id="rainbowGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#8b5cf6;stop-opacity:1" />
+                                    <stop offset="50%" style="stop-color:#ec4899;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#f59e0b;stop-opacity:1" />
+                                </linearGradient>
+                            </defs>
+                            <g>
+                                <path d="M100,20 C130,20 150,40 155,70 C160,100 155,130 140,155 C130,170 115,180 100,180 L100,20 Z"
+                                      fill="url(#rainbowGrad)" stroke="#ec4899" stroke-width="2" opacity="0.8"/>
+                                <!-- Artistic swirl overlay -->
+                                <circle cx="120" cy="70" r="8" fill="none" stroke="#fbbf24" stroke-width="2" opacity="0.6"/>
+                                <path d="M125,100 Q135,110 130,120" fill="none" stroke="#fbbf24" stroke-width="2" opacity="0.6"/>
+                                <circle cx="125" cy="140" r="6" fill="none" stroke="#fbbf24" stroke-width="2" opacity="0.6"/>
+                            </g>
+                        </svg>
+                    </div>
+
+                    <div class="content-preview">
+                        <h3>🎨 Creative</h3>
+
+                        <div class="thumbnails">
+                            <div class="thumbnail">
+                                <div class="thumbnail-icon">🛤️</div>
+                                <div>Learning Paths</div>
+                            </div>
+                            <div class="thumbnail">
+                                <div class="thumbnail-icon">🐯</div>
+                                <div>Calvin & Hobbes</div>
+                            </div>
+                            <div class="thumbnail">
+                                <div class="thumbnail-icon">📿</div>
+                                <div>Gita</div>
+                            </div>
+                            <div class="thumbnail">
+                                <div class="thumbnail-icon">✨</div>
+                                <div>Creative Works</div>
+                            </div>
+                        </div>
+
+                        <ul class="bullet-list">
+                            <li>• Learning Paths - Interactive knowledge journeys</li>
+                            <li>• Calvin & Hobbes - Philosophy through comics</li>
+                            <li>• Bhagavad Gita - Ancient wisdom, modern context</li>
+                            <li>• Creative Works - Writing & thought experiments</li>
+                        </ul>
+
+                        <button class="expand-btn">Expand Creative →</button>
+                    </div>
+
+                    <div class="full-content">
+                        <div class="content-card">
+                            <h4>🛤️ Learning Paths</h4>
+                            <p>Interactive timelines exploring AI Safety, Risk Management, Responsibility, and the Future. Visual journeys through complex topics.</p>
+                        </div>
+                        <div class="content-card">
+                            <h4>🐯 Calvin & Hobbes</h4>
+                            <p>Philosophy and wisdom through beloved comic strips. Deep dives into imagination, consciousness, and what it means to be human.</p>
+                        </div>
+                        <div class="content-card">
+                            <h4>📿 Bhagavad Gita</h4>
+                            <p>Ancient Sanskrit wisdom translated for modern AI challenges. Bridging 5000-year-old philosophy with AGI alignment.</p>
+                        </div>
+                        <div class="content-card">
+                            <h4>✨ Creative Works & Behind the Scenes</h4>
+                            <p>Essays, articles, and thought experiments. Medium publications on AI, consciousness, and the future of intelligence.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile View -->
+        <div class="mobile-view">
+            <!-- Compact Hero -->
+            <div class="hero-compact">
+                <h1>Sunil Iyer</h1>
+                <p>Logic + Magic</p>
+            </div>
+
+            <!-- Mobile Tabs -->
+            <div class="mobile-tabs">
+                <button class="mobile-tab active" onclick="setMobileTab('technical')">
+                    🧠 Technical
+                </button>
+                <button class="mobile-tab" onclick="setMobileTab('creative')">
+                    🎨 Creative
+                </button>
+            </div>
+
+            <!-- Mobile Content -->
+            <div class="mobile-content">
+                <div class="mobile-content-section active" id="mobile-technical">
+                    <h3 style="margin-bottom: 20px;">🧠 Technical Side</h3>
+
+                    <div class="content-card">
+                        <h4>📜 AGI Constitution</h4>
+                        <p>AI governance framework for safe, ethical AGI development.</p>
+                    </div>
+                    <div class="content-card">
+                        <h4>🤖 Seshan Intelligence</h4>
+                        <p>Enterprise AI platform managing $30M+ engagements.</p>
+                    </div>
+                    <div class="content-card">
+                        <h4>💼 Portfolio Projects</h4>
+                        <p>Full-stack applications and enterprise solutions.</p>
+                    </div>
+                    <div class="content-card">
+                        <h4>📄 Resume</h4>
+                        <p>15+ years in AI/ML, cloud architecture, and leadership.</p>
+                    </div>
+                </div>
+
+                <div class="mobile-content-section" id="mobile-creative">
+                    <h3 style="margin-bottom: 20px;">🎨 Creative Side</h3>
+
+                    <div class="content-card">
+                        <h4>🛤️ Learning Paths</h4>
+                        <p>Interactive timelines exploring AI topics visually.</p>
+                    </div>
+                    <div class="content-card">
+                        <h4>🐯 Calvin & Hobbes</h4>
+                        <p>Philosophy through comic strips and imagination.</p>
+                    </div>
+                    <div class="content-card">
+                        <h4>📿 Bhagavad Gita</h4>
+                        <p>Ancient wisdom for modern AGI alignment challenges.</p>
+                    </div>
+                    <div class="content-card">
+                        <h4>✨ Creative Works</h4>
+                        <p>Essays, articles, and thought experiments on Medium.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Info Box -->
+        <div class="info-box">
+            <h3>📋 Design Specifications</h3>
+            <ul>
+                <li>Brain Style: Hand-drawn/illustrated (friendly, playful)</li>
+                <li>Left Brain: Two-tone colors (analytical - blues/grays)</li>
+                <li>Right Brain: Rainbow gradient (creative - purples/pinks/oranges)</li>
+                <li>Split Visual: Subtle gradient transition with pulsing animation</li>
+                <li>Collapsed State: Thumbnails + 3-4 bullet points per side</li>
+                <li>Expanded State: Featured content cards with full descriptions</li>
+                <li>Mobile: Horizontal tabs to switch between Technical/Creative</li>
+                <li>Animation: GSAP with elastic easing for playful morphing effect</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        function setState(state) {
+            const container = document.getElementById('brainContainer');
+            container.className = 'brain-split-container state-' + state;
+
+            // Update button states
+            document.querySelectorAll('.control-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+        }
+
+        function setMobileTab(tab) {
+            // Update tab buttons
+            document.querySelectorAll('.mobile-tab').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+
+            // Update content sections
+            document.querySelectorAll('.mobile-content-section').forEach(section => {
+                section.classList.remove('active');
+            });
+            document.getElementById('mobile-' + tab).classList.add('active');
+        }
+    </script>
+</body>
+</html>

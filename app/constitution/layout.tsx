@@ -20,6 +20,9 @@ export default function ConstitutionLayout({
   // Extract part ID from pathname
   const currentPartId = pathname?.split('/').pop() || '';
 
+  // Check if we're on the landing page
+  const isLandingPage = pathname === '/constitution';
+
   // Handler for opening the Sanskrit panel (not currently used but available for future tooltip integration)
   // const handleOpenPanel = (term: SanskritTerm) => {
   //   setSelectedTerm(term);
@@ -31,42 +34,7 @@ export default function ConstitutionLayout({
     setTimeout(() => setSelectedTerm(null), 300);
   };
 
-  return (
-    <div className="constitution-container">
-      {/* Mobile sidebar toggle button - only visible on mobile */}
-      <button
-        className="constitution-mobile-sidebar-toggle"
-        onClick={() => setIsSidebarOpen(!isSidebarOpen)}
-        aria-label="Toggle constitution navigation"
-      >
-        <span>☰</span>
-        <span style={{ fontSize: '1.25rem' }}>ॐ</span>
-      </button>
-
-      {/* Sidebar */}
-      <Sidebar
-        currentPartId={currentPartId}
-        isOpen={isSidebarOpen}
-        onClose={() => setIsSidebarOpen(false)}
-      />
-
-      {/* Main content */}
-      <main className="constitution-reading-area">{children}</main>
-
-      {/* Sanskrit Reference Panel */}
-      <SanskritPanel
-        isOpen={isPanelOpen}
-        onClose={handleClosePanel}
-        selectedTerm={selectedTerm}
-      />
-
-      {/* Mobile overlay */}
-      {isSidebarOpen && (
-        <div
-          onClick={() => setIsSidebarOpen(false)}
-          className="constitution-mobile-overlay"
-        />
-      )}
-    </div>
-  );
+  // All pages get full width, centered layout (no sidebar)
+  // Sidebar removed per design requirements
+  return <>{children}</>;
 }

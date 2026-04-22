@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Editorial Magazine Style - Wireframe</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: #f5f5f5;
+      padding: 20px;
+    }
+
+    .wireframe {
+      max-width: 1400px;
+      margin: 0 auto;
+      background: white;
+      border: 2px solid #333;
+    }
+
+    .section {
+      border-bottom: 2px solid #ddd;
+      padding: 40px;
+    }
+
+    .label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #666;
+      margin-bottom: 8px;
+      font-weight: 600;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(135deg, #e0e7ff 0%, #f3e8ff 100%);
+      min-height: 400px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      margin-bottom: 20px;
+      color: #333;
+      font-weight: 700;
+    }
+
+    .hero .stats {
+      display: flex;
+      gap: 40px;
+      margin-top: 30px;
+    }
+
+    .stat {
+      background: rgba(255,255,255,0.5);
+      padding: 20px 30px;
+      border-radius: 8px;
+      border: 1px dashed #9333ea;
+    }
+
+    /* Image Break 1 - Split Layout */
+    .split-section {
+      display: grid;
+      grid-template-columns: 40% 60%;
+      gap: 60px;
+      align-items: center;
+      padding: 80px 40px;
+      background: white;
+    }
+
+    .image-box {
+      background: linear-gradient(135deg, #9333ea 0%, #6366f1 100%);
+      aspect-ratio: 4/3;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 14px;
+      font-weight: 600;
+      border: 2px dashed rgba(255,255,255,0.3);
+      position: relative;
+    }
+
+    .image-box::before {
+      content: 'IMAGE 1';
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      font-size: 10px;
+      background: rgba(0,0,0,0.3);
+      padding: 4px 8px;
+      border-radius: 4px;
+    }
+
+    .content-preview {
+      padding: 40px;
+    }
+
+    .content-preview h2 {
+      font-size: 36px;
+      margin-bottom: 20px;
+      color: #1f2937;
+    }
+
+    .content-preview p {
+      color: #6b7280;
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+
+    .cta-link {
+      color: #9333ea;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* Big Three Cards */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      background: #f9fafb;
+      padding: 80px 40px;
+    }
+
+    .card {
+      background: white;
+      border: 2px solid #e5e7eb;
+      border-radius: 12px;
+      padding: 30px;
+      min-height: 400px;
+    }
+
+    .card-image {
+      background: #e0e7ff;
+      height: 180px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      border: 1px dashed #9333ea;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      color: #6b7280;
+    }
+
+    /* Image Break 2 - Asymmetric Grid */
+    .asymmetric-section {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto auto;
+      gap: 30px;
+      padding: 80px 40px;
+      background: white;
+    }
+
+    .image-box-small {
+      background: linear-gradient(45deg, #6366f1 0%, #8b5cf6 100%);
+      aspect-ratio: 4/3;
+      border-radius: 12px;
+      border: 2px dashed rgba(255,255,255,0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: 600;
+      position: relative;
+    }
+
+    .image-box-small::before {
+      content: 'IMG 2A';
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      font-size: 10px;
+      background: rgba(0,0,0,0.3);
+      padding: 4px 8px;
+      border-radius: 4px;
+    }
+
+    .image-box-small:last-child::before {
+      content: 'IMG 2B';
+    }
+
+    .text-content {
+      grid-column: 1 / -1;
+      padding: 40px;
+      background: #f9fafb;
+      border-radius: 12px;
+    }
+
+    .text-content h2 {
+      font-size: 32px;
+      margin-bottom: 16px;
+      color: #1f2937;
+    }
+
+    /* Image Break 3 - Full Bleed Background */
+    .fullbleed-section {
+      position: relative;
+      min-height: 600px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #1e1b4b 0%, #5b21b6 100%);
+      padding: 80px 40px;
+      overflow: hidden;
+    }
+
+    .fullbleed-section::before {
+      content: 'IMAGE 3 - Full Background';
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      font-size: 12px;
+      color: rgba(255,255,255,0.6);
+      background: rgba(0,0,0,0.3);
+      padding: 8px 16px;
+      border-radius: 4px;
+      border: 1px dashed rgba(255,255,255,0.3);
+    }
+
+    .frosted-overlay {
+      background: rgba(255,255,255,0.1);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 20px;
+      padding: 60px;
+      max-width: 800px;
+      text-align: center;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    }
+
+    .frosted-overlay h2 {
+      font-size: 42px;
+      color: white;
+      margin-bottom: 20px;
+    }
+
+    .frosted-overlay p {
+      color: rgba(255,255,255,0.9);
+      line-height: 1.8;
+      font-size: 18px;
+    }
+
+    /* Footer */
+    .footer {
+      background: #f9fafb;
+      padding: 60px 40px;
+      text-align: center;
+      border-top: 2px solid #e5e7eb;
+    }
+
+    .annotation {
+      position: absolute;
+      background: #fef3c7;
+      border: 2px solid #f59e0b;
+      padding: 12px 16px;
+      border-radius: 8px;
+      font-size: 12px;
+      font-weight: 600;
+      color: #92400e;
+      max-width: 200px;
+      line-height: 1.4;
+      z-index: 10;
+    }
+
+    .annotation::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 0;
+      border-style: solid;
+    }
+
+    .note-1 {
+      top: 120px;
+      left: -220px;
+    }
+
+    .note-1::after {
+      border-width: 8px 0 8px 12px;
+      border-color: transparent transparent transparent #f59e0b;
+      right: -12px;
+      top: 20px;
+    }
+
+    .note-2 {
+      top: 50%;
+      right: -240px;
+      transform: translateY(-50%);
+    }
+
+    .note-2::after {
+      border-width: 8px 12px 8px 0;
+      border-color: transparent #f59e0b transparent transparent;
+      left: -12px;
+      top: 20px;
+    }
+
+    .note-3 {
+      bottom: -100px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .note-3::after {
+      border-width: 0 8px 12px 8px;
+      border-color: transparent transparent #f59e0b transparent;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  </style>
+</head>
+<body>
+  <h1 style="text-align: center; margin-bottom: 30px; font-size: 28px; color: #1f2937;">
+    Option 1: Editorial Magazine Style
+  </h1>
+
+  <div class="wireframe">
+    <!-- Hero Section -->
+    <div class="hero section">
+      <div class="label">Hero Section</div>
+      <h1>Three Typewriter Headlines</h1>
+      <p style="color: #6b7280; font-size: 18px;">And I'm just getting started.</p>
+      <div class="stats">
+        <div class="stat">26+ articles</div>
+        <div class="stat">5 paths</div>
+        <div class="stat">5 agents</div>
+        <div class="stat">9 projects</div>
+      </div>
+    </div>
+
+    <!-- Image Break 1 - Split Layout -->
+    <div class="split-section" style="position: relative;">
+      <div class="annotation note-1">
+        Image flows WITH content, not as a break. 40/60 split creates visual interest.
+      </div>
+
+      <div class="image-box">
+        <div style="text-align: center;">
+          <div style="font-size: 24px; margin-bottom: 8px;">📚</div>
+          Knowledge Pathways<br/>
+          <small style="opacity: 0.7;">1200x900px</small>
+        </div>
+      </div>
+
+      <div class="content-preview">
+        <div class="label">Content Preview</div>
+        <h2>Learning Paths</h2>
+        <p>Abstract visualization of interconnected learning paths. Neural network-inspired with flowing lines connecting nodes. Clean minimalist illustration.</p>
+        <p style="font-size: 14px; color: #9ca3af;">This replaces the first massive image break. Content flows naturally alongside imagery.</p>
+        <a href="#" class="cta-link">Explore curriculum →</a>
+      </div>
+    </div>
+
+    <!-- Big Three Cards -->
+    <div class="cards-grid">
+      <div class="card">
+        <div class="card-image">Card Image</div>
+        <div class="label">Card 1</div>
+        <h3 style="margin-bottom: 12px;">The Curriculum</h3>
+        <p style="color: #6b7280; font-size: 14px;">5 paths, 26+ articles</p>
+      </div>
+      <div class="card">
+        <div class="card-image">Card Image</div>
+        <div class="label">Card 2</div>
+        <h3 style="margin-bottom: 12px;">The Builds</h3>
+        <p style="color: #6b7280; font-size: 14px;">Working AI agents</p>
+      </div>
+      <div class="card">
+        <div class="card-image">Card Image</div>
+        <div class="label">Card 3</div>
+        <h3 style="margin-bottom: 12px;">The Constitution</h3>
+        <p style="color: #6b7280; font-size: 14px;">AGI framework</p>
+      </div>
+    </div>
+
+    <!-- Image Break 2 - Asymmetric Grid -->
+    <div class="asymmetric-section" style="position: relative;">
+      <div class="annotation note-2">
+        Two smaller images create rhythm. Text interwoven creates magazine-like flow.
+      </div>
+
+      <div class="image-box-small">
+        <div style="text-align: center;">
+          <div style="font-size: 20px; margin-bottom: 8px;">🔧</div>
+          Building Blocks<br/>
+          <small style="opacity: 0.7;">800x600px</small>
+        </div>
+      </div>
+
+      <div class="image-box-small">
+        <div style="text-align: center;">
+          <div style="font-size: 20px; margin-bottom: 8px;">⚡</div>
+          System Flow<br/>
+          <small style="opacity: 0.7;">800x600px</small>
+        </div>
+      </div>
+
+      <div class="text-content">
+        <div class="label">Journey Timeline</div>
+        <h2>The Journey</h2>
+        <p style="color: #6b7280;">Biotechnology → Software Engineering → QA → AI → AI Governance</p>
+        <p style="color: #9ca3af; font-size: 14px; margin-top: 20px;">Timeline animation, creative projects, latest insights all flow naturally here.</p>
+      </div>
+    </div>
+
+    <!-- Image Break 3 - Full Bleed Background -->
+    <div class="fullbleed-section" style="position: relative;">
+      <div class="annotation note-3">
+        Full-bleed background with frosted glass overlay. Image doesn't disrupt - it enhances.
+      </div>
+
+      <div class="frosted-overlay">
+        <h2>Let's Build Together</h2>
+        <p>Whether you need AI governance expertise or want to discuss the AGI Constitution - I'd love to hear from you.</p>
+        <button style="margin-top: 30px; padding: 16px 40px; background: white; color: #5b21b6; border: none; border-radius: 8px; font-weight: 600; cursor: pointer;">
+          Get in touch →
+        </button>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      <div class="label">Footer</div>
+      <p style="color: #6b7280;">© 2026 Sunil Iyer</p>
+    </div>
+  </div>
+
+  <div style="margin-top: 40px; padding: 30px; background: #f0fdf4; border: 2px solid #86efac; border-radius: 12px; max-width: 1400px; margin-left: auto; margin-right: auto;">
+    <h3 style="color: #166534; margin-bottom: 16px;">✅ Benefits of Editorial Magazine Style</h3>
+    <ul style="color: #166534; line-height: 2;">
+      <li><strong>Natural flow:</strong> Content and images work together, not fighting</li>
+      <li><strong>Mobile-friendly:</strong> Grid collapses to stack naturally on small screens</li>
+      <li><strong>Sophisticated:</strong> Feels like a premium publication, not a generic website</li>
+      <li><strong>Contextual:</strong> Images support nearby content rather than random breaks</li>
+      <li><strong>Flexible:</strong> Easy to adjust layouts per section without major refactor</li>
+    </ul>
+  </div>
+</body>
+</html>

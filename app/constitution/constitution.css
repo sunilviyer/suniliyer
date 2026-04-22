@@ -510,3 +510,1146 @@
     left: 0;
   }
 }
+
+/* ============================================
+   CONSTITUTION LANDING PAGE REDESIGN
+   Warm & Sacred Aesthetic
+   ============================================ */
+
+/* Landing page container */
+.constitution-landing {
+  background-color: var(--constitution-bg-primary);
+  color: var(--constitution-text-primary);
+  padding-top: 0; /* Remove default padding for sections to control spacing */
+}
+
+/* Hero Section */
+.const-hero {
+  position: relative;
+  padding: 100px 40px 60px;
+  max-width: 1280px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.const-hero-om {
+  font-family: 'Noto Sans Devanagari', sans-serif;
+  font-size: clamp(120px, 18vw, 240px);
+  color: var(--constitution-saffron);
+  line-height: 0.9;
+  opacity: 0.18;
+  position: absolute;
+  top: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 0;
+  pointer-events: none;
+  user-select: none;
+}
+
+.const-hero-inner {
+  position: relative;
+  z-index: 1;
+}
+
+.const-eyebrow {
+  margin-bottom: 28px;
+  font-family: 'Source Serif 4', serif;
+  font-size: 12px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--constitution-text-secondary);
+  font-weight: 500;
+}
+
+.const-eyebrow-accent {
+  color: var(--constitution-saffron);
+}
+
+.const-hero-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(64px, 8vw, 112px);
+  line-height: 0.98;
+  font-weight: 400;
+  letter-spacing: -0.015em;
+  color: var(--constitution-text-primary);
+  margin: 0;
+  text-wrap: balance;
+}
+
+.const-hero-sanhita {
+  font-style: italic;
+  font-weight: 400;
+  color: var(--constitution-saffron);
+  display: block;
+  margin-top: 6px;
+}
+
+.const-hero-dev-title {
+  font-family: 'Noto Sans Devanagari', sans-serif;
+  font-size: clamp(28px, 3.5vw, 44px);
+  color: var(--constitution-gold);
+  margin: 22px 0 0;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+}
+
+.const-hero-tagline {
+  max-width: 620px;
+  margin: 36px auto 0;
+  font-size: 19px;
+  line-height: 1.55;
+  color: var(--constitution-text-secondary);
+  font-family: 'Source Serif 4', serif;
+  text-wrap: pretty;
+}
+
+.const-hero-meta {
+  margin-top: 40px;
+  display: flex;
+  gap: 36px;
+  justify-content: center;
+  flex-wrap: wrap;
+  font-family: 'Source Serif 4', serif;
+  font-size: 13px;
+  color: var(--constitution-text-secondary);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.const-hero-meta span::before {
+  content: "·";
+  margin-right: 16px;
+  color: var(--constitution-gold);
+}
+
+.const-hero-meta span:first-child::before {
+  content: none;
+}
+
+.const-hero-cta {
+  margin-top: 48px;
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Buttons */
+.const-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 26px;
+  font-family: 'Source Serif 4', serif;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  border: 1px solid var(--constitution-text-primary);
+  color: var(--constitution-text-primary);
+  background: transparent;
+  transition: all .18s;
+  text-decoration: none;
+}
+
+.const-btn:hover {
+  background: var(--constitution-text-primary);
+  color: var(--constitution-bg-primary);
+}
+
+.const-btn-primary {
+  border-color: var(--constitution-saffron);
+  color: var(--constitution-bg-primary);
+  background: var(--constitution-saffron);
+}
+
+.const-btn-primary:hover {
+  background: #9A2B12;
+  border-color: #9A2B12;
+  color: var(--constitution-bg-primary);
+}
+
+.const-btn-ghost {
+  border-color: var(--constitution-border);
+  color: var(--constitution-text-secondary);
+}
+
+.const-btn-ghost:hover {
+  border-color: var(--constitution-text-primary);
+  background: transparent;
+  color: var(--constitution-text-primary);
+}
+
+.const-btn .arrow {
+  display: inline-block;
+  transition: transform .18s;
+}
+
+.const-btn:hover .arrow {
+  transform: translateX(3px);
+}
+
+/* Executive Quote Band */
+.const-exec-band {
+  max-width: 1080px;
+  margin: 20px auto 0;
+  padding: 0 40px;
+}
+
+.const-exec-quote {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(22px, 2.6vw, 30px);
+  line-height: 1.4;
+  color: var(--constitution-deep-blue);
+  text-align: center;
+  max-width: 820px;
+  margin: 60px auto 40px;
+  text-wrap: balance;
+}
+
+[data-theme="dark"] .const-exec-quote {
+  color: var(--constitution-text-primary);
+}
+
+.const-exec-quote::before, .const-exec-quote::after {
+  content: "";
+  display: block;
+  width: 36px;
+  height: 1px;
+  background: var(--constitution-gold);
+  margin: 20px auto;
+}
+
+/* Stats Ledger */
+.const-stats {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 50px 40px;
+  border-top: 1px solid var(--constitution-border);
+  border-bottom: 1px solid var(--constitution-border);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+}
+
+.const-stat-cell {
+  padding: 20px 24px;
+  border-right: 1px solid var(--constitution-border);
+  text-align: left;
+}
+
+.const-stat-cell:nth-child(4n) {
+  border-right: 0;
+}
+
+.const-stat-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 64px;
+  line-height: 1;
+  font-weight: 300;
+  color: var(--constitution-saffron);
+  font-feature-settings: "lnum" 1, "tnum" 1;
+}
+
+.const-stat-label {
+  margin-top: 10px;
+  font-family: 'Source Serif 4', serif;
+  font-size: 13px;
+  color: var(--constitution-text-secondary);
+  line-height: 1.35;
+  letter-spacing: 0.02em;
+  max-width: 200px;
+}
+
+@media (max-width: 900px) {
+  .const-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .const-stat-cell:nth-child(4n){
+    border-right: 1px solid var(--constitution-border);
+  }
+  .const-stat-cell:nth-child(2n){
+    border-right: 0;
+  }
+}
+
+@media (max-width: 500px) {
+  .const-stats {
+    grid-template-columns: 1fr;
+  }
+  .const-stat-cell {
+    border-right: 0 !important;
+    border-bottom: 1px solid var(--constitution-border);
+  }
+  .const-stat-cell:last-child {
+    border-bottom: 0;
+  }
+}
+
+/* Seven Pillars Section */
+.const-pillars-section {
+  max-width: 1200px;
+  margin: 100px auto;
+  padding: 0 40px;
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 80px;
+}
+
+.const-pillars-head {
+  position: sticky;
+  top: 100px;
+  align-self: start;
+}
+
+.const-pillars-head .const-eyebrow {
+  margin-bottom: 20px;
+}
+
+.const-pillars-head h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(32px, 3.4vw, 44px);
+  line-height: 1.1;
+  font-weight: 500;
+  margin: 0 0 .4em;
+}
+
+.const-pillars-head p {
+  color: var(--constitution-text-secondary);
+  font-size: 15.5px;
+  line-height: 1.6;
+}
+
+.const-pillars-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.const-pillar-row {
+  display: grid;
+  grid-template-columns: 48px 1fr;
+  gap: 28px;
+  padding: 34px 0;
+  border-bottom: 1px solid var(--constitution-border);
+  align-items: start;
+  transition: background .2s;
+  cursor: default;
+}
+
+.const-pillar-row:first-child {
+  border-top: 1px solid var(--constitution-border);
+}
+
+.const-pillar-row:hover {
+  background: rgba(201, 162, 39, 0.08);
+}
+
+.const-pillar-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 36px;
+  font-weight: 400;
+  color: var(--constitution-gold);
+  line-height: 1;
+  padding-top: 4px;
+  font-feature-settings: "lnum" 1;
+}
+
+.const-pillar-body {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.const-pillar-head-row {
+  display: flex;
+  align-items: baseline;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.const-pillar-roman {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 500;
+  font-size: 32px;
+  color: var(--constitution-text-primary);
+  letter-spacing: 0.005em;
+  line-height: 1.1;
+}
+
+.const-pillar-dev {
+  font-family: 'Noto Sans Devanagari', sans-serif;
+  font-size: 26px;
+  color: var(--constitution-saffron);
+  line-height: 1;
+}
+
+.const-pillar-meaning {
+  font-family: 'Source Serif 4', serif;
+  font-style: italic;
+  color: var(--constitution-text-secondary);
+  font-size: 14.5px;
+  white-space: nowrap;
+  margin-left: auto;
+}
+
+.const-pillar-desc {
+  margin-top: 0;
+  font-family: 'Source Serif 4', serif;
+  color: var(--constitution-text-secondary);
+  font-size: 16px;
+  line-height: 1.55;
+  max-width: 640px;
+}
+
+@media (max-width: 900px) {
+  .const-pillars-section {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+  .const-pillars-head {
+    position: static;
+  }
+  .const-pillar-meaning {
+    margin-left: 0;
+    white-space: normal;
+  }
+}
+
+/* Structure Map (23 Parts Grid) */
+.const-structure {
+  max-width: 1200px;
+  margin: 100px auto;
+  padding: 0 40px;
+}
+
+.const-structure-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  margin-bottom: 36px;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.const-structure-head h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(32px, 3.4vw, 44px);
+  margin-bottom: 10px;
+}
+
+.const-structure-head p {
+  color: var(--constitution-text-secondary);
+  max-width: 420px;
+  margin: 0;
+}
+
+.const-structure-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.const-structure-card {
+  padding: 22px 22px 26px;
+  border: 1px solid var(--constitution-border);
+  background: var(--constitution-bg-primary);
+  transition: background .15s;
+  min-height: 150px;
+  position: relative;
+}
+
+.const-structure-card:hover {
+  background: rgba(201, 162, 39, 0.08);
+}
+
+.const-structure-card-wide {
+  grid-column: 1 / -1;
+}
+
+.const-structure-card-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--constitution-border);
+}
+
+.const-structure-label {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  color: var(--constitution-gold);
+  text-transform: uppercase;
+}
+
+.const-structure-count {
+  font-family: 'Source Serif 4', serif;
+  font-size: 10.5px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--constitution-text-secondary);
+  font-weight: 500;
+}
+
+.const-structure-grid-inner {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.const-structure-item {
+  display: block;
+  padding: 14px;
+  border: 1px solid var(--constitution-border);
+  background: var(--constitution-bg-primary);
+  transition: all .15s;
+  text-decoration: none;
+  color: inherit;
+}
+
+.const-structure-item:hover {
+  background: rgba(201, 162, 39, 0.08);
+  border-color: var(--constitution-gold);
+}
+
+.const-structure-item-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  color: var(--constitution-gold);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.const-structure-item-body {
+  flex: 1;
+}
+
+.const-structure-item-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--constitution-text-primary);
+  line-height: 1.2;
+  margin-bottom: 6px;
+}
+
+.const-structure-item-sub {
+  font-family: 'Source Serif 4', serif;
+  font-size: 12px;
+  color: var(--constitution-text-secondary);
+  line-height: 1.45;
+}
+
+@media (max-width: 900px) {
+  .const-structure-grid-inner {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .const-structure-grid {
+    grid-template-columns: 1fr;
+  }
+  .const-structure-grid-inner {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Colophon / Author Section */
+.const-colophon {
+  max-width: 1200px;
+  margin: 100px auto;
+  padding: 0 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: start;
+}
+
+.const-colophon-l .const-eyebrow {
+  margin-bottom: 18px;
+}
+
+.const-colophon-l h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(32px, 3.4vw, 44px);
+  margin-bottom: 20px;
+}
+
+.const-colophon-l p {
+  color: var(--constitution-text-secondary);
+  font-size: 17px;
+  line-height: 1.65;
+}
+
+.const-colophon-prayer {
+  margin-top: 40px;
+  padding-top: 30px;
+  border-top: 1px solid var(--constitution-border);
+}
+
+.const-colophon-prayer .const-dev {
+  font-family: 'Noto Sans Devanagari', sans-serif;
+  font-size: 22px;
+  color: var(--constitution-saffron);
+  line-height: 1.6;
+  letter-spacing: 0.08em;
+}
+
+.const-colophon-prayer em {
+  display: block;
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  color: var(--constitution-text-secondary);
+  font-size: 16px;
+  margin-top: 8px;
+}
+
+.const-colophon-r {
+  padding: 36px;
+  background: rgba(201, 162, 39, 0.08);
+  border: 1px solid var(--constitution-border);
+}
+
+.const-colophon-r .const-eyebrow {
+  margin-bottom: 14px;
+}
+
+.const-colophon-r h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 500;
+  font-size: 24px;
+  margin-bottom: 6px;
+}
+
+.const-colophon-meta {
+  font-family: 'Source Serif 4', serif;
+  color: var(--constitution-text-secondary);
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.const-colophon-links {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border-top: 1px solid var(--constitution-border);
+  padding-top: 18px;
+}
+
+.const-colophon-link {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14.5px;
+  color: var(--constitution-text-secondary);
+  padding: 6px 0;
+  text-decoration: none;
+}
+
+.const-colophon-link:hover {
+  color: var(--constitution-saffron);
+}
+
+.const-colophon-link span:last-child {
+  color: var(--constitution-text-secondary);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+}
+
+@media (max-width: 900px) {
+  .const-colophon {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Footer */
+.const-footer {
+  padding: 40px;
+  text-align: center;
+  border-top: 1px solid var(--constitution-border);
+  color: var(--constitution-text-secondary);
+  font-size: 13px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.const-footer .const-dev {
+  font-family: 'Noto Sans Devanagari', sans-serif;
+  font-size: 18px;
+  color: var(--constitution-saffron);
+  text-transform: none;
+  letter-spacing: 0.08em;
+  display: block;
+  margin-bottom: 6px;
+}
+
+/* Helper class for Devanagari text */
+.const-dev {
+  font-family: 'Noto Sans Devanagari', sans-serif;
+}
+
+/* ============================================
+   SANSKRIT HOVER CARD (from Claude Design)
+   ============================================ */
+
+/* Sanskrit inline term styling */
+.sanskrit-inline {
+  font-family: 'Source Serif 4', serif;
+  font-style: italic;
+  font-weight: 500;
+  color: var(--constitution-saffron);
+  border-bottom: 1px dotted var(--constitution-saffron);
+  cursor: help;
+  padding-bottom: 1px;
+  transition: color .15s, border-color .15s;
+}
+
+.sanskrit-inline:hover {
+  color: #9A2B12; /* Lava color for hover */
+  border-bottom-color: #9A2B12;
+}
+
+.sanskrit-inline.is-active {
+  color: #9A2B12;
+  background: var(--constitution-vedic-anchor-bg);
+}
+
+/* Hover Card Popover */
+.sk-popover {
+  position: fixed;
+  z-index: 200;
+  width: 280px;
+  padding: 14px 16px;
+  background: var(--constitution-bg-primary);
+  border: 1px solid var(--constitution-border);
+  box-shadow: 0 4px 20px rgba(28, 23, 20, 0.08), 0 2px 6px rgba(28, 23, 20, 0.05);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(4px);
+  transition: opacity .12s, transform .12s;
+}
+
+[data-theme="dark"] .sk-popover {
+  background: var(--constitution-bg-sidebar);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4), 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.sk-popover.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.sk-pop-head {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+
+.sk-pop-term {
+  font-family: 'Source Serif 4', serif;
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--constitution-saffron);
+}
+
+.sk-pop-dev {
+  font-family: 'Noto Sans Devanagari', sans-serif;
+  font-size: 22px;
+  color: var(--constitution-gold);
+  line-height: 1;
+}
+
+.sk-pop-mean {
+  font-family: 'Source Serif 4', serif;
+  font-style: italic;
+  color: var(--constitution-text-secondary);
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+
+.sk-pop-use {
+  font-family: 'Source Serif 4', serif;
+  font-size: 13.5px;
+  line-height: 1.5;
+  color: var(--constitution-text-secondary);
+}
+
+/* ============================================
+   READER ARTICLE PAGES (Interior Pages)
+   Warm & Sacred Design from Claude Design
+   ============================================ */
+
+.reader-article {
+  max-width: var(--read-width-comfy, 720px);
+  margin: 0 auto;
+  padding: 48px 40px 120px;
+}
+
+/* Reader Header */
+.r-head {
+  margin-bottom: 52px;
+}
+
+.r-head-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+.r-head-pill {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--constitution-saffron);
+}
+
+.r-head-pill .const-dev {
+  font-family: 'Noto Sans Devanagari', sans-serif;
+  font-size: 18px;
+  color: var(--constitution-gold);
+  margin-left: 8px;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.r-head-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 400;
+  font-size: clamp(44px, 5vw, 68px);
+  line-height: 1.02;
+  color: var(--constitution-text-primary);
+  margin: 0 0 14px;
+  letter-spacing: -0.01em;
+}
+
+.r-head-sub {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(22px, 2.5vw, 28px);
+  color: var(--constitution-text-secondary);
+  margin-bottom: 20px;
+  line-height: 1.3;
+}
+
+.r-head-story {
+  font-family: 'Source Serif 4', serif;
+  font-style: italic;
+  font-size: 15px;
+  color: var(--constitution-saffron);
+  padding: 12px 18px;
+  background: var(--constitution-vedic-anchor-bg);
+  border-left: 2px solid var(--constitution-gold);
+  display: inline-block;
+}
+
+/* Update constitution body for reader */
+.reader-article .constitution-body {
+  font-family: 'Source Serif 4', serif;
+  font-size: 18px;
+  line-height: 1.75;
+  color: var(--constitution-text-primary);
+}
+
+.reader-article .constitution-body p {
+  margin-bottom: 1.5rem;
+}
+
+.reader-article .constitution-body h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 32px;
+  font-weight: 600;
+  color: var(--constitution-text-primary);
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.reader-article .constitution-body h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--constitution-text-primary);
+  margin-top: 2.5rem;
+  margin-bottom: 0.75rem;
+  line-height: 1.3;
+}
+
+.reader-article .constitution-body h4 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--constitution-text-primary);
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Pullquote styling */
+.reader-article .constitution-body blockquote {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-weight: 500;
+  font-size: clamp(26px, 3vw, 36px);
+  line-height: 1.25;
+  color: var(--constitution-deep-blue);
+  border-top: 1px solid var(--constitution-border);
+  border-bottom: 1px solid var(--constitution-border);
+  padding: 28px 0;
+  margin: 40px 0;
+  text-align: center;
+  text-wrap: balance;
+}
+
+[data-theme="dark"] .reader-article .constitution-body blockquote {
+  color: var(--constitution-text-primary);
+}
+
+/* Lists */
+.reader-article .constitution-body ul,
+.reader-article .constitution-body ol {
+  margin-bottom: 1.5rem;
+  line-height: 1.8;
+  padding-left: 2rem;
+}
+
+.reader-article .constitution-body li {
+  margin-bottom: 0.5rem;
+}
+
+/* Links in article body */
+.reader-article .constitution-body a {
+  color: var(--constitution-saffron);
+  text-decoration: underline;
+  text-decoration-color: var(--constitution-saffron);
+  text-underline-offset: 2px;
+  transition: color 0.15s;
+}
+
+.reader-article .constitution-body a:hover {
+  color: #9A2B12;
+  text-decoration-color: #9A2B12;
+}
+
+/* Mobile adjustments for reader */
+@media (max-width: 768px) {
+  .reader-article {
+    padding: 32px 20px 80px;
+  }
+
+  .r-head-title {
+    font-size: clamp(32px, 8vw, 48px);
+  }
+
+  .r-head-sub {
+    font-size: clamp(18px, 4vw, 22px);
+  }
+
+  .reader-article .constitution-body {
+    font-size: 17px;
+  }
+}
+
+/* ============================================
+   COLLAPSIBLE ANCHOR CONTAINERS
+   For Vedic Anchors and Constitutional Sources
+   ============================================ */
+
+.anchor-container {
+  margin: 2rem 0;
+  border-radius: 4px;
+  overflow: hidden;
+  transition: all 0.2s ease;
+}
+
+.anchor-vedic {
+  border: 1px solid var(--constitution-gold);
+  background: var(--constitution-vedic-anchor-bg);
+}
+
+.anchor-source {
+  border: 1px solid var(--constitution-slate);
+  background: var(--constitution-constitutional-source-bg);
+}
+
+.anchor-toggle {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 18px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  transition: background 0.2s ease;
+  text-align: left;
+}
+
+.anchor-vedic .anchor-toggle {
+  color: var(--constitution-gold);
+}
+
+.anchor-source .anchor-toggle {
+  color: var(--constitution-slate);
+}
+
+.anchor-toggle:hover {
+  background: rgba(201, 162, 39, 0.1);
+}
+
+.anchor-icon {
+  font-size: 16px;
+  flex-shrink: 0;
+}
+
+.anchor-label {
+  flex: 1;
+}
+
+.anchor-chevron {
+  font-size: 20px;
+  font-weight: 400;
+  transform: rotate(0deg);
+  transition: transform 0.2s ease;
+  font-family: 'Source Serif 4', serif;
+}
+
+.anchor-chevron.is-expanded {
+  transform: rotate(90deg);
+}
+
+.anchor-content {
+  padding: 0 18px 16px 18px;
+  font-family: 'Source Serif 4', serif;
+  font-size: 16px;
+  line-height: 1.7;
+  animation: slideDown 0.2s ease;
+}
+
+.anchor-vedic .anchor-content {
+  color: var(--constitution-text-primary);
+  font-style: italic;
+}
+
+.anchor-source .anchor-content {
+  color: var(--constitution-text-secondary);
+  font-style: italic;
+  font-size: 15px;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ============================================
+   IMPROVED TABLE ALIGNMENT
+   Based on sample MDX files
+   ============================================ */
+
+.constitution-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  margin: 2.5rem 0;
+  border: 1px solid var(--constitution-border);
+  border-radius: 4px;
+}
+
+.constitution-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0;
+  font-family: 'Source Serif 4', serif;
+  font-size: 16px;
+}
+
+.constitution-table thead {
+  background-color: var(--constitution-deep-blue);
+  color: white;
+}
+
+[data-theme="dark"] .constitution-table thead {
+  background-color: var(--constitution-saffron);
+  color: var(--constitution-bg-primary);
+}
+
+.constitution-table th {
+  padding: 14px 16px;
+  text-align: left;
+  font-weight: 600;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 17px;
+  border-bottom: 2px solid var(--constitution-border);
+}
+
+.constitution-table td {
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--constitution-border);
+  vertical-align: top;
+}
+
+.constitution-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.constitution-table tbody tr:nth-child(even) {
+  background-color: var(--constitution-hover-bg);
+}
+
+.constitution-table tbody tr:hover {
+  background-color: var(--constitution-active-bg);
+  transition: background-color 0.15s ease;
+}
+
+/* Special styling for first column (often labels) */
+.constitution-table td:first-child {
+  font-weight: 500;
+  color: var(--constitution-saffron);
+}
+
+/* Center-align numeric columns */
+.constitution-table td[align="center"],
+.constitution-table th[align="center"] {
+  text-align: center;
+}
+
+.constitution-table td[align="right"],
+.constitution-table th[align="right"] {
+  text-align: right;
+}
+
+/* Mobile table improvements */
+@media (max-width: 768px) {
+  .constitution-table {
+    font-size: 14px;
+  }
+
+  .constitution-table th,
+  .constitution-table td {
+    padding: 10px 12px;
+  }
+
+  .constitution-table th {
+    font-size: 15px;
+  }
+}
