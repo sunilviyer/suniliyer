@@ -203,6 +203,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }));
 
   // AGI Constitution pages (23 total parts)
+  // IMPORTANT: Must match IDs in app/constitution/data/reading-order.ts
   const constitutionParts = [
     'authors-note',
     'section-1-0',
@@ -226,7 +227,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     'part-17',
     'part-18',
     'appendix-a',
-    'closing-declaration',
+    'closing', // Fixed: was 'closing-declaration'
   ];
 
   const constitutionPages: MetadataRoute.Sitemap = [
