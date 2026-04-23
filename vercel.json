@@ -4,8 +4,19 @@
       "source": "/aidefence/:path*",
       "destination": "/:path*",
       "permanent": true
+    },
+    {
+      "source": "/seshan/demo/",
+      "destination": "/coming-soon",
+      "permanent": false
+    },
+    {
+      "source": "/seshan/dashboard/",
+      "destination": "/coming-soon",
+      "permanent": false
     }
   ],
+  "trailingSlash": false,
   "headers": [
     {
       "source": "/(.*)",
