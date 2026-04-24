@@ -15,9 +15,11 @@ export async function loadPartContent(partId: string): Promise<string | null> {
       return null;
     }
 
-    // Content is in /Volumes/External/AIDefence/AGIConstitution/content/
+    // Content is in /AGIConstitution/content/ (project root)
     const contentPath = path.join(
-      '/Volumes/External/AIDefence/AGIConstitution/content',
+      process.cwd(),
+      'AGIConstitution',
+      'content',
       part.filename
     );
 
