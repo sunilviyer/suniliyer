@@ -1,0 +1,327 @@
+/* Constitution Interior Pages — Dharma Sanhita Design System */
+/* Based on AGI Constitution Design Sample from Claude Design */
+
+/* CSS Variables - Dharma Sanhita Color Palette */
+:root {
+  /* Vedic-inspired color palette */
+  --saffron: #FF9933;
+  --deep-blue: #264653;
+  --gold: #D4AF37;
+  --charcoal: #2D2D2D;
+  --slate: #6B7280;
+
+  /* Neutrals */
+  --ink: #1A1A1A;
+  --ink-soft: #4A4A4A;
+  --ink-muted: #8B8B8B;
+  --bg: #FFFFFF;
+  --bg-raised: #F9FAFB;
+  --rule: #E5E7EB;
+  --rule-strong: #D1D5DB;
+
+  /* Lava red for DRA markers */
+  --lava: #DC2626;
+
+  /* Vedic anchor background */
+  --anchor-vedic-bg: #FFF7ED;
+
+  /* Typography */
+  --font-display: 'Cormorant Garamond', serif;
+  --font-body: 'Source Serif 4', serif;
+  --font-dev: 'Noto Sans Devanagari', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+/* Dark mode overrides */
+[data-theme="dark"], .dark {
+  --ink: #F3F4F6;
+  --ink-soft: #D1D5DB;
+  --ink-muted: #9CA3AF;
+  --bg: #111827;
+  --bg-raised: #1F2937;
+  --rule: #374151;
+  --rule-strong: #4B5563;
+  --anchor-vedic-bg: #1F2124;
+}
+
+/* Shared artboard/interior base */
+.ib {
+  font-family: var(--font-body);
+  color: var(--ink);
+  background: var(--bg);
+  width: 100%;
+  min-height: 100vh;
+  padding: 64px 72px;
+  position: relative;
+  overflow: hidden;
+  font-size: 15.5px;
+  line-height: 1.6;
+}
+
+.ib-eyebrow {
+  font-family: var(--font-body);
+  font-size: 11px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--saffron);
+  font-weight: 600;
+  margin-bottom: 18px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.ib-eyebrow .dev {
+  font-family: var(--font-dev);
+  color: var(--gold);
+  font-size: 16px;
+  letter-spacing: 0;
+}
+
+.ib-eyebrow::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--rule);
+}
+
+.ib-h1 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 64px;
+  line-height: 1;
+  letter-spacing: -0.01em;
+  margin: 0 0 16px;
+  color: var(--ink);
+}
+
+.ib-h2 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 36px;
+  line-height: 1.1;
+  margin: 0 0 12px;
+}
+
+.ib-h3 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 1.2;
+  margin: 0 0 8px;
+}
+
+.ib-sub {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 22px;
+  color: var(--ink-soft);
+  margin-bottom: 28px;
+}
+
+.ib-lede {
+  font-size: 17px;
+  line-height: 1.65;
+  color: var(--ink-soft);
+  max-width: 640px;
+  text-wrap: pretty;
+}
+
+.ib-body {
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: var(--ink-soft);
+}
+
+.ib-dev {
+  font-family: var(--font-dev);
+  color: var(--saffron);
+}
+
+.ib-num {
+  font-family: var(--font-display);
+  font-weight: 400;
+  color: var(--gold);
+  font-feature-settings: "lnum" 1, "tnum" 1;
+}
+
+.ib-mono {
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  letter-spacing: 0.04em;
+  color: var(--ink-muted);
+}
+
+/* ——— 01 NACHIKETA OPENER ——— */
+.c-nachi {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 64px;
+  height: 100%;
+}
+
+.c-nachi .nachi-om {
+  position: absolute;
+  top: -20px;
+  right: 48px;
+  font-family: var(--font-dev);
+  font-size: 320px;
+  color: var(--saffron);
+  opacity: 0.08;
+  line-height: 0.9;
+  pointer-events: none;
+  user-select: none;
+}
+
+.c-nachi .nachi-l {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+}
+
+.c-nachi .nachi-part {
+  font-family: var(--font-body);
+  font-size: 12px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  font-weight: 600;
+  margin-bottom: 14px;
+}
+
+.c-nachi .nachi-title {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 92px;
+  line-height: 0.95;
+  letter-spacing: -0.015em;
+  margin: 0;
+}
+
+.c-nachi .nachi-title em {
+  font-style: italic;
+  color: var(--saffron);
+  font-weight: 400;
+  display: block;
+  font-size: 0.55em;
+  margin-top: 6px;
+}
+
+.c-nachi .nachi-dev {
+  font-family: var(--font-dev);
+  font-size: 34px;
+  color: var(--gold);
+  margin-top: 22px;
+  letter-spacing: 0.08em;
+}
+
+.c-nachi .nachi-quote {
+  margin-top: 40px;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 24px;
+  line-height: 1.35;
+  color: var(--deep-blue);
+  max-width: 580px;
+  border-top: 1px solid var(--rule-strong);
+  padding-top: 22px;
+}
+
+.c-nachi .nachi-quote cite {
+  display: block;
+  font-family: var(--font-body);
+  font-style: normal;
+  font-size: 12px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  margin-top: 14px;
+}
+
+.c-nachi .nachi-r {
+  border-left: 1px solid var(--rule);
+  padding-left: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 24px;
+  position: relative;
+  z-index: 1;
+}
+
+.c-nachi .boon {
+  display: grid;
+  grid-template-columns: 40px 1fr;
+  gap: 16px;
+  padding-bottom: 20px;
+  border-bottom: 1px dotted var(--rule);
+}
+
+.c-nachi .boon:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+.c-nachi .boon-n {
+  font-family: var(--font-display);
+  font-size: 38px;
+  color: var(--gold);
+  line-height: 1;
+}
+
+.c-nachi .boon-label {
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.c-nachi .boon-text {
+  font-family: var(--font-display);
+  font-size: 17px;
+  line-height: 1.3;
+  color: var(--ink);
+}
+
+.c-nachi .boon.is-third .boon-n {
+  color: var(--saffron);
+  font-weight: 500;
+}
+
+.c-nachi .boon.is-third .boon-text {
+  color: var(--ink);
+  font-weight: 500;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .ib {
+    padding: 40px 24px;
+  }
+
+  .c-nachi {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .c-nachi .nachi-om {
+    font-size: 180px;
+    top: 10px;
+    right: 20px;
+  }
+
+  .c-nachi .nachi-title {
+    font-size: 56px;
+  }
+
+  .c-nachi .nachi-r {
+    border-left: 0;
+    border-top: 1px solid var(--rule);
+    padding-left: 0;
+    padding-top: 32px;
+  }
+}

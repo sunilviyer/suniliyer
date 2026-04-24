@@ -6,6 +6,7 @@ import Sidebar from './components/Sidebar';
 import SanskritPanel from './components/SanskritPanel';
 import { type SanskritTerm } from './data/sanskrit-glossary';
 import './constitution.css';
+import './constitution-interior.css';
 
 export default function ConstitutionLayout({
   children,
