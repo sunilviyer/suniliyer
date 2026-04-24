@@ -17,26 +17,32 @@ export default function BookPage() {
   const flipToStory = () => {
     if (isFlipping || currentPage !== 'cover') return;
     setIsFlipping(true);
-    setCurrentPage('story');
-    setTimeout(() => setIsFlipping(false), 1000);
+    setTimeout(() => {
+      setCurrentPage('story');
+      setIsFlipping(false);
+    }, 100);
   };
 
   const flipToSubstrate = () => {
     if (isFlipping || currentPage !== 'story') return;
     setIsFlipping(true);
-    setCurrentPage('substrate');
-    setTimeout(() => setIsFlipping(false), 1000);
+    setTimeout(() => {
+      setCurrentPage('substrate');
+      setIsFlipping(false);
+    }, 100);
   };
 
   const flipBack = () => {
     if (isFlipping) return;
     setIsFlipping(true);
-    if (currentPage === 'substrate') {
-      setCurrentPage('story');
-    } else if (currentPage === 'story') {
-      setCurrentPage('cover');
-    }
-    setTimeout(() => setIsFlipping(false), 1000);
+    setTimeout(() => {
+      if (currentPage === 'substrate') {
+        setCurrentPage('story');
+      } else if (currentPage === 'story') {
+        setCurrentPage('cover');
+      }
+      setIsFlipping(false);
+    }, 100);
   };
 
   return (

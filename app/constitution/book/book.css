@@ -36,12 +36,13 @@
 /* Book container */
 .book-container {
   position: relative;
-  width: 1200px;
-  max-width: 95vw;
-  height: 800px;
-  max-height: 85vh;
+  width: 1400px;
+  max-width: 98vw;
+  height: 900px;
+  max-height: 95vh;
   transform-style: preserve-3d;
   transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  margin: 0 auto;
 }
 
 .book-container:hover {
@@ -209,38 +210,41 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 0;
-  animation: page-flip-in 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-style: preserve-3d;
+  transform-origin: left center;
+  animation: page-enter 1.2s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
 }
 
 .book-page-spread.flipping {
-  animation: page-flip-out 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: page-exit 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  pointer-events: none;
 }
 
-@keyframes page-flip-in {
+@keyframes page-enter {
   0% {
+    transform: perspective(2000px) rotateY(-120deg);
     opacity: 0;
-    transform: rotateY(-90deg) scale(0.8);
   }
-  50% {
-    opacity: 0.5;
+  30% {
+    opacity: 0.3;
   }
   100% {
+    transform: perspective(2000px) rotateY(0deg);
     opacity: 1;
-    transform: rotateY(0deg) scale(1);
   }
 }
 
-@keyframes page-flip-out {
+@keyframes page-exit {
   0% {
+    transform: perspective(2000px) rotateY(0deg);
     opacity: 1;
-    transform: rotateY(0deg) scale(1);
   }
-  50% {
-    opacity: 0.5;
+  70% {
+    opacity: 0.3;
   }
   100% {
+    transform: perspective(2000px) rotateY(120deg);
     opacity: 0;
-    transform: rotateY(90deg) scale(0.8);
   }
 }
 
