@@ -325,3 +325,39 @@
     padding-top: 32px;
   }
 }
+
+/* ——— 02 SUBSTRATE DIPTYCH ——— */
+.c-substrate { display: grid; grid-template-columns: 1fr 1fr; gap: 0; height: 100%; }
+.c-substrate .side { padding: 56px 52px; position: relative; }
+.c-substrate .side.left { border-right: 1px solid var(--rule-strong); background: var(--bg); }
+.c-substrate .side.right { background: var(--bg-raised); }
+.c-substrate .side-tag { font-size: 11px; letter-spacing: 0.26em; text-transform: uppercase; font-weight: 600; margin-bottom: 14px; }
+.c-substrate .left .side-tag { color: var(--ink-muted); }
+.c-substrate .right .side-tag { color: var(--saffron); }
+.c-substrate h2 { font-size: 42px; line-height: 1; margin-bottom: 18px; }
+.c-substrate .side .sans {
+  font-family: var(--font-display); font-style: italic;
+  font-size: 20px; color: var(--ink-soft);
+  margin-bottom: 36px; line-height: 1.35;
+}
+.c-substrate .right .sans { color: var(--deep-blue); }
+.c-substrate .cue {
+  font-family: var(--font-display); font-weight: 500;
+  font-size: 18px; padding: 14px 0; border-top: 1px solid var(--rule);
+  display: grid; grid-template-columns: 120px 1fr; gap: 20px; align-items: baseline;
+}
+.c-substrate .cue:last-child { border-bottom: 1px solid var(--rule); }
+.c-substrate .cue-label { font-family: var(--font-body); font-size: 10.5px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--ink-muted); font-weight: 600; }
+.c-substrate .cue-val { color: var(--ink); }
+.c-substrate .right .cue-val { color: var(--saffron); font-style: italic; }
+.c-substrate .big-q {
+  position: absolute; bottom: 56px; left: 52px; right: 52px;
+  font-family: var(--font-display); font-weight: 500;
+  font-size: 26px; line-height: 1.25; color: var(--ink);
+  padding-top: 20px; border-top: 2px solid var(--ink);
+}
+.c-substrate .big-q em { color: var(--saffron); font-style: italic; }
+.c-substrate .right-om {
+  position: absolute; top: 24px; right: 40px;
+  font-family: var(--font-dev); font-size: 160px; color: var(--saffron); opacity: 0.1; line-height: 0.9;
+}
