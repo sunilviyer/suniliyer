@@ -158,8 +158,8 @@ export function getConstitutionSocialMeta({
  */
 export function getHomepageSocialMeta(): Metadata {
   return getSocialMeta({
-    title: 'Sunil Iyer | AI Governance & Responsible AI',
-    description: 'Helping organizations navigate AI through education, implementation guidance, and governance frameworks.',
+    title: 'Sunil Iyer | AI Governance, Responsible AI Curriculum, Frameworks & AI Agents',
+    description: 'AI governance consultant with 18+ years serving enterprise customers. Free responsible AI curriculum, 26+ published articles, an AGI constitution, and working AI agents.',
     path: '/',
     image: '/images/og-homepage.webp',
     type: 'website',
