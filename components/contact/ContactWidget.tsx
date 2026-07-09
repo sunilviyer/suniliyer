@@ -536,7 +536,7 @@ function ContactFormInner({ dark }: ContactFormInnerProps) {
             fontFamily: 'var(--font-body), sans-serif',
           }}
         >
-          Drop a message — I&apos;d love to hear from you.
+          Drop a message. I&apos;d love to hear from you.
         </p>
       </div>
 
