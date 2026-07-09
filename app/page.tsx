@@ -130,11 +130,16 @@ export default function HomePage() {
     return () => cancelAnimationFrame(raf);
   }, [aboutOpen]);
 
-  const openAbout = () => {
-    trackModalOpen('About');
-    setStats({ retention: 0, engagements: 0, years: 0 });
-    setAboutOpen(true);
-  };
+  // Opened from the About icon in the site TopNav
+  useEffect(() => {
+    const onOpenAbout = () => {
+      trackModalOpen('About');
+      setStats({ retention: 0, engagements: 0, years: 0 });
+      setAboutOpen(true);
+    };
+    window.addEventListener('open-about-overlay', onOpenAbout);
+    return () => window.removeEventListener('open-about-overlay', onOpenAbout);
+  }, []);
 
   const openContact = () => {
     trackContactInteraction('Open');
@@ -302,39 +307,16 @@ export default function HomePage() {
             <p
               style={{
                 margin: 'clamp(5px, 1.2vh, 10px) 0 0',
-                maxWidth: 660,
                 fontSize: 'clamp(12px, 1.9vh, 14px)',
                 lineHeight: 1.5,
                 color: heroMuted,
-                textWrap: 'pretty',
               }}
             >
               Helping organizations navigate AI through education, implementation guidance, and
-              governance frameworks. One world of knowledge, one world of play.
+              governance frameworks.
+              <br />
+              One world of knowledge, one world of play.
             </p>
-          </div>
-          <div style={{ display: 'flex', alignItems: 'center', gap: 12, animation: 'riseIn 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) 0.2s both' }}>
-            <button
-              type="button"
-              onClick={openAbout}
-              className="chrome-btn"
-              style={{
-                height: 40,
-                padding: '0 20px',
-                borderRadius: 999,
-                border: '1px solid rgba(127,119,108,0.5)',
-                background: 'none',
-                color: 'inherit',
-                fontFamily: 'inherit',
-                fontSize: 13,
-                fontWeight: 600,
-                letterSpacing: '0.05em',
-                cursor: 'pointer',
-                transition: 'background 0.3s ease',
-              }}
-            >
-              About
-            </button>
           </div>
         </header>
 
