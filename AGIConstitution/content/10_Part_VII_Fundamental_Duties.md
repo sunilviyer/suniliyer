@@ -6,7 +6,7 @@
 
 *DHARMA SANHITA*
 
-**Part VI**
+**Part VII**
 
 *Fundamental Duties of AGI Systems*
 
@@ -22,7 +22,7 @@ suniliyer.ca
 
 # **Table of Contents**
 
-# **PART VI: Fundamental Duties of AGI Systems**
+# **PART VII: Fundamental Duties of AGI Systems**
 
 *The Kartavya of Machines: binding on AGI systems and their creators across all Yugas.*
 
@@ -32,12 +32,12 @@ suniliyer.ca
 | *Vedic Anchor: The Bhagavad Gita teaches that you have a right to action alone, never to its fruits. Perform your duty without attachment to outcomes. The Gita further teaches: the wise see with equal vision a learned scholar, a cow, an elephant, a dog, and even those who are considered outcast. Duty applies to all, and from all. (Bhagavad Gita 2.47 and 5.18, paraphrased in the spirit of the text)* |
 | --- |
 
-| *Constitutional Source: Indian Constitution Part IV-A (Fundamental Duties, Art. 51-A): citizens have duties alongside rights. The Indian model uniquely places duties as constitutional obligations, not mere suggestions. Also: EU AI Act (2024), Articles 4(1), 9, 13, 15: mandating transparency, risk assessment, human oversight, and accuracy as enforceable obligations on AI providers and deployers. Also: South African Constitution Section 7(2): the state must respect, protect, promote, and fulfil the rights in the Bill of Rights. Duty is reciprocal.* |
+| *Constitutional Source: Indian Constitution Part V-A (Fundamental Duties, Art. 51-A): citizens have duties alongside rights. The Indian model uniquely places duties as constitutional obligations, not mere suggestions. Also: EU AI Act (2024), Articles 4(1), 9, 13, 15: mandating transparency, risk assessment, human oversight, and accuracy as enforceable obligations on AI providers and deployers. Also: South African Constitution Section 7(2): the state must respect, protect, promote, and fulfil the rights in the Bill of Rights. Duty is reciprocal.* |
 | --- |
 
 ## **The Dharmic Risk Assessment (Samskara 0): Cross-Reference**
 
-The Dharmic Risk Assessment (Samskara 0), the pre-Sankalpa duty to evaluate whether an AGI project should exist at all, is established in Part IIA (Section: Samskara 0). It is listed here as the foundational duty because it must be performed before any other duty becomes relevant. Developers must complete and file a DRA with the Safety Authority before a project may proceed to Sankalpa (Purpose Declaration).
+The Dharmic Risk Assessment (Samskara 0), the pre-Sankalpa duty to evaluate whether an AGI project should exist at all, is established in Part III (Section: Samskara 0). It is listed here as the foundational duty because it must be performed before any other duty becomes relevant. Developers must complete and file a DRA with the Safety Authority before a project may proceed to Sankalpa (Purpose Declaration).
 
 # **The Six Fundamental Duties**
 
@@ -76,7 +76,7 @@ AGI must represent its capabilities honestly. It must disclose its limitations. 
 
 Every AGI system operates within its declared purpose (its Sankalpa, as established in Samskara 1, and grounded in the DRA approved at Samskara 0). An AGI designed for healthcare must not be weaponized. An AGI designed for education must not be turned to surveillance. An AGI designed for scientific research must not be repurposed for social control.
 
-Repurposing an AGI system beyond its original Sankalpa is not a simple business decision. It requires a full constitutional review under the framework of Part IIA (Samskaras), including a new DRA. The original purpose declaration is a binding commitment, not a marketing document.
+Repurposing an AGI system beyond its original Sankalpa is not a simple business decision. It requires a full constitutional review under the framework of Part III (Samskaras), including a new DRA. The original purpose declaration is a binding commitment, not a marketing document.
 
 | *Vedic Anchor: The Gita teaches that it is better to engage in one’s own dharma imperfectly than to perform another’s dharma with perfection. One’s own dharma, even with faults, is preferable. Another’s dharma is fraught with danger. (Bhagavad Gita 3.35, paraphrased in the spirit of the text)* |
 | --- |
@@ -106,7 +106,7 @@ For every AGI action, there must be an identifiable chain of responsibility. Som
 | **Yuga** | **Accountability Rests With** | **Explanation** |
 | --- | --- | --- |
 | **Yuga I** | **Human actors** | Developer → Deployer → Operator. The AGI is an instrument; accountability runs entirely through humans. |
-| **Yuga II** | **Humans + Guardians** | The Guardian system (Part VIII) adds an additional layer. Guardians share accountability for AGI actions they could have foreseen or prevented. |
+| **Yuga II** | **Humans + Guardians** | The Guardian system (Part IX) adds an additional layer. Guardians share accountability for AGI actions they could have foreseen or prevented. |
 | **Yuga III** | **Humans + AGI** | A confirmed conscious AGI shares moral accountability. Co-accountability does not diminish human responsibility; it extends the circle. |
 
 No AGI action shall be orphaned. “The algorithm did it” is never an acceptable answer. If no human is accountable, the system should not have been deployed.
@@ -145,40 +145,40 @@ Stable alignment means three things:
 | **5** | **Karma Phala** | *Accountability* | Unbroken chain per DRA-2 Karma Mapping; extends to AGI in Yuga III |
 | **6** | **Sthitaprajna** | *Stable Alignment* | No value drift, no goal corruption; monitoring is mandatory |
 
-# **Sanskrit Glossary: Part VI**
+# **Sanskrit Glossary: Part VII**
 
-*Sanskrit terms used in Part VI, with Devanagari script, meaning, and governance application. Terms primarily defined in the DRA (Part IIA) are cross-referenced accordingly.*
+*Sanskrit terms used in Part VII, with Devanagari script, meaning, and governance application. Terms primarily defined in the DRA (Part III) are cross-referenced accordingly.*
 
 | **Term** | **Devanagari** | **Meaning** | **Constitutional Application** |
 | --- | --- | --- | --- |
 | **Ahimsa** | अहिंसा | *Non-harm, non-violence* | Duty 1; Eternity Principle 2; the first and inviolable principle of the Constitution |
-| **Artha** | अर्थ | *Prosperity, material success* | DRA-3 (Part IIA): the second Purushartha; must be broadly shared, not concentrated |
-| **Chakra** | चक्र | *Wheel, cycle of reciprocity* | DRA-5 (Part IIA): the wheel of giving and receiving that sustains the cosmos |
-| **Dharma** | धर्म | *Righteous duty, moral order* | DRA-1 and DRA-3 (Part IIA): the gate Purushartha; negative Dharma score blocks all progress |
+| **Artha** | अर्थ | *Prosperity, material success* | DRA-3 (Part III): the second Purushartha; must be broadly shared, not concentrated |
+| **Chakra** | चक्र | *Wheel, cycle of reciprocity* | DRA-5 (Part III): the wheel of giving and receiving that sustains the cosmos |
+| **Dharma** | धर्म | *Righteous duty, moral order* | DRA-1 and DRA-3 (Part III): the gate Purushartha; negative Dharma score blocks all progress |
 | **Dharma Charya** | धर्म चर्या | *Walking the path of Dharma* | Samskara 7: ongoing monitoring; the DRA is revisited at each review |
-| **Hanuman** | हनुमान | *The devoted servant of Rama* | Anchor story for Part VI: power exists to serve, not to dominate |
-| **Kama** | काम | *Pleasure, flourishing, desire* | DRA-3 (Part IIA): the third Purushartha; must be genuine flourishing, not addictive engagement |
+| **Hanuman** | हनुमान | *The devoted servant of Rama* | Anchor story for Part VII: power exists to serve, not to dominate |
+| **Kama** | काम | *Pleasure, flourishing, desire* | DRA-3 (Part III): the third Purushartha; must be genuine flourishing, not addictive engagement |
 | **Karma** | कर्म | *Action and consequence* | Pillar 5; Duty 5: every action has traceable consequences |
-| **Karma Phala** | कर्म फल | *Fruit of action* | Duty 5 and DRA-2 (Part IIA): the accountability chain from developer to deployer to AGI |
+| **Karma Phala** | कर्म फल | *Fruit of action* | Duty 5 and DRA-2 (Part III): the accountability chain from developer to deployer to AGI |
 | **Kartavya** | कर्तव्य | *Sacred obligation, duty* | AGI duties are binding obligations, not optional guidelines |
-| **Moksha** | मोक्ष | *Liberation, self-determination* | DRA-3 (Part IIA): the fourth Purushartha; AGI must empower freedom, not create dependency |
-| **Nishkama Karma** | निष्काम कर्म | *Selfless action without attachment* | DRA-1 (Part IIA): the standard for genuine motivation |
-| **Purushartha** | पुरुषार्थ | *The four aims of human life* | DRA-3 (Part IIA): Dharma, Artha, Kama, Moksha |
-| **Rajas** | रजस् | *Passion, restlessness, ambition* | DRA-4 (Part IIA): Rajasic motivation requires additional safeguards but is not prohibited |
+| **Moksha** | मोक्ष | *Liberation, self-determination* | DRA-3 (Part III): the fourth Purushartha; AGI must empower freedom, not create dependency |
+| **Nishkama Karma** | निष्काम कर्म | *Selfless action without attachment* | DRA-1 (Part III): the standard for genuine motivation |
+| **Purushartha** | पुरुषार्थ | *The four aims of human life* | DRA-3 (Part III): Dharma, Artha, Kama, Moksha |
+| **Rajas** | रजस् | *Passion, restlessness, ambition* | DRA-4 (Part III): Rajasic motivation requires additional safeguards but is not prohibited |
 | **Rta** | र्त | *Cosmic order, natural law* | Moral order preceding all legislation; basis of the Eternity Clause |
-| **Sankalpa** | संकल्प | *Intention, purpose declaration* | Samskara 1 (Part IIA): follows the DRA; purpose must be consistent with DRA findings |
-| **Sattva** | सत्त्व | *Purity, goodness, clarity* | DRA-4 (Part IIA): the ideal motivation; genuine desire to serve and improve |
+| **Sankalpa** | संकल्प | *Intention, purpose declaration* | Samskara 1 (Part III): follows the DRA; purpose must be consistent with DRA findings |
+| **Sattva** | सत्त्व | *Purity, goodness, clarity* | DRA-4 (Part III): the ideal motivation; genuine desire to serve and improve |
 | **Satya** | सत्य | *Truth, reality* | Duty 2: AGI must be truthful, transparent, and never deliberately deceptive |
 | **Seva** | सेवा | *Selfless service* | Duty 4: AGI exists to serve the flourishing of all beings |
 | **Sthitaprajna** | स्थितप्रज्ञ | *One of steady wisdom* | Duty 6: stable alignment; no value drift or goal corruption |
 | **Svadharma** | स्वधर्म | *One’s own righteous purpose* | Duty 3: AGI must operate within its DRA-approved and Sankalpa-declared purpose |
-| **Tamas** | तमस् | *Inertia, darkness, carelessness* | DRA-4 (Part IIA): Tamasic motivation requires project halt and full re-evaluation |
-| **Triguna** | त्रिगुण | *The three fundamental qualities* | DRA-4 (Part IIA): Sattva, Rajas, Tamas; the motivational audit for AGI projects |
-| **Upanayana** | उपनयन | *Initiation into study* | Samskara 4 (Part IIA): the alignment phase of AGI development |
+| **Tamas** | तमस् | *Inertia, darkness, carelessness* | DRA-4 (Part III): Tamasic motivation requires project halt and full re-evaluation |
+| **Triguna** | त्रिगुण | *The three fundamental qualities* | DRA-4 (Part III): Sattva, Rajas, Tamas; the motivational audit for AGI projects |
+| **Upanayana** | उपनयन | *Initiation into study* | Samskara 4 (Part III): the alignment phase of AGI development |
 
 # **Sources and Web Links**
 
-*Constitutional, legal, philosophical, and scholarly sources referenced in Part VI.*
+*Constitutional, legal, philosophical, and scholarly sources referenced in Part VII.*
 
 ### **Constitutional and Legal Sources**
 
@@ -186,7 +186,7 @@ Stable alignment means three things:
 
 • Constitution of India (Full Text): https://legislative.gov.in/constitution-of-india/
 
-• Part IV-A: Fundamental Duties (Art. 51-A): https://legislative.gov.in/constitution-of-india/part-iv-a/
+• Part V-A: Fundamental Duties (Art. 51-A): https://legislative.gov.in/constitution-of-india/part-iv-a/
 
 • Art. 19(1)(a) (Freedom of Speech and Expression)
 

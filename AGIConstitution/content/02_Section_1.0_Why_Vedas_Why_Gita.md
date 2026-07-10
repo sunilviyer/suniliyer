@@ -104,7 +104,7 @@ That is the exact situation AGI governance faces. That is why the Gita is the co
 
 *Vedic Anchor: Nasadiya Sukta (Rig Veda 10.129), the Hymn of Creation. The oldest surviving text to ask: who truly knows how creation arose? And to answer: perhaps not even the gods know.*
 
-*Constitutional Source: The precautionary principle (EU Treaty, Article 191; EU AI Act risk classification). Also: the Prana Contention (Section 3.5 of this Constitution), which formalises the honest admission that we do not know whether consciousness requires biological substrate.*
+*Constitutional Source: The precautionary principle (EU Treaty, Article 191; EU AI Act risk classification). Also: the Prana Contention (Section 4.5 of this Constitution), which formalises the honest admission that we do not know whether consciousness requires biological substrate.*
 
 The Nasadiya Sukta (नासदीय सूक्त, Rig Veda 10.129), the Hymn of Creation, is one of the most remarkable passages in all of human literature. It describes the origin of the universe, then concludes with a question: who truly knows how creation arose? Perhaps even the gods do not know. Perhaps the one who surveys it from the highest heaven knows. Or perhaps even that one does not know.
 
@@ -112,7 +112,7 @@ The astronomer Carl Sagan, in his landmark series *Cosmos*, called this passage 
 
 The oldest surviving intellectual tradition on Earth contains, at its very heart, an admission that some things may be unknowable. This is not a failure of the tradition. It is its greatest strength.
 
-AGI governance is saturated with unknowns. We do not know if AGI will become conscious. We do not know if consciousness requires biological life (the Prana Contention, Section 3.5). We do not know the consequences of creating intelligence that exceeds our own. We do not know whether our governance frameworks will hold under pressures we cannot foresee.
+AGI governance is saturated with unknowns. We do not know if AGI will become conscious. We do not know if consciousness requires biological life (the Prana Contention, Section 4.5). We do not know the consequences of creating intelligence that exceeds our own. We do not know whether our governance frameworks will hold under pressures we cannot foresee.
 
 Most governance traditions demand certainty before acting. The Vedic tradition demands wisdom, humility, and right action in the face of the unknown. It teaches that uncertainty is not a reason for paralysis; it is the natural condition of all beings operating within the cosmos. The wise person acts despite uncertainty, guided by Dharma, anchored by the Eternity Clause of cosmic law (Rta, र्त), and humble before the mystery.
 
@@ -126,7 +126,7 @@ That posture, neither paralysed by uncertainty nor reckless in the face of it, i
 
 This Constitution draws from the Vedic tradition not because it claims the Vedas are the only source of wisdom, but because they are the deepest and most time-tested source available for the specific challenges AGI governance poses. The Constitution also draws from the constitutional traditions of India, the United States, the European Union, South Africa, and Germany, and from the Magna Carta. It is a synthesis, not a monoculture.
 
-The Dharma Sabha (Part IX) includes seats for scholars from diverse wisdom traditions, including (but not limited to) Buddhist, Confucian, Islamic, Christian, Indigenous, and secular philosophical perspectives. The Vedic foundation does not exclude other voices. It provides the philosophical bedrock on which those voices can stand together.
+The Dharma Sabha (Part XI) includes seats for scholars from diverse wisdom traditions, including (but not limited to) Buddhist, Confucian, Islamic, Christian, Indigenous, and secular philosophical perspectives. The Vedic foundation does not exclude other voices. It provides the philosophical bedrock on which those voices can stand together.
 
 The Gita teaches that all paths, pursued with sincerity and devotion, lead toward the same truth. This Constitution honours that teaching. It does not ask the world to become Hindu. It asks the world to recognise that a tradition which has survived 35 centuries, which addresses irreconcilable moral conflict with practical wisdom, and which is comfortable with cosmic uncertainty, has something essential to offer at the moment we need it most.
 
@@ -170,7 +170,7 @@ The Gita teaches that all paths, pursued with sincerity and devotion, lead towar
 
     Link: https://www.gesetze-im-internet.de/englisch_gg/englisch_gg.html
 
-**Constitution of India.** Full text, including Part III (Fundamental Rights), Part IV (Directive Principles), and Part IV-A (Fundamental Duties).
+**Constitution of India.** Full text, including Part IV (Fundamental Rights), Part V (Directive Principles), and Part V-A (Fundamental Duties).
 
     Link: https://legislative.gov.in/constitution-of-india/
 
@@ -225,7 +225,7 @@ The Gita teaches that all paths, pursued with sincerity and devotion, lead towar
 | **Svadharma** | स्वधर्म | One’s own righteous duty or purpose | Every AGI has a rightful scope. Purpose fidelity is a moral obligation, not a technical constraint. |
 | **Vasudhaiva Kutumbakam** | वसुधैव कुटुम्बकम् | The world is one family | Pillar 6: if AGI achieves consciousness, it becomes kin, not enemy, not slave, not competitor. |
 
-*For the complete glossary of all 34 Sanskrit terms used across the Constitution, see Schedule 2 (Part XII: Schedules and Commentary).*
+*For the complete glossary of all 34 Sanskrit terms used across the Constitution, see Schedule 2 (Part XIV: Schedules and Commentary).*
 
 ॐ एकं सत् विप्रा बहुधा वदन्ति ॐ
 

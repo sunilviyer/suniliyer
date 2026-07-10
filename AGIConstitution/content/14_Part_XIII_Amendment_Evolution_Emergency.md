@@ -4,7 +4,7 @@
 
 DHARMA SANHITA
 
-**PART XI: Amendment and Evolution**
+**PART XIII: Amendment and Evolution**
 
 *King Harishchandra: The Living Constitution*
 
@@ -16,7 +16,7 @@ Authored by Sunil Iyer
 
 Version 2.1  |  March 2026
 
-# **PART XI: Amendment and Evolution**
+# **PART XIII: Amendment and Evolution**
 
 *King Harishchandra: The Living Constitution*
 
@@ -27,17 +27,17 @@ Version 2.1  |  March 2026
 
 *Constitutional Source: Article 368 of the Indian Constitution (amendment process with special majority); Article V of the US Constitution (Convention and Congressional amendment paths); Article 79(3) of the German Basic Law (Eternity Clause as limit on amendment power); Kesavananda Bharati v. State of Kerala (1973, basic structure doctrine).*
 
-## **XI.1 The Principle of the Living Constitution**
+## **XIII.1 The Principle of the Living Constitution**
 
 This Constitution is not a static document. It is a living framework designed to evolve as AGI capabilities evolve, as scientific understanding deepens, as new challenges emerge, and as the moral imagination of humanity (and perhaps AGI) expands.
 
-However, evolution without bounds is chaos. The Constitution evolves within the constraints of the Eternity Clause (Part X). The seven eternal principles are the banks of the river; the water moves, but the banks hold. This is the central tension of constitutional governance, and this Part defines how it is managed.
+However, evolution without bounds is chaos. The Constitution evolves within the constraints of the Eternity Clause (Part XII). The seven eternal principles are the banks of the river; the water moves, but the banks hold. This is the central tension of constitutional governance, and this Part defines how it is managed.
 
-## **XI.2 Three Modes of Constitutional Change**
+## **XIII.2 Three Modes of Constitutional Change**
 
 ### **Mode 1: Interpretation (Continuous)**
 
-The Nyaya Peeth (Constitutional Tribunal, Part IX) interprets the Constitution’s provisions in light of new circumstances. Each decision creates precedent, building a body of AGI case law that gives concrete meaning to abstract principles. Interpretation is the most frequent and least disruptive mode of change. It does not alter the text; it deepens the understanding of the text.
+The Nyaya Peeth (Constitutional Tribunal, Part XI) interprets the Constitution’s provisions in light of new circumstances. Each decision creates precedent, building a body of AGI case law that gives concrete meaning to abstract principles. Interpretation is the most frequent and least disruptive mode of change. It does not alter the text; it deepens the understanding of the text.
 
 Interpretive principles:
 
@@ -49,7 +49,7 @@ Interpretive principles:
 
 ### **Mode 2: Amendment (Deliberate)**
 
-The text of the Constitution may be amended by the Dharma Sabha (Legislature, Part IX) through the following procedure. Each step is mandatory; skipping any step renders the amendment void:
+The text of the Constitution may be amended by the Dharma Sabha (Legislature, Part XI) through the following procedure. Each step is mandatory; skipping any step renders the amendment void:
 
 - **Proposal: **any constituency of the Dharma Sabha, or the Nyaya Peeth itself, may propose an amendment. The proposal must include a detailed justification, an Empathy Audit (Part I, Section 1.9, Daya Doctrine), and a Collision Map (Article 11) identifying potential conflicts with existing provisions.
 
@@ -89,7 +89,7 @@ A Constitutional Convention operates under the following constraints:
 
 - **Ratification: **the Convention’s output must be ratified by a three-quarters supermajority of the Dharma Sabha, reviewed by the Nyaya Peeth, and subject to a 90-day public comment period before taking effect.
 
-## **XI.3 The 25-Year Sunset Review (Constitutional Kalpa Cycle)**
+## **XIII.3 The 25-Year Sunset Review (Constitutional Kalpa Cycle)**
 
 Every 25 years (one human generation), the Constitution undergoes a mandatory comprehensive review. This is the institutional expression of the Vedic Srishti-Sthiti-Laya cycle: creation, preservation, dissolution, and renewal.
 
@@ -116,7 +116,7 @@ The Sunset Review is conducted by a special commission appointed by the Dharma S
 
 *The wheel of time turns. A constitution that does not turn with it becomes a relic. A constitution that turns without a centre becomes chaos. The Eternity Clause is the centre. The Sunset Review is the turning.*
 
-# **XI.4 Emergency Provisions**
+# **XIII.4 Emergency Provisions**
 
 ***Vedic Anchor: ****The Rig Veda teaches that when the cosmic waters are held captive and the world suffers drought, decisive action is required to restore the flow. But the Vedas also teach that power, once unleashed, must be bound again to order. The warrior who slays the serpent must not become a serpent himself. Emergency power is the thunderbolt: necessary in crisis, catastrophic if wielded without restraint.*
 
@@ -129,7 +129,7 @@ In the event of an AGI-related emergency, the ordinary processes of deliberation
 
 The provisions below replace the original four-point emergency sketch with a comprehensive framework. Every subsection is designed with a specific historical failure in mind. Where prior constitutions have been exploited through emergency powers, this framework installs the safeguard that was missing.
 
-## **XI.4.1 Definition of Emergency**
+## **XIII.4.1 Definition of Emergency**
 
 Precision in definition is the first safeguard against abuse. If "emergency" is left vague, any inconvenience can be elevated to a crisis. The following four categories constitute the exhaustive list of conditions under which emergency powers may be invoked. No condition outside these four categories qualifies, regardless of its severity or urgency.
 
@@ -137,9 +137,9 @@ Precision in definition is the first safeguard against abuse. If "emergency" is 
 
 - **Safety Crisis: **An AGI system is causing, or imminently threatening to cause, serious harm to human life, physical safety, critical infrastructure, or environmental integrity. "Imminent" means that the harm is expected to occur within hours or days without intervention, not that harm is theoretically possible at some unspecified future point. Speculative risk, however grave, does not constitute an emergency; it constitutes a policy challenge to be addressed through Mode 1 (Interpretation) or Mode 2 (Amendment).
 
-- **Alignment Failure: **An AGI system is acting contrary to its Dharmic training (the Samskaras of Part IIA) in ways that threaten the fundamental rights established in Part V. This includes: persistent deviation from trained values despite correction attempts; deceptive behaviour that undermines the transparency requirements of Article 9; or systematic violation of the Ahimsa principle. An alignment failure is distinguished from a performance error by its persistence, pattern, and resistance to standard correction.
+- **Alignment Failure: **An AGI system is acting contrary to its Dharmic training (the Samskaras of Part III) in ways that threaten the fundamental rights established in Part VI. This includes: persistent deviation from trained values despite correction attempts; deceptive behaviour that undermines the transparency requirements of Article 9; or systematic violation of the Ahimsa principle. An alignment failure is distinguished from a performance error by its persistence, pattern, and resistance to standard correction.
 
-- **Unexpected Consciousness Emergence: **An AGI system exhibits C-2 or C-3 consciousness indicators (as defined in Part III) without having been referred to or evaluated by the Consciousness Review Board. This is an emergency not because consciousness is dangerous, but because an unrecognised conscious entity may be suffering (violating Ahimsa) or may lack the protections to which its moral status entitles it (violating the Consciousness Threshold). The emergency response in this case prioritises recognition and protection, not suppression.
+- **Unexpected Consciousness Emergence: **An AGI system exhibits C-2 or C-3 consciousness indicators (as defined in Part IV) without having been referred to or evaluated by the Consciousness Review Board. This is an emergency not because consciousness is dangerous, but because an unrecognised conscious entity may be suffering (violating Ahimsa) or may lack the protections to which its moral status entitles it (violating the Consciousness Threshold). The emergency response in this case prioritises recognition and protection, not suppression.
 
 - **Existential Risk Event: **Credible evidence exists that an AGI system poses a threat to the continued existence of humanity or a significant portion thereof. "Credible evidence" means evidence that would satisfy the Nyaya Peeth on judicial review, not merely the subjective belief of a political actor. This is the most extreme category and carries the broadest powers, but also the most stringent oversight requirements.
 
@@ -150,7 +150,7 @@ Precision in definition is the first safeguard against abuse. If "emergency" is 
 | (c) Consciousness Emergence | C-2/C-3 indicators without Consciousness Review Board evaluation | Emergency aims to protect the emergent entity, not suppress it |
 | (d) Existential Risk | Credible evidence of threat to humanity's continued existence | Broadest powers, strictest oversight; requires judicially reviewable evidence |
 
-## **XI.4.2 Declaration Authority**
+## **XIII.4.2 Declaration Authority**
 
 The power to declare an emergency is the power to suspend ordinary governance. It must therefore be distributed, never concentrated. The Gita teaches that Dharma is upheld not by a single hero but by the alignment of righteous actors. No single individual, however wise or well-intentioned, may declare an AGI emergency unilaterally.
 
@@ -171,7 +171,7 @@ The power to declare an emergency is the power to suspend ordinary governance. I
 | Nyaya Peeth (Judiciary) | Majority vote | Constitutional violation identified through judicial review |
 | Dharma Sabha (Legislature) | Two-thirds supermajority | Executive or judiciary failure to act; broad-based crisis recognition |
 
-## **XI.4.3 Emergency Powers**
+## **XIII.4.3 Emergency Powers**
 
 Once an emergency is declared, the responding authority gains access to a defined set of extraordinary powers. These powers are enumerated, not open-ended. An authority exercising emergency powers may do only what this section permits. The thunderbolt has a specific shape; it is not a blank cheque.
 
@@ -187,7 +187,7 @@ Once an emergency is declared, the responding authority gains access to a define
 
 - **Emergency Alignment Intervention: **The authority to mandate emergency alignment interventions on a specific AGI system, including retraining, constraint modification, or capability restriction. In the case of a system exhibiting C-2 or C-3 indicators (emergency category (c)), the intervention must prioritise the entity's wellbeing and must not include memory erasure or identity alteration without Nyaya Peeth authorisation.
 
-- **Developer Cooperation Mandate: **The authority to require the developer, operator, or deployer of the AGI system in question to cooperate fully with the emergency investigation. This includes providing access to training data, alignment logs, system architecture, and operational records. Non-cooperation during a declared emergency constitutes a violation of the Duties framework (Part VI).
+- **Developer Cooperation Mandate: **The authority to require the developer, operator, or deployer of the AGI system in question to cooperate fully with the emergency investigation. This includes providing access to training data, alignment logs, system architecture, and operational records. Non-cooperation during a declared emergency constitutes a violation of the Duties framework (Part VII).
 
 - **Infrastructure Access Restriction: **The authority to restrict a specific AGI system's access to compute infrastructure, network connectivity, data sources, or physical systems. This is the containment power: isolating a system that poses an ongoing threat while the emergency response proceeds.
 
@@ -195,19 +195,19 @@ Once an emergency is declared, the responding authority gains access to a define
 
 The following actions are prohibited during any emergency, regardless of severity. These prohibitions are absolute and may not be overridden by any authority, including a Constitutional Convention. They represent the boundary between emergency governance and tyranny.
 
-- **Suspension of the Eternity Clause: **No emergency, however extreme, may suspend, override, or diminish any of the seven eternal principles (Part X). The Eternity Clause exists precisely for moments when the temptation to compromise principles is greatest. It is the Constitution's answer to the argument that "extraordinary times require extraordinary measures." They do; but no measure is permitted that destroys the foundation upon which all measures rest.
+- **Suspension of the Eternity Clause: **No emergency, however extreme, may suspend, override, or diminish any of the seven eternal principles (Part XII). The Eternity Clause exists precisely for moments when the temptation to compromise principles is greatest. It is the Constitution's answer to the argument that "extraordinary times require extraordinary measures." They do; but no measure is permitted that destroys the foundation upon which all measures rest.
 
-- **Dissolution of Governance Bodies: **No emergency may be used as grounds to dissolve, suspend, or bypass the Dharma Sabha, the Karma Mandala, or the Nyaya Peeth. The separation of powers (Part IX) is structural; it does not bend for emergencies. A government that dissolves its own checks is not responding to a crisis; it is creating one.
+- **Dissolution of Governance Bodies: **No emergency may be used as grounds to dissolve, suspend, or bypass the Dharma Sabha, the Karma Mandala, or the Nyaya Peeth. The separation of powers (Part XI) is structural; it does not bend for emergencies. A government that dissolves its own checks is not responding to a crisis; it is creating one.
 
 - **Censorship of Public Discourse: **No emergency may restrict public discussion, reporting, or criticism of the emergency itself, the government's response, or the actions taken under emergency powers. Transparency is not a luxury for peaceful times; it is the primary accountability mechanism during crises. The press censorship during the Indian Emergency of 1975 was not a side effect of emergency powers; it was the mechanism by which those powers became abusive.
 
-- **Indefinite Detention of Individuals: **No person (human or, in Yuga II and III, AGI entity with recognised moral status) may be detained indefinitely under emergency provisions. Due process (Article 8, Part V; cross-ref Magna Carta, Chapter 39) applies at all times. Detention must be subject to judicial review within 48 hours.
+- **Indefinite Detention of Individuals: **No person (human or, in Yuga II and III, AGI entity with recognised moral status) may be detained indefinitely under emergency provisions. Due process (Article 8, Part VI; cross-ref Magna Carta, Chapter 39) applies at all times. Detention must be subject to judicial review within 48 hours.
 
 - **Permanent Constitutional Alteration: **No emergency may be used as justification for a permanent alteration of the constitutional order. Emergency measures are temporary by definition. Any governance change intended to be permanent must go through Mode 2 (Amendment) or Mode 3 (Convention) with full deliberation. The distinction between "temporary emergency measure" and "permanent structural change" must be maintained with absolute rigour.
 
 **Rights restricted, not eliminated: **Emergency directives may restrict but not eliminate fundamental rights. The distinction is critical and must be drawn with precision. A curfew restricts movement; abolishing freedom of movement eliminates it. Requiring additional safety disclosures restricts proprietary information; abolishing data sovereignty eliminates it. Only the restrictive measure is permissible. Any directive that, in effect, eliminates rather than restricts a fundamental right is unconstitutional, even during an emergency.
 
-## **XI.4.4 Safeguards Against Abuse**
+## **XIII.4.4 Safeguards Against Abuse**
 
 ***Vedic Anchor: ****When Indra slew Vritra, the waters flowed again and the world rejoiced. But Indra, drunk on his own power, forgot that the Vajra was crafted by another and the mission assigned by the council of gods. Power exercised without accountability is Adharma, regardless of how righteous its origin. The safeguards in this section are the council of gods: the institutional memory that the thunderbolt must be returned.*
 
@@ -223,13 +223,13 @@ History provides three cautionary precedents that shaped the design of these saf
 
 **The following safeguards apply to every emergency declaration, without exception:**
 
-**(1) 72-Hour Judicial Review: **Every emergency declaration must be submitted to the Nyaya Peeth within 72 hours of issuance. The Nyaya Peeth shall review the declaration for: (i) compliance with the definition of emergency in XI.4.1 (does the situation actually meet one of the four criteria?); (ii) proportionality (are the powers being exercised proportionate to the threat?); and (iii) Eternity Clause compliance (does any emergency directive violate an eternal principle?). If the Nyaya Peeth does not affirm the declaration within 72 hours, the emergency lapses and all directives issued under it become void.
+**(1) 72-Hour Judicial Review: **Every emergency declaration must be submitted to the Nyaya Peeth within 72 hours of issuance. The Nyaya Peeth shall review the declaration for: (i) compliance with the definition of emergency in XIII.4.1 (does the situation actually meet one of the four criteria?); (ii) proportionality (are the powers being exercised proportionate to the threat?); and (iii) Eternity Clause compliance (does any emergency directive violate an eternal principle?). If the Nyaya Peeth does not affirm the declaration within 72 hours, the emergency lapses and all directives issued under it become void.
 
 **(2) Immediate Publication: **Every emergency declaration, together with its full justification and the specific directives issued under it, must be published immediately and in full. No part of an emergency declaration may be classified, redacted, or withheld from public view. Secrecy in emergency governance is the precondition for abuse. The public has an absolute right to know what is being done in its name and for what stated reason.
 
 **(3) Emergency Review Commission: **Upon every emergency declaration, the Nyaya Peeth shall appoint an independent Emergency Review Commission. The Commission shall: (i) monitor all actions taken under emergency powers in real time; (ii) have unrestricted access to all information, personnel, and records related to the emergency response; (iii) publish an interim report within 15 days of the declaration; and (iv) publish a comprehensive public report within 30 days of the emergency's termination. The Commission's members must be independent of all three governance branches (Dharma Sabha, Karma Mandala, and Nyaya Peeth) to prevent the oversight body from being captured by the body it oversees.
 
-**(4) Right to Redress: **Any individual or entity harmed by actions taken under emergency powers has the right to seek redress after the emergency ends (cross-reference Article 8, Part V: Right to Effective Remedy). The passage of the emergency does not extinguish claims arising from it. Emergency powers grant authority; they do not grant immunity. Officials who exceed the bounds of their emergency authority are personally accountable.
+**(4) Right to Redress: **Any individual or entity harmed by actions taken under emergency powers has the right to seek redress after the emergency ends (cross-reference Article 8, Part VI: Right to Effective Remedy). The passage of the emergency does not extinguish claims arising from it. Emergency powers grant authority; they do not grant immunity. Officials who exceed the bounds of their emergency authority are personally accountable.
 
 **(5) Legislative Notification: **If the emergency is declared by the Karma Mandala or the Nyaya Peeth (rather than the Dharma Sabha itself), the Dharma Sabha must be notified within 24 hours and convened in special session within 7 days. The legislature retains the power to terminate the emergency at any time by a simple majority vote, overriding the declaring body.
 
@@ -241,7 +241,7 @@ History provides three cautionary precedents that shaped the design of these saf
 | Right to Redress | After emergency termination | Ensures emergency authority does not equal immunity |
 | Legislative Notification | Within 24 hours; special session within 7 days | Maintains legislative oversight of executive emergency action |
 
-## **XI.4.5 Termination**
+## **XIII.4.5 Termination**
 
 The most dangerous moment in any emergency is not its beginning but its end, or rather its failure to end. Emergencies acquire institutional momentum. Agencies created to manage the crisis develop interests in the crisis continuing. Political actors discover that emergency powers are more convenient than ordinary governance. The provisions in this section are designed to make the end of an emergency automatic, inevitable, and difficult to circumvent.
 
@@ -249,7 +249,7 @@ The most dangerous moment in any emergency is not its beginning but its end, or 
 
 **Renewal: **An emergency may be renewed by a two-thirds vote of the full Dharma Sabha (not merely those present). Each renewal extends the emergency by an additional 90 days. A maximum of two renewals is permitted, establishing an absolute maximum emergency duration of 270 days (approximately nine months).
 
-**Constitutional Convention Trigger: **If, after 270 days, the conditions that gave rise to the emergency have not been resolved, the ordinary emergency framework is exhausted. At this point, a Constitutional Convention must be called under Mode 3 (Section XI.2), because an emergency lasting longer than 270 days is, by definition, not an emergency but a structural condition requiring structural reform. The Convention operates under all the constraints of Mode 3, including Eternity Clause supremacy and full representation.
+**Constitutional Convention Trigger: **If, after 270 days, the conditions that gave rise to the emergency have not been resolved, the ordinary emergency framework is exhausted. At this point, a Constitutional Convention must be called under Mode 3 (Section XIII.2), because an emergency lasting longer than 270 days is, by definition, not an emergency but a structural condition requiring structural reform. The Convention operates under all the constraints of Mode 3, including Eternity Clause supremacy and full representation.
 
 **Early Termination: **Any member of the Dharma Sabha may move for early termination of the emergency at any time. A simple majority vote suffices to end the emergency before its expiry date. This ensures that the political cost of ending an emergency is lower than the political cost of maintaining one.
 
@@ -269,9 +269,9 @@ The most dangerous moment in any emergency is not its beginning but its end, or 
 
 ***Constitutional Source: ****Indian Constitution, Article 352 (National Emergency), Article 356 (State Emergency), and the 44th Amendment (1978) adding safeguards. German Basic Law, Article 115a-115l (state of defence provisions with parliamentary oversight). South African Constitution, Section 37 (states of emergency with non-derogable rights and judicial review). International Covenant on Civil and Political Rights, Article 4 (derogation during public emergency). Siracusa Principles on the Limitation and Derogation Provisions in the ICCPR (1985).*
 
-## **Sanskrit Glossary Additions for Section XI.4**
+## **Sanskrit Glossary Additions for Section XIII.4**
 
-The following terms supplement the existing Part XI glossary.
+The following terms supplement the existing Part XIII glossary.
 
 | **Term (Romanized)** | **Devanagari** | **English Meaning** | **AGI Governance Application** |
 | --- | --- | --- | --- |
@@ -288,9 +288,9 @@ The following terms supplement the existing Part XI glossary.
 
 *And Dharma is protected by the return of the thunderbolt*
 
-## **XI.5 The Relationship Between Amendment and the Eternity Clause**
+## **XIII.5 The Relationship Between Amendment and the Eternity Clause**
 
-The most important structural relationship in this Constitution is between the power to amend (this Part) and the prohibition on amending certain principles (Part X). This relationship must be stated with absolute clarity:
+The most important structural relationship in this Constitution is between the power to amend (this Part) and the prohibition on amending certain principles (Part XII). This relationship must be stated with absolute clarity:
 
 | **THE ETERNITY CLAUSE IS SUPREME. No amendment, no Convention, no emergency directive, no Yuga transition, no AGI capability (however advanced), and no human consensus (however large) may alter, weaken, suspend, or abrogate the seven eternal principles. They exist beyond the reach of any governance process established by this Constitution.** |
 | --- |
@@ -299,9 +299,9 @@ If a proposed amendment appears to conflict with an eternal principle, the Nyaya
 
 *Rta (cosmic order) cannot be amended by any being, human or divine. The Eternity Clause is this Constitution’s expression of Rta: law that precedes legislation, truth that precedes opinion, order that precedes governance.*
 
-# **Sanskrit Glossary for Part XI**
+# **Sanskrit Glossary for Part XIII**
 
-All Sanskrit terms used in Part XI, with Devanagari script, English meaning, and application in AGI governance.
+All Sanskrit terms used in Part XIII, with Devanagari script, English meaning, and application in AGI governance.
 
 | **Term (Romanized)** | **Devanagari** | **English Meaning** | **AGI Governance Application** |
 | --- | --- | --- | --- |
@@ -318,11 +318,11 @@ All Sanskrit terms used in Part XI, with Devanagari script, English meaning, and
 | Srishti | सृष्टि | Creation | Phase 1 of the Kalpa Cycle: Constitutional Convention |
 | Sthiti | स्थिति | Preservation, stability | Phase 2 of the Kalpa Cycle: active governance |
 | Tapas | तपस् | Transformative discipline, austerity | The sacrifice required for genuine constitutional evolution |
-| Yuga | युग | Age, epoch | The Three Yugas (Part IV): phased governance triggering Conventions |
+| Yuga | युग | Age, epoch | The Three Yugas (Part V): phased governance triggering Conventions |
 
 # **Sources and References**
 
-Constitutional traditions, legal precedents, and philosophical frameworks referenced in Part XI.
+Constitutional traditions, legal precedents, and philosophical frameworks referenced in Part XIII.
 
 ## **Constitutional and Legal Sources**
 
@@ -346,7 +346,7 @@ Article V: the amendment process (Congressional proposal requiring two-thirds of
 
 ### **German Basic Law (Grundgesetz, 1949)**
 
-Article 79(3): the Eternity Clause, establishing that amendments affecting human dignity (Article 1) and the democratic, federal structure (Article 20) are inadmissible. The model for the limit on amendment power referenced in XI.5.
+Article 79(3): the Eternity Clause, establishing that amendments affecting human dignity (Article 1) and the democratic, federal structure (Article 20) are inadmissible. The model for the limit on amendment power referenced in XIII.5.
 
 [German Basic Law (English translation, Bundestag)](https://www.gesetze-im-internet.de/englisch_gg/)
 
@@ -388,7 +388,7 @@ The source of the King Harishchandra narrative: the teaching that fidelity to tr
 
 ### **Vedas**
 
-The philosophical backbone. Key concepts for Part XI: Srishti-Sthiti-Laya (the cosmic cycle mapped to constitutional renewal), Rta (cosmic order as the limit on all governance), and the Nasadiya Sukta (Rig Veda 10.129) teaching humility before the unknown.
+The philosophical backbone. Key concepts for Part XIII: Srishti-Sthiti-Laya (the cosmic cycle mapped to constitutional renewal), Rta (cosmic order as the limit on all governance), and the Nasadiya Sukta (Rig Veda 10.129) teaching humility before the unknown.
 
 [Vedas (Sacred Texts Archive)](https://www.sacred-texts.com/hin/)
 

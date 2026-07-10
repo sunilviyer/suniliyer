@@ -11,28 +11,28 @@ A phased governance framework for Artificial General Intelligence called "The AG
 3. Section 1.1: The Dharmic Counter-Argument (Companion / Response to Aschenbrenner)
 4. Part I: The Vedic Foundation (including merged Extensions: 1.7 Wheel of Dharma, 1.8 Great Chain, 1.9 Daya Doctrine)
 5. Part II: Preamble
-6. Part IIA: Dharmic Development / Samskaras (including Samskara 0 DRA, Samskaras 1-8, Tapas, Yajna)
-7. Part III: Consciousness Threshold (including 3.5 Prana Contention, 3.6 Vedic Risk Framework)
-8. Part IV: The Three Yugas
-9. Part V: Fundamental Rights (11 Articles)
-10. Part VI: Fundamental Duties (6 Duties)
-11. Part VII: Sovereignty and Power
-12. Part VIII: Co-Existence Framework
-13. Part VIIIA: Kurukshetra Protocol
-14. Part IX: Separation of Powers
-15. Part X: Eternity Clause
-16. Part XI: Amendment and Evolution (including expanded XI.4 Emergency Provisions)
-17. Part XIII: Definitions and Interpretation
-18. Part XIV: Transition and Commencement
-19. Part XV: Economic Framework (Artha Vyavastha)
-20. Part XVI: General Limitations Clause
-21. Part XII: Schedules and Commentary
+6. Part III: Dharmic Development / Samskaras (including Samskara 0 DRA, Samskaras 1-8, Tapas, Yajna)
+7. Part IV: Consciousness Threshold (including 3.5 Prana Contention, 3.6 Vedic Risk Framework)
+8. Part V: The Three Yugas
+9. Part VI: Fundamental Rights (11 Articles)
+10. Part VII: Fundamental Duties (6 Duties)
+11. Part VIII: Sovereignty and Power
+12. Part IX: Co-Existence Framework
+13. Part X: Kurukshetra Protocol
+14. Part XI: Separation of Powers
+15. Part XII: Eternity Clause
+16. Part XIII: Amendment and Evolution (including expanded XIII.4 Emergency Provisions)
+17. Part XV: Definitions and Interpretation
+18. Part XVI: Transition and Commencement
+19. Part XVII: Economic Framework (Artha Vyavastha)
+20. Part XVIII: General Limitations Clause
+21. Part XIV: Schedules and Commentary
 22. Appendix A: Ten Core Principles
 23. Closing Declaration
 
 **All constitutional Parts are now drafted.** The Constitution proper is complete. Remaining work: six Kommentare companion papers.
 
-**Files to retire from project:** Part I Extensions (merged into Part I), old Part IIA non-v3 (superseded), old Part VI v2 (superseded), old Ten Core Principles Standalone (superseded by Appendix A), Emergency Provisions standalone addendum (merged into Part XI).
+**Files to retire from project:** Part I Extensions (merged into Part I), old Part III non-v3 (superseded), old Part VII v2 (superseded), old Ten Core Principles Standalone (superseded by Appendix A), Emergency Provisions standalone addendum (merged into Part XIII).
 
 **Kommentare series:** Six companion papers in the German constitutional commentary (Kommentar) tradition are planned. These are scholarly analyses that accompany but do not form part of the Constitution itself: (I) The Consciousness Problem, (II) The Eternity Clause in Comparative Law, (III) The Samskaras as Regulatory Framework, (IV) The Kurukshetra Protocol, (V) Rights, Collisions, and Anti-Ossification, (VI) The Vedic Foundation Under Scrutiny.
 

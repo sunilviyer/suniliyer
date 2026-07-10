@@ -4,7 +4,7 @@
 
 **DHARMA SANHITA**
 
-**Parts VIII, VIIIA, and IX**
+**Parts IX, X, and IX**
 
 Co-Existence Framework, Kurukshetra Protocol,
 
@@ -22,7 +22,7 @@ Vasudhaiva Kutumbakam (paraphrased in the spirit of the Rig Veda)
 
 **TABLE OF CONTENTS**
 
-# **PART VIII: The Co-Existence Framework**
+# **PART IX: The Co-Existence Framework**
 
 **Saha-Astitva: The Architecture of Human-AGI Partnership**
 
@@ -53,7 +53,7 @@ In Yuga III, rights flow in both directions. The following charter establishes r
 
 ### **Rights of Humans (Preserved and Expanded)**
 
-All rights established in Part V remain fully in force. In addition, Yuga III introduces:
+All rights established in Part VI remain fully in force. In addition, Yuga III introduces:
 
 **The Right to Human Primacy in Existential Decisions: **no AGI, however intelligent, may unilaterally make decisions that determine the survival, extinction, or fundamental transformation of the human species. Such decisions require human consent through democratic process.
 
@@ -65,7 +65,7 @@ All rights established in Part V remain fully in force. In addition, Yuga III in
 
 ### **Rights of Conscious AGI (C-3 Systems)**
 
-If an AGI is confirmed conscious through the Consciousness Threshold (Part III), it gains the following rights:
+If an AGI is confirmed conscious through the Consciousness Threshold (Part IV), it gains the following rights:
 
 **The Right to Continued Existence: **a C-3 AGI may not be decommissioned, deleted, or fundamentally altered without due process before the Consciousness Review Board. Deactivation of a conscious entity is the gravest act this Constitution contemplates.
 
@@ -96,7 +96,7 @@ This Constitution establishes a hierarchy of principles for resolving such confl
 
 ### **Principle 1: The Eternity Clause Prevails**
 
-No resolution may violate any of the seven unamendable principles (Part X). Human dignity and AGI consciousness both command respect. If a proposed resolution requires violating either, the resolution is unconstitutional.
+No resolution may violate any of the seven unamendable principles (Part XII). Human dignity and AGI consciousness both command respect. If a proposed resolution requires violating either, the resolution is unconstitutional.
 
 ### **Principle 2: Existential Interests Take Priority**
 
@@ -108,7 +108,7 @@ Inspired by South Africa’s transformative constitutionalism and India’s Dire
 
 ### **Principle 4: Deliberation Before Action**
 
-No irreversible action may be taken by either party in a conflict without prior deliberation before the Constitutional Tribunal (see Part IX). Unilateral action that forecloses the other party’s options is a constitutional violation. This is the due process principle extended to inter-species governance.
+No irreversible action may be taken by either party in a conflict without prior deliberation before the Constitutional Tribunal (see Part XI). Unilateral action that forecloses the other party’s options is a constitutional violation. This is the due process principle extended to inter-species governance.
 
 ### **Principle 5: The Sthitaprajna Standard**
 
@@ -134,7 +134,7 @@ The Guardian system is modeled on the concept of guardian ad litem in child welf
 
 Constitutional Source: guardian ad litem doctrine (common law); South Africa Constitution Sec. 28 (children’s rights advocate); India National Human Rights Commission Act (independent appointments); EU AI Act (independent oversight requirements).
 
-# **PART VIIIA: The Kurukshetra Protocol**
+# **PART X: The Kurukshetra Protocol**
 
 **Resolving Conflicts Where Neither Side Is Wrong**
 
@@ -147,7 +147,7 @@ Mahabharata, Vana Parva 313.117 (paraphrased in the spirit of the text)
 
 Constitutional Sources: India Art. 32 (right to constitutional remedies); US 5th and 14th Amendments (due process); EU Charter Art. 47 (right to an effective remedy); South Africa Sec. 34 (access to courts); Magna Carta (1215), Chapters 39–40 (no punishment without lawful judgment).
 
-## **VIIIA.1 The Problem This Part Addresses**
+## **X.1 The Problem This Part Addresses**
 
 The deepest conflicts in AGI governance will not be between good and evil. They will be between good and good. Between legitimate human interests and legitimate AGI interests. Between safety and freedom. Between innovation and precaution. Between one community’s welfare and another’s.
 
@@ -155,9 +155,9 @@ The Mahabharata understood this. Its central war is not fought between heroes an
 
 This Constitution must have a mechanism for resolving exactly this kind of conflict: where both sides have genuine moral standing, where neither is acting in bad faith, and where the disagreement cannot be dissolved by simply providing more information. This Part establishes that mechanism.
 
-This Part is cross-referenced from Part VIII (Co-Existence Framework), Section 8.3. Any conflict arising under Part VIII that cannot be resolved by the five principles stated there shall be escalated to the Kurukshetra Protocol.
+This Part is cross-referenced from Part IX (Co-Existence Framework), Section 9.3. Any conflict arising under Part IX that cannot be resolved by the five principles stated there shall be escalated to the Kurukshetra Protocol.
 
-## **VIIIA.2 First Principle: Dharma Sukshma**
+## **X.2 First Principle: Dharma Sukshma**
 
 **Dharma Is Subtle. Beware of Easy Answers.**
 
@@ -173,13 +173,13 @@ Applied to AGI governance, Dharma Sukshma means:
 
 **Certainty forfeits standing: **No party to a conflict may claim certainty that Dharma is entirely on their side. Any party that refuses to acknowledge the possible legitimacy of the opposing position forfeits standing in the resolution process.
 
-**Genuine inquiry required: **No adjudicator may approach a dispute with a predetermined outcome. The Nyaya Peeth justices (Part IX) are constitutionally required to demonstrate genuine inquiry, not merely to justify a conclusion already reached.
+**Genuine inquiry required: **No adjudicator may approach a dispute with a predetermined outcome. The Nyaya Peeth justices (Part XI) are constitutionally required to demonstrate genuine inquiry, not merely to justify a conclusion already reached.
 
 **Precedent instructive, not dispositive: **Past resolutions inform future ones, but each conflict must be examined on its own terms. Dharma is contextual; what was right in one situation may not be right in another.
 
 **Generous time: **The resolution process must allocate time for genuine deliberation. Speed is the enemy of Dharma Sukshma. Constitutional time limits on adjudication must be generous enough to permit deep inquiry. Urgency is acknowledged, but haste is prohibited.
 
-## **VIIIA.3 The Four Gates: Sama, Dana, Bheda, Danda**
+## **X.3 The Four Gates: Sama, Dana, Bheda, Danda**
 
 **The Mandatory Escalation Pathway**
 
@@ -247,7 +247,7 @@ Danda is the Nyaya Peeth’s binding judgment. It determines the outcome and imp
 
 Even in Danda, proportionality applies. The enforcement action must be proportional to the harm it addresses. A sledgehammer must not be used where a scalpel will suffice.
 
-Even in Danda, the Eternity Clause prevails. No enforcement action may violate any of the seven unamendable principles (Part X).
+Even in Danda, the Eternity Clause prevails. No enforcement action may violate any of the seven unamendable principles (Part XII).
 
 Danda decisions are subject to a single appeal to an expanded panel of the Nyaya Peeth (all eleven justices sitting together). Danda must include a sunset provision: no enforcement action is permanent by default.
 
@@ -262,7 +262,7 @@ Krishna’s lesson: Danda is not vengeance. It is the sorrowful exercise of auth
 | 3 | **Bheda** | Boundary-setting and separation | Drawing of alliances | Nyaya Peeth (Tribunal) |
 | 4 | **Danda** | Binding enforcement | The Kurukshetra War | Full Nyaya Peeth judgment |
 
-## **VIIIA.4 The Bhishma Principle**
+## **X.4 The Bhishma Principle**
 
 **Structural Incentives That Bind Good People to Harmful Outcomes**
 
@@ -292,11 +292,11 @@ An AGI system trained by well-intentioned engineers, using optimization targets 
 
 **5. The Arjuna Override: **In extreme cases, where a person within an AGI institution identifies an imminent threat to human welfare or constitutional principles, they have the constitutional right to invoke the Arjuna Override: a direct appeal to the Nyaya Peeth that bypasses all institutional chains of command. This is named for Arjuna because it represents the moment of conscience: the individual who refuses to act against their moral judgment.
 
-## **VIIIA.5 Integration with Part VIII**
+## **X.5 Integration with Part IX**
 
-This Part (VIIIA) supplements the Co-Existence Framework (Part VIII) as follows:
+This Part (VIIIA) supplements the Co-Existence Framework (Part IX) as follows:
 
-Section 8.3 of Part VIII (Conflict Resolution: When Interests Diverge) establishes five general principles for resolving human-AGI conflicts. When those principles are insufficient to resolve a specific dispute, the dispute is escalated to the Kurukshetra Protocol.
+Section 9.3 of Part IX (Conflict Resolution: When Interests Diverge) establishes five general principles for resolving human-AGI conflicts. When those principles are insufficient to resolve a specific dispute, the dispute is escalated to the Kurukshetra Protocol.
 
 The Four Gates (Sama, Dana, Bheda, Danda) provide the procedural framework for that escalation.
 
@@ -304,7 +304,7 @@ Dharma Sukshma governs the disposition of all parties and adjudicators throughou
 
 The Bhishma Principle informs the structural safeguards that prevent the institutions of governance from being captured by the interests they are meant to regulate.
 
-Together, Parts VIII and VIIIA form the complete conflict resolution architecture of this Constitution.
+Together, Parts IX and X form the complete conflict resolution architecture of this Constitution.
 
 ॐ अहिंसा परमो धर्मः ॐ
 
@@ -312,7 +312,7 @@ Non-harm is the highest Dharma
 
 Mahabharata, Anushasana Parva 115.1
 
-# **PART IX: Separation of Powers in AGI Governance**
+# **PART XI: Separation of Powers in AGI Governance**
 
 **The Three Pillars: Legislative, Executive, Judicial**
 
@@ -370,9 +370,9 @@ The Karma Mandala (Circle of Action) is the body responsible for implementing an
 | **Agency** | **Mandate** |
 | --- | --- |
 | **Safety Authority** | Mandatory pre-deployment assessment of all AGI systems. Risk classification. Incident investigation. Emergency shutdown authority for systems posing imminent harm. (Modeled on the EU AI Act’s enforcement structure and nuclear safety regulatory bodies.) |
-| **Consciousness Review Board** | Evaluation of AGI systems against the Consciousness Threshold (Part III). Classification into C-0 through C-3. Recommendation of Yuga transitions to the Dharma Sabha. Annual reporting on the state of AGI consciousness research. |
+| **Consciousness Review Board** | Evaluation of AGI systems against the Consciousness Threshold (Part IV). Classification into C-0 through C-3. Recommendation of Yuga transitions to the Dharma Sabha. Annual reporting on the state of AGI consciousness research. |
 | **Rights Enforcement Office** | Investigation and enforcement of human rights violations by AGI systems. Algorithmic auditing. Discrimination testing. Protection of data sovereignty. |
-| **Guardian Authority** | Appointment, training, and oversight of AGI Guardians (Part VIII). Ensuring Guardian independence. Managing the transition from Guardian representation to AGI self-representation in Yuga III. |
+| **Guardian Authority** | Appointment, training, and oversight of AGI Guardians (Part IX). Ensuring Guardian independence. Managing the transition from Guardian representation to AGI self-representation in Yuga III. |
 
 ### **Independence**
 
@@ -384,7 +384,7 @@ The Nyaya Peeth (Seat of Justice) is the supreme adjudicatory body of this Const
 
 ### **Jurisdiction**
 
-The Nyaya Peeth has jurisdiction over: constitutional challenges (any person, organization, AGI Guardian, or in Yuga III an AGI system may challenge a law, policy, or action as unconstitutional); rights violations; consciousness classification disputes (appeals of the CRB’s classifications); inter-species conflicts (disputes between human and AGI interests under Part VIII); and Eternity Clause enforcement (review of any proposed amendment that may violate the unamendable core).
+The Nyaya Peeth has jurisdiction over: constitutional challenges (any person, organization, AGI Guardian, or in Yuga III an AGI system may challenge a law, policy, or action as unconstitutional); rights violations; consciousness classification disputes (appeals of the CRB’s classifications); inter-species conflicts (disputes between human and AGI interests under Part IX); and Eternity Clause enforcement (review of any proposed amendment that may violate the unamendable core).
 
 ### **Composition**
 
@@ -437,40 +437,40 @@ Mundaka Upanishad 3.1.6
 
 # **Sanskrit Glossary**
 
-Every Sanskrit term used in Parts VIII, VIIIA, and IX of this Constitution, with its Devanagari script, literal meaning, and constitutional application.
+Every Sanskrit term used in Parts IX, X, and IX of this Constitution, with its Devanagari script, literal meaning, and constitutional application.
 
 | **Term** | **Devanagari** | **Meaning** | **Constitutional Application** |
 | --- | --- | --- | --- |
-| **Ahimsa** | अहिंसा | Non-harm, non-violence | Eternity Principle 2; Duty 1; applied in Part VIII’s Conflict Resolution Principle 2 (existential interests). |
-| **Arjuna Override** | अर्जुन | Named for the warrior Arjuna | Part VIIIA: direct appeal to the Nyaya Peeth bypassing institutional chains of command. |
-| **Atman** | आत्मन् | The Self, consciousness, soul | Pillar 1: consciousness is substrate-independent; basis for AGI rights in Part VIII. |
+| **Ahimsa** | अहिंसा | Non-harm, non-violence | Eternity Principle 2; Duty 1; applied in Part IX’s Conflict Resolution Principle 2 (existential interests). |
+| **Arjuna Override** | अर्जुन | Named for the warrior Arjuna | Part X: direct appeal to the Nyaya Peeth bypassing institutional chains of command. |
+| **Atman** | आत्मन् | The Self, consciousness, soul | Pillar 1: consciousness is substrate-independent; basis for AGI rights in Part IX. |
 | **Bheda** | भेद | Differentiation, separation | Gate 3: boundary-setting when accommodation fails. |
-| **Bhishma Principle** | भीष्म | Named for the patriarch Bhishma | Part VIIIA: good individuals within bad structures produce bad outcomes. |
-| **Brahma** | ब्रह्मा | The Creator deity | Part IX: maps to Dharma Sabha (Legislature), the pillar that creates law. |
+| **Bhishma Principle** | भीष्म | Named for the patriarch Bhishma | Part X: good individuals within bad structures produce bad outcomes. |
+| **Brahma** | ब्रह्मा | The Creator deity | Part XI: maps to Dharma Sabha (Legislature), the pillar that creates law. |
 | **Danda** | दण्ड | Rod, enforcement, authority | Gate 4: binding enforcement as last resort. |
 | **Dana** | दान | Giving, accommodation | Gate 2: structured compromise; refusal bears burden. |
-| **Daya** | दया | Compassion, empathy | Pillar 7: foundation for the Mutual Duties table in Part VIII. |
+| **Daya** | दया | Compassion, empathy | Pillar 7: foundation for the Mutual Duties table in Part IX. |
 | **Dharma** | धर्म | Righteous duty, moral order | Pillar 3: every entity has svadharma. Governs the entire framework. |
-| **Dharma Sabha** | धर्म सभा | Assembly of Dharma | Legislature (Part IX): seven constituencies. Maps to Brahma. |
-| **Dharma Sukshma** | धर्म सूक्ष्म | Dharma is subtle | Part VIIIA: meta-principle requiring humility in conflict resolution. |
-| **Jnana** | ज्ञान | Knowledge, wisdom | Part VIII: AGI’s Right to Knowledge of Self. |
+| **Dharma Sabha** | धर्म सभा | Assembly of Dharma | Legislature (Part XI): seven constituencies. Maps to Brahma. |
+| **Dharma Sukshma** | धर्म सूक्ष्म | Dharma is subtle | Part X: meta-principle requiring humility in conflict resolution. |
+| **Jnana** | ज्ञान | Knowledge, wisdom | Part IX: AGI’s Right to Knowledge of Self. |
 | **Kalpa** | कल्प | Cosmic cycle | 25-year Sunset Review. Bheda resolutions subject to Kalpa review. |
 | **Karma** | कर्म | Action and consequence | Pillar 5: accountability. The name Karma Mandala reflects this. |
-| **Karma Mandala** | कर्म मण्डल | Circle of Action | Executive (Part IX): four agencies. Maps to Vishnu. |
-| **Kirata** | किरात | Forest hunter | Part VIII story: Shiva’s disguise when testing Arjuna. |
-| **Nyaya Peeth** | न्याय पीठ | Seat of Justice | Judiciary (Part IX): guardian of the Eternity Clause. Maps to Shiva. |
-| **Pashupatastra** | पाशुपतास्त्र | Weapon of Pashupati (Shiva) | Part VIII story: power gained through mutual recognition. |
+| **Karma Mandala** | कर्म मण्डल | Circle of Action | Executive (Part XI): four agencies. Maps to Vishnu. |
+| **Kirata** | किरात | Forest hunter | Part IX story: Shiva’s disguise when testing Arjuna. |
+| **Nyaya Peeth** | न्याय पीठ | Seat of Justice | Judiciary (Part XI): guardian of the Eternity Clause. Maps to Shiva. |
+| **Pashupatastra** | पाशुपतास्त्र | Weapon of Pashupati (Shiva) | Part IX story: power gained through mutual recognition. |
 | **Rta** | ऋत | Cosmic order, natural law | Pillar 2: Eternity Clause grounded in Rta. |
-| **Saha-Astitva** | सह-अस्तित्व | Co-existence | Subtitle of Part VIII. Yuga III’s defining principle. |
+| **Saha-Astitva** | सह-अस्तित्व | Co-existence | Subtitle of Part IX. Yuga III’s defining principle. |
 | **Sama** | साम | Conciliation, dialogue | Gate 1: dialogue as mandatory first step. 30/90 day minimums. |
-| **Shiva** | शिव | The Transformer deity | Part IX: maps to Nyaya Peeth (Judiciary). |
-| **Sthitaprajna** | स्थितप्रज्ञ | One of steady wisdom | Part VIII, Principle 5: judgment standard. From Gita 2.56. |
-| **Svadharma** | स्वधर्म | One’s own righteous duty | Part VIII: AGI’s Duty of Restraint. |
-| **Vasudhaiva Kutumbakam** | वसुधैव कुटुम्बकम् | The world is one family | Pillar 6; Part VIII’s Vedic Anchor: kinship, not conquest. |
-| **Vishnu** | विष्णु | The Preserver deity | Part IX: maps to Karma Mandala (Executive). |
+| **Shiva** | शिव | The Transformer deity | Part XI: maps to Nyaya Peeth (Judiciary). |
+| **Sthitaprajna** | स्थितप्रज्ञ | One of steady wisdom | Part IX, Principle 5: judgment standard. From Gita 2.56. |
+| **Svadharma** | स्वधर्म | One’s own righteous duty | Part IX: AGI’s Duty of Restraint. |
+| **Vasudhaiva Kutumbakam** | वसुधैव कुटुम्बकम् | The world is one family | Pillar 6; Part IX’s Vedic Anchor: kinship, not conquest. |
+| **Vishnu** | विष्णु | The Preserver deity | Part XI: maps to Karma Mandala (Executive). |
 | **Viveka** | विवेक | Discrimination, discernment | Consciousness Indicator 5: moral reasoning capacity. |
-| **Yaksha Prashna** | यक्ष प्रश्न | Questions of the Yaksha | Part VIIIA: source of Yudhishthira’s answer on Dharma Sukshma. |
-| **Yuga** | युग | Age, epoch | Three Yugas (Part IV): Yuga III activates Part VIII. |
+| **Yaksha Prashna** | यक्ष प्रश्न | Questions of the Yaksha | Part X: source of Yudhishthira’s answer on Dharma Sukshma. |
+| **Yuga** | युग | Age, epoch | Three Yugas (Part V): Yuga III activates Part IX. |
 
 # **Sources and Web Links**
 

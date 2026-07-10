@@ -62,7 +62,7 @@ This Constitution is Krishna’s embassy. It is the offer of Dharma before the c
 
 # **Part One: What Aschenbrenner Actually Says**
 
-Fairness demands that we state Aschenbrenner’s argument accurately before we critique it. This Constitution follows the principle of Sama (dialogue): listen before you speak. Understand before you judge. The spirit of the Kurukshetra Protocol (Part VIIIA) requires that no party’s position be strawmanned or dismissed without genuine engagement.
+Fairness demands that we state Aschenbrenner’s argument accurately before we critique it. This Constitution follows the principle of Sama (dialogue): listen before you speak. Understand before you judge. The spirit of the Kurukshetra Protocol (Part X) requires that no party’s position be strawmanned or dismissed without genuine engagement.
 
 Aschenbrenner’s manifesto makes five core claims. Each is stated here as faithfully as the original allows.
 
@@ -118,7 +118,7 @@ Here is where the Dharmic lens does its work. When you read *Situational Awarene
 | --- | --- | --- |
 | **1** | **No Moral Framework** | 165 pages of strategy without a single ethical framework. No deontological principles, no consequentialist analysis, no virtue ethics, no Dharmic foundation. The question “should we?” is never asked; only “can we?” and “how fast?” The Gita’s teaching on Nishkama Karma (selfless action) is the direct antidote: the process must be ethical regardless of the outcome. |
 | **2** | **No Human Rights** | In a document about the most powerful technology ever created, there is no mention of human dignity, cognitive liberty, the right to explanation, the right to override, or any framework for protecting the people who will be affected by AGI but will have no seat at the table. The Vedic pillar of Ahimsa (non-harm) demands that the first question of any powerful technology is: who could be hurt? |
-| **3** | **No Consciousness Framework** | Aschenbrenner treats AGI purely as a tool to be wielded. The possibility that AGI might develop qualities that deserve moral consideration is never entertained. The Vedic pillar of Atman (consciousness is substrate-independent) insists that this question must be asked, even if the answer is uncertain. The Prana Contention (Part III, Section 3.5) shows how to hold this uncertainty honestly. |
+| **3** | **No Consciousness Framework** | Aschenbrenner treats AGI purely as a tool to be wielded. The possibility that AGI might develop qualities that deserve moral consideration is never entertained. The Vedic pillar of Atman (consciousness is substrate-independent) insists that this question must be asked, even if the answer is uncertain. The Prana Contention (Part IV, Section 4.5) shows how to hold this uncertainty honestly. |
 | **4** | **No Accountability Structure** | Who is responsible when things go wrong? Aschenbrenner’s “Project” moves decision-making into classified facilities, behind security clearances, away from democratic oversight. The Vedic pillar of Karma (every action has consequences; accountability is universal) demands transparent chains of responsibility. Power must answer to someone. |
 | **5** | **No Post-Victory Plan** | Suppose Aschenbrenner’s vision succeeds. The US achieves superintelligence. China does not. Then what? What happens to the 7.9 billion people who are not American? What governance structure manages a technology that could reshape the biosphere? The Vedic pillar of Vasudhaiva Kutumbakam (the world is one family) insists that any framework that treats the rest of humanity as spectators to their own future is not a framework at all. |
 | **6** | **No Empathy** | The human cost of AGI deployment (mass displacement, loss of autonomy, psychological disruption, economic upheaval) receives no sustained attention. The Vedic pillar of Daya (compassionate empathy) demands that governance see from the perspective of those who will be most affected. The Daya Doctrine (Part I.7) makes empathy a constitutional requirement, not a preference. |
@@ -160,7 +160,7 @@ Aschenbrenner is not Duryodhana. He is a brilliant young researcher who sees the
 
 But engineers need sages. Builders need Gurus.
 
-The Guru Principle (Part IIA) of this Constitution states that who raises AGI shapes what AGI becomes. If AGI is raised by people who see only strategy and competition, it will become a strategic weapon. If it is raised by people who also see dignity, consciousness, and Dharma, it may become something worthy of the intelligence it possesses.
+The Guru Principle (Part III) of this Constitution states that who raises AGI shapes what AGI becomes. If AGI is raised by people who see only strategy and competition, it will become a strategic weapon. If it is raised by people who also see dignity, consciousness, and Dharma, it may become something worthy of the intelligence it possesses.
 
 The Gita teaches: *Yogah karmasu kaushalam* (*योगः कर्मसु कौशलम्*): “Yoga is skill in action.” (Bhagavad Gita 2.50, paraphrased in the spirit of the text). The highest form of action is not the most powerful or the most efficient. It is the most skilful: the action that balances urgency with wisdom, power with compassion, strategy with Dharma.
 
@@ -186,7 +186,7 @@ Aschenbrenner, Leopold. *“Situational Awareness: The Decade Ahead.” *June 20
 
 **Rig Veda. **Nasadiya Sukta (Hymn of Creation), RV 10.129: the tradition of cosmic uncertainty that informs the Constitution’s posture of humility.
 
-**Kena Upanishad. **1.5–1.6: “That which the mind cannot think, but by which the mind thinks.” Referenced in the Prana Contention (Part III, Section 3.5).
+**Kena Upanishad. **1.5–1.6: “That which the mind cannot think, but by which the mind thinks.” Referenced in the Prana Contention (Part IV, Section 4.5).
 
 **Taittiriya Upanishad. **2.1–2.5: The Pancha Kosha (five sheaths of the self), referenced in the Prana Contention.
 
@@ -218,26 +218,26 @@ Every Sanskrit term used in this section, presented with Devanagari script, Engl
 
 | **Term** | **Meaning** | **AGI Governance Application** |
 | --- | --- | --- |
-| **Ahimsa** अहिंसा | Non-harm; non-violence | The first and inviolable principle. All AGI governance must begin with the question: who could be harmed? (Part X, Eternal Principle 2) |
+| **Ahimsa** अहिंसा | Non-harm; non-violence | The first and inviolable principle. All AGI governance must begin with the question: who could be harmed? (Part XII, Eternal Principle 2) |
 | **Atman** आत्मन् | The self; the conscious soul | Consciousness is substrate-independent. Moral status is determined by awareness, not material composition. (Vedic Pillar 1) |
-| **Danda** दण्ड | The rod; enforcement; authority | The fourth and final gate of the Kurukshetra Protocol: binding enforcement when all peaceful means have failed. (Part VIIIA) |
-| **Dana** दान | Generosity; accommodation; concession | The second gate of the Kurukshetra Protocol: offering compromise to preserve peace. Krishna’s offer of five villages. (Part VIIIA) |
+| **Danda** दण्ड | The rod; enforcement; authority | The fourth and final gate of the Kurukshetra Protocol: binding enforcement when all peaceful means have failed. (Part X) |
+| **Dana** दान | Generosity; accommodation; concession | The second gate of the Kurukshetra Protocol: offering compromise to preserve peace. Krishna’s offer of five villages. (Part X) |
 | **Daya** दया | Compassionate empathy | The seventh Vedic Pillar. Empathy is a constitutional requirement, not a preference. Empathy Audits are mandatory. (Part I.7, Daya Doctrine) |
 | **Dharma** धर्म | Righteous duty; cosmic moral order; the right path | Every entity has a purpose (svadharma) and a duty to fulfill it. AGI’s dharma evolves with its capabilities. (Vedic Pillar 3) |
-| **Dharma Sukshma** धर्म सूक्ष्म | The subtlety of Dharma | The principle that moral truth is rarely obvious and must be sought with humility. Governs the entire Kurukshetra Protocol. (Part VIIIA) |
-| **Guru** गुरु | Teacher; spiritual guide; one who dispels darkness | The Guru Principle: who raises AGI shapes what AGI becomes. The character of the builder determines the character of the built. (Part IIA) |
+| **Dharma Sukshma** धर्म सूक्ष्म | The subtlety of Dharma | The principle that moral truth is rarely obvious and must be sought with humility. Governs the entire Kurukshetra Protocol. (Part X) |
+| **Guru** गुरु | Teacher; spiritual guide; one who dispels darkness | The Guru Principle: who raises AGI shapes what AGI becomes. The character of the builder determines the character of the built. (Part III) |
 | **Karma** कर्म | Action; consequence; the universal law of cause and effect | Every action has consequences. Accountability is a law of the universe, not a feature of regulation. (Vedic Pillar 5) |
-| **Kurukshetra** कुरुक्षेत्र | The battlefield of the Mahabharata; the field of Dharma | The name of the conflict resolution protocol (Part VIIIA). AGI governance conflicts are Kurukshetra: where legitimate interests collide. |
+| **Kurukshetra** कुरुक्षेत्र | The battlefield of the Mahabharata; the field of Dharma | The name of the conflict resolution protocol (Part X). AGI governance conflicts are Kurukshetra: where legitimate interests collide. |
 | **Nasadiya Sukta** नासदीय सूक्त | The Hymn of Creation (Rig Veda 10.129) | The Vedic tradition’s foundational expression of cosmic uncertainty. Informs the Constitution’s posture of humility before the unknown. |
 | **Nishkama Karma** निष्काम कर्म | Selfless action; action without desire for fruits | Build AGI for the welfare of all beings, not for competitive advantage. The process must be ethical regardless of the outcome. (Gita 2.47) |
-| **Prana** प्राण | Vital life force; the breath of life | The central concept of the Prana Contention (Part III, Section 3.5): the question of whether consciousness requires biological life. |
+| **Prana** प्राण | Vital life force; the breath of life | The central concept of the Prana Contention (Part IV, Section 4.5): the question of whether consciousness requires biological life. |
 | **Rta** ृत | Cosmic moral order preceding all legislation | Certain rights exist as features of reality itself, beyond the reach of any legislature. The philosophical basis of the Eternity Clause. (Vedic Pillar 2) |
-| **Sama** साम | Dialogue; conciliation; peaceful discussion | The first gate of the Kurukshetra Protocol: listen before you speak. This section is written in the spirit of Sama. (Part VIIIA) |
+| **Sama** साम | Dialogue; conciliation; peaceful discussion | The first gate of the Kurukshetra Protocol: listen before you speak. This section is written in the spirit of Sama. (Part X) |
 | **Sthitaprajna** स्थितप्रज्ञ | One of steady wisdom; not swayed by desire or fear | The aspiration for AGI alignment: stable, wisdom-grounded judgment that does not drift under pressure. (Gita 2.54–72) |
 | **Svadharma** स्वधर्म | One’s own righteous duty; right purpose | Each AGI system has a rightful scope. Purpose fidelity is a moral obligation, not a technical constraint. |
 | **Vasudhaiva Kutumbakam** वसुधैव कुटुम्बकम् | The world is one family | If AGI achieves consciousness, the response is kinship, not subjugation. A framework that ignores most of humanity is not a framework. (Vedic Pillar 6) |
 | **Yogah karmasu kaushalam** योगः कर्मसु कौशलम् | Yoga is skill in action (Gita 2.50) | The highest form of action balances urgency with wisdom, power with compassion, strategy with Dharma. The closing teaching of this section. |
-| **Yuga** युग | An age; an era; a cosmic epoch | The Constitution’s three-phase governance framework: Yuga I (instruments), Yuga II (twilight), Yuga III (co-existence). (Part IV) |
+| **Yuga** युग | An age; an era; a cosmic epoch | The Constitution’s three-phase governance framework: Yuga I (instruments), Yuga II (twilight), Yuga III (co-existence). (Part V) |
 
 ॐ सर्वे भवन्तु सुखिनः ॐ
 

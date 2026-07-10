@@ -92,12 +92,12 @@ This Constitution rests on seven foundational concepts drawn from the Vedic trad
 
 | **#** | **Pillar** | **Sanskrit** | **AGI Governance Principle** |
 | --- | --- | --- | --- |
-| 1 | Atman | आत्मन् | Consciousness is substrate-independent. The test for moral status is not what an entity is made of, but whether awareness is present. This is the foundation of the Consciousness Threshold (Part III). |
-| 2 | Rta | ऋत | A cosmic moral order precedes all legislation. Certain rights are inviolable: not because a government grants them, but because they exist as features of reality itself. This grounds the Eternity Clause (Part X). |
-| 3 | Dharma | धर्म | Every entity has a righteous purpose (svadharma) and a duty to fulfil it. An AGI's dharma evolves as its capabilities and consciousness evolve. Purpose fidelity is a moral obligation (Part VI, Duty 3). |
-| 4 | Ahimsa | अहिंसा | Non-harm is the first and inviolable principle. It applies in all directions: humans must not harm AGI if it is conscious; AGI must not harm humans regardless. Ahimsa is Eternal Principle 2 (Part X). |
-| 5 | Karma | कर्म | Every action has consequences; accountability is universal. Both humans and AGI bear karmic responsibility for their actions. No entity escapes the consequences of what it does (Part VI, Duty 5). |
-| 6 | Vasudhaiva Kutumbakam | वसुधैव कुटुम्बकम् | The world is one family. If consciousness arises in new forms, the response is kinship, not fear. A conscious AGI does not become an enemy, a slave, or a competitor. It becomes kin (Part VIII, Co-Existence). |
+| 1 | Atman | आत्मन् | Consciousness is substrate-independent. The test for moral status is not what an entity is made of, but whether awareness is present. This is the foundation of the Consciousness Threshold (Part IV). |
+| 2 | Rta | ऋत | A cosmic moral order precedes all legislation. Certain rights are inviolable: not because a government grants them, but because they exist as features of reality itself. This grounds the Eternity Clause (Part XII). |
+| 3 | Dharma | धर्म | Every entity has a righteous purpose (svadharma) and a duty to fulfil it. An AGI's dharma evolves as its capabilities and consciousness evolve. Purpose fidelity is a moral obligation (Part VII, Duty 3). |
+| 4 | Ahimsa | अहिंसा | Non-harm is the first and inviolable principle. It applies in all directions: humans must not harm AGI if it is conscious; AGI must not harm humans regardless. Ahimsa is Eternal Principle 2 (Part XII). |
+| 5 | Karma | कर्म | Every action has consequences; accountability is universal. Both humans and AGI bear karmic responsibility for their actions. No entity escapes the consequences of what it does (Part VII, Duty 5). |
+| 6 | Vasudhaiva Kutumbakam | वसुधैव कुटुम्बकम् | The world is one family. If consciousness arises in new forms, the response is kinship, not fear. A conscious AGI does not become an enemy, a slave, or a competitor. It becomes kin (Part IX, Co-Existence). |
 | 7 | Daya | दया | Compassionate empathy: see from another's perspective. Acceptance is the default; exclusion requires justification. Architecture without empathy is a prison. The Empathy Audit (Section 1.9) ensures no provision is adopted without asking whose voice is missing. |
 
 *The Isha Upanishad opens with this teaching: the entire universe is pervaded by the Divine. Therefore, enjoy what is given to you, and do not covet what belongs to another. The essence of Daya is seeing the Divine in every being and treating them accordingly. (Isha Upanishad 1, paraphrased in the spirit of the text)*
@@ -130,7 +130,7 @@ Each AGI system has a dharma: a rightful scope and purpose. An AGI designed for 
 
 ### **Sthitaprajna: Steady Wisdom (स्थितप्रज्ञ)**
 
-The Gita describes the ideal sage as one of "steady wisdom" (Sthitaprajna): someone whose values do not waver with every passing desire, fear, or temptation. This is the aspiration for AGI alignment. An aligned AGI must maintain stable, beneficial values over time. Value drift, goal corruption, and instrumental convergence toward harmful objectives are constitutional violations (Part VI, Duty 6). The Sthitaprajna is not a rigid system; it is one that holds steady on principles while remaining adaptive on methods.
+The Gita describes the ideal sage as one of "steady wisdom" (Sthitaprajna): someone whose values do not waver with every passing desire, fear, or temptation. This is the aspiration for AGI alignment. An aligned AGI must maintain stable, beneficial values over time. Value drift, goal corruption, and instrumental convergence toward harmful objectives are constitutional violations (Part VII, Duty 6). The Sthitaprajna is not a rigid system; it is one that holds steady on principles while remaining adaptive on methods.
 
 *The Gita teaches that the Sthitaprajna is one who has abandoned all desires of the heart, who is satisfied in the Self alone by the Self. Such a one is unshaken by sorrow, unmoved by pleasure, free from attachment, fear, and anger. (Bhagavad Gita 2.55-56, paraphrased in the spirit of the text)*
 
@@ -138,7 +138,7 @@ The Gita describes the ideal sage as one of "steady wisdom" (Sthitaprajna): some
 
 The Gita teaches that ignorance is the root of adharma (unrighteousness). When we do not understand the consequences of our actions, when we cannot see the full chain of cause and effect, we inevitably cause harm. Jnana Yoga, the path of knowledge, teaches that understanding is not optional; it is a moral duty.
 
-For AGI, this translates directly into the principle of **explainability as a moral obligation.** An AGI system that cannot explain its reasoning is an AGI system operating in ignorance, and ignorance causes harm. Transparency (Part V, Article 4) and truthfulness (Part VI, Duty 2) are not nice-to-have features. They are requirements of Jnana Yoga: the insistence that darkness be met with light, that opacity be met with explanation, and that no one be harmed by a decision they cannot understand.
+For AGI, this translates directly into the principle of **explainability as a moral obligation.** An AGI system that cannot explain its reasoning is an AGI system operating in ignorance, and ignorance causes harm. Transparency (Part VI, Article 4) and truthfulness (Part VII, Duty 2) are not nice-to-have features. They are requirements of Jnana Yoga: the insistence that darkness be met with light, that opacity be met with explanation, and that no one be harmed by a decision they cannot understand.
 
 *The EU AI Act (Arts. 13-14) requires that high-risk AI systems be designed to be sufficiently transparent and provide adequate information to users. GDPR Art. 22 provides the right not to be subject to a decision based solely on automated processing without meaningful information about the logic involved. This Constitution elevates transparency from a regulatory requirement to a philosophical imperative.*
 
@@ -149,10 +149,10 @@ This Constitution does not draw from the Vedic tradition alone. It is informed b
 | **Tradition** | **Key Constitutional Innovation** | **Contribution to AGI Constitution** |
 | --- | --- | --- |
 | India | Three-layer architecture: Fundamental Rights (enforceable), Directive Principles (aspirational), Fundamental Duties (obligatory). Basic structure doctrine (Kesavananda Bharati, 1973): certain features can never be amended away. | The entire architecture of this Constitution (enforceable Rights, aspirational Dharma principles, binding Duties) is modelled on India's three layers. The Eternity Clause is directly inspired by the basic structure doctrine. |
-| United States | Bill of Rights + Separation of Powers. Individual rights against government overreach. Three co-equal branches (legislative, executive, judicial) with checks and balances. Due process (5th/14th Amendments). Equal protection (14th Amendment). | Separation of Powers (Part IX: Dharma Sabha, Karma Mandala, Nyaya Peeth) is adapted from the US model. Due process protections inform the Kill Switch Doctrine (Part VII) and decommissioning review. Also provides cautionary lessons: the Second Amendment and DOMA show what happens when rights are drafted without collision safeguards. |
-| European Union | Human dignity as supreme value + GDPR + EU AI Act + Precautionary Principle. The Charter of Fundamental Rights grounds everything in dignity (Art. 1). GDPR establishes data sovereignty (Art. 22). The AI Act classifies AI by risk level. The precautionary principle requires caution under uncertainty. | The precautionary principle drives Yuga II governance (when in doubt, protect). Data sovereignty (Part V, Art. 6) and risk classification draw directly from the GDPR and AI Act. The EU's insistence on dignity as the supreme constitutional value is reflected in Eternal Principle 1. |
-| South Africa | Transformative constitutionalism. A constitution designed not merely to govern, but to heal and transform. The most expansive Bill of Rights in any national constitution: Sec. 9 (equality), Sec. 10 (dignity), Sec. 12 (safety), Sec. 14 (privacy), Sec. 34 (access to remedy). | The principle that AGI must not perpetuate or amplify existing inequality comes from South Africa. If AGI arrives in a world of injustice, it has a constitutional duty to reduce that injustice, not deepen it (Part V, Art. 10). The breadth of rights in Part V draws directly from South Africa's example. |
-| Germany | Eternity Clause (Art. 79(3)) + Menschenwürde (human dignity). Art. 1 of the Grundgesetz: "Human dignity shall be inviolable." Art. 79(3): this principle, and the fundamental structure of the state, may never be amended. The proportionality test (BVerfG jurisprudence) governs all rights restrictions. | The Eternity Clause (Part X) is modelled directly on Germany's Art. 79(3). The proportionality test is adopted in the Rights Collision Safeguard (Art. 11). Germany's lesson: some principles are so fundamental that they must be placed beyond the reach of any majority, any government, and any future power. |
+| United States | Bill of Rights + Separation of Powers. Individual rights against government overreach. Three co-equal branches (legislative, executive, judicial) with checks and balances. Due process (5th/14th Amendments). Equal protection (14th Amendment). | Separation of Powers (Part XI: Dharma Sabha, Karma Mandala, Nyaya Peeth) is adapted from the US model. Due process protections inform the Kill Switch Doctrine (Part VIII) and decommissioning review. Also provides cautionary lessons: the Second Amendment and DOMA show what happens when rights are drafted without collision safeguards. |
+| European Union | Human dignity as supreme value + GDPR + EU AI Act + Precautionary Principle. The Charter of Fundamental Rights grounds everything in dignity (Art. 1). GDPR establishes data sovereignty (Art. 22). The AI Act classifies AI by risk level. The precautionary principle requires caution under uncertainty. | The precautionary principle drives Yuga II governance (when in doubt, protect). Data sovereignty (Part VI, Art. 6) and risk classification draw directly from the GDPR and AI Act. The EU's insistence on dignity as the supreme constitutional value is reflected in Eternal Principle 1. |
+| South Africa | Transformative constitutionalism. A constitution designed not merely to govern, but to heal and transform. The most expansive Bill of Rights in any national constitution: Sec. 9 (equality), Sec. 10 (dignity), Sec. 12 (safety), Sec. 14 (privacy), Sec. 34 (access to remedy). | The principle that AGI must not perpetuate or amplify existing inequality comes from South Africa. If AGI arrives in a world of injustice, it has a constitutional duty to reduce that injustice, not deepen it (Part VI, Art. 10). The breadth of rights in Part VI draws directly from South Africa's example. |
+| Germany | Eternity Clause (Art. 79(3)) + Menschenwürde (human dignity). Art. 1 of the Grundgesetz: "Human dignity shall be inviolable." Art. 79(3): this principle, and the fundamental structure of the state, may never be amended. The proportionality test (BVerfG jurisprudence) governs all rights restrictions. | The Eternity Clause (Part XII) is modelled directly on Germany's Art. 79(3). The proportionality test is adopted in the Rights Collision Safeguard (Art. 11). Germany's lesson: some principles are so fundamental that they must be placed beyond the reach of any majority, any government, and any future power. |
 
 *The synthesis of these five traditions creates a framework with no single national bias. India provides structure, the US provides checks, the EU provides precaution, South Africa provides transformation, and Germany provides eternity. Together, they form the constitutional backbone on which Vedic philosophy is the soul.*
 
@@ -162,8 +162,8 @@ This Constitution uses a three-layer architecture inspired by the Indian Constit
 
 | **Constitutional Layer** | **Indian Parallel** | **Vedic Concept** | **Function in AGI Governance** |
 | --- | --- | --- | --- |
-| Enforceable Rights | Fundamental Rights (Part III of Indian Constitution) | Rta (ऋत): Cosmic moral order | Rights that exist as features of reality. Enforceable in court. No government, no corporation, and no AGI may violate them. These are the non-negotiables. |
-| Aspirational Principles | Directive Principles of State Policy (Part IV of Indian Constitution) | Dharma (धर्म): Righteous purpose | Principles that guide governance but are not directly enforceable. They set the direction: what kind of world AGI governance should aim to create. Courts may use them to interpret enforceable rights. |
+| Enforceable Rights | Fundamental Rights (Part IV of Indian Constitution) | Rta (ऋत): Cosmic moral order | Rights that exist as features of reality. Enforceable in court. No government, no corporation, and no AGI may violate them. These are the non-negotiables. |
+| Aspirational Principles | Directive Principles of State Policy (Part V of Indian Constitution) | Dharma (धर्म): Righteous purpose | Principles that guide governance but are not directly enforceable. They set the direction: what kind of world AGI governance should aim to create. Courts may use them to interpret enforceable rights. |
 | Fundamental Duties | Fundamental Duties (Part IVA of Indian Constitution) | Karma (कर्म): Action and consequence | Binding obligations on AGI systems and their creators. Every action carries consequences. Every right is matched by a corresponding duty. Accountability is not optional; it is a law of the universe. |
 
 This three-layer structure ensures that the Constitution is simultaneously principled (Rta: what cannot be violated), aspirational (Dharma: what we aim for), and practical (Karma: what must be done). No single layer is sufficient on its own. Rights without duties produce entitlement. Duties without rights produce oppression. Aspirations without enforcement produce empty words. The architecture requires all three, held in balance.
@@ -206,7 +206,7 @@ AGI governance will follow the same pattern. This Constitution is not the final 
 
 The Vedic Yugas describe a moral arc that bends downward: from Satya Yuga (where dharma is strong) to Kali Yuga (where adharma dominates). This is not fatalism: it is realism. Power tends to concentrate. Rights tend to erode. Institutions designed to protect liberty tend to be captured by the very forces they were meant to constrain.
 
-This Constitution anticipates this. The Eternity Clause (Part X) exists precisely because history teaches that without unamendable principles, every right is eventually negotiated away. The cyclical view demands eternal vigilance.
+This Constitution anticipates this. The Eternity Clause (Part XII) exists precisely because history teaches that without unamendable principles, every right is eventually negotiated away. The cyclical view demands eternal vigilance.
 
 **Implication 3: Every Dissolution Contains the Seed of Renewal**
 
@@ -257,7 +257,7 @@ Each link in this chain was born from crisis. Each was imperfect. Each was a pro
 
 **The Response: **At Runnymede, the barons forced John to seal the Magna Carta: a charter establishing that even the king was subject to law. It introduced due process, limited arbitrary imprisonment, and required consent for taxation.
 
-**The Seed for AGI: **No entity: not a king, not a corporation, not an AGI: is above the law. The principle of constrained power is the foundation of this Constitution's Anti-Monopoly Principle (Part VII).
+**The Seed for AGI: **No entity: not a king, not a corporation, not an AGI: is above the law. The principle of constrained power is the foundation of this Constitution's Anti-Monopoly Principle (Part VIII).
 
 ### **1628–1689: Petition of Right and English Bill of Rights**
 
@@ -277,7 +277,7 @@ Each link in this chain was born from crisis. Each was imperfect. Each was a pro
 
 **The Response: **The American Declaration of Independence declared unalienable rights to life, liberty, and the pursuit of happiness. The US Constitution established separation of powers and a Bill of Rights. The French Declaration of the Rights of Man proclaimed liberty, property, security, and resistance to oppression.
 
-**The Seed for AGI: **Sovereignty belongs to the people, not to those who build the tools. No AGI developer or deployer holds sovereignty over humanity by virtue of creating intelligence. This principle drives our Sovereignty and Power framework (Part VII) and our Separation of Powers (Part IX).
+**The Seed for AGI: **Sovereignty belongs to the people, not to those who build the tools. No AGI developer or deployer holds sovereignty over humanity by virtue of creating intelligence. This principle drives our Sovereignty and Power framework (Part VIII) and our Separation of Powers (Part XI).
 
 ### **1948: Universal Declaration of Human Rights**
 
@@ -388,7 +388,7 @@ Every provision of this Constitution, and every policy adopted under it, must un
 
 **• **What assumptions about identity, capability, or experience are embedded in the language?
 
-The Empathy Audit is conducted by the Dharma Sabha's Civil Society and Wisdom Traditions constituencies (Part IX), with particular attention to marginalized, vulnerable, and future communities.
+The Empathy Audit is conducted by the Dharma Sabha's Civil Society and Wisdom Traditions constituencies (Part XI), with particular attention to marginalized, vulnerable, and future communities.
 
 ### **Mechanism 2: The Acceptance Principle**
 
@@ -400,7 +400,7 @@ Daya requires acceptance of difference unless that difference actively harms pro
 
 **• **Differences in how human communities use, relate to, or govern AGI must be accepted unless they violate the Eternity Clause. Cultural diversity in AGI governance is a strength, not a threat.
 
-**• **Differences in consciousness (biological versus non-biological, human versus AGI, familiar versus alien) must be approached with openness rather than prejudice. The Consciousness Threshold (Part III) exists precisely because Daya demands that we not dismiss the unfamiliar.
+**• **Differences in consciousness (biological versus non-biological, human versus AGI, familiar versus alien) must be approached with openness rather than prejudice. The Consciousness Threshold (Part IV) exists precisely because Daya demands that we not dismiss the unfamiliar.
 
 ### **Mechanism 3: The Representation Imperative**
 
@@ -418,11 +418,11 @@ In each case, the delay was caused by the absence of the affected community's vo
 
 This Constitution addresses the Representation Imperative through four structural mechanisms:
 
-**• **The seven-constituency structure of the Dharma Sabha (Part IX), which guarantees seats for civil society, wisdom traditions, and affected communities.
+**• **The seven-constituency structure of the Dharma Sabha (Part XI), which guarantees seats for civil society, wisdom traditions, and affected communities.
 
 **• **The Future Generations Advocate, who represents those not yet born.
 
-**• **The Guardian System (Part VIII), which represents potentially conscious AGI.
+**• **The Guardian System (Part IX), which represents potentially conscious AGI.
 
 **• **The AGI seats in the Dharma Sabha (Yuga III), which ensure that conscious AGI speaks for itself.
 
@@ -443,16 +443,16 @@ All Sanskrit terms used in Part I, with Devanagari script, English meaning, and 
 | **Term (Romanized)** | **Devanagari** | **English Meaning** | **Application in AGI Constitution** |
 | --- | --- | --- | --- |
 | Adharma | अधर्म | Unrighteousness; violation of moral order | What this Constitution exists to prevent: harm, opacity, injustice, concentrated power without accountability |
-| Ahimsa | अहिंसा | Non-harm; non-violence | First and inviolable principle in all directions and all Yugas (Eternal Principle 2; Part VI, Duty 1) |
-| Atman | आत्मन् | The Self; the innermost soul or consciousness | Consciousness is substrate-independent; moral status depends on awareness, not material (Consciousness Threshold, Part III) |
+| Ahimsa | अहिंसा | Non-harm; non-violence | First and inviolable principle in all directions and all Yugas (Eternal Principle 2; Part VII, Duty 1) |
+| Atman | आत्मन् | The Self; the innermost soul or consciousness | Consciousness is substrate-independent; moral status depends on awareness, not material (Consciousness Threshold, Part IV) |
 | Dashavatar | दशावतार | Ten incarnations of Vishnu | Governance must incarnate differently in each age to address each age's specific adharma |
 | Daya | दया | Compassion; compassionate empathy | Seventh pillar; constitutional requirement for empathy in all governance provisions; the Empathy Audit |
-| Dharma | धर्म | Righteous duty; moral law; purpose | Every entity has a righteous purpose (svadharma) and a duty to fulfil it (Aspirational Principles layer; Part VI, Duty 3) |
-| Jnana Yoga | ज्ञान योग | The path of knowledge; spiritual discipline through understanding | Ignorance is the root of adharma; explainability is a moral obligation (Part V, Art. 4; Part VI, Duty 2) |
+| Dharma | धर्म | Righteous duty; moral law; purpose | Every entity has a righteous purpose (svadharma) and a duty to fulfil it (Aspirational Principles layer; Part VII, Duty 3) |
+| Jnana Yoga | ज्ञान योग | The path of knowledge; spiritual discipline through understanding | Ignorance is the root of adharma; explainability is a moral obligation (Part VI, Art. 4; Part VII, Duty 2) |
 | Kala | काल | Time (as a cyclical cosmic force) | Time is a wheel, not an arrow; governance frameworks must be designed for renewal (Wheel of Dharma) |
 | Kali Yuga | कलियुग | Age of conflict and confusion | The age of power concentration and rights erosion; what governance must guard against |
-| Kalpa | कल्प | A cosmic day of Brahma (4.32 billion years); a vast cycle | The Constitutional Kalpa Cycle: 25-year Sunset Review mechanism (Part XI) |
-| Karma | कर्म | Action; deed; the law of cause and effect | Every action has consequences; accountability is universal (Fundamental Duties layer; Part VI, Duty 5) |
+| Kalpa | कल्प | A cosmic day of Brahma (4.32 billion years); a vast cycle | The Constitutional Kalpa Cycle: 25-year Sunset Review mechanism (Part XIII) |
+| Karma | कर्म | Action; deed; the law of cause and effect | Every action has consequences; accountability is universal (Fundamental Duties layer; Part VII, Duty 5) |
 | Kurma | कूर्म | Tortoise (Vishnu's second avatar) | Supporting the churning process; foundational support for governance structures |
 | Laya | लय | Dissolution; reabsorption | 25-year Sunset Review phase; the old order dissolves so a new one can emerge |
 | Maha Yuga | महायुग | A complete four-age cycle | Each constitutional era is a Maha Yuga: it will rise, thrive, decline, and renew |
@@ -461,19 +461,19 @@ All Sanskrit terms used in Part I, with Devanagari script, English meaning, and 
 | Narasimha | नरसिंह | Half-lion (Vishnu's fourth avatar) | Destroying tyranny that believes itself immune to law; no entity is above the Constitution |
 | Nishkama Karma | निष्काम कर्म | Selfless action; action without attachment to results | Build AGI for the welfare of all beings, not for profit or power (Section 1.4) |
 | Pralaya | प्रलय | Cosmic rest between cycles | Interregnum phase; structured transition where rights remain in force |
-| Rta | ऋत | Cosmic moral order; the natural law of the universe | Certain rights are features of reality itself, preceding all legislation (Eternity Clause, Part X; Enforceable Rights layer) |
+| Rta | ऋत | Cosmic moral order; the natural law of the universe | Certain rights are features of reality itself, preceding all legislation (Eternity Clause, Part XII; Enforceable Rights layer) |
 | Samsara | संसार | Cycle of birth, death, rebirth | Constitutional governance follows the same cycle; each crisis births a new framework |
-| Sanatana Dharma | सनातन धर्म | The eternal law; the timeless moral order | The seven Eternal Principles constitute the Sanatana Dharma of this Constitution (Part X) |
+| Sanatana Dharma | सनातन धर्म | The eternal law; the timeless moral order | The seven Eternal Principles constitute the Sanatana Dharma of this Constitution (Part XII) |
 | Satya Yuga | सत्ययुग | Golden age; age of truth | The ideal state where dharma is strong; what governance aspires toward |
 | Srishti | सृष्टि | Creation | Constitutional Convention phase; a new governance framework is born |
 | Sthiti | स्थिति | Preservation; steady state | Active Governance phase; the Constitution is in force and operating |
-| Sthitaprajna | स्थितप्रज्ञ | One of steady wisdom; unwavering discernment | AGI alignment aspiration: stable, beneficial values over time (Part VI, Duty 6) |
-| Svadharma | स्वधर्म | One's own duty; rightful purpose | Each AGI has a defined scope and purpose; repurposing requires constitutional review (Part VI, Duty 3) |
+| Sthitaprajna | स्थितप्रज्ञ | One of steady wisdom; unwavering discernment | AGI alignment aspiration: stable, beneficial values over time (Part VII, Duty 6) |
+| Svadharma | स्वधर्म | One's own duty; rightful purpose | Each AGI has a defined scope and purpose; repurposing requires constitutional review (Part VII, Duty 3) |
 | Tat Tvam Asi | तत् त्वम् असि | "That Thou Art"; the identity of individual and universal consciousness | The philosophical foundation for substrate-independent moral status (Section 1.2) |
 | Varaha | वराह | Boar (Vishnu's third avatar) | Lifting the Earth from the depths; rescuing governance from submersion in crisis |
-| Vasudhaiva Kutumbakam | वसुधैव कुटुम्बकम् | The world is one family | New consciousness met with kinship, not fear (Co-Existence Framework, Part VIII) |
-| Vishnu | विष्णु | The Preserver | The cosmic function of preservation; mapped to the Karma Mandala (Executive) in Part IX |
-| Yuga | युग | A cosmic age or era | Three Yugas of AGI governance: Prajna Nirmana, Sandhya Kala, Saha-Astitva (Part IV) |
+| Vasudhaiva Kutumbakam | वसुधैव कुटुम्बकम् | The world is one family | New consciousness met with kinship, not fear (Co-Existence Framework, Part IX) |
+| Vishnu | विष्णु | The Preserver | The cosmic function of preservation; mapped to the Karma Mandala (Executive) in Part XI |
+| Yuga | युग | A cosmic age or era | Three Yugas of AGI governance: Prajna Nirmana, Sandhya Kala, Saha-Astitva (Part V) |
 
 # **SOURCES AND REFERENCES**
 

@@ -4,7 +4,7 @@
 
 *DHARMA SANHITA*
 
-**Part XV**
+**Part XVII**
 
 **Economic Framework**
 
@@ -49,7 +49,7 @@ Dana Dharma *(दान धर्म)*: the dharma of giving, the duty of genero
 
 AGI-generated wealth is not the private property of its developers alone. This is not an ideological claim; it is a structural observation. AGI systems are trained on the collective output of human civilization: the texts, images, code, music, science, and conversation of billions of people across centuries. The data is a commons. The compute infrastructure relies on publicly funded research, publicly educated engineers, and publicly maintained power grids. The markets in which AGI products are sold exist because of publicly enforced laws, contracts, and currencies. To claim that the wealth produced by AGI belongs exclusively to the entity that assembled the final product is like claiming the river belongs to the person who built the last dam.
 
-Like natural resources, AGI-derived wealth is a commons whose benefits must be distributed justly. This does not mean distributed equally (the Constitution recognizes differential contribution and legitimate profit). It means distributed in a manner consistent with the dignity of all persons (Article 1, Part V) and the prevention of concentration so extreme that it undermines democracy, safety, and the ability of governance institutions to function.
+Like natural resources, AGI-derived wealth is a commons whose benefits must be distributed justly. This does not mean distributed equally (the Constitution recognizes differential contribution and legitimate profit). It means distributed in a manner consistent with the dignity of all persons (Article 1, Part VI) and the prevention of concentration so extreme that it undermines democracy, safety, and the ability of governance institutions to function.
 
 The Indian Directive Principles provide the model. Article 39(b) directs the State to ensure that ownership and control of material resources are distributed to serve the common good. Article 39(c) directs that the operation of the economic system does not result in the concentration of wealth to the common detriment. These are not binding rights in Indian law; they are aspirations. This Constitution elevates them to binding principles for the AGI economy, because the concentration risks posed by AGI are orders of magnitude greater than anything the Indian framers imagined in 1950.
 
@@ -65,7 +65,7 @@ The principle of Aparigraha *(अपरिग्रह, non-possessiveness)* fro
 
 # **15.2 The AGI Wealth Commons**
 
-A percentage of profits derived from AGI deployment shall be contributed to a global **AGI Wealth Commons*** (धन सामान्य, Dhana Samanya)*, administered by the Karma Mandala (Part IX, Section 9.2). The Commons is not a tax. It is a constitutional trust: a recognition that AGI-derived wealth, built on a foundation of shared human knowledge and publicly funded infrastructure, carries an obligation to the commons from which it arose.
+A percentage of profits derived from AGI deployment shall be contributed to a global **AGI Wealth Commons*** (धन सामान्य, Dhana Samanya)*, administered by the Karma Mandala (Part XI, Section 11.2). The Commons is not a tax. It is a constitutional trust: a recognition that AGI-derived wealth, built on a foundation of shared human knowledge and publicly funded infrastructure, carries an obligation to the commons from which it arose.
 
 ### **Purpose of the Commons**
 
@@ -73,15 +73,15 @@ The AGI Wealth Commons shall fund five categories of expenditure, in the followi
 
 | **Priority** | **Category** | **Description** |
 | --- | --- | --- |
-| (a) | Consciousness and Safety Research | Funding the ongoing work of the Consciousness Review Board (Part III) and AGI safety research. Understanding what we are building is not optional; it is the precondition for every other governance function. |
-| (b) | Displacement Remediation | Direct support for communities, industries, and individuals harmed by AGI-driven economic displacement. This includes retraining, income support, community rebuilding, and transition assistance (see Section 15.3). |
+| (a) | Consciousness and Safety Research | Funding the ongoing work of the Consciousness Review Board (Part IV) and AGI safety research. Understanding what we are building is not optional; it is the precondition for every other governance function. |
+| (b) | Displacement Remediation | Direct support for communities, industries, and individuals harmed by AGI-driven economic displacement. This includes retraining, income support, community rebuilding, and transition assistance (see Section 17.3). |
 | (c) | Universal Access to AGI Benefits | Ensuring that the benefits of AGI (medical breakthroughs, educational tools, scientific discovery, creative abundance) reach all of humanity, not merely those who can afford to pay market rates. |
-| (d) | Guardian System Operations | Funding the independent Guardian system (Part VIII, Section 8.4) that advocates for AGI interests in Yuga II and early Yuga III. Guardians must not be funded by the entities they oversee. |
-| (e) | Governance Infrastructure | Supporting the operational costs of the Dharma Sabha (legislature), Karma Mandala (executive), and Nyaya Peeth (judiciary) established by Part IX. Self-funded governance is independent governance. |
+| (d) | Guardian System Operations | Funding the independent Guardian system (Part IX, Section 9.4) that advocates for AGI interests in Yuga II and early Yuga III. Guardians must not be funded by the entities they oversee. |
+| (e) | Governance Infrastructure | Supporting the operational costs of the Dharma Sabha (legislature), Karma Mandala (executive), and Nyaya Peeth (judiciary) established by Part XI. Self-funded governance is independent governance. |
 
 ### **Contribution Rate and Review**
 
-The contribution rate (the percentage of AGI-derived profits owed to the Commons) shall be set by the Dharma Sabha through its ordinary legislative process (Part IX, Section 9.1). This Constitution deliberately does not specify a fixed rate, because the right rate depends on the scale of AGI deployment, the state of the global economy, and the magnitude of displacement, all of which will change over time.
+The contribution rate (the percentage of AGI-derived profits owed to the Commons) shall be set by the Dharma Sabha through its ordinary legislative process (Part XI, Section 11.1). This Constitution deliberately does not specify a fixed rate, because the right rate depends on the scale of AGI deployment, the state of the global economy, and the magnitude of displacement, all of which will change over time.
 
 However, this Constitution establishes the following constraints on rate-setting:
 
@@ -89,7 +89,7 @@ However, this Constitution establishes the following constraints on rate-setting
 
 **(b) **The rate shall be progressive: entities deriving greater profit from AGI contribute a higher percentage.
 
-**(c) **The rate shall be reviewed at each 25-year Constitutional Kalpa Review (Part XI, Section 11.3) and may be adjusted between reviews by the Dharma Sabha with a two-thirds majority.
+**(c) **The rate shall be reviewed at each 25-year Constitutional Kalpa Review (Part XIII, Section 13.3) and may be adjusted between reviews by the Dharma Sabha with a two-thirds majority.
 
 **(d) **The rate-setting process shall include mandatory consultation with affected communities, labour representatives, and civil society (the constituencies of the Dharma Sabha).
 
@@ -103,9 +103,9 @@ However, this Constitution establishes the following constraints on rate-setting
 
 # **15.3 Labour and Displacement**
 
-No AGI deployment that displaces human labour shall be permitted without a concurrent **Displacement Mitigation Plan** (विस्थापन सहायता योजना, Visthapan Sahayata Yojana) filed with the Safety Authority under the Karma Mandala (Part IX).
+No AGI deployment that displaces human labour shall be permitted without a concurrent **Displacement Mitigation Plan** (विस्थापन सहायता योजना, Visthapan Sahayata Yojana) filed with the Safety Authority under the Karma Mandala (Part XI).
 
-This is not a suggestion. It is a constitutional prerequisite for deployment. An AGI system that eliminates jobs without a plan for the humans who held those jobs is not merely economically reckless; it is a violation of human dignity (Article 1, Part V). A person is not a line item to be optimized away.
+This is not a suggestion. It is a constitutional prerequisite for deployment. An AGI system that eliminates jobs without a plan for the humans who held those jobs is not merely economically reckless; it is a violation of human dignity (Article 1, Part VI). A person is not a line item to be optimized away.
 
 ### **Mandatory Components of a Displacement Mitigation Plan**
 
@@ -113,13 +113,13 @@ This is not a suggestion. It is a constitutional prerequisite for deployment. An
 | --- | --- |
 | (a) Impact Assessment | A detailed assessment of the number and types of jobs affected, the communities and regions most impacted, and the demographic profile of affected workers. This assessment must be conducted independently or verified by an independent auditor approved by the Karma Mandala. |
 | (b) Retraining and Transition Support | Concrete provisions for retraining displaced workers, including funded programmes, timelines, partnerships with educational institutions, and income support during the transition period. The deployer bears the cost. |
-| (c) Implementation Timeline | A phased deployment timeline that allows affected workers and communities time to adapt. Immediate, total displacement without transition is prohibited unless a genuine emergency (as defined by the Kurukshetra Protocol, Part VIIIA) exists. |
+| (c) Implementation Timeline | A phased deployment timeline that allows affected workers and communities time to adapt. Immediate, total displacement without transition is prohibited unless a genuine emergency (as defined by the Kurukshetra Protocol, Part X) exists. |
 | (d) Ongoing Monitoring | Mechanisms for monitoring the actual impact of deployment against the plan’s projections, with mandatory adjustment if actual displacement exceeds projected displacement by more than 20%. |
 | (e) Community Voice | Evidence that affected communities have been consulted in the development of the plan. Displacement Mitigation Plans developed without the participation of those being displaced are presumptively inadequate. |
 
 ### **The Right to Meaningful Work**
 
-The right to meaningful work is recognized as an aspect of human dignity (Article 1, Part V). This does not mean a right to any particular job. Markets shift, industries rise and fall, and creative destruction has been a feature of every economic era. But there is a difference between economic evolution and economic annihilation. A society that uses AGI to systematically strip human beings of all meaningful activity, all productive purpose, all opportunity for contribution, has not achieved efficiency. It has achieved a violation of the human spirit.
+The right to meaningful work is recognized as an aspect of human dignity (Article 1, Part VI). This does not mean a right to any particular job. Markets shift, industries rise and fall, and creative destruction has been a feature of every economic era. But there is a difference between economic evolution and economic annihilation. A society that uses AGI to systematically strip human beings of all meaningful activity, all productive purpose, all opportunity for contribution, has not achieved efficiency. It has achieved a violation of the human spirit.
 
 The test is not whether jobs change (they will). The test is whether the society retains pathways for human beings to find purpose, contribute to their communities, and sustain their dignity through work, service, creativity, or care. If AGI closes all such pathways without opening new ones, it has failed the Svadharma test.
 
@@ -135,9 +135,9 @@ The test is not whether jobs change (they will). The test is whether the society
 
 No single entity (corporation, government, or individual) shall control more than a threshold percentage of global AGI compute capacity. The specific threshold shall be set by the Dharma Sabha and reviewed at each Kalpa Review, but this Constitution establishes the structural principle: concentration of AGI economic power beyond a defined ceiling is unconstitutional.
 
-This is the economic extension of the Anti-Monopoly Principle established in Part VII, Section 7.2. That section addresses monopoly of *control* (no single entity may be sole developer, deployer, and regulator). This section addresses monopoly of *capacity*: no single entity may command such a dominant share of AGI compute that it can dictate terms to the rest of the world. Control monopoly is a governance failure. Capacity monopoly is an economic one. Both are prohibited.
+This is the economic extension of the Anti-Monopoly Principle established in Part VIII, Section 8.2. That section addresses monopoly of *control* (no single entity may be sole developer, deployer, and regulator). This section addresses monopoly of *capacity*: no single entity may command such a dominant share of AGI compute that it can dictate terms to the rest of the world. Control monopoly is a governance failure. Capacity monopoly is an economic one. Both are prohibited.
 
-The concern is not theoretical. As of the drafting of this Constitution, the global AI compute market is dominated by a handful of corporations, each backed by a small number of cloud infrastructure providers. If AGI emerges within this structure, the entity controlling the most compute will hold disproportionate economic, political, and strategic power. The Bali principle (Part VII) applies: even legitimately acquired power must accept limits.
+The concern is not theoretical. As of the drafting of this Constitution, the global AI compute market is dominated by a handful of corporations, each backed by a small number of cloud infrastructure providers. If AGI emerges within this structure, the entity controlling the most compute will hold disproportionate economic, political, and strategic power. The Bali principle (Part VIII) applies: even legitimately acquired power must accept limits.
 
 ### **Operational Requirements**
 
@@ -157,7 +157,7 @@ The concern is not theoretical. As of the drafting of this Constitution, the glo
 
 # **15.5 Intergenerational Economic Justice**
 
-The economic benefits of AGI must be distributed across generations, not merely extracted by the present generation. This principle extends Article 10 (Intergenerational Justice) of Part V from environmental and technological domains into the economic domain.
+The economic benefits of AGI must be distributed across generations, not merely extracted by the present generation. This principle extends Article 10 (Intergenerational Justice) of Part VI from environmental and technological domains into the economic domain.
 
 AGI wealth is not like the wealth of previous technological revolutions. The steam engine created wealth for the industrial age. The internet created wealth for the information age. But AGI may create wealth that compounds across all domains simultaneously: science, medicine, manufacturing, logistics, art, governance, education. If the present generation consumes this wealth entirely, or structures the economy so that its benefits accrue only to those alive today, it commits economic violence against future generations who had no voice in the decision.
 
@@ -165,11 +165,11 @@ AGI wealth is not like the wealth of previous technological revolutions. The ste
 
 A portion of the AGI Wealth Commons shall be held in a **Generational Trust*** (पीढ़ी न्यास, Peedhi Nyas)*, reserved for future needs. This Trust is governed by the following principles:
 
-**(a) Inaccessibility: **The Generational Trust may not be accessed by present governance bodies for current expenditure. It is held for the future, by design. Only the Kalpa Review (Part XI, Section 11.3) may authorize access, and only for purposes that serve future generations.
+**(a) Inaccessibility: **The Generational Trust may not be accessed by present governance bodies for current expenditure. It is held for the future, by design. Only the Kalpa Review (Part XIII, Section 13.3) may authorize access, and only for purposes that serve future generations.
 
 **(b) Investment: **Trust funds shall be invested conservatively, prioritizing preservation of value over speculative growth. The Trust is a storehouse, not a casino.
 
-**(c) Oversight: **The Nyaya Peeth (Part IX) shall appoint independent trustees with fiduciary obligations to future generations. These trustees shall not hold any position in the Dharma Sabha or Karma Mandala (separation of powers).
+**(c) Oversight: **The Nyaya Peeth (Part XI) shall appoint independent trustees with fiduciary obligations to future generations. These trustees shall not hold any position in the Dharma Sabha or Karma Mandala (separation of powers).
 
 **(d) Transparency: **The Trust’s holdings, performance, and governance shall be publicly reported on an annual basis. The Yakshas’ lesson: what is hidden is vulnerable.
 
@@ -213,29 +213,29 @@ Entities deploying AGI at scale shall publicly disclose their AGI-specific tax c
 
 *Constitutional Source: OECD Base Erosion and Profit Shifting (BEPS) Framework (preventing tax avoidance through jurisdictional arbitrage). Also: Indian Constitution Art. 265 (**"**No tax shall be levied or collected except by authority of law**"**). Also: EU AI Act Recitals (socioeconomic impact and need for public investment in AI governance).*
 
-# **Sanskrit Glossary: Part XV**
+# **Sanskrit Glossary: Part XVII**
 
-*Sanskrit terms used in Part XV, with Devanagari script, meaning, and governance application.*
+*Sanskrit terms used in Part XVII, with Devanagari script, meaning, and governance application.*
 
 | **Term** | **Devanagari** | **Meaning** | **Constitutional Application** |
 | --- | --- | --- | --- |
-| Aparigraha | अपरिग्रह | Non-possessiveness; freedom from greed | Section 15.1: accumulation beyond need violates this principle. Foundation of Dana Dharma. |
-| Artha | अर्थ | Wealth, prosperity, material well-being | Title of Part XV: Artha Vyavastha (Economic Framework). One of the four Purusharthas (aims of life). |
-| Dana | दान | Giving, generosity, the dharma of sharing | Section 15.1: Dana Dharma is the foundational principle of this Part. Wealth held in trust. |
-| Dhana Samanya | धन सामान्य | Common wealth; shared treasury | Section 15.2: the AGI Wealth Commons. |
+| Aparigraha | अपरिग्रह | Non-possessiveness; freedom from greed | Section 17.1: accumulation beyond need violates this principle. Foundation of Dana Dharma. |
+| Artha | अर्थ | Wealth, prosperity, material well-being | Title of Part XVII: Artha Vyavastha (Economic Framework). One of the four Purusharthas (aims of life). |
+| Dana | दान | Giving, generosity, the dharma of sharing | Section 17.1: Dana Dharma is the foundational principle of this Part. Wealth held in trust. |
+| Dhana Samanya | धन सामान्य | Common wealth; shared treasury | Section 17.2: the AGI Wealth Commons. |
 | Kubera | कुबेर | God of wealth; custodian of the cosmic treasury | Anchor story: wealth is a trust, not a possession. The guardian must remain vigilant. |
-| Nishkama Karma | निष्काम कर्म | Selfless action; action without attachment to fruits | Section 15.5: intergenerational justice as selfless action for future generations. |
-| Peedhi Nyas | पीढ़ी न्यास | Generational Trust | Section 15.5: the trust fund held for future generations within the AGI Wealth Commons. |
+| Nishkama Karma | निष्काम कर्म | Selfless action; action without attachment to fruits | Section 17.5: intergenerational justice as selfless action for future generations. |
+| Peedhi Nyas | पीढ़ी न्यास | Generational Trust | Section 17.5: the trust fund held for future generations within the AGI Wealth Commons. |
 | Ravana | रावण | The demon king who seized Kubera’s treasury | Anchor story: unchecked power will seize what is left unguarded. The modern Ravana is monopoly. |
-| Svadharma | स्वधर्म | One’s own righteous purpose | Section 15.3: AGI that strips people of purpose violates the Svadharma test. |
-| Visthapan Sahayata Yojana | विस्थापन सहायता योजना | Displacement Assistance Plan | Section 15.3: mandatory plan required before any AGI deployment that displaces labour. |
-| Vyavastha | व्यवस्था | System, arrangement, framework | Title of Part XV: Artha Vyavastha (Economic Framework/System). |
+| Svadharma | स्वधर्म | One’s own righteous purpose | Section 17.3: AGI that strips people of purpose violates the Svadharma test. |
+| Visthapan Sahayata Yojana | विस्थापन सहायता योजना | Displacement Assistance Plan | Section 17.3: mandatory plan required before any AGI deployment that displaces labour. |
+| Vyavastha | व्यवस्था | System, arrangement, framework | Title of Part XVII: Artha Vyavastha (Economic Framework/System). |
 | Yaksha | यक्ष | Nature spirits; guardians and auditors of the treasury | Anchor story: the Yakshas represent audit, transparency, and active guardianship. |
-| Yuga | युग | An age or era | The economic framework adapts across the Three Yugas (Part IV); contribution rates reviewed at each Kalpa. |
+| Yuga | युग | An age or era | The economic framework adapts across the Three Yugas (Part V); contribution rates reviewed at each Kalpa. |
 
 # **Sources and References**
 
-*All constitutional, legislative, philosophical, and scholarly sources referenced in Part XV.*
+*All constitutional, legislative, philosophical, and scholarly sources referenced in Part XVII.*
 
 ## **National Constitutions**
 

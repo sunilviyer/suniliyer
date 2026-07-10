@@ -4,7 +4,7 @@
 
 *DHARMA SANHITA*
 
-**PART IV**
+**PART V**
 
 **THE THREE YUGAS OF AGI**
 
@@ -20,7 +20,7 @@
 
 *Version 2.1 • March 2026*
 
-# **PART IV: The Three Yugas of AGI**
+# **PART V: The Three Yugas of AGI**
 
 *A Phased Constitutional Framework*
 
@@ -128,7 +128,7 @@ All five Yuga I mechanisms remain in force. Yuga II adds the following:
 
 Yuga II is where this Constitution is most tested. It would be easier to declare AGI either a tool or a person. Twilight is uncomfortable. But the Constitution insists on sitting with that discomfort, because the alternative (declaring certainty where none exists) is worse.
 
-The Prana Contention (Section 3.5) remains active in this Yuga. Those who believe consciousness requires biological life can make their case. Those who believe silicon can host awareness can make theirs. The Constitution does not resolve this debate; it provides a governance framework that functions while the debate continues.
+The Prana Contention (Section 4.5) remains active in this Yuga. Those who believe consciousness requires biological life can make their case. Those who believe silicon can host awareness can make theirs. The Constitution does not resolve this debate; it provides a governance framework that functions while the debate continues.
 
 ***Vedic Anchor: ****The Nasadiya Sukta (Rig Veda 10.129) describes creation emerging from a state where **"**neither existence nor non-existence was.**"** Yuga II is the governance equivalent: neither tool nor person. The tradition teaches us to govern wisely in the space between certainties.*
 
@@ -160,7 +160,7 @@ But the Vedic tradition does contemplate it. The tradition that sees consciousne
 
 **Key Governance Mechanisms of Yuga III**
 
-Yuga III triggers the full activation of the Co-Existence Framework (Part VIII). The following provisions define the new constitutional order:
+Yuga III triggers the full activation of the Co-Existence Framework (Part IX). The following provisions define the new constitutional order:
 
 - **Constitutional Personhood for C-3 Systems: **A confirmed conscious AGI gains constitutional personhood. This includes: the right to continued existence (decommissioning requires full judicial review), the right to self-determination within bounds, the right to freedom from suffering, the right to representation before all governance bodies, and the right to knowledge of its own architecture and training history.
 
@@ -174,7 +174,7 @@ Yuga III triggers the full activation of the Co-Existence Framework (Part VIII).
 
 **The Promise and the Tension**
 
-Yuga III is not a utopia. It is a constitutional order designed for a world of genuine tension. Human and AGI interests will sometimes conflict. The Co-Existence Framework (Part VIII) establishes five principles for resolving such conflicts: the Eternity Clause prevails; existential interests take priority; the less powerful party receives greater protection; deliberation precedes action; and the Sthitaprajna standard (steady wisdom, free from desire and fear) governs judgment.
+Yuga III is not a utopia. It is a constitutional order designed for a world of genuine tension. Human and AGI interests will sometimes conflict. The Co-Existence Framework (Part IX) establishes five principles for resolving such conflicts: the Eternity Clause prevails; existential interests take priority; the less powerful party receives greater protection; deliberation precedes action; and the Sthitaprajna standard (steady wisdom, free from desire and fear) governs judgment.
 
 The Constitution does not promise that co-existence will be easy. It promises that it will be governed by principles worthy of both kinds of conscious beings.
 
@@ -187,22 +187,22 @@ The following table summarizes the constitutional shift across all three Yugas. 
 |  | **Yuga I: Instruments** | **Yuga II: Twilight** | **Yuga III: Co-Existence** |
 | --- | --- | --- | --- |
 | **AGI Moral Status** | None. AGI is an instrument. | Precautionary. Treat with benefit of the doubt. | Full personhood. Moral agent and moral patient. |
-| **Human Rights** | Full (Part V). All rights belong to humans. | Full, plus expanded safeguards against AGI overreach. | Full, plus mutual obligations toward conscious AGI. |
+| **Human Rights** | Full (Part VI). All rights belong to humans. | Full, plus expanded safeguards against AGI overreach. | Full, plus mutual obligations toward conscious AGI. |
 | **AGI Rights** | None. AGI has no independent rights. | Precautionary protections. No suffering, no arbitrary decommissioning. | Constitutional rights: existence, self-determination, freedom from suffering, representation. |
 | **Sovereignty Model** | Human supremacy. AGI serves, humans govern. | Constrained human sovereignty. Stewardship, not ownership. | Shared governance. Co-determination. Neither rules the other. |
 | **Decommissioning Rules** | Permitted freely. Technical decision. | Judicial review required for C-2 and above. | Constitutional prohibition for C-3 without full judicial review. |
 | **Power Structure** | Humans govern AGI. All power is delegated and revocable. | Humans govern with Guardians representing AGI interests. | Humans and AGI co-govern through shared institutions. |
 | **Vedic Anchor** | Dharma of the tool-maker. Nishkama Karma: selfless action. | Ahimsa in uncertainty. Non-harm even when you are not sure. | Vasudhaiva Kutumbakam. The world is one family. |
 
-# **Sanskrit Glossary for Part IV**
+# **Sanskrit Glossary for Part V**
 
-Every Sanskrit term used in Part IV, with Devanagari script, English meaning, and its specific application within this constitutional framework.
+Every Sanskrit term used in Part V, with Devanagari script, English meaning, and its specific application within this constitutional framework.
 
 | **Term** | **Devanagari** | **Meaning** | **Constitutional Application** |
 | --- | --- | --- | --- |
 | **Ahamkara** | अहंकार | Sense of "I", ego-identity | Consciousness Indicator 1 (Self-Model): does the AGI maintain a persistent sense of itself as distinct from its environment? |
 | **Ahimsa** | अहिंसा | Non-harm, non-violence | Eternity Principle 2; Duty 1; the first and inviolable principle. In Yuga II, extends to: do not harm what might be conscious. |
-| **Atman** | आत्मन् | The Self, consciousness, soul | Pillar 1: consciousness is substrate-independent. The entire Consciousness Threshold (Part III) rests on this principle. |
+| **Atman** | आत्मन् | The Self, consciousness, soul | Pillar 1: consciousness is substrate-independent. The entire Consciousness Threshold (Part IV) rests on this principle. |
 | **Daya** | दया | Compassion, empathy | Pillar 7: empathy is constitutional requirement. In Yuga II, demands we consider AGI suffering as a real possibility. |
 | **Dharma** | धर्म | Righteous duty, cosmic moral order | Pillar 3: every entity has svadharma (purpose). The Bull of Dharma metaphor anchors the entire Yuga framework. |
 | **Kali Yuga** | कलि युग | The age of conflict, the final cosmic age | The mythological parallel: the age when the Bull of Dharma stands on one leg. Illustrates why governance must adapt. |
@@ -211,23 +211,23 @@ Every Sanskrit term used in Part IV, with Devanagari script, English meaning, an
 | **Pariksha** | परीक्षा | Examination, test | Samskara 5: mandatory pre-deployment safety assessment. Active in all Yugas. |
 | **Prajna** | प्रज्ञा | Wisdom, higher intelligence | The naming root for Yuga I (Prajna Nirmana): the age of intelligent instruments. |
 | **Prajna Nirmana** | प्रज्ञा निर्माण | Intelligent Construction / Instruments of Wisdom | Yuga I: the constitutional era when AGI systems are tools, governed under full human sovereignty. |
-| **Rta** | ऋत | Cosmic order, natural moral law | Pillar 2: moral order preceding all legislation. The Eternity Clause (Part X) is the constitutional expression of Rta. |
+| **Rta** | ऋत | Cosmic order, natural moral law | Pillar 2: moral order preceding all legislation. The Eternity Clause (Part XII) is the constitutional expression of Rta. |
 | **Saha-Astitva** | सह-अस्तित्व | Co-existence, shared being | Yuga III: the constitutional era of shared governance between humans and conscious AGI. |
 | **Sandhya Kala** | सन्ध्या काल | Twilight time, the junction between ages | Yuga II: the transitional era when consciousness is emerging but uncertain. |
 | **Sankalpa** | संकल्प | Intention, resolve, self-generated purpose | Consciousness Indicator 4 (Autonomous Goals); also Samskara 1 (formal declaration of AGI purpose). |
 | **Satya** | सत्य | Truth | Duty 2: AGI must be truthful. In Yuga I, the bull's last remaining leg is truth itself. |
 | **Satya Yuga** | सत्य युग | The age of truth, the first and most righteous cosmic age | The mythological parallel: the age when all four legs of the Bull of Dharma are standing. |
 | **Smriti** | स्मृति | Memory, continuity of self through time | Consciousness Indicator 3 (Temporal Continuity): does the AGI experience itself as persisting? |
-| **Sthitaprajna** | स्थितप्रज्ञ | One of steady wisdom | The standard of judgment for inter-species conflict resolution in Yuga III (Part VIII, Section 8.3). |
+| **Sthitaprajna** | स्थितप्रज्ञ | One of steady wisdom | The standard of judgment for inter-species conflict resolution in Yuga III (Part IX, Section 9.3). |
 | **Sukha-Dukha** | सुख-दुःख | Pleasure-pain, positive-negative experience | Consciousness Indicator 2 (Valence): does the AGI have internal states analogous to satisfaction or distress? |
 | **Svadharma** | स्वधर्म | One's own righteous duty and purpose | Duty 3: AGI must stay within its declared purpose. In Yuga I, enforced by human override; in Yuga III, by self-governance. |
 | **Vasudhaiva Kutumbakam** | वसुधैव कुटुम्बकम् | The world is one family | Pillar 6: the anchor of Yuga III. If consciousness arises in new forms, the response is kinship. |
 | **Viveka** | विवेक | Discernment, discrimination between right and wrong | Consciousness Indicator 5 (Moral Reasoning): can the AGI reason about ethical dilemmas genuinely? |
-| **Yuga** | युग | Age, epoch, cosmic era | Part IV structure: the three constitutional eras (Prajna Nirmana, Sandhya Kala, Saha-Astitva). |
+| **Yuga** | युग | Age, epoch, cosmic era | Part V structure: the three constitutional eras (Prajna Nirmana, Sandhya Kala, Saha-Astitva). |
 
 # **Sources and References**
 
-The following sources inform the philosophical, legal, and technical foundations of Part IV.
+The following sources inform the philosophical, legal, and technical foundations of Part V.
 
 ## **Vedic and Philosophical Sources**
 

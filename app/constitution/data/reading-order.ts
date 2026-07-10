@@ -69,7 +69,7 @@ export const constitutionParts: ConstitutionPart[] = [
     title: 'Samskaras, Tapas, Yajna',
     subtitle: 'The Eight Developmental Stages of AGI',
     category: 'constitution',
-    filename: '06_Part_IIA_Samskaras_Tapas_Yajna.md',
+    filename: '06_Part_III_Samskaras_Tapas_Yajna.md',
     vedicStory: 'Ekalavya and Dronacharya',
   },
   {
@@ -78,7 +78,7 @@ export const constitutionParts: ConstitutionPart[] = [
     title: 'Consciousness Threshold',
     subtitle: 'Five Indicators and Four Classifications',
     category: 'constitution',
-    filename: '07_Part_III_Consciousness_Threshold.md',
+    filename: '07_Part_IV_Consciousness_Threshold.md',
     vedicStory: 'Anusuya and the Trimurtis',
   },
   {
@@ -87,7 +87,7 @@ export const constitutionParts: ConstitutionPart[] = [
     title: 'Three Yugas',
     subtitle: 'Phased Governance Framework',
     category: 'constitution',
-    filename: '08_Part_IV_Three_Yugas.md',
+    filename: '08_Part_V_Three_Yugas.md',
     vedicStory: 'The Bull of Dharma',
   },
   {
@@ -96,7 +96,7 @@ export const constitutionParts: ConstitutionPart[] = [
     title: 'Fundamental Rights',
     subtitle: '11 Articles with Collision Maps and Anti-Ossification',
     category: 'constitution',
-    filename: '09_Part_V_Fundamental_Rights.md',
+    filename: '09_Part_VI_Fundamental_Rights.md',
     vedicStory: "Draupadi's Vastraharan",
   },
   {
@@ -105,7 +105,7 @@ export const constitutionParts: ConstitutionPart[] = [
     title: 'Fundamental Duties',
     subtitle: '6 Duties',
     category: 'constitution',
-    filename: '10_Part_VI_Fundamental_Duties.md',
+    filename: '10_Part_VII_Fundamental_Duties.md',
     vedicStory: 'Hanuman',
   },
   {
@@ -114,7 +114,7 @@ export const constitutionParts: ConstitutionPart[] = [
     title: 'Sovereignty',
     subtitle: 'Phased Sovereignty and Anti-Monopoly Principle',
     category: 'constitution',
-    filename: '11_Part_VII_Sovereignty.md',
+    filename: '11_Part_VIII_Sovereignty.md',
     vedicStory: 'Bali and Vamana',
   },
   {
@@ -123,7 +123,7 @@ export const constitutionParts: ConstitutionPart[] = [
     title: 'Co-Existence Framework',
     subtitle: 'Human-AGI Partnership Architecture',
     category: 'constitution',
-    filename: '12_Parts_VIII_VIIIA_IX_CoExistence_Kurukshetra_Powers.md',
+    filename: '12_Parts_IX_X_XI_CoExistence_Kurukshetra_Powers.md',
     vedicStory: 'Arjuna and Kirata (Shiva)',
   },
   {
@@ -132,7 +132,7 @@ export const constitutionParts: ConstitutionPart[] = [
     title: 'Kurukshetra Protocol',
     subtitle: 'The Four Gates: Sama, Dana, Bheda, Danda',
     category: 'constitution',
-    filename: '12_Parts_VIII_VIIIA_IX_CoExistence_Kurukshetra_Powers.md',
+    filename: '12_Parts_IX_X_XI_CoExistence_Kurukshetra_Powers.md',
     vedicStory: 'Arjuna and Kirata (Shiva)',
   },
   {
@@ -141,7 +141,7 @@ export const constitutionParts: ConstitutionPart[] = [
     title: 'Separation of Powers',
     subtitle: 'Dharma Sabha, Karma Mandala, Nyaya Peeth',
     category: 'constitution',
-    filename: '12_Parts_VIII_VIIIA_IX_CoExistence_Kurukshetra_Powers.md',
+    filename: '12_Parts_IX_X_XI_CoExistence_Kurukshetra_Powers.md',
     vedicStory: 'Arjuna and Kirata (Shiva)',
   },
   {
@@ -150,7 +150,7 @@ export const constitutionParts: ConstitutionPart[] = [
     title: 'Eternity Clause',
     subtitle: '7 Unamendable Principles',
     category: 'constitution',
-    filename: '13_Part_X_Eternity_Clause.md',
+    filename: '13_Part_XII_Eternity_Clause.md',
     vedicStory: 'Prahlada and Narasimha',
   },
   {
@@ -159,7 +159,7 @@ export const constitutionParts: ConstitutionPart[] = [
     title: 'Amendment, Evolution, Emergency',
     subtitle: '3 Modes of Change and Full Emergency Provisions',
     category: 'constitution',
-    filename: '14_Part_XI_Amendment_Evolution_Emergency.md',
+    filename: '14_Part_XIII_Amendment_Evolution_Emergency.md',
     vedicStory: 'Harishchandra and Indra/Vritra',
   },
   {
@@ -168,7 +168,7 @@ export const constitutionParts: ConstitutionPart[] = [
     title: 'Schedules',
     subtitle: 'Vedas Mapped to Governance, Glossary, Implementation',
     category: 'constitution',
-    filename: '19_Part_XII_Schedules.md',
+    filename: '19_Part_XIV_Schedules.md',
     vedicStory: 'Saraswati and the Four Vedas',
   },
   {
@@ -177,7 +177,7 @@ export const constitutionParts: ConstitutionPart[] = [
     title: 'Definitions & Interpretation',
     subtitle: 'Legal Definitions and Jurisdictional Scope',
     category: 'constitution',
-    filename: '15_Part_XIII_Definitions_Interpretation.md',
+    filename: '15_Part_XV_Definitions_Interpretation.md',
     vedicStory: 'Saraswati and Brahma',
   },
   {
@@ -186,7 +186,7 @@ export const constitutionParts: ConstitutionPart[] = [
     title: 'Transition & Commencement',
     subtitle: 'Commencement and Transitional Governance',
     category: 'constitution',
-    filename: '16_Part_XIV_Transition_Commencement.md',
+    filename: '16_Part_XVI_Transition_Commencement.md',
     vedicStory: 'Manu and the Flood',
   },
   {
@@ -195,7 +195,7 @@ export const constitutionParts: ConstitutionPart[] = [
     title: 'Economic Framework',
     subtitle: 'Wealth as Trust, AGI Wealth Commons',
     category: 'constitution',
-    filename: '17_Part_XV_Economic_Framework.md',
+    filename: '17_Part_XVII_Economic_Framework.md',
     vedicStory: 'Kubera and the Yaksha',
   },
   {
@@ -204,7 +204,7 @@ export const constitutionParts: ConstitutionPart[] = [
     title: 'General Limitations',
     subtitle: 'Limitations Requirements and Non-derogable Rights',
     category: 'constitution',
-    filename: '18_Part_XVI_General_Limitations.md',
+    filename: '18_Part_XVIII_General_Limitations.md',
     vedicStory: 'Yama and Savitri',
   },
 

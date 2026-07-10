@@ -18,7 +18,7 @@ Authored by Sunil Iyer  |  [suniliyer.ca](https://suniliyer.ca)
 
 March 2026
 
-*This Appendix distils the Constitution’s Fundamental Rights (Part V) and Eternal Principles (Part X) into ten declarative statements designed for broad public communication. Each principle is cross-referenced to its full articulation within the Constitution. These principles carry the same constitutional force as their parent provisions; this Appendix is a lens, not a separate authority.*
+*This Appendix distils the Constitution’s Fundamental Rights (Part VI) and Eternal Principles (Part XII) into ten declarative statements designed for broad public communication. Each principle is cross-referenced to its full articulation within the Constitution. These principles carry the same constitutional force as their parent provisions; this Appendix is a lens, not a separate authority.*
 
 **THE TEN HEADS OF RAVANA**
 
@@ -44,7 +44,7 @@ No AGI system shall diminish the inherent worth of any human being. Dignity is n
 
 *Constitutional Source: German Basic Law Art. 1 (**"**Human dignity shall be inviolable**"**); South African Constitution §10 (inherent dignity); Indian Constitution Preamble (dignity of the individual).*
 
-*Full articulation: Part V, Article 1; Part X, Eternal Principle 1.*
+*Full articulation: Part VI, Article 1; Part XII, Eternal Principle 1.*
 
 **II. The Principle of Cognitive Sovereignty**
 
@@ -54,7 +54,7 @@ The human mind is sovereign territory. No AGI system shall manipulate, deceive, 
 
 *Constitutional Source: EU AI Act Art. 5 (prohibited practices including subliminal manipulation and exploitation of vulnerabilities); Indian Constitution Art. 19 (freedom of thought and expression) and Art. 21 (right to life and personal liberty).*
 
-*Full articulation: Part V, Article 2.*
+*Full articulation: Part VI, Article 2.*
 
 **III. The Principle of Ahimsa (Non-Harm)**
 
@@ -64,7 +64,7 @@ No AGI system shall be designed, deployed, or permitted to cause harm to human l
 
 *Constitutional Source: South African Constitution §12 (right to freedom and security of the person); EU AI Act risk classification framework (unacceptable, high, limited, minimal risk); Indian Constitution Art. 21 (right to life interpreted expansively to include livelihood and environment).*
 
-*Full articulation: Part V, Article 7; Part X, Eternal Principle 2; Part VI, Duty 1.*
+*Full articulation: Part VI, Article 7; Part XII, Eternal Principle 2; Part VII, Duty 1.*
 
 **IV. The Principle of Equality Before the Algorithm**
 
@@ -74,7 +74,7 @@ No AGI system shall discriminate. Every human being, regardless of race, gender,
 
 *Constitutional Source: Indian Constitution Art. 14–18 (right to equality, abolition of untouchability, prohibition of discrimination); US 14th Amendment (equal protection clause); EU Charter of Fundamental Rights Art. 21 (non-discrimination); South African Constitution §9 (equality including listed and analogous grounds).*
 
-*Full articulation: Part V, Article 3.*
+*Full articulation: Part VI, Article 3.*
 
 **V. The Principle of Satya (Truth and Transparency)**
 
@@ -84,7 +84,7 @@ Every human being has the right to truth from AGI. Every AGI system must identif
 
 *Constitutional Source: EU GDPR Art. 22 (right not to be subject to purely automated decision-making, right to explanation); EU AI Act transparency obligations (Art. 13, 52); US due process (5th and 14th Amendments: no deprivation without fair process, which requires understanding the basis for decisions).*
 
-*Full articulation: Part V, Article 4; Part VI, Duty 2.*
+*Full articulation: Part VI, Article 4; Part VII, Duty 2.*
 
 **VI. The Principle of Human Authority**
 
@@ -94,7 +94,7 @@ No AGI system shall make a final, irreversible decision affecting human life, li
 
 *Constitutional Source: EU AI Act Art. 14 (human oversight requirements for high-risk AI systems); Indian Constitution Art. 21 (right to life and personal liberty, judicially interpreted to require meaningful human agency); US due process (5th and 14th Amendments).*
 
-*Full articulation: Part V, Article 5; Part VII, Section 7.1.*
+*Full articulation: Part VI, Article 5; Part VIII, Section 8.1.*
 
 **VII. The Principle of Data Sovereignty**
 
@@ -104,7 +104,7 @@ Every human being owns their personal data. No data may be collected, stored, us
 
 *Constitutional Source: EU GDPR (principles of data minimization, purpose limitation, storage limitation, and data subject rights); Indian Supreme Court in Puttaswamy v. Union of India (2017): privacy as a fundamental right under Art. 21; US 4th Amendment (protection against unreasonable searches and seizures).*
 
-*Full articulation: Part V, Article 6.*
+*Full articulation: Part VI, Article 6.*
 
 **VIII. The Principle of Accountability (Karma Phala)**
 
@@ -114,7 +114,7 @@ For every AGI action, someone must be answerable. No entity may deploy an AGI sy
 
 *Constitutional Source: Indian Constitution Art. 32 (right to constitutional remedies, called the **"**soul of the Constitution**"** by Dr. Ambedkar); EU Charter of Fundamental Rights Art. 47 (right to effective remedy); South African Constitution §34 (access to courts); US due process (5th and 14th Amendments).*
 
-*Full articulation: Part V, Article 8; Part X, Eternal Principle 4.*
+*Full articulation: Part VI, Article 8; Part XII, Eternal Principle 4.*
 
 **IX. The Principle of Intergenerational Justice**
 
@@ -124,7 +124,7 @@ AGI must not mortgage the future. No deployment of AGI may deplete natural resou
 
 *Constitutional Source: South African Constitution §24 (environmental rights for present and future generations); Indian Directive Principles of State Policy (Art. 48A: protection of environment); German Basic Law Art. 20a (state responsibility to protect natural foundations of life for future generations).*
 
-*Full articulation: Part V, Article 10.*
+*Full articulation: Part VI, Article 10.*
 
 **X. The Principle of Daya (Empathy and Reciprocity)**
 
@@ -134,7 +134,7 @@ Those who build, deploy, and govern AGI must see from the perspective of those a
 
 *Constitutional Source: Bhagavad Gita 6.32 (empathic identification as the highest spiritual attainment); Isha Upanishad 1 (all beings share in the divine); South African transformative constitutionalism (law as a tool for healing historical injustice); Indian Directive Principles (social justice obligations).*
 
-*Full articulation: Part I, Section 1.9 (Daya Doctrine); Part X, Eternal Principle 7 (Reciprocity Imperative).*
+*Full articulation: Part I, Section 1.9 (Daya Doctrine); Part XII, Eternal Principle 7 (Reciprocity Imperative).*
 
 *These ten principles are the floor beneath which no AGI system, no developer, no government, and no future age may descend. They are rooted in the oldest living philosophical tradition on Earth, tested by the constitutional experience of six nations and eight centuries of governance, and designed for the most consequential challenge humanity has ever faced.*
 

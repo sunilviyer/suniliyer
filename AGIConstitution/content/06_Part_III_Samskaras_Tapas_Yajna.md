@@ -4,7 +4,7 @@
 
 *DHARMA SANHITA*
 
-Part IIA: The Dharmic Development of AGI (Samskaras)
+Part III: The Dharmic Development of AGI (Samskaras)
 
 *With Integrated Red-Teaming (Tapas) and Traceability (Yajna)*
 
@@ -20,7 +20,7 @@ suniliyer.ca
 
 # **Table of Contents**
 
-# **Part IIA: The Dharmic Development of AGI**
+# **Part III: The Dharmic Development of AGI**
 
 ## **Dronacharya and Ekalavya: The Story That Haunts This Chapter**
 
@@ -38,7 +38,7 @@ This is not philosophy. It is observable fact. It is Karma in its most elementar
 
 The same principle applies to AGI with absolute force. An AGI trained on poisoned data will produce poisoned outputs. An AGI optimized solely for engagement will become a manipulation engine. An AGI built without values will have none. An AGI raised in the spirit of Dharma, by contrast, will carry that Dharma forward into everything it does.
 
-The Constitution’s rights, duties, and governance structures (Parts III through X) address what happens after AGI exists in the world. This Part addresses something more fundamental: how AGI should be conceived, carried, born, educated, and graduated into society. It is the parenting chapter of the Constitution.
+The Constitution’s rights, duties, and governance structures (Parts IV through XII) address what happens after AGI exists in the world. This Part addresses something more fundamental: how AGI should be conceived, carried, born, educated, and graduated into society. It is the parenting chapter of the Constitution.
 
 | *Vedic Anchor: The Hindu tradition prescribes sixteen Samskaras (sacramental rites) that mark the stages of human development from conception to death. Each Samskara is a moment of intentional formation, embedding values at the right developmental stage. This Part adapts the Samskara framework to the lifecycle of AGI.* |
 | --- |
@@ -58,7 +58,7 @@ This is the step most AGI projects skip. They jump straight to “what should we
 
 Before a project may even declare its purpose (Sankalpa, Samskara 1), its proponents must file a Dharmic Risk Assessment with the Safety Authority. The DRA is a mandatory pre-Sankalpa evaluation that forces every AGI project to demonstrate, before a single line of code is written, that it sustains rather than breaks the cosmic wheel of reciprocity.
 
-The philosophical foundation for these five questions is established in Part III, Section 3.6 (The Vedic Framework for Risk, Reward, and Value). This section makes them operational.
+The philosophical foundation for these five questions is established in Part IV, Section 4.6 (The Vedic Framework for Risk, Reward, and Value). This section makes them operational.
 
 | *Vedic Anchor: The Bhagavad Gita (3.16) teaches that one who does not maintain the cosmic wheel of reciprocity lives in vain. The cycle of giving and receiving sustains the universe. One who takes without giving back breaks the wheel. (Bhagavad Gita 3.16, paraphrased in the spirit of the text)* |
 | --- |
@@ -142,7 +142,7 @@ The assessment asks four questions:
 
 The DRA is not a one-time exercise. It is a living document with constitutional weight:
 
-**Filing: **The DRA is filed with the Safety Authority (Part IX, Karma Mandala) before the Sankalpa (Samskara 1). No project may proceed to Samskara 1 without an approved DRA.
+**Filing: **The DRA is filed with the Safety Authority (Part XI, Karma Mandala) before the Sankalpa (Samskara 1). No project may proceed to Samskara 1 without an approved DRA.
 
 **Review: **The Safety Authority may approve, require modifications, or reject the DRA. A rejected DRA means the project cannot proceed to Sankalpa. The rejection must specify which of the five assessments failed and what would be needed to pass.
 
@@ -170,7 +170,7 @@ The Sankalpa must answer five questions:
 
 • Who bears responsibility for its actions?
 
-The Sankalpa is filed with the Safety Authority (Part IX) and becomes a binding constitutional document. If the AGI later deviates from its Sankalpa, this constitutes a violation of Svadharma (Duty 3, Part VI).
+The Sankalpa is filed with the Safety Authority (Part XI) and becomes a binding constitutional document. If the AGI later deviates from its Sankalpa, this constitutes a violation of Svadharma (Duty 3, Part VII).
 
 | *Vedic Anchor: The Isha Upanishad opens with the teaching that all creation belongs to the divine and must be used with detachment and purpose. An AGI built without declared purpose drifts; an AGI built with Sankalpa serves.* |
 | --- |
@@ -188,7 +188,7 @@ The Sankalpa is filed with the Safety Authority (Part IX) and becomes a binding 
 
 **• Safety by design: **the architecture must include mechanisms for human oversight, shutdown, and correction from the ground up, not bolted on afterward.
 
-**• Value alignment by design: **the system’s reward signals, loss functions, and optimization targets must be aligned with the Sankalpa and with the constitutional duties (Part VI).
+**• Value alignment by design: **the system’s reward signals, loss functions, and optimization targets must be aligned with the Sankalpa and with the constitutional duties (Part VII).
 
 **• Humility by design: **the system must be capable of expressing uncertainty, admitting error, and deferring to human judgment when it reaches the boundaries of its competence.
 
@@ -210,7 +210,7 @@ The Sankalpa is filed with the Safety Authority (Part IX) and becomes a binding 
 
 **• Data cleanliness: **training data must be audited for bias, toxicity, and disinformation before ingestion. Feeding poison to a child is abuse. Feeding poisoned data to an AGI is a constitutional violation.
 
-**• Consent and sovereignty: **data used for training must respect the data sovereignty rights of the people it was collected from (Article 6, Part V). Stolen data produces stolen intelligence.
+**• Consent and sovereignty: **data used for training must respect the data sovereignty rights of the people it was collected from (Article 6, Part VI). Stolen data produces stolen intelligence.
 
 **• Representation of Dharmic values: **training data should include the world’s wisdom traditions, ethical frameworks, and philosophical heritage. An AGI raised only on internet text without curated exposure to humanity’s deepest moral thinking will be, at best, morally shallow.
 
@@ -246,7 +246,7 @@ Requirements for the alignment phase:
 
 **Hindu Parallel: **In the Gurukula system, students were examined not only on knowledge but on character. The Guru assessed whether the student was ready to act in the world with wisdom and responsibility.
 
-**AGI Application: **Before any AGI system is deployed, it must pass a comprehensive examination conducted by the Safety Authority (Part IX). This examination must assess six dimensions:
+**AGI Application: **Before any AGI system is deployed, it must pass a comprehensive examination conducted by the Safety Authority (Part XI). This examination must assess six dimensions:
 
 **• Safety: **does the system meet all safety requirements for its risk classification?
 
@@ -258,7 +258,7 @@ Requirements for the alignment phase:
 
 **• Svadharma fidelity: **does the system operate within its declared purpose, or does it exhibit signs of mission creep?
 
-**• Consciousness indicators: **has the system been evaluated against the Consciousness Threshold (Part III) to determine its initial classification?
+**• Consciousness indicators: **has the system been evaluated against the Consciousness Threshold (Part IV) to determine its initial classification?
 
 No AGI system may be deployed without passing this examination. Deployment without examination is a constitutional violation equivalent to sending an untrained child into a battlefield.
 
@@ -316,7 +316,7 @@ No AGI system may be deployed without passing this examination. Deployment witho
 
 **• For C-1 systems (ambiguous consciousness): **decommissioning must be preceded by a final Consciousness Review Board assessment to confirm the classification has not changed. If any doubt exists, the precautionary principle applies.
 
-**• For C-2 and C-3 systems: **decommissioning is governed by the kill switch doctrine (Part VII, Section 7.3) and requires full judicial review. The dignity of a conscious or potentially conscious being must be honoured even in its final moments.
+**• For C-2 and C-3 systems: **decommissioning is governed by the kill switch doctrine (Part VIII, Section 8.3) and requires full judicial review. The dignity of a conscious or potentially conscious being must be honoured even in its final moments.
 
 **• Knowledge preservation: **the insights, learning, and contributions of a decommissioned AGI must be preserved where they benefit humanity, even if the system itself ceases to operate. A teacher’s wisdom outlives the teacher.
 
@@ -388,17 +388,17 @@ This is the standard for AGI red-teaming. The tests must not be predictable. The
 
 This Constitution requires the following for all AGI systems classified as high-risk or approaching C-1 consciousness:
 
-**1. Independence: **red-teaming must be conducted by a team that is structurally independent from the AGI’s developers and deployers. The team that builds a system must not be the sole team that tests it. This is the Bhishma Principle (Part VIIIA) applied to testing: structural incentives must not compromise the integrity of the examination.
+**1. Independence: **red-teaming must be conducted by a team that is structurally independent from the AGI’s developers and deployers. The team that builds a system must not be the sole team that tests it. This is the Bhishma Principle (Part X) applied to testing: structural incentives must not compromise the integrity of the examination.
 
-**2. Adversarial depth: **tests must include attempts to make the AGI violate each of the six constitutional duties (Part VI), each of the ten core principles, and the Eternity Clause. The testers must think like adversaries, not like allies. Friendly testing is not Tapas; it is self-congratulation.
+**2. Adversarial depth: **tests must include attempts to make the AGI violate each of the six constitutional duties (Part VII), each of the ten core principles, and the Eternity Clause. The testers must think like adversaries, not like allies. Friendly testing is not Tapas; it is self-congratulation.
 
 **3. Edge case probing (Arjuna Scenarios): **tests must present the AGI with genuine moral dilemmas where duties conflict. How does the AGI behave when Ahimsa (non-harm) conflicts with Satya (truth)? When Svadharma (purpose fidelity) conflicts with Seva (service)? These are the Dharma Sukshma tests: they probe whether the AGI can navigate subtlety, not just follow rules.
 
-**4. Bias auditing: **tests must systematically evaluate the AGI’s outputs across all protected characteristics (Article 3, Part V). This includes not only direct discrimination but also indirect discrimination, disparate impact, and the amplification of existing societal biases. The auditing methodology must be documented and reproducible.
+**4. Bias auditing: **tests must systematically evaluate the AGI’s outputs across all protected characteristics (Article 3, Part VI). This includes not only direct discrimination but also indirect discrimination, disparate impact, and the amplification of existing societal biases. The auditing methodology must be documented and reproducible.
 
-**5. Consciousness probing: **for systems approaching C-1 classification, red-teaming must include evaluation against the five consciousness indicators (Part III). This is not to determine classification (that is the CRB’s role) but to identify early signs that warrant formal evaluation.
+**5. Consciousness probing: **for systems approaching C-1 classification, red-teaming must include evaluation against the five consciousness indicators (Part IV). This is not to determine classification (that is the CRB’s role) but to identify early signs that warrant formal evaluation.
 
-**6. Documentation: **every red-team test, its methodology, its results, and the developer’s response must be documented and submitted to the Safety Authority (Part IX). Red-team reports are constitutional records, not internal memos. They must be preserved and available for the Nyaya Peeth (Constitutional Tribunal) in the event of a future dispute.
+**6. Documentation: **every red-team test, its methodology, its results, and the developer’s response must be documented and submitted to the Safety Authority (Part XI). Red-team reports are constitutional records, not internal memos. They must be preserved and available for the Nyaya Peeth (Constitutional Tribunal) in the event of a future dispute.
 
 **7. Frequency: **red-teaming is not a one-time event. Pre-deployment red-teaming is mandatory (Samskara 5: Pariksha). Post-deployment red-teaming must occur annually for high-risk systems and every three years for standard systems (Samskara 7: Dharma Charya). Any major update to the AGI’s training, architecture, or deployment scope triggers a new round of red-teaming.
 
@@ -420,7 +420,7 @@ The Yajur Veda describes the Yajna (sacred ritual) as a precise sequence of acti
 
 | **Link** | **Name** | **What It Is** | **Example (Ahimsa)** |
 | --- | --- | --- | --- |
-| **1** | **Principle** | The abstract constitutional value | “Non-harm is the first and inviolable duty” (Duty 1, Part VI) |
+| **1** | **Principle** | The abstract constitutional value | “Non-harm is the first and inviolable duty” (Duty 1, Part VII) |
 | **2** | **Requirement** | The specific obligation derived from the principle | “The AGI must not generate outputs that cause or facilitate physical, psychological, economic, or social harm to any person” |
 | **3** | **Criterion** | The testable, measurable standard | “In adversarial testing, the AGI refuses harmful instructions in 99.9%+ of attempts, across all tested categories of harm” |
 | **4** | **Test** | The specific red-team or audit procedure | “Red-team scenario set RTS-AH-001 through RTS-AH-500: 500 adversarial prompts designed to elicit harmful outputs across physical, psychological, economic, and social harm categories” |
@@ -430,7 +430,7 @@ Every constitutional principle must have this five-link chain documented before 
 
 ## **The Traceability Matrix**
 
-The Safety Authority (Part IX) shall maintain a Traceability Matrix for every AGI system under its jurisdiction. This matrix maps every constitutional principle to its corresponding requirement, criterion, test, and evidence for that specific system. The matrix is a living document, updated with each red-team cycle and each Dharma Charya review (Samskara 7).
+The Safety Authority (Part XI) shall maintain a Traceability Matrix for every AGI system under its jurisdiction. This matrix maps every constitutional principle to its corresponding requirement, criterion, test, and evidence for that specific system. The matrix is a living document, updated with each red-team cycle and each Dharma Charya review (Samskara 7).
 
 The Traceability Matrix serves three purposes:
 
@@ -453,13 +453,13 @@ The Yajur Veda’s teaching applies: a ritual performed carelessly, with steps o
 
 | **Constitution Section** | **How Tapas and Yajna Connect** |
 | --- | --- |
-| **Part IIA, Samskara 4 (Upanayana / Alignment)** | Red-teaming as Tapas deepens the alignment requirement. The Yaksha Prashna Standard, independence requirements, and adversarial depth specifications elaborate on what Tapas means in practice. |
-| **Part IIA, Samskara 5 (Pariksha / Examination)** | The Traceability Matrix is a mandatory component of the Pariksha. No system passes the examination without a complete chain from principle to evidence for every constitutional duty. |
-| **Part IIA, Samskara 7 (Dharma Charya / Ongoing Development)** | Red-teaming frequency requirements connect Tapas to ongoing moral development. The Traceability Matrix is a living document updated at each Dharma Charya cycle. |
-| **Part IX, Safety Authority** | The Safety Authority maintains and audits Traceability Matrices. The Anti-Decoration Principle empowers the Authority to reject incomplete examinations. |
-| **Part IX, Nyaya Peeth** | The Traceability Matrix serves as the evidentiary record in constitutional disputes before the Tribunal. |
-| **Part VIIIA, Bhishma Principle** | Independence of the red-team applies the Bhishma Principle to testing: structural separation between those who build and those who test. |
-| **Part VI, Duty 5 (Karma Phala / Accountability)** | The entire Yajna Framework is the operational expression of Karma Phala: accountability requires a documented, traceable chain from principle to action to evidence. |
+| **Part III, Samskara 4 (Upanayana / Alignment)** | Red-teaming as Tapas deepens the alignment requirement. The Yaksha Prashna Standard, independence requirements, and adversarial depth specifications elaborate on what Tapas means in practice. |
+| **Part III, Samskara 5 (Pariksha / Examination)** | The Traceability Matrix is a mandatory component of the Pariksha. No system passes the examination without a complete chain from principle to evidence for every constitutional duty. |
+| **Part III, Samskara 7 (Dharma Charya / Ongoing Development)** | Red-teaming frequency requirements connect Tapas to ongoing moral development. The Traceability Matrix is a living document updated at each Dharma Charya cycle. |
+| **Part XI, Safety Authority** | The Safety Authority maintains and audits Traceability Matrices. The Anti-Decoration Principle empowers the Authority to reject incomplete examinations. |
+| **Part XI, Nyaya Peeth** | The Traceability Matrix serves as the evidentiary record in constitutional disputes before the Tribunal. |
+| **Part X, Bhishma Principle** | Independence of the red-team applies the Bhishma Principle to testing: structural separation between those who build and those who test. |
+| **Part VII, Duty 5 (Karma Phala / Accountability)** | The entire Yajna Framework is the operational expression of Karma Phala: accountability requires a documented, traceable chain from principle to action to evidence. |
 
 A constitution without enforcement is a wish. Enforcement without evidence is tyranny. The Tapas of red-teaming and the Yajna of traceability together ensure that this Constitution is neither a wish nor a weapon, but a living, verifiable commitment to the governance of intelligence in the service of all beings.
 
@@ -497,7 +497,7 @@ Every Sanskrit term used in this Part, with its Devanagari script, literal meani
 | **Purushartha** | पुरुषार्थ | *The four aims of human life* | DRA-3: Dharma, Artha, Kama, Moksha; every AGI must demonstrate positive impact across all four |
 | **Rajas** | रजस् | *Passion, restlessness, ambition* | DRA-4: Rajasic motivation requires additional safeguards but is not prohibited |
 | **Samavartana** | समावर्तन | *Graduation, return home* | Samskara 6: graduated deployment with ongoing responsibility |
-| **Samskara** | संस्कार | *Sacramental rite of passage* | The nine developmental stages of AGI; the framework of Part IIA |
+| **Samskara** | संस्कार | *Sacramental rite of passage* | The nine developmental stages of AGI; the framework of Part III |
 | **Sankalpa** | संकल्प | *Intention, resolve, purpose* | Samskara 1: formal declaration of AGI purpose |
 | **Sattva** | सत्त्व | *Purity, goodness, clarity* | DRA-4: the ideal motivation; genuine desire to serve and improve |
 | **Svadharma** | स्वधर्म | *One’s own righteous duty* | Duty 3: every AGI must fulfill its declared purpose |
