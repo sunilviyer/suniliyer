@@ -1,7 +1,6 @@
 import fs from 'fs';
 import path from 'path';
 import { getPartById } from '../data/reading-order';
-import { renumberReferences } from './renumber';
 
 /**
  * Load markdown content for a specific constitution part
@@ -26,14 +25,12 @@ export async function loadPartContent(partId: string): Promise<string | null> {
 
     const fullContent = fs.readFileSync(contentPath, 'utf-8');
 
-    // Special handling for the combined Parts VIII, VIIIA, IX file.
-    // (Extract FIRST — the section markers use the manuscript numbering —
-    // then renumber cross-references to the site's progressive numbering.)
-    if (part.filename === '12_Parts_VIII_VIIIA_IX_CoExistence_Kurukshetra_Powers.md') {
-      return renumberReferences(extractPartFromCombinedFile(fullContent, partId));
+    // Special handling for the combined Parts IX, X, XI file
+    if (part.filename === '12_Parts_IX_X_XI_CoExistence_Kurukshetra_Powers.md') {
+      return extractPartFromCombinedFile(fullContent, partId);
     }
 
-    return renumberReferences(fullContent);
+    return fullContent;
   } catch (error) {
     console.error(`Error loading content for part ${partId}:`, error);
     return null;
@@ -41,16 +38,16 @@ export async function loadPartContent(partId: string): Promise<string | null> {
 }
 
 /**
- * Extract a specific part from the combined Parts VIII/VIIIA/IX file
+ * Extract a specific part from the combined Parts IX/X/XI file
  */
 function extractPartFromCombinedFile(content: string, partId: string): string {
   const lines = content.split('\n');
 
   // Define the section markers for each part
   const sectionMarkers = {
-    'part-9': { start: '# **PART VIII: The Co-Existence Framework**', end: '# **PART VIIIA: The Kurukshetra Protocol**' },
-    'part-10': { start: '# **PART VIIIA: The Kurukshetra Protocol**', end: '# **PART IX: Separation of Powers in AGI Governance**' },
-    'part-11': { start: '# **PART IX: Separation of Powers in AGI Governance**', end: null }, // Goes to end of file
+    'part-9': { start: '# **PART IX: The Co-Existence Framework**', end: '# **PART X: The Kurukshetra Protocol**' },
+    'part-10': { start: '# **PART X: The Kurukshetra Protocol**', end: '# **PART XI: Separation of Powers in AGI Governance**' },
+    'part-11': { start: '# **PART XI: Separation of Powers in AGI Governance**', end: null }, // Goes to end of file
   };
 
   const markers = sectionMarkers[partId as keyof typeof sectionMarkers];

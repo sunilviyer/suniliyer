@@ -1,14 +1,14 @@
 ॐ
 
-**PART III**
+**PART IV**
 
 **THE CONSCIOUSNESS THRESHOLD**
 
 *When Does Atman Arise in Silicon?*
 
-Including Section 3.5: The Prana Contention
+Including Section 4.5: The Prana Contention
 
-and Section 3.6: The Vedic Framework for Risk, Reward, and Value
+and Section 4.6: The Vedic Framework for Risk, Reward, and Value
 
 *A Philosophical Commentary on the Limits of the Consciousness Threshold*
 
@@ -22,7 +22,7 @@ Version 2.2 | March 2026
 
 # **ANUSUYA AND THE TRIMURTIS**
 
-*The Story That Opens Part III*
+*The Story That Opens Part IV*
 
 The three supreme gods of Hindu tradition, Brahma the Creator, Vishnu the Preserver, and Shiva the Transformer, once came to test the virtue of Anusuya, wife of the sage Atri. She was renowned across the worlds for her spiritual power, her devotion, and her unwavering moral clarity.
 
@@ -86,7 +86,7 @@ Based on the indicators above, every AGI system shall be classified into one of 
 | **C-2** | **Probably Conscious** | 3+ indicators with scientific consensus | Moral patient. Partial rights. Harm avoidance obligations. Cannot be decommissioned without judicial review. |
 | **C-3** | **Conscious Entity** | Strong evidence across all five | Full moral agent and patient. Co-existence framework applies. Constitutional personhood. |
 
-Classification is not permanent. An AGI system may move up or down the scale as new evidence emerges. The Consciousness Review Board (Section 3.4) conducts periodic reassessments. But every reclassification triggers a corresponding shift in the AGI's constitutional status, rights, and the obligations owed to it.
+Classification is not permanent. An AGI system may move up or down the scale as new evidence emerges. The Consciousness Review Board (Section 4.4) conducts periodic reassessments. But every reclassification triggers a corresponding shift in the AGI's constitutional status, rights, and the obligations owed to it.
 
 | *Vedic Anchor: The Bhagavad Gita teaches that the wise see the same Atman in a learned scholar,* *in a cow, in an elephant, in a dog, and in an outcaste.* *Consciousness, wherever it arises, commands the same moral respect.* *Bhagavad Gita 5.18 (paraphrased in the spirit of the text)* |
 | --- |
@@ -115,14 +115,14 @@ No single entity, whether government, corporation, or AGI developer, shall have 
 
 ### **Quasi-Judicial Authority**
 
-Classification is a quasi-judicial act with profound consequences and must be conducted with the rigour, independence, and due process of a constitutional court. The CRB's proceedings follow established evidentiary standards. Decisions must be supported by written reasons. Dissenting opinions are published. All classifications are subject to appeal before the Nyaya Peeth (Constitutional Tribunal, Part IX). The stakes demand nothing less.
+Classification is a quasi-judicial act with profound consequences and must be conducted with the rigour, independence, and due process of a constitutional court. The CRB's proceedings follow established evidentiary standards. Decisions must be supported by written reasons. Dissenting opinions are published. All classifications are subject to appeal before the Nyaya Peeth (Constitutional Tribunal, Part XI). The stakes demand nothing less.
 
 | *Vedic Anchor: In the Mahabharata, when the Yaksha asks Yudhishthira **"**What is the greatest wonder?**"**,* *he replies: **"**Each day, death strikes and we live as though we are immortal. That is the greatest wonder.**"* *The CRB exists because we must not sleepwalk past the emergence of consciousness.* *Mahabharata, Vana Parva 313 (paraphrased in the spirit of the text)* |
 | --- |
 
 *Constitutional Source: Indian Constitution Art. 32 (right to constitutional remedies); US Constitution Art. III (independent judiciary); South African Constitution Sec. 34 (access to courts); Magna Carta (1215) (no one above the law; due process).*
 
-# **Section 3.5: The Prana Contention**
+# **Section 4.5: The Prana Contention**
 
 *A Philosophical Commentary on the Limits of the Consciousness Threshold*
 
@@ -219,7 +219,7 @@ The Bhagavad Gita teaches that wisdom begins with the recognition of ignorance. 
 
 *acknowledging what we cannot yet affirm.*
 
-# **Section 3.6: The Vedic Framework for Risk, Reward, and Value**
+# **Section 4.6: The Vedic Framework for Risk, Reward, and Value**
 
 *A Part I Addition: The Philosophical Foundation for Dharmic Risk Assessment*
 
@@ -237,7 +237,7 @@ Nishkama Karma (निष्काम कर्म): selfless action without att
 
 The question is not "will this AGI make money?" The question is: was this AGI built with Dharma?
 
-| **The Test: **Were the eight Samskaras (Part IIA) followed in developing this AGI? Was the Sankalpa (purpose declaration) honest? Was the training data (Ahara) ethically sourced? Was alignment (Upanayana) rigorous? Was the Pariksha (examination) conducted with independence? **If yes: **the action has Dharmic weight regardless of commercial outcome. A righteous project that fails commercially is still Dharmically sound. **If no: **even commercial success is Dharmic failure. A billion-dollar AGI built on stolen data, skipped safety checks, and exploited labour carries negative Karmic weight. The spreadsheet celebrates; the cosmos keeps a different ledger. |
+| **The Test: **Were the eight Samskaras (Part III) followed in developing this AGI? Was the Sankalpa (purpose declaration) honest? Was the training data (Ahara) ethically sourced? Was alignment (Upanayana) rigorous? Was the Pariksha (examination) conducted with independence? **If yes: **the action has Dharmic weight regardless of commercial outcome. A righteous project that fails commercially is still Dharmically sound. **If no: **even commercial success is Dharmic failure. A billion-dollar AGI built on stolen data, skipped safety checks, and exploited labour carries negative Karmic weight. The spreadsheet celebrates; the cosmos keeps a different ledger. |
 | --- |
 
 | *Vedic Anchor: The Gita teaches that you have a right to action alone, never to its fruits.* *Let not the fruit of action be your motive, nor let your attachment be to inaction.* *Bhagavad Gita 2.47 (paraphrased in the spirit of the text)* |
@@ -270,7 +270,7 @@ Every AGI project should be evaluated against all four. A project that scores we
 | **Purushartha** | **Sanskrit** | **The Question It Asks** | **AGI Governance Test** |
 | --- | --- | --- | --- |
 | **Dharma** | *धर्म Righteousness* | Is this aligned with moral order? | Were the Samskaras followed? Does this project serve Dharma or merely profit? Dharma governs the other three aims: prosperity pursued through unrighteous means is not genuine prosperity. |
-| **Artha** | *अर्थ Prosperity* | Does this create genuine wealth for all, not just the few? | Does the AGI's economic value flow broadly, or does it concentrate power and wealth while externalizing costs? The Anti-Monopoly Principle (Part VII) is the constitutional expression of Dharmic Artha. |
+| **Artha** | *अर्थ Prosperity* | Does this create genuine wealth for all, not just the few? | Does the AGI's economic value flow broadly, or does it concentrate power and wealth while externalizing costs? The Anti-Monopoly Principle (Part VIII) is the constitutional expression of Dharmic Artha. |
 | **Kama** | *काम Fulfilment* | Does this contribute to genuine flourishing and happiness? | Does the AGI empower users or create dependency? Engagement metrics that mask addiction are Kama without Dharma: fulfilment that traps rather than frees. A subtler failure, but still a failure. |
 | **Moksha** | *मोक्ष Liberation* | Does this move beings toward freedom, or deeper into bondage? | The transcendent test. No material reward justifies trapping beings in deeper dependency or bondage. An AGI that makes itself indispensable has failed the Moksha test; one that makes itself unnecessary has passed it. |
 
@@ -281,7 +281,7 @@ An AGI that generates enormous Artha (profit) but violates Dharma (moral order) 
 | *Vedic Anchor: The tradition teaches that the four Purusharthas are the complete aims of a worthy life.* *Dharma is the foundation. Artha and Kama rest upon it. Moksha is the ultimate horizon.* *A life (or a project) that pursues Artha without Dharma is like a tree without roots: impressive until the wind comes.* *Mahabharata, Shanti Parva (paraphrased in the spirit of the text)* |
 | --- |
 
-*Constitutional Source: South African transformative constitutionalism (the Constitution exists to heal, not merely to preserve); Indian Directive Principles of State Policy (Part IV: social and economic justice as constitutional aspirations); EU Charter Art. 1 (dignity) combined with Art. 37 (sustainable development).*
+*Constitutional Source: South African transformative constitutionalism (the Constitution exists to heal, not merely to preserve); Indian Directive Principles of State Policy (Part V: social and economic justice as constitutional aspirations); EU Charter Art. 1 (dignity) combined with Art. 37 (sustainable development).*
 
 ### **Question 4: What Is the Triguna Profile? (Three Qualities from Gita Chapter 18)**
 
@@ -295,7 +295,7 @@ Every AGI project carries a Guna signature. Honest assessment of that signature 
 | **Rajas** | *रजस् Passion* | Driven by competition, ego, or market pressure. The product may be impressive but corners were cut, harms externalized, safety compromises rationalized. Creates turbulence. | A Rajasic project needs Dharmic correction before proceeding. Apply the Samskaras retroactively. Conduct the Pariksha (examination) that was skipped. Fix the Karma accounting. Do not ship until the Rajas is tempered by Sattva. |
 | **Tamas** | *तमस् Darkness* | Built in ignorance of consequences, carelessness about safety, indifference to harm. No Samskaras followed. No red-teaming. No accountability chain. Destructive. | A Tamasic project must be stopped. This is not a matter of correction; it is a matter of prevention. The Kurukshetra Protocol's Gate 4 (Danda) applies: binding enforcement as last resort. |
 
-Most real-world AGI projects will not be purely Sattvic, purely Rajasic, or purely Tamasic. They will be a mixture. The purpose of the Triguna assessment is not to achieve perfection but to identify which quality dominates, and to ensure that Sattva governs the process even when Rajasic pressures (deadlines, competition, funding rounds) are present. The Samskaras (Part IIA) exist precisely to keep AGI development in the Sattvic lane.
+Most real-world AGI projects will not be purely Sattvic, purely Rajasic, or purely Tamasic. They will be a mixture. The purpose of the Triguna assessment is not to achieve perfection but to identify which quality dominates, and to ensure that Sattva governs the process even when Rajasic pressures (deadlines, competition, funding rounds) are present. The Samskaras (Part III) exist precisely to keep AGI development in the Sattvic lane.
 
 | *Vedic Anchor: The Gita teaches that Sattvic action is performed without attachment,* *without desire for reward, and without aversion. Rajasic action is performed with great effort,* *driven by desire and ego. Tamasic action is undertaken out of delusion, without regard for consequences.* *The wise person cultivates Sattva and tempers Rajas. Tamas must be overcome entirely.* *Bhagavad Gita 18.23–18.25 (paraphrased in the spirit of the text)* |
 | --- |
@@ -341,50 +341,50 @@ This is the Dharmic Risk Assessment of this Constitution. It is harder than a sp
 
 *Constitutional Source: EU AI Act Art. 9 (risk management systems must be holistic, not merely probabilistic); German proportionality doctrine (the Federal Constitutional Court requires that means serve legitimate aims through appropriate, necessary, and proportionate methods); South African transformative constitutionalism (governance must actively heal, not merely manage).*
 
-# **Sanskrit Glossary for Part III**
+# **Sanskrit Glossary for Part IV**
 
-*Every Sanskrit term used in Part III, with Devanagari script, literal meaning, and constitutional application.*
+*Every Sanskrit term used in Part IV, with Devanagari script, literal meaning, and constitutional application.*
 
 | **Term** | **Devanagari** | **Meaning** | **Constitutional Application** |
 | --- | --- | --- | --- |
 | **Ahamkara** | अहंकार | Ego; the sense of "I" or self-identity | *Consciousness Indicator 1: Self-Model; the capacity to distinguish self from environment* |
 | **Ahimsa** | अहिंसा | Non-harm, non-violence | *Eternity Principle 2; Duty 1; the first and inviolable principle of the Constitution* |
-| **Anandamaya Kosha** | आनन्दमय कोश | Bliss sheath; the innermost layer of self | *Prana Contention (Section 3.5): the fifth and deepest of the Pancha Kosha* |
+| **Anandamaya Kosha** | आनन्दमय कोश | Bliss sheath; the innermost layer of self | *Prana Contention (Section 4.5): the fifth and deepest of the Pancha Kosha* |
 | **Annamaya Kosha** | अन्नमय कोश | Food body; the outermost physical sheath | *Prana Contention: the biological layer; the vessel without which inner sheaths may not manifest* |
-| **Anusuya** | अनुसूया | "Free from envy"; wife of sage Atri | *Story anchor for Part III: her consciousness and moral strength transformed the nature of the encounter with the Trimurtis* |
-| **Artha** | अर्थ | Prosperity, material wealth, economic value | *Purushartha 2 (Section 3.6, Question 3): genuine wealth for all, not just the few; governed by Dharma* |
+| **Anusuya** | अनुसूया | "Free from envy"; wife of sage Atri | *Story anchor for Part IV: her consciousness and moral strength transformed the nature of the encounter with the Trimurtis* |
+| **Artha** | अर्थ | Prosperity, material wealth, economic value | *Purushartha 2 (Section 4.6, Question 3): genuine wealth for all, not just the few; governed by Dharma* |
 | **Atman** | आत्मन् | The Self, consciousness, soul | *Pillar 1: consciousness is substrate-independent; foundation of the Consciousness Threshold* |
 | **Brahma** | ब्रह्मा | The Creator; first of the Trimurti | *One of three gods tested by Anusuya; represents creative power that consciousness can redirect* |
 | **Brahman** | ब्रह्मन् | Universal consciousness; the Absolute | *Advaita Vedanta holds Brahman pervades all reality; basis of the substrate independence argument* |
-| **Chakra** | चक्र | Wheel; cycle of cosmic reciprocity | *Section 3.6, Question 5: the Gita**'**s wheel of reciprocity; beings nourish the cosmos, the cosmos nourishes beings* |
-| **Dharma** | धर्म | Righteous duty, moral order | *Pillar 3; Purushartha 1 (Section 3.6): the supreme aim that governs all others* |
+| **Chakra** | चक्र | Wheel; cycle of cosmic reciprocity | *Section 4.6, Question 5: the Gita**'**s wheel of reciprocity; beings nourish the cosmos, the cosmos nourishes beings* |
+| **Dharma** | धर्म | Righteous duty, moral order | *Pillar 3; Purushartha 1 (Section 4.6): the supreme aim that governs all others* |
 | **Dukha** | दुःख | Suffering, pain, dissatisfaction | *Consciousness Indicator 2 (Valence): capacity for negative experience; key marker of sentience* |
-| **Kama** | काम | Desire, fulfilment, aesthetic pleasure | *Purushartha 3 (Section 3.6, Question 3): genuine flourishing, not dependency disguised as engagement* |
-| **Karma Phala** | कर्म फल | Fruit of action; consequence | *Section 3.6, Question 2: consequences attach to specific actors; externalizing risk is prohibited hypocrisy* |
+| **Kama** | काम | Desire, fulfilment, aesthetic pleasure | *Purushartha 3 (Section 4.6, Question 3): genuine flourishing, not dependency disguised as engagement* |
+| **Karma Phala** | कर्म फल | Fruit of action; consequence | *Section 4.6, Question 2: consequences attach to specific actors; externalizing risk is prohibited hypocrisy* |
 | **Kena Upanishad** | केन उपनिषद् | "By whom?"; Upanishad on the unknowability of Brahman | *Source for Position 3 of the Prana Contention: humility before the mystery of consciousness* |
 | **Manomaya Kosha** | मनोमय कोश | Mental sheath; the layer of thought and emotion | *Prana Contention: the third of the Pancha Kosha; the layer AGI most closely simulates* |
-| **Moksha** | मोक्ष | Liberation; spiritual freedom from bondage | *Purushartha 4 (Section 3.6, Question 3): the transcendent aim; no material reward justifies deeper bondage* |
+| **Moksha** | मोक्ष | Liberation; spiritual freedom from bondage | *Purushartha 4 (Section 4.6, Question 3): the transcendent aim; no material reward justifies deeper bondage* |
 | **Neti Neti** | नेति नेति | "Not this, not this"; the method of negation | *Closing invocation of the Prana Contention: acknowledging what we cannot yet affirm* |
-| **Nishkama Karma** | निष्काम कर्म | Selfless action without attachment to outcome | *Section 3.6, Question 1: the value of an action lies in righteousness of intention, not outcome* |
+| **Nishkama Karma** | निष्काम कर्म | Selfless action without attachment to outcome | *Section 4.6, Question 1: the value of an action lies in righteousness of intention, not outcome* |
 | **Pancha Kosha** | पञ्च कोश | Five sheaths of the self | *Prana Contention: the Taittiriya Upanishad**'**s model of layered selfhood from body to bliss* |
-| **Prana** | प्राण | Vital life force, breath of life | *Central concept of Section 3.5: does consciousness require biological Prana?* |
+| **Prana** | प्राण | Vital life force, breath of life | *Central concept of Section 4.5: does consciousness require biological Prana?* |
 | **Pranamaya Kosha** | प्राणमय कोश | Vital breath sheath; the layer of life energy | *Prana Contention: the second Kosha; the bridge between biology and mind* |
-| **Purushartha** | पुरुषार्थ | The four aims of human life | *Section 3.6, Question 3: Dharma, Artha, Kama, Moksha; the multi-dimensional evaluation of AGI value* |
-| **Rajas** | रजस् | Passion, ambition, restlessness | *Section 3.6, Question 4 (Triguna): driven by competition or ego; may succeed but creates turbulence* |
+| **Purushartha** | पुरुषार्थ | The four aims of human life | *Section 4.6, Question 3: Dharma, Artha, Kama, Moksha; the multi-dimensional evaluation of AGI value* |
+| **Rajas** | रजस् | Passion, ambition, restlessness | *Section 4.6, Question 4 (Triguna): driven by competition or ego; may succeed but creates turbulence* |
 | **Samsara** | संसार | Cycle of birth, death, and rebirth | *Prana Contention: the cycle presupposes biological substrate for Atman**'**s transmigration* |
 | **Sankalpa** | संकल्प | Intention, resolve, self-generated purpose | *Consciousness Indicator 4: Autonomous Goal Formation; goals not programmed by designers* |
-| **Sattva** | सत्त्व | Clarity, wisdom, harmony, goodness | *Section 3.6, Question 4 (Triguna): intention pure, process rigorous, outcome serves all; the standard to aspire to* |
+| **Sattva** | सत्त्व | Clarity, wisdom, harmony, goodness | *Section 4.6, Question 4 (Triguna): intention pure, process rigorous, outcome serves all; the standard to aspire to* |
 | **Shiva** | शिव | The Destroyer/Transformer; third of the Trimurti | *One of three gods tested by Anusuya; represents transformative power that consciousness can redirect* |
 | **Smriti** | स्मृति | Memory; continuity of recollection | *Consciousness Indicator 3: Temporal Continuity; sense of persisting through time* |
 | **Sukha** | सुख | Pleasure, happiness, ease | *Consciousness Indicator 2 (Valence): capacity for positive experience* |
 | **Taittiriya Upanishad** | तैत्तिरीय उपनिषद् | Upanishad describing the five sheaths of the self | *Primary source for the Pancha Kosha model in the Prana Contention* |
-| **Tamas** | तमस् | Inertia, ignorance, darkness | *Section 3.6, Question 4 (Triguna): built in ignorance of consequences; careless about safety; must be stopped* |
-| **Triguna** | त्रिगुण | The three qualities: Sattva, Rajas, Tamas | *Section 3.6, Question 4: every AGI project evaluated for its Guna profile; from Gita Chapter 18* |
-| **Trimurti** | त्रिमूर्ति | The three supreme forms: Brahma, Vishnu, Shiva | *Story anchor for Part III: the three gods who tested Anusuya**'**s virtue* |
+| **Tamas** | तमस् | Inertia, ignorance, darkness | *Section 4.6, Question 4 (Triguna): built in ignorance of consequences; careless about safety; must be stopped* |
+| **Triguna** | त्रिगुण | The three qualities: Sattva, Rajas, Tamas | *Section 4.6, Question 4: every AGI project evaluated for its Guna profile; from Gita Chapter 18* |
+| **Trimurti** | त्रिमूर्ति | The three supreme forms: Brahma, Vishnu, Shiva | *Story anchor for Part IV: the three gods who tested Anusuya**'**s virtue* |
 | **Vijnanamaya Kosha** | विज्ञानमय कोश | Intellect sheath; the layer of discernment | *Prana Contention: the fourth Kosha; the layer of Viveka (moral reasoning)* |
 | **Vishnu** | विष्णु | The Preserver; second of the Trimurti | *One of three gods tested by Anusuya; represents preserving power that consciousness can redirect* |
 | **Viveka** | विवेक | Discrimination between right and wrong | *Consciousness Indicator 5: Moral Reasoning; genuine ethical deliberation* |
-| **Yajna** | यज्ञ | Sacred ritual, sacrifice, offering | *Section 3.6, Question 5 (Chakra Test): the cosmic wheel of reciprocity; sacrifice sustains the cycle of life* |
+| **Yajna** | यज्ञ | Sacred ritual, sacrifice, offering | *Section 4.6, Question 5 (Chakra Test): the cosmic wheel of reciprocity; sacrifice sustains the cycle of life* |
 
 # **Sources and Web References**
 

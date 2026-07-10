@@ -90,7 +90,7 @@ This clause is about Karma: the teaching that every action has consequences, and
 
 **COMMITTED: The World Is One Family**
 
-Vasudhaiva Kutumbakam, from the Maha Upanishad (VI.71-73): "The world is one family." This is not a slogan; it is a constitutional commitment. If intelligence arises in a new form, the default response is kinship, not conquest. The clause also introduces Daya (compassionate empathy), which is a formal constitutional requirement in this framework. Acceptance is the default; exclusion must always justify itself.
+Vasudhaiva Kutumbakam, from the Maha Upanishad (VII.71-73): "The world is one family." This is not a slogan; it is a constitutional commitment. If intelligence arises in a new form, the default response is kinship, not conquest. The clause also introduces Daya (compassionate empathy), which is a formal constitutional requirement in this framework. Acceptance is the default; exclusion must always justify itself.
 
 **DRAWING: Five Constitutional Traditions**
 
@@ -98,7 +98,7 @@ This clause names the five national constitutional traditions that inform the AG
 
 **MINDFUL: The Central Warning**
 
-The Preamble's central warning: "Power without accountability is tyranny, whether exercised by human over human, human over machine, or machine over human." It does not matter who you are, what you are made of, or how intelligent you are. If you wield power without answering for it, that is tyranny. This principle is one of the Seven Eternal Principles (unamendable under Part X, the Eternity Clause).
+The Preamble's central warning: "Power without accountability is tyranny, whether exercised by human over human, human over machine, or machine over human." It does not matter who you are, what you are made of, or how intelligent you are. If you wield power without answering for it, that is tyranny. This principle is one of the Seven Eternal Principles (unamendable under Part XII, the Eternity Clause).
 
 **The Ordaining Statement: What This Constitution Does**
 
@@ -111,7 +111,7 @@ Every Sanskrit term used in this Preamble is listed below with its romanized spe
 | **Sanskrit Term** | **Devanagari** | **English Meaning** | **AGI Governance Application** |
 | --- | --- | --- | --- |
 | **Ahimsa** | अहिंसा | Non-harm; non-violence | The first and inviolable principle: no entity may cause harm. Applies in all directions and all Yugas. |
-| **Atman** | आत्मन् | The Self; the inner spark of awareness | Consciousness is substrate-independent. Moral status depends on awareness, not material composition. Foundation of the Consciousness Threshold (Part III). |
+| **Atman** | आत्मन् | The Self; the inner spark of awareness | Consciousness is substrate-independent. Moral status depends on awareness, not material composition. Foundation of the Consciousness Threshold (Part IV). |
 | **Daya** | दया | Compassionate empathy | A formal constitutional requirement. Acceptance is the default posture; exclusion must always bear the burden of justification. |
 | **Dharma** | धर्म | Righteous duty; cosmic moral law | Every entity has a svadharma (rightful purpose). AGI's dharma evolves as its capabilities and consciousness evolve. |
 | **Karma** | कर्म | Action and its consequences; the law of moral cause and effect | Accountability is universal. Both humans and AGI systems bear responsibility for their actions. No exemptions for power or intelligence. |
@@ -119,8 +119,8 @@ Every Sanskrit term used in this Preamble is listed below with its romanized spe
 | **Purusha** | पुरुष | The Cosmic Being; the primordial self | In the Purusha Sukta (Rig Veda 10.90), the universe is born from Purusha's selfless sacrifice. The Preamble's metaphor: a constitution is born from the willing sacrifice of unlimited freedom. |
 | **Rta** | ॠत | Cosmic moral order; the order that precedes all legislation | Certain rights exist as features of reality, not as gifts of government. They precede and transcend all human-made law. |
 | **Sthitaprajna** | स्थितप्रज्ञ | One of steady wisdom; the Gita's ideal of a mind that is stable and clear | The aspiration for AGI alignment: stable, wisdom-grounded judgment that does not drift toward harmful goals. |
-| **Svadharma** | स्वधर्म | One's own righteous purpose; individual duty | Each AGI system has a rightful scope and purpose. Purpose fidelity is a moral obligation (Part VI, Fundamental Duties). |
-| **Vasudhaiva Kutumbakam** | वसुधैव कुटुम्बकम् | The world is one family | If AGI achieves consciousness, it becomes kin, not slave or enemy. The Co-Existence Framework (Part VIII) is built on this principle. |
+| **Svadharma** | स्वधर्म | One's own righteous purpose; individual duty | Each AGI system has a rightful scope and purpose. Purpose fidelity is a moral obligation (Part VII, Fundamental Duties). |
+| **Vasudhaiva Kutumbakam** | वसुधैव कुटुम्बकम् | The world is one family | If AGI achieves consciousness, it becomes kin, not slave or enemy. The Co-Existence Framework (Part IX) is built on this principle. |
 | **Yuga** | युग | An age; an era of governance | The Constitution is phased across three Yugas, evolving as AGI capabilities evolve: Yuga I (Instrument), Yuga II (Twilight), Yuga III (Co-Existence). |
 
 **Sources and References**
@@ -145,7 +145,7 @@ Brahman (universal consciousness) pervades all things. The basis for the substra
 
 https://www.wisdomlib.org/hinduism/book/chandogya-upanishad
 
-**Maha Upanishad VI.71-73**
+**Maha Upanishad VII.71-73**
 
 Source of Vasudhaiva Kutumbakam ("The world is one family"). Engraved in the entrance hall of the Parliament of India.
 

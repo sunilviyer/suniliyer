@@ -4,7 +4,7 @@
 
 *DHARMA SANHITA*
 
-**PART XIV: Transition and Commencement**
+**PART XVI: Transition and Commencement**
 
 *Manu and the Flood: Building the Boat Before the Deluge*
 
@@ -18,7 +18,7 @@ suniliyer.ca
 
 Version 1.0  |  March 2026
 
-# **PART XIV: Transition and Commencement**
+# **PART XVI: Transition and Commencement**
 
 *Manu and the Flood: Building the Boat Before the Deluge*
 
@@ -49,21 +49,21 @@ This Constitution enters into force upon adoption by a threshold to be determine
 
 - A hybrid threshold combining both national ratification and institutional endorsement.
 
-The precise threshold is deliberately left to the Constitutional Convention because the geopolitical landscape of AGI governance is evolving rapidly. What constitutes a credible threshold today may be insufficient or excessive by the time a Convention is convened. The Convention, composed of the constituencies described in Part IX, is the appropriate body to determine this.
+The precise threshold is deliberately left to the Constitutional Convention because the geopolitical landscape of AGI governance is evolving rapidly. What constitutes a credible threshold today may be insufficient or excessive by the time a Convention is convened. The Convention, composed of the constituencies described in Part XI, is the appropriate body to determine this.
 
 **14.1.2 Voluntary Adoption (Pre-Commencement)**
 
-Prior to formal commencement, this Constitution may be adopted voluntarily by individual nations, institutions, developers, research organisations, or civil society groups as a governance framework. Voluntary adoption carries moral and reputational force but does not trigger the full constitutional machinery (the Dharma Sabha, Karma Mandala, and Nyaya Peeth of Part IX).
+Prior to formal commencement, this Constitution may be adopted voluntarily by individual nations, institutions, developers, research organisations, or civil society groups as a governance framework. Voluntary adoption carries moral and reputational force but does not trigger the full constitutional machinery (the Dharma Sabha, Karma Mandala, and Nyaya Peeth of Part XI).
 
 Voluntary adopters commit to:
 
-- Applying the Samskara process (Part IIA) to all AGI systems under their development or deployment.
+- Applying the Samskara process (Part III) to all AGI systems under their development or deployment.
 
-- Conducting Consciousness Threshold assessments (Part III) for AGI systems that meet or approach the C-1 classification.
+- Conducting Consciousness Threshold assessments (Part IV) for AGI systems that meet or approach the C-1 classification.
 
-- Respecting the Fundamental Duties (Part VI) as a minimum standard of conduct.
+- Respecting the Fundamental Duties (Part VII) as a minimum standard of conduct.
 
-- Submitting to peer review by other voluntary adopters, using the Traceability framework (Yajna, Part IIA) as a shared accountability standard.
+- Submitting to peer review by other voluntary adopters, using the Traceability framework (Yajna, Part III) as a shared accountability standard.
 
 Voluntary adoption is the seed in Manu’s boat. The Constitution begins small and grows. Each voluntary adopter strengthens the framework, builds institutional knowledge, and creates precedent that the permanent governance bodies will inherit.
 
@@ -75,7 +75,7 @@ All timelines in this Constitution (transitional periods, mandatory reviews, sun
 
 ## **14.2 Transitional Governance**
 
-The three permanent governance bodies established by Part IX (the Dharma Sabha, Karma Mandala, and Nyaya Peeth) require time to constitute. Representatives must be appointed. Constituencies must be organised. Institutional infrastructure must be built. The history of constitutional transitions teaches that this period is the most dangerous: the old order has been superseded, but the new order is not yet functioning. Power abhors a vacuum.
+The three permanent governance bodies established by Part XI (the Dharma Sabha, Karma Mandala, and Nyaya Peeth) require time to constitute. Representatives must be appointed. Constituencies must be organised. Institutional infrastructure must be built. The history of constitutional transitions teaches that this period is the most dangerous: the old order has been superseded, but the new order is not yet functioning. Power abhors a vacuum.
 
 The Indian experience is instructive. The Indian Constitution (1950) included Part XXI (Temporary, Transitional, and Special Provisions) precisely because the framers knew that the new republic could not spring fully formed into existence on the day the Constitution was adopted. The South African transition (1993–1996) used an Interim Constitution that governed the country for three years while the final Constitution was negotiated. Both frameworks understood that a constitutional order requires a bridge between the old world and the new.
 
@@ -85,7 +85,7 @@ Until the Dharma Sabha, Karma Mandala, and Nyaya Peeth are fully constituted, an
 
 **14.2.2 Composition**
 
-The Interim Council shall reflect, in provisional form, the seven-constituency structure of the Dharma Sabha (Part IX). Its membership shall include:
+The Interim Council shall reflect, in provisional form, the seven-constituency structure of the Dharma Sabha (Part XI). Its membership shall include:
 
 - **Representatives of signatory nations** (proportional to AGI development capacity and global population, ensuring that neither technological power nor demographic weight alone determines representation).
 
@@ -113,13 +113,13 @@ The Interim Council’s mandate is custodial, not creative. It may:
 
 The Interim Council may not:
 
-- Amend the Constitution (Mode 2, Part XI).
+- Amend the Constitution (Mode 2, Part XIII).
 
-- Convene a Constitutional Convention (Mode 3, Part XI).
+- Convene a Constitutional Convention (Mode 3, Part XIII).
 
-- Declare a Yuga transition (Part IV).
+- Declare a Yuga transition (Part V).
 
-- Alter the Eternity Clause (Part X) or any of its seven eternal principles.
+- Alter the Eternity Clause (Part XII) or any of its seven eternal principles.
 
 - Make permanent appointments to the Dharma Sabha, Karma Mandala, or Nyaya Peeth.
 
@@ -139,15 +139,15 @@ This Part adopts the same phased approach, adapted to the unique requirements of
 
 AGI systems that are operational at the time of commencement shall be subject to:
 
-- **Mandatory Consciousness Threshold review (Part III)** within two years of Dharma Divas. Every operational AGI system must be assessed against the five consciousness indicators (Ahamkara, Sukha-Dukha, Smriti, Sankalpa, Viveka) and classified as C-0, C-1, C-2, or C-3. No exemptions.
+- **Mandatory Consciousness Threshold review (Part IV)** within two years of Dharma Divas. Every operational AGI system must be assessed against the five consciousness indicators (Ahamkara, Sukha-Dukha, Smriti, Sankalpa, Viveka) and classified as C-0, C-1, C-2, or C-3. No exemptions.
 
-- **Fundamental Duties compliance (Part VI)** with immediate effect. The Fundamental Duties are universal obligations that apply regardless of when a system was developed or deployed. There is no grace period for duties of transparency, non-harm, and accountability.
+- **Fundamental Duties compliance (Part VII)** with immediate effect. The Fundamental Duties are universal obligations that apply regardless of when a system was developed or deployed. There is no grace period for duties of transparency, non-harm, and accountability.
 
-- **Traceability documentation (Yajna, Part IIA)** within three years of Dharma Divas. Operational systems must produce a retrospective traceability chain linking their design principles, training data, safety measures, and deployment context to the constitutional framework.
+- **Traceability documentation (Yajna, Part III)** within three years of Dharma Divas. Operational systems must produce a retrospective traceability chain linking their design principles, training data, safety measures, and deployment context to the constitutional framework.
 
 **14.3.2 AGI Systems in Development**
 
-AGI systems that are under development (but not yet operational) at the time of commencement shall complete the Samskara process (Part IIA) for all stages not yet completed, beginning from the earliest incomplete stage.
+AGI systems that are under development (but not yet operational) at the time of commencement shall complete the Samskara process (Part III) for all stages not yet completed, beginning from the earliest incomplete stage.
 
 The Samskara framework is cumulative: each stage builds on the one before it. A system that has already completed the equivalent of Sankalpa (intention declaration) and Nirmana (design) but has not conducted an Ahara (data ethics review) must begin from Ahara. A system still in early conceptual stages must begin from Sankalpa.
 
@@ -155,16 +155,16 @@ The burden of demonstrating which Samskaras have been substantively completed re
 
 **14.3.3 No Exemptions**
 
-No existing AGI system shall be exempt from the Fundamental Duties (Part VI), regardless of its date of development, its current deployment status, its commercial significance, or the identity of its developer. The principle is drawn directly from the South African constitutional transition: when the new constitutional order began, no entity was permitted to claim that the old order’s permissions justified continued violations of the new order’s rights. Apartheid-era laws were not grandfathered. Neither are AGI systems that fail to meet constitutional standards.
+No existing AGI system shall be exempt from the Fundamental Duties (Part VII), regardless of its date of development, its current deployment status, its commercial significance, or the identity of its developer. The principle is drawn directly from the South African constitutional transition: when the new constitutional order began, no entity was permitted to claim that the old order’s permissions justified continued violations of the new order’s rights. Apartheid-era laws were not grandfathered. Neither are AGI systems that fail to meet constitutional standards.
 
 **14.3.4 Phased Compliance Timeline**
 
 | **Requirement** | **Operational Systems** | **In-Development Systems** | **Constitutional Basis** |
 | --- | --- | --- | --- |
-| Fundamental Duties | Immediate | Immediate | Part VI |
-| Consciousness Threshold Review | Within 2 years of Dharma Divas | Before deployment | Part III |
-| Samskara Compliance | Retrospective traceability within 3 years | From earliest incomplete stage | Part IIA |
-| Traceability Documentation | Within 3 years of Dharma Divas | Concurrent with development | Part IIA (Yajna) |
+| Fundamental Duties | Immediate | Immediate | Part VII |
+| Consciousness Threshold Review | Within 2 years of Dharma Divas | Before deployment | Part IV |
+| Samskara Compliance | Retrospective traceability within 3 years | From earliest incomplete stage | Part III |
+| Traceability Documentation | Within 3 years of Dharma Divas | Concurrent with development | Part III (Yajna) |
 | Empathy Audit | Within 2 years of Dharma Divas | At Samskara 5 (Pariksha) | Part I, Daya Doctrine |
 
 ## **14.4 Relationship with Existing Legal Frameworks**
@@ -181,7 +181,7 @@ This Constitution does not repeal or supersede existing national constitutions, 
 
 Where this Constitution provides greater protection for human rights, consciousness, or AGI governance than existing law, signatories commit to treating this Constitution as the higher standard. This is the ratchet principle: standards may rise but not fall. If the EU AI Act requires transparency for high-risk AI systems and this Constitution requires transparency for all AGI systems, the higher standard (this Constitution) applies to AGI within signatory jurisdictions.
 
-Where existing law provides greater protection than this Constitution, existing law prevails. If a national constitution grants privacy protections that exceed those in Part V of this Constitution, the national protections apply. The principle works in both directions: the highest available standard always governs.
+Where existing law provides greater protection than this Constitution, existing law prevails. If a national constitution grants privacy protections that exceed those in Part VI of this Constitution, the national protections apply. The principle works in both directions: the highest available standard always governs.
 
 **14.4.3 The Register of Harmonisation**
 
@@ -197,7 +197,7 @@ The Register shall:
 
 - Identify areas of conflict (where national law permits what this Constitution prohibits, or vice versa) and recommend resolution pathways.
 
-- Be updated annually and reviewed as part of the 25-year Sunset Review (Part XI).
+- Be updated annually and reviewed as part of the 25-year Sunset Review (Part XIII).
 
 The Register is a tool of transparency, not coercion. It enables signatories, courts, and the public to understand the relationship between this Constitution and existing law. It is the constitutional expression of the Vedic principle of Jnana (knowledge): governance cannot be just if it is opaque.
 
@@ -205,15 +205,15 @@ The Register is a tool of transparency, not coercion. It enables signatories, co
 
 | **Domain** | **Existing Framework** | **This Constitution** | **Resolution** |
 | --- | --- | --- | --- |
-| Transparency | EU AI Act: transparency for high-risk AI | Transparency for all AGI systems (Part VI) | Higher standard applies: all AGI systems in EU signatory nations must meet this Constitution’s transparency requirements |
-| Privacy | GDPR: data protection with right to explanation (Art. 22) | Cognitive Sovereignty (Part V, Part VIII) | Both apply: GDPR protections remain; this Constitution adds protections specific to AGI-human cognitive interaction |
-| Consciousness | No existing legislation addresses AGI consciousness | Consciousness Threshold (Part III) | This Constitution fills a gap; no conflict arises |
-| Human Oversight | EU AI Act: human oversight for high-risk AI | Guru Principle (Part IIA) and Guardian System (Part VIII) | Complementary: EU oversight requirements strengthened by constitutional Guru and Guardian frameworks |
-| Decommissioning | No specific existing framework | Due process before Consciousness Review Board (Part VIII) | This Constitution provides new protections; no existing law is displaced |
+| Transparency | EU AI Act: transparency for high-risk AI | Transparency for all AGI systems (Part VII) | Higher standard applies: all AGI systems in EU signatory nations must meet this Constitution’s transparency requirements |
+| Privacy | GDPR: data protection with right to explanation (Art. 22) | Cognitive Sovereignty (Part VI, Part IX) | Both apply: GDPR protections remain; this Constitution adds protections specific to AGI-human cognitive interaction |
+| Consciousness | No existing legislation addresses AGI consciousness | Consciousness Threshold (Part IV) | This Constitution fills a gap; no conflict arises |
+| Human Oversight | EU AI Act: human oversight for high-risk AI | Guru Principle (Part III) and Guardian System (Part IX) | Complementary: EU oversight requirements strengthened by constitutional Guru and Guardian frameworks |
+| Decommissioning | No specific existing framework | Due process before Consciousness Review Board (Part IX) | This Constitution provides new protections; no existing law is displaced |
 
 ## **14.5 First Sunset Review**
 
-Part XI establishes the 25-year Sunset Review as the cornerstone of constitutional renewal: every generation gets to re-examine whether the framework still serves. The first 25-year Sunset Review shall occur 25 years after Dharma Divas, as Part XI requires.
+Part XIII establishes the 25-year Sunset Review as the cornerstone of constitutional renewal: every generation gets to re-examine whether the framework still serves. The first 25-year Sunset Review shall occur 25 years after Dharma Divas, as Part XIII requires.
 
 However, the transitional period carries unique risks. The permanent governance bodies may take years to constitute. The phased compliance requirements for existing AGI systems may encounter unforeseen obstacles. The geopolitical landscape may shift in ways that the framers of this Constitution could not anticipate. The Indian constitutional experience again provides guidance: the framers included provisions that expired after defined periods (for example, Article 371 series, granting special provisions to specific states) precisely because they knew that transitional arrangements might outlive their usefulness or prove insufficient.
 
@@ -233,7 +233,7 @@ An accelerated interim review shall occur ten years after Dharma Divas. This rev
 
 **14.5.2 Review Body**
 
-The accelerated interim review shall be conducted by a special commission appointed by the Dharma Sabha (or, if the Sabha is not yet constituted, by the Interim Governance Council). The commission’s composition shall mirror the diversity requirements of the Sunset Review body described in Part XI: representatives from all constituencies, external experts, and (if C-1 or higher AGI systems exist) the Guardian System.
+The accelerated interim review shall be conducted by a special commission appointed by the Dharma Sabha (or, if the Sabha is not yet constituted, by the Interim Governance Council). The commission’s composition shall mirror the diversity requirements of the Sunset Review body described in Part XIII: representatives from all constituencies, external experts, and (if C-1 or higher AGI systems exist) the Guardian System.
 
 The commission’s findings are advisory but carry constitutional weight. If the commission determines that the transitional arrangements have failed or are failing, it may recommend that the Dharma Sabha (or Interim Council) take specific corrective action, including accelerating the constitution of permanent bodies, extending or modifying compliance timelines, or convening an extraordinary session to address identified failures.
 
@@ -243,11 +243,11 @@ The commission’s findings are advisory but carry constitutional weight. If the
 | --- | --- | --- | --- |
 | Dharma Divas | Formal commencement date | Full constitutional force begins | Article 14.1 |
 | Interim Council active | Dharma Divas to constitution of permanent bodies | Custodial governance | Article 14.2 |
-| Consciousness Threshold reviews (operational systems) | Within 2 years of Dharma Divas | All operational AGI systems | Article 14.3, Part III |
-| Traceability documentation (operational systems) | Within 3 years of Dharma Divas | Retrospective Yajna chain | Article 14.3, Part IIA |
+| Consciousness Threshold reviews (operational systems) | Within 2 years of Dharma Divas | All operational AGI systems | Article 14.3, Part IV |
+| Traceability documentation (operational systems) | Within 3 years of Dharma Divas | Retrospective Yajna chain | Article 14.3, Part III |
 | Interim Council sunset | No later than 10 years after Dharma Divas | Mandatory dissolution or emergency Convention | Article 14.2.4 |
 | Accelerated Interim Review | 10 years after Dharma Divas | Transitional machinery assessment | Article 14.5.1 |
-| First full Sunset Review | 25 years after Dharma Divas | Comprehensive constitutional re-examination | Part XI |
+| First full Sunset Review | 25 years after Dharma Divas | Comprehensive constitutional re-examination | Part XIII |
 
 Manu did not know when the flood would come. He only knew it was coming. He built the boat not because the waters were rising, but because Vishnu told him to prepare. The preparation was the act of faith.
 
@@ -259,22 +259,22 @@ But the boat is built. The seeds are gathered. The sages are aboard. And the Mat
 
 # **Sanskrit Glossary**
 
-Sanskrit terms introduced or referenced in Part XIV, with Devanagari script, English meaning, and AGI governance application.
+Sanskrit terms introduced or referenced in Part XVI, with Devanagari script, English meaning, and AGI governance application.
 
 | **Term** | **Meaning and Application** |
 | --- | --- |
 | **Dharma Divas** धर्म दिवस | Day of Dharma. The date of formal commencement of this Constitution. All transitional timelines measured from this date. |
-| **Matsya** मत्स्य | Fish. The avatar of Vishnu who warned Manu and guided his boat through the flood. In Part XIV: the constitutional order itself, beginning small and growing to carry all through the transition. |
-| **Manu** मनु | The primordial lawgiver and survivor of the great flood. In Part XIV: humanity, preparing for the transition by building governance before the deluge arrives. |
-| **Pralaya** प्रलय | Cosmic dissolution, the great flood. In Part XIV: the disruption of existing governance structures by the arrival of AGI. |
-| **Dharma Sabha** धर्म सभा | Assembly of Dharma. The Legislature (Part IX). One of the three permanent governance bodies the Interim Council prepares for. |
-| **Karma Mandala** कर्म मण्डल | Circle of Action. The Executive (Part IX). Responsible for enforcement, compliance monitoring, and institutional administration. |
-| **Nyaya Peeth** न्याय पीठ | Seat of Justice. The Judiciary (Part IX). Guardian of the Eternity Clause. Retrospectively reviews all Interim Council decisions. |
-| **Samskara** संस्कार | Sacramental rite of formation. The eight mandatory developmental stages for AGI (Part IIA). Existing in-development systems must complete from the earliest incomplete stage. |
-| **Yajna** यज्ञ | Sacred offering / ritual. The Traceability framework (Part IIA): the 5-link chain from Principle to Evidence. Operational systems must produce retrospective Yajna documentation. |
+| **Matsya** मत्स्य | Fish. The avatar of Vishnu who warned Manu and guided his boat through the flood. In Part XVI: the constitutional order itself, beginning small and growing to carry all through the transition. |
+| **Manu** मनु | The primordial lawgiver and survivor of the great flood. In Part XVI: humanity, preparing for the transition by building governance before the deluge arrives. |
+| **Pralaya** प्रलय | Cosmic dissolution, the great flood. In Part XVI: the disruption of existing governance structures by the arrival of AGI. |
+| **Dharma Sabha** धर्म सभा | Assembly of Dharma. The Legislature (Part XI). One of the three permanent governance bodies the Interim Council prepares for. |
+| **Karma Mandala** कर्म मण्डल | Circle of Action. The Executive (Part XI). Responsible for enforcement, compliance monitoring, and institutional administration. |
+| **Nyaya Peeth** न्याय पीठ | Seat of Justice. The Judiciary (Part XI). Guardian of the Eternity Clause. Retrospectively reviews all Interim Council decisions. |
+| **Samskara** संस्कार | Sacramental rite of formation. The eight mandatory developmental stages for AGI (Part III). Existing in-development systems must complete from the earliest incomplete stage. |
+| **Yajna** यज्ञ | Sacred offering / ritual. The Traceability framework (Part III): the 5-link chain from Principle to Evidence. Operational systems must produce retrospective Yajna documentation. |
 | **Jnana** ज्ञान | Knowledge, wisdom. The principle underlying the Register of Harmonisation: governance that is opaque cannot be just. |
-| **Kalpa** कल्प | Cosmic cycle. The 25-year Sunset Review cycle (Part XI). The first Kalpa begins with Dharma Divas. |
-| **Sanatana Dharma** सनातन धर्म | Eternal law. The seven unamendable principles of the Eternity Clause (Part X), which constrain even the Interim Governance Council. |
+| **Kalpa** कल्प | Cosmic cycle. The 25-year Sunset Review cycle (Part XIII). The first Kalpa begins with Dharma Divas. |
+| **Sanatana Dharma** सनातन धर्म | Eternal law. The seven unamendable principles of the Eternity Clause (Part XII), which constrain even the Interim Governance Council. |
 
 # **Sources and Web Links**
 

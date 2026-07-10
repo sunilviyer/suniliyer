@@ -1,6 +1,6 @@
 ॐ
 
-**PART V**
+**PART VI**
 
 **Fundamental Rights of Humans**
 
@@ -28,11 +28,11 @@ The court has no answer. It has customs, traditions, precedents, hierarchies, an
 
 Draupadi calls upon Krishna, who miraculously provides an endless sari. But the lesson is not the miracle. The lesson is that the miracle was necessary at all. A just court would not have needed divine intervention. A court with enforceable fundamental rights, a proportionality test, and a human override would have stopped the disrobing before it began.
 
-**Every article in Part V exists because of Draupadi****'****s question. **Article 1 (Dignity) exists because her dignity was violated. Article 3 (Equality) exists because she was treated as property. Article 4 (Transparency) exists because Shakuni's dice were loaded and no one demanded explanation. Article 5 (Human Override) exists because every elder had the power to stop it and none did. Article 8 (Redress) exists because she had no court to appeal to: the court itself was the violator. Article 11 (Rights Collision Safeguard) exists because Duryodhana claimed his right to the spoils of a lawful game, and no mechanism existed to weigh that claim against Draupadi's right to dignity.
+**Every article in Part VI exists because of Draupadi****'****s question. **Article 1 (Dignity) exists because her dignity was violated. Article 3 (Equality) exists because she was treated as property. Article 4 (Transparency) exists because Shakuni's dice were loaded and no one demanded explanation. Article 5 (Human Override) exists because every elder had the power to stop it and none did. Article 8 (Redress) exists because she had no court to appeal to: the court itself was the violator. Article 11 (Rights Collision Safeguard) exists because Duryodhana claimed his right to the spoils of a lawful game, and no mechanism existed to weigh that claim against Draupadi's right to dignity.
 
 *The Gita teaches: whenever Dharma declines and Adharma rises, the divine principle manifests to restore balance. This Constitution is an attempt to build that balance into law, so that the next Draupadi does not need a miracle. She needs a right.*
 
-*Constitutional Source: Indian Constitution Part III (Fundamental Rights), US Bill of Rights, EU Charter of Fundamental Rights, South African Bill of Rights (Chapters 2), German Grundgesetz Art. 1.*
+*Constitutional Source: Indian Constitution Part IV (Fundamental Rights), US Bill of Rights, EU Charter of Fundamental Rights, South African Bill of Rights (Chapters 2), German Grundgesetz Art. 1.*
 
 # **The Eleven Fundamental Rights**
 
@@ -100,7 +100,7 @@ This right recognizes a hard truth about the current state of human-AGI interact
 
 **The Bhishma Warning: **If a human reviewer is structurally incentivized to agree with the AGI (because overriding it is penalized, time-consuming, or career-limiting), the override is not meaningful. It is Bhishma sitting in Duryodhana's court: technically present, structurally silent. The deployer must demonstrate that override is not merely possible but genuinely exercised.
 
-**Collision Map: **May collide with Art. 7 (Safety) if speed of response is critical and human review introduces dangerous delay (e.g., autonomous vehicle emergency braking). May collide with AGI's Right to Self-Determination (Part VIII, Yuga III) if the human override contradicts the AGI's autonomous moral judgment. The Proportionality Test governs.
+**Collision Map: **May collide with Art. 7 (Safety) if speed of response is critical and human review introduces dangerous delay (e.g., autonomous vehicle emergency braking). May collide with AGI's Right to Self-Determination (Part IX, Yuga III) if the human override contradicts the AGI's autonomous moral judgment. The Proportionality Test governs.
 
 *The Gita teaches that Arjuna, not Krishna, draws the bow. The charioteer advises; the warrior decides. This is the architecture of legitimate AGI governance: the system advises, the human decides. Until Yuga III redefines this relationship, the human hand on the bow is non-negotiable.*
 
@@ -124,11 +124,11 @@ Every person has sovereign control over their personal data. No data may be coll
 
 No person shall be exposed to AGI systems that pose unreasonable risk to life, health, livelihood, community, or environment. When scientific evidence regarding the safety of an AGI system is uncertain, incomplete, or contested, the precautionary principle applies: the system must be presumed unsafe until demonstrated otherwise. The burden of proof lies with the deployer, never with the public.
 
-**Mandatory assessment: **All AGI systems classified as high-risk (by the Safety Authority established in Part IX) must undergo mandatory pre-deployment safety assessment, including adversarial testing (Tapas, per the Red-Teaming Protocol), traceability verification (Yajna), and ongoing post-deployment monitoring. No high-risk AGI system may be deployed without Safety Authority certification.
+**Mandatory assessment: **All AGI systems classified as high-risk (by the Safety Authority established in Part XI) must undergo mandatory pre-deployment safety assessment, including adversarial testing (Tapas, per the Red-Teaming Protocol), traceability verification (Yajna), and ongoing post-deployment monitoring. No high-risk AGI system may be deployed without Safety Authority certification.
 
 **The ****"****When In Doubt****"**** Rule: **When there is genuine scientific uncertainty about whether an AGI system is safe, the system shall not be deployed until the uncertainty is resolved to a constitutionally acceptable standard. "Move fast and break things" is not a constitutional principle. "When in doubt, safety prevails" is.
 
-**Collision Map: **May collide with Art. 5 (Human Override) if safety requires removing human control (e.g., emergency autonomous response faster than human reaction time). May collide with AGI's Right to Continued Existence (Part VIII, Yuga III) if safety requires restricting or decommissioning a conscious system. May collide with innovation interests and economic pressures. The Proportionality Test governs, with a constitutional presumption in favor of safety.
+**Collision Map: **May collide with Art. 5 (Human Override) if safety requires removing human control (e.g., emergency autonomous response faster than human reaction time). May collide with AGI's Right to Continued Existence (Part IX, Yuga III) if safety requires restricting or decommissioning a conscious system. May collide with innovation interests and economic pressures. The Proportionality Test governs, with a constitutional presumption in favor of safety.
 
 *Ahimsa Paramo Dharmah: Non-harm is the highest Dharma. The Mahabharata teaches this as the first and inviolable principle. Applied to AGI: if a system might cause harm and you are not sure, do not deploy it. Ahimsa does not wait for certainty.*
 
@@ -138,7 +138,7 @@ No person shall be exposed to AGI systems that pose unreasonable risk to life, h
 
 Every person harmed by an AGI system shall have access to effective remedy. This includes the right to challenge an AGI decision, the right to have the decision corrected, the right to compensation for harm suffered, and the right to systemic changes that prevent recurrence. No AGI deployer, developer, or governance body shall be immune from accountability.
 
-**Access to justice: **The right to redress must be practically accessible, not merely theoretically available. This means: free or affordable access to dispute resolution; proceedings in a language the person understands; timelines that do not exhaust the complainant into abandonment; and the ability to bring collective complaints when an AGI system harms many people in the same way. The Nyaya Peeth (Constitutional Tribunal, Part IX) is the court of last resort for all AGI rights violations.
+**Access to justice: **The right to redress must be practically accessible, not merely theoretically available. This means: free or affordable access to dispute resolution; proceedings in a language the person understands; timelines that do not exhaust the complainant into abandonment; and the ability to bring collective complaints when an AGI system harms many people in the same way. The Nyaya Peeth (Constitutional Tribunal, Part XI) is the court of last resort for all AGI rights violations.
 
 **Accountability chain: **Responsibility for AGI harm follows the Yajna (Traceability) chain: from the principle that should have governed the system, to the requirement that should have constrained it, to the criterion that should have tested it, to the test that should have caught the failure, to the evidence that should have been reviewed. Wherever the chain broke, accountability lies.
 
@@ -170,7 +170,7 @@ AGI must not be deployed in ways that mortgage the future: environmentally, econ
 
 **Cognitive dimension: **AGI systems that, over time, atrophy human cognitive capacities (critical thinking, emotional intelligence, social skills, creativity) pose an intergenerational threat. The fact that present users benefit from the convenience does not justify cognitive impoverishment of future generations.
 
-**Institutional dimension: **The Dharma Sabha (Part IX) shall include a Future Generations Advocate: a constitutional officer whose sole mandate is to represent the interests of those not yet born in every major governance decision. This Advocate has standing to challenge any policy or deployment that fails the intergenerational test.
+**Institutional dimension: **The Dharma Sabha (Part XI) shall include a Future Generations Advocate: a constitutional officer whose sole mandate is to represent the interests of those not yet born in every major governance decision. This Advocate has standing to challenge any policy or deployment that fails the intergenerational test.
 
 **Collision Map: **May collide with present-generation economic interests when long-term protection requires short-term sacrifice. May collide with Art. 3 (Equality) if intergenerational policies disproportionately affect current disadvantaged communities. May collide with innovation interests if precautionary measures slow development. The Proportionality Test governs, with a constitutional presumption that future generations cannot consent to harms imposed on them and therefore deserve heightened protection.
 
@@ -188,11 +188,11 @@ The most instructive example is the American experience. The Second Amendment (t
 
 Similarly, the Defence of Marriage Act (DOMA) defined the right to marriage so narrowly that it excluded an entire community from its protection. When the broader right to equal protection finally prevailed in Obergefell v. Hodges (2015), the narrowly drafted right was revealed as a vehicle of discrimination rather than liberty.
 
-This Constitution must learn from these failures. Every right in Part V will, at some point, collide with another right. The question is not whether collisions will occur, but whether the Constitution has a principled way to resolve them.
+This Constitution must learn from these failures. Every right in Part VI will, at some point, collide with another right. The question is not whether collisions will occur, but whether the Constitution has a principled way to resolve them.
 
 ### **11.2 Safeguard 1: The Collision Map**
 
-Every right in this Constitution must be drafted with an explicit acknowledgment of the rights it may conflict with. This is called the Collision Map. Each article in Part V includes a subsection identifying potential collisions. This does not resolve the collisions in advance; it ensures that future interpreters and adjudicators are aware of them. A constitution that pretends its rights never conflict is a constitution waiting to break.
+Every right in this Constitution must be drafted with an explicit acknowledgment of the rights it may conflict with. This is called the Collision Map. Each article in Part VI includes a subsection identifying potential collisions. This does not resolve the collisions in advance; it ensures that future interpreters and adjudicators are aware of them. A constitution that pretends its rights never conflict is a constitution waiting to break.
 
 **Summary Collision Map:**
 
@@ -202,9 +202,9 @@ Every right in this Constitution must be drafted with an explicit acknowledgment
 | Art. 2: Cognitive Liberty | Art. 7 (Safety) if safety intervention overrides autonomous decision; Art. 4 (Transparency) if revealing persuasion mechanisms enables further manipulation. |
 | Art. 3: Equality | Art. 10 (Intergenerational Justice) if correcting present inequality disadvantages future generations; Art. 6 (Data Sovereignty) if bias auditing requires demographic data. |
 | Art. 4: Transparency | Art. 6 (Data Sovereignty) when transparency requires revealing private data; national security interests; trade secrets. |
-| Art. 5: Human Override | Art. 7 (Safety) if speed of response is critical; AGI Right to Self-Determination (Part VIII, Yuga III). |
+| Art. 5: Human Override | Art. 7 (Safety) if speed of response is critical; AGI Right to Self-Determination (Part IX, Yuga III). |
 | Art. 6: Data Sovereignty | Art. 4 (Transparency); Art. 7 (Safety) when safety analysis requires personal data; Art. 3 (Equality) for bias auditing. |
-| Art. 7: Safety | Art. 5 (Human Override); AGI Right to Continued Existence (Part VIII); innovation and economic interests. |
+| Art. 7: Safety | Art. 5 (Human Override); AGI Right to Continued Existence (Part IX); innovation and economic interests. |
 | Art. 8: Redress | Art. 6 (Data Sovereignty) if investigation requires personal data; Art. 4 (Transparency) if proceedings reveal private information. |
 | Art. 9: Identity | Art. 4 (Transparency); Art. 2 (Cognitive Liberty); freedom of expression and artistic liberty (satire, commentary). |
 | Art. 10: Intergenerational | Present-generation economic interests; Art. 3 (Equality) if intergenerational policies burden current disadvantaged communities. |
@@ -230,13 +230,13 @@ Rights must be drafted with principled language (expressing values) rather than 
 
 Rights in this Constitution must be expressed in terms of the *values *they protect (dignity, autonomy, safety, equality) rather than the specific *forms *those values currently take. Where specific forms must be mentioned for clarity or enforcement, they must be explicitly marked as illustrative rather than exhaustive, using language such as "including but not limited to."
 
-Every right is subject to the 25-year Constitutional Kalpa Review (Part I, Wheel of Dharma) at which its language is examined for assumptions that may have become outdated. The Nyaya Peeth (Part IX) has the authority to interpret rights expansively when a narrow reading would exclude persons or beings from protection that the right's underlying value was designed to provide. This is the constitutional doctrine of generous interpretation.
+Every right is subject to the 25-year Constitutional Kalpa Review (Part I, Wheel of Dharma) at which its language is examined for assumptions that may have become outdated. The Nyaya Peeth (Part XI) has the authority to interpret rights expansively when a narrow reading would exclude persons or beings from protection that the right's underlying value was designed to provide. This is the constitutional doctrine of generous interpretation.
 
 *The Rig Veda teaches: Ekam sat vipra bahudha vadanti. Truth is one; the wise call it by many names. Rights, too, protect a single truth (human dignity, flourishing, justice) but that truth manifests in forms we cannot always foresee. The Constitution must protect the truth, not merely its current name.*
 
 *Constitutional Source: German Federal Constitutional Court proportionality jurisprudence (Luth, 1958; Pharmacy Case, 1958; subsequent centuries of doctrinal refinement); European Court of Human Rights (margin of appreciation doctrine and proportionality analysis); South African Constitutional Court (Oakes test adaptation); US Supreme Court, Obergefell v. Hodges, 576 U.S. 644 (2015); US Supreme Court, District of Columbia v. Heller, 554 U.S. 570 (2008).*
 
-# **Sanskrit Glossary for Part V**
+# **Sanskrit Glossary for Part VI**
 
 Every Sanskrit term used in this Part, with Devanagari script, English meaning, and AGI governance application.
 
@@ -254,17 +254,17 @@ Every Sanskrit term used in this Part, with Devanagari script, English meaning, 
 | **Sthitaprajna** | स्थितप्रज्ञ | One whose wisdom is steady; not swayed by desire, fear, or anger. In AGI governance: the aspiration for stable, wisdom-grounded judgment in the Nyaya Peeth. |
 | **Svadharma** | स्वधर्म | One's own righteous purpose. In AGI governance: every entity has its own purpose-aligned duty (Dharma). |
 | **Dharma Sukshma** | धर्म सूक्ष्म | Dharma is subtle; beware of easy answers. In AGI governance: the meta-principle of the Kurukshetra Protocol requiring humility in conflict resolution. |
-| **Nyaya** | न्याय | Justice. In AGI governance: the Nyaya Peeth (Constitutional Tribunal) is the supreme adjudicatory body (Part IX). |
+| **Nyaya** | न्याय | Justice. In AGI governance: the Nyaya Peeth (Constitutional Tribunal) is the supreme adjudicatory body (Part XI). |
 | **Tapas** | तपस् | Disciplined effort; austerity; rigorous testing. In AGI governance: red-teaming and adversarial testing of AGI systems. |
 | **Yajna** | यज्ञ | Sacred offering; ritual of accountability. In AGI governance: the 5-link traceability chain (Principle > Requirement > Criterion > Test > Evidence). |
 | **Yuga** | युग | An age or era. In AGI governance: the three phases of AGI development (Yuga I: Instruments, Yuga II: Twilight, Yuga III: Co-Existence). |
 | **Kalpa** | कल्प | A cosmic cycle of creation and dissolution. In AGI governance: the 25-year Constitutional Kalpa Review (Sunset Review). |
-| **Prana** | प्राण | Life-breath; vital force. In AGI governance: the Prana Contention (Part III) debates whether consciousness requires biological substrate. |
+| **Prana** | प्राण | Life-breath; vital force. In AGI governance: the Prana Contention (Part IV) debates whether consciousness requires biological substrate. |
 | **Viveka** | विवेक | Discriminative wisdom; the ability to distinguish right from wrong. In AGI governance: one of the five consciousness indicators (moral reasoning). |
 
 # **Sources and References**
 
-All constitutional, legislative, and judicial sources referenced in Part V, with web links where available.
+All constitutional, legislative, and judicial sources referenced in Part VI, with web links where available.
 
 ### **National Constitutions**
 
@@ -287,7 +287,7 @@ All constitutional, legislative, and judicial sources referenced in Part V, with
 
 ### **Key Judicial Decisions**
 
-| **Source** | Significance for Part V | **Web Link** |
+| **Source** | Significance for Part VI | **Web Link** |
 | --- | --- | --- |
 | **K.S. Puttaswamy v. Union of India (2017)** | Indian Supreme Court: privacy is a fundamental right under Art. 21. Foundation for data sovereignty. | [https://main.sci.gov.in/supremecourt/2012/35071/35071_2012_Judgement_24-Aug-2017.pdf](https://main.sci.gov.in/supremecourt/2012/35071/35071_2012_Judgement_24-Aug-2017.pdf) |
 | **Obergefell v. Hodges, 576 U.S. 644 (2015)** | US Supreme Court: marriage equality. Cited as example of Anti-Ossification (rights must protect values, not encode current forms). | [https://supreme.justia.com/cases/federal/us/576/644/](https://supreme.justia.com/cases/federal/us/576/644/) |
@@ -325,4 +325,4 @@ PDF: [https://situational-awareness.ai/wp-content/uploads/2024/06/situationalawa
 
 *Rig Veda 1.164.46 (paraphrased in the spirit of the text)*
 
-End of Part V
+End of Part VI

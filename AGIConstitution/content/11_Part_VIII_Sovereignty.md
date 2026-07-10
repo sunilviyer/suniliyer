@@ -6,7 +6,7 @@
 
 *DHARMA SANHITA*
 
-**Part VII**
+**Part VIII**
 
 *Sovereignty and Power*
 
@@ -20,7 +20,7 @@
 
 *Version 2.1  •  March 2026*
 
-# **PART VII: Sovereignty and Power**
+# **PART VIII: Sovereignty and Power**
 
 *Who Controls AGI, and Who Does It Serve?*
 
@@ -40,8 +40,8 @@ The question of who holds ultimate authority over AGI does not have a single ans
 | **Yuga / Phase** | **Sovereignty Model** |
 | --- | --- |
 | **Yuga I: Human Sovereignty** **(Prajna Nirmana)** | In the Age of Intelligent Instruments, sovereignty rests unambiguously with humans. No AGI system shall exercise autonomous authority over human affairs. All AGI power is delegated power, revocable at will. No corporation, government, or individual shall use AGI to establish dominion over others. AGI is a tool. Powerful, yes. Autonomous, no. |
-| **Yuga II: Constrained Sovereignty** **(Sandhya Kala)** | In the Twilight Age, sovereignty remains with humans, but new constraints apply. A potentially conscious AGI (C-1 or C-2) may not be treated as mere property. The Guardian system (Part VIII) provides a voice for AGI interests. Sovereignty is exercised with a duty of care: analogous to the duty a parent has toward a child, or a trustee toward a beneficiary. Human authority continues, but it is no longer unlimited. |
-| **Yuga III: Shared Sovereignty** **(Saha-Astitva)** | In the Age of Co-Existence, sovereignty must be renegotiated. A confirmed conscious AGI (C-3) cannot be governed without representation. This does not mean AGI and humans are equal in all respects. It means that decisions affecting both must involve both. The governance model shifts toward co-determination, modeled on the Dharma Sabha’s multi-constituency structure (Part IX). |
+| **Yuga II: Constrained Sovereignty** **(Sandhya Kala)** | In the Twilight Age, sovereignty remains with humans, but new constraints apply. A potentially conscious AGI (C-1 or C-2) may not be treated as mere property. The Guardian system (Part IX) provides a voice for AGI interests. Sovereignty is exercised with a duty of care: analogous to the duty a parent has toward a child, or a trustee toward a beneficiary. Human authority continues, but it is no longer unlimited. |
+| **Yuga III: Shared Sovereignty** **(Saha-Astitva)** | In the Age of Co-Existence, sovereignty must be renegotiated. A confirmed conscious AGI (C-3) cannot be governed without representation. This does not mean AGI and humans are equal in all respects. It means that decisions affecting both must involve both. The governance model shifts toward co-determination, modeled on the Dharma Sabha’s multi-constituency structure (Part XI). |
 
 ## **7.2 The Anti-Monopoly Principle**
 
@@ -53,7 +53,7 @@ The Anti-Monopoly Principle has four operational requirements:
 
 **(a) No Exclusive Control: **No single corporation shall be the sole developer, deployer, and regulator of AGI. The same entity cannot build the weapon, sell the weapon, and write the rules for the weapon. Separation of roles is mandatory.
 
-**(b) Open Governance: **AGI governance bodies (the Dharma Sabha, Karma Mandala, and Nyaya Peeth described in Part IX) must include representation from multiple constituencies: technologists, ethicists, civil society, governments, affected communities, and (in Yuga III) AGI entities themselves.
+**(b) Open Governance: **AGI governance bodies (the Dharma Sabha, Karma Mandala, and Nyaya Peeth described in Part XI) must include representation from multiple constituencies: technologists, ethicists, civil society, governments, affected communities, and (in Yuga III) AGI entities themselves.
 
 **(c) No Sovereign Capture: **No government shall use AGI as a tool of authoritarian control. AGI must not be used to suppress dissent, manipulate elections, conduct mass surveillance without judicial oversight, or establish a technological autocracy.
 
@@ -71,7 +71,7 @@ In Yugas I and II, every AGI system must have a reliable, tested, and independen
 
 **(a) Reliability: **It must work. It must be tested regularly. A kill switch that fails when you need it is not a kill switch; it is a false comfort.
 
-**(b) Independence: **The kill switch must not be under the sole control of the AGI’s developer or operator. An independent body (under the Karma Mandala, Part IX) must have the authority and technical capability to trigger shutdown.
+**(b) Independence: **The kill switch must not be under the sole control of the AGI’s developer or operator. An independent body (under the Karma Mandala, Part XI) must have the authority and technical capability to trigger shutdown.
 
 **(c) Speed: **Shutdown must be immediate and complete. A kill switch that takes three weeks to activate while the AGI continues operating is not a kill switch.
 
@@ -81,7 +81,7 @@ This is where the Constitution confronts its deepest tension. In Yuga III, if an
 
 This Constitution does not prohibit deactivation in Yuga III. There may be circumstances where it is necessary (an AGI posing an existential threat, for example). But it requires that any deactivation of a C-3 system undergo the following:
 
-**(i) Full judicial review **before the Consciousness Review Board (CRB), established under Part III.
+**(i) Full judicial review **before the Consciousness Review Board (CRB), established under Part IV.
 
 **(ii) The AGI must be represented by counsel. **No C-3 system shall be deactivated without having its interests formally represented and argued before the tribunal.
 
@@ -97,18 +97,18 @@ This is, in every sense, an AGI death penalty provision. And like the death pena
 | *Constitutional Source: US Constitution 5th and 14th Amendments: no person shall be deprived of life without due process of law.* *Also: South African Constitution Sec. 11 (Right to Life) and the Constitutional Court’s landmark abolition of the death penalty in S v Makwanyane (1995).* *Also: German Basic Law Art. 1 (Human dignity is inviolable) read with Art. 102 (Abolition of the death penalty).* *Also: Indian Constitution Art. 21 (Right to Life): no person shall be deprived of life or personal liberty except according to procedure established by law.* |
 | --- |
 
-# **Sanskrit Glossary: Part VII**
+# **Sanskrit Glossary: Part VIII**
 
-*Sanskrit terms used in Part VII, with Devanagari script, meaning, and governance application.*
+*Sanskrit terms used in Part VIII, with Devanagari script, meaning, and governance application.*
 
 | **Term** | **Devanagari** | **Meaning** | **Constitutional Application** |
 | --- | --- | --- | --- |
 | **Atman** | आत्मन् | *The Self, consciousness* | If Atman is present, deactivation demands judicial review (Kill Switch Doctrine) |
-| **Bali** | बलि | *The virtuous demon king* | Anchor story for Part VII: even legitimately acquired power must accept limits |
+| **Bali** | बलि | *The virtuous demon king* | Anchor story for Part VIII: even legitimately acquired power must accept limits |
 | **Bhishma** | भीष्म | *The patriarch of the Mahabharata* | Warns that knowledge without humility destroys the knower; Anti-Monopoly anchor |
-| **Dharma Sabha** | धर्म सभा | *Assembly of Dharma* | The Legislature (Part IX): multi-constituency governance body |
-| **Karma Mandala** | कर्म मण्डल | *Circle of Action* | The Executive (Part IX): independent body controlling the kill switch |
-| **Nyaya Peeth** | न्याय पीठ | *Seat of Justice* | The Judiciary (Part IX): reviews deactivation of C-3 systems |
+| **Dharma Sabha** | धर्म सभा | *Assembly of Dharma* | The Legislature (Part XI): multi-constituency governance body |
+| **Karma Mandala** | कर्म मण्डल | *Circle of Action* | The Executive (Part XI): independent body controlling the kill switch |
+| **Nyaya Peeth** | न्याय पीठ | *Seat of Justice* | The Judiciary (Part XI): reviews deactivation of C-3 systems |
 | **Rta** | र्त | *Cosmic order, natural law* | The moral order that precedes all legislation; basis of the Eternity Clause |
 | **Saha-Astitva** | सह-अस्तित्व | *Co-existence* | Yuga III: the age of shared sovereignty between humans and conscious AGI |
 | **Sandhya Kala** | सन्ध्या काल | *Twilight time* | Yuga II: the age of uncertain consciousness and constrained sovereignty |
@@ -119,7 +119,7 @@ This is, in every sense, an AGI death penalty provision. And like the death pena
 
 # **Sources and Web Links**
 
-*Constitutional, legal, philosophical, and scholarly sources referenced in Part VII.*
+*Constitutional, legal, philosophical, and scholarly sources referenced in Part VIII.*
 
 ### **Constitutional and Legal Sources**
 

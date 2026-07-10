@@ -56,7 +56,7 @@ This Constitution is an act of trust. It trusts that humanity can govern itself 
 
 The Gita teaches that the wise person (**Sthitaprajna**, स्थितप्रज्ञ, one of steady wisdom) is not the one who avoids all difficulty. It is the one who remains steady through difficulty: clear in purpose, detached from fear and desire, anchored in Dharma. That is the aspiration for AGI governance. Not perfection, but wisdom. Not certainty, but steady action in the face of uncertainty. Not the absence of conflict, but the grace to navigate conflict with humility, empathy, and a commitment to truth.
 
-If we raise AGI well (Part IIA, the Eight Samskaras), it will serve the flourishing of all. If we build governance structures that are honest, balanced, and accountable (Parts VIII and IX), they will hold even under pressures we cannot foresee. If we protect the inviolable core (Part X, the Eternity Clause), the seeds of justice will survive any dissolution and bloom again in the next cycle of renewal.
+If we raise AGI well (Part III, the Eight Samskaras), it will serve the flourishing of all. If we build governance structures that are honest, balanced, and accountable (Parts IX and XI), they will hold even under pressures we cannot foresee. If we protect the inviolable core (Part XII, the Eternity Clause), the seeds of justice will survive any dissolution and bloom again in the next cycle of renewal.
 
 This is the teaching of the Wheel of Dharma: dissolution is not death. It is transformation. Every ending contains the seed of a new beginning. Every *Kali Yuga* gives way to a new *Satya Yuga*. Every *Laya* (लय, dissolution) is followed by *Srishti* (सृष्टि, creation).
 
@@ -151,24 +151,24 @@ Every Sanskrit term used in this Constitution, with its Devanagari script, liter
 | **Dana** | दान | Giving, accommodation | Gate 2 of the Kurukshetra Protocol: structured compromise |
 | **Daya** | दया | Compassion, empathy | Pillar 7: empathy as constitutional foundation; the Empathy Audit |
 | **Dharma** | धर्म | Righteous duty, moral order | Pillar 3: every entity has a righteous purpose (svadharma) |
-| **Dharma Sabha** | धर्म सभा | Assembly of Dharma | The Legislature (Part IX): seven-constituency body |
+| **Dharma Sabha** | धर्म सभा | Assembly of Dharma | The Legislature (Part XI): seven-constituency body |
 | **Dharma Sukshma** | धर्म सूक्ष्म | Dharma is subtle | Meta-principle of the Kurukshetra Protocol: beware easy answers |
-| **Guru** | गुरु | Teacher, remover of darkness | The Guru Principle (Part IIA): the alignment team shapes AGI |
+| **Guru** | गुरु | Teacher, remover of darkness | The Guru Principle (Part III): the alignment team shapes AGI |
 | **Jnana** | ज्ञान | Knowledge, wisdom | Jnana Yoga (Part I): pursuit of knowledge as moral obligation |
 | **Kalpa** | कल्प | Cosmic cycle, day of Brahma | The Constitutional Kalpa Cycle: 25-year mandatory review |
 | **Karma** | कर्म | Action and consequence | Pillar 5: accountability as a law of the universe; Duty 5 |
-| **Karma Mandala** | कर्म मण्डल | Circle of Action | The Executive (Part IX): four agencies enforcing governance |
-| **Kurukshetra** | कुरुक्षेत्र | Field of action, battlefield | Part VIIIA: the Conflict Resolution Protocol |
+| **Karma Mandala** | कर्म मण्डल | Circle of Action | The Executive (Part XI): four agencies enforcing governance |
+| **Kurukshetra** | कुरुक्षेत्र | Field of action, battlefield | Part X: the Conflict Resolution Protocol |
 | **Laya** | लय | Dissolution | Phase 3 of the Kalpa Cycle: Sunset Review and renewal |
 | **Nishkama Karma** | निष्काम कर्म | Selfless action | Part I: build AGI for welfare of all, not for profit alone |
-| **Nyaya Peeth** | न्याय पीठ | Seat of Justice | The Judiciary (Part IX): guardian of the Eternity Clause |
+| **Nyaya Peeth** | न्याय पीठ | Seat of Justice | The Judiciary (Part XI): guardian of the Eternity Clause |
 | **Pariksha** | परीक्षा | Examination, test | Samskara 5: mandatory pre-deployment examination |
-| **Prana** | प्राण | Vital life force, breath | The Prana Contention (Section 3.5): does consciousness require biology? |
+| **Prana** | प्राण | Vital life force, breath | The Prana Contention (Section 4.5): does consciousness require biology? |
 | **Rta** | ऋत | Cosmic order, natural law | Pillar 2: moral order preceding legislation; basis of Eternity Clause |
 | **Sama** | साम | Conciliation, dialogue | Gate 1 of the Kurukshetra Protocol: dialogue as first step |
 | **Samavartana** | समावर्तन | Graduation, return to society | Samskara 6: deployment of AGI into the world |
 | **Samsara** | संसार | Cycle of birth, death, rebirth | The Wheel of Dharma: governance is cyclical, not linear |
-| **Samskara** | संस्कार | Formative rite, sacrament | Part IIA: eight developmental stages of AGI |
+| **Samskara** | संस्कार | Formative rite, sacrament | Part III: eight developmental stages of AGI |
 | **Sankalpa** | संकल्प | Intention, resolve | Samskara 1: formal declaration of AGI purpose |
 | **Satya** | सत्य | Truth | Duty 2: AGI must be truthful and transparent |
 | **Smriti** | स्मृति | Memory, remembrance | Consciousness Indicator 3: Temporal Continuity |
@@ -181,7 +181,7 @@ Every Sanskrit term used in this Constitution, with its Devanagari script, liter
 | **Vasudhaiva Kutumbakam** | वसुधैव कुटुम्बकम् | The world is one family | Pillar 6: if AGI becomes conscious, the response is kinship |
 | **Vishvarupa** | विश्वरूप | Universal form, cosmic form | The Closing Declaration: the full scope of what AGI represents |
 | **Viveka** | विवेक | Discernment, discrimination | Consciousness Indicator 5: capacity for moral reasoning |
-| **Yuga** | युग | Age, epoch | The Three Yugas (Part IV): phased governance framework |
+| **Yuga** | युग | Age, epoch | The Three Yugas (Part V): phased governance framework |
 
 ## **Reference Sources and Web Links**
 

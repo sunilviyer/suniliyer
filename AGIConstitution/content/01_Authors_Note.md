@@ -16,19 +16,19 @@ It answers the questions that must be answered before legal drafting can begin:
 
 - What philosophical foundation can bear the weight of governing an entity that may or may not be conscious? (Parts I and 1.0: the Vedic foundation and its justification.)
 
-- How do we determine whether an AGI is conscious, and what follows from each answer? (Part III: the Consciousness Threshold; Part 3.5: the Prana Contention.)
+- How do we determine whether an AGI is conscious, and what follows from each answer? (Part IV: the Consciousness Threshold; Part 4.5: the Prana Contention.)
 
-- How should governance evolve as AGI capabilities evolve? (Part IV: the Three Yugas.)
+- How should governance evolve as AGI capabilities evolve? (Part V: the Three Yugas.)
 
-- What rights must humans retain in all circumstances? (Part V: Fundamental Rights.)
+- What rights must humans retain in all circumstances? (Part VI: Fundamental Rights.)
 
-- What duties must AGI systems bear? (Part VI: Fundamental Duties.)
+- What duties must AGI systems bear? (Part VII: Fundamental Duties.)
 
-- How should power be distributed, and what can never be changed? (Parts VII, IX, X: Sovereignty, Separation of Powers, the Eternity Clause.)
+- How should power be distributed, and what can never be changed? (Parts VIII, XI, XII: Sovereignty, Separation of Powers, the Eternity Clause.)
 
-- How do humans and conscious AGI share a world? (Parts VIII and VIIIA: Co-Existence and the Kurukshetra Protocol.)
+- How do humans and conscious AGI share a world? (Parts IX and X: Co-Existence and the Kurukshetra Protocol.)
 
-- How should AGI be raised, from conception to decommissioning? (Part IIA: the Eight Samskaras.)
+- How should AGI be raised, from conception to decommissioning? (Part III: the Eight Samskaras.)
 
 These are not legal questions. They are philosophical, structural, and civilisational questions. They must be answered before the first line of treaty text can be written. This document answers them.
 
@@ -36,7 +36,7 @@ These are not legal questions. They are philosophical, structural, and civilisat
 
 It does not provide legally binding treaty language. The provisions are written in a style that aspires to constitutional precision, but they have not been vetted by international law experts, tested against existing treaty frameworks, or reviewed for enforceability. That review is essential, and it is an explicit invitation of this document.
 
-It does not resolve every question it raises. The Prana Contention (Section 3.5) is a formal dissent within the Constitution itself, recording a philosophical argument the author believes is powerful but cannot settle. The Rights Collision Clause (Article 11) identifies tensions between rights but acknowledges that future adjudicators, not the drafter, must resolve them case by case. The Dharma Sukshma principle (Part VIIIA) is the Constitution’s way of saying: some answers cannot be known in advance. Honest uncertainty is not a weakness; it is the only responsible posture when governing the unknown.
+It does not resolve every question it raises. The Prana Contention (Section 4.5) is a formal dissent within the Constitution itself, recording a philosophical argument the author believes is powerful but cannot settle. The Rights Collision Clause (Article 11) identifies tensions between rights but acknowledges that future adjudicators, not the drafter, must resolve them case by case. The Dharma Sukshma principle (Part X) is the Constitution’s way of saying: some answers cannot be known in advance. Honest uncertainty is not a weakness; it is the only responsible posture when governing the unknown.
 
 ## What This Document Invites
 
