@@ -66,7 +66,6 @@ export default function PartFlipbook({ part, prev, next, markdown }: PartFlipboo
         subLabel={`Dharma Sanhita · ${partLabel(part)}`}
         prev={prevLink}
         next={nextLink}
-        storageKey={`fb-sp-${part.id}`}
       />
     );
   }

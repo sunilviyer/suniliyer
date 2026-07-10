@@ -42,8 +42,6 @@ interface FlipbookProps {
   subLabel: string;
   prev?: PartNavLink | null;
   next?: PartNavLink | null;
-  /** localStorage key for remembering the reader's spread in this book */
-  storageKey: string;
   /** Only mount face content for leaves near the current spread (big books) */
   virtualize?: boolean;
 }
@@ -52,13 +50,13 @@ type Flipping = { leaf: number; dir: 'next' | 'prev' } | null;
 
 const FLIP_MS = 920;
 
-export default function Flipbook({ faces, title, subLabel, prev, next, storageKey, virtualize = false }: FlipbookProps) {
+export default function Flipbook({ faces, title, subLabel, prev, next, virtualize = false }: FlipbookProps) {
+  // Every visit opens at the cover — no position memory.
   const [spread, setSpread] = useState(0);
   const [face, setFace] = useState(0); // mobile pager position (index into faces)
   const [flipping, setFlipping] = useState<Flipping>(null);
   const [scale, setScale] = useState(1);
   const [mScale, setMScale] = useState(1);
-  const [hydrated, setHydrated] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const stageRef = useRef<HTMLDivElement>(null);
   const touchX = useRef<number | null>(null);
@@ -82,17 +80,6 @@ export default function Flipbook({ faces, title, subLabel, prev, next, storageKe
     mq.addEventListener('change', update);
     return () => mq.removeEventListener('change', update);
   }, []);
-
-  // Restore position from localStorage after mount (SSR-safe).
-  useEffect(() => {
-    const sp = parseInt(localStorage.getItem(storageKey) || '0', 10) || 0;
-    const clamped = Math.min(sp, totalSpreads - 1);
-    setSpread(clamped);
-    setFace(Math.min(clamped * 2, totalFaces - 1));
-    setHydrated(true);
-    // Only on mount / book identity change.
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [storageKey]);
 
   // Recompute scale to fit the stage: full spread (1280×780) on desktop,
   // one page (640×780) on mobile.
@@ -166,16 +153,8 @@ export default function Flipbook({ faces, title, subLabel, prev, next, storageKe
   // (or rotating a tablet) stays on the same page. face f is shown by
   // spread ceil(f/2).
   useEffect(() => {
-    if (!hydrated) return;
     if (isMobile) setSpread(Math.ceil(face / 2));
-  }, [face, isMobile, hydrated]);
-
-  // persist (only after the initial restore, so defaults don't clobber
-  // a saved position on mount)
-  useEffect(() => {
-    if (!hydrated) return;
-    localStorage.setItem(storageKey, String(spread));
-  }, [spread, storageKey, hydrated]);
+  }, [face, isMobile]);
 
   // Keyboard nav
   useEffect(() => {

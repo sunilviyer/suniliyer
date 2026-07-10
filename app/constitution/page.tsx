@@ -225,10 +225,7 @@ export default function ConstitutionIndexPage() {
               <span>suniliyer.ca</span>
               <span>↗</span>
             </a>
-            <a href="#" className="const-colophon-link">
-              <span>Download PDF</span>
-              <span>312 pp</span>
-            </a>
+            {/* "Download PDF" removed until a real PDF export exists */}
             <button
               onClick={() => {
                 const bibtex = `@misc{iyer2026agi,

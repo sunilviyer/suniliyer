@@ -163,7 +163,6 @@ export default function MarkdownBook({ part, prev, next, markdown }: MarkdownBoo
           subLabel={`Dharma Sanhita · ${label}`}
           prev={prevLink}
           next={nextLink}
-          storageKey={`fb-sp-${part.id}`}
           virtualize
         />
       ) : (
