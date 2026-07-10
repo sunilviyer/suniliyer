@@ -253,7 +253,7 @@ const GitaPlate: FaceComponent = () => (
         </div>
       ))}
     </div>
-    <div className="bp-plate-cap">Plate IV · <em>Each teaching maps to a Fundamental Duty — see Part VI</em></div>
+    <div className="bp-plate-cap">Plate IV · <em>Each teaching maps to a Fundamental Duty — see Part VII</em></div>
     <div className="bp-folio right"><span>p.</span><span className="num">10</span></div>
   </div>
 );
@@ -266,7 +266,7 @@ const ArchText: FaceComponent = () => (
     <h2 className="bp-h2">Three Layers</h2>
     <div className="bp-sub">One constitution, three modes of force.</div>
     <div className="bp-lede">The Indian Constitution of 1950 pioneered a three-layer design: enforceable rights, aspirational principles, and fundamental duties. This document adopts the same scaffold — and binds each layer to a Vedic anchor so the structure has philosophy, not only legality.</div>
-    <p className="bp-p bp-dropcap">The first layer — <strong>Rta</strong> — sets the floor that can never be breached. These are enforceable rights: features of reality, not grants of government. No state, corporation, or AGI may violate them. They are justiciable in a court of competent jurisdiction (Part VII).</p>
+    <p className="bp-p bp-dropcap">The first layer — <strong>Rta</strong> — sets the floor that can never be breached. These are enforceable rights: features of reality, not grants of government. No state, corporation, or AGI may violate them. They are justiciable in a court of competent jurisdiction (Part VIII).</p>
     <p className="bp-p">The second layer — <strong>Dharma</strong> — sets the direction governance should aim. Aspirational principles are not directly enforceable, but courts use them to interpret the Rights above. They are the difference between a Constitution of prohibitions and a Constitution of purpose.</p>
     <p className="bp-p">The third layer — <strong>Karma</strong> — binds everyone to consequence. Every right is matched by a duty. Accountability is not optional; it is a law of the universe. Duties apply to AGI and to its creators, both.</p>
     <div className="bp-callout">
@@ -290,7 +290,7 @@ const ArchPlate: FaceComponent = () => (
           <div className="layer-sub">Rta — cosmic moral order</div>
           <div className="layer-desc">Features of reality. Justiciable in court.</div>
         </div>
-        <div className="layer-tag"><strong>Part V</strong>11 Rights</div>
+        <div className="layer-tag"><strong>Part VI</strong>11 Rights</div>
       </div>
       <div className="layer dharma">
         <div className="layer-dev">धर्म</div>
@@ -299,7 +299,7 @@ const ArchPlate: FaceComponent = () => (
           <div className="layer-sub">Dharma — righteous direction</div>
           <div className="layer-desc">Not enforceable. Used to interpret rights.</div>
         </div>
-        <div className="layer-tag"><strong>Part IV</strong>Directive</div>
+        <div className="layer-tag"><strong>Part V</strong>Directive</div>
       </div>
       <div className="layer karma">
         <div className="layer-dev">कर्म</div>
@@ -308,7 +308,7 @@ const ArchPlate: FaceComponent = () => (
           <div className="layer-sub">Karma — consequence</div>
           <div className="layer-desc">Bind AGI and creators alike. Every right, its duty.</div>
         </div>
-        <div className="layer-tag"><strong>Part VI</strong>6 Duties</div>
+        <div className="layer-tag"><strong>Part VII</strong>6 Duties</div>
       </div>
     </div>
     <div className="bp-plate-cap">Plate V · <em>After the Indian Constitution (1950), re-anchored in Vedic concepts</em></div>
@@ -383,7 +383,7 @@ const WheelText: FaceComponent = () => (
     <div className="bp-lede">Most constitutions are written as if time moves in one direction. This one is designed to fail gracefully and be reborn — every 25 years, one human generation, the document undergoes mandatory comprehensive review.</div>
     <p className="bp-p bp-dropcap">The Vedic cosmology names three phases of the cycle. <strong>Srishti</strong> — creation. A new Constitution is born from convention. <strong>Sthiti</strong> — preservation. Years 1 through 24, the document governs actively; its protections are real; its duties bind.</p>
     <p className="bp-p"><strong>Laya</strong> — dissolution. Year 25 arrives. The document enters mandatory review. What has worked is kept. What has failed is mourned and discarded. What the world has become is acknowledged. A new convention is summoned.</p>
-    <p className="bp-p">The Eternity Clause (Part X) survives all dissolutions. It is the seed that flowers in the next Srishti. Ten principles so foundational that no future generation may amend them away — not even unanimously. Some things are handed forward.</p>
+    <p className="bp-p">The Eternity Clause (Part XII) survives all dissolutions. It is the seed that flowers in the next Srishti. Ten principles so foundational that no future generation may amend them away — not even unanimously. Some things are handed forward.</p>
     <div className="bp-callout">
       <span>Kala, the wheel-turner</span>
       &ldquo;The wheel turns. Dharma waxes and wanes. Governance, like the cosmos, moves through creation, preservation, and dissolution — and back again. What we write is not forever. What we protect forever is a separate matter.&rdquo;

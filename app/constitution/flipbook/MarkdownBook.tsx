@@ -71,7 +71,12 @@ export default function MarkdownBook({ part, prev, next, markdown }: MarkdownBoo
     if (typeof document !== 'undefined' && document.fonts?.ready) {
       document.fonts.ready.then(() => { if (!cancelled) measure(); });
     }
-    return () => { cancelled = true; };
+    // The mobile breakpoint changes .bpg-flow's type scale, which changes
+    // the page count — remeasure when crossing it.
+    const mq = window.matchMedia('(max-width: 768px)');
+    const onBreakpoint = () => measure();
+    mq.addEventListener('change', onBreakpoint);
+    return () => { cancelled = true; mq.removeEventListener('change', onBreakpoint); };
   }, [measure]);
 
   const label = partLabel(part);

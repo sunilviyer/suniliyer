@@ -1,6 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import { getPartById } from '../data/reading-order';
+import { renumberReferences } from './renumber';
 
 /**
  * Load markdown content for a specific constitution part
@@ -25,12 +26,14 @@ export async function loadPartContent(partId: string): Promise<string | null> {
 
     const fullContent = fs.readFileSync(contentPath, 'utf-8');
 
-    // Special handling for the combined Parts VIII, VIIIA, IX file
+    // Special handling for the combined Parts VIII, VIIIA, IX file.
+    // (Extract FIRST — the section markers use the manuscript numbering —
+    // then renumber cross-references to the site's progressive numbering.)
     if (part.filename === '12_Parts_VIII_VIIIA_IX_CoExistence_Kurukshetra_Powers.md') {
-      return extractPartFromCombinedFile(fullContent, partId);
+      return renumberReferences(extractPartFromCombinedFile(fullContent, partId));
     }
 
-    return fullContent;
+    return renumberReferences(fullContent);
   } catch (error) {
     console.error(`Error loading content for part ${partId}:`, error);
     return null;
