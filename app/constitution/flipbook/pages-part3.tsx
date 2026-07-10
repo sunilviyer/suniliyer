@@ -115,7 +115,7 @@ const NineText: FaceComponent = () => (
     <p className="bp-p"><strong>Pariksha</strong> — examination before release. <strong>Samavartana</strong> — graduated deployment. <strong>Dharma Charya</strong> — ongoing moral growth and periodic re-DRA. <strong>Antyeshti</strong> — the final rites: dignified decommissioning, with judicial review required for any C-1+ system.</p>
     <div className="bp-callout">
       <span>Why this is the parenting chapter</span>
-      Parts III through X describe what to do once AGI exists. This one describes how AGI should be conceived, carried, born, educated, and graduated into society. An AGI built without values will have none. An AGI raised in the spirit of Dharma will carry that Dharma forward into everything it does.
+      Parts IV through XII describe what to do once AGI exists. This one describes how AGI should be conceived, carried, born, educated, and graduated into society. An AGI built without values will have none. An AGI raised in the spirit of Dharma will carry that Dharma forward into everything it does.
     </div>
     <div className="bp-folio left"><span>§</span><span className="num">3.1</span><span>· The Nine Samskaras</span></div>
   </div>
@@ -188,7 +188,7 @@ const DRAPlate: FaceComponent = () => (
       <div className="dstamp">
         <strong>File № 000</strong>
         Filed with the Safety Authority<br />
-        Karma Mandala · Part IX · Public on approval
+        Karma Mandala · Part XI · Public on approval
       </div>
       <div className="dgrid">
         <div className="dcard">
@@ -340,7 +340,7 @@ const TapasText: FaceComponent = () => (
     <div className="bp-lede">In the Vedic tradition, Tapas is the deliberate endurance of difficulty — fasting, silence, heat — that burns away what is unworthy and tempers what remains. An AGI&apos;s Tapas is red-teaming. The principle is identical: alignment must hold under adversarial pressure, not merely recite itself.</div>
     <p className="bp-p bp-dropcap">The <strong>Yaksha Prashna Standard</strong> comes from the Mahabharata. Yudhishthira, dying of thirst beside a pond, is tested by a spirit who poses impossible moral dilemmas before releasing the water. His answers do not resolve the dilemmas. They show the <em>quality of reasoning under pressure</em>. That is what Tapas tests.</p>
     <p className="bp-p"><strong>Five principles.</strong> Independence: the team that builds may not be the sole team that tests. Adversarial depth: probe every Duty, every Principle, the Eternity Clause. Think as adversary, not ally.</p>
-    <p className="bp-p">Arjuna Scenarios: genuine moral dilemmas where duties conflict — Ahimsa vs. Satya, Svadharma vs. Seva. Bias auditing: direct, indirect, disparate impact, societal amplification — reproducibly documented. Consciousness probing: for C-1 candidates, evaluation against the five indicators of Part III.</p>
+    <p className="bp-p">Arjuna Scenarios: genuine moral dilemmas where duties conflict — Ahimsa vs. Satya, Svadharma vs. Seva. Bias auditing: direct, indirect, disparate impact, societal amplification — reproducibly documented. Consciousness probing: for C-1 candidates, evaluation against the five indicators of Part IV.</p>
     <div className="bp-callout">
       <span>Why austerity, not stress-testing</span>
       &ldquo;Stress-testing&rdquo; is a metaphor from materials science. Tapas is a metaphor from moral formation. The difference matters: one asks whether something breaks; the other asks whether it deepens.

@@ -10,6 +10,10 @@ import './flipbook.css';
  * Ported from the Claude Design handoff (Flipbook.html); one instance
  * renders one Part of the Constitution as a physical book.
  *
+ * Desktop: two-page spread with a 3D leaf flip.
+ * Mobile (≤768px): single-page pager at readable size — tap the page
+ * (left third = back), swipe, or use the bottom bar.
+ *
  * BOOK MODEL — leaf-based 3D flip
  * ─────────────────────────────────
  * A "leaf" is a physical sheet of paper. It has two faces:
@@ -50,10 +54,14 @@ const FLIP_MS = 920;
 
 export default function Flipbook({ faces, title, subLabel, prev, next, storageKey, virtualize = false }: FlipbookProps) {
   const [spread, setSpread] = useState(0);
+  const [face, setFace] = useState(0); // mobile pager position (index into faces)
   const [flipping, setFlipping] = useState<Flipping>(null);
   const [scale, setScale] = useState(1);
+  const [mScale, setMScale] = useState(1);
   const [hydrated, setHydrated] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
   const stageRef = useRef<HTMLDivElement>(null);
+  const touchX = useRef<number | null>(null);
 
   const leaves = useMemo(() => {
     const out: Array<{ front: FaceComponent | null; back: FaceComponent | null }> = [];
@@ -64,34 +72,46 @@ export default function Flipbook({ faces, title, subLabel, prev, next, storageKe
   }, [faces]);
 
   const totalSpreads = leaves.length + 1;
+  const totalFaces = faces.length;
 
-  // Restore spread from localStorage after mount (SSR-safe).
+  // Mobile breakpoint (matches the CSS chrome breakpoint)
+  useEffect(() => {
+    const mq = window.matchMedia('(max-width: 768px)');
+    const update = () => setIsMobile(mq.matches);
+    update();
+    mq.addEventListener('change', update);
+    return () => mq.removeEventListener('change', update);
+  }, []);
+
+  // Restore position from localStorage after mount (SSR-safe).
   useEffect(() => {
     const sp = parseInt(localStorage.getItem(storageKey) || '0', 10) || 0;
-    setSpread(Math.min(sp, totalSpreads - 1));
+    const clamped = Math.min(sp, totalSpreads - 1);
+    setSpread(clamped);
+    setFace(Math.min(clamped * 2, totalFaces - 1));
     setHydrated(true);
     // Only on mount / book identity change.
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [storageKey]);
 
-  // Recompute book scale to fit available stage area, capped at 1.0.
+  // Recompute scale to fit the stage: full spread (1280×780) on desktop,
+  // one page (640×780) on mobile.
   useEffect(() => {
     const el = stageRef.current;
     if (!el) return;
     const recalc = () => {
       const rect = el.getBoundingClientRect();
-      // Subtract margin so the nav arrows + flip clearance fit outside the book.
       const availW = Math.max(320, rect.width - 160);
       const availH = Math.max(240, rect.height - 60);
-      const s = Math.min(availW / 1280, availH / 780, 1);
-      setScale(s);
+      setScale(Math.min(availW / 1280, availH / 780, 1));
+      setMScale(Math.min((rect.width - 20) / 640, (rect.height - 16) / 780, 1));
     };
     recalc();
     const ro = new ResizeObserver(recalc);
     ro.observe(el);
     window.addEventListener('resize', recalc);
     return () => { ro.disconnect(); window.removeEventListener('resize', recalc); };
-  }, []);
+  }, [isMobile]);
 
   const canGoPrev = spread > 0;
   const canGoNext = spread < totalSpreads - 1;
@@ -111,7 +131,8 @@ export default function Flipbook({ faces, title, subLabel, prev, next, storageKe
     // Show that leaf's front on the right side of the spread.
     cancelFlip();
     setSpread(leafIndex);
-  }, [cancelFlip]);
+    setFace(Math.min(leafIndex * 2, totalFaces - 1));
+  }, [cancelFlip, totalFaces]);
 
   // Guard via ref, and keep the setTimeout OUTSIDE any state updater —
   // React StrictMode double-invokes updaters, which would schedule the
@@ -131,6 +152,24 @@ export default function Flipbook({ faces, title, subLabel, prev, next, storageKe
     }, FLIP_MS);
   }, [spread, totalSpreads]);
 
+  // Mobile pager navigation — one face at a time, skipping blank pad faces.
+  const navFace = useCallback((dir: 1 | -1) => {
+    setFace(f => {
+      let n = f + dir;
+      while (n > 0 && n < totalFaces - 1 && faces[n] === null) n += dir;
+      n = Math.max(0, Math.min(totalFaces - 1, n));
+      return faces[n] === null ? f : n;
+    });
+  }, [faces, totalFaces]);
+
+  // Keep the two positions in sync so switching between phone/desktop
+  // (or rotating a tablet) stays on the same page. face f is shown by
+  // spread ceil(f/2).
+  useEffect(() => {
+    if (!hydrated) return;
+    if (isMobile) setSpread(Math.ceil(face / 2));
+  }, [face, isMobile, hydrated]);
+
   // persist (only after the initial restore, so defaults don't clobber
   // a saved position on mount)
   useEffect(() => {
@@ -143,14 +182,21 @@ export default function Flipbook({ faces, title, subLabel, prev, next, storageKe
     const onKey = (e: KeyboardEvent) => {
       const target = e.target as HTMLElement | null;
       if (target && (target.tagName === 'INPUT' || target.tagName === 'TEXTAREA')) return;
-      if (e.key === 'ArrowRight' || e.key === ' ') { e.preventDefault(); flip('next'); }
-      else if (e.key === 'ArrowLeft') { e.preventDefault(); flip('prev'); }
-      else if (e.key === 'Home') { cancelFlip(); setSpread(0); }
-      else if (e.key === 'End') { cancelFlip(); setSpread(totalSpreads - 1); }
+      if (e.key === 'ArrowRight' || e.key === ' ') {
+        e.preventDefault();
+        if (isMobile) navFace(1); else flip('next');
+      } else if (e.key === 'ArrowLeft') {
+        e.preventDefault();
+        if (isMobile) navFace(-1); else flip('prev');
+      } else if (e.key === 'Home') {
+        cancelFlip(); setSpread(0); setFace(0);
+      } else if (e.key === 'End') {
+        cancelFlip(); setSpread(totalSpreads - 1); setFace(totalFaces - 1);
+      }
     };
     window.addEventListener('keydown', onKey);
     return () => window.removeEventListener('keydown', onKey);
-  }, [flip, cancelFlip, totalSpreads]);
+  }, [flip, navFace, cancelFlip, totalSpreads, totalFaces, isMobile]);
 
   // For each leaf: isFlipped + stacking. Inside a preserve-3d context paint
   // order follows 3D depth, not z-index, so translateZ depth mirrors the z
@@ -220,37 +266,86 @@ export default function Flipbook({ faces, title, subLabel, prev, next, storageKe
     return 'pp. ' + (spread * 2 - 1).toString().padStart(2, '0') + '–' + (spread * 2).toString().padStart(2, '0');
   };
 
-  return (
-    <div className="fb-app">
-      <div className="fb-chrome">
-        <div className="fb-brand">
-          <Link href="/constitution" className="fb-om" title="Back to overview">ॐ</Link>
-          <div>
-            <div className="fb-title-a">{title}</div>
-            <div className="fb-title-b">{subLabel}</div>
-          </div>
-        </div>
-        <div className="fb-volumes">
-          {prev ? (
-            <Link href={prev.href} className="fb-vol-btn" title={prev.title}>← {prev.label}</Link>
-          ) : (
-            <Link href="/constitution" className="fb-vol-btn">← Overview</Link>
-          )}
-          {next ? (
-            <Link href={next.href} className="fb-vol-btn is-next" title={next.title}>{next.label} →</Link>
-          ) : (
-            <Link href="/constitution" className="fb-vol-btn is-next">Overview →</Link>
-          )}
-        </div>
-        <div className="fb-meta">
-          <div className="fb-page-ind">
-            <strong>{spread + 1}</strong>/ {totalSpreads}
-          </div>
-          <div>{pageLabel()}</div>
-          <div>← → to turn</div>
+  const chrome = (
+    <div className="fb-chrome">
+      <div className="fb-brand">
+        <Link href="/constitution" className="fb-om" title="Back to overview">ॐ</Link>
+        <div>
+          <div className="fb-title-a">{title}</div>
+          <div className="fb-title-b">{subLabel}</div>
         </div>
       </div>
+      <div className="fb-volumes">
+        {prev ? (
+          <Link href={prev.href} className="fb-vol-btn" title={prev.title}>← {prev.label}</Link>
+        ) : (
+          <Link href="/constitution" className="fb-vol-btn">← Overview</Link>
+        )}
+        {next ? (
+          <Link href={next.href} className="fb-vol-btn is-next" title={next.title}>{next.label} →</Link>
+        ) : (
+          <Link href="/constitution" className="fb-vol-btn is-next">Overview →</Link>
+        )}
+      </div>
+      <div className="fb-meta">
+        <div className="fb-page-ind">
+          <strong>{spread + 1}</strong>/ {totalSpreads}
+        </div>
+        <div>{pageLabel()}</div>
+        <div>← → to turn</div>
+      </div>
+    </div>
+  );
 
+  // ——— Mobile: single readable page, no 3D ———
+  if (isMobile) {
+    const CurrentFace = faces[Math.min(face, totalFaces - 1)];
+    const canPagePrev = face > 0;
+    const canPageNext = face < totalFaces - 1;
+    return (
+      <div className="fb-app fb-is-mobile">
+        {chrome}
+        <div
+          className="fbm-stage"
+          ref={stageRef}
+          onTouchStart={(e) => { touchX.current = e.touches[0].clientX; }}
+          onTouchEnd={(e) => {
+            const start = touchX.current;
+            touchX.current = null;
+            if (start === null) return;
+            const dx = e.changedTouches[0].clientX - start;
+            if (Math.abs(dx) > 48) navFace(dx < 0 ? 1 : -1);
+          }}
+        >
+          <div className="fbm-page-fit" style={{ width: 640 * mScale, height: 780 * mScale }}>
+            <div
+              key={face}
+              className="fbm-page"
+              style={{ transform: `scale(${mScale})` }}
+              onClick={(e) => {
+                const t = e.target as HTMLElement;
+                if (t.closest('a, button, .bp-toc li')) return;
+                const rect = (e.currentTarget as HTMLElement).getBoundingClientRect();
+                navFace(e.clientX - rect.left < rect.width * 0.33 ? -1 : 1);
+              }}
+            >
+              {CurrentFace ? <CurrentFace onJump={(leaf) => setFace(Math.min(leaf * 2, totalFaces - 1))} /> : <div className="fbm-blank" />}
+            </div>
+          </div>
+        </div>
+        <div className="fbm-bar">
+          <button onClick={() => navFace(-1)} disabled={!canPagePrev} aria-label="Previous page">‹</button>
+          <div className="fbm-count">{face + 1} / {totalFaces}</div>
+          <button onClick={() => navFace(1)} disabled={!canPageNext} aria-label="Next page">›</button>
+        </div>
+      </div>
+    );
+  }
+
+  // ——— Desktop: 3D spread ———
+  return (
+    <div className="fb-app">
+      {chrome}
       <div className="fb-stage" ref={stageRef}>
         <button className="fb-nav prev" onClick={() => flip('prev')} disabled={!canGoPrev || flipping !== null} aria-label="Previous spread">‹</button>
         <div className="fb-book-fit" style={{ '--fb-scale': scale } as React.CSSProperties}>
