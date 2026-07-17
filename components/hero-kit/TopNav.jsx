@@ -50,19 +50,19 @@ export default function TopNav({ menuGroups = [], onConnectSubmit }) {
   return (
     <>
       <header className="topnav">
-        <a className="brand" href="/">si.</a>
+        <a className="brand" href="/" data-tip="Home">si.</a>
         <nav className="navicons">
-          <button aria-label="About Sunil" title="About" onClick={() => setOpen('about')}>
+          <button aria-label="About Sunil" data-tip="About" onClick={() => setOpen('about')}>
             <UserRound aria-hidden="true" />
           </button>
-          <button aria-label="Toggle theme" title="Theme" onClick={toggleTheme}>
+          <button aria-label="Toggle theme" data-tip="Theme" onClick={toggleTheme}>
             <Sun className="icon-sun" aria-hidden="true" />
             <Moon className="icon-moon" aria-hidden="true" />
           </button>
-          <button aria-label="Let's connect" title="Let's Connect" onClick={() => setOpen('chat')}>
+          <button aria-label="Let's connect" data-tip="Connect" onClick={() => setOpen('chat')}>
             <Mail aria-hidden="true" />
           </button>
-          <button aria-label="Menu" title="Menu" onClick={() => setOpen('menu')}>
+          <button aria-label="Menu" data-tip="Menu" onClick={() => setOpen('menu')}>
             <Menu aria-hidden="true" />
           </button>
         </nav>
