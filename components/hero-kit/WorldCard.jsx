@@ -43,9 +43,34 @@ export default function WorldCard({
   onClose,
   dimmed = false,
 }) {
-  const sectionRef = useReveal();
+  const [sectionRef, revealClasses] = useReveal();
   const videoRef = useRef(null);
   const canvasRef = useRef(null);
+
+  // hover opens on mouse; touch has no hover, so a tap toggles instead
+  // (on phones pointerenter/leave both fire within a single tap)
+  const handlePointerEnter = (e) => {
+    if (e.pointerType === 'touch') return;
+    onOpen?.();
+  };
+  const handlePointerLeave = (e) => {
+    if (e.pointerType === 'touch') return;
+    onClose?.();
+  };
+  const handleClick = (e) => {
+    if (e.target.closest?.('.wfan-card')) return; // fan links navigate
+    const touchLike =
+      e.nativeEvent?.pointerType === 'touch' ||
+      window.matchMedia('(hover: none)').matches;
+    if (!touchLike) return;
+    if (open) onClose?.();
+    else onOpen?.();
+  };
+  // keep the fan open while focus moves between elements inside the card
+  const handleBlur = (e) => {
+    if (e.currentTarget.contains(e.relatedTarget)) return;
+    onClose?.();
+  };
 
   useEffect(() => {
     const section = sectionRef.current;
@@ -150,14 +175,15 @@ export default function WorldCard({
 
   return (
     <section
-      className={`card world ${accent} ${open ? 'fan-open' : ''} ${dimmed ? 'dimmed' : ''}`}
+      className={`card world ${accent} ${revealClasses} ${open ? 'fan-open' : ''} ${dimmed ? 'dimmed' : ''}`}
       ref={sectionRef}
       tabIndex={0}
-      aria-label={`${title} — hover or focus to reveal destinations`}
-      onPointerEnter={onOpen}
-      onPointerLeave={onClose}
+      aria-label={`${title} — hover, tap, or focus to reveal destinations`}
+      onPointerEnter={handlePointerEnter}
+      onPointerLeave={handlePointerLeave}
+      onClick={handleClick}
       onFocusCapture={onOpen}
-      onBlurCapture={onClose}
+      onBlurCapture={handleBlur}
     >
       <div className="vlayer">
         <video
