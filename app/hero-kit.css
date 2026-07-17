@@ -357,8 +357,9 @@
   transform: translate(-50%, var(--vy, -41%)) scale(var(--vscale, 1.2));
   will-change: transform;
   filter: brightness(0.94) saturate(1.06);
-  transition: filter 0.5s ease;
+  transition: filter 0.5s ease, opacity 0.45s ease;
 }
+.vlayer video.swapping { opacity: 0; } /* theme-variant crossfade */
 .world:hover .vlayer video { filter: brightness(1.06) saturate(1.12); }
 .dust {
   position: absolute;
