@@ -182,7 +182,7 @@ export default function HeroPreview({ fontClasses = '' }) {
           <nav aria-label="Social links">
             <a href="https://www.linkedin.com/in/sunilviyer/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
             <a href="https://github.com/sunilviyer" target="_blank" rel="noopener noreferrer">GitHub</a>
-            <a href="https://medium.com/@suniliyer" target="_blank" rel="noopener noreferrer">Medium</a>
+            <a href="https://medium.com/@sunilviswanathaniyer" target="_blank" rel="noopener noreferrer">Medium</a>
             <button type="button" className="credits-link" onClick={() => setCreditsOpen(true)}>Credits</button>
           </nav>
         </footer>

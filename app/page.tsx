@@ -493,11 +493,11 @@ export default function HomePage() {
             GitHub
           </a>
           <a
-            href="https://medium.com/@suniliyer"
+            href="https://medium.com/@sunilviswanathaniyer"
             target="_blank"
             rel="noopener noreferrer"
             className="chrome-link"
-            onClick={() => trackExternalLink('Other', 'https://medium.com/@suniliyer')}
+            onClick={() => trackExternalLink('Other', 'https://medium.com/@sunilviswanathaniyer')}
           >
             Medium
           </a>

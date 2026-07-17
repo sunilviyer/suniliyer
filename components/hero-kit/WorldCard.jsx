@@ -113,6 +113,16 @@ export default function WorldCard({
     let raf = null;
     let t = 0;
 
+    // iOS can reject the first play() (fired at page load for the card
+    // peeking above the fold) before the video has data; retry whenever
+    // playback becomes possible again
+    const tryPlay = () => {
+      if (visible && video.paused) video.play().catch(() => {});
+    };
+    video.addEventListener('canplay', tryPlay);
+    document.addEventListener('visibilitychange', tryPlay);
+    window.addEventListener('touchend', tryPlay, { passive: true });
+
     const loop = () => {
       if (!visible) {
         raf = null;
@@ -156,7 +166,7 @@ export default function WorldCard({
         entries.forEach((e) => {
           visible = e.isIntersecting;
           if (visible) {
-            video.play().catch(() => {});
+            tryPlay();
             if (!raf) loop();
           } else {
             video.pause();
@@ -169,6 +179,9 @@ export default function WorldCard({
     return () => {
       vio.disconnect();
       window.removeEventListener('resize', resize);
+      video.removeEventListener('canplay', tryPlay);
+      document.removeEventListener('visibilitychange', tryPlay);
+      window.removeEventListener('touchend', tryPlay);
       if (raf) cancelAnimationFrame(raf);
     };
   }, [tint, videoY, videoScale]);
@@ -192,6 +205,7 @@ export default function WorldCard({
           muted
           loop
           playsInline
+          preload="auto"
           src={videoSrc}
           style={{ '--vy': `${videoY}%`, '--vscale': videoScale }}
         />
