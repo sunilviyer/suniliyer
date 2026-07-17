@@ -7,12 +7,12 @@ import { useReveal } from '@/lib/hero-kit/useReveal';
 // the card and a cursor-following highlight inside it (both read the
 // --lx/--ly vars that Torchlight maintains on .kit-root).
 export default function HeroCard() {
-  const ref = useReveal(2600); // words settle, then personalities begin
+  const [ref, revealClasses] = useReveal(2600); // words settle, then personalities begin
 
   return (
     <div className="hero-wrap">
       <div className="hero-glow" aria-hidden="true" />
-      <section className="card hero" ref={ref}>
+      <section className={`card hero ${revealClasses}`} ref={ref}>
         <div className="hero-light" aria-hidden="true" />
         <p className="eyebrow">
           <Words text="Sunil Iyer" startIndex={0} />{' '}
