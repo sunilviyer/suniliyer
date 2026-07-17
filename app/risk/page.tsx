@@ -37,9 +37,9 @@ const riskCards = [
   {
     id: '4',
     title: 'AI and Privacy',
-    slug: 'ai-and-privacy',
+    slug: 'ai-privacy',
     tldr: 'Protecting personal information: privacy risks in AI training and inference',
-    image: 'ai-privacy-dilemma.webp',
+    image: 'ai-privacy.webp',
     era: 'Privacy Risk',
     tags: ['Privacy', 'Data']
   },
