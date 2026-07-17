@@ -169,6 +169,7 @@ export default function HeroPreview({ fontClasses = '' }) {
             accent="leela"
             tint="magma"
             videoSrc="/videos/leela-3d.webm"
+            videoSrcLight="/videos/leela-3d-light.webm"
             videoY={-70}
             videoScale={1.5}
             tag="The world of play"

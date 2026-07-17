@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Words } from './Kinetic';
 import WorldFan from './WorldFan';
 import { useReveal } from '@/lib/hero-kit/useReveal';
@@ -16,6 +16,8 @@ const TINTS = {
  *  - accent: 'vidya' | 'leela'        (CSS class carrying --accent)
  *  - tint:   'ember' | 'magma'        (dust color family)
  *  - videoSrc: '/videos/vidya-3d.webm'
+ *  - videoSrcLight: optional light-theme variant; the card crossfades to
+ *             it when the theme toggle flips (falls back to videoSrc)
  *  - videoY:  vertical anchor of the footage in % (default -41; more
  *             negative raises the video so more of the top is cropped)
  *  - videoScale: zoom on the footage (default 1.2); raise together with a
@@ -31,6 +33,7 @@ export default function WorldCard({
   accent,
   tint = 'ember',
   videoSrc,
+  videoSrcLight,
   videoY = -41,
   videoScale = 1.2,
   tag,
@@ -46,6 +49,28 @@ export default function WorldCard({
   const [sectionRef, revealClasses] = useReveal();
   const videoRef = useRef(null);
   const canvasRef = useRef(null);
+  const [theme, setTheme] = useState('dark');
+  const [vidReady, setVidReady] = useState(false);
+
+  // follow the kit theme toggle so the footage can relight
+  useEffect(() => {
+    const root = document.documentElement;
+    const read = () => setTheme(root.dataset.theme === 'light' ? 'light' : 'dark');
+    read();
+    const mo = new MutationObserver(read);
+    mo.observe(root, { attributes: true, attributeFilter: ['data-theme'] });
+    return () => mo.disconnect();
+  }, []);
+
+  const activeSrc =
+    theme === 'light' && videoSrcLight ? videoSrcLight : videoSrc;
+
+  // fade out while the swapped source loads; canplay fades back in
+  useEffect(() => {
+    setVidReady(false);
+    const video = videoRef.current;
+    if (video && video.readyState >= 3) setVidReady(true);
+  }, [activeSrc]);
 
   // hover opens on mouse; touch has no hover, so a tap toggles instead
   // (on phones pointerenter/leave both fire within a single tap)
@@ -201,12 +226,14 @@ export default function WorldCard({
       <div className="vlayer">
         <video
           ref={videoRef}
+          className={vidReady ? '' : 'swapping'}
           autoPlay
           muted
           loop
           playsInline
           preload="auto"
-          src={videoSrc}
+          src={activeSrc}
+          onCanPlay={() => setVidReady(true)}
           style={{ '--vy': `${videoY}%`, '--vscale': videoScale }}
         />
       </div>
