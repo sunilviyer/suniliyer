@@ -5,6 +5,7 @@ import TopNav from '@/components/hero-kit/TopNav';
 import Torchlight from '@/components/hero-kit/Torchlight';
 import HeroCard from '@/components/hero-kit/HeroCard';
 import WorldCard from '@/components/hero-kit/WorldCard';
+import { HomeAnalytics } from '@/components/homepage/HomeAnalytics';
 
 // mirrors the live homepage's nav sections so the menu carries every link
 const MENU_GROUPS = [
@@ -144,6 +145,7 @@ export default function HeroPreview({ fontClasses = '' }) {
 
   return (
     <div className={`kit-root ${fontClasses}`}>
+      <HomeAnalytics />
       <Torchlight />
       <TopNav menuGroups={MENU_GROUPS} onConnectSubmit={handleConnectSubmit} />
       <main className="kit-main">
