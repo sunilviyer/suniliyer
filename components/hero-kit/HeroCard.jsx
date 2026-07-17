@@ -1,6 +1,7 @@
 'use client';
 
 import { Word, Words, Letters } from './Kinetic';
+import HeroVideo from './HeroVideo';
 import { useReveal } from '@/lib/hero-kit/useReveal';
 
 // Hero card with the Torchlight treatment: a breathing glow bleed behind
@@ -13,6 +14,7 @@ export default function HeroCard() {
     <div className="hero-wrap">
       <div className="hero-glow" aria-hidden="true" />
       <section className={`card hero ${revealClasses}`} ref={ref}>
+        <HeroVideo />
         <div className="hero-light" aria-hidden="true" />
         <p className="eyebrow">
           <Words text="Sunil Iyer" startIndex={0} />{' '}
