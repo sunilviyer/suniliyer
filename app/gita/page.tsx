@@ -696,7 +696,7 @@ export default function GitaExperience() {
 
               {/* Center — Guru figure link */}
               <a
-                href="https://ai-agents-rosy-mu.vercel.app/agents/guru"
+                href="https://ai-agents-rosy-mu.vercel.app/agents/sage"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="sage-center"

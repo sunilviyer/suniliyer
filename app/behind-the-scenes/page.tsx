@@ -44,7 +44,7 @@ const PROJECTS: Project[] = [
     stats: ["280+ hrs", "4 iterations", "Real-time"],
     tech: ["Next.js", "Flask", "PostgreSQL", "Neon DB"],
     fullStory: "It started with a spreadsheet. I had a high-value RRSP and was managing it the way most people do — logging into my brokerage, glancing at numbers, hoping for the best. Then one evening I did the math and realized I was dangerously concentrated in a single stock.\n\nThat moment became the spark for Seshan. I wanted a dashboard showing everything my brokerage wouldn't: concentration risk, sector exposure, and what a recession would do to my specific portfolio.\n\nI had never built a full-stack application. I'm not an engineer. I'm a customer success leader who was curious and frustrated. Next.js, Flask, PostgreSQL — all from scratch. The first version was embarrassing. The fourth was good.\n\nOver 280 hours across evenings and weekends. I didn't learn PostgreSQL because I wanted to. I learned it because I needed a database. Attach learning to a problem you care about.",
-    portfolioLink: "/portfolio/seshan-dashboard",
+    portfolioLink: "https://seshan-navy.vercel.app/",
   },
   {
     id: "seshan-intelligence",
@@ -60,7 +60,7 @@ const PROJECTS: Project[] = [
     stats: ["Zero cloud", "Llama 3.2B", "100% local"],
     tech: ["Next.js", "Ollama", "Llama 3.2B", "React"],
     fullStory: "Once the dashboard worked, I wondered: could AI financial analysis run entirely on my machine? No cloud. No data leaving my laptop.\n\nOllama with Llama 3.2B — concentration risks, stress-testing, benchmarks. All local. Your data never leaves.\n\nI work in an industry where data privacy is paramount. Privacy and capability aren't mutually exclusive.",
-    portfolioLink: "/portfolio/seshan-intelligence",
+    portfolioLink: "/seshan/demo/",
   },
   {
     id: "mortgage-calculator",
@@ -76,7 +76,7 @@ const PROJECTS: Project[] = [
     stats: ["∞ scenarios", "Real life", "→ Matcher"],
     tech: ["React", "Financial modeling"],
     fullStory: "Started with life, not technology. House hunting in Oakville with a young family. Calculating mortgage scenarios on a napkin.\n\nThe calculator was born in a weekend. The real insight: math wasn't the hard part. Cross-referencing listings across five platforms was. That became the Matchmaker agent.",
-    portfolioLink: "/portfolio/mortgage-calculator",
+    portfolioLink: "/mortgage-calculator",
   },
   {
     id: "calvin-hobbes",
@@ -92,7 +92,7 @@ const PROJECTS: Project[] = [
     stats: ["30+ strips", "10+ themes", "Hand-crafted"],
     tech: ["Leonardo AI", "Manual assembly", "React"],
     fullStory: "cAlvIn is a small robot — not self-aware, always learning, constantly hallucinating. Hobbes is wise and loves trouble.\n\nLeonardo AI generates character poses. I assemble every strip manually — characters, bubbles, panels, pacing. All credit to Bill Watterson.",
-    portfolioLink: "/portfolio/calvin-hobbes",
+    portfolioLink: "/calvinhobbes",
   },
   {
     id: "ai-agents",
@@ -108,7 +108,7 @@ const PROJECTS: Project[] = [
     stats: ["5 agents", "5 personas", "1 live"],
     tech: ["Python", "Next.js", "SVG avatars"],
     fullStory: "SIU: fraud research. Banker: stock monitoring. Matchmaker: home finding. Editor: editing. Guru: the Bhagavad Gita.\n\nHuman-in-the-loop. Agents compress information-gathering. Humans retain judgment. Each has its own SVG avatar, color, persona.",
-    portfolioLink: "/portfolio/ai-agents",
+    portfolioLink: "https://ai-agents-rosy-mu.vercel.app",
   },
   {
     id: "bhagavad-gita",
@@ -124,7 +124,7 @@ const PROJECTS: Project[] = [
     stats: ["10 moments", "4 layers", "Live chat"],
     tech: ["Next.js", "Framer Motion", "Claude API"],
     fullStory: "The most personal project. The Gita isn't a text to me — it's a framework for hard decisions.\n\n10 moments, four layers each. Guru lets visitors converse with the wisdom. No client. No deadline. Just honoring something that has given me so much.",
-    portfolioLink: "/portfolio/bhagavad-gita",
+    portfolioLink: "/gita",
   },
   {
     id: "creative-works",
@@ -140,7 +140,7 @@ const PROJECTS: Project[] = [
     stats: ["Videos", "Comics", "AI Art", "Photos"],
     tech: ["Midjourney", "Runway", "Leonardo AI"],
     fullStory: "No single spark. A lifelong flame. From college to AI-generated mythology videos.\n\nPart gallery, part bookshelf, part mixtape. Not curated for an audience. Curated for me.",
-    portfolioLink: "/portfolio/creative-works",
+    portfolioLink: "/creative-works",
   },
   {
     id: "learning-paths",
@@ -156,7 +156,7 @@ const PROJECTS: Project[] = [
     stats: ["158 articles", "5 paths", "173 cards"],
     tech: ["Next.js", "NotebookLM", "MDX"],
     fullStory: "Nobody sees the scale. Five neat paths on the surface. 158 articles behind it. Custom Apps Script, six notebooks, 173 cards, quality audits, a master fix plan.\n\nThe hardest part: sequencing so someone else could learn naturally.",
-    portfolioLink: "/portfolio/learning-paths",
+    portfolioLink: "/history",
   },
   {
     id: "suniliyer-ca",
