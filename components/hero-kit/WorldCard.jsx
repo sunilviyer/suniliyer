@@ -198,6 +198,10 @@ export default function WorldCard({
       </div>
       <canvas className="dust" ref={canvasRef} />
       <div className="rim" aria-hidden="true" />
+      <span className="tap-hint" aria-hidden="true">
+        <span className="tap-dot" />
+        Tap to explore
+      </span>
       <WorldFan items={fanItems} open={open} />
       <div className="world-inner">
         <p className="tag">
