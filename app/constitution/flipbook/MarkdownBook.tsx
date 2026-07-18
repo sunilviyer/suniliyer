@@ -41,10 +41,10 @@ const COVER_GRADIENTS: Record<ConstitutionPart['group'], string> = {
 };
 
 /**
- * Strip the front matter the cover already presents: the opening ॐ,
- * the ordinal line (principles), the H1, and the descriptor/anchor line
- * directly after the H1. Everything else (including the plate figure)
- * stays in the flow.
+ * Strip the front matter the book presents on dedicated pages: the
+ * opening ॐ, the ordinal line (principles), the H1, the descriptor or
+ * anchor line directly after the H1, and the plate figure (the plate
+ * gets a full page of its own so the story starts on a fresh page).
  */
 function stripFrontMatter(md: string): string {
   const lines = md.split('\n');
@@ -57,7 +57,8 @@ function stripFrontMatter(md: string): string {
   if (i < lines.length && /^\*[^*]+\*$/.test(lines[i].trim()) ) { i++; skipBlank(); }   // ordinal
   if (i < lines.length && /^#\s/.test(lines[i].trim())) { i++; skipBlank(); }            // H1
   if (i < lines.length && /^\*[^*]+\*$/.test(lines[i].trim())) { i++; skipBlank(); }     // descriptor / anchor
-  return lines.slice(i).join('\n');
+  return lines.slice(i).join('\n')
+    .replace(/<figure class="plate">[\s\S]*?<\/figure>\s*/, '');
 }
 
 /** map a canonical content link (NN-slug.md, optionally #anchor) to its route */
@@ -184,6 +185,19 @@ export default function MarkdownBook({ part, prev, next, markdown }: MarkdownBoo
     );
 
     const arr: Array<FaceComponent | null> = [CoverFace];
+
+    // The plate takes a full page of its own, facing the first page of
+    // the story (inside of the cover leaf = left page of spread 1).
+    if (part.image) {
+      const PlateFace: FaceComponent = () => (
+        <div className="bpp-plate">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src={part.image} alt={part.story || part.title} />
+          <div className="bpp-plate-cap">{part.story || part.title}</div>
+        </div>
+      );
+      arr.push(PlateFace);
+    }
 
     for (let i = 0; i < pages; i++) {
       const side = arr.length % 2 === 1 ? 'left' : 'right';
