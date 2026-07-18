@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { constitutionParts } from '../data/reading-order';
+import { constitutionParts, GROUP_TITLES, type ArticleGroup } from '../data/reading-order';
 
 interface SidebarProps {
   currentPartId?: string;
@@ -10,29 +10,24 @@ interface SidebarProps {
   onClose?: () => void;
 }
 
+const GROUP_ORDER: ArticleGroup[] = ['opening', 'principles', 'machinery', 'safeguards', 'aids', 'closing'];
+
 /**
- * Sidebar navigation for the Constitution reader
- * Lists all Parts in canonical reading order
- * Grouped by category: Front Matter, Preface, Constitution, Appendix
+ * Sidebar navigation for the Constitution reader.
+ * Lists all chapters in canonical reading order, grouped by the six
+ * movements of the book.
  */
 export default function Sidebar({ currentPartId, isOpen = true, onClose }: SidebarProps) {
-  const categories = {
-    'front-matter': 'Front Matter',
-    'preface': 'Philosophical Preface',
-    'constitution': 'The Constitution',
-    'appendix': 'Appendices',
-  };
-
-  const partsByCategory = Object.entries(categories).map(([key, title]) => ({
-    category: key as 'front-matter' | 'preface' | 'constitution' | 'appendix',
-    title,
-    parts: constitutionParts.filter(p => p.category === key),
+  const partsByGroup = GROUP_ORDER.map((group) => ({
+    group,
+    title: GROUP_TITLES[group],
+    parts: constitutionParts.filter(p => p.group === group),
   }));
 
   return (
     <aside className={`constitution-sidebar ${isOpen ? 'mobile-open' : ''}`}>
-      {partsByCategory.map(({ category, title, parts }) => (
-        <div key={category} className="sidebar-nav-category">
+      {partsByGroup.map(({ group, title, parts }) => (
+        <div key={group} className="sidebar-nav-category">
           <div className="sidebar-category-title">{title}</div>
           {parts.map(part => (
             <Link
@@ -42,7 +37,7 @@ export default function Sidebar({ currentPartId, isOpen = true, onClose }: Sideb
               onClick={onClose}
             >
               <span className="sidebar-nav-number">
-                {part.number || '—'}
+                {part.roman || 'ॐ'}
               </span>
               <span className="sidebar-nav-title">{part.title}</span>
             </Link>

@@ -1,9 +1,8 @@
 import { redirect } from 'next/navigation';
 
 /**
- * The standalone two-volume book prototype was superseded by per-part
- * flipbooks at /constitution/[partId]. Keep the old URL working.
+ * Legacy URL. The book now begins with the Author's Note.
  */
 export default function BookRedirect() {
-  redirect('/constitution/part-1');
+  redirect('/constitution/authors-note');
 }

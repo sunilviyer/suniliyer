@@ -15,7 +15,7 @@ interface PageProps {
 }
 
 /**
- * Generate static params for all constitution parts
+ * Generate static params for all constitution articles
  */
 export async function generateStaticParams() {
   return constitutionParts.map((part) => ({
@@ -24,7 +24,7 @@ export async function generateStaticParams() {
 }
 
 /**
- * Generate metadata for each part with social media tags
+ * Generate metadata for each article with social media tags
  */
 export async function generateMetadata({ params }: PageProps) {
   const { partId } = await params;
@@ -32,12 +32,13 @@ export async function generateMetadata({ params }: PageProps) {
 
   if (!part) {
     return {
-      title: 'Part Not Found | AGI Constitution',
+      title: 'Article Not Found | AGI Constitution',
     };
   }
 
-  const title = part.category === 'constitution' ? `${partLabel(part)}: ${part.title}` : part.title;
-  const description = part.subtitle || `${part.title} - AGI Constitution: Dharma Sanhita`;
+  const label = partLabel(part);
+  const title = label === part.title ? part.title : `${label}: ${part.title}`;
+  const description = part.subtitle || `${part.title}, from The AGI Constitution: Dharma Sanhita`;
 
   return getConstitutionSocialMeta({
     title,
@@ -47,9 +48,8 @@ export async function generateMetadata({ params }: PageProps) {
 }
 
 /**
- * Dynamic route for each constitution part — renders the part as an
- * interactive flipbook (bespoke spreads for Parts I and III, generated
- * pagination from the part's markdown otherwise).
+ * Dynamic route for each constitution article, rendered as an
+ * interactive flipbook paginated from the article's markdown.
  */
 export default async function ConstitutionPartPage({ params }: PageProps) {
   const { partId } = await params;
@@ -67,18 +67,18 @@ export default async function ConstitutionPartPage({ params }: PageProps) {
 
   const { prev, next } = getAdjacentParts(partId);
 
-  // Schema.org structured data
-  const title = part.category === 'constitution' ? `${partLabel(part)}: ${part.title}` : part.title;
-  const description = part.subtitle || `${part.title} - AGI Constitution: Dharma Sanhita`;
+  const label = partLabel(part);
+  const title = label === part.title ? part.title : `${label}: ${part.title}`;
+  const description = part.subtitle || `${part.title}, from The AGI Constitution: Dharma Sanhita`;
 
   const articleSchema = getArticleSchema({
     title,
     description,
     slug: partId,
     path: 'constitution',
-    datePublished: '2026-03-01T00:00:00Z',
-    dateModified: '2026-03-01T00:00:00Z',
-    image: '/images/constitution/dharma-sanhita.webp',
+    datePublished: '2026-07-01T00:00:00Z',
+    dateModified: '2026-07-01T00:00:00Z',
+    image: part.image || '/images/constitution/dharma-sanhita.webp',
     readTime: '15 min',
     tags: ['AGI Governance', 'AI Ethics', 'Constitutional Framework', 'Vedic Philosophy']
   });

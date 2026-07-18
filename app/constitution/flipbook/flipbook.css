@@ -803,6 +803,65 @@
 }
 .bpg-flow a { color: var(--deep-blue); text-decoration: underline; }
 
+/* ——— Dharma Sanhita article template elements ——— */
+
+/* The Madhubani plate: one per article, a frontispiece at the top */
+.bpg-flow figure.plate {
+  margin: 0 0 14px;
+  text-align: center;
+  break-inside: avoid-column;
+}
+.bpg-flow figure.plate img {
+  max-width: 100%;
+  max-height: 480px;
+  object-fit: contain;
+  border: 1px solid var(--rule);
+  background: var(--bg);
+}
+.bpg-flow figure.plate figcaption {
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: 11.5px;
+  color: var(--ink-muted);
+  margin-top: 8px;
+}
+
+/* Chapter-open ॐ and closing mantra: centered, gold */
+.bpg-flow .bpg-om {
+  text-align: center;
+  font-family: var(--font-dev);
+  font-size: 30px;
+  color: var(--gold);
+  margin: 4px 0 14px;
+}
+.bpg-flow .bpg-mantra {
+  text-align: center;
+  font-family: var(--font-dev);
+  font-size: 15px;
+  color: var(--gold);
+  margin: 18px 0 10px;
+  break-inside: avoid-column;
+}
+
+/* Anchors and Aids block: gold left border, smaller type */
+.bpg-flow .bpg-anchor-line {
+  border-left: 3px solid var(--gold);
+  background: var(--anchor-vedic-bg);
+  padding: 8px 12px;
+  margin: 0 0 6px;
+  font-size: 12px;
+  line-height: 1.5;
+  break-inside: avoid-column;
+}
+.bpg-flow .bpg-anchor-line em:first-child {
+  font-style: normal;
+  font-weight: 600;
+  color: var(--deep-blue);
+}
+
+/* The Story sections read as italic narrative — give them air */
+.bpg-flow h2 + p em:only-child { line-height: 1.7; }
+
 /* Offscreen measurer for pagination */
 .bpg-measure {
   position: fixed; left: -10000px; top: 0;
