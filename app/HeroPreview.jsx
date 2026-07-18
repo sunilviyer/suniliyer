@@ -158,6 +158,7 @@ export default function HeroPreview({ fontClasses = '' }) {
             accent="vidya"
             tint="ember"
             videoSrc="/videos/vidya-3d.webm"
+            videoSrcLight="/videos/vidya-3d-light.webm"
             tag="The world of knowledge"
             title="Vidya"
             devanagari="विद्या"
