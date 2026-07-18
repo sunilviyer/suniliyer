@@ -11,7 +11,8 @@ import { ContactWidget } from '@/components/contact/ContactWidget';
  */
 export function GlobalUI() {
   const pathname = usePathname();
-  if (pathname === '/' || pathname === '/hero-preview') return null;
+  // The homepage and the Constitution pages ship the hero-kit nav themselves.
+  if (pathname === '/' || pathname === '/hero-preview' || pathname?.startsWith('/constitution')) return null;
 
   return (
     <>

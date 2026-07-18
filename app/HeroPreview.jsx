@@ -2,61 +2,13 @@
 
 import { useEffect, useRef, useState } from 'react';
 import TopNav from '@/components/hero-kit/TopNav';
+import { MENU_GROUPS } from '@/components/hero-kit/menu-groups';
 import Torchlight from '@/components/hero-kit/Torchlight';
 import HeroCard from '@/components/hero-kit/HeroCard';
 import WorldCard from '@/components/hero-kit/WorldCard';
 import { HomeAnalytics } from '@/components/homepage/HomeAnalytics';
 
 // mirrors the live homepage's nav sections so the menu carries every link
-const MENU_GROUPS = [
-  {
-    heading: 'Learning Paths',
-    links: [
-      { href: '/history', label: 'History of AI', desc: '1950s to foundation models' },
-      { href: '/terminology', label: 'Terminology', desc: 'ML, neural nets, LLMs' },
-      { href: '/risk', label: 'Risk', desc: 'bias, deepfakes, harms' },
-      { href: '/responsibility', label: 'Responsibility', desc: 'GDPR, EU AI Act, governance' },
-      { href: '/future', label: 'Future of AI', desc: 'AGI, careers, regulation' },
-    ],
-  },
-  {
-    heading: 'AGI Constitution',
-    links: [
-      { href: '/constitution/authors-note', label: "Author's Note", desc: 'introduction & context' },
-      { href: '/constitution/context', label: 'Why Vedas', desc: 'philosophical foundation' },
-      { href: '/constitution', label: 'The Constitution', desc: 'full constitutional text' },
-      { href: '/constitution/part-1', label: 'Ten Principles', desc: 'core ethical framework' },
-      { href: '/constitution/part-18', label: 'Closing Declaration', desc: 'final commitments' },
-    ],
-  },
-  {
-    heading: 'Portfolio',
-    links: [
-      { href: 'https://www.suniliyer.ca/seshan/demo/', label: 'Seshan Intelligence', desc: 'AI business intelligence', external: true },
-      { href: 'https://seshan-navy.vercel.app/', label: 'Seshan Dashboard', desc: 'interactive analytics', external: true },
-      { href: 'https://ai-agents-rosy-mu.vercel.app', label: 'AI Agents', desc: 'SIU, Banker, Editor…', external: true },
-    ],
-  },
-  {
-    heading: 'Inner Monologue',
-    links: [
-      { href: '/articles', label: 'Articles', desc: 'thoughts & insights' },
-      { href: '/gita', label: 'Bhagavad Gita', desc: 'AI-guided scripture' },
-      { href: '/calvinhobbes', label: 'Calvin & Hobbes', desc: 'AI-illustrated comics' },
-      { href: '/creative-works', label: 'Creative Works', desc: 'poetry & writing' },
-      { href: '/behind-the-scenes', label: 'Behind the Scenes', desc: 'process · tools' },
-    ],
-  },
-  {
-    heading: 'Connect',
-    links: [
-      { href: '/journey', label: 'My Journey', desc: 'professional story' },
-      { href: '/downloads/Sunil_Iyer_Resume.pdf', label: 'Resume', desc: 'download resume' },
-      { href: 'https://linkedin.com/in/sunilviyer', label: 'LinkedIn', desc: 'professional network', external: true },
-      { href: 'https://github.com/sunilviyer', label: 'GitHub', desc: 'code repositories', external: true },
-    ],
-  },
-];
 
 const LEELA_FAN = [
   { imgUrl: '/images/heroes/gita-card.webp', label: 'Gita', desc: 'interactive Bhagavad Gita', href: '/gita' },
