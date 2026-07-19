@@ -17,6 +17,9 @@ import './constitution-landing.css';
 
 const PDF_HREF = '/downloads/AGIConstitutionDharmaSanhita.pdf';
 
+/** Same per-group gradient the flipbook itself uses for these chapters' covers */
+const COVER_GRADIENT = 'linear-gradient(135deg, #5C280A 0%, #2A1408 100%)';
+
 /** Devanagari anchor extracted from a principle subtitle ("Rta (ऋत)" → "ऋत") */
 function devFromSubtitle(subtitle?: string): string {
   const m = subtitle?.match(/\(([^)]+)\)/);
@@ -26,6 +29,10 @@ function devFromSubtitle(subtitle?: string): string {
 export default function ConstitutionLandingPage() {
   const firstChapter = constitutionParts[0];
   const principles = constitutionParts.filter(p => p.group === 'principles');
+  const frameIds = ['authors-note', 'prologue', 'preamble'];
+  const frameChapters = frameIds
+    .map(id => constitutionParts.find(p => p.id === id))
+    .filter((p): p is NonNullable<typeof p> => !!p);
 
   // Hero videos must always be muted. React does not reliably write the
   // muted attribute, so enforce it via the property after mount, and
@@ -107,6 +114,31 @@ export default function ConstitutionLandingPage() {
             </div>
           </div>
         </div>
+      </div>
+
+      {/* —————————————— The Frame (pre-reading) —————————————— */}
+      <div className="msl-gallery-head">
+        <div className="msl-gallery-eyebrow">The Frame</div>
+        <h2 className="msl-gallery-h2">Before You Begin</h2>
+        <p className="msl-gallery-intro">
+          Three chapters open the book before the principles do — read them first.
+        </p>
+      </div>
+      <div className="msl-frame-grid">
+        {frameChapters.map((p) => (
+          <Link key={p.id} href={`/constitution/${p.id}`} className="msl-card">
+            <div className="msl-card-mat">
+              <div className="msl-cover-plate" style={{ background: COVER_GRADIENT }}>
+                <div className="msl-cover-plate-om">ॐ</div>
+                <div className="msl-cover-plate-title">{p.title}</div>
+              </div>
+            </div>
+            <div className="msl-card-body">
+              <div className="msl-card-title">{p.title}</div>
+              {p.subtitle && <div className="msl-card-story">{p.subtitle}</div>}
+            </div>
+          </Link>
+        ))}
       </div>
 
       {/* —————————————— Ten Principles gallery —————————————— */}

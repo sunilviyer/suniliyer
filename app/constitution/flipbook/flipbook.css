@@ -741,8 +741,8 @@
   height: 662px;
   width: 528px;
   font-family: var(--font-body);
-  font-size: 16px;
-  line-height: 1.6;
+  font-size: 18px;
+  line-height: 1.62;
   color: var(--ink-soft);
 }
 .bpg-flow > * { max-width: 528px; }
@@ -752,19 +752,19 @@
 .bpg-flow em { font-style: italic; }
 .bpg-flow h1 {
   font-family: var(--font-display); font-weight: 500;
-  font-size: 30px; line-height: 1.1; color: var(--ink);
+  font-size: 33px; line-height: 1.1; color: var(--ink);
   margin: 18px 0 10px; letter-spacing: -0.01em;
   break-after: avoid-column;
 }
 .bpg-flow h2 {
   font-family: var(--font-display); font-weight: 600;
-  font-size: 24px; line-height: 1.15; color: var(--ink);
+  font-size: 27px; line-height: 1.15; color: var(--ink);
   margin: 16px 0 8px;
   break-after: avoid-column;
 }
 .bpg-flow h3, .bpg-flow h4 {
   font-family: var(--font-display); font-weight: 600;
-  font-size: 19px; line-height: 1.2; color: var(--ink);
+  font-size: 21px; line-height: 1.2; color: var(--ink);
   margin: 14px 0 6px;
   break-after: avoid-column;
 }
@@ -779,17 +779,17 @@
   margin: 0 0 12px; padding: 10px 14px;
   background: var(--anchor-vedic-bg);
   border-left: 3px solid var(--gold);
-  font-style: italic; font-size: 14.5px; line-height: 1.55;
+  font-style: italic; font-size: 16.5px; line-height: 1.55;
   break-inside: avoid-column;
 }
 .bpg-flow table {
   border-collapse: collapse;
   width: 100%;
-  font-size: 12.5px; line-height: 1.45;
+  font-size: 14px; line-height: 1.45;
   margin: 0 0 12px;
 }
 .bpg-flow th {
-  font-size: 10.5px; letter-spacing: 0.14em; text-transform: uppercase;
+  font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase;
   color: var(--ink-muted); font-weight: 600; text-align: left;
   padding: 5px 6px 5px 0; border-bottom: 1px solid var(--rule-strong);
 }
@@ -798,7 +798,7 @@
   vertical-align: top;
 }
 .bpg-flow code {
-  font-family: var(--font-mono); font-size: 13px;
+  font-family: var(--font-mono); font-size: 14.5px;
   background: var(--bg-deep); padding: 1px 4px;
 }
 .bpg-flow a { color: var(--deep-blue); text-decoration: underline; }
@@ -882,7 +882,7 @@
 .bpg-flow .bpg-mantra {
   text-align: center;
   font-family: var(--font-dev);
-  font-size: 19px;
+  font-size: 21px;
   color: var(--gold);
   margin: 18px 0 10px;
   break-inside: avoid-column;
@@ -892,9 +892,9 @@
 .bpg-flow .bpg-anchor-line {
   border-left: 3px solid var(--gold);
   background: var(--anchor-vedic-bg);
-  padding: 9px 13px;
+  padding: 10px 14px;
   margin: 0 0 7px;
-  font-size: 14px;
+  font-size: 15.5px;
   line-height: 1.55;
   break-inside: avoid-column;
 }
@@ -970,14 +970,14 @@
 
   /* Generated pages re-paginate with bigger type so the scaled-down
      single page stays readable on a phone. */
-  .bpg-flow { font-size: 22px; line-height: 1.55; }
-  .bpg-flow h1 { font-size: 32px; }
-  .bpg-flow h2 { font-size: 26px; }
-  .bpg-flow h3, .bpg-flow h4 { font-size: 22px; }
-  .bpg-flow blockquote { font-size: 18px; }
-  .bpg-flow table { font-size: 15px; }
-  .bpg-flow th { font-size: 12px; }
-  .bpg-flow code { font-size: 16px; }
+  .bpg-flow { font-size: 24px; line-height: 1.55; }
+  .bpg-flow h1 { font-size: 34px; }
+  .bpg-flow h2 { font-size: 28px; }
+  .bpg-flow h3, .bpg-flow h4 { font-size: 24px; }
+  .bpg-flow blockquote { font-size: 20px; }
+  .bpg-flow table { font-size: 16px; }
+  .bpg-flow th { font-size: 13px; }
+  .bpg-flow code { font-size: 17px; }
 }
 
 /* —————— Small touches —————— */
