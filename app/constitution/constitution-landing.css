@@ -63,20 +63,24 @@
 
 .msl * { box-sizing: border-box; }
 
-/* —————————————— Hero —————————————— */
-.msl-hero {
+/* —————————————— Hero + structure band share one video backdrop —————————————— */
+.msl-video-zone {
   position: relative;
   overflow: hidden;
+}
+.msl-hero {
+  position: relative;
   text-align: center;
   padding: 130px 80px 90px;
 }
 .msl-hero-video {
   position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
+  top: 50%;
+  left: 50%;
+  width: 130%;
+  height: 130%;
   object-fit: contain;
-  transform: translateX(7%);
+  transform: translate(-50%, -50%) translateX(7%);
   pointer-events: none;
   transition: opacity 0.6s ease;
 }
@@ -181,6 +185,11 @@
 
 /* —————————————— Structure band —————————————— */
 .msl-band {
+  /* Sits inside .msl-video-zone alongside the absolutely-positioned
+     video — without its own positioning it would paint BEHIND the
+     video in stacking order (non-positioned content paints before
+     positioned content), hiding its text. */
+  position: relative;
   border-top: 1px solid var(--msl-border);
   border-bottom: 1px solid var(--msl-border);
   transition: border-color 0.5s ease;
@@ -388,7 +397,10 @@
 /* —————————————— Mobile (≤640px) — option 3b —————————————— */
 @media (max-width: 640px) {
   .msl-hero { padding: 92px 22px 56px; }
-  .msl-hero-video { object-fit: cover; transform: none; }
+  .msl-hero-video {
+    top: 0; left: 0; width: 100%; height: 100%;
+    object-fit: cover; transform: none;
+  }
   .msl-hero-video.is-dark {
     -webkit-mask-image: radial-gradient(ellipse closest-side, black 55%, transparent 95%);
     mask-image: radial-gradient(ellipse closest-side, black 55%, transparent 95%);
