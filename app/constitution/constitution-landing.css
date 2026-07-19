@@ -343,31 +343,6 @@
   margin: 0 auto;
   padding: 36px 60px 70px;
 }
-/* The chapter's actual flipbook-cover treatment, used as placeholder art
-   until these chapters have their own Madhubani plates. */
-.msl-cover-plate {
-  width: 100%;
-  aspect-ratio: 3 / 4;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  padding: 16px;
-  text-align: center;
-}
-.msl-cover-plate-om {
-  font-family: var(--msl-dev);
-  color: rgba(246, 230, 200, 0.45);
-  font-size: 26px;
-}
-.msl-cover-plate-title {
-  font-family: var(--msl-display);
-  color: #F6E6C8;
-  font-size: 16px;
-  line-height: 1.2;
-}
-
 /* —————————————— Footer —————————————— */
 .msl-footer {
   border-top: 1px solid var(--msl-border);
@@ -438,8 +413,6 @@
   .msl-gallery-intro { display: none; }
   .msl-grid { grid-template-columns: 1fr 1fr; gap: 16px; padding: 22px 22px 44px; }
   .msl-frame-grid { grid-template-columns: 1fr; gap: 16px; max-width: none; padding: 22px 22px 44px; }
-  .msl-cover-plate-om { font-size: 22px; }
-  .msl-cover-plate-title { font-size: 15px; }
   .msl-card-mat { padding: 6px; }
   .msl-card-badge { font-size: 16px; padding: 2px 8px; }
   .msl-card-title { font-size: 16px; }
