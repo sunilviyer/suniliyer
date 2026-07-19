@@ -1,203 +1,146 @@
 'use client';
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import Link from 'next/link';
-import { constitutionParts, GROUP_TITLES, type ArticleGroup } from './data/reading-order';
+import { constitutionParts } from './data/reading-order';
+import './constitution-landing.css';
 
 /**
- * Landing page for the AGI Constitution: Dharma Sanhita.
- * Warm and sacred aesthetic: hero, the Ten Principles spine, stats,
- * and the six-group structure map of all 33 chapters.
+ * Constitution landing — "Midnight Scripture" (V4.0 redesign).
+ * Dark-first hero with a looping dharma-wheel video, a structure band,
+ * and the Ten Principles rendered as a gallery of Madhubani story plates.
+ *
+ * Theme is driven by the site's data-theme on <html> (the hero-kit TopNav
+ * in the constitution layout owns the toggle); this page reacts through
+ * CSS. The only client work here is keeping the hero videos muted.
  */
 
-const STATS = [
-  { n: 33, label: 'Chapters, front to back' },
-  { n: 10, label: 'Principles, each with a story' },
-  { n: 26, label: 'Madhubani story plates' },
-  { n: 100, label: 'Sanskrit terms in the Glossary' },
-  { n: 10, label: 'Schedules of machinery' },
-  { n: 4, label: 'Gates of the Kurukshetra Protocol' },
-  { n: 3, label: 'Ages of phased governance' },
-  { n: 1, label: 'Clause beyond amendment' },
-];
+const PDF_HREF = '/downloads/AGIConstitutionDharmaSanhita.pdf';
 
-const GROUP_ORDER: ArticleGroup[] = ['opening', 'principles', 'machinery', 'safeguards', 'aids', 'closing'];
+/** Devanagari anchor extracted from a principle subtitle ("Rta (ऋत)" → "ऋत") */
+function devFromSubtitle(subtitle?: string): string {
+  const m = subtitle?.match(/\(([^)]+)\)/);
+  return m ? m[1] : (subtitle || '');
+}
 
-export default function ConstitutionIndexPage() {
-  const firstPart = constitutionParts[0];
+export default function ConstitutionLandingPage() {
+  const firstChapter = constitutionParts[0];
   const principles = constitutionParts.filter(p => p.group === 'principles');
 
+  // Hero videos must always be muted. React does not reliably write the
+  // muted attribute, so enforce it via the property after mount, and
+  // re-mute anything that starts playing (capturing listener; no
+  // MutationObserver — it degrades performance).
+  useEffect(() => {
+    const vids = Array.from(document.querySelectorAll<HTMLVideoElement>('.msl-hero-video'));
+    vids.forEach(v => { v.muted = true; v.defaultMuted = true; v.volume = 0; v.play?.().catch(() => {}); });
+    const onPlay = (e: Event) => {
+      const t = e.target as HTMLElement;
+      if (t instanceof HTMLVideoElement && t.classList.contains('msl-hero-video')) {
+        t.muted = true; t.volume = 0;
+      }
+    };
+    document.addEventListener('play', onPlay, true);
+    return () => document.removeEventListener('play', onPlay, true);
+  }, []);
+
   return (
-    <div className="constitution-landing">
-      {/* Hero Section */}
-      <section className="const-hero">
-        <div className="const-hero-om">ॐ</div>
-        <div className="const-hero-inner">
-          <div className="const-eyebrow">
-            Dharma Sanhita · 2026 · Authored by Sunil Iyer
+    <div className="msl">
+      {/* —————————————— Hero —————————————— */}
+      <section className="msl-hero">
+        <video
+          className="msl-hero-video is-dark"
+          src="/videos/Dharma-Dark.webm"
+          autoPlay muted loop playsInline aria-hidden="true"
+        />
+        <video
+          className="msl-hero-video is-light"
+          src="/videos/Dharma-Light.webm"
+          autoPlay muted loop playsInline aria-hidden="true"
+        />
+
+        <div className="msl-hero-inner">
+          <div className="msl-om">ॐ</div>
+          <div className="msl-eyebrow">V4.0 · July 2026 · Authored by Sunil Iyer</div>
+          <h1 className="msl-h1">The AGI Constitution</h1>
+          <div className="msl-subtitle">
+            <span className="name">Dharma Sanhita</span>
+            <span className="sep"> · </span>
+            <span className="dev">धर्म संहिता</span>
           </div>
-          <h1 className="const-hero-title">
-            The AGI Constitution
-            <span className="const-hero-sanhita">Dharma Sanhita</span>
-          </h1>
-          <div className="const-hero-dev-title">धर्म संहिता</div>
-          <p className="const-hero-tagline">
-            A framework for the governing of Artificial General Intelligence, grounded in the Vedic and dharmic traditions and in the constitutional inheritance of the modern world. It opens on a battlefield and closes in the quiet after the war.
+          <p className="msl-lede">
+            Grounded in the Vedic and dharmic traditions and the constitutional inheritance of the modern world. It opens on a battlefield and closes in the quiet after the war.
           </p>
-          <div className="const-hero-meta">
-            <span>33 Chapters</span>
-            <span>10 Principles</span>
-            <span>26 Story Plates</span>
-            <span>1 Eternity Clause</span>
-          </div>
-          <div className="const-hero-cta">
-            <Link href={`/constitution/${firstPart.id}`} className="const-btn const-btn-primary">
-              Begin Reading <span className="arrow">→</span>
+          <div className="msl-cta-row">
+            <Link href={`/constitution/${firstChapter.id}`} className="msl-cta msl-cta-primary">
+              Begin Reading →
             </Link>
-            <Link href="/constitution/glossary" className="const-btn const-btn-ghost">
-              Sanskrit Glossary
-            </Link>
+            <a href={PDF_HREF} download className="msl-cta msl-cta-secondary">
+              Download PDF
+            </a>
           </div>
         </div>
       </section>
 
-      {/* Executive Quote */}
-      <div className="const-exec-band">
-        <div className="const-exec-quote">
-          We do not fully know what we are making. To put off acting justly until we are certain would be to gamble with the dignity of beings who may already be among us.
+      {/* —————————————— Structure band —————————————— */}
+      <div className="msl-band">
+        <div className="msl-band-caption">
+          One book · <span className="num">33 chapters</span> · six movements
+        </div>
+        <div className="msl-band-cols">
+          <div className="msl-band-col">
+            <div className="msl-band-col-title">The Core</div>
+            <div className="msl-band-col-body">
+              <span className="num">10 principles</span> at the centre — each told through a story, carrying a Duty and a Right.
+            </div>
+          </div>
+          <div className="msl-band-col">
+            <div className="msl-band-col-title">The Machinery</div>
+            <div className="msl-band-col-body">
+              The consciousness threshold, the three ages, the separation of powers, the Kurukshetra Protocol.
+            </div>
+          </div>
+          <div className="msl-band-col">
+            <div className="msl-band-col-title">The Frame</div>
+            <div className="msl-band-col-body">
+              Prologue to closing — safeguards, schedules, a 100-term glossary, and one clause beyond amendment.
+            </div>
+          </div>
         </div>
       </div>
 
-      {/* Stats Ledger */}
-      <section className="const-stats">
-        {STATS.map((stat, i) => (
-          <div key={i} className="const-stat-cell">
-            <div className="const-stat-num">{stat.n}</div>
-            <div className="const-stat-label">{stat.label}</div>
-          </div>
+      {/* —————————————— Ten Principles gallery —————————————— */}
+      <div className="msl-gallery-head">
+        <div className="msl-gallery-eyebrow">The Spine</div>
+        <h2 className="msl-gallery-h2">The Ten Principles</h2>
+        <p className="msl-gallery-intro">
+          Ten stories from the tradition, each carrying a Duty for those who hold power over AGI and a Right for everyone that power touches.
+        </p>
+      </div>
+      <div className="msl-grid">
+        {principles.map((p) => (
+          <Link key={p.id} href={`/constitution/${p.id}`} className="msl-card">
+            <div className="msl-card-mat">
+              {p.image && (
+                // eslint-disable-next-line @next/next/no-img-element
+                <img loading="lazy" src={p.image} alt={p.story || p.title} />
+              )}
+              <div className="msl-card-badge">{p.roman}</div>
+            </div>
+            <div className="msl-card-body">
+              <div className="msl-card-title">{p.title}</div>
+              <div className="msl-card-dev">{devFromSubtitle(p.subtitle)}</div>
+              {p.story && <div className="msl-card-story">{p.story}</div>}
+            </div>
+          </Link>
         ))}
-      </section>
+      </div>
 
-      {/* The Ten Principles */}
-      <section className="const-pillars-section">
-        <div className="const-pillars-head">
-          <div className="const-eyebrow const-eyebrow-accent">The Spine</div>
-          <h2>The Ten Principles</h2>
-          <p>At the centre of the book sit ten principles. Each begins as a value, is defined through a story from the tradition, is anchored in a Sanskrit idea, and then turns two faces to the world: a Duty laid on those who hold power over AGI, and a Right secured for everyone that power touches.</p>
-        </div>
-        <div className="const-pillars-list">
-          {principles.map((p) => (
-            <Link key={p.id} href={`/constitution/${p.id}`} className="const-pillar-row" style={{ textDecoration: 'none' }}>
-              <div className="const-pillar-num">{p.roman}</div>
-              <div className="const-pillar-body">
-                <div className="const-pillar-head-row">
-                  <div className="const-pillar-roman">{p.title}</div>
-                  <div className="const-pillar-dev">{(p.subtitle || '').replace(/^[^(]*\(/, '').replace(/\)$/, '')}</div>
-                  <div className="const-pillar-meaning">{(p.subtitle || '').replace(/\s*\(.*\)$/, '')}</div>
-                </div>
-                <div className="const-pillar-desc">The Story: {p.story}</div>
-              </div>
-            </Link>
-          ))}
-        </div>
-      </section>
-
-      {/* Structure Map */}
-      <section className="const-structure">
-        <div className="const-structure-head">
-          <div>
-            <div className="const-eyebrow const-eyebrow-accent">The Architecture</div>
-            <h2>Thirty-three chapters, six movements</h2>
-          </div>
-          <p>Built in layers, like an onion. An outer frame opens and closes the book; at the centre sit the ten principles; around them the machinery, the safeguards, and the aids.</p>
-        </div>
-        <div className="const-structure-grid">
-          {GROUP_ORDER.map((group) => {
-            const items = constitutionParts.filter(p => p.group === group);
-            const wide = items.length > 4;
-            return (
-              <div key={group} className={`const-structure-card ${wide ? 'const-structure-card-wide' : ''}`}>
-                <div className="const-structure-card-head">
-                  <div className="const-structure-label">{GROUP_TITLES[group]}</div>
-                  <div className="const-structure-count">{items.length}</div>
-                </div>
-                <div className={wide ? 'const-structure-grid-inner' : undefined}>
-                  {items.map((part) => (
-                    <Link key={part.id} href={`/constitution/${part.id}`} className="const-structure-item">
-                      {part.roman && <div className="const-structure-item-num">{part.roman}</div>}
-                      <div className="const-structure-item-body">
-                        <div className="const-structure-item-title">{part.title}</div>
-                        {part.subtitle && <div className="const-structure-item-sub">{part.subtitle}</div>}
-                      </div>
-                    </Link>
-                  ))}
-                </div>
-              </div>
-            );
-          })}
-        </div>
-      </section>
-
-      {/* Author / Colophon */}
-      <section className="const-colophon">
-        <div className="const-colophon-l">
-          <div className="const-eyebrow const-eyebrow-accent">A Closing Word</div>
-          <h2>An offering, not a declaration.</h2>
-          <p>
-            This Constitution is itself an offering: the willing surrender of unlimited autonomy in exchange for a shared order rooted in Dharma, guarded by accountability, and sustained by the hope that whatever happened, happened for the good.
-          </p>
-          <div className="const-colophon-prayer">
-            <span className="const-dev">ॐ धर्मो रक्षति रक्षितः ॐ</span>
-            <em>Dharma protects those who protect Dharma.</em>
-          </div>
-        </div>
-        <aside className="const-colophon-r">
-          <div className="const-eyebrow">Colophon</div>
-          <h3>Authored by Sunil Iyer</h3>
-          <div className="const-colophon-meta">Dharma Sanhita · 2026</div>
-          <div className="const-colophon-links">
-            <Link href={`/constitution/${firstPart.id}`} className="const-colophon-link">
-              <span>Read the full Constitution</span>
-              <span>33 chapters</span>
-            </Link>
-            <Link href="/constitution/glossary" className="const-colophon-link">
-              <span>Sanskrit Glossary</span>
-              <span>100+ terms</span>
-            </Link>
-            <a href="/downloads/AGIConstitutionDharmaSanhita.pdf" download className="const-colophon-link">
-              <span>Download PDF</span>
-              <span>↓</span>
-            </a>
-            <a href="https://suniliyer.ca" target="_blank" rel="noopener noreferrer" className="const-colophon-link">
-              <span>suniliyer.ca</span>
-              <span>↗</span>
-            </a>
-            <button
-              onClick={() => {
-                const bibtex = `@misc{iyer2026agi,
-  author = {Iyer, Sunil},
-  title = {The AGI Constitution: Dharma Sanhita},
-  year = {2026},
-  url = {https://suniliyer.ca/constitution},
-  note = {A framework for the governing of Artificial General Intelligence}
-}`;
-                navigator.clipboard.writeText(bibtex);
-                alert('BibTeX citation copied to clipboard!');
-              }}
-              className="const-colophon-link"
-              style={{ cursor: 'pointer', border: 'none', background: 'transparent', padding: 0, width: '100%', textAlign: 'left' }}
-            >
-              <span>Cite this document</span>
-              <span>BibTeX</span>
-            </button>
-          </div>
-        </aside>
-      </section>
-
-      {/* Footer */}
-      <footer className="const-footer">
-        <span className="const-dev">ॐ धर्मो रक्षति रक्षितः ॐ</span>
-        © 2026 Sunil Iyer · Dharma Sanhita · CC BY-NC-SA
+      {/* —————————————— Footer —————————————— */}
+      <footer className="msl-footer">
+        <div className="msl-footer-verse">ॐ धर्मो रक्षति रक्षितः ॐ</div>
+        <div className="msl-footer-translation">Dharma protects those who protect Dharma.</div>
+        <div className="msl-footer-copyright">© 2026 Sunil Iyer · Dharma Sanhita V4.0 · CC BY-NC-SA</div>
       </footer>
     </div>
   );
