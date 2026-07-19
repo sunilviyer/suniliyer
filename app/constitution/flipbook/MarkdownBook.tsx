@@ -61,6 +61,22 @@ function stripFrontMatter(md: string): string {
     .replace(/<figure class="plate">[\s\S]*?<\/figure>\s*/, '');
 }
 
+/**
+ * Inside the Vedic Anchor blockquotes, a bold Sanskrit quote and its
+ * English translation share a line in the source. Give the quote its
+ * own line (display concern only; the markdown files stay untouched).
+ */
+function breakSanskritQuotes(md: string): string {
+  return md.split('\n').map(line => {
+    if (!line.startsWith('>')) return line;
+    return line
+      // bold containing Devanagari: "**Ahimsa (अहिंसा)**, non-harm, …"
+      .replace(/(\*\*[^*]*[ऀ-ॿ][^*]*\*\*),?\s*/g, '$1<br/>')
+      // multi-word transliterated quote: "**Ekam sat, vipra …**, truth is one …"
+      .replace(/(\*\*[A-Z][^*]+\s[^*]+\s[^*]+\*\*),\s*/g, '$1<br/>');
+  }).join('\n');
+}
+
 /** map a canonical content link (NN-slug.md, optionally #anchor) to its route */
 function hrefToRoute(href: string | undefined): string | null {
   if (!href) return null;
@@ -81,7 +97,7 @@ export default function MarkdownBook({ part, prev, next, markdown }: MarkdownBoo
   const [pages, setPages] = useState<number | null>(null);
   const measureRef = useRef<HTMLDivElement>(null);
 
-  const md = useMemo(() => stripFrontMatter(markdown), [markdown]);
+  const md = useMemo(() => breakSanskritQuotes(stripFrontMatter(markdown)), [markdown]);
 
   const flow = useMemo(() => (
     <div className="bpg-flow">
@@ -191,8 +207,10 @@ export default function MarkdownBook({ part, prev, next, markdown }: MarkdownBoo
     if (part.image) {
       const PlateFace: FaceComponent = () => (
         <div className="bpp-plate">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={part.image} alt={part.story || part.title} />
+          <figure className="bpp-plate-mat">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src={part.image} alt={part.story || part.title} />
+          </figure>
           <div className="bpp-plate-cap">{part.story || part.title}</div>
         </div>
       );
