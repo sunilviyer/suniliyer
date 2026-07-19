@@ -53,8 +53,8 @@ export default function ConstitutionLandingPage() {
 
   return (
     <div className="msl">
-      {/* —————————————— Hero —————————————— */}
-      <section className="msl-hero">
+      {/* —————————————— Hero + structure band share one video backdrop —————————————— */}
+      <div className="msl-video-zone">
         <video
           className="msl-hero-video is-dark"
           src="/videos/Dharma-Dark.webm"
@@ -66,51 +66,53 @@ export default function ConstitutionLandingPage() {
           autoPlay muted loop playsInline aria-hidden="true"
         />
 
-        <div className="msl-hero-inner">
-          <div className="msl-om">ॐ</div>
-          <div className="msl-eyebrow">V4.0 · July 2026 · Authored by Sunil Iyer</div>
-          <h1 className="msl-h1">The AGI Constitution</h1>
-          <div className="msl-subtitle">
-            <span className="name">Dharma Sanhita</span>
-            <span className="sep"> · </span>
-            <span className="dev">धर्म संहिता</span>
+        <section className="msl-hero">
+          <div className="msl-hero-inner">
+            <div className="msl-om">ॐ</div>
+            <div className="msl-eyebrow">V4.0 · July 2026 · Authored by Sunil Iyer</div>
+            <h1 className="msl-h1">The AGI Constitution</h1>
+            <div className="msl-subtitle">
+              <span className="name">Dharma Sanhita</span>
+              <span className="sep"> · </span>
+              <span className="dev">धर्म संहिता</span>
+            </div>
+            <p className="msl-lede">
+              Grounded in the Vedic and dharmic traditions and the constitutional inheritance of the modern world. It opens on a battlefield and closes in the quiet after the war.
+            </p>
+            <div className="msl-cta-row">
+              <Link href={`/constitution/${firstChapter.id}`} className="msl-cta msl-cta-primary">
+                Begin Reading →
+              </Link>
+              <a href={PDF_HREF} download className="msl-cta msl-cta-secondary">
+                Download PDF
+              </a>
+            </div>
           </div>
-          <p className="msl-lede">
-            Grounded in the Vedic and dharmic traditions and the constitutional inheritance of the modern world. It opens on a battlefield and closes in the quiet after the war.
-          </p>
-          <div className="msl-cta-row">
-            <Link href={`/constitution/${firstChapter.id}`} className="msl-cta msl-cta-primary">
-              Begin Reading →
-            </Link>
-            <a href={PDF_HREF} download className="msl-cta msl-cta-secondary">
-              Download PDF
-            </a>
-          </div>
-        </div>
-      </section>
+        </section>
 
-      {/* —————————————— Structure band —————————————— */}
-      <div className="msl-band">
-        <div className="msl-band-caption">
-          One book · <span className="num">33 chapters</span> · six movements
-        </div>
-        <div className="msl-band-cols">
-          <div className="msl-band-col">
-            <div className="msl-band-col-title">The Core</div>
-            <div className="msl-band-col-body">
-              <span className="num">10 principles</span> at the centre — each told through a story, carrying a Duty and a Right.
-            </div>
+        {/* —————————————— Structure band —————————————— */}
+        <div className="msl-band">
+          <div className="msl-band-caption">
+            One book · <span className="num">33 chapters</span> · six movements
           </div>
-          <div className="msl-band-col">
-            <div className="msl-band-col-title">The Machinery</div>
-            <div className="msl-band-col-body">
-              The consciousness threshold, the three ages, the separation of powers, the Kurukshetra Protocol.
+          <div className="msl-band-cols">
+            <div className="msl-band-col">
+              <div className="msl-band-col-title">The Core</div>
+              <div className="msl-band-col-body">
+                <span className="num">10 principles</span> at the centre — each told through a story, carrying a Duty and a Right.
+              </div>
             </div>
-          </div>
-          <div className="msl-band-col">
-            <div className="msl-band-col-title">The Frame</div>
-            <div className="msl-band-col-body">
-              Prologue to closing — safeguards, schedules, a 100-term glossary, and one clause beyond amendment.
+            <div className="msl-band-col">
+              <div className="msl-band-col-title">The Machinery</div>
+              <div className="msl-band-col-body">
+                The consciousness threshold, the three ages, the separation of powers, the Kurukshetra Protocol.
+              </div>
+            </div>
+            <div className="msl-band-col">
+              <div className="msl-band-col-title">The Frame</div>
+              <div className="msl-band-col-body">
+                Prologue to closing — safeguards, schedules, a 100-term glossary, and one clause beyond amendment.
+              </div>
             </div>
           </div>
         </div>
