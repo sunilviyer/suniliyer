@@ -17,8 +17,12 @@ import './constitution-landing.css';
 
 const PDF_HREF = '/downloads/AGIConstitutionDharmaSanhita.pdf';
 
-/** Same per-group gradient the flipbook itself uses for these chapters' covers */
-const COVER_GRADIENT = 'linear-gradient(135deg, #5C280A 0%, #2A1408 100%)';
+/** Madhubani plates for the three "Before You Begin" landing cards */
+const FRAME_IMAGES: Record<string, string> = {
+  'authors-note': '/images/AGIMadhubani/authors-note.png',
+  'prologue': '/images/AGIMadhubani/prologue.png',
+  'preamble': '/images/AGIMadhubani/preamble.png',
+};
 
 /** Devanagari anchor extracted from a principle subtitle ("Rta (ऋत)" → "ऋत") */
 function devFromSubtitle(subtitle?: string): string {
@@ -130,10 +134,8 @@ export default function ConstitutionLandingPage() {
         {frameChapters.map((p) => (
           <Link key={p.id} href={`/constitution/${p.id}`} className="msl-card">
             <div className="msl-card-mat">
-              <div className="msl-cover-plate" style={{ background: COVER_GRADIENT }}>
-                <div className="msl-cover-plate-om">ॐ</div>
-                <div className="msl-cover-plate-title">{p.title}</div>
-              </div>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img loading="lazy" src={FRAME_IMAGES[p.id]} alt={p.title} />
             </div>
             <div className="msl-card-body">
               <div className="msl-card-title">{p.title}</div>
