@@ -38,7 +38,7 @@ Set the article's **Status** using the legend below.
 
 | # | File | Title | Words | Status | Edits |
 |---|------|-------|-------|--------|-------|
-| 00 | `00-authors-note.md` | Author's Note | 805 | ⬜ | 0 |
+| 00 | `00-authors-note.md` | Author's Note | 805 | ✏️ | 1 |
 | 01 | `01-prologue.md` | Prologue | 668 | ⬜ | 0 |
 | 02 | `02-preamble.md` | Preamble | 460 | ⬜ | 0 |
 | 03 | `03-principles-overview.md` | The Ten Principles | 622 | ⬜ | 0 |
@@ -89,8 +89,12 @@ Template to copy for each edit:
 - **Reason / notes:** 
 -->
 
-### 00 — Author's Note (`00-authors-note.md`) · Status: ⬜
-_No edits logged yet._
+### 00 — Author's Note (`00-authors-note.md`) · Status: ✏️
+
+- **Location:** "I may not get the opportunity to build an AGI myself. But here is the thought I kept returning to, the one that made me feel I had a place in this at all"
+- **Current:** Frames the author's role from a place of limitation ("I may not get the opportunity... made me feel I had a place in this at all").
+- **Change to:** Reframe positively around collective effort — e.g. AGI is not built by a single person; it should be a cumulative effort of society, which ensures its behaviour is modeled after everyone.
+- **Reason / notes:** Current wording still reads as negative/self-diminishing; shift to a positive, collective framing.
 
 ### 01 — Prologue (`01-prologue.md`) · Status: ⬜
 _No edits logged yet._
