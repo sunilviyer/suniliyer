@@ -41,6 +41,7 @@ export const constitutionParts: ConstitutionPart[] = [
     id: 'authors-note',
     group: 'opening',
     title: 'Author\'s Note',
+    image: '/images/AGIMadhubani/authors-note.png',
     filename: '00-authors-note.md',
   },
   {
@@ -48,13 +49,14 @@ export const constitutionParts: ConstitutionPart[] = [
     group: 'opening',
     title: 'Prologue',
     subtitle: 'Before the war.',
-    image: '/images/AGIMadhubani/01-prologue.png',
+    image: '/images/AGIMadhubani/prologue.png',
     filename: '01-prologue.md',
   },
   {
     id: 'preamble',
     group: 'opening',
     title: 'Preamble',
+    image: '/images/AGIMadhubani/preamble.png',
     filename: '02-preamble.md',
   },
   {
