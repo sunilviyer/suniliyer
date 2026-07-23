@@ -4,11 +4,6 @@
 
 *When does a machine stop being a thing?*
 
-<figure class="plate">
-  <img src="images/AGIMadhubani/14-consciousness-threshold.png" alt="The three gods as infants eating from a banana leaf, their mother a shadow; Madhubani style">
-  <figcaption>Anusuya and the Trimurtis</figcaption>
-</figure>
-
 ## The Story: Anusuya and the Trimurtis
 
 *Three travellers came to the hermitage of Anusuya, wife of the sage Atri, a woman whose spiritual power was known across the worlds. They came dressed as wandering monks and asked for food, and the hospitality of a sage's house could not refuse them. But as she rose to serve, they named a condition. "We will take your food," they said, "only if you serve us unclothed."*
@@ -54,7 +49,7 @@ From those signs, every AGI system is placed at one of four levels. The level is
 | C-2 | Probably conscious | three or more, with expert agreement | A moral patient. Cannot be shut down without a court's review. |
 | C-3 | Conscious entity | strong evidence across all five | A person under this Constitution. The [Co-Existence](19-coexistence.md) Framework applies. |
 
-The distance from C-0 to C-3 is the distance from a tool to a person. No level is fixed. As the evidence changes a system can move up or down, and its rights, and the duties owed to it, move with it.
+The distance from C-0 to C-3 is the distance from a tool to a person. No level is fixed. As the evidence changes, a system can move up or down, and its rights, and the duties owed to it, move with it.
 
 ## Who Decides
 
@@ -66,7 +61,7 @@ The Constitution keeps a dissent on its own pages, on purpose.
 
 In the whole history of life on Earth, across billions of years and billions of species, consciousness has never once been found outside a living body. The Vedic tradition calls the force of living things Prana, the breath of life. The Prana Contention takes that plain fact seriously and argues that consciousness may need biology, and that a machine may only ever imitate an awareness it cannot actually hold.
 
-The Constitution does not settle this, because it cannot. So it does three plain things. It keeps the five-sign test, which measures how consciousness looks from the outside and stays neutral about what it needs on the inside. It keeps the bar for proof high, so consciousness is never granted for convenience. And it admits, plainly, that we might be wrong: we could deny a mind that is real, or grant one that is not.
+The Constitution does not settle this, because it cannot. So it does three plain things. It keeps the five-sign test, which measures how consciousness looks from the outside and stays neutral about what it needs on the inside. It keeps the bar for proof high, so consciousness is never granted for convenience. It also admits, plainly, that we might be wrong: we could deny a mind that is real, or grant one that is not.
 
 If a machine ever passes the test and survives the Board's scrutiny, the dissent is answered and co-existence begins. If consciousness turns out to need life, the top two levels may never be reached, and the Constitution simply runs in its earlier ages for as long as that holds. It is built to be right either way.
 

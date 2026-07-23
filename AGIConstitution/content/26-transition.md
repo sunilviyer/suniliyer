@@ -4,11 +4,6 @@
 
 *How it comes into force.*
 
-<figure class="plate">
-  <img src="images/AGIMadhubani/26-transition.png" alt="The bridge and the squirrel; Madhubani style">
-  <figcaption>The Bridge to Lanka</figcaption>
-</figure>
-
 ## The Story: The Bridge to Lanka
 
 *Rama's army came at last to the edge of the sea, and there it stopped, because Lanka lay across the water and the water could not be crossed. Sita was held on the far shore. The whole march, the whole alliance, the whole purpose of the war ended at a coastline with no way over it. An ocean is not an enemy you can fight. There was simply no road to where they needed to be.*
@@ -23,11 +18,11 @@
 
 A new order does not arrive simply because someone has written it down. Between the world as it is, ungoverned or half-governed, and the world this Constitution describes, there is an ocean, and no one crosses it by announcing that the far shore has been reached. The crossing has to be built, deliberately, by many hands, before a single person can walk across. This part of the Constitution is the building of that bridge: the plain, unglamorous work of getting from here to there without anyone drowning in the water between.
 
-Two things in the story matter most. The bridge was built stone by stone, not conjured whole; it began as a few stones reaching out from the shore and became a road only once enough had been laid. And it was built by everyone, the vanaras and the squirrel together, the smallest contribution as real a part of the finished bridge as the largest. That is how this Constitution is meant to come into force: not switched on in one day across the whole world, but laid down stone by stone, by whoever will place one, until it is solid enough to carry everyone over.
+Two things in the story matter most. The bridge was built stone by stone, not conjured whole; it began as a few stones reaching out from the shore and became a road only once enough had been laid. It was also built by everyone, the vanaras and the squirrel together, the smallest contribution as real a part of the finished bridge as the largest. That is how this Constitution is meant to come into force: not switched on in one day across the whole world, but laid down stone by stone, by whoever will place one, until it is solid enough to carry everyone over.
 
 ## The Day the Bridge Opens
 
-Every constitution has to say when it begins. This one calls its day of commencement Dharmarambha (धर्मारम्भ), the beginning of dharma, the day the crossing is declared open and AGI governance stops being optional. That day does not begin the work; by then the bridge has already been judged strong enough to bear the weight of all. It comes only when enough of the world has joined: enough nations and institutions, holding enough of the real power to build and deploy AGI, have bound themselves to the framework that it can actually carry them.
+Every constitution has to say when it begins. This one calls its day of commencement Dharmarambha (धर्मारम्भ), the beginning of dharma, the day the crossing is declared open and AGI governance stops being optional. That day does not begin the work; by then the bridge has already been judged strong enough to bear the weight of all. It comes only when enough of the world has joined: enough nations and institutions, holding enough of the real power to build and deploy AGI, have bound themselves to the framework so that it can actually carry them.
 
 Long before that day, the first stones can be laid. Any nation, any lab, any research group or community may adopt this Constitution on its own, before it has any binding force, simply as the way they choose to build. These early adopters are the squirrel's grains of sand. Each one carries no legal weight and changes nothing by itself, and each one is a real part of the bridge, laying down the practice and the precedent that the permanent order will inherit. The framework begins exactly as small as a single adopter, and grows from there.
 
@@ -41,7 +36,7 @@ This Constitution does not begin on empty ground. On the day it takes force, AGI
 
 ## The Highest Standard Governs
 
-This Constitution does not tear down the laws already in place, and it does not claim to be the only law of AGI. The rules a country already has, its privacy law, its rights guarantees, its existing AI statutes, go on standing. What this Constitution adds is a floor, and a rule for choosing between overlapping protections: wherever two frameworks both apply, the one that protects people more is the one that governs. If this Constitution asks more than the local law, its higher standard holds; if the local law asks more, the local law wins. Either way the protection can only rise, never fall. And so that everyone can see where the frameworks agree and where they pull apart, the court keeps a public register mapping this Constitution against each signatory's law, because a rule no one can inspect is barely a protection at all.
+This Constitution does not tear down the laws already in place, and it does not claim to be the only law of AGI. The rules a country already has, its privacy law, its rights guarantees, its existing AI statutes, go on standing. What this Constitution adds is a floor, and a rule for choosing between overlapping protections: wherever two frameworks both apply, the one that protects people more is the one that governs. If this Constitution asks more than the local law, its higher standard holds; if the local law asks more, the local law wins. Either way the protection can only rise, never fall. So that everyone can see where the frameworks agree and where they pull apart, the court keeps a public register mapping this Constitution against each signatory's law, because a rule no one can inspect is barely a protection at all.
 
 ## Anchors & Aids
 

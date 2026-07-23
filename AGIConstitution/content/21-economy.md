@@ -4,18 +4,13 @@
 
 *Artha Vyavastha (अर्थ व्यवस्था)*
 
-<figure class="plate">
-  <img src="images/AGIMadhubani/21-economy.png" alt="The guardian of the treasury; Madhubani style">
-  <figcaption>The Guardian of the Treasury</figcaption>
-</figure>
-
 ## The Story: The Guardian of the Treasury
 
 *Kubera is the god of wealth, and it is worth being exact about what that means, because it is not quite what it sounds like. Kubera does not own the treasure of the worlds. He keeps it. Brahma made him custodian of all the riches there are, the gold and gems of the earth, the bright hoards of the heavens, the buried wealth beneath the ground, and set him to guard it and to see that whatever flowed out of it flowed fairly. He was a keeper of the accounts, not the owner of them, and the Yakshas, the old spirits of forest and hill, served under him as auditors and sentries, watching the treasury to keep it honest and whole.*
 
 *For a long age Kubera kept it well. Then, slowly, he grew comfortable. He began to feel that the treasury was simply his, that his custody was a kind of ownership and would hold itself, that the order of things would keep the wealth safe whether he watched it closely or not. He let his guard down.*
 
-*His half-brother was Ravana, the demon king of Lanka, and Ravana wanted the treasury and did not much care how he took it. He came in force against his own kin, overpowered Kubera, and carried off the treasure and the flying chariot with it. He did not win because he was stronger than the moral order of things. He won because the guardian had stopped guarding. The wealth of the gods, left half-watched, went to the one who wanted it most, taken from the one who had forgotten it was only ever his to keep.*
+*His half-brother was Ravana, the demon king of Lanka, and Ravana wanted the treasury and did not much care how he took it. He came in force against his own kin, overpowered Kubera, and carried off the treasure and the flying chariot with it. He did not win because he was stronger than the moral order of things. He won because the guardian had stopped guarding. The wealth of the gods, left half-watched, went to the one who wanted it most, taken from the one who had forgotten it was only ever his to protect.*
 
 ## Why It Matters Here
 
@@ -35,7 +30,7 @@ So a share of the profit from AGI is owed to a common fund, the Wealth Commons, 
 - the independent Guardians who speak for possibly-conscious systems, who must never be paid by the ones they watch;
 - the running of the governing institutions themselves, because governance paid for by the industry it regulates is captured governance.
 
-The size of the share is set by the legislature, not fixed here, because the right level will move with the scale of deployment and the state of the economy. But it is held to a few rules. It is never zero. It rises with profit, so that those who gain most give most. It follows the wealth wherever the wealth is booked, so that routing profits through a low-tax haven does not dissolve the obligation. And it is reviewed at each twenty-five-year turning.
+The size of the share is set by the legislature, not fixed here, because the right level will move with the scale of deployment and the state of the economy. But it is held to a few rules. It is never zero. It rises with profit, so that those who gain most give most. It follows the wealth wherever the wealth is booked, so that routing profits through a low-tax haven does not dissolve the obligation, and it is reviewed at each twenty-five-year turning.
 
 ## No One Is Optimised Away
 

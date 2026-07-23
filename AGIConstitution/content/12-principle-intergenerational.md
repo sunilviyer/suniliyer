@@ -6,11 +6,6 @@
 
 *Srishti-Sthiti-Laya (सृष्टि-स्थिति-लय)*
 
-<figure class="plate">
-  <img src="images/AGIMadhubani/12-principle-intergenerational.png" alt="Manu, the fish, and the flood; Madhubani style">
-  <figcaption>Manu, the Fish, and the Flood</figcaption>
-</figure>
-
 ## The Story: Manu, the Fish, and the Flood
 
 *Manu, the first man, was washing his hands in the river one morning when a tiny fish swam into his cupped palms and, to his astonishment, spoke.*
@@ -29,7 +24,7 @@
 
 **AGI must not mortgage the future.**
 
-No deployment of an AGI may strip the earth of its resources, wreck its ecosystems, lock power into a few hands beyond undoing, erase whole categories of human work without opening others, or breed dependencies that leave those who come after us less free, less safe, or less able than we are. The present generation holds the future in trust rather than owning it. And the people who are not yet born, who cannot vote, argue, sue, or object, are protected by this Constitution as though they could.
+No deployment of an AGI may strip the earth of its resources, wreck its ecosystems, lock power into a few hands beyond undoing, erase whole categories of human work without opening others, or breed dependencies that leave those who come after us less free, less safe, or less able than we are. The present generation holds the future in trust rather than owning it, and the people who are not yet born, who cannot vote, argue, sue, or object, are protected by this Constitution as though they could.
 
 Manu's boat carried seeds, not treasure. That is intergenerational justice in a single image. Faced with the end of his world, he did not hoard what was valuable to him; he preserved what the next world would need to begin, and he did it for people he would never meet. An AGI arrives at a moment that has something of the flood about it: a technology powerful enough to reshape the climate, the economy, the balance of power, and the very conditions of human life, all within one generation's watch. The temptation is to treat the future the way a flood treats a coastline, as something to be spent now for whatever it yields. This principle insists on Manu's posture instead. What we build must leave the seeds intact. The measure of an AGI is both what it does for the people alive to benefit from it and what it makes possible for the people who come after.
 

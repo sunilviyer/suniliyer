@@ -6,14 +6,9 @@
 
 *Satya (सत्य)*
 
-<figure class="plate">
-  <img src="images/AGIMadhubani/08-principle-truth.png" alt="Harishchandra at the cremation ground; Madhubani style">
-  <figcaption>Harishchandra, the King Who Would Not Lie</figcaption>
-</figure>
-
 ## The Story: Harishchandra, the King Who Would Not Lie
 
-*Harishchandra was a king remembered for a single, almost unreasonable virtue: he had never told a lie, not once, and he would not begin now, whatever it cost him. The sages fell to arguing over whether any man could truly be that honest, and one of them, Vishwamitra, set out to find the bottom of it.*
+*Harishchandra was a king remembered for a single, almost unreasonable virtue: he had never told a lie, not once, and he would not begin now, whatever it cost him. The sages fell to arguing over whether any man could truly be that honest, and one of them, Vishwamitra, set out to get to the bottom of it.*
 
 *It began with a promise. Drawn into a moment of obligation, Harishchandra gave Vishwamitra his word that he would grant him whatever he asked. Vishwamitra asked for his entire kingdom, and the king, without hesitation, handed it over: the throne, the treasury, the land, all of it. And then Vishwamitra asked for one thing more, a parting fee owed on top of the kingdom already given. But Harishchandra had just given away everything he owned. He had nothing left to pay with except himself.*
 

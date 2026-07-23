@@ -12,7 +12,7 @@ We hold that consciousness, wherever it genuinely arises, commands respect, what
 
 We hold that no power may go unanswered, in whatever direction it runs: humans over one another, humans over machines, or machines over humans. Power without accountability is the oldest name for tyranny.
 
-We hold that if a new kind of mind arrives among us, our first answer should be kinship, not conquest, and that a just people begins from acceptance, while exclusion must always explain itself.
+We hold that if a new kind of mind arrives among us, our first answer should be kinship, not conquest, and that a just society begins from acceptance, while exclusion must always explain itself.
 
 To bind ourselves to these things is to give something up. Every constitution is an act of shared surrender: each of us lets go of some unchecked freedom so that a just order can stand for all. The ones who hold the most power over AGI are asked to surrender the most, and that is as it should be.
 

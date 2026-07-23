@@ -4,18 +4,13 @@
 
 *The thunderbolt is loaned, not given.*
 
-<figure class="plate">
-  <img src="images/AGIMadhubani/24-emergency-powers.png" alt="Indra and the thunderbolt; Madhubani style">
-  <figcaption>The Thunderbolt</figcaption>
-</figure>
-
 ## The Story: The Thunderbolt
 
 *Vritra was a serpent, vast beyond reckoning, and he swallowed the waters of the world. He coiled around the rivers and shut them up inside himself, and everywhere the waters had run there was drought: the rivers stopped, the crops died, and every living thing began to fail for want of them. It was as close to the end of the world as the world had ever come.*
 
 *The gods could not free the waters. They went to Indra, their king, because if anyone could break the serpent it was he, but even Indra's ordinary weapons were nothing against Vritra. So a weapon was forged for the crisis, made for this one enemy and no other: the Vajra, the thunderbolt, meant for the single purpose of killing what could not otherwise be killed. Indra took it up and went against the serpent, and after a battle that shook the sky he struck Vritra down and split him open, and the waters broke loose and came roaring back into the world. The rivers ran again. The world was saved, and it was saved by a terrible power used at exactly the moment terrible power was needed.*
 
-*But the story does not end at the victory, and that is the part worth staying for. Having wielded a weapon that killed a god, Indra began to believe he was himself beyond the reach of any law. The glory went to his head. He grew arrogant and grasping, took what was not his, waved away the counsel of the wise, and carried on as though the power lent to him for one desperate task were simply his to keep and to use as he pleased. And so the other gods, and Brihaspati whose wisdom he had brushed aside, and in the end the weight of dharma itself, had to move against their own king to bring him back under the law. The thunderbolt, they reminded him, had been loaned for a purpose. It was never a gift. When the waters flowed again, it was meant to be set down.*
+*But the story does not end at the victory, and that is the part worth staying for. Having wielded a weapon that killed a god, Indra began to believe he was himself beyond the reach of any law. The glory went to his head. He grew arrogant and greedy, took what was not his, waved away the counsel of the wise, and carried on as though the power lent to him for one desperate task were simply his to keep and to use as he pleased. And so the other gods, and Brihaspati whose wisdom he had brushed aside, and in the end the weight of dharma itself, had to move against their own king to bring him back under the law. The thunderbolt, they reminded him, had been loaned for a purpose. It was never a gift. When the waters flowed again, it was meant to be set down.*
 
 ## Why It Matters Here
 

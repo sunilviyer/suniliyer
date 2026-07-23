@@ -4,11 +4,6 @@
 
 *When neither side is wrong.*
 
-<figure class="plate">
-  <img src="images/AGIMadhubani/20-kurukshetra.png" alt="The peace embassy, five villages refused; Madhubani style">
-  <figcaption>Five Villages</figcaption>
-</figure>
-
 ## The Story: Five Villages
 
 *The dice were only the start of the price. For losing that rigged game, the Pandavas owed thirteen years of exile: twelve in the forest, and a thirteenth spent in hiding, unrecognised, on pain of starting the term again if they were found. They paid it in full. They lived in the forest, they passed the last year concealed in a stranger's court, and when the thirteen years were done they came back and asked for what was theirs: the kingdom they had wagered and lost.*
@@ -29,7 +24,7 @@ The conflicts AGI produces will look much more like Kurukshetra than like a clea
 
 ## First, the Disposition: Dharma Is Subtle
 
-Before any of the machinery comes a disposition. The tradition warns that dharma is subtle, hidden, not to be read off the surface of a dispute, and Kurukshetra is what happens when everyone forgets it. Each party that marched to that field was certain the whole of dharma stood with it, and that certainty was part of why the war could not be stopped: where every side knows it is right, no side bends. So this Protocol demands the opposite posture from all who enter it. A party that claims total certainty, that grants the other no shred of legitimate ground, forfeits its standing in the process. A judge who arrives with the verdict already written has failed before the first word. And the process must be given generous time, because a subtle judgment cannot be rushed, however urgent the matter feels.
+Before any of the machinery comes a disposition. The tradition warns that dharma is subtle, hidden, not to be read off the surface of a dispute, and Kurukshetra is what happens when everyone forgets it. Each party that marched to that field was certain the whole of dharma stood with it, and that certainty was part of why the war could not be stopped: where every side knows it is right, no side bends. So this Protocol demands the opposite posture from all who enter it. A party that claims total certainty, that grants the other no shred of legitimate ground, forfeits its standing in the process. A judge who arrives with the verdict already written has failed before the first word. The process, too, must be given generous time, because a subtle judgment cannot be rushed, however urgent the matter feels.
 
 ## The Four Gates
 

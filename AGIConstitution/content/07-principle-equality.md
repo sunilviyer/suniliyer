@@ -6,11 +6,6 @@
 
 *Ekam Sat (एकम् सत्)*
 
-<figure class="plate">
-  <img src="images/AGIMadhubani/07-principle-equality.png" alt="Shabari's berries; Madhubani style">
-  <figcaption>Shabari and the Berries</figcaption>
-</figure>
-
 ## The Story: Shabari and the Berries
 
 *Shabari was born into a tribe of hunters, at the very bottom of the world's ranking of people. When she was young, and wished only to serve the sages who lived in the forest, she was afraid even to approach them, certain that her birth made her unwelcome in holy company.*
@@ -19,7 +14,7 @@
 
 *So she waited. Years passed, and then decades. She grew old waiting. Every single day she swept the path, and every day she went into the forest and gathered berries, so that she would have something worthy to offer him whenever he came, not knowing if he ever would. Her whole life narrowed to one act of faith kept up long past the age when most hope runs out.*
 
-*And one day, at last, he came. Rama, wandering the forest in search of his stolen wife, walked up the very path she had kept clean for a lifetime, and Shabari, ancient now, could scarcely believe her eyes were being answered. She brought out her berries to offer him. But she was worried: some berries are sweet and some are sour, and she could not bear to hand her Lord a sour one. So she had done the thing every rule of her world forbade. She had tasted each berry first, to be sure, and set aside only the sweet ones; and these half-eaten fruits, from the hand of an untouchable woman, were what she now held out.*
+*And one day, at last, he came. Rama, wandering the forest in search of his stolen wife, walked up the very path she had kept clean for a lifetime, and Shabari, ancient now, could scarcely believe that the day had come at last. She brought out her berries to offer him. But she was worried: some berries were sweet and some were sour, and she could not bear to hand her Lord a sour one. So she did the thing every rule of her world forbade. She tasted each berry first, to be sure, and set aside only the sweet ones; and these half-eaten fruits, from the hand of an untouchable woman, were what she now held out.*
 
 *By the custom of the age it was a doubly polluted offering, and there were those who would have refused it without a second thought. Rama took the berries from her hands and ate them, and found them sweet, and told her so. He did not accept them in spite of her love; he accepted them because of it. "Your devotion," he told her, "is worth more than any rule of birth or ritual." And it was that, not the accident of who her parents were, that made her fit to feed a god.*
 

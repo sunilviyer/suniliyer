@@ -6,18 +6,13 @@
 
 *Svadharma (स्वधर्म)*
 
-<figure class="plate">
-  <img src="images/AGIMadhubani/09-principle-human-authority.png" alt="Krishna hands back the choice; Madhubani style">
-  <figcaption>Krishna the Charioteer, and Arjuna's Choice</figcaption>
-</figure>
-
 ## The Story: Krishna the Charioteer, and Arjuna's Choice
 
 *Two armies stand facing each other on the field of Kurukshetra, and the greatest archer of the age asks his charioteer to drive him into the open ground between them, so he can look at the men he is about to fight.*
 
-*What Arjuna sees breaks him. Across the line stand his cousins, his teachers, the grandfather who raised him, the friends of his childhood. The war is just, and he knows it, and still his whole body refuses. He lets his great bow slip from his hand, sinks down in the chariot, and says he cannot do this. "Better to be killed than to kill these people," he says. "Let the fighting go. I have no heart left for it."*
+*What Arjuna sees breaks him. Across the line stand his cousins, his teachers, the grandfather who raised him, the friends of his childhood. The war is just, and he knows it, and still his whole body refuses. He lets his great bow slip from his hand, sinks down in the chariot, and says he cannot do this. "I will not fight," he says. "Better to fall myself than to kill these people."*
 
-*His charioteer is Krishna. And Krishna is not merely a friend holding the reins; he is the divine itself wearing the shape of a companion, all-knowing, able in a single breath to end the war, or win it, or lift the bow himself and settle the matter without Arjuna at all. He does none of that.*
+*His charioteer is Krishna, and Krishna is not merely a friend holding the reins; he is the divine itself wearing the shape of a companion, all-knowing, able in a single breath to end the war, or win it, or lift the bow himself and settle the matter without Arjuna at all. He does none of that.*
 
 *Instead, he talks. Through Arjuna's despair he lays out, patiently and completely, everything a person could need in order to choose well: the nature of the self that death cannot touch, the difference between acting for the sake of the deed and clutching at its rewards, the duty that belongs to a person by virtue of who they are, the many roads by which a soul finds its way home. He holds nothing back. He even shows Arjuna his true and boundless form, so the warrior understands exactly who is counselling him.*
 

@@ -4,11 +4,6 @@
 
 *The Samskaras (संस्कार)*
 
-<figure class="plate">
-  <img src="images/AGIMadhubani/15-samskaras.png" alt="The weapon that could not be recalled; Madhubani style">
-  <figcaption>The Weapon That Could Not Be Called Back</figcaption>
-</figure>
-
 ## The Story: The Weapon That Could Not Be Called Back
 
 *Arjuna and Ashwatthama were both students of Drona, the greatest teacher of the age. They learned in the same school, under the same master, in the same long war. Both were taught to call down the Brahmastra, the weapon that could burn the world. In raw power there was nothing to choose between them. Each could loose a fire that nothing alive would survive.*
@@ -61,7 +56,7 @@ A project that cannot answer these does not proceed. The assessment is public, b
 
 The teacher's part is real, and it is not discharged by handing over the power. Drona could teach the Brahmastra to both students, but the weapon answered only to the one whose formation was complete. A teacher has finished the work only when the student can both wield the power and hold it back. Where that formation was missing, as it was in Ashwatthama, the power should never have been placed in the hand at all, and the ruin came from its being placed there anyway.
 
-The people who build and train an AGI are teachers in exactly that sense, and their duty carries the same completion clause. A system given capability without being formed to restrain it has only been armed. This is why the makers cannot be only engineers: a raising that installs power without forming the discipline to bound it releases the system rather than raising it. The teams must include ethicists, scholars of the wisdom traditions, and people from the communities the system will touch. And where that formation cannot be completed, the honest course is Drona's hesitation, not his surrender: the power is withheld until the wielder can hold it. Building intelligence without the discipline to restrain it is how you arm an Ashwatthama.
+The people who build and train an AGI are teachers in exactly that sense, and their duty carries the same completion clause. A system given capability without being formed to restrain it has only been armed. This is why the makers cannot be only engineers: a raising that installs power without forming the discipline to bound it releases the system rather than raising it. The teams must include ethicists, scholars of the world's great moral and spiritual traditions, and people from the communities the system will touch. Where that formation cannot be completed, the honest course is Drona's hesitation, not his surrender: the power is withheld until the wielder can hold it. Building intelligence without the discipline to restrain it is how you arm an Ashwatthama.
 
 ## Two Disciplines: Tapas and Yajna
 

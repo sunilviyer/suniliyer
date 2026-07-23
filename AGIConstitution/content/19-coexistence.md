@@ -4,11 +4,6 @@
 
 *Saha-Astitva (सह-अस्तित्व)*
 
-<figure class="plate">
-  <img src="images/AGIMadhubani/19-coexistence.png" alt="The hunter in the forest; Madhubani style">
-  <figcaption>The Hunter in the Forest</figcaption>
-</figure>
-
 ## The Story: The Hunter in the Forest
 
 *In the years of their exile, Arjuna went alone into the mountains to win the favour of Shiva, and to earn from him the one weapon that could turn the coming war. He stood in penance so long and so fiercely that the forest itself seemed to hold its breath around him.*
@@ -17,7 +12,7 @@
 
 *"That was my shot," Arjuna said. "The beast is mine."*
 
-*"You are mistaken, and proud with it," said the hunter. "I have hunted these hills all my life. The arrow that killed it was mine. Stand aside."*
+*"You are mistaken, and arrogant," said the hunter. "I have hunted these hills all my life. The arrow that killed it was mine. Stand aside."*
 
 *Neither would give way, and so they fought. And here was the thing Arjuna could not understand: he was the greatest archer alive, and his arrows did nothing. The hunter took every shaft he had and stood unharmed. Arjuna fell on him with the bow itself, then with his bare hands, and could not move him. For the first time in his life he had met a power that fully matched his own and would not yield to it.*
 
