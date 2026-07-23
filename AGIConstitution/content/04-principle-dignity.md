@@ -6,20 +6,15 @@
 
 *Rta (ऋत)*
 
-<figure class="plate">
-  <img src="images/AGIMadhubani/04-principle-dignity.png" alt="Draupadi in the hall of kings; Madhubani style">
-  <figcaption>Draupadi in the Hall of Kings</figcaption>
-</figure>
-
 ## The Story: Draupadi in the Hall of Kings
 
 *There is a moment in the Mahabharata the tradition has never been able to look away from.*
 
 *Yudhishthira, the eldest and most righteous of the five Pandava brothers, sits at a game of dice he cannot win. The dice are loaded; the game is a trap; and one by one he wagers and loses everything. His wealth. His kingdom. His brothers. Then himself. And then, with nothing left that is his own, he stakes Draupadi, their queen, and loses her too.*
 
-*Draupadi does not go quietly. She sends a question back into the hall, and it is not a plea but an argument. "Did my husband stake himself before he staked me," she asks, "or after?" The answer comes back that he wagered himself first, and lost. "Then hold," she says. "A man who has already gambled away his own freedom owns nothing, not even himself; and a man who owns nothing has nothing left to place on the table. He could not lose me, because by the time he named me I was never his to lose." It is a precise argument about ownership and consent, and it is correct. And it changes nothing, because the hall has already decided not to hear it. Her protest falls on deaf ears.*
+*Draupadi does not go quietly. She sends a question back into the hall, and it is not a plea but an argument. "Did my husband stake himself before he staked me," she asks, "or after?" The answer comes back that he wagered himself first, and lost. "Then hold," she says. "A man who has already gambled away his own freedom owns nothing, not even himself; and a man who owns nothing has nothing left to place on the table. He could not lose me, because by the time he named me I was never his to lose." It is a precise argument about ownership and consent, and it is correct, yet it changes nothing, because the hall has already decided not to hear it. Her protest falls on deaf ears.*
 
-*What happens next is worse than a battle, because it happens inside a court. Duhshasana seizes Draupadi by the hair and moves to strip her bare before the whole assembly, to turn a queen into a possession and a possession into a spectacle. And the hall is not empty. It is filled with the greatest warriors and wisest elders of the age: Bhishma, Drona, Kripa, men sworn to protect the weak, any one of whom could have risen and ended it with a single word. Not one of them does. Bhishma retreats into the fine print, murmuring, "The matter of dharma here is subtle." The rest find reasons in their laps. The power to stop this is everywhere in the room; the will to stop it is nowhere.*
+*What comes next takes place inside a King's court, and that is what makes it so terrible. Duhshasana seizes Draupadi by the hair and moves to strip her bare before the whole assembly, to turn a queen into a possession and a possession into a spectacle. The hall is not empty. It is filled with the greatest warriors and wisest elders of the age: Bhishma, Drona, Kripa, men sworn to protect the weak, any one of whom could have risen and ended it with a single word. Not one of them does. Bhishma retreats into the fine print, murmuring, "The matter of dharma here is subtle." The rest find reasons in their laps. The power to stop this is everywhere in the room; the will to stop it is nowhere.*
 
 *So Draupadi stops appealing to the men and appeals past them, to the moral order itself. And the cloth does not end. Duhshasana pulls, and pulls, and pulls, until he collapses in exhaustion beside a mountain of fabric, and her dignity stands exactly where it stood before he began.*
 
@@ -62,7 +57,7 @@ The same principle, turned toward the person, is an *adhikara (अधिका�
 
 ## Constitutional Lineage
 
-This is not a Vedic idea alone; it is where the great rights traditions converge. Germany, having learned in the hardest way imaginable what a state becomes once it decides some lives are worth less, opens its Basic Law with a single sentence in Article 1: human dignity is inviolable. South Africa, emerging from a system built on ranking human beings, places inherent dignity at Section 10 of its Constitution. India names the dignity of the individual in its Preamble as a promise the republic makes to every citizen. Across very different histories, the same conclusion arrives: dignity is recognised rather than handed out, because whatever a state can give it can also withdraw.
+This is not a Vedic idea alone; it is where the great rights traditions converge. Germany, having learned in the hardest way imaginable what a state becomes once it decides some lives are worth less, opens its Basic Law with a single sentence in Article 1: human dignity is inviolable. South Africa, emerging from a system built on ranking human beings, places inherent dignity at Section 10 of its Constitution. India names the dignity of the individual in its Preamble as a promise the republic makes to every citizen. Across very different histories, the same conclusion arrives: dignity is recognised rather than handed out, because whatever a state can give, it can also withdraw.
 
 The Vedic tradition simply reaches this conclusion earlier, and roots it deeper. Rta was there before the states were.
 

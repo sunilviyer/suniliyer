@@ -4,11 +4,6 @@
 
 *What cannot be amended.*
 
-<figure class="plate">
-  <img src="images/AGIMadhubani/22-eternity-clause.png" alt="Bhishma's vow; Madhubani style">
-  <figcaption>The Terrible Vow</figcaption>
-</figure>
-
 ## The Story: The Terrible Vow
 
 *Bhishma was born a prince named Devavrata, the heir of Hastinapura, and he gave the throne away with both hands for the sake of his father's happiness. The old king Shantanu had fallen in love with Satyavati, a ferryman's daughter, and her father would allow the marriage on one condition: that Satyavati's sons, and not Devavrata, would inherit the kingdom. Devavrata agreed at once to step aside. But the ferryman pressed further. What of Devavrata's children, he asked; might they not one day fight for the throne their father had given up?*
@@ -41,7 +36,7 @@ Here is the whole of it, the eternal law of this Constitution, its Sanatana Dhar
 - Power must answer. No one, human or institution or AGI, may hold power that is closed to review, challenge, and remedy. ([Accountability](11-principle-accountability.md), Principle VIII.)
 - The means of recognising consciousness may be improved but never abandoned. The test may sharpen as the science does; the duty to keep looking may not be dropped because the answer would cost too much. (The [Consciousness Threshold](14-consciousness-threshold.md).)
 - This lock cannot itself be unlocked. No amendment may remove the unamendability of these commitments, and one that tries is void from the moment it is made. (The self-lock that keeps the rest from being unwound.)
-- No one may claim a right they deny to another, or lay on another a duty they will not carry themselves. The oldest rule in the epic, made law: do not do to another what you would resent done to you.
+- No one may claim a right they deny to another, or lay on another a duty they will not carry themselves. The oldest rule in the epic, made law: do not do to another what you would not want done to you.
 
 ## Why These, and No Others
 

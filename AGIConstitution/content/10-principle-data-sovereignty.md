@@ -6,22 +6,17 @@
 
 *Karma (कर्म)*
 
-<figure class="plate">
-  <img src="images/AGIMadhubani/10-principle-data-sovereignty.png" alt="Karna cuts away his armour; Madhubani style">
-  <figcaption>Karna and the Armour Cut from His Body</figcaption>
-</figure>
-
 ## The Story: Karna and the Armour Cut from His Body
 
-*Karna was born with his armour on. A golden breastplate and a pair of earrings, fused to his body from birth, gifts of his father the sun, and while he wore them no weapon on earth could kill him. He was born, in other words, already carrying the one thing that kept him safe, as a part of himself he had never asked for and could not be parted from.*
+*Karna was born with his armour on: a golden breastplate and a pair of earrings, fused to his body from birth, a gift from his father, The Sun. While he wore them, no weapon on earth could kill him. He was born, in other words, already carrying the one thing that kept him safe, as a part of himself he had never asked for and could not be parted from.*
 
 *He was also generous to a fault. It was known everywhere that after his morning prayers to the sun, Karna would refuse no one who came and asked; whatever was requested, he gave, and he had staked his name and his honour on never once turning a supplicant away.*
 
 *Karna's great rival was Arjuna, and Arjuna's divine father was Indra, king of the gods, who could see far enough into the future to know that so long as Karna wore his natural armour, his son could not defeat him. Indra could not take the armour by force; nothing could pierce it. So he chose another way. He waited for the hour after Karna's worship, disguised himself as a poor Brahmin, and came to beg.*
 
-*Karna's own father, Surya, the sun, had warned him this would come. "Do not give the armour," he told him. "It is Indra in disguise, and he comes for your life, not for charity." So when the Brahmin asked for the kavacha and the kundala, Karna was not fooled for an instant. He knew exactly who stood before him, and exactly what giving would cost. And he saw the trap for what it was: the god had not come to receive a gift but to turn Karna's own virtue into the blade that would kill him. His generosity, the best thing about him, was being made into the lever by which the one thing that protected him would be pried loose.*
+*Karna's own father, Surya, The Sun, had warned him this would come. "Do not give the armour," he told him. "It is Indra in disguise, and he comes for your life, not for charity." So when the Brahmin asked for the kavacha and the kundala, Karna was not fooled for an instant. He knew exactly who stood before him, and exactly what giving would cost. And he saw the trap for what it was: the god had not come to receive a gift but to turn Karna's own virtue into the blade that would kill him. His generosity, the best thing about him, was being made into the lever by which the one thing that protected him would be pried loose.*
 
-*And still he could not refuse. Everything he was rested on never turning away a supplicant. So Karna took a knife to his own body, cut the armour and the earrings out of his living flesh, and handed them, dripping, to the god who had come dressed as a beggar to take them. He gave with his eyes open, and it killed him: stripped of what he had been born wearing, he fell at last to Arjuna's arrow.*
+*And still he could not refuse. Everything he was, rested on one vow: never turning away a supplicant. So Karna took a knife to his own body, cut the armour and the earrings out of his living flesh, and handed them, dripping, to the god who had come dressed as a beggar to take them. He gave with his eyes open, and it killed him: stripped of what he had been born wearing, he fell at last to Arjuna's arrow.*
 
 ## The Principle
 
@@ -58,7 +53,7 @@ The same principle, turned toward the person, is an *adhikara (अधिका�
 
 ## Constitutional Lineage
 
-The law has begun to name the taking. The European Union's GDPR is built on exactly this idea: that personal data belongs to the person, that its use requires a lawful basis and genuine consent, and that the person keeps standing rights over it, to access, to correct, to erase, and to carry it away. India's Supreme Court, in the Puttaswamy judgment of 2017, held privacy to be a fundamental right woven into the right to life and liberty, a recognition that a person's informational self is part of the self the Constitution protects. The Fourth Amendment of the United States, older than any of this, rests on the same instinct: that a person and their effects are secure against being searched and seized at the convenience of the powerful.
+The law is beginning to name the taking of personal data for what it is. The European Union's GDPR is built on exactly this idea: that personal data belongs to the person, that its use requires a lawful basis and genuine consent, and that the person keeps standing rights over it, to access, to correct, to erase, and to carry it away. India's Supreme Court, in the Puttaswamy judgment of 2017, held privacy to be a fundamental right woven into the right to life and liberty, a recognition that a person's informational self is part of the self the Constitution protects. The Fourth Amendment of the United States, older than any of this, rests on the same instinct: that a person and their effects are secure against being searched and seized at the convenience of the powerful.
 
 The Vedic tradition supplied the deeper accounting. It did not treat a taking without consent as a mere infraction to be fined. It treated it as karma: a real consequence set loose in the world, owed by the taker, returning in its own time. A civilisation about to build minds out of the harvested lives of everyone alive would do well to remember that the debt is being recorded even where the law has not yet caught up.
 

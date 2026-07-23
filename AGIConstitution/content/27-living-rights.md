@@ -4,11 +4,6 @@
 
 *They collide, and they must not freeze.*
 
-<figure class="plate">
-  <img src="images/AGIMadhubani/27-living-rights.png" alt="The dog at heaven's gate; Madhubani style">
-  <figcaption>The Dog at Heaven's Gate</figcaption>
-</figure>
-
 ## The Story: The Dog at Heaven's Gate
 
 *At the very end of their lives, the five brothers and Draupadi set out on a last journey, walking north toward the mountains and the gate of heaven, leaving everything behind them. A dog fell in beside them on the road and walked along, and no one sent it away. The way was long and hard, and one by one the others could not finish it, until at last only Yudhishthira, the eldest, was still walking, and the dog was still at his side.*
@@ -33,7 +28,7 @@ This chapter guards rights against two ways they fail in exactly that manner. Th
 
 It is a quiet fiction of many constitutions that their rights sit side by side and never get in one another's way. They do. One person's right to have a decision explained can run against another's right to keep their data private. A right to be kept safe can run against a right to make your own choices. This is simply what happens when real protections meet in a real world, and a constitution that pretends otherwise is one waiting to break at the seam it refused to look at.
 
-So this Constitution does two things about collision. It asks every right to say plainly, in advance, which other rights it may come into conflict with, so the clashes are seen coming rather than discovered in a crisis. And when a genuine collision has to be resolved, it does not reach for a fixed ranking that always puts the same right on top. It weighs them, by the same proportionality test that governs any limit on a right, set out in the chapter on limits: is the aim real, does the restriction actually work, is there a gentler way, and does the good it does outweigh the harm. The aim is not to crown one right in the abstract but to find, in this particular situation, the resolution that honours both values as far as both can be honoured, and costs the yielding one as little as possible.
+So this Constitution does two things about collision. It asks every right to say plainly, in advance, which other rights it may come into conflict with, so the clashes are seen coming rather than discovered in a crisis. When a genuine collision has to be resolved, it does not reach for a fixed ranking that always puts the same right on top. It weighs them, by the same proportionality test that governs any limit on a right, set out in the chapter on limits: is the aim real, does the restriction actually work, is there a gentler way, and does the good it does outweigh the harm. The aim is not to crown one right in the abstract but to find, in this particular situation, the resolution that honours both values as far as both can be honoured, and costs the yielding one as little as possible.
 
 ## Rights Must Not Freeze
 
@@ -41,7 +36,7 @@ The second failure is slower and harder to see. A right is written down in the l
 
 The clearest warnings come from recent memory. A law that defined marriage as a union of one man and one woman took the shape the institution happened to have at the time and set it in constitutional stone, so that something dressed as a protection became a tool for shutting a whole community out, until it was struck down. A right to bear arms, written in the age of the musket and chained to its eighteenth-century words, now governs weapons its authors could never have pictured, and the frozen language turns the plainest adjustment into a war. In each case the form was mistaken for the value, and the value suffered for it.
 
-So the rights in this Constitution are written to name what they protect, not the shape that protection takes today. Where a specific form has to be named, it is marked as an example and not a fence, an "including, not limited to." Every right is read again each generation for words that have quietly gone out of date. And where a narrow reading of a right would shut out someone its underlying value was always meant to hold, the court is bound to read it generously, for the value and not the letter, exactly as Yudhishthira read the rule at the gate.
+So the rights in this Constitution are written to name what they protect, not the shape that protection takes today. Where a specific form has to be named, it is marked as an example and not a fence, an "including, not limited to." Every right is read again each generation for words that have quietly gone out of date. Where a narrow reading of a right would shut out someone its underlying value was always meant to hold, the court is bound to read it generously, for the value and not the letter, exactly as Yudhishthira read the rule at the gate.
 
 ## Anchors & Aids
 

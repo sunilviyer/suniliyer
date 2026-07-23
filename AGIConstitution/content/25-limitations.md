@@ -4,14 +4,9 @@
 
 *When a right may be limited, and when it may not.*
 
-<figure class="plate">
-  <img src="images/AGIMadhubani/25-limitations.png" alt="Savitri and the god of death; Madhubani style">
-  <figcaption>Savitri and the God of Death</figcaption>
-</figure>
-
 ## The Story: Savitri and the God of Death
 
-*Savitri was a princess who chose her own husband, a good man named Satyavan, and married him even after a sage warned her that Satyavan was fated to die one year from the wedding day. She married him knowing it. And when the year had nearly run out she began to fast and watch, and on the appointed day she walked with him into the forest, and there, as he lay his head in her lap, his life went out of him. Then Yama came for him in person, death itself, and drew the soul from Satyavan's body with his noose, and turned to carry it away.*
+*Savitri was a princess who chose her own husband, a good man named Satyavan, and married him even after a sage warned her that Satyavan was fated to die one year from the wedding day. She married him knowing it. And when the year had nearly run out she began to fast and watch, and on the appointed day she walked with him into the forest, and there, as he laid his head in her lap, his life went out of him. Then Yama came for him in person, death itself, and drew the soul from Satyavan's body with his noose, and turned to carry it away.*
 
 *Savitri followed. Yama told her to turn back, that the living have no road into the country of the dead, that what he did he did by law and she could not undo it. But she kept walking behind him, and as she walked she spoke, and what she said was so wise and so true that the god of death slowed to listen. Yama is Dharmaraja, the king of dharma, and he honours wisdom wherever he meets it. Moved, he offered her a boon, anything at all, except the one thing: not the life of her husband.*
 
@@ -21,7 +16,7 @@
 
 ## Why It Matters Here
 
-Two things make Yama the right figure to stand over this part of the Constitution. His power is terrible, necessary, and real: he is death, and someone must do that work. And he never wields it as he pleases. He is called Dharmaraja, the king of dharma, because his authority is not his own; it belongs to the law he serves, and he takes only what the law allows him to take. His noose is the most fearsome power there is, and it is also the most tightly bound.
+Two things make Yama the right figure to stand over this part of the Constitution. His power is terrible, necessary, and real: he is death, and someone must do that work. Yet he never wields it as he pleases. He is called Dharmaraja, the king of dharma, because his authority is not his own; it belongs to the law he serves, and he takes only what the law allows him to take. His noose is the most fearsome power there is, and it is also the most tightly bound.
 
 The power to limit a right is a smaller noose of the same kind. This Constitution does not pretend that rights are absolute. Almost every right it grants can, in some genuine situation, be limited: freedom to move can be curfewed in a real crisis, data can be reached by a lawful investigation, one right can be pared back where it truly cannot sit alongside another. A constitution that swore its rights were untouchable and then let governments override them quietly anyway would simply be lying. This one admits the power to limit, and then ties it down with strict rules, the way the law ties down Yama's noose. A limit that follows those rules is lawful. One that ignores them is not law at all, only a person holding a rope.
 
@@ -33,7 +28,7 @@ It must come from a general law, not a targeted order. A rule that binds everyon
 
 It must be justifiable in an open society, measured not by whether the one imposing it thinks it reasonable, but by whether a fair-minded person committed to dignity, equality, and freedom would.
 
-It must be proportionate, which is four questions in one. Does it serve a real constitutional purpose, and not mere profit or convenience? Will it actually achieve that purpose? Is there no gentler way to achieve the same thing? And even then, does the good it does outweigh the harm it does to the right? Fail any of the four and the limit fails.
+It must be proportionate, which is four questions in one. Does it serve a real constitutional purpose, and not mere profit or convenience? Will it actually achieve that purpose? Is there no gentler way to achieve the same thing? Even then, does the good it does outweigh the harm it does to the right? Fail any of the four, and the limit fails.
 
 It must use the least restrictive means available. If the same end can be reached by limiting the right less, or not at all, the lighter path must be taken. Where careful design could solve the problem instead of a blanket restriction, the design must be chosen.
 
