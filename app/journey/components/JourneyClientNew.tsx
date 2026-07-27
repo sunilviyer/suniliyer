@@ -3,7 +3,6 @@
 import { useRef } from 'react';
 import { ThemeProvider } from '@/contexts/ThemeContext';
 import { timeline } from '@/data/journey/timeline';
-import JourneyHeader from './JourneyHeader';
 import JourneyFooter from './JourneyFooter';
 import TimelineCard from './TimelineCard';
 import { Linkedin, Download } from 'lucide-react';
@@ -16,9 +15,6 @@ export default function JourneyClientNew() {
   return (
     <ThemeProvider>
       <main className="min-h-screen bg-background-primary transition-colors duration-300">
-        {/* Fixed Header */}
-        <JourneyHeader />
-
         {/* Hero Section */}
         <div className="max-w-[1600px] mx-auto px-6 pt-32 pb-16">
           <div className="text-center max-w-3xl mx-auto mb-16">

@@ -37,6 +37,30 @@
   --glowa: 0.3;
 }
 
+/* Nav-only wrapper: supplies kit-root tokens to the fixed TopNav on
+   interior pages without painting the homepage's full-viewport background. */
+.kit-navonly {
+  min-height: 0 !important;
+  background: transparent !important;
+  position: static !important;
+  overflow: visible !important;
+}
+
+/* Interior pages don't all implement both themes, so the nav can't rely on
+   the page beneath for contrast — give brand + icons their own glass surface
+   that follows the theme with the ink. */
+.kit-navonly .brand,
+.kit-navonly .navicons button {
+  background: var(--glass);
+  border: 1px solid var(--hairline);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+.kit-navonly .brand {
+  padding: 0.35rem 0.8rem;
+  border-radius: 12px;
+}
+
 /* ---------- torchlight background (option 2a) ---------- */
 /* spotlight lives on the page layer; embers float above the cards */
 .torch-spot {

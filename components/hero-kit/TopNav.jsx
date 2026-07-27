@@ -14,17 +14,25 @@ export default function TopNav({ menuGroups = [], onConnectSubmit }) {
   const [open, setOpen] = useState(null); // 'about' | 'menu' | 'chat' | null
   const [sendState, setSendState] = useState('idle'); // idle | sending | sent | error
 
-  // theme: persisted under its own key so the rest of the site is untouched
+  // theme: 'kit-theme' is canonical, but mirror the legacy 'theme' key,
+  // Tailwind's .dark class, and the 'themeChange' event so interior pages
+  // built against the old nav keep responding to the toggle.
+  const applyTheme = (next, { notify = true } = {}) => {
+    document.documentElement.dataset.theme = next;
+    document.documentElement.classList.toggle('dark', next === 'dark');
+    localStorage.setItem('kit-theme', next);
+    localStorage.setItem('theme', next);
+    if (notify) window.dispatchEvent(new CustomEvent('themeChange'));
+  };
   useEffect(() => {
     const saved =
-      typeof window !== 'undefined' && localStorage.getItem('kit-theme');
-    document.documentElement.dataset.theme = saved || 'dark';
+      localStorage.getItem('kit-theme') || localStorage.getItem('theme');
+    applyTheme(saved || 'dark', { notify: false });
   }, []);
   const toggleTheme = () => {
     const next =
       document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
-    document.documentElement.dataset.theme = next;
-    localStorage.setItem('kit-theme', next);
+    applyTheme(next);
   };
 
   useEffect(() => {

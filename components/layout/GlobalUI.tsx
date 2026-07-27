@@ -1,22 +1,21 @@
 'use client';
 
 import { usePathname } from 'next/navigation';
-import TopNav from './TopNav';
+import SiteTopNav from '@/components/hero-kit/SiteTopNav';
 import { ContactWidget } from '@/components/contact/ContactWidget';
 
 /**
- * GlobalUI — mounts the TopNav and ContactWidget on every page.
- * Theme toggle and contact button are integrated into the TopNav component.
- * The homepage (hero redesign) ships its own nav, so global chrome stays off there.
+ * GlobalUI — mounts the site-wide hero-kit TopNav and ContactWidget on
+ * every page. The homepage (and its /hero-preview source) render the
+ * hero-kit nav inside their own kit-root, so global chrome stays off there.
  */
 export function GlobalUI() {
   const pathname = usePathname();
-  // The homepage and the Constitution pages ship the hero-kit nav themselves.
-  if (pathname === '/' || pathname === '/hero-preview' || pathname?.startsWith('/constitution')) return null;
+  if (pathname === '/' || pathname === '/hero-preview') return null;
 
   return (
     <>
-      <TopNav />
+      <SiteTopNav />
       <ContactWidget hideButton />
     </>
   );

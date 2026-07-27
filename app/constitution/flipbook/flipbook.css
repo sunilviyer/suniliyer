@@ -841,14 +841,6 @@
   letter-spacing: 0.02em;
 }
 
-/* Nav-only kit-root wrapper: supply the hero-kit tokens the TopNav needs
-   without painting the homepage's full-viewport background. */
-.kit-navonly {
-  min-height: 0 !important;
-  background: transparent !important;
-  position: static !important;
-  overflow: visible !important;
-}
 
 /* The Madhubani plate: one per article, a frontispiece at the top */
 .bpg-flow figure.plate {
