@@ -36,6 +36,12 @@ _bmad/
 # Legacy / archived source
 OLD/
 
+# Design-kit workspace (live copy lives in components/hero-kit/)
+/hero-kit/
+
+# Local docx build workspace (large generated output)
+scripts/docx-build/
+
 # External documentation & reference templates
 docs/
 
