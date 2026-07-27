@@ -45,7 +45,7 @@ const CREDITS = [
   { what: 'Words & everything else', who: 'Sunil Iyer.' },
 ];
 
-export default function HeroPreview({ fontClasses = '' }) {
+export default function Home({ fontClasses = '' }) {
   // the contact API rejects submissions that arrive suspiciously fast
   const mountedAt = useRef(Date.now());
   // at most one world fan open; hovering the other card closes this one

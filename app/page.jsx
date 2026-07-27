@@ -1,7 +1,7 @@
-// Homepage — the hero redesign, promoted from /hero-preview.
+// Homepage — the hero redesign.
 // Metadata (title, social cards, JSON-LD) comes from the root layout.
 import { Fraunces, Archivo } from 'next/font/google';
-import HeroPreview from './HeroPreview';
+import Home from './Home';
 import './hero-kit.css';
 
 const fraunces = Fraunces({
@@ -20,5 +20,5 @@ const archivo = Archivo({
 });
 
 export default function Page() {
-  return <HeroPreview fontClasses={`${fraunces.variable} ${archivo.variable}`} />;
+  return <Home fontClasses={`${fraunces.variable} ${archivo.variable}`} />;
 }

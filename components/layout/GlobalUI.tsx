@@ -6,12 +6,12 @@ import { ContactWidget } from '@/components/contact/ContactWidget';
 
 /**
  * GlobalUI — mounts the site-wide hero-kit TopNav and ContactWidget on
- * every page. The homepage (and its /hero-preview source) render the
- * hero-kit nav inside their own kit-root, so global chrome stays off there.
+ * every page. The homepage renders the hero-kit nav inside its own
+ * kit-root, so global chrome stays off there.
  */
 export function GlobalUI() {
   const pathname = usePathname();
-  if (pathname === '/' || pathname === '/hero-preview') return null;
+  if (pathname === '/') return null;
 
   return (
     <>
