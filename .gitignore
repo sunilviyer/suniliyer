@@ -3,7 +3,7 @@ node_modules
 .next
 .vercel
 *.log
-tsconfig.tsbuildinfo
+*.tsbuildinfo
 
 # ── Environment & secrets ─────────────────────────────────────────
 .env
@@ -19,6 +19,12 @@ tsconfig.tsbuildinfo
 .vscode/
 *.swp
 *.swo
+**/.fuse_hidden*
+*.bak
+*.backup
+
+# ── Local scratch files ───────────────────────────────────────────
+content/articles/complete-YAML/Untitled*.rtf
 
 # ── Planning & AI tooling (not for public repo) ───────────────────
 # Claude Code settings and commands
