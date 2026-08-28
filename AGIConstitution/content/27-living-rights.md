@@ -41,7 +41,7 @@ So the rights in this Constitution are written to name what they protect, not th
 ## Anchors & Aids
 
 *Vedic Anchors:* Yudhishthira and the dog at heaven's gate, who held to the value beneath the rule rather than the rule itself; Dharma, who wore the dog's shape to see whether the letter or the spirit would be served; the old teaching that dharma is what sustains living beings, not merely the words that bind them. [See Glossary](29-glossary.md).
-*Constitutional Sources:* the proportionality jurisprudence of the German constitutional court and the European Court of Human Rights (the framework for weighing colliding rights); Obergefell v. Hodges (2015) and the Defence of Marriage Act (a right that ossified into exclusion); District of Columbia v. Heller (2008) (a right frozen to its founding form); the doctrine of generous interpretation. [See Sources](31-sources.md).
+*Constitutional Sources:* the proportionality jurisprudence of the German constitutional court and the European Court of Human Rights (the framework for weighing colliding rights); Obergefell v. Hodges (2015) and the Defense of Marriage Act (a right that ossified into exclusion); District of Columbia v. Heller (2008) (a right frozen to its founding form); the doctrine of generous interpretation. [See Sources](31-sources.md).
 *Related:* borrows the proportionality test from the [Limits on Rights](25-limitations.md) rather than restating it; its value-first, generous reading is the interpretation mode of [Amendment and Evolution](23-amendment.md); the collisions it maps run among the Ten Principles; its guard against ossification is re-run at the twenty-five-year review.
 
 ॐ धारणाद् धर्म इत्याहुः ॐ
