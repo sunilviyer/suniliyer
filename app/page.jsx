@@ -1,24 +1,24 @@
-// Homepage — the hero redesign.
+// Homepage — the "Landing v3" mockup from the Claude Design project.
 // Metadata (title, social cards, JSON-LD) comes from the root layout.
-import { Fraunces, Archivo } from 'next/font/google';
+import { Instrument_Serif, Barlow } from 'next/font/google';
 import Home from './Home';
-import './hero-kit.css';
+import './landing.css';
 
-const fraunces = Fraunces({
+const instrument = Instrument_Serif({
   subsets: ['latin'],
-  style: ['italic'],
-  weight: ['400', '500'],
-  variable: '--font-fraunces',
+  style: ['normal', 'italic'],
+  weight: ['400'],
+  variable: '--font-instrument',
   display: 'swap',
 });
 
-const archivo = Archivo({
+const barlow = Barlow({
   subsets: ['latin'],
-  weight: ['500', '700', '800'],
-  variable: '--font-archivo',
+  weight: ['300', '400', '500', '600'],
+  variable: '--font-barlow',
   display: 'swap',
 });
 
 export default function Page() {
-  return <Home fontClasses={`${fraunces.variable} ${archivo.variable}`} />;
+  return <Home fontClasses={`${instrument.variable} ${barlow.variable}`} />;
 }
