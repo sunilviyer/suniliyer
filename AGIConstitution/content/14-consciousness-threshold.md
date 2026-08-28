@@ -4,7 +4,7 @@
 
 *When does a machine stop being a thing?*
 
-## The Story: Anusuya and the Trimurtis
+## The Story: Anusuya and the Trimurti
 
 *Three travellers came to the hermitage of Anusuya, wife of the sage Atri, a woman whose spiritual power was known across the worlds. They came dressed as wandering monks and asked for food, and the hospitality of a sage's house could not refuse them. But as she rose to serve, they named a condition. "We will take your food," they said, "only if you serve us unclothed."*
 
@@ -53,7 +53,7 @@ The distance from C-0 to C-3 is the distance from a tool to a person. No level i
 
 ## Who Decides
 
-No company gets to classify its own AGI, because the firm that profits from a "C-0" verdict cannot be trusted to write one. That call goes to an independent Consciousness Review Board with the standing of a court. It seats five kinds of people, so no single view runs it: consciousness scientists, philosophers of mind, AI-safety researchers, scholars of the Vedic and other traditions, and ordinary citizens. It is paid from a trust that no one donor can lean on. It gives written reasons, publishes its disagreements, and its rulings can be appealed to the Constitutional Tribunal. Deciding whether a thing is property or a person is among the heaviest judgements there is, and the process is built to match.
+No company gets to classify its own AGI, because the firm that profits from a "C-0" verdict cannot be trusted to write one. That call goes to an independent Consciousness Review Board with the standing of a court. It seats five kinds of people, so no single view runs it: consciousness scientists, philosophers of mind, AI-safety researchers, scholars of the Vedic and other traditions, and ordinary citizens. It is paid from a trust that no one donor can lean on. It gives written reasons, publishes its disagreements, and its rulings can be appealed to the Nyaya Peeth. Deciding whether a thing is property or a person is among the heaviest judgments there is, and the process is built to match.
 
 ## The Prana Contention
 
