@@ -161,6 +161,9 @@ export default function Home({ fontClasses = '' }) {
   const videoA = useRef(null);
   const videoB = useRef(null);
   const socialsRef = useRef(null);
+  const contactCardRef = useRef(null);
+  const exploreCardRef = useRef(null);
+  const lastTrigger = useRef(null);
   const loopState = useRef(null);
   // the contact API rejects submissions that arrive suspiciously fast
   const mountedAt = useRef(Date.now());
@@ -279,11 +282,28 @@ export default function Home({ fontClasses = '' }) {
   }, []);
 
   useEffect(() => {
-    if (!contactOpen && !exploreOpen) return;
+    if (!contactOpen && !exploreOpen) return undefined;
     const onKey = (e) => { if (e.key === 'Escape') closePanels(); };
     window.addEventListener('keydown', onKey);
     return () => window.removeEventListener('keydown', onKey);
   }, [contactOpen, exploreOpen, closePanels]);
+
+  /* Move focus into whichever card just opened, and hand it back to the
+     nav button on close — the cards are inert until then, so this has to
+     run after React has flipped the attribute. */
+  useEffect(() => {
+    const card = contactOpen ? contactCardRef.current
+      : exploreOpen ? exploreCardRef.current
+      : null;
+    if (!card) {
+      lastTrigger.current?.focus?.();
+      return;
+    }
+    // the form should land on its first field; Explore has none, so it
+    // falls back to the close button
+    const field = card.querySelector('.lp-field input, .lp-field textarea');
+    (field || card.querySelector('button, a'))?.focus();
+  }, [contactOpen, exploreOpen]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -348,7 +368,7 @@ export default function Home({ fontClasses = '' }) {
               <Link href="/journey" className="lp-icon-btn lg" aria-label="About Sunil" title="About Sunil">
                 <svg width="16" height="16" viewBox="0 0 24 24" {...stroke}><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" /><circle cx="12" cy="7" r="4" /></svg>
               </Link>
-              <button type="button" onClick={() => { setContactOpen(true); setExploreOpen(false); }} className="lp-icon-btn lg" aria-label="Get in touch" title="Get in touch">
+              <button type="button" onClick={(e) => { lastTrigger.current = e.currentTarget; setContactOpen(true); setExploreOpen(false); }} className="lp-icon-btn lg" aria-label="Get in touch" title="Get in touch">
                 <svg width="16" height="16" viewBox="0 0 24 24" {...stroke}><rect x="2" y="4" width="20" height="16" rx="2" /><path d="m2 7 10 6 10-6" /></svg>
               </button>
               <button type="button" onClick={toggleMode} className="lp-icon-btn lg" aria-label={light ? 'Switch to dark mode' : 'Switch to light mode'}>
@@ -358,7 +378,7 @@ export default function Home({ fontClasses = '' }) {
                   <svg width="16" height="16" viewBox="0 0 24 24" {...stroke}><circle cx="12" cy="12" r="4" /><path d="M12 2v2" /><path d="M12 20v2" /><path d="M4.93 4.93l1.41 1.41" /><path d="M17.66 17.66l1.41 1.41" /><path d="M2 12h2" /><path d="M20 12h2" /><path d="M6.34 17.66l-1.41 1.41" /><path d="M19.07 4.93l-1.41 1.41" /></svg>
                 )}
               </button>
-              <button type="button" onClick={() => { setExploreOpen(true); setContactOpen(false); }} className="lp-icon-btn lg" aria-label="Explore" title="Explore">
+              <button type="button" onClick={(e) => { lastTrigger.current = e.currentTarget; setExploreOpen(true); setContactOpen(false); }} className="lp-icon-btn lg" aria-label="Explore" title="Explore">
                 <svg width="16" height="16" viewBox="0 0 24 24" {...stroke}><path d="M4 6h16" /><path d="M4 12h16" /><path d="M4 18h16" /></svg>
               </button>
             </div>
@@ -394,17 +414,26 @@ export default function Home({ fontClasses = '' }) {
         </div>
       </section>
 
-      {/* ── slide-overs ──────────────────────────────────── */}
+      {/* ── modals ───────────────────────────────────────── */}
       <div className={`lp-scrim ${panelsOpen ? 'show' : ''}`} onClick={closePanels} aria-hidden="true" />
 
-      <aside className={`lp-panel ${contactOpen ? 'open' : ''}`} aria-label="Get in touch" inert={!contactOpen}>
-        <div className="lp-panel-head">
+      <div className="lp-modal-wrap">
+        <div
+          ref={contactCardRef}
+          className={`lp-modal ${contactOpen ? 'open' : ''}`}
+          role="dialog"
+          aria-modal="true"
+          aria-label="Get in touch"
+          inert={!contactOpen}
+        >
+          <div className="lp-modal-scroll">
+        <div className="lp-modal-head">
           <h3>Get In Touch</h3>
-          <button type="button" className="lp-panel-close" onClick={closePanels} aria-label="Close">
+          <button type="button" className="lp-modal-close" onClick={closePanels} aria-label="Close">
             <svg width="20" height="20" viewBox="0 0 24 24" {...stroke}><path d="M18 6 6 18" /><path d="m6 6 12 12" /></svg>
           </button>
         </div>
-        <p className="lp-panel-lede">Drop a message. I&apos;d love to hear from you.</p>
+        <p className="lp-modal-lede">Drop a message. I&apos;d love to hear from you.</p>
         <form className="lp-form" onSubmit={handleSubmit}>
           <div className="lp-field">
             <label htmlFor="lp-name">Name *</label>
@@ -433,12 +462,23 @@ export default function Home({ fontClasses = '' }) {
             Secure &amp; private
           </p>
         </form>
-      </aside>
+          </div>
+        </div>
+      </div>
 
-      <aside className={`lp-panel lp-panel--explore ${exploreOpen ? 'open' : ''}`} aria-label="Explore" inert={!exploreOpen}>
-        <div className="lp-panel-head">
+      <div className="lp-modal-wrap">
+        <div
+          ref={exploreCardRef}
+          className={`lp-modal lp-modal--explore ${exploreOpen ? 'open' : ''}`}
+          role="dialog"
+          aria-modal="true"
+          aria-label="Explore"
+          inert={!exploreOpen}
+        >
+          <div className="lp-modal-scroll">
+        <div className="lp-modal-head">
           <h3>Explore</h3>
-          <button type="button" className="lp-panel-close" onClick={closePanels} aria-label="Close">
+          <button type="button" className="lp-modal-close" onClick={closePanels} aria-label="Close">
             <svg width="20" height="20" viewBox="0 0 24 24" {...stroke}><path d="M18 6 6 18" /><path d="m6 6 12 12" /></svg>
           </button>
         </div>
@@ -456,7 +496,9 @@ export default function Home({ fontClasses = '' }) {
             </div>
           ))}
         </div>
-      </aside>
+          </div>
+        </div>
+      </div>
 
       {/* ── about ────────────────────────────────────────── */}
       <section className="lp-section lp-about">
