@@ -359,32 +359,35 @@ export default function Home({ fontClasses = '' }) {
       <video ref={videoA} className="lp-bg" src={BG_DARK} autoPlay muted playsInline preload="auto" aria-hidden="true" />
       <video ref={videoB} className="lp-bg" src={BG_DARK} muted playsInline preload="auto" aria-hidden="true" />
 
+      {/* Nav sits outside the hero: .lp-section creates a stacking
+          context at z-index 1, so a fixed nav nested inside the hero
+          gets painted over by the later sections once you scroll. */}
+      <nav className="lp-nav">
+        <div className="lp-nav-inner lg">
+          <span className="lp-mark">si.</span>
+          <div className="lp-nav-actions">
+            <Link href="/journey" className="lp-icon-btn lg" aria-label="About Sunil" title="About Sunil">
+              <svg width="16" height="16" viewBox="0 0 24 24" {...stroke}><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" /><circle cx="12" cy="7" r="4" /></svg>
+            </Link>
+            <button type="button" onClick={(e) => { lastTrigger.current = e.currentTarget; setContactOpen(true); setExploreOpen(false); }} className="lp-icon-btn lg" aria-label="Get in touch" title="Get in touch">
+              <svg width="16" height="16" viewBox="0 0 24 24" {...stroke}><rect x="2" y="4" width="20" height="16" rx="2" /><path d="m2 7 10 6 10-6" /></svg>
+            </button>
+            <button type="button" onClick={toggleMode} className="lp-icon-btn lg" aria-label={light ? 'Switch to dark mode' : 'Switch to light mode'}>
+              {light ? (
+                <svg width="16" height="16" viewBox="0 0 24 24" {...stroke}><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" /></svg>
+              ) : (
+                <svg width="16" height="16" viewBox="0 0 24 24" {...stroke}><circle cx="12" cy="12" r="4" /><path d="M12 2v2" /><path d="M12 20v2" /><path d="M4.93 4.93l1.41 1.41" /><path d="M17.66 17.66l1.41 1.41" /><path d="M2 12h2" /><path d="M20 12h2" /><path d="M6.34 17.66l-1.41 1.41" /><path d="M19.07 4.93l-1.41 1.41" /></svg>
+              )}
+            </button>
+            <button type="button" onClick={(e) => { lastTrigger.current = e.currentTarget; setExploreOpen(true); setContactOpen(false); }} className="lp-icon-btn lg" aria-label="Explore" title="Explore">
+              <svg width="16" height="16" viewBox="0 0 24 24" {...stroke}><path d="M4 6h16" /><path d="M4 12h16" /><path d="M4 18h16" /></svg>
+            </button>
+          </div>
+        </div>
+      </nav>
+
       {/* ── hero ─────────────────────────────────────────── */}
       <section className="lp-section lp-hero">
-        <nav className="lp-nav">
-          <div className="lp-nav-inner lg">
-            <span className="lp-mark">si.</span>
-            <div className="lp-nav-actions">
-              <Link href="/journey" className="lp-icon-btn lg" aria-label="About Sunil" title="About Sunil">
-                <svg width="16" height="16" viewBox="0 0 24 24" {...stroke}><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" /><circle cx="12" cy="7" r="4" /></svg>
-              </Link>
-              <button type="button" onClick={(e) => { lastTrigger.current = e.currentTarget; setContactOpen(true); setExploreOpen(false); }} className="lp-icon-btn lg" aria-label="Get in touch" title="Get in touch">
-                <svg width="16" height="16" viewBox="0 0 24 24" {...stroke}><rect x="2" y="4" width="20" height="16" rx="2" /><path d="m2 7 10 6 10-6" /></svg>
-              </button>
-              <button type="button" onClick={toggleMode} className="lp-icon-btn lg" aria-label={light ? 'Switch to dark mode' : 'Switch to light mode'}>
-                {light ? (
-                  <svg width="16" height="16" viewBox="0 0 24 24" {...stroke}><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" /></svg>
-                ) : (
-                  <svg width="16" height="16" viewBox="0 0 24 24" {...stroke}><circle cx="12" cy="12" r="4" /><path d="M12 2v2" /><path d="M12 20v2" /><path d="M4.93 4.93l1.41 1.41" /><path d="M17.66 17.66l1.41 1.41" /><path d="M2 12h2" /><path d="M20 12h2" /><path d="M6.34 17.66l-1.41 1.41" /><path d="M19.07 4.93l-1.41 1.41" /></svg>
-                )}
-              </button>
-              <button type="button" onClick={(e) => { lastTrigger.current = e.currentTarget; setExploreOpen(true); setContactOpen(false); }} className="lp-icon-btn lg" aria-label="Explore" title="Explore">
-                <svg width="16" height="16" viewBox="0 0 24 24" {...stroke}><path d="M4 6h16" /><path d="M4 12h16" /><path d="M4 18h16" /></svg>
-              </button>
-            </div>
-          </div>
-        </nav>
-
         <div className="lp-hero-body">
           <h1 className="lp-hero-title">
             {HERO_WORDS.map((w, i) => (
