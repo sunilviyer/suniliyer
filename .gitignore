@@ -47,3 +47,6 @@ docs/
 
 # Temp files
 /tmp/
+
+# Video masters (large source renders; web variants live in public/videos/)
+/media-masters/
