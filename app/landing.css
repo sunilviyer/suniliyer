@@ -8,6 +8,11 @@
   --serif: var(--font-instrument), 'Instrument Serif', Georgia, serif;
   --sans: var(--font-barlow), 'Barlow', system-ui, sans-serif;
   --gold: #d4a04a;
+  /* Light mode sets black type over a busy cream frame; a soft white halo
+     separates the glyphs without altering any colour. Dark mode has the
+     contrast already, so it stays off. */
+  --hero-halo: none;
+
 
   --ink: #fff;
   --ink-90: rgba(255, 255, 255, 0.9);
@@ -45,11 +50,12 @@
 }
 
 .landing.is-light {
-  --ink: rgba(10, 10, 12, 0.88);
-  --ink-90: rgba(10, 10, 12, 0.8);
-  --ink-70: rgba(10, 10, 12, 0.62);
-  --ink-50: rgba(10, 10, 12, 0.5);
-  --ink-45: rgba(10, 10, 12, 0.45);
+  --hero-halo: 0 0 2px rgba(255, 255, 255, 0.95), 0 2px 16px rgba(255, 255, 255, 0.85);
+  --ink: rgba(8, 8, 10, 0.96);
+  --ink-90: rgba(8, 8, 10, 0.9);
+  --ink-70: rgba(8, 8, 10, 0.76);
+  --ink-50: rgba(8, 8, 10, 0.62);
+  --ink-45: rgba(8, 8, 10, 0.58);
   --hair: rgba(10, 10, 12, 0.14);
   --card: rgba(10, 10, 12, 0.05);
   background: #fff;
@@ -66,9 +72,9 @@
   --p-btn-ink: #fff;
 
   --hero-scrim: radial-gradient(ellipse at center,
-    rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0.38) 42%, rgba(255, 255, 255, 0) 72%);
+    rgba(255, 255, 255, 0.82) 0%, rgba(255, 255, 255, 0.6) 42%, rgba(255, 255, 255, 0) 74%);
   --hero-scrim-strong: radial-gradient(ellipse at center,
-    rgba(255, 255, 255, 0.72) 0%, rgba(255, 255, 255, 0.52) 48%, rgba(255, 255, 255, 0) 78%);
+    rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.72) 48%, rgba(255, 255, 255, 0) 80%);
 }
 
 .landing a { color: var(--ink-70); text-decoration: none; transition: color 0.25s ease; }
@@ -120,7 +126,7 @@
 
 @keyframes lp-fadeUp { from { filter: blur(10px); opacity: 0; transform: translateY(20px); } to { filter: blur(0); opacity: 1; transform: translateY(0); } }
 @keyframes lp-wordIn { from { filter: blur(10px); opacity: 0; transform: translateY(50px); } to { filter: blur(0); opacity: 1; transform: translateY(0); } }
-@keyframes lp-shimmer { 0%, 100% { opacity: 0.45; } 50% { opacity: 1; } }
+@keyframes lp-shimmer { 0%, 100% { opacity: 0.62; } 50% { opacity: 1; } }
 @keyframes lp-ripple { 0%, 24%, 100% { transform: translateY(0) scale(1); } 8% { transform: translateY(-12px) scale(1.03); } 16% { transform: translateY(2px) scale(1); } }
 @keyframes lp-colorCycle { 0%, 100% { color: #d4a04a; } 33% { color: #c96f8e; } 66% { color: #8b7fd6; } }
 
@@ -195,7 +201,7 @@
   top: 50%;
   transform: translate(-50%, -50%);
   width: min(1180px, 128%);
-  height: min(720px, 108%);
+  height: min(780px, 116%);
   background: var(--hero-scrim);
   z-index: -1;
   pointer-events: none;
@@ -214,6 +220,7 @@
   color: var(--ink);
   line-height: 0.9;
   letter-spacing: -0.03em;
+  text-shadow: var(--hero-halo);
 }
 .lp-word { display: inline-block; margin-right: 0.26em; }
 .lp-word--key { font-style: italic; color: var(--gold); }
@@ -224,6 +231,7 @@
   font-weight: 300;
   line-height: 1.6;
   max-width: 480px;
+  text-shadow: var(--hero-halo);
   animation: lp-fadeUp 0.8s ease-out 1.4s both;
 }
 .lp-cta {
@@ -233,6 +241,7 @@
   color: var(--ink);
   font-size: 14px;
   font-weight: 500;
+  text-shadow: var(--hero-halo);
   animation: lp-fadeUp 0.8s ease-out 1.6s both;
 }
 .lp-cta:hover { color: var(--ink); }
@@ -407,6 +416,7 @@
   color: var(--ink);
   line-height: 1.15;
   letter-spacing: -0.02em;
+  text-shadow: var(--hero-halo);
 }
 .lp-about-title .lp-word--key { font-family: var(--serif); }
 .landing.is-light .lp-about-title .lp-word:not(.lp-word--key) { color: rgba(10, 10, 12, 0.55); }
