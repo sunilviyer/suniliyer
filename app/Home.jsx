@@ -4,10 +4,21 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import { HomeAnalytics } from '@/components/homepage/HomeAnalytics';
 
-/* Background loop — the 28s dharma-evolution renders from the mockup. */
-const BG_DARK = '/videos/dharma-evolution-dark-28s.mp4';
-const BG_LIGHT = '/videos/dharma-evolution-light-28s.mp4';
-const CROSSFADE = 1.0; // seconds of overlap between the two <video> elements
+/* Background loop. Both renders are seamless 29.5s loops, so the browser
+   loops them natively — no crossfade needed. webm first, mp4 as fallback;
+   the poster fills the frame while a render loads and across theme swaps. */
+const BG = {
+  dark: {
+    webm: '/videos/evolution-dark-loop-web.webm',
+    mp4: '/videos/evolution-dark-loop-web.mp4',
+    poster: '/videos/evolution-dark-poster.jpg',
+  },
+  light: {
+    webm: '/videos/evolution-light-loop-web.webm',
+    mp4: '/videos/evolution-light-loop-web.mp4',
+    poster: '/videos/evolution-light-poster.jpg',
+  },
+};
 
 const HERO_WORDS = [
   { text: 'Serious' }, { text: 'about' },
@@ -158,13 +169,11 @@ function useReveal() {
 }
 
 export default function Home({ fontClasses = '' }) {
-  const videoA = useRef(null);
-  const videoB = useRef(null);
+  const bgRef = useRef(null);
   const socialsRef = useRef(null);
   const contactCardRef = useRef(null);
   const exploreCardRef = useRef(null);
   const lastTrigger = useRef(null);
-  const loopState = useRef(null);
   // the contact API rejects submissions that arrive suspiciously fast
   const mountedAt = useRef(Date.now());
 
@@ -185,88 +194,22 @@ export default function Home({ fontClasses = '' }) {
     setExploreOpen(false);
   }, []);
 
-  /* ── background: two <video>s crossfading into each other ── */
+  /* Autoplay can be refused or interrupted; nudge it until it takes. */
   useEffect(() => {
-    const a = videoA.current;
-    const b = videoB.current;
-    if (!a || !b) return;
-
-    const st = { active: a, standby: b, switching: false };
-    loopState.current = st;
-
-    const swap = () => {
-      if (st.switching) return;
-      st.switching = true;
-      st.standby.currentTime = 0;
-      st.standby.muted = true;
-      st.standby.play().then(() => {
-        st.standby.style.opacity = '1';
-        st.active.style.opacity = '0';
-        setTimeout(() => {
-          const t = st.active;
-          st.active = st.standby;
-          st.standby = t;
-          st.standby.pause();
-          st.switching = false;
-        }, CROSSFADE * 1000);
-      }).catch(() => { st.switching = false; });
-    };
-
-    // watchdog rather than 'ended': autoplay can be interrupted mid-loop
-    const watchdog = setInterval(() => {
-      const v = st.active;
-      if (st.switching) return;
-      if (v.ended) { swap(); return; }
-      if (v.paused) {
-        v.muted = true;
-        v.play().then(() => { v.style.opacity = '1'; }).catch(() => {});
-        return;
-      }
-      if (v.style.opacity !== '1') v.style.opacity = '1';
-      const remaining = v.duration - v.currentTime;
-      if (Number.isFinite(remaining) && remaining <= CROSSFADE) swap();
-    }, 250);
-
+    const v = bgRef.current;
+    if (!v) return undefined;
     let retry;
-    const tryPlay = () => {
-      if (!st.active.paused) return;
-      st.active.muted = true;
-      st.active.play()
-        .then(() => { st.active.style.opacity = '1'; })
-        .catch(() => { retry = setTimeout(tryPlay, 500); });
-    };
-    a.addEventListener('canplay', tryPlay);
-    tryPlay();
-
-    return () => {
-      clearInterval(watchdog);
-      clearTimeout(retry);
-      a.removeEventListener('canplay', tryPlay);
-    };
-  }, []);
-
-  /* ── theme toggle also swaps the loop to its light render ── */
-  const toggleMode = () => {
-    const next = !light;
-    setLight(next);
-    const src = next ? BG_LIGHT : BG_DARK;
-    const a = videoA.current;
-    const b = videoB.current;
-    const st = loopState.current;
-    if (!a || !b || !st) return;
-    st.switching = true;
-    [a, b].forEach((v) => {
-      v.style.opacity = '0';
-      v.src = src;
+    const play = () => {
       v.muted = true;
-      v.load();
-    });
-    st.active = a;
-    st.standby = b;
-    a.play()
-      .then(() => { a.style.opacity = '1'; st.switching = false; })
-      .catch(() => { st.switching = false; });
-  };
+      const p = v.play();
+      if (p && p.catch) p.catch(() => { retry = setTimeout(play, 600); });
+    };
+    v.addEventListener('canplay', play);
+    play();
+    return () => { clearTimeout(retry); v.removeEventListener('canplay', play); };
+  }, [light]);
+
+  const toggleMode = () => setLight((v) => !v);
 
   /* ── socials fade out as the hero scrolls away ── */
   useEffect(() => {
@@ -356,8 +299,23 @@ export default function Home({ fontClasses = '' }) {
     <div className={`landing ${light ? 'is-light' : ''} ${fontClasses}`}>
       <HomeAnalytics />
 
-      <video ref={videoA} className="lp-bg" src={BG_DARK} autoPlay muted playsInline preload="auto" aria-hidden="true" />
-      <video ref={videoB} className="lp-bg" src={BG_DARK} muted playsInline preload="auto" aria-hidden="true" />
+      {/* keyed on the theme so React swaps in a fresh element and the
+          browser re-picks its source; the poster covers the handover */}
+      <video
+        key={light ? 'light' : 'dark'}
+        ref={bgRef}
+        className="lp-bg"
+        poster={(light ? BG.light : BG.dark).poster}
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="auto"
+        aria-hidden="true"
+      >
+        <source src={(light ? BG.light : BG.dark).webm} type="video/webm" />
+        <source src={(light ? BG.light : BG.dark).mp4} type="video/mp4" />
+      </video>
 
       {/* Nav sits outside the hero: .lp-section creates a stacking
           context at z-index 1, so a fixed nav nested inside the hero

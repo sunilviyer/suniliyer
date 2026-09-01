@@ -133,8 +133,9 @@
   object-fit: cover;
   object-position: bottom;
   z-index: 0;
-  opacity: 0;
-  transition: opacity 1s ease;
+  /* was faded in by JS during the old crossfade; the poster covers the
+     load now, so it is simply visible */
+  opacity: 1;
   pointer-events: none;
 }
 
