@@ -12,6 +12,16 @@
      separates the glyphs without altering any colour. Dark mode has the
      contrast already, so it stays off. */
   --hero-halo: none;
+  /* The world cards and footer sit directly over the loop. The .lg glass is
+     nearly clear (0.01 alpha, 4px blur), which is fine for small chrome like
+     the nav pill but leaves body copy fighting the motion behind it. These
+     surfaces get a real frosted backdrop instead. */
+  --card-glass: rgba(10, 10, 14, 0.52);
+  --card-blur: blur(22px) saturate(115%);
+  /* The about headline sits on the loop with no surface behind it, so unlike
+     the hero it needs a halo in dark mode too — white type washes out over
+     the brighter frames. */
+  --title-halo: 0 2px 22px rgba(0, 0, 0, 0.62), 0 0 5px rgba(0, 0, 0, 0.45);
 
 
   --ink: #fff;
@@ -51,6 +61,8 @@
 
 .landing.is-light {
   --hero-halo: 0 0 2px rgba(255, 255, 255, 0.95), 0 2px 16px rgba(255, 255, 255, 0.85);
+  --card-glass: rgba(255, 255, 255, 0.66);
+  --title-halo: 0 0 2px rgba(255, 255, 255, 0.95), 0 2px 18px rgba(255, 255, 255, 0.9);
   --ink: rgba(8, 8, 10, 0.96);
   --ink-90: rgba(8, 8, 10, 0.9);
   --ink-70: rgba(8, 8, 10, 0.76);
@@ -416,13 +428,16 @@
   color: var(--ink);
   line-height: 1.15;
   letter-spacing: -0.02em;
-  text-shadow: var(--hero-halo);
+  text-shadow: var(--title-halo);
 }
 .lp-about-title .lp-word--key { font-family: var(--serif); }
 .landing.is-light .lp-about-title .lp-word:not(.lp-word--key) { color: rgba(10, 10, 12, 0.55); }
 
 .lp-worlds { max-width: 900px; margin: 80px auto 0; display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
 .lp-world {
+  background: var(--card-glass);
+  backdrop-filter: var(--card-blur);
+  -webkit-backdrop-filter: var(--card-blur);
   border-radius: 20px;
   padding: 32px;
   text-align: left;
@@ -435,7 +450,7 @@
   width: 100%;
   display: block;
 }
-.lp-world-label { margin: 0 0 12px; color: var(--ink-50); font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; }
+.lp-world-label { margin: 0 0 12px; color: var(--ink-70); font-size: 12px; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; }
 .lp-world-lede { margin: 0 0 20px; color: var(--ink-90); font-size: 15px; font-weight: 300; line-height: 1.6; }
 .lp-world-more { color: var(--ink); font-size: 14px; font-weight: 500; display: inline-flex; align-items: center; gap: 6px; }
 .lp-world-more svg { transition: transform 0.4s ease; }
@@ -470,7 +485,16 @@
   box-sizing: border-box;
 }
 .lp-footer-wrap { max-width: 1280px; margin: 0 auto; width: 100%; }
-.lp-footer { width: 100%; border-radius: 24px; padding: 40px; color: var(--ink-70); box-sizing: border-box; }
+.lp-footer {
+  width: 100%;
+  border-radius: 24px;
+  padding: 40px;
+  color: var(--ink-70);
+  box-sizing: border-box;
+  background: var(--card-glass);
+  backdrop-filter: var(--card-blur);
+  -webkit-backdrop-filter: var(--card-blur);
+}
 .lp-footer-grid { display: grid; grid-template-columns: 5fr 7fr; gap: 48px; margin-bottom: 40px; }
 .lp-footer-brand { display: flex; align-items: center; gap: 10px; margin-bottom: 16px; }
 .lp-footer-brand .lp-mark { font-size: 26px; }
