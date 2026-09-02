@@ -33,11 +33,18 @@ const strip = (html) =>
 const words = (s) => (s ? s.split(' ').filter(Boolean).length : 0);
 
 async function main() {
-  const smRes = await fetch(`${BASE}/sitemap.xml`);
+  const smRes = await fetch(`${BASE}/sitemap.xml`, { redirect: 'follow' });
   if (!smRes.ok) throw new Error(`sitemap fetch failed: ${smRes.status}`);
   const sm = await smRes.text();
   const urls = [...sm.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1]);
-  if (!urls.length) throw new Error('no <loc> entries found in sitemap');
+  if (!urls.length) {
+    // Most likely an auth wall rather than a broken sitemap: Vercel preview
+    // deployments redirect to vercel.com/sso-api and return a login page.
+    const hint = /sso|login|authenticat/i.test(sm)
+      ? ' -- the response looks like a login page, so this URL is probably protected'
+      : '';
+    throw new Error(`no <loc> entries in ${BASE}/sitemap.xml${hint}`);
+  }
 
   const failures = [];
   const queue = [...urls];

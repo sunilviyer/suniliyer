@@ -3,7 +3,7 @@ name: AI readability
 # Most AI crawlers (GPTBot, ClaudeBot, PerplexityBot) do not execute JavaScript.
 # This fails if any sitemap page stops serving its content as plain HTML.
 #
-# It checks the URL Vercel just deployed rather than building here: the build
+# It checks the deployed production URL rather than building here: the build
 # needs a database connection string that CI has no business holding, and
 # testing the real deployment is a truer check anyway.
 on:
@@ -15,8 +15,16 @@ on:
 
 jobs:
   check:
-    # only once Vercel reports the deployment is live
-    if: github.event_name != 'deployment_status' || github.event.deployment_status.state == 'success'
+    # Production deployments only. Vercel preview URLs sit behind SSO and
+    # redirect to vercel.com/sso-api, so the check cannot read them without
+    # bypass credentials -- which CI should not hold. The trade-off: a
+    # regression is caught minutes after it reaches production rather than
+    # before merge. Run `npm run check:ai-readable -- <url>` locally to check
+    # a branch before merging.
+    if: >-
+      github.event_name != 'deployment_status' ||
+      (github.event.deployment_status.state == 'success' &&
+       contains(github.event.deployment_status.environment_url, 'suniliyer.ca'))
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
