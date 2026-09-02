@@ -17,7 +17,7 @@
      the nav pill but leaves body copy fighting the motion behind it. These
      surfaces get a real frosted backdrop instead. */
   --card-glass: rgba(10, 10, 14, 0.52);
-  --card-blur: blur(22px) saturate(115%);
+  --card-blur: blur(15px) saturate(112%);
   /* The about headline sits on the loop with no surface behind it, so unlike
      the hero it needs a halo in dark mode too — white type washes out over
      the brighter frames. */
@@ -61,7 +61,7 @@
 
 .landing.is-light {
   --hero-halo: 0 0 2px rgba(255, 255, 255, 0.95), 0 2px 16px rgba(255, 255, 255, 0.85);
-  --card-glass: rgba(255, 255, 255, 0.66);
+  --card-glass: rgba(255, 255, 255, 0.52);
   --title-halo: 0 0 2px rgba(255, 255, 255, 0.95), 0 2px 18px rgba(255, 255, 255, 0.9);
   --ink: rgba(8, 8, 10, 0.96);
   --ink-90: rgba(8, 8, 10, 0.9);
@@ -84,9 +84,9 @@
   --p-btn-ink: #fff;
 
   --hero-scrim: radial-gradient(ellipse at center,
-    rgba(255, 255, 255, 0.82) 0%, rgba(255, 255, 255, 0.6) 42%, rgba(255, 255, 255, 0) 74%);
+    rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0.42) 42%, rgba(255, 255, 255, 0) 74%);
   --hero-scrim-strong: radial-gradient(ellipse at center,
-    rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.72) 48%, rgba(255, 255, 255, 0) 80%);
+    rgba(255, 255, 255, 0.74) 0%, rgba(255, 255, 255, 0.55) 48%, rgba(255, 255, 255, 0) 80%);
 }
 
 .landing a { color: var(--ink-70); text-decoration: none; transition: color 0.25s ease; }
@@ -133,8 +133,18 @@
 }
 
 /* ── motion ───────────────────────────────────────────────── */
-.reveal { opacity: 0; transform: translateY(40px); filter: blur(8px); transition: opacity 0.9s ease, transform 0.9s ease, filter 0.9s ease; }
-.reveal.in { opacity: 1; transform: translateY(0); filter: blur(0); }
+/* opacity + transform only: both composite on the GPU. This used to animate
+   filter: blur(8px) as well, which repainted each card and the footer every
+   frame of a 0.9s transition — the stutter on the first scroll past them. */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+.reveal.in { opacity: 1; transform: translateY(0); }
+/* drop the compositing hint once the transition can no longer run */
+.reveal.in { will-change: auto; }
 
 @keyframes lp-fadeUp { from { filter: blur(10px); opacity: 0; transform: translateY(20px); } to { filter: blur(0); opacity: 1; transform: translateY(0); } }
 @keyframes lp-wordIn { from { filter: blur(10px); opacity: 0; transform: translateY(50px); } to { filter: blur(0); opacity: 1; transform: translateY(0); } }
@@ -155,6 +165,10 @@
      load now, so it is simply visible */
   opacity: 1;
   pointer-events: none;
+  /* own layer: the page scrolls over it instead of repainting it, and the
+     frosted surfaces above sample a stable texture */
+  transform: translateZ(0);
+  backface-visibility: hidden;
 }
 
 .lp-section { position: relative; z-index: 1; }
@@ -530,5 +544,5 @@
 @media (prefers-reduced-motion: reduce) {
   .landing *,
   .landing *::before { animation: none !important; transition-duration: 0.01ms !important; }
-  .reveal { opacity: 1; transform: none; filter: none; }
+  .reveal { opacity: 1; transform: none; }
 }
