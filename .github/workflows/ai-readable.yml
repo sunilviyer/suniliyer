@@ -1,0 +1,39 @@
+name: AI readability
+
+# Most AI crawlers (GPTBot, ClaudeBot, PerplexityBot) do not execute JavaScript.
+# This fails if any sitemap page stops serving its content as plain HTML.
+#
+# It checks the deployed production URL rather than building here: the build
+# needs a database connection string that CI has no business holding, and
+# testing the real deployment is a truer check anyway.
+on:
+  deployment_status:
+  schedule:
+    # weekly, so a content change that blanks a page is caught without a push
+    - cron: '0 9 * * 1'
+  workflow_dispatch:
+
+jobs:
+  check:
+    # Production deployments only. Vercel preview URLs sit behind SSO and
+    # redirect to vercel.com/sso-api, so the check cannot read them without
+    # bypass credentials -- which CI should not hold. The trade-off: a
+    # regression is caught minutes after it reaches production rather than
+    # before merge. Run `npm run check:ai-readable -- <url>` locally to check
+    # a branch before merging.
+    if: >-
+      github.event_name != 'deployment_status' ||
+      (github.event.deployment_status.state == 'success' &&
+       contains(github.event.deployment_status.environment_url, 'suniliyer.ca'))
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Check every sitemap page is readable without JavaScript
+        # the script uses only built-in fetch, so no install step is needed
+        env:
+          TARGET: ${{ github.event.deployment_status.environment_url || 'https://www.suniliyer.ca' }}
+        run: node scripts/check-ai-readable.mjs "$TARGET"
