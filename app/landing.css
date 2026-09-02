@@ -18,6 +18,8 @@
      surfaces get a real frosted backdrop instead. */
   --card-glass: rgba(10, 10, 14, 0.52);
   --card-blur: blur(15px) saturate(112%);
+  --card-glass-hover: rgba(14, 14, 19, 0.62);
+  --card-lift: rgba(0, 0, 0, 0.42);
   /* The about headline sits on the loop with no surface behind it, so unlike
      the hero it needs a halo in dark mode too — white type washes out over
      the brighter frames. */
@@ -62,6 +64,8 @@
 .landing.is-light {
   --hero-halo: 0 0 2px rgba(255, 255, 255, 0.95), 0 2px 16px rgba(255, 255, 255, 0.85);
   --card-glass: rgba(255, 255, 255, 0.52);
+  --card-glass-hover: rgba(255, 255, 255, 0.66);
+  --card-lift: rgba(20, 20, 30, 0.18);
   --title-halo: 0 0 2px rgba(255, 255, 255, 0.95), 0 2px 18px rgba(255, 255, 255, 0.9);
   --ink: rgba(8, 8, 10, 0.96);
   --ink-90: rgba(8, 8, 10, 0.9);
@@ -158,6 +162,11 @@
   inset: 0;
   width: 100%;
   height: 100%;
+  /* iOS grows the visual viewport as the toolbar collapses, leaving a strip
+     of page background below a 100%-tall fixed element. Invisible in dark
+     mode (black on black), a visible cut in light mode. lvh is the viewport
+     with the toolbar hidden, so the video always covers and crops instead. */
+  height: 100lvh;
   object-fit: cover;
   object-position: bottom;
   z-index: 0;
@@ -203,7 +212,15 @@
 .lp-icon-btn:hover { color: var(--ink); }
 
 /* ── hero ─────────────────────────────────────────────────── */
-.lp-hero { min-height: 100vh; display: flex; flex-direction: column; }
+/* svh = viewport with the toolbars showing, i.e. the worst case. Sizing to
+   it means the social row is on screen at first paint rather than below the
+   fold, which is also what made it look like it "appeared then vanished". */
+.lp-hero {
+  min-height: 100vh;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+}
 .lp-hero-body {
   position: relative;
   z-index: 10;
@@ -248,7 +265,7 @@
   letter-spacing: -0.03em;
   text-shadow: var(--hero-halo);
 }
-.lp-word { display: inline-block; margin-right: 0.26em; }
+.lp-word { display: inline-block; margin-right: 0.26em; padding-bottom: 0.09em; }
 .lp-word--key { font-style: italic; color: var(--gold); }
 .lp-hero-sub {
   margin: 20px 0 0;
@@ -455,6 +472,11 @@
 
 .lp-worlds { max-width: 900px; margin: 80px auto 0; display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
 .lp-world {
+  /* covers both the reveal (slow) and the hover lift (quick) */
+  transition: opacity 0.7s ease,
+              transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+              box-shadow 0.45s ease,
+              background-color 0.35s ease;
   background: var(--card-glass);
   backdrop-filter: var(--card-blur);
   -webkit-backdrop-filter: var(--card-blur);
@@ -474,6 +496,15 @@
 .lp-world-lede { margin: 0 0 20px; color: var(--ink-90); font-size: 15px; font-weight: 300; line-height: 1.6; }
 .lp-world-more { color: var(--ink); font-size: 14px; font-weight: 500; display: inline-flex; align-items: center; gap: 6px; }
 .lp-world-more svg { transition: transform 0.4s ease; }
+/* lift on hover, settle on press; .in keeps it from fighting the reveal */
+.lp-world.in:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 22px 48px var(--card-lift);
+  background: var(--card-glass-hover);
+}
+.lp-world.in:active { transform: translateY(-2px); transition-duration: 0.12s; }
+.lp-world.in:hover .lp-world-more svg { transform: translateY(3px); }
+.lp-world.open.in:hover .lp-world-more svg { transform: rotate(180deg) translateY(3px); }
 .lp-world.open .lp-world-more svg { transform: rotate(180deg); }
 .lp-world-drawer { display: grid; grid-template-rows: 0fr; transition: grid-template-rows 0.6s cubic-bezier(0.22, 1, 0.36, 1); }
 .lp-world.open .lp-world-drawer { grid-template-rows: 1fr; }
@@ -533,7 +564,12 @@
 /* ── responsive ──────────────────────────────────────────── */
 @media (max-width: 860px) {
   .lp-nav-inner { padding: 10px 16px; }
-  .lp-hero-title { font-size: clamp(40px, 12vw, 64px); }
+  .lp-hero-title { font-size: clamp(40px, 12vw, 64px); line-height: 0.98; }
+  .lp-hero-body { padding: 96px 20px 16px; }
+  .lp-hero-sub { margin-top: 14px; }
+  .lp-cta { margin-top: 18px; }
+  .lp-socials { padding-bottom: 26px; gap: 14px; }
+  .lp-social { padding: 13px; }
   .lp-hero-body::before { width: 150%; height: 92%; background: var(--hero-scrim-strong); }
   .lp-worlds { grid-template-columns: 1fr; }
   .lp-footer-grid { grid-template-columns: 1fr; gap: 32px; }
