@@ -50,3 +50,6 @@ docs/
 
 # Video masters (large source renders; web variants live in public/videos/)
 /media-masters/
+
+# Playwright MCP run artifacts (snapshots, console logs)
+.playwright-mcp/

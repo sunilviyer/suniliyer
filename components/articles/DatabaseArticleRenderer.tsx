@@ -1,6 +1,7 @@
 'use client';
 
-import React, { useMemo, useState, useEffect } from 'react';
+import React, { useMemo } from 'react';
+import { parse as parseHTML, type HTMLElement as ParsedElement, type Node as ParsedNode, type TextNode } from 'node-html-parser';
 import { InlineContextCard } from './InlineContextCard';
 import { KeyLearnings } from './KeyLearnings';
 import { Accordion } from './Accordion';
@@ -147,13 +148,19 @@ function renderResourceItem(item: ResourceItem, index: number, isSource: boolean
 /**
  * Recursively process DOM nodes and replace card markers with React components
  */
-function processNode(node: ChildNode, keyPrefix: string = ''): React.ReactNode[] {
+// node-html-parser mirrors the DOM's numeric nodeType values, but the `Node`
+// global does not exist on the server, so the constants are inlined.
+const TEXT_NODE = 3;
+const ELEMENT_NODE = 1;
+
+function processNode(node: ParsedNode, keyPrefix: string = ''): React.ReactNode[] {
   const results: React.ReactNode[] = [];
   let keyCounter = 0;
 
-  if (node.nodeType === Node.TEXT_NODE) {
-    // Text node - check for card markers
-    const text = node.textContent || '';
+  if (node.nodeType === TEXT_NODE) {
+    // Text node - check for card markers. `.text` decodes entities, which is
+    // what DOMParser used to do for us.
+    const text = (node as TextNode).text || '';
     const cardPattern = /\{\{CARD\|([^|]+)\|([^}]+)\}\}/g;
     let lastIndex = 0;
     let match;
@@ -200,10 +207,10 @@ function processNode(node: ChildNode, keyPrefix: string = ''): React.ReactNode[]
     }
 
     return results;
-  } else if (node.nodeType === Node.ELEMENT_NODE) {
+  } else if (node.nodeType === ELEMENT_NODE) {
     // Element node - recursively process children
-    const element = node as Element;
-    const tagName = element.tagName.toLowerCase();
+    const element = node as ParsedElement;
+    const tagName = element.rawTagName.toLowerCase();
     const children: React.ReactNode[] = [];
 
     // Process all child nodes
@@ -217,16 +224,16 @@ function processNode(node: ChildNode, keyPrefix: string = ''): React.ReactNode[]
       key: `${keyPrefix}-${tagName}-${keyCounter++}`,
     };
 
-    Array.from(element.attributes).forEach((attr) => {
+    Object.entries(element.attributes).forEach(([attrName, attrValue]) => {
       // Convert HTML attributes to React props
-      let propName = attr.name;
+      let propName = attrName;
       if (propName === 'class') propName = 'className';
       if (propName === 'for') propName = 'htmlFor';
 
       // Handle style attribute
-      if (propName === 'style' && typeof attr.value === 'string') {
+      if (propName === 'style' && typeof attrValue === 'string') {
         const styleObj: Record<string, string> = {};
-        attr.value.split(';').forEach((style) => {
+        attrValue.split(';').forEach((style) => {
           const [key, value] = style.split(':').map((s) => s.trim());
           if (key && value) {
             // Convert kebab-case to camelCase
@@ -236,7 +243,7 @@ function processNode(node: ChildNode, keyPrefix: string = ''): React.ReactNode[]
         });
         props.style = styleObj;
       } else {
-        props[propName] = attr.value;
+        props[propName] = attrValue;
       }
     });
 
@@ -249,12 +256,13 @@ function processNode(node: ChildNode, keyPrefix: string = ''): React.ReactNode[]
 
 /**
  * Parse HTML content and replace {{CARD|cardId|trigger}} markers with React components
- * Note: DOMParser automatically decodes HTML entities like &apos; to '
+ * Note: the parser decodes HTML entities like &apos; to ' for us.
  */
 function parseContentWithCards(htmlContent: string): React.ReactNode[] {
-  const parser = new DOMParser();
-  const doc = parser.parseFromString(`<div>${htmlContent}</div>`, 'text/html');
-  const container = doc.body.firstChild;
+  // node-html-parser rather than DOMParser: DOMParser is browser-only, which
+  // is why this used to be deferred to a client-side effect and left the prose
+  // out of the server HTML entirely.
+  const container = parseHTML(`<div>${htmlContent}</div>`).firstChild as ParsedElement | null;
 
   if (!container) {
     return [];
@@ -275,39 +283,18 @@ export function DatabaseArticleRenderer({
   additionalResources,
   sources,
 }: DatabaseArticleRendererProps) {
-  const [isMounted, setIsMounted] = useState(false);
-  const [isContentReady, setIsContentReady] = useState(false);
-
-  useEffect(() => {
-    setIsMounted(true);
-    // Small delay to ensure smooth transition
-    setTimeout(() => setIsContentReady(true), 50);
-  }, []);
-
-  // Parse content only on client after mount
-  const parsedContent = useMemo(() => {
-    if (!isMounted) return null;
-    return parseContentWithCards(content);
-  }, [content, isMounted]);
+  // Parsed during render on both server and client. parseContentWithCards and
+  // decodeHTMLEntities are pure string work -- no document/window -- so this
+  // server-renders. It used to be gated behind an isMounted effect, which meant
+  // the server emitted only a loading skeleton and the prose existed nowhere in
+  // the HTML: fine for Googlebot, which renders JS, invisible to AI crawlers,
+  // which mostly do not.
+  const parsedContent = useMemo(() => parseContentWithCards(content), [content]);
 
   return (
     <>
       {/* Main Content */}
-      <div className="database-article-content" suppressHydrationWarning>
-        {!isContentReady ? (
-          <div className="article-loading-skeleton">
-            <div className="skeleton-line skeleton-title"></div>
-            <div className="skeleton-line"></div>
-            <div className="skeleton-line"></div>
-            <div className="skeleton-line skeleton-short"></div>
-            <div className="skeleton-line"></div>
-            <div className="skeleton-line"></div>
-            <div className="skeleton-line skeleton-short"></div>
-          </div>
-        ) : (
-          parsedContent
-        )}
-      </div>
+      <div className="database-article-content">{parsedContent}</div>
 
       {/* Key Learnings */}
       {keyLearnings && keyLearnings.length > 0 && (
@@ -344,62 +331,6 @@ export function DatabaseArticleRenderer({
           display: inline !important;
         }
 
-        .article-loading-skeleton {
-          padding: 40px 0;
-          animation: fadeIn 0.3s ease-in;
-        }
-
-        @keyframes fadeIn {
-          from {
-            opacity: 0;
-          }
-          to {
-            opacity: 1;
-          }
-        }
-
-        .skeleton-line {
-          height: 20px;
-          background: linear-gradient(
-            90deg,
-            rgba(147, 102, 57, 0.06) 0%,
-            rgba(147, 102, 57, 0.12) 50%,
-            rgba(147, 102, 57, 0.06) 100%
-          );
-          background-size: 200% 100%;
-          animation: shimmer 1.5s infinite;
-          border-radius: 4px;
-          margin-bottom: 16px;
-        }
-
-        .skeleton-line.skeleton-title {
-          height: 32px;
-          width: 60%;
-          margin-bottom: 32px;
-        }
-
-        .skeleton-line.skeleton-short {
-          width: 80%;
-        }
-
-        @keyframes shimmer {
-          0% {
-            background-position: 200% 0;
-          }
-          100% {
-            background-position: -200% 0;
-          }
-        }
-
-        [data-theme='dark'] .skeleton-line {
-          background: linear-gradient(
-            90deg,
-            rgba(147, 102, 57, 0.1) 0%,
-            rgba(147, 102, 57, 0.15) 50%,
-            rgba(147, 102, 57, 0.1) 100%
-          );
-          background-size: 200% 100%;
-        }
       `}</style>
     </>
   );

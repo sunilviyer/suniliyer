@@ -10,7 +10,8 @@
     "start": "next start",
     "lint": "next lint",
     "type-check": "tsc --noEmit",
-    "generate-article-mapping": "node scripts/generate-article-mapping.js"
+    "generate-article-mapping": "node scripts/generate-article-mapping.js",
+    "check:ai-readable": "node scripts/check-ai-readable.mjs"
   },
   "dependencies": {
     "@neondatabase/serverless": "^1.0.2",
@@ -21,6 +22,7 @@
     "gsap": "^3.12.5",
     "lucide-react": "^0.563.0",
     "next": "^15.1.3",
+    "node-html-parser": "^9.0.2",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-markdown": "^10.1.0",

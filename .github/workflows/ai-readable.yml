@@ -1,0 +1,35 @@
+name: AI readability
+
+# Most AI crawlers (GPTBot, ClaudeBot, PerplexityBot) do not execute JavaScript.
+# This fails if any sitemap page stops serving its content as plain HTML.
+on:
+  push:
+    branches: [main]
+  pull_request:
+  schedule:
+    # weekly, so a CMS/content change that blanks a page is caught even
+    # when nobody has pushed
+    - cron: '0 9 * * 1'
+  workflow_dispatch:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      # PRs run against the built site locally, so a regression is caught
+      # before it ships rather than after.
+      - name: Install
+        run: npm ci
+      - name: Build
+        run: npm run build
+      - name: Start
+        run: |
+          npm run start &
+          npx wait-on http://localhost:3000 --timeout 120000
+      - name: Check every sitemap page is readable without JavaScript
+        run: node scripts/check-ai-readable.mjs http://localhost:3000
