@@ -271,7 +271,13 @@
   animation: lp-fadeUp 0.8s ease-out 1.6s both;
 }
 .lp-cta:hover { color: var(--ink); }
+/* No scroll-driven fade here. The row sits in flow at the foot of the hero,
+   so it scrolls away on its own; fading it by scrollY made it vanish while
+   still on screen — the act of scrolling to see it was what erased it — and
+   toggling visibility mid-scroll disturbed the browser's scroll anchor.
+   overflow-anchor is off so this row is never chosen as the anchor. */
 .lp-socials {
+  overflow-anchor: none;
   position: relative;
   z-index: 10;
   display: flex;
