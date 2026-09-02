@@ -213,15 +213,29 @@ export default function Home({ fontClasses = '' }) {
 
   /* ── socials fade out as the hero scrolls away ── */
   useEffect(() => {
-    const onScroll = () => {
+    let frame = 0;
+    let last = -1;
+    const apply = () => {
+      frame = 0;
       const el = socialsRef.current;
       if (!el) return;
       const p = Math.max(0, 1 - window.scrollY / (window.innerHeight * 0.35));
-      el.style.opacity = String(p);
-      el.style.visibility = p === 0 ? 'hidden' : 'visible';
+      // skip the write when it would not change anything visible; scroll
+      // fires far more often than the opacity meaningfully moves
+      const q = Math.round(p * 100) / 100;
+      if (q === last) return;
+      last = q;
+      el.style.opacity = String(q);
+      el.style.visibility = q === 0 ? 'hidden' : 'visible';
     };
+    // coalesce to one write per frame instead of one per scroll event
+    const onScroll = () => { if (!frame) frame = requestAnimationFrame(apply); };
     window.addEventListener('scroll', onScroll, { passive: true });
-    return () => window.removeEventListener('scroll', onScroll);
+    apply();
+    return () => {
+      if (frame) cancelAnimationFrame(frame);
+      window.removeEventListener('scroll', onScroll);
+    };
   }, []);
 
   useEffect(() => {
