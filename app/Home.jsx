@@ -170,7 +170,6 @@ function useReveal() {
 
 export default function Home({ fontClasses = '' }) {
   const bgRef = useRef(null);
-  const socialsRef = useRef(null);
   const contactCardRef = useRef(null);
   const exploreCardRef = useRef(null);
   const lastTrigger = useRef(null);
@@ -210,33 +209,6 @@ export default function Home({ fontClasses = '' }) {
   }, [light]);
 
   const toggleMode = () => setLight((v) => !v);
-
-  /* ── socials fade out as the hero scrolls away ── */
-  useEffect(() => {
-    let frame = 0;
-    let last = -1;
-    const apply = () => {
-      frame = 0;
-      const el = socialsRef.current;
-      if (!el) return;
-      const p = Math.max(0, 1 - window.scrollY / (window.innerHeight * 0.35));
-      // skip the write when it would not change anything visible; scroll
-      // fires far more often than the opacity meaningfully moves
-      const q = Math.round(p * 100) / 100;
-      if (q === last) return;
-      last = q;
-      el.style.opacity = String(q);
-      el.style.visibility = q === 0 ? 'hidden' : 'visible';
-    };
-    // coalesce to one write per frame instead of one per scroll event
-    const onScroll = () => { if (!frame) frame = requestAnimationFrame(apply); };
-    window.addEventListener('scroll', onScroll, { passive: true });
-    apply();
-    return () => {
-      if (frame) cancelAnimationFrame(frame);
-      window.removeEventListener('scroll', onScroll);
-    };
-  }, []);
 
   useEffect(() => {
     if (!contactOpen && !exploreOpen) return undefined;
@@ -380,7 +352,7 @@ export default function Home({ fontClasses = '' }) {
           <Link href="/constitution" className="lp-cta lg">Read the AGI Constitution</Link>
         </div>
 
-        <div className="lp-socials" ref={socialsRef}>
+        <div className="lp-socials">
           {SOCIALS.map((s) => (
             <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer" className="lp-social lg" aria-label={s.label}>
               <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d={s.path} /></svg>
