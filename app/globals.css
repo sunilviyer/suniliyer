@@ -196,3 +196,22 @@ a.card-arrow-btn:hover {
     animation: pulse-glow 2s ease-in-out infinite;
   }
 }
+
+/* Was a styled-jsx block inside DatabaseArticleRenderer; moved here when that
+   component became a Server Component (styled-jsx requires a client one). */
+.inline-card-placeholder {
+  display: inline !important;
+}
+
+/* Resource / source links in articles. Was an inline style plus onMouseEnter
+   and onMouseLeave, which a Server Component cannot attach -- and which did
+   nothing before hydration anyway. CSS :hover works immediately. */
+.article-resource-link {
+  color: #936639;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(147, 102, 57, 0.3);
+  transition: border-color 0.2s ease;
+}
+.article-resource-link:hover {
+  border-bottom-color: #936639;
+}

@@ -33,8 +33,21 @@ const strip = (html) =>
 const words = (s) => (s ? s.split(' ').filter(Boolean).length : 0);
 
 async function main() {
-  const smRes = await fetch(`${BASE}/sitemap.xml`, { redirect: 'follow' });
-  if (!smRes.ok) throw new Error(`sitemap fetch failed: ${smRes.status}`);
+  let smRes;
+  try {
+    smRes = await fetch(`${BASE}/sitemap.xml`, { redirect: 'follow' });
+  } catch (err) {
+    // "fetch failed" on its own is useless; the usual cause is that nothing is
+    // listening, so say which URL was tried and how to start one.
+    throw new Error(
+      `could not reach ${BASE} (${err.cause?.code || err.message}).\n` +
+      `  Is a server running there? Try:\n` +
+      `    npm run dev                              # then check http://localhost:3000\n` +
+      `    npm run build && npm run start           # production build on :3000\n` +
+      `    npm run check:ai-readable                # check live production instead`
+    );
+  }
+  if (!smRes.ok) throw new Error(`sitemap fetch failed: HTTP ${smRes.status} from ${BASE}/sitemap.xml`);
   const sm = await smRes.text();
   const urls = [...sm.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1]);
   if (!urls.length) {

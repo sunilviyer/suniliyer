@@ -1,6 +1,10 @@
-'use client';
+/**
+ * Server Component. It is rendered by each article's server page and handed to
+ * the client ArticlePageWrapper as children, so nothing forces it client-side --
+ * which keeps node-html-parser out of the browser bundle entirely.
+ */
 
-import React, { useMemo } from 'react';
+import React from 'react';
 import { parse as parseHTML, type HTMLElement as ParsedElement, type Node as ParsedNode, type TextNode } from 'node-html-parser';
 import { InlineContextCard } from './InlineContextCard';
 import { KeyLearnings } from './KeyLearnings';
@@ -109,18 +113,7 @@ function renderResourceItem(item: ResourceItem, index: number, isSource: boolean
           href={url}
           target="_blank"
           rel="noopener noreferrer"
-          style={{
-            color: '#936639',
-            textDecoration: 'none',
-            borderBottom: '1px solid rgba(147, 102, 57, 0.3)',
-            transition: 'border-color 0.2s ease',
-          }}
-          onMouseEnter={(e) => {
-            e.currentTarget.style.borderBottomColor = '#936639';
-          }}
-          onMouseLeave={(e) => {
-            e.currentTarget.style.borderBottomColor = 'rgba(147, 102, 57, 0.3)';
-          }}
+          className="article-resource-link"
         >
           {displayTitle}
         </a>
@@ -289,7 +282,7 @@ export function DatabaseArticleRenderer({
   // the server emitted only a loading skeleton and the prose existed nowhere in
   // the HTML: fine for Googlebot, which renders JS, invisible to AI crawlers,
   // which mostly do not.
-  const parsedContent = useMemo(() => parseContentWithCards(content), [content]);
+  const parsedContent = parseContentWithCards(content);
 
   return (
     <>
@@ -326,12 +319,6 @@ export function DatabaseArticleRenderer({
         </div>
       )}
 
-      <style jsx global>{`
-        .inline-card-placeholder {
-          display: inline !important;
-        }
-
-      `}</style>
     </>
   );
 }
