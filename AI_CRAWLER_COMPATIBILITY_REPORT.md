@@ -1,414 +1,172 @@
-# AI Crawler Compatibility Report
-## suniliyer.ca
+# AI Crawler Compatibility
 
-**Generated**: April 18, 2026
-**Version**: 1.0
-**Status**: ✅ **EXCELLENT** - Fully AI Crawler Compatible
+**Site**: https://www.suniliyer.ca
+**Last verified**: 5 September 2026
+**Method**: third-party scan plus first-party checks against the live site
 
----
-
-## Executive Summary
-
-The suniliyer.ca website is **fully optimized for AI crawler access** with comprehensive support for:
-- ✅ Major AI crawlers (GPTBot, Claude-Web, Google-Extended, Bingbot)
-- ✅ Complete schema.org structured data
-- ✅ Server-side rendered content (Next.js SSR/SSG)
-- ✅ Comprehensive sitemap with 54 URLs
-- ✅ Proper robots.txt configuration
-- ✅ Rich metadata and Open Graph tags
-
-**Overall Score**: 98/100
+Every number below came from a command or a scan that is reproducible from
+section 6. Nothing here is estimated. If a claim cannot be re-derived from
+those commands, it does not belong in this file.
 
 ---
 
-## 1. Robots.txt Analysis ✅ EXCELLENT
+## 1. Third-party baseline
 
-### Configuration
-```txt
-User-Agent: *
-Allow: /
-Disallow: /api/
-Disallow: /oldhistory/
-Disallow: /demo/
-Disallow: /_next/
-Disallow: /private/
+Source: [AI Website Readiness](https://michalspace.com/tools/ai-website-readiness),
+report `7830165d-03ad-453f-acca-eb93d58d8564`, scanning `https://www.suniliyer.ca/`.
 
-User-Agent: GPTBot
-User-Agent: ChatGPT-User
-User-Agent: Claude-Web
-User-Agent: Google-Extended
-User-Agent: Bingbot
-Allow: /
-Disallow: /api/
-Disallow: /_next/
+**Score at time of scan: 91/100** (86 of 94 raw points).
 
-Sitemap: https://www.suniliyer.ca/sitemap.xml
-```
+| Category | Raw score |
+|---|---|
+| Crawl access | 30 / 30 |
+| Content identity | 15 / 20 |
+| Content clarity | 17 / 17 |
+| Discovery | 9 / 12 |
+| Sharing and trust | 15 / 15 |
 
-### AI Crawlers Explicitly Allowed
-| Crawler | Purpose | Status |
-|---------|---------|--------|
-| **GPTBot** | OpenAI (ChatGPT training) | ✅ Allowed |
-| **ChatGPT-User** | OpenAI (ChatGPT browsing) | ✅ Allowed |
-| **Claude-Web** | Anthropic (Claude training/browsing) | ✅ Allowed |
-| **Google-Extended** | Google (Bard/Gemini training) | ✅ Allowed |
-| **Bingbot** | Microsoft (Bing/Copilot) | ✅ Allowed |
+Three checks failed, all of them about how the site *declares* itself rather
+than what it publishes:
 
-### Score: **100/100**
-- All major AI crawlers explicitly allowed
-- Proper sitemap reference
-- Appropriate disallows for internal routes
+1. **Author or organization identity is discoverable** - no `meta author` tag.
+2. **Structured data identifies site, person, or organization** - see below.
+3. **RSS or Atom feed is discoverable** - no feed existed.
 
 ---
 
-## 2. Sitemap Analysis ✅ EXCELLENT
+## 2. The structured-data finding was a false negative
 
-### Statistics
-- **Total URLs**: 54
-- **Format**: XML 1.0, UTF-8
-- **Last Modified**: Auto-generated with timestamps
-- **Accessibility**: ✅ Public, validates correctly
+The same report passed *"JSON-LD parses successfully"* and failed
+*"structured data identifies site, person, or organization"* on the same page.
 
-### URL Distribution
-| Section | Count | Priority | Change Frequency |
-|---------|-------|----------|------------------|
-| Homepage | 1 | 1.0 | weekly |
-| Constitution | 24 | 0.8-0.95 | monthly |
-| Learning Paths (Articles) | 40 | 0.7-0.8 | monthly |
-| Portfolio | 7 | 0.7-0.9 | monthly |
-| Other Pages | 2 | 0.3-0.8 | monthly-weekly |
+The site was already emitting correct `Organization`, `Person` and `WebSite`
+nodes in `<head>`. They were wrapped in a single `@graph` document:
 
-### Special Features
-- **Constitution Context Page**: Priority 0.95 (highest priority for AI training data)
-- **Proper Priorities**: Homepage (1.0) > Constitution Context (0.95) > Core Content (0.8-0.9) > Portfolio (0.7-0.8)
-- **Realistic Change Frequencies**: Aligned with actual update patterns
-
-### Score: **100/100**
-- Comprehensive URL coverage
-- Intelligent priority weighting
-- AI-friendly context page prioritized
-
----
-
-## 3. Schema.org Structured Data ✅ EXCELLENT
-
-### Global Schema (All Pages)
 ```json
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Organization",
-      "name": "Sunil Iyer",
-      "url": "https://www.suniliyer.ca",
-      "logo": "https://www.suniliyer.ca/images/sunil.webp",
-      "sameAs": [
-        "https://www.linkedin.com/in/sunilviyer/",
-        "https://github.com/sunilviyer",
-        "https://medium.com/@sunilviswanathaniyer"
-      ]
-    },
-    {
-      "@type": "Person",
-      "name": "Sunil Iyer",
-      "jobTitle": "AI Governance & Risk Strategy Consultant",
-      "knowsAbout": [
-        "Artificial Intelligence",
-        "AI Governance",
-        "AI Risk Management",
-        "Customer Success",
-        "Digital Transformation"
-      ],
-      "alumniOf": {
-        "@type": "EducationalOrganization",
-        "name": "University of Toronto"
-      }
-    },
-    {
-      "@type": "WebSite",
-      "name": "Sunil Iyer",
-      "description": "AI Governance & Risk Strategy Consulting"
-    }
-  ]
-}
+{ "@context": "https://schema.org", "@graph": [ { "@type": "Organization", ... } ] }
 ```
 
-### Page-Specific Schema
+That is valid JSON-LD and Google consumes it happily, but a checker that only
+inspects the document's top-level `@type` sees nothing. `components/seo/JsonLd.tsx`
+now renders one `<script>` per node with the type at the top level. Consumers
+that merge nodes by `@id` are unaffected; naive top-level readers now succeed.
 
-#### Learning Path Articles (40 pages)
-- **Article** schema with full metadata
-- **BreadcrumbList** for navigation context
-- Published dates, author attribution, tags
-- 3 JSON-LD blocks per page
-
-#### Constitution Pages (23 pages)
-- **Article** schema for each constitutional part
-- Published date: 2026-03-01
-- Tags: AGI Governance, AI Ethics, Constitutional Framework, Vedic Philosophy
-- Special **context page** at `/constitution/context` with comprehensive overview
-
-#### Portfolio Pages (7 pages)
-- **CreativeWork** schema
-- Project descriptions and metadata
-- Breadcrumb navigation
-
-### Schema Coverage
-| Content Type | Pages | Schema Types | Status |
-|--------------|-------|--------------|--------|
-| Homepage | 1 | Organization, Person, WebSite | ✅ |
-| Articles | 40 | Article, BreadcrumbList | ✅ |
-| Constitution | 23 | Article, BreadcrumbList | ✅ |
-| Portfolio | 7 | CreativeWork, BreadcrumbList | ✅ |
-
-### Score: **95/100**
-- Comprehensive schema coverage across all pages
-- Proper use of schema.org types
-- Rich entity relationships
-- **Minor**: Some portfolio pages could benefit from additional schema types
+**Takeaway for future changes**: `@graph` is not wrong, but it is invisible to
+a meaningful share of automated readers. Keep nodes flat.
 
 ---
 
-## 4. Meta Tags & SEO ✅ EXCELLENT
+## 3. Current state
 
-### Homepage Meta Tags
-```html
-<meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes"/>
-<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff"/>
-<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0a0a0a"/>
-```
+| Surface | Verified value |
+|---|---|
+| HTTPS + HSTS | yes, `max-age=63072000` |
+| Apex to www | single 308 redirect, one hop |
+| robots.txt | reachable, wildcard `Allow: /`, sitemap declared |
+| AI crawlers named in robots.txt | 14 tokens, section 4 |
+| sitemap.xml | 89 URLs |
+| rss.xml | 73 items |
+| JSON-LD on `/` | 3 flat nodes: Organization, Person, WebSite |
+| JSON-LD on `/articles` | 5 flat nodes, adds CreativeWork + BreadcrumbList |
+| JSON-LD on `/history` | 5 flat nodes, adds Course + BreadcrumbList |
+| Author attribution | `meta author`, `meta creator`, `meta publisher`, `link rel=author` |
+| Feed discovery | `<link rel="alternate" type="application/rss+xml">` on every page |
+| Security headers | `X-Content-Type-Options`, `X-Frame-Options`, `Referrer-Policy`, `Permissions-Policy` (set in `vercel.json`) |
+| Rendering | Next.js App Router, server-rendered; article prose is in the initial HTML |
+| Article dates | weekly, 2024-02-01 to 2024-10-31, one shared source read by schema, metadata and feed |
 
-### All Pages Include
-- ✅ Unique `<title>` tags
-- ✅ Unique meta descriptions (160 chars)
-- ✅ Open Graph tags (og:title, og:description, og:image, og:type, og:url)
-- ✅ Twitter Card tags (summary_large_image)
-- ✅ Canonical URLs
-- ✅ Language declaration (en-US)
+### Content inventory
 
-### Social Meta Examples
-```html
-<!-- Article Page Example -->
-<meta property="og:type" content="article" />
-<meta property="og:title" content="What AI Actually Is - History - Sunil Iyer" />
-<meta property="og:description" content="Educational article about AI fundamentals" />
-<meta property="og:image" content="https://www.suniliyer.ca/images/og-image.webp" />
-<meta property="og:url" content="https://www.suniliyer.ca/history/what-ai-actually-is" />
-<meta property="article:published_time" content="2026-01-01" />
-<meta property="article:tag" content="AI History" />
+| Body of work | Pages | In sitemap | In feed |
+|---|---|---|---|
+| AGI Constitution articles | 33 | yes | yes |
+| Constitution index + context page | 2 | yes | no |
+| Learning-path articles | 40 | yes | yes |
+| Learning-path index pages | 5 | yes | no |
+| Main pages | 5 | yes | no |
+| Portfolio / other | 4 | yes | no |
+| **Total** | **89** | **89** | **73** |
 
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="What AI Actually Is" />
-<meta name="twitter:description" content="..." />
-<meta name="twitter:image" content="https://www.suniliyer.ca/images/og-image.webp" />
-```
-
-### Score: **100/100**
-- Complete meta tag coverage
-- SEO-optimized titles and descriptions
-- Social media preview support
-- Proper semantic HTML
+`lib/data/learning-path-articles.ts` is the single source of truth for the 40
+articles, and `app/constitution/data/reading-order.ts` for the 33 constitution
+parts. `app/sitemap.ts` and `lib/feed.ts` both read those, so the sitemap and
+the feed cannot list different content.
 
 ---
 
-## 5. Content Accessibility (SSR/SSG) ✅ EXCELLENT
+## 4. AI crawlers named in robots.txt
 
-### Rendering Method
-**Next.js 15.5.9 with Static Site Generation (SSG)**
+The wildcard rule already grants these access; naming them is an explicit
+statement of intent. Tokens verified against each operator's own documentation
+on 5 September 2026.
 
-### Content Without JavaScript
-✅ **ALL content is accessible without JavaScript**
+| Operator | Tokens | Source |
+|---|---|---|
+| OpenAI | `GPTBot`, `OAI-SearchBot`, `ChatGPT-User` | developers.openai.com/api/docs/bots |
+| Anthropic | `ClaudeBot`, `Claude-User`, `Claude-SearchBot` | support.claude.com/en/articles/8896518 |
+| Anthropic (legacy) | `anthropic-ai`, `Claude-Web` | retired tokens, kept so stale crawler configs still match |
+| Google | `Google-Extended` | Gemini / Vertex AI training token |
+| Microsoft | `Bingbot` | Bing and Copilot |
+| Perplexity | `PerplexityBot`, `Perplexity-User` | docs.perplexity.ai/guides/bots |
+| Common Crawl | `CCBot` | corpus behind many open models |
+| Apple | `Applebot-Extended` | Apple Intelligence training token |
 
-**Test Results**:
+`Claude-Web` was the previous version of this file's only Anthropic entry and
+is no longer an active token. It is retained deliberately, not by neglect.
+
+---
+
+## 5. Known gaps
+
+Honest list of what is still missing or unverified.
+
+- **Per-article publication dates are assigned, not recovered.** The 40
+  learning-path articles run weekly from 1 February 2024 to 31 October 2024 in
+  reading order, held in `lib/data/learning-path-articles.ts`. The Article
+  schema, `og:published_time` and the feed all read that one field, so they
+  agree, but the specific days are a stand-in for records the site never kept.
+  The 33 constitution parts keep the declared 2026-03-01 date, spaced a day
+  apart; weekly spacing there would date items past today, and feed readers
+  hide those.
+- **No performance numbers in this document.** The previous version of this
+  file quoted TTFB, FCP and LCP figures that were never measured. Use Vercel
+  Speed Insights or a Lighthouse run for those; do not restate them here
+  without a linked run.
+- **`/ai.txt` is not implemented.** It is a proposed convention with no
+  meaningful adoption; skip it until a crawler actually reads it.
+- **FAQ and HowTo schema** are not used anywhere, and could suit the
+  terminology and learning-path pages.
+
+---
+
+## 6. How to re-verify
+
 ```bash
-curl -s http://localhost:3006 | grep -o '<h1.*</h1>' | wc -l
-# Result: 3 (all headline tags present in HTML)
+# redirect chain and security headers
+curl -sSI https://suniliyer.ca | head -20
+curl -sSI https://www.suniliyer.ca | head -20
 
-curl -s http://localhost:3006 | grep -o '<p.*</p>' | wc -l
-# Result: 15+ (all paragraph content present)
+# robots and sitemap
+curl -sS https://www.suniliyer.ca/robots.txt
+curl -sS https://www.suniliyer.ca/sitemap.xml | grep -c '<loc>'
 
-curl -s http://localhost:3006 | grep -o '<a href.*</a>' | wc -l
-# Result: 50+ (all navigation links present)
+# feed: item count and XML validity
+curl -sS https://www.suniliyer.ca/rss.xml -o /tmp/rss.xml
+grep -c '<item>' /tmp/rss.xml
+python3 -c "import xml.dom.minidom; xml.dom.minidom.parse('/tmp/rss.xml'); print('valid')"
+
+# what a crawler sees without running JavaScript
+curl -sS https://www.suniliyer.ca/ -o /tmp/home.html
+grep -o '<meta name="author"[^>]*>' /tmp/home.html
+grep -o '<link[^>]*rel="alternate"[^>]*>' /tmp/home.html
+python3 - <<'PY'
+import re, json
+h = open('/tmp/home.html', encoding='utf-8').read()
+for b in re.findall(r'<script type="application/ld\+json"[^>]*>(.*?)</script>', h, re.S):
+    d = json.loads(b)
+    print(d.get('@type'), '| @graph present:', '@graph' in d)
+PY
 ```
 
-### Key Features
-- ✅ **Server-Side Rendered**: All HTML generated at build time
-- ✅ **No Client-Only Content**: Critical content not behind JavaScript
-- ✅ **Semantic HTML**: Proper heading hierarchy (H1 → H6)
-- ✅ **Full Text Content**: All article text in HTML source
-- ✅ **Navigation Links**: All internal links in HTML (not JavaScript router only)
-
-### AI Crawler Benefits
-1. **Complete Page Context**: AI crawlers see 100% of page content
-2. **No JavaScript Execution Required**: Fast crawling, no rendering overhead
-3. **Proper Document Structure**: Easy content extraction
-4. **Rich Text Content**: Full article bodies, not summaries
-
-### Score: **100/100**
-- Perfect SSR/SSG implementation
-- Zero client-only content blocking AI access
-- Semantic, accessible HTML
-
----
-
-## 6. Special AI-Friendly Features ✅ EXCELLENT
-
-### Constitution Context Page (`/constitution/context`)
-**Highest priority in sitemap (0.95) - specifically designed for AI training**
-
-Features:
-- Complete document overview and structure
-- Seven Vedic Pillars with Sanskrit/Devanagari
-- Full Sanskrit glossary (40 terms)
-- Machine-readable Schema.org JSON-LD metadata
-- Navigation guidance for AI agents
-- Quick reference for common queries
-
-### Article Organization
-- **40 educational articles** across 5 learning paths
-- Clear categorization: History, Terminology, Risk, Responsibility, Future
-- Breadcrumb navigation for context
-- Tags and keywords for topic modeling
-
-### Rich Semantic Data
-- **Sanskrit Terms**: Devanagari script with transliterations
-- **Technical Terminology**: AI, governance, ethics concepts
-- **Cross-References**: Internal linking between related concepts
-- **Citation Style**: Proper attribution and sources
-
-### Score: **100/100**
-- Exceptional AI training data quality
-- Comprehensive context and metadata
-- Well-structured educational content
-
----
-
-## 7. Performance & Technical SEO ✅ EXCELLENT
-
-### Load Performance
-- **Initial HTML Size**: ~50KB (gzipped)
-- **Time to First Byte (TTFB)**: < 200ms
-- **First Contentful Paint (FCP)**: < 1.5s
-- **Largest Contentful Paint (LCP)**: < 2.5s
-
-### Technical Implementation
-- ✅ **HTTPS**: Secure connection
-- ✅ **Responsive Design**: Mobile-friendly (viewport meta tag)
-- ✅ **Image Optimization**: WebP format (292 images, 100% WebP)
-- ✅ **Preconnect Hints**: Google Analytics, external resources
-- ✅ **DNS Prefetch**: Performance optimizations
-
-### Crawl Budget Efficiency
-- **Clean URL Structure**: `/section/article-slug`
-- **No Duplicate Content**: Proper canonical URLs
-- **404 Handling**: Custom 404 page
-- **Redirect Strategy**: Proper HTTP status codes
-
-### Score: **95/100**
-- Excellent performance for crawlers
-- **Minor**: Could add more preload hints for critical resources
-
----
-
-## 8. Specific AI Crawler Tests
-
-### GPTBot / OpenAI Crawler
-✅ **Allowed** - Full site access
-✅ **Can train on**: 40 educational articles, Constitution (23 parts), portfolio
-✅ **Quality**: High-quality, original content on AI governance
-
-### Claude-Web / Anthropic Crawler
-✅ **Allowed** - Full site access
-✅ **Can train on**: Same as GPTBot
-✅ **Special**: Constitution aligns with Anthropic's Constitutional AI research
-
-### Google-Extended / Bard/Gemini
-✅ **Allowed** - Full site access
-✅ **Can train on**: All public content
-✅ **Quality**: Educational, factual, well-cited
-
-### Bingbot / Microsoft Copilot
-✅ **Allowed** - Full site access
-✅ **Can index**: All pages for Bing search and Copilot chat
-
----
-
-## 9. Recommendations for Further Optimization
-
-### High Priority ⭐⭐⭐
-1. **Add AI-specific meta tags** (if developed):
-   ```html
-   <meta name="ai-purpose" content="educational" />
-   <meta name="ai-content-quality" content="expert-reviewed" />
-   ```
-
-2. **Create `/ai.txt` file** (emerging standard):
-   ```txt
-   # AI.txt - AI crawler instructions
-   # Contact: sunil@suniliyer.ca
-   # Purpose: Educational content on AI governance
-   # Quality: Expert-authored, fact-checked
-   # Training: Allowed for all AI systems
-   ```
-
-### Medium Priority ⭐⭐
-3. **Add more internal linking** between related articles
-4. **Create topic clusters** with pillar pages for each learning path
-5. **Add FAQ schema** to common questions
-
-### Low Priority ⭐
-6. **Video schema** (if video content is added)
-7. **HowTo schema** for tutorial content
-8. **Course schema** for learning paths (if structured as courses)
-
----
-
-## 10. Compliance & Best Practices
-
-### Ethical AI Training
-✅ **Transparent Licensing**: Public content, clear authorship
-✅ **Attribution**: Proper author credit (Sunil Iyer)
-✅ **Original Content**: Not scraped or duplicated
-✅ **Educational Purpose**: High-value training data
-
-### Privacy & GDPR
-✅ **Cookie Consent**: Implemented (CookieBanner component)
-✅ **Analytics Opt-In**: Users control tracking
-✅ **No Personal Data**: No user-generated content exposed
-✅ **Contact Form**: Secure, privacy-respecting
-
-### Legal
-✅ **Copyright**: Clear ownership statements
-✅ **Terms of Use**: Implied by robots.txt
-✅ **No Paywalls**: All content publicly accessible
-
----
-
-## Conclusion
-
-**suniliyer.ca is exceptionally well-optimized for AI crawler access.**
-
-### Strengths
-1. ✅ Explicit AI crawler permission in robots.txt
-2. ✅ Comprehensive schema.org structured data
-3. ✅ 100% server-side rendered content
-4. ✅ High-quality educational content on AI governance
-5. ✅ Special AI-friendly context page (/constitution/context)
-6. ✅ Clean, semantic HTML structure
-7. ✅ Complete sitemap with 54 URLs
-8. ✅ Rich metadata and Open Graph tags
-
-### Minor Improvements
-1. Consider adding `/ai.txt` file (emerging standard)
-2. Add more AI-specific meta tags as standards develop
-3. Expand internal linking between related topics
-
-### Final Score: **98/100**
-
-**Recommendation**: This site serves as an **excellent example** of how to structure content for AI crawler access while maintaining high SEO and accessibility standards.
-
----
-
-**Report Generated By**: AI Crawler Compatibility Analyzer
-**Date**: April 18, 2026
-**Next Review**: July 2026
+Every value in section 3 comes from those commands. Re-run them before editing
+this file, and delete any claim you cannot reproduce.

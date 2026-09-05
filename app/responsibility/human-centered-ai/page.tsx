@@ -44,8 +44,7 @@ export default async function HumanCenteredAiArticle() {
     description: 'Keeping people in the loop: prioritizing human needs and wellbeing',
     slug: 'human-centered-ai',
     path: 'responsibility',
-    datePublished: '2025-01-01T00:00:00Z',
-    dateModified: content.updatedDate || '2025-01-01T00:00:00Z',
+    dateModified: content.updatedDate,
     image: content.headerImage,
     readTime: content.readTime,
     tags: content.tags || []

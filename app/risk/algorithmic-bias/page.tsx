@@ -44,8 +44,7 @@ export default async function AlgorithmicBiasArticle() {
     description: 'How AI systems inherit and amplify human prejudices',
     slug: 'algorithmic-bias',
     path: 'risk',
-    datePublished: '2025-01-01T00:00:00Z',
-    dateModified: content.updatedDate || '2025-01-01T00:00:00Z',
+    dateModified: content.updatedDate,
     image: content.headerImage,
     readTime: content.readTime,
     tags: content.tags || []

@@ -44,8 +44,7 @@ export default async function AIFamilyTreePage() {
     description: 'From expert systems to neural networks: A visual journey through the evolution of AI approaches',
     slug: 'ai-family-tree',
     path: 'history',
-    datePublished: '2025-01-01T00:00:00Z',
-    dateModified: content.updatedDate || '2025-01-01T00:00:00Z',
+    dateModified: content.updatedDate,
     image: content.headerImage,
     readTime: content.readTime,
     tags: content.tags || []

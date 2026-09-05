@@ -44,8 +44,7 @@ export default async function AITechnologyStackArticle() {
     description: 'From data to deployment: Understanding the layers that power AI systems',
     slug: 'ai-technology-stack',
     path: 'terminology',
-    datePublished: '2025-01-01T00:00:00Z',
-    dateModified: content.updatedDate || '2025-01-01T00:00:00Z',
+    dateModified: content.updatedDate,
     image: content.headerImage,
     readTime: content.readTime,
     tags: content.tags || []

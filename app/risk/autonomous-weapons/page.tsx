@@ -44,8 +44,7 @@ export default async function AutonomousWeaponsArticle() {
     description: 'Lethal autonomous weapons systems and the future of warfare',
     slug: 'autonomous-weapons',
     path: 'risk',
-    datePublished: '2025-01-01T00:00:00Z',
-    dateModified: content.updatedDate || '2025-01-01T00:00:00Z',
+    dateModified: content.updatedDate,
     image: content.headerImage,
     readTime: content.readTime,
     tags: content.tags || []

@@ -44,8 +44,7 @@ export default async function LargeLanguageModelsArticle() {
     description: 'GPT, BERT, and beyond: The technology powering conversational AI',
     slug: 'large-language-models',
     path: 'history',
-    datePublished: '2025-01-01T00:00:00Z',
-    dateModified: content.updatedDate || '2025-01-01T00:00:00Z',
+    dateModified: content.updatedDate,
     image: content.headerImage,
     readTime: content.readTime,
     tags: content.tags || []

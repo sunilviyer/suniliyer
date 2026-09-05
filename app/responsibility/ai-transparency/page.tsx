@@ -44,8 +44,7 @@ export default async function AiTransparencyArticle() {
     description: 'Disclosure requirements and the right to know when AI is being used',
     slug: 'ai-transparency',
     path: 'responsibility',
-    datePublished: '2025-01-01T00:00:00Z',
-    dateModified: content.updatedDate || '2025-01-01T00:00:00Z',
+    dateModified: content.updatedDate,
     image: content.headerImage,
     readTime: content.readTime,
     tags: content.tags || []

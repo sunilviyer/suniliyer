@@ -6,6 +6,7 @@
  */
 
 import { Organization, Person, Article, BreadcrumbList, WebSite, Course, CreativeWork } from 'schema-dts';
+import { getArticlePublishDate } from '@/lib/data/learning-path-articles';
 
 // Base URLs
 const SITE_URL = 'https://www.suniliyer.ca';
@@ -124,7 +125,12 @@ export function getArticleSchema(props: ArticleSchemaProps): Article {
   } = props;
 
   const articleUrl = `${SITE_URL}/${path}/${slug}`;
-  const publishDate = datePublished || new Date('2025-01-01').toISOString();
+  // Falls back to the shared article index so the date in the schema, the
+  // page metadata and the RSS feed always agree.
+  const publishDate =
+    datePublished ||
+    getArticlePublishDate(path, slug) ||
+    new Date('2025-01-01').toISOString();
   const modifyDate = dateModified || publishDate;
 
   return {

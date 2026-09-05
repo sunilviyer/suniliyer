@@ -44,8 +44,7 @@ export default async function BlackBoxProblemArticle() {
     description: 'Why AI decisions are opaque and what explainable AI is trying to solve',
     slug: 'black-box-problem',
     path: 'terminology',
-    datePublished: '2025-01-01T00:00:00Z',
-    dateModified: content.updatedDate || '2025-01-01T00:00:00Z',
+    dateModified: content.updatedDate,
     image: content.headerImage,
     readTime: content.readTime,
     tags: content.tags || []

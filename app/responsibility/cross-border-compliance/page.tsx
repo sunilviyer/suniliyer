@@ -44,8 +44,7 @@ export default async function CrossBorderComplianceArticle() {
     description: 'Navigating multiple jurisdictions: international AI compliance strategies',
     slug: 'cross-border-compliance',
     path: 'responsibility',
-    datePublished: '2025-01-01T00:00:00Z',
-    dateModified: content.updatedDate || '2025-01-01T00:00:00Z',
+    dateModified: content.updatedDate,
     image: content.headerImage,
     readTime: content.readTime,
     tags: content.tags || []

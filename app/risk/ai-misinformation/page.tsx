@@ -44,8 +44,7 @@ export default async function AiMisinformationArticle() {
     description: 'How AI enables the creation and spread of false information at scale',
     slug: 'ai-misinformation',
     path: 'risk',
-    datePublished: '2025-01-01T00:00:00Z',
-    dateModified: content.updatedDate || '2025-01-01T00:00:00Z',
+    dateModified: content.updatedDate,
     image: content.headerImage,
     readTime: content.readTime,
     tags: content.tags || []
