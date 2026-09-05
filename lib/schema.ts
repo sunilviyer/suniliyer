@@ -13,6 +13,23 @@ const SITE_URL = 'https://www.suniliyer.ca';
 const SITE_NAME = 'Sunil Iyer';
 
 /**
+ * Coerce a date into ISO 8601 for schema.org, which accepts nothing else.
+ *
+ * The article rows carry human-written strings in updatedDate ("January 2025"),
+ * so feeding them straight into dateModified emits structured data that
+ * validators reject. Anything unparseable returns undefined so the caller can
+ * fall back rather than publish a bad value.
+ */
+function toIsoDate(value?: string): string | undefined {
+  if (!value) return undefined;
+
+  const parsed = new Date(value);
+  if (Number.isNaN(parsed.getTime())) return undefined;
+
+  return parsed.toISOString();
+}
+
+/**
  * Organization schema for Sunil Iyer (personal brand)
  */
 export function getOrganizationSchema(): Organization {
@@ -128,10 +145,10 @@ export function getArticleSchema(props: ArticleSchemaProps): Article {
   // Falls back to the shared article index so the date in the schema, the
   // page metadata and the RSS feed always agree.
   const publishDate =
-    datePublished ||
+    toIsoDate(datePublished) ||
     getArticlePublishDate(path, slug) ||
     new Date('2025-01-01').toISOString();
-  const modifyDate = dateModified || publishDate;
+  const modifyDate = toIsoDate(dateModified) || publishDate;
 
   return {
     '@type': 'Article',
