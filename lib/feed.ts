@@ -9,13 +9,15 @@ export const AUTHOR_NAME = 'Sunil Iyer';
 export const FEED_PATH = '/rss.xml';
 
 /**
- * The site declares a single publication date per body of work
- * (see getArticleSocialMeta / getConstitutionSocialMeta). Feed readers sort
- * and de-duplicate on pubDate, so each item is spaced one day apart from its
- * body's base date, in reading order. The sequence is the real one; only the
- * day-level granularity is synthetic.
+ * Learning-path articles carry their own publishDate in the shared index, so
+ * the feed, the Article schema and og:published_time all report the same day.
+ *
+ * The constitution has no per-part dates. It keeps the site's declared
+ * 2026-03-01 publication date, spaced one day per part in reading order, so
+ * feed readers have something stable to sort on. Weekly spacing was
+ * considered and rejected: 33 parts a week apart from that base runs past
+ * today's date, and feed readers hide items dated in the future.
  */
-const ARTICLES_BASE_DATE = Date.UTC(2025, 0, 1);
 const CONSTITUTION_BASE_DATE = Date.UTC(2026, 2, 1);
 const ONE_DAY_MS = 24 * 60 * 60 * 1000;
 
@@ -44,12 +46,12 @@ export function getFeedItems(): FeedItem[] {
     pubDate: new Date(CONSTITUTION_BASE_DATE + index * ONE_DAY_MS),
   }));
 
-  const articles: FeedItem[] = learningPathArticles.map((article, index) => ({
+  const articles: FeedItem[] = learningPathArticles.map((article) => ({
     path: `/${article.path}/${article.slug}`,
     title: article.title,
     description: article.description,
     categories: article.tags,
-    pubDate: new Date(ARTICLES_BASE_DATE + index * ONE_DAY_MS),
+    pubDate: new Date(article.publishDate),
   }));
 
   return [...constitution.reverse(), ...articles.reverse()];

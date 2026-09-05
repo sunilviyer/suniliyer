@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import { getArticlePublishDate } from '@/lib/data/learning-path-articles';
 
 const SITE_URL = 'https://www.suniliyer.ca';
 const SITE_NAME = 'Sunil Iyer';
@@ -6,6 +7,7 @@ const AUTHOR_NAME = 'Sunil Iyer';
 const TWITTER_HANDLE = '@suniliyer'; // Update if you have a Twitter handle
 const FEED_URL = `${SITE_URL}/rss.xml`;
 const FEED_TITLE = `${SITE_NAME} - Articles and the AGI Constitution`;
+const FALLBACK_PUBLISH_DATE = '2025-01-01T00:00:00Z';
 
 interface SocialMetaProps {
   title: string;
@@ -90,7 +92,7 @@ export function getArticleSocialMeta({
   slug,
   path,
   image,
-  publishedTime = '2025-01-01T00:00:00Z',
+  publishedTime,
   modifiedTime,
   tags = [],
 }: {
@@ -109,7 +111,10 @@ export function getArticleSocialMeta({
     path: `/${path}/${slug}`,
     image: image || '/images/og-default.webp',
     type: 'article',
-    publishedTime,
+    // Shared article index is the source of truth, so og:published_time
+    // matches the Article schema and the feed.
+    publishedTime:
+      publishedTime || getArticlePublishDate(path, slug) || FALLBACK_PUBLISH_DATE,
     modifiedTime,
     tags,
   });

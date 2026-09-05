@@ -44,8 +44,7 @@ export default async function AIvsAutomationArticle() {
     description: 'Distinguishing intelligent systems from rule-based automation',
     slug: 'ai-vs-automation',
     path: 'terminology',
-    datePublished: '2025-01-01T00:00:00Z',
-    dateModified: content.updatedDate || '2025-01-01T00:00:00Z',
+    dateModified: content.updatedDate,
     image: content.headerImage,
     readTime: content.readTime,
     tags: content.tags || []

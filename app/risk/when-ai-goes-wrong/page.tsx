@@ -44,8 +44,7 @@ export default async function WhenAIGoesWrongArticle() {
     description: 'Real-world AI failures and lessons learned from high-stakes errors',
     slug: 'when-ai-goes-wrong',
     path: 'risk',
-    datePublished: '2025-01-01T00:00:00Z',
-    dateModified: content.updatedDate || '2025-01-01T00:00:00Z',
+    dateModified: content.updatedDate,
     image: content.headerImage,
     readTime: content.readTime,
     tags: content.tags || []

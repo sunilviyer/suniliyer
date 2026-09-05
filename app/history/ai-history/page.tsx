@@ -45,8 +45,7 @@ export default async function AIHistoryArticle() {
     description: 'From the 1956 Dartmouth Conference to modern breakthroughs: The complete journey of artificial intelligence',
     slug: 'ai-history',
     path: 'history',
-    datePublished: '2025-01-01T00:00:00Z',
-    dateModified: content.updatedDate || '2025-01-01T00:00:00Z',
+    dateModified: content.updatedDate,
     image: content.headerImage,
     readTime: content.readTime,
     tags: content.tags || []

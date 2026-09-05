@@ -44,8 +44,7 @@ export default async function GenerativeAIExplainedArticle() {
     description: 'From GANs to diffusion models: Understanding AI systems that create new content',
     slug: 'generative-ai-explained',
     path: 'history',
-    datePublished: '2025-01-01T00:00:00Z',
-    dateModified: content.updatedDate || '2025-01-01T00:00:00Z',
+    dateModified: content.updatedDate,
     image: content.headerImage,
     readTime: content.readTime,
     tags: content.tags || []

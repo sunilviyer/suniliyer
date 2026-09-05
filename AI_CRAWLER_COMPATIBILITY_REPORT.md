@@ -73,6 +73,7 @@ a meaningful share of automated readers. Keep nodes flat.
 | Feed discovery | `<link rel="alternate" type="application/rss+xml">` on every page |
 | Security headers | `X-Content-Type-Options`, `X-Frame-Options`, `Referrer-Policy`, `Permissions-Policy` (set in `vercel.json`) |
 | Rendering | Next.js App Router, server-rendered; article prose is in the initial HTML |
+| Article dates | weekly, 2024-02-01 to 2024-10-31, one shared source read by schema, metadata and feed |
 
 ### Content inventory
 
@@ -119,10 +120,14 @@ is no longer an active token. It is retained deliberately, not by neglect.
 
 Honest list of what is still missing or unverified.
 
-- **Per-article publication dates are synthetic.** Both the schema and the feed
-  derive dates from a single base date per body of work, spaced one day apart
-  in reading order (`lib/feed.ts`). The ordering is real; the day granularity
-  is not. Real `publishedTime` values per article would be better.
+- **Per-article publication dates are assigned, not recovered.** The 40
+  learning-path articles run weekly from 1 February 2024 to 31 October 2024 in
+  reading order, held in `lib/data/learning-path-articles.ts`. The Article
+  schema, `og:published_time` and the feed all read that one field, so they
+  agree, but the specific days are a stand-in for records the site never kept.
+  The 33 constitution parts keep the declared 2026-03-01 date, spaced a day
+  apart; weekly spacing there would date items past today, and feed readers
+  hide those.
 - **No performance numbers in this document.** The previous version of this
   file quoted TTFB, FCP and LCP figures that were never measured. Use Vercel
   Speed Insights or a Lighthouse run for those; do not restate them here

@@ -44,8 +44,7 @@ export default async function NistAiRmfArticle() {
     description: 'Understanding the US government\'s approach to managing AI risks',
     slug: 'nist-ai-rmf',
     path: 'responsibility',
-    datePublished: '2025-01-01T00:00:00Z',
-    dateModified: content.updatedDate || '2025-01-01T00:00:00Z',
+    dateModified: content.updatedDate,
     image: content.headerImage,
     readTime: content.readTime,
     tags: content.tags || []

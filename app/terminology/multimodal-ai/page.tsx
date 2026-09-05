@@ -44,8 +44,7 @@ export default async function MultimodalAiArticle() {
     description: 'Beyond text: AI systems that understand images, audio, and video together',
     slug: 'multimodal-ai',
     path: 'terminology',
-    datePublished: '2025-01-01T00:00:00Z',
-    dateModified: content.updatedDate || '2025-01-01T00:00:00Z',
+    dateModified: content.updatedDate,
     image: content.headerImage,
     readTime: content.readTime,
     tags: content.tags || []

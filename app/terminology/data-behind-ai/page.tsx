@@ -44,8 +44,7 @@ export default async function DataBehindAIArticle() {
     description: 'Quality over quantity: Understanding the fuel that powers AI systems',
     slug: 'data-behind-ai',
     path: 'terminology',
-    datePublished: '2025-01-01T00:00:00Z',
-    dateModified: content.updatedDate || '2025-01-01T00:00:00Z',
+    dateModified: content.updatedDate,
     image: content.headerImage,
     readTime: content.readTime,
     tags: content.tags || []

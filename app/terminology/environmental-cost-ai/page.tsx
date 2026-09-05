@@ -44,8 +44,7 @@ export default async function EnvironmentalCostAiArticle() {
     description: 'Carbon footprint and sustainability challenges in training large AI models',
     slug: 'environmental-cost-ai',
     path: 'terminology',
-    datePublished: '2025-01-01T00:00:00Z',
-    dateModified: content.updatedDate || '2025-01-01T00:00:00Z',
+    dateModified: content.updatedDate,
     image: content.headerImage,
     readTime: content.readTime,
     tags: content.tags || []

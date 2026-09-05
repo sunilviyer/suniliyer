@@ -44,8 +44,7 @@ export default async function AiComputeArticle() {
     description: 'GPUs, TPUs, and the infrastructure powering AI at scale',
     slug: 'ai-compute',
     path: 'terminology',
-    datePublished: '2025-01-01T00:00:00Z',
-    dateModified: content.updatedDate || '2025-01-01T00:00:00Z',
+    dateModified: content.updatedDate,
     image: content.headerImage,
     readTime: content.readTime,
     tags: content.tags || []

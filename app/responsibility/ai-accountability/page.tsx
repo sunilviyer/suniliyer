@@ -44,8 +44,7 @@ export default async function AiAccountabilityArticle() {
     description: 'Who\'s responsible when AI systems cause harm',
     slug: 'ai-accountability',
     path: 'responsibility',
-    datePublished: '2025-01-01T00:00:00Z',
-    dateModified: content.updatedDate || '2025-01-01T00:00:00Z',
+    dateModified: content.updatedDate,
     image: content.headerImage,
     readTime: content.readTime,
     tags: content.tags || []

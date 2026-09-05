@@ -44,8 +44,7 @@ export default async function AgiGovernanceArticle() {
     description: 'Artificial General Intelligence governance challenges: separating hype from reality while preparing for transformative capabilities.',
     slug: 'agi-governance',
     path: 'future',
-    datePublished: '2025-01-01T00:00:00Z',
-    dateModified: content.updatedDate || '2025-01-01T00:00:00Z',
+    dateModified: content.updatedDate,
     image: content.headerImage,
     readTime: content.readTime,
     tags: content.tags || []

@@ -44,8 +44,7 @@ export default async function Iso42001Article() {
     description: 'The international standard for AI management systems',
     slug: 'iso-42001',
     path: 'responsibility',
-    datePublished: '2025-01-01T00:00:00Z',
-    dateModified: content.updatedDate || '2025-01-01T00:00:00Z',
+    dateModified: content.updatedDate,
     image: content.headerImage,
     readTime: content.readTime,
     tags: content.tags || []

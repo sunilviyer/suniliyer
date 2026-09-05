@@ -44,8 +44,7 @@ export default async function DeepfakesSyntheticMediaArticle() {
     description: 'AI-generated content that blurs the line between real and fake',
     slug: 'deepfakes-synthetic-media',
     path: 'risk',
-    datePublished: '2025-01-01T00:00:00Z',
-    dateModified: content.updatedDate || '2025-01-01T00:00:00Z',
+    dateModified: content.updatedDate,
     image: content.headerImage,
     readTime: content.readTime,
     tags: content.tags || []
