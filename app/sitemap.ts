@@ -1,4 +1,9 @@
 import { MetadataRoute } from 'next';
+import { constitutionParts } from '@/app/constitution/data/reading-order';
+import {
+  LEARNING_PATH_SLUGS,
+  learningPathArticles,
+} from '@/lib/data/learning-path-articles';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://www.suniliyer.ca';
@@ -66,174 +71,28 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ];
 
-  // Learning Path: History
-  const historyRoutes = [
-    'ai-family-tree',
-    'ai-history',
-    'deep-learning-decoded',
-    'generative-ai-explained',
-    'how-machines-learn',
-    'large-language-models',
-    'types-of-ai-intelligence',
-    'what-ai-actually-is',
-  ];
-
-  // Learning Path: Risk
-  const riskRoutes = [
-    'ai-hallucinations',
-    'ai-misinformation',
-    'ai-privacy',
-    'algorithmic-bias',
-    'autonomous-weapons',
-    'deepfakes-synthetic-media',
-    'job-displacement',
-    'when-ai-goes-wrong',
-  ];
-
-  // Learning Path: Responsibility
-  const responsibilityRoutes = [
-    'ai-accountability',
-    'ai-transparency',
-    'cross-border-compliance',
-    'eu-ai-act-explained',
-    'global-ai-law-tracker',
-    'human-centered-ai',
-    'iso-42001',
-    'nist-ai-rmf',
-  ];
-
-  // Learning Path: Future
-  const futureRoutes = [
-    'agi-governance',
-    'ai-existential-risk',
-    'ai-governance-careers',
-    'ai-national-security',
-    'ai-safety',
-    'future-ai-ethics',
-    'future-ai-regulation',
-    'trustworthy-ai',
-  ];
-
-  // Learning Path: Terminology
-  const terminologyRoutes = [
-    'ai-compute',
-    'ai-technology-stack',
-    'ai-vs-automation',
-    'black-box-problem',
-    'data-behind-ai',
-    'environmental-cost-ai',
-    'foundation-models',
-    'multimodal-ai',
-  ];
-
-  // Learning path index pages
-  const learningPathIndexPages: MetadataRoute.Sitemap = [
-    {
-      url: `${baseUrl}/history`,
+  // Learning path index pages, one per path
+  const learningPathIndexPages: MetadataRoute.Sitemap = LEARNING_PATH_SLUGS.map(
+    (path) => ({
+      url: `${baseUrl}/${path}`,
       lastModified: currentDate,
-      changeFrequency: 'weekly',
+      changeFrequency: 'weekly' as const,
       priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/risk`,
+    })
+  );
+
+  // Learning path articles, from the shared content index that the RSS feed
+  // also reads, so the two can never list different articles.
+  const learningPathArticlePages: MetadataRoute.Sitemap =
+    learningPathArticles.map((article) => ({
+      url: `${baseUrl}/${article.path}/${article.slug}`,
       lastModified: currentDate,
-      changeFrequency: 'weekly',
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/responsibility`,
-      lastModified: currentDate,
-      changeFrequency: 'weekly',
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/future`,
-      lastModified: currentDate,
-      changeFrequency: 'weekly',
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/terminology`,
-      lastModified: currentDate,
-      changeFrequency: 'weekly',
-      priority: 0.9,
-    },
-  ];
+      changeFrequency: 'monthly' as const,
+      priority: 0.8,
+    }));
 
-  // Generate learning path content pages
-  const historyPages: MetadataRoute.Sitemap = historyRoutes.map(route => ({
-    url: `${baseUrl}/history/${route}`,
-    lastModified: currentDate,
-    changeFrequency: 'monthly' as const,
-    priority: 0.8,
-  }));
-
-  const riskPages: MetadataRoute.Sitemap = riskRoutes.map(route => ({
-    url: `${baseUrl}/risk/${route}`,
-    lastModified: currentDate,
-    changeFrequency: 'monthly' as const,
-    priority: 0.8,
-  }));
-
-  const responsibilityPages: MetadataRoute.Sitemap = responsibilityRoutes.map(route => ({
-    url: `${baseUrl}/responsibility/${route}`,
-    lastModified: currentDate,
-    changeFrequency: 'monthly' as const,
-    priority: 0.8,
-  }));
-
-  const futurePages: MetadataRoute.Sitemap = futureRoutes.map(route => ({
-    url: `${baseUrl}/future/${route}`,
-    lastModified: currentDate,
-    changeFrequency: 'monthly' as const,
-    priority: 0.8,
-  }));
-
-  const terminologyPages: MetadataRoute.Sitemap = terminologyRoutes.map(route => ({
-    url: `${baseUrl}/terminology/${route}`,
-    lastModified: currentDate,
-    changeFrequency: 'monthly' as const,
-    priority: 0.8,
-  }));
-
-  // AGI Constitution pages (33 articles)
-  // IMPORTANT: Must match IDs in app/constitution/data/reading-order.ts
-  const constitutionParts = [
-    'authors-note',
-    'prologue',
-    'preamble',
-    'principles-overview',
-    'principle-dignity',
-    'principle-cognitive-sovereignty',
-    'principle-non-harm',
-    'principle-equality',
-    'principle-truth',
-    'principle-human-authority',
-    'principle-data-sovereignty',
-    'principle-accountability',
-    'principle-intergenerational',
-    'principle-empathy',
-    'consciousness-threshold',
-    'samskaras',
-    'yugas',
-    'sovereignty',
-    'separation-of-powers',
-    'coexistence',
-    'kurukshetra',
-    'economy',
-    'eternity-clause',
-    'amendment',
-    'emergency-powers',
-    'limitations',
-    'transition',
-    'living-rights',
-    'definitions',
-    'glossary',
-    'schedules',
-    'sources',
-    'closing',
-  ];
-
+  // AGI Constitution pages, driven by the canonical reading order so the
+  // sitemap cannot drift from the routes that actually render.
   const constitutionPages: MetadataRoute.Sitemap = [
     {
       url: `${baseUrl}/constitution`,
@@ -247,8 +106,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly',
       priority: 0.95, // High priority for AI discoverability
     },
-    ...constitutionParts.map(part => ({
-      url: `${baseUrl}/constitution/${part}`,
+    ...constitutionParts.map((part) => ({
+      url: `${baseUrl}/constitution/${part.id}`,
       lastModified: currentDate,
       changeFrequency: 'monthly' as const,
       priority: 0.8,
@@ -261,10 +120,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...portfolioPages,
     ...constitutionPages,
     ...learningPathIndexPages,
-    ...historyPages,
-    ...riskPages,
-    ...responsibilityPages,
-    ...futurePages,
-    ...terminologyPages,
+    ...learningPathArticlePages,
   ];
 }

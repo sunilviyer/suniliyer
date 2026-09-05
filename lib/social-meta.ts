@@ -4,6 +4,8 @@ const SITE_URL = 'https://www.suniliyer.ca';
 const SITE_NAME = 'Sunil Iyer';
 const AUTHOR_NAME = 'Sunil Iyer';
 const TWITTER_HANDLE = '@suniliyer'; // Update if you have a Twitter handle
+const FEED_URL = `${SITE_URL}/rss.xml`;
+const FEED_TITLE = `${SITE_NAME} - Articles and the AGI Constitution`;
 
 interface SocialMetaProps {
   title: string;
@@ -36,8 +38,16 @@ export function getSocialMeta({
   return {
     title,
     description,
+    // Named author/publisher so crawlers that never execute JS can attribute
+    // the page without parsing structured data.
+    authors: [{ name: AUTHOR_NAME, url: SITE_URL }],
+    creator: AUTHOR_NAME,
+    publisher: SITE_NAME,
     alternates: {
       canonical: url,
+      types: {
+        'application/rss+xml': [{ url: FEED_URL, title: FEED_TITLE }],
+      },
     },
     openGraph: {
       type,
