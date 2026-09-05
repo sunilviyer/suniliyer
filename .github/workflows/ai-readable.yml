@@ -6,6 +6,12 @@ name: AI readability
 # It checks the deployed production URL rather than building here: the build
 # needs a database connection string that CI has no business holding, and
 # testing the real deployment is a truer check anyway.
+#
+# Vercel preview URLs sit behind SSO and redirect to vercel.com/sso-api, so the
+# check cannot read them without bypass credentials -- which CI should not hold.
+# Only production is checked. The trade-off: a regression is caught minutes
+# after it reaches production rather than before merge. Run
+# `npm run check:ai-readable -- <url>` locally to check a branch before merging.
 on:
   deployment_status:
   schedule:
@@ -13,18 +19,15 @@ on:
     - cron: '0 9 * * 1'
   workflow_dispatch:
 
+env:
+  # Always the real site. Never github.event.deployment_status.environment_url:
+  # for eight consecutive runs that field did not contain the domain, so a
+  # job-level `if:` testing it skipped every deployment, production included,
+  # and reported "skipped" rather than failing. See the gate step below.
+  PRODUCTION_URL: https://www.suniliyer.ca
+
 jobs:
   check:
-    # Production deployments only. Vercel preview URLs sit behind SSO and
-    # redirect to vercel.com/sso-api, so the check cannot read them without
-    # bypass credentials -- which CI should not hold. The trade-off: a
-    # regression is caught minutes after it reaches production rather than
-    # before merge. Run `npm run check:ai-readable -- <url>` locally to check
-    # a branch before merging.
-    if: >-
-      github.event_name != 'deployment_status' ||
-      (github.event.deployment_status.state == 'success' &&
-       contains(github.event.deployment_status.environment_url, 'suniliyer.ca'))
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -32,8 +35,43 @@ jobs:
         with:
           node-version: 22
 
+      # The gate lives in a step, not in `if:` on the job, so a deployment that
+      # is not checked says so out loud in the log instead of vanishing as a
+      # skipped run that looks the same as a healthy one.
+      - name: Decide whether this event should be checked
+        id: gate
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          DS_STATE: ${{ github.event.deployment_status.state }}
+          DS_ENVIRONMENT: ${{ github.event.deployment_status.environment }}
+          DS_ENVIRONMENT_URL: ${{ github.event.deployment_status.environment_url }}
+          DS_TARGET_URL: ${{ github.event.deployment_status.target_url }}
+          IS_PRODUCTION: ${{ github.event.deployment.production_environment }}
+        run: |
+          echo "event               : $EVENT_NAME"
+          echo "deployment state    : ${DS_STATE:-<unset>}"
+          echo "environment         : ${DS_ENVIRONMENT:-<unset>}"
+          echo "production_environment: ${IS_PRODUCTION:-<unset>}"
+          echo "environment_url     : ${DS_ENVIRONMENT_URL:-<unset>}"
+          echo "target_url          : ${DS_TARGET_URL:-<unset>}"
+
+          should_run=false
+          if [ "$EVENT_NAME" != "deployment_status" ]; then
+            # schedule and workflow_dispatch always check production
+            should_run=true
+            echo "-> checking: $EVENT_NAME always checks production"
+          elif [ "$DS_STATE" != "success" ]; then
+            echo "-> skipping: deployment state is '${DS_STATE:-<unset>}', not 'success'"
+          elif [ "$IS_PRODUCTION" = "true" ] || [ "$DS_ENVIRONMENT" = "Production" ]; then
+            should_run=true
+            echo "-> checking: successful production deployment"
+          else
+            echo "-> skipping: not a production deployment (previews sit behind SSO)"
+          fi
+
+          echo "should_run=$should_run" >> "$GITHUB_OUTPUT"
+
       - name: Check every sitemap page is readable without JavaScript
         # the script uses only built-in fetch, so no install step is needed
-        env:
-          TARGET: ${{ github.event.deployment_status.environment_url || 'https://www.suniliyer.ca' }}
-        run: node scripts/check-ai-readable.mjs "$TARGET"
+        if: steps.gate.outputs.should_run == 'true'
+        run: node scripts/check-ai-readable.mjs "$PRODUCTION_URL"
