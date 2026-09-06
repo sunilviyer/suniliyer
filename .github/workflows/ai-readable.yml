@@ -30,8 +30,8 @@ jobs:
   check:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
         with:
           node-version: 22
 
@@ -62,7 +62,17 @@ jobs:
             echo "-> checking: $EVENT_NAME always checks production"
           elif [ "$DS_STATE" != "success" ]; then
             echo "-> skipping: deployment state is '${DS_STATE:-<unset>}', not 'success'"
-          elif [ "$IS_PRODUCTION" = "true" ] || [ "$DS_ENVIRONMENT" = "Production" ]; then
+          # The environment NAME is the reliable signal. Vercel does not set the
+          # production flag: the real production deployment of main on
+          # 2026-09-05 reported environment "Production" with
+          # production_environment false. The flag is kept only as a fallback
+          # for a provider that does set it.
+          #
+          # Do not collapse this into a single test on production_environment.
+          # A condition that reads plausibly but is never true is exactly what
+          # skipped this workflow for nine consecutive runs, including two
+          # production deploys, without anything looking wrong.
+          elif [ "$DS_ENVIRONMENT" = "Production" ] || [ "$IS_PRODUCTION" = "true" ]; then
             should_run=true
             echo "-> checking: successful production deployment"
           else
