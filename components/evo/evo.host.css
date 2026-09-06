@@ -1,0 +1,21 @@
+/* Host integration layer for the Evolution homepage.
+   Kept separate from evo.css so a future drop-in of the upstream package
+   does not clobber these site-specific fixes. Imported by app/page.tsx
+   after evo.css. */
+
+/* next/font supplies hashed family names, so point the package's font
+   variables at them and keep the original names as fallbacks. */
+.evo,
+.evo-fonts {
+  --fd: var(--font-evo-display), "Archivo", system-ui, sans-serif;
+  --fm: var(--font-evo-mono), "IBM Plex Mono", ui-monospace, monospace;
+  --fb: var(--font-evo-body), "Source Sans 3", system-ui, sans-serif;
+}
+
+/* app/globals.css paints body with --bg-primary (white in light mode).
+   The film is position:fixed, so iOS rubber-band overscroll would flash
+   that white band past the top and bottom of the page. Follow the evo
+   theme on this route only. */
+:root[data-evo-theme] body {
+  background: var(--bg);
+}
