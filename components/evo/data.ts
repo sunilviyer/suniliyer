@@ -19,18 +19,18 @@ export const WORLDS: Record<World, { word: string; tag: string }> = {
 export type Stage = { num: string; name: string; era: string; world: World; title: string; desc: string; href: string; art: string };
 export const STAGES: Stage[] = [
   { num: "02", name: "ROCK CARVING", era: "10,000 BCE", world: "vidya", title: "Agents", art: "/images/stages/agents.webp", desc: "agents and dashboards", href: "https://ai-agents-rosy-mu.vercel.app" },
-  { num: "03", name: "PARCHMENT", era: "500 BCE", world: "vidya", title: "Articles", art: "/images/stages/articles.webp", desc: "26+ publications", href: "https://www.suniliyer.ca/articles" },
-  { num: "04", name: "PAPER", era: "105 CE", world: "vidya", title: "Curriculum", art: "/images/stages/curriculum.webp", desc: "learning path", href: "https://www.suniliyer.ca/history" },
-  { num: "05", name: "PRINTING PRESS", era: "1440", world: "vidya", title: "Constitution", art: "/images/stages/constitution.webp", desc: "AI principles", href: "https://www.suniliyer.ca/constitution" },
-  { num: "06", name: "TYPEWRITER", era: "1868", world: "leela", title: "Gita", art: "/images/stages/gita.webp", desc: "interactive Bhagavad Gita", href: "https://www.suniliyer.ca/gita" },
-  { num: "07", name: "PUNCH CARD", era: "1890", world: "leela", title: "Calvin and Hobbes", art: "/images/stages/calvinhobbes.webp", desc: "a cAlvIn parody", href: "https://www.suniliyer.ca/calvinhobbes" },
-  { num: "08", name: "BINARY", era: "1945", world: "leela", title: "Creative Works", art: "/images/stages/creative.webp", desc: "art and animation", href: "https://www.suniliyer.ca/creative-works" },
-  { num: "09", name: "NETWORK", era: "1983", world: "leela", title: "Behind the Scenes", art: "/images/stages/behind.webp", desc: "process and tools", href: "https://www.suniliyer.ca/behind-the-scenes" },
+  { num: "03", name: "PARCHMENT", era: "500 BCE", world: "vidya", title: "Articles", art: "/images/stages/articles.webp", desc: "26+ publications", href: "/articles" },
+  { num: "04", name: "PAPER", era: "105 CE", world: "vidya", title: "Curriculum", art: "/images/stages/curriculum.webp", desc: "learning path", href: "/history" },
+  { num: "05", name: "PRINTING PRESS", era: "1440", world: "vidya", title: "Constitution", art: "/images/stages/constitution.webp", desc: "AI principles", href: "/constitution" },
+  { num: "06", name: "TYPEWRITER", era: "1868", world: "leela", title: "Gita", art: "/images/stages/gita.webp", desc: "interactive Bhagavad Gita", href: "/gita" },
+  { num: "07", name: "PUNCH CARD", era: "1890", world: "leela", title: "Calvin and Hobbes", art: "/images/stages/calvinhobbes.webp", desc: "a cAlvIn parody", href: "/calvinhobbes" },
+  { num: "08", name: "BINARY", era: "1945", world: "leela", title: "Creative Works", art: "/images/stages/creative.webp", desc: "art and animation", href: "/creative-works" },
+  { num: "09", name: "NETWORK", era: "1983", world: "leela", title: "Behind the Scenes", art: "/images/stages/behind.webp", desc: "process and tools", href: "/behind-the-scenes" },
 ];
 export const NAV = [
-  { label: "Journey", href: "https://www.suniliyer.ca/journey" },
-  { label: "Articles", href: "https://www.suniliyer.ca/articles" },
-  { label: "Constitution", href: "https://www.suniliyer.ca/constitution" },
+  { label: "Journey", href: "/journey" },
+  { label: "Articles", href: "/articles" },
+  { label: "Constitution", href: "/constitution" },
   { label: "Contact", href: "#contact" },
 ];
 export const SOCIALS = [
@@ -41,23 +41,23 @@ export const SOCIALS = [
 export const BIO = "AI governance consultant with 18+ years serving enterprise customers. Free responsible AI curriculum, 26+ published articles, an AGI constitution, and working AI agents.";
 export const FOOTER: { head: string; links: { label: string; href: string }[] }[] = [
   { head: "Vidya", links: [
-    { label: "History of AI", href: "https://www.suniliyer.ca/history" },
-    { label: "Terminology", href: "https://www.suniliyer.ca/terminology" },
-    { label: "Risk", href: "https://www.suniliyer.ca/risk" },
-    { label: "Responsibility", href: "https://www.suniliyer.ca/responsibility" },
-    { label: "Future of AI", href: "https://www.suniliyer.ca/future" },
+    { label: "History of AI", href: "/history" },
+    { label: "Terminology", href: "/terminology" },
+    { label: "Risk", href: "/risk" },
+    { label: "Responsibility", href: "/responsibility" },
+    { label: "Future of AI", href: "/future" },
   ]},
   { head: "Leela", links: [
-    { label: "Bhagavad Gita", href: "https://www.suniliyer.ca/gita" },
-    { label: "Calvin & Hobbes", href: "https://www.suniliyer.ca/calvinhobbes" },
-    { label: "Creative Works", href: "https://www.suniliyer.ca/creative-works" },
-    { label: "Behind the Scenes", href: "https://www.suniliyer.ca/behind-the-scenes" },
+    { label: "Bhagavad Gita", href: "/gita" },
+    { label: "Calvin & Hobbes", href: "/calvinhobbes" },
+    { label: "Creative Works", href: "/creative-works" },
+    { label: "Behind the Scenes", href: "/behind-the-scenes" },
   ]},
   { head: "Connect", links: [
-    { label: "My Journey", href: "https://www.suniliyer.ca/journey" },
-    { label: "Articles", href: "https://www.suniliyer.ca/articles" },
-    { label: "AGI Constitution", href: "https://www.suniliyer.ca/constitution" },
-    { label: "Resume", href: "https://www.suniliyer.ca/downloads/Sunil_Iyer_Resume.pdf" },
+    { label: "My Journey", href: "/journey" },
+    { label: "Articles", href: "/articles" },
+    { label: "AGI Constitution", href: "/constitution" },
+    { label: "Resume", href: "/downloads/Sunil_Iyer_Resume.pdf" },
   ]},
 ];
 export const CUES: { t: number; num: string; label: string }[] = [

@@ -2,6 +2,7 @@
 
 import React, { useEffect, useRef, useState, type FormEvent } from "react";
 import Link from "next/link";
+import { EvoLink } from "./link";
 import { sendContact } from "../../lib/api/contact.functions";
 import { ThemeToggle } from "./theme";
 
@@ -38,9 +39,9 @@ export function Nav() {
       <div className="nav-pill">
         <Link href="/" className="nav-brand" aria-label="si. home">si<em>.</em></Link>
         <div className="nav-icons">
-          <a className="nav-ic" href="https://www.suniliyer.ca/journey" aria-label="My Journey" title="My Journey">
+          <EvoLink className="nav-ic" href="/journey" aria-label="My Journey" title="My Journey">
             <svg {...IC} aria-hidden="true"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-          </a>
+          </EvoLink>
           <button type="button" className={contact ? "nav-ic on" : "nav-ic"} aria-label="Contact" aria-expanded={contact} title="Contact" onClick={() => { setContact((c) => !c); setOpen(false); }}>
             <svg {...IC} aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
           </button>
@@ -52,9 +53,9 @@ export function Nav() {
       </div>
       {open ? (
         <nav className="nav-menu" aria-label="Primary">
-          <a href="https://www.suniliyer.ca/journey">Journey</a>
-          <a href="https://www.suniliyer.ca/articles">Articles</a>
-          <a href="https://www.suniliyer.ca/constitution">Constitution</a>
+          <EvoLink href="/journey">Journey</EvoLink>
+          <EvoLink href="/articles">Articles</EvoLink>
+          <EvoLink href="/constitution">Constitution</EvoLink>
           <button type="button" onClick={() => { setOpen(false); setContact(true); }}>Contact</button>
         </nav>
       ) : null}
@@ -187,12 +188,12 @@ export function Hero() {
         <p className="hero-sub" style={{ marginTop: 26 }}>
           Helping organizations navigate AI through education, implementation guidance, and governance frameworks.
         </p>
-        <a ref={ctaRef} className="liquid-cta" style={{ marginTop: 30 }} href="https://www.suniliyer.ca/constitution">
+        <Link ref={ctaRef} className="liquid-cta" style={{ marginTop: 30 }} href="/constitution">
           <span className="lq-star" aria-hidden="true"></span>
           <span className="lq-shadow" aria-hidden="true"></span>
           <span className="lq-glass" aria-hidden="true"></span>
           <span className="lq-label">Read the AGI Constitution</span>
-        </a>
+        </Link>
         <svg className="lq-defs" aria-hidden="true" focusable="false">
           <defs>
             <filter id="lq-glass-f" x="0%" y="0%" width="100%" height="100%" colorInterpolationFilters="sRGB">

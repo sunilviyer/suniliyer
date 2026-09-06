@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import { BIO, FOOTER, WORLDS, type Stage } from "./data";
+import { EvoLink } from "./link";
 
 // One stage per film chapter. The frosted-glass card sweeps in coverflow
 // style, scroll-linked and reversible: tilted on edge and receded while
@@ -63,14 +64,14 @@ export function StageSection({ stage, side }: { stage: Stage; side: "left" | "ri
         <span className="aside-tag">{world.tag}</span>
       </div>
       <div className="stage-figure" ref={cardRef}>
-        <a className="stage-card" href={stage.href}>
+        <EvoLink className="stage-card" href={stage.href}>
           <span className="stage-art" aria-hidden="true"><img src={stage.art} alt="" loading="lazy" draggable={false} /></span>
           <span className="stage-meta">{stage.name} &middot; {stage.era}</span>
           <span className="stage-world">{world.word} &middot; {world.tag}</span>
           <b className="stage-title">{stage.title}</b>
           <span className="stage-desc">{stage.desc}</span>
           <span className="stage-go" aria-hidden="true">Explore &rarr;</span>
-        </a>
+        </EvoLink>
       </div>
     </section>
   );
@@ -110,7 +111,7 @@ export function Footer() {
                 <h3>{col.head}</h3>
                 <ul>
                   {col.links.map((l) => (
-                    <li key={l.label}><a href={l.href}>{l.label}</a></li>
+                    <li key={l.label}><EvoLink href={l.href}>{l.label}</EvoLink></li>
                   ))}
                 </ul>
               </div>
