@@ -33,8 +33,9 @@ export const NAV = [
   { label: "Constitution", href: "/constitution" },
   { label: "Contact", href: "#contact" },
 ];
+export const LINKEDIN = "https://linkedin.com/in/sunilviyer";
 export const SOCIALS = [
-  { label: "LinkedIn", href: "https://linkedin.com/in/sunilviyer" },
+  { label: "LinkedIn", href: LINKEDIN },
   { label: "GitHub", href: "https://github.com/sunilviyer" },
   { label: "Medium", href: "https://medium.com/@sunilviswanathaniyer" },
 ];
