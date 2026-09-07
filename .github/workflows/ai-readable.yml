@@ -15,8 +15,17 @@ name: AI readability
 on:
   deployment_status:
   schedule:
-    # weekly, so a content change that blanks a page is caught without a push
-    - cron: '0 9 * * 1'
+    # Weekly, so a content change that blanks a page is caught without a push.
+    #
+    # Deliberately at :37, not :00. The first scheduled run this workflow was
+    # ever due -- Monday 2026-09-07 09:00 UTC -- never arrived; it was still
+    # absent 2h18m later with zero runs recorded for the schedule event.
+    # GitHub queues scheduled workflows on shared infrastructure and delays or
+    # drops them under load, and the top of the hour is the most contended
+    # slot, so its own docs advise scheduling off the hour. An odd minute is
+    # not superstition here: it is the only lever this file has over whether
+    # the run happens at all.
+    - cron: '37 9 * * 1'
   workflow_dispatch:
 
 env:
