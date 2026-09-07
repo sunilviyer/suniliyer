@@ -71,8 +71,15 @@ export async function POST(request: Request) {
     if (_timestamp) {
       const timeElapsed = Date.now() - parseInt(_timestamp);
       if (timeElapsed < 3000) {
-        // Submitted in less than 3 seconds - likely bot
-        return NextResponse.json({ success: true }, { status: 200 });
+        // Submitted in under 3 seconds - likely a bot. This used to return
+        // success without sending, so a genuinely fast human saw "Sent" and
+        // the message was silently discarded. Reject visibly instead: a bot
+        // ignores the response either way, and a person gets a chance to
+        // resend rather than believing the mail went through.
+        return NextResponse.json(
+          { error: 'That was a little too quick — please try sending again.' },
+          { status: 400 }
+        );
       }
     }
 

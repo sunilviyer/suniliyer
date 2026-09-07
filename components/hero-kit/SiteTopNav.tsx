@@ -41,7 +41,13 @@ export default function SiteTopNav() {
         _timestamp: String(mountedAt.current),
       }),
     });
-    if (!res.ok) throw new Error('contact failed');
+    if (!res.ok) {
+      // The route explains itself (rate limited, bad address, too-short
+      // message). Carry that text up so TopNav can show it instead of a
+      // generic failure.
+      const body = (await res.json().catch(() => null)) as { error?: string } | null;
+      throw new Error(body?.error || 'contact failed');
+    }
   };
 
   return (
