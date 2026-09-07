@@ -64,8 +64,12 @@ export function StageSection({ stage, side }: { stage: Stage; side: "left" | "ri
         <span className="aside-tag">{world.tag}</span>
       </div>
       <div className="stage-figure" ref={cardRef}>
-        <EvoLink className="stage-card" href={stage.href}>
-          <span className="stage-art" aria-hidden="true"><img src={stage.art} alt="" loading="lazy" draggable={false} /></span>
+        {/* The art illustrates the card, so it carries alt text rather than
+            aria-hidden. The link takes an explicit label so its accessible
+            name stays "Agents - agents and dashboards" instead of swallowing
+            the image description and every line of card metadata. */}
+        <EvoLink className="stage-card" href={stage.href} aria-label={`${stage.title} - ${stage.desc}`}>
+          <span className="stage-art"><img src={stage.art} alt={stage.alt} loading="lazy" draggable={false} /></span>
           <span className="stage-meta">{stage.name} &middot; {stage.era}</span>
           <span className="stage-world">{world.word} &middot; {world.tag}</span>
           <b className="stage-title">{stage.title}</b>

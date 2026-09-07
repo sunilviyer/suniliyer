@@ -16,16 +16,19 @@ export const WORLDS: Record<World, { word: string; tag: string }> = {
   vidya: { word: "Vidya", tag: "The World of Knowledge" },
   leela: { word: "Leela", tag: "The World of Play" },
 };
-export type Stage = { num: string; name: string; era: string; world: World; title: string; desc: string; href: string; art: string };
+export type Stage = { num: string; name: string; era: string; world: World; title: string; desc: string; href: string; art: string;
+  /** Describes what the artwork shows. The card already renders the medium,
+   *  era, title and description as text, so alt must not repeat them. */
+  alt: string };
 export const STAGES: Stage[] = [
-  { num: "02", name: "ROCK CARVING", era: "10,000 BCE", world: "vidya", title: "Agents", art: "/images/stages/agents.webp", desc: "agents and dashboards", href: "https://ai-agents-rosy-mu.vercel.app" },
-  { num: "03", name: "PARCHMENT", era: "500 BCE", world: "vidya", title: "Articles", art: "/images/stages/articles.webp", desc: "26+ publications", href: "/articles" },
-  { num: "04", name: "PAPER", era: "105 CE", world: "vidya", title: "Curriculum", art: "/images/stages/curriculum.webp", desc: "learning path", href: "/history" },
-  { num: "05", name: "PRINTING PRESS", era: "1440", world: "vidya", title: "Constitution", art: "/images/stages/constitution.webp", desc: "AI principles", href: "/constitution" },
-  { num: "06", name: "TYPEWRITER", era: "1868", world: "leela", title: "Gita", art: "/images/stages/gita.webp", desc: "interactive Bhagavad Gita", href: "/gita" },
-  { num: "07", name: "PUNCH CARD", era: "1890", world: "leela", title: "Calvin and Hobbes", art: "/images/stages/calvinhobbes.webp", desc: "a cAlvIn parody", href: "/calvinhobbes" },
-  { num: "08", name: "BINARY", era: "1945", world: "leela", title: "Creative Works", art: "/images/stages/creative.webp", desc: "art and animation", href: "/creative-works" },
-  { num: "09", name: "NETWORK", era: "1983", world: "leela", title: "Behind the Scenes", art: "/images/stages/behind.webp", desc: "process and tools", href: "/behind-the-scenes" },
+  { num: "02", name: "ROCK CARVING", era: "10,000 BCE", world: "vidya", title: "Agents", art: "/images/stages/agents.webp", alt: "Five cartoon robots crowd into a selfie inside a phone frame.", desc: "agents and dashboards", href: "https://ai-agents-rosy-mu.vercel.app" },
+  { num: "03", name: "PARCHMENT", era: "500 BCE", world: "vidya", title: "Articles", art: "/images/stages/articles.webp", alt: "An open handwritten notebook and fountain pen on a desk, ringed by coffee, reading glasses, sticky notes and printed drafts.", desc: "26+ publications", href: "/articles" },
+  { num: "04", name: "PAPER", era: "105 CE", world: "vidya", title: "Curriculum", art: "/images/stages/curriculum.webp", alt: "Five buds opening along a bare tree branch against a white sky.", desc: "learning path", href: "/history" },
+  { num: "05", name: "PRINTING PRESS", era: "1440", world: "vidya", title: "Constitution", art: "/images/stages/constitution.webp", alt: "Devanagari verse glowing gold on a dark stone tablet, lit by a single oil lamp.", desc: "AI principles", href: "/constitution" },
+  { num: "06", name: "TYPEWRITER", era: "1868", world: "leela", title: "Gita", art: "/images/stages/gita.webp", alt: "Watercolour of Krishna playing a flute, a kneeling armoured Arjuna below with palms pressed together.", desc: "interactive Bhagavad Gita", href: "/gita" },
+  { num: "07", name: "PUNCH CARD", era: "1890", world: "leela", title: "Calvin and Hobbes", art: "/images/stages/calvinhobbes.webp", alt: "A small white robot and a plush striped tiger sit side by side, turned toward each other.", desc: "a cAlvIn parody", href: "/calvinhobbes" },
+  { num: "08", name: "BINARY", era: "1945", world: "leela", title: "Creative Works", art: "/images/stages/creative.webp", alt: "Four backlit cards strung on twine: a film still, a comic strip, a glowing forest spirit and a sunrise landscape.", desc: "art and animation", href: "/creative-works" },
+  { num: "09", name: "NETWORK", era: "1983", world: "leela", title: "Behind the Scenes", art: "/images/stages/behind.webp", alt: "An empty theatre stage seen from the boards, rigging and lights overhead and the auditorium beyond.", desc: "process and tools", href: "/behind-the-scenes" },
 ];
 export const NAV = [
   { label: "Journey", href: "/journey" },
