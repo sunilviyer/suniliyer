@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { UserRound, Sun, Moon, Mail, Menu, X as XIcon } from 'lucide-react';
+import AnimatedLogo from './AnimatedLogo';
 
 const X = () => <XIcon className="xicon" aria-hidden="true" />;
 
@@ -58,7 +59,7 @@ export default function TopNav({ menuGroups = [], onConnectSubmit }) {
   return (
     <>
       <header className="topnav">
-        <a className="brand" href="/" data-tip="Home">si.</a>
+        <AnimatedLogo />
         <nav className="navicons">
           <button aria-label="About Sunil" data-tip="About" onClick={() => setOpen('about')}>
             <UserRound aria-hidden="true" />
