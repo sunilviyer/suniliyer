@@ -68,9 +68,16 @@ const config: Config = {
         'border-accent': 'var(--journey-border-accent)',
         'hover-bg': 'var(--journey-hover-bg)',
       },
+      // --font-geist-* were create-next-app scaffold leftovers and were never
+      // defined anywhere, so font-sans/font-mono silently fell through to the
+      // generic fallbacks. Point them at the variables app/layout.tsx actually
+      // sets. Nothing uses these utilities today, so this changes no rendering;
+      // it stops the next person who reaches for font-sans getting system-ui
+      // instead of the site face.
       fontFamily: {
-        sans: ['var(--font-geist-sans)', 'system-ui', 'sans-serif'],
-        mono: ['var(--font-geist-mono)', 'monospace'],
+        sans: ['var(--font-funnel-sans)', 'system-ui', 'sans-serif'],
+        display: ['var(--font-funnel-display)', 'system-ui', 'sans-serif'],
+        mono: ['ui-monospace', 'SFMono-Regular', 'Menlo', 'monospace'],
       },
     },
   },
