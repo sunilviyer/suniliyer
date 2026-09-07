@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { CUES, STAGES } from "./data";
 import { ThemeProvider } from "./theme";
 import { ScrollFilm } from "./film";
-import { Hero, Nav } from "./hero";
+import { Hero } from "./hero";
 import { DepthGauge, FilmCaption, Footer, StageSection } from "./strata";
 import "./evo.css";
 import "./evo.host.css";
@@ -26,7 +26,6 @@ export function EvoPage() {
     <ThemeProvider>
       <div className="evo">
         <ScrollFilm onProgress={onProgress} />
-        <Nav />
         <DepthGauge active={active} />
         <FilmCaption active={active} label={label} />
         <main id="journey" className="evo-content">

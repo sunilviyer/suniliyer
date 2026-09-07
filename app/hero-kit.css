@@ -324,3 +324,48 @@
   stroke-linecap: round;
   vertical-align: -1px;
 }
+
+/* ── Animated SI wordmark ───────────────────────────────────────────────
+   Ported from the Claude Design canvas (Animated Logo.dc.html). The mark
+   rests as "SI.", blinks three times, expands to "Sunil Iyer.", holds,
+   then collapses. Letters inherit colour so the mark works in both themes;
+   only the accent dot is fixed. */
+@keyframes si-blink {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: 0.08; }
+}
+.brand-animated {
+  display: inline-flex;
+  align-items: baseline;
+  font-family: var(--font-funnel-display), var(--display), system-ui, sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1.375rem;
+  letter-spacing: 0.02em;
+  line-height: 1;
+  color: inherit;
+}
+.brand-animated[data-phase='blink'] {
+  animation: si-blink 0.45s ease 3;
+}
+.brand-animated .bl-grow {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  vertical-align: bottom;
+  max-width: 0;
+  opacity: 0;
+  transition: max-width 0.7s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.5s ease;
+}
+.brand-animated[data-phase='open'] .bl-grow {
+  max-width: 120px;
+  opacity: 1;
+}
+.brand-animated .bl-dot { color: #d4a24e; }
+
+/* No motion: rest as a static "SI." wordmark. */
+@media (prefers-reduced-motion: reduce) {
+  .brand-animated,
+  .brand-animated[data-phase='blink'] { animation: none; }
+  .brand-animated .bl-grow { transition: none; }
+}
