@@ -19,3 +19,10 @@
 :root[data-evo-theme] body {
   background: var(--bg);
 }
+
+/* .evo a clears text-decoration, which would make the LinkedIn link in the
+   contact form's error note indistinguishable from the text around it. */
+.form-note a {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}

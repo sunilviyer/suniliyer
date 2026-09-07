@@ -5,6 +5,7 @@ import Link from "next/link";
 import { EvoLink } from "./link";
 import { sendContact } from "../../lib/api/contact.functions";
 import { ThemeToggle } from "./theme";
+import { LINKEDIN } from "./data";
 
 const IC = { width: 18, height: 18, viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeWidth: 1.8, strokeLinecap: "round" as const, strokeLinejoin: "round" as const };
 
@@ -81,7 +82,13 @@ export function Nav() {
                 {status === "sending" ? "Sending" : "Send Message"}
               </button>
               {status === "sent" ? <span className="form-note" role="status">Message sent. Thank you.</span> : null}
-              {status === "error" ? <span className="form-note form-err" role="status">{errMsg ?? "Could not send. Email contactme@suniliyer.ca"}</span> : null}
+              {status === "error" ? (
+                <span className="form-note form-err" role="status">
+                  {errMsg ?? (
+                    <>Could not send. Reach me on <a href={LINKEDIN} target="_blank" rel="noreferrer">LinkedIn</a>.</>
+                  )}
+                </span>
+              ) : null}
             </div>
           </form>
         </div>
