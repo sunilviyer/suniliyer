@@ -47,93 +47,94 @@ export function CookieBanner() {
     <div
       role="dialog"
       aria-label="Cookie consent"
-      style={{
-        position: 'fixed',
-        bottom: 24,
-        left: '50%',
-        transform: 'translateX(-50%)',
-        zIndex: 99999,
-        width: 'min(560px, calc(100vw - 32px))',
-        background: 'rgba(10, 10, 20, 0.92)',
-        backdropFilter: 'blur(20px)',
-        WebkitBackdropFilter: 'blur(20px)',
-        border: '1px solid rgba(255,255,255,0.1)',
-        borderRadius: 16,
-        padding: '18px 22px',
-        display: 'flex',
-        alignItems: 'center',
-        gap: 16,
-        boxShadow: '0 8px 40px rgba(0,0,0,0.5)',
-        animation: 'cookieSlideUp 0.4s cubic-bezier(0.16,1,0.3,1) both',
-      }}
+      className="cookie-banner"
     >
-      {/* Cookie icon */}
-      <span style={{ fontSize: 22, flexShrink: 0 }}>🍪</span>
+      <span className="cb-icon" aria-hidden="true">🍪</span>
 
-      {/* Text */}
-      <p style={{
-        flex: 1,
-        margin: 0,
-        fontSize: 13,
-        lineHeight: 1.6,
-        color: 'rgba(255,255,255,0.75)',
-        fontFamily: 'var(--font-funnel-sans), system-ui, sans-serif',
-      }}>
-        This site uses cookies for analytics to understand how visitors use it.{' '}
+      <p className="cb-text">
+        Cookies for analytics.{' '}
         <a
           href="https://policies.google.com/privacy"
           target="_blank"
           rel="noopener noreferrer"
-          style={{ color: 'rgba(255,186,8,0.85)', textDecoration: 'underline', textUnderlineOffset: 3 }}
         >
           Learn more
         </a>
       </p>
 
-      {/* Buttons */}
-      <div style={{ display: 'flex', gap: 8, flexShrink: 0 }}>
-        <button
-          onClick={handleDecline}
-          style={{
-            background: 'transparent',
-            border: '1px solid rgba(255,255,255,0.2)',
-            color: 'rgba(255,255,255,0.55)',
-            borderRadius: 8,
-            padding: '7px 14px',
-            fontSize: 12,
-            fontFamily: 'var(--font-funnel-sans), system-ui, sans-serif',
-            cursor: 'pointer',
-            transition: 'all 0.2s ease',
-            whiteSpace: 'nowrap',
-          }}
-          onMouseOver={(e) => (e.currentTarget.style.borderColor = 'rgba(255,255,255,0.4)')}
-          onMouseOut={(e) => (e.currentTarget.style.borderColor = 'rgba(255,255,255,0.2)')}
-        >
-          Decline
-        </button>
-        <button
-          onClick={handleAccept}
-          style={{
-            background: 'rgba(255,186,8,0.9)',
-            border: '1px solid transparent',
-            color: '#0a0a14',
-            borderRadius: 8,
-            padding: '7px 16px',
-            fontSize: 12,
-            fontWeight: 600,
-            fontFamily: 'var(--font-funnel-sans), system-ui, sans-serif',
-            cursor: 'pointer',
-            transition: 'all 0.2s ease',
-            whiteSpace: 'nowrap',
-          }}
-          onMouseOver={(e) => (e.currentTarget.style.background = '#FFBA08')}
-          onMouseOut={(e) => (e.currentTarget.style.background = 'rgba(255,186,8,0.9)')}
-        >
-          Accept
-        </button>
+      <div className="cb-actions">
+        <button className="cb-btn cb-decline" onClick={handleDecline}>Decline</button>
+        <button className="cb-btn cb-accept" onClick={handleAccept}>Accept</button>
       </div>
 
       <style>{`
+        .cookie-banner {
+          position: fixed;
+          bottom: 16px;
+          left: 50%;
+          transform: translateX(-50%);
+          z-index: 99999;
+          width: max-content;
+          max-width: calc(100vw - 24px);
+          background: rgba(10, 10, 20, 0.92);
+          backdrop-filter: blur(20px);
+          -webkit-backdrop-filter: blur(20px);
+          border: 1px solid rgba(255, 255, 255, 0.1);
+          border-radius: 12px;
+          padding: 9px 12px;
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          box-shadow: 0 8px 40px rgba(0, 0, 0, 0.5);
+          font-family: var(--font-funnel-sans), system-ui, sans-serif;
+          animation: cookieSlideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) both;
+        }
+        .cb-icon { font-size: 15px; flex-shrink: 0; line-height: 1; }
+        .cb-text {
+          margin: 0;
+          font-size: 12.5px;
+          line-height: 1.35;
+          color: rgba(255, 255, 255, 0.72);
+          white-space: nowrap;
+        }
+        .cb-text a {
+          color: rgba(255, 186, 8, 0.85);
+          text-decoration: underline;
+          text-underline-offset: 3px;
+        }
+        .cb-actions { display: flex; gap: 6px; flex-shrink: 0; }
+        .cb-btn {
+          border-radius: 7px;
+          padding: 5px 11px;
+          font-size: 12px;
+          font-family: inherit;
+          cursor: pointer;
+          white-space: nowrap;
+          transition: all 0.2s ease;
+        }
+        .cb-decline {
+          background: transparent;
+          border: 1px solid rgba(255, 255, 255, 0.2);
+          color: rgba(255, 255, 255, 0.55);
+        }
+        .cb-decline:hover { border-color: rgba(255, 255, 255, 0.4); }
+        .cb-accept {
+          background: rgba(255, 186, 8, 0.9);
+          border: 1px solid transparent;
+          color: #0a0a14;
+          font-weight: 600;
+        }
+        .cb-accept:hover { background: #FFBA08; }
+
+        /* Narrow phones: drop the icon and let the line wrap rather than
+           letting the bar grow tall enough to cover page content. */
+        @media (max-width: 430px) {
+          .cookie-banner { gap: 8px; padding: 8px 10px; }
+          .cb-icon { display: none; }
+          .cb-text { white-space: normal; font-size: 11.5px; }
+          .cb-btn { padding: 5px 9px; font-size: 11.5px; }
+        }
+
         @keyframes cookieSlideUp {
           from { opacity: 0; transform: translateX(-50%) translateY(20px); }
           to   { opacity: 1; transform: translateX(-50%) translateY(0); }

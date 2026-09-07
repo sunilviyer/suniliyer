@@ -14,6 +14,7 @@ const X = () => <XIcon className="xicon" aria-hidden="true" />;
 export default function TopNav({ menuGroups = [], onConnectSubmit }) {
   const [open, setOpen] = useState(null); // 'about' | 'menu' | 'chat' | null
   const [sendState, setSendState] = useState('idle'); // idle | sending | sent | error
+  const [sendError, setSendError] = useState('');
 
   // theme: 'kit-theme' is canonical, but mirror the legacy 'theme' key,
   // Tailwind's .dark class, and the 'themeChange' event so interior pages
@@ -46,12 +47,14 @@ export default function TopNav({ menuGroups = [], onConnectSubmit }) {
     e.preventDefault();
     if (!onConnectSubmit) return;
     const form = e.target;
+    setSendError('');
     setSendState('sending');
     try {
       await onConnectSubmit(new FormData(form));
       setSendState('sent');
       form.reset();
-    } catch {
+    } catch (err) {
+      setSendError(err?.message && err.message !== 'contact failed' ? err.message : '');
       setSendState('error');
     }
   };
@@ -168,7 +171,7 @@ export default function TopNav({ menuGroups = [], onConnectSubmit }) {
         </form>
         <p className="secure" aria-live="polite">
           {sendState === 'error' ? (
-            'Something went wrong — please try again.'
+            sendError || 'Something went wrong — please try again.'
           ) : (
             <>
               <svg viewBox="0 0 24 24" className="lock" aria-hidden="true">

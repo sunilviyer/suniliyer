@@ -32,17 +32,6 @@ html{scroll-behavior:smooth}
 :root[data-evo-theme="light"] .film-scrim{background:rgba(253,240,213,.32)}
 .evo-content{position:relative;z-index:1}
 .evo-footer{position:relative;z-index:1;background:var(--glass);-webkit-backdrop-filter:blur(22px) saturate(1.15);backdrop-filter:blur(22px) saturate(1.15);border:1px solid var(--card-border);border-radius:clamp(28px,5vw,52px);box-shadow:0 24px 80px rgba(0,0,0,.25),inset 0 1px 0 rgba(253,240,213,.08)}
-.evo-nav{position:fixed;inset:14px 0 auto 0;z-index:60;display:grid;justify-items:center;padding:0 clamp(10px,3vw,36px);pointer-events:none;background:none;border:none}
-.evo-nav .evo-wrap{display:flex;align-items:center;justify-content:space-between;height:58px}
-.nav-brand{font-family:Georgia,"Times New Roman",serif;font-style:italic;font-weight:600;font-size:25px;letter-spacing:-.01em}
-.nav-brand em{color:var(--accent);font-style:normal}
-.nav-right{display:flex;align-items:center;gap:clamp(10px,2.2vw,26px)}
-.nav-link{font-family:var(--fm);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-dim);position:relative;padding:4px 0}
-.nav-link::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform .3s}
-.nav-link:hover{color:var(--ink)}
-.nav-link:hover::after{transform:scaleX(1)}
-.theme-btn{background:none;border:1px solid var(--hairline);border-radius:999px;width:34px;height:34px;display:grid;place-items:center;color:var(--ink-dim);cursor:pointer;transition:transform .3s}
-.theme-btn:hover{color:var(--ink);transform:rotate(15deg)}
 .evo-hero{min-height:100svh;display:grid;align-content:center;gap:34px;padding-top:110px;padding-bottom:8vh;position:relative}
 .hero-scrub{will-change:transform,opacity,filter}
 .hero-head{font-family:var(--fd);font-weight:600;letter-spacing:-.035em;line-height:.97;font-size:clamp(44px,8.6vw,124px);margin:0;text-wrap:balance;max-width:14ch}
@@ -125,16 +114,6 @@ html{scroll-behavior:smooth}
 .gauge .notch.on{background:var(--accent)}
 .converge{padding:14vh 0 10vh;display:grid;gap:26px}
 .converge-state{font-family:var(--fd);font-weight:600;font-size:clamp(30px,4.6vw,58px);letter-spacing:-.02em;line-height:1.1;margin:0;max-width:22ch;text-wrap:balance}
-.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;max-width:720px}
-.contact-grid .full{grid-column:1/-1}
-.field{display:grid;gap:6px}
-.field label{font-family:var(--fm);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-faint)}
-.field input,.field textarea{background:transparent;border:1px solid var(--card-border);color:var(--ink);font-family:var(--fb);font-size:15px;padding:11px 12px;border-radius:0;transition:border-color .3s}
-.field input:focus,.field textarea:focus{outline:none;border-color:var(--steel)}
-.send-btn{justify-self:start;font-family:var(--fm);font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink);background:transparent;border:1px solid var(--red);padding:13px 26px;cursor:pointer;transition:background .3s,color .3s}
-.send-btn:hover{background:var(--red);color:var(--cream)}
-.form-note{font-family:var(--fm);font-size:11.5px;letter-spacing:.08em;color:var(--steel)}
-.form-err{color:var(--red)}
 .sch{will-change:transform}
 .socials{display:flex;gap:22px}
 .social-link{font-family:var(--fm);font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-dim);border-bottom:1px solid var(--hairline);padding-bottom:3px;transition:color .3s,border-color .3s}
@@ -164,9 +143,6 @@ html{scroll-behavior:smooth}
 .chapter.in-view .card{animation:card-rise .65s cubic-bezier(.2,.7,.2,1) backwards}
 @keyframes card-rise{from{transform:translateY(34px)}to{transform:translateY(0)}}
 .gauge{right:5px}.gauge .notch{height:15px;width:2px;gap:5px}
-  .contact-grid{grid-template-columns:1fr}
-  .nav-right{gap:12px}
-  .nav-link{font-size:10px;letter-spacing:.09em}
 }
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
@@ -229,19 +205,8 @@ html{scroll-behavior:smooth}
   .stage{min-height:92svh}
   .stage-card{padding:24px 22px 22px;border-radius:18px}
   .stage-title{font-size:28px}
-  .nav-right{flex-wrap:nowrap}
 }
 /* Pill nav + icon buttons (matches suniliyer.ca) */
-.nav-pill{pointer-events:auto;width:min(1240px,100%);height:58px;border-radius:999px;background:var(--glass);-webkit-backdrop-filter:blur(16px) saturate(1.15);backdrop-filter:blur(16px) saturate(1.15);border:1px solid var(--hairline);display:flex;align-items:center;justify-content:space-between;padding:0 12px 0 26px;box-shadow:0 10px 40px rgba(0,0,0,.18)}
-.nav-icons{display:flex;align-items:center;gap:6px}
-.nav-ic{width:38px;height:38px;border-radius:999px;display:grid;place-items:center;color:var(--ink-dim);background:none;border:none;cursor:pointer;transition:background .25s,color .25s;padding:0}
-.nav-ic:hover{color:var(--ink);background:rgba(253,240,213,.09)}
-:root[data-evo-theme="light"] .nav-ic:hover{background:rgba(0,48,73,.08)}
-.nav-icons .theme-btn{border:none;width:38px;height:38px}
-.nav-menu{pointer-events:auto;position:absolute;top:76px;right:clamp(10px,3vw,36px);background:var(--glass);-webkit-backdrop-filter:blur(22px);backdrop-filter:blur(22px);border:1px solid var(--hairline);border-radius:18px;padding:10px;display:grid;gap:2px;min-width:210px;box-shadow:0 20px 60px rgba(0,0,0,.3)}
-.nav-menu a{font-family:var(--fm);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-dim);padding:10px 14px;border-radius:10px;transition:background .2s,color .2s}
-.nav-menu a:hover{color:var(--ink);background:rgba(253,240,213,.08)}
-:root[data-evo-theme="light"] .nav-menu a:hover{background:rgba(0,48,73,.07)}
 /* Footer card layout (matches suniliyer.ca) */
 .foot-inner{padding:0 clamp(20px,4vw,56px)}
 .foot-grid{display:grid;grid-template-columns:minmax(250px,1.1fr) 2fr;gap:clamp(26px,5vw,84px);align-items:start}
@@ -272,20 +237,7 @@ html{scroll-behavior:smooth}
 .lq-label{position:relative;z-index:1;pointer-events:none}
 @media (prefers-reduced-motion:reduce){.liquid-cta,.liquid-cta:hover,.liquid-cta:active{transform:none;transition:none}}
 /* Contact dropdown from the nav mail icon */
-.contact-pop{pointer-events:auto;position:absolute;top:76px;right:clamp(10px,3vw,36px);width:min(440px,calc(100vw - 20px));background:var(--glass);-webkit-backdrop-filter:blur(24px) saturate(1.15);backdrop-filter:blur(24px) saturate(1.15);border:1px solid var(--hairline);border-radius:22px;padding:20px 22px 22px;box-shadow:0 24px 70px rgba(0,0,0,.35);animation:pop-drop .28s cubic-bezier(.2,.7,.2,1)}
 @keyframes pop-drop{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
-.pop-nub{position:absolute;top:-7.5px;right:64px;width:14px;height:14px;background:var(--glass);border-left:1px solid var(--hairline);border-top:1px solid var(--hairline);transform:rotate(45deg);-webkit-backdrop-filter:blur(24px);backdrop-filter:blur(24px)}
-.pop-head{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:14px}
-.pop-head b{font-family:var(--fd);font-weight:600;font-size:19px;letter-spacing:-.01em}
-.pop-head p{margin:4px 0 0;font-size:13.5px;color:var(--ink-dim)}
-.pop-grid{max-width:none;gap:10px}
-.pop-grid .field input,.pop-grid .field textarea{padding:9px 11px;font-size:14px;background:rgba(10,10,10,.25)}
-:root[data-evo-theme="light"] .pop-grid .field input,:root[data-evo-theme="light"] .pop-grid .field textarea{background:rgba(253,240,213,.35)}
-.nav-ic.on{color:var(--ink);background:rgba(253,240,213,.12)}
-:root[data-evo-theme="light"] .nav-ic.on{background:rgba(0,48,73,.1)}
-.nav-menu button{font-family:var(--fm);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-dim);padding:10px 14px;border-radius:10px;background:none;border:none;cursor:pointer;text-align:left;transition:background .2s,color .2s}
-.nav-menu button:hover{color:var(--ink);background:rgba(253,240,213,.08)}
-:root[data-evo-theme="light"] .nav-menu button:hover{background:rgba(0,48,73,.07)}
 @media (prefers-reduced-motion:reduce){.contact-pop{animation:none}}
 /* Orbiting star light on the liquid CTA */
 .liquid-cta{overflow:hidden;--lq-light:rgba(253,240,213,.95)}
